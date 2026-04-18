@@ -5,6 +5,7 @@ import shutil
 from pathlib import Path
 
 import pytesseract
+from core_interfaces import TextTransform
 from pdf2image import convert_from_path
 from ocr_adapters import TesseractOcrEngine
 from text_normalization import (
@@ -141,7 +142,7 @@ def run_pilot(
     part_dir = output_root / part
     ensure_dir(part_dir)
 
-    transforms = [LigatureNormalizer()]
+    transforms: list[TextTransform] = [LigatureNormalizer()]
     if normalize_ae:
         transforms.append(AeHeuristicNormalizer())
     if normalize_open_c:
