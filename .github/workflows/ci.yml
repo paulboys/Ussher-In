@@ -42,7 +42,17 @@ jobs:
 
       - name: Run tests
         run: |
-          python -m pytest 08_working_scratch/tests -q
+          mkdir -p .ci-artifacts/pytest
+          set -o pipefail
+          python -m pytest 08_working_scratch/tests -q 2>&1 | tee .ci-artifacts/pytest/pytest.log
+
+      - name: Upload pytest logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pytest-logs-${{ github.run_id }}
+          path: .ci-artifacts/pytest/
+          if-no-files-found: warn
 
   lint_type_optional:
     name: lint-type (non-blocking)
@@ -75,8 +85,19 @@ jobs:
 
       - name: Run ruff lint
         run: |
-          python -m ruff check 08_working_scratch/pipeline_scripts 08_working_scratch/phase3b/scripts 08_working_scratch/tests
+          mkdir -p .ci-artifacts/lint-type
+          set -o pipefail
+          python -m ruff check 08_working_scratch/pipeline_scripts 08_working_scratch/phase3b/scripts 08_working_scratch/tests 2>&1 | tee .ci-artifacts/lint-type/ruff.log
 
       - name: Run mypy type check
         run: |
-          python -m mypy 08_working_scratch/pipeline_scripts 08_working_scratch/phase3b/scripts --ignore-missing-imports
+          set -o pipefail
+          python -m mypy 08_working_scratch/pipeline_scripts 08_working_scratch/phase3b/scripts --ignore-missing-imports 2>&1 | tee .ci-artifacts/lint-type/mypy.log
+
+      - name: Upload lint/type logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lint-type-logs-${{ github.run_id }}
+          path: .ci-artifacts/lint-type/
+          if-no-files-found: warn
