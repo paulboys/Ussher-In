@@ -25,3 +25,10 @@ class EvaluationRecord:
     metric_name: str
     score: float
     scope: str
+
+
+@dataclass(frozen=True)
+class OcrResult:
+    text: str
+    avg_confidence: float
+    min_confidence: float
