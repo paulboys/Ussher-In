@@ -6,6 +6,12 @@ from pathlib import Path
 
 import pytesseract
 from pdf2image import convert_from_path
+from text_normalization import (
+    AeHeuristicNormalizer,
+    CompositeTextNormalizer,
+    HistoricalNumeralNormalizer,
+    LigatureNormalizer,
+)
 
 
 def ensure_dir(path: Path) -> None:
@@ -35,44 +41,15 @@ def build_tesseract_config(tessdata_dir: Path | None) -> str:
 
 
 def normalize_ligatures(text: str) -> str:
-    # Normalize ligature code points to explicit ASCII transliterations.
-    return (
-        text.replace("Æ", "AE")
-        .replace("æ", "ae")
-        .replace("Ǣ", "AE")
-        .replace("ǣ", "ae")
-    )
+    return LigatureNormalizer().apply(text)
 
 
 def normalize_ae_heuristics(text: str) -> str:
-    # Heuristic corrections for common early-print Latin OCR errors where ae is lost.
-    normalized = text
-    pattern_replacements = [
-        (r"\b([Pp])rzedix", r"\1raedix"),
-        (r"\b([Pp])rz", r"\1rae"),
-        (r"\b([Pp])redic", r"\1raedic"),
-        (r"\b([Pp])refulg", r"\1raefulg"),
-        (r"\b([Pp])racept", r"\1raecept"),
-        (r"\b([Qq])use\b", r"\1uae"),
-        (r"\b([Zz])tern", r"aetern"),
-        (r"\bterr[eé]\b", "terrae"),
-    ]
-    for pattern, repl in pattern_replacements:
-        normalized = re.sub(pattern, repl, normalized)
-    normalized = normalized.replace("praeedix", "praedix")
-    return normalized
+    return AeHeuristicNormalizer().apply(text)
 
 
 def normalize_historical_numerals(text: str) -> str:
-    # Common OCR confusion in this corpus: open C glyph rendered as D or 2.
-    normalized = text
-    normalized = normalized.replace(" CID ", " CIƆ ")
-    normalized = normalized.replace(" I2C ", " IƆC ")
-    normalized = re.sub(r"\bCID\b", "CIƆ", normalized)
-    normalized = re.sub(r"\bI2C\b", "IƆC", normalized)
-    normalized = re.sub(r"\bC1D\b", "CIƆ", normalized)
-    normalized = re.sub(r"\bI2G\b", "IƆC", normalized)
-    return normalized
+    return HistoricalNumeralNormalizer().apply(text)
 
 
 def clean_footnote_markers_in_body(text: str) -> str:
@@ -168,6 +145,13 @@ def run_pilot(
     part_dir = output_root / part
     ensure_dir(part_dir)
 
+    transforms = [LigatureNormalizer()]
+    if normalize_ae:
+        transforms.append(AeHeuristicNormalizer())
+    if normalize_open_c:
+        transforms.append(HistoricalNumeralNormalizer())
+    text_normalizer = CompositeTextNormalizer(transforms=transforms)
+
     images = convert_from_path(
         str(pdf_path),
         first_page=start_page,
@@ -188,20 +172,12 @@ def run_pilot(
             body_text, body_avg_conf, body_min_conf = score_image_text(image, "lat", body_config)
             footnote_text, footnote_avg_conf, footnote_min_conf = "", 0.0, 0.0
 
-        body_text = normalize_ligatures(body_text)
-        footnote_text = normalize_ligatures(footnote_text)
+        body_text = text_normalizer.apply(body_text)
+        footnote_text = text_normalizer.apply(footnote_text)
 
         if split_footnotes:
             body_text = clean_footnote_markers_in_body(body_text)
             footnote_text = relabel_footnotes(footnote_text)
-
-        if normalize_ae:
-            body_text = normalize_ae_heuristics(body_text)
-            footnote_text = normalize_ae_heuristics(footnote_text)
-
-        if normalize_open_c:
-            body_text = normalize_historical_numerals(body_text)
-            footnote_text = normalize_historical_numerals(footnote_text)
 
         text = body_text
         if split_footnotes and footnote_text.strip():
