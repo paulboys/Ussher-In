@@ -22,7 +22,7 @@ As a data scientist unable to read Latin, the only way to answer these questions
 
 The pipeline has two stages:
 
-1. **OCR** — Extract structured Latin text from photocopied book PDFs using Tesseract with LSTM fine-tuning for historical print. Each page is segmented into body, footnotes, and marginalia, then quality-checked.
+1. **OCR** — Extract structured Latin text from photocopied book PDFs. The initial approach uses Tesseract with LSTM fine-tuning for historical print, but this is a starting point, not a final one; the project may progress to other tools as needed. Each page is segmented into body, footnotes, and marginalia, then quality-checked.
 2. **Translation** — Translate the structured Latin into literal, academic-register English using machine translation with human post-editing. The output is bilingual Latin–English reading documents.
 
 ### Fine-Tuning for Historical Print
