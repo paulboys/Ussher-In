@@ -10,7 +10,7 @@ Ussher's *Antiquitates* is a foundational history of the early British and Irish
 
 ## Background
 
-This project was born from two historical questions:
+This project was born from two historical questions I have asking for years:
 1.  How significant was James Ussher's influence on the Westminster Assembly, given the deep parallels between his earlier works and their famous Confession?
 2.  How did St. Basil's monastic rule travel from 4th-century Cappadocia to the Celtic monasteries of Ireland and Scotland?
 
@@ -61,6 +61,10 @@ The source material is a 19th-century edition with ligatures (æ/Æ), footnote m
 | `06_tools_config/` | Environment, Tesseract config, and tessdata |
 | `07_documentation/` | Process docs, schema, execution plan |
 | `08_working_scratch/` | Pipeline scripts, annotation tooling, fine-tuning workspace |
+
+## Collaboration
+
+This project is intended to be collaborative. Anyone interested in contributing—whether with Latin, historical context, or technical expertise—is welcome. Please open an issue on GitHub or reach out to paul.d.boys@gmail.com.
 
 ## License
 
