@@ -73,7 +73,7 @@ Constraints:
 - Keep changes minimal and focused on failing checks.
 After edits, summarize what changed in .agent/run_$runId/fix_summary.md
 "@
-        claude -p $prompt | Out-File -FilePath (Join-Path $sessionDir "claude_output.txt") -Encoding utf8
+        claude -p $prompt --dangerously-skip-permissions | Out-File -FilePath (Join-Path $sessionDir "claude_output.txt") -Encoding utf8
     }
 
     & "C:/Users/User/miniforge3/python.exe" -m pytest 08_working_scratch/tests -q
