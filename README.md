@@ -16,7 +16,7 @@ This project was born from two historical questions I have been asking for years
 1.  How significant was James Ussher's influence on the Westminster Assembly, given the deep parallels between his earlier works and their famous Confession?
 2.  How did St. Basil's monastic rule travel from 4th-century Cappadocia to the Celtic monasteries of Ireland and Scotland?
 
-This second line of inquiry lead to one, untranslated primary source: Ussher's *Antiquitates*. This work documents the history of the early insular church, its key figures like Columba, and its connections to the wider Christian world.
+This second line of inquiry led to one, untranslated primary source: Ussher's *Antiquitates*. This work documents the history of the early insular church, its key figures like Columba, and its connections to the wider Christian world.
 
 As a data scientist unable to read Latin, the only way to answer these questions was to build the tools to make the book accessible. This repository is the result—a data-driven attempt to produce the first English translation through a combination of OCR, machine learning, and careful human review.
 
