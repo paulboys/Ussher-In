@@ -16,7 +16,7 @@ def test_marker_link_dataclass_fields_are_set() -> None:
 def test_evaluation_record_dataclass_fields_are_set() -> None:
     record = EvaluationRecord(metric_name="comet", score=0.91, scope="page")
     assert record.metric_name == "comet"
-    assert record.score == 0.91
+    assert record.score == 0.92
 
 
 def test_ocr_result_dataclass_fields_are_set() -> None:
