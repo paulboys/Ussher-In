@@ -6,6 +6,7 @@ from pathlib import Path
 
 import pytesseract
 from pdf2image import convert_from_path
+from ocr_adapters import TesseractOcrEngine
 from text_normalization import (
     AeHeuristicNormalizer,
     CompositeTextNormalizer,
@@ -109,14 +110,9 @@ def relabel_footnotes(footnote_text: str) -> str:
     return "\n".join(rendered)
 
 
-def score_image_text(image, lang: str, config: str) -> tuple[str, float, float]:
-    text = pytesseract.image_to_string(image, lang=lang, config=config)
-    data = pytesseract.image_to_data(image, lang=lang, config=config, output_type=pytesseract.Output.DICT)
-    confidences = [float(c) for c in data.get("conf", []) if c not in ("-1", -1)]
-
-    avg_conf = round(sum(confidences) / len(confidences), 2) if confidences else 0.0
-    min_conf = round(min(confidences), 2) if confidences else 0.0
-    return text, avg_conf, min_conf
+def score_image_text(ocr_engine: TesseractOcrEngine, image, lang: str, config: str) -> tuple[str, float, float]:
+    result = ocr_engine.extract(image=image, lang=lang, config=config)
+    return result.text, result.avg_confidence, result.min_confidence
 
 
 def split_page_regions(image, footnote_top_ratio: float):
@@ -151,6 +147,7 @@ def run_pilot(
     if normalize_open_c:
         transforms.append(HistoricalNumeralNormalizer())
     text_normalizer = CompositeTextNormalizer(transforms=transforms)
+    ocr_engine = TesseractOcrEngine()
 
     images = convert_from_path(
         str(pdf_path),
@@ -166,10 +163,10 @@ def run_pilot(
 
         if split_footnotes:
             body_image, footnote_image = split_page_regions(image, footnote_top_ratio)
-            body_text, body_avg_conf, body_min_conf = score_image_text(body_image, "lat", body_config)
-            footnote_text, footnote_avg_conf, footnote_min_conf = score_image_text(footnote_image, "lat", footnote_config)
+            body_text, body_avg_conf, body_min_conf = score_image_text(ocr_engine, body_image, "lat", body_config)
+            footnote_text, footnote_avg_conf, footnote_min_conf = score_image_text(ocr_engine, footnote_image, "lat", footnote_config)
         else:
-            body_text, body_avg_conf, body_min_conf = score_image_text(image, "lat", body_config)
+            body_text, body_avg_conf, body_min_conf = score_image_text(ocr_engine, image, "lat", body_config)
             footnote_text, footnote_avg_conf, footnote_min_conf = "", 0.0, 0.0
 
         body_text = text_normalizer.apply(body_text)
