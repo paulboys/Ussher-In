@@ -10,6 +10,10 @@ __pycache__/
 *.pyc
 *.pyo
 .env
+.agent/
+
+# Local automation logs
+*_agent.log
 
 # OS
 Thumbs.db
