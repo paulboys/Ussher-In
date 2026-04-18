@@ -23,13 +23,21 @@
 - Convert cleaned OCR into translation units
 - Preserve source page mapping and identifiers
 
-## Phase 4 (Translation)
+## Phase 4 (English Reference Benchmark Set)
+
+- OCR and structure the existing English translation PDF/images into aligned English records
+- Build an initial Latin-English benchmark set where the English witness exists
+- Use this benchmark set to score machine translation output with BLEU, COMET, and related metrics
+- Preserve page and segment alignment so benchmark pairs can be reused for later model training or selection
+
+## Phase 5 (Translation)
 
 - Generate machine drafts
+- Score machine drafts against the English benchmark set where aligned reference text exists
 - Human post-edit to literal/academic register
 - Track provenance in translation history
 
-## Phase 5 (Deliverables)
+## Phase 6 (Deliverables)
 
 - Produce bilingual reading files as primary output
 - Store structured assets for reproducibility
