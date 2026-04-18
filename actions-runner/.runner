@@ -1,0 +1,11 @@
+﻿{
+  "agentId": 2,
+  "agentName": "UssherIn-Runner",
+  "poolId": 1,
+  "poolName": "Default",
+  "serverUrl": "https://pipelinesghubeus21.actions.githubusercontent.com/aUGxOLPrpyZ6dauDoNFCSAUeAfpJkysV8cmIA8JuhJVU0VNLhG/",
+  "gitHubUrl": "https://github.com/paulboys/Ussher-In",
+  "workFolder": "_work",
+  "useV2Flow": true,
+  "serverUrlV2": "https://broker.actions.githubusercontent.com/"
+}

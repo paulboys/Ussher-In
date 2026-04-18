@@ -1,0 +1,4498 @@
+[2026-04-18 20:26:16Z INFO HostContext] No proxy settings were found based on environmental variables (http_proxy/https_proxy/HTTP_PROXY/HTTPS_PROXY)
+[2026-04-18 20:26:16Z INFO HostContext] Well known directory 'Bin': 'C:\Users\User\Documents\UssherIn\actions-runner\bin'
+[2026-04-18 20:26:16Z INFO HostContext] Well known directory 'Root': 'C:\Users\User\Documents\UssherIn\actions-runner'
+[2026-04-18 20:26:16Z INFO HostContext] Well known config file 'Credentials': 'C:\Users\User\Documents\UssherIn\actions-runner\.credentials'
+[2026-04-18 20:26:16Z INFO HostContext] Well known directory 'Bin': 'C:\Users\User\Documents\UssherIn\actions-runner\bin'
+[2026-04-18 20:26:16Z INFO HostContext] Well known directory 'Root': 'C:\Users\User\Documents\UssherIn\actions-runner'
+[2026-04-18 20:26:16Z INFO HostContext] Well known config file 'Runner': 'C:\Users\User\Documents\UssherIn\actions-runner\.runner'
+[2026-04-18 20:26:16Z INFO Worker] Version: 2.333.1
+[2026-04-18 20:26:16Z INFO Worker] Commit: 6792966801e8925346735b68c03bf9f347af4646
+[2026-04-18 20:26:16Z INFO Worker] Culture: en-US
+[2026-04-18 20:26:16Z INFO Worker] UI Culture: en-US
+[2026-04-18 20:26:16Z INFO Worker] Waiting to receive the job message from the channel.
+[2026-04-18 20:26:16Z INFO ProcessChannel] Receiving message of length 35887, with hash '3874a5ef557676adcc6234425c8698b63b9b21427f98fdb85d517bd855cfb7cf'
+[2026-04-18 20:26:16Z INFO Worker] Message received.
+[2026-04-18 20:26:17Z INFO Worker] Job message:
+ {
+  "fileTable": [
+    ".github/workflows/agent-remediation.yml"
+  ],
+  "mask": [
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    }
+  ],
+  "steps": [
+    {
+      "type": "action",
+      "reference": {
+        "type": "repository",
+        "name": "actions/checkout",
+        "ref": "v4",
+        "repositoryType": "GitHub"
+      },
+      "displayNameToken": {
+        "type": 0,
+        "file": 1,
+        "line": 25,
+        "col": 15,
+        "lit": "Checkout dev"
+      },
+      "contextName": "__actions_checkout",
+      "inputs": {
+        "type": 2,
+        "file": 1,
+        "line": 28,
+        "col": 11,
+        "map": [
+          {
+            "key": {
+              "type": 0,
+              "file": 1,
+              "line": 28,
+              "col": 11,
+              "lit": "ref"
+            },
+            "value": {
+              "type": 0,
+              "file": 1,
+              "line": 28,
+              "col": 16,
+              "lit": "dev"
+            }
+          },
+          {
+            "key": {
+              "type": 0,
+              "file": 1,
+              "line": 29,
+              "col": 11,
+              "lit": "fetch-depth"
+            },
+            "value": {
+              "type": 0,
+              "file": 1,
+              "line": 29,
+              "col": 24,
+              "lit": "0"
+            }
+          }
+        ]
+      },
+      "condition": "success()",
+      "id": "582be594-3b9f-4737-bf2a-15540f48d2b8",
+      "name": "__actions_checkout"
+    },
+    {
+      "type": "action",
+      "reference": {
+        "type": "script"
+      },
+      "displayNameToken": {
+        "type": 0,
+        "file": 1,
+        "line": 31,
+        "col": 15,
+        "lit": "Configure git identity"
+      },
+      "contextName": "__run",
+      "inputs": {
+        "type": 2,
+        "map": [
+          {
+            "key": "script",
+            "value": {
+              "type": 0,
+              "file": 1,
+              "line": 33,
+              "col": 14,
+              "lit": "git config user.name \"github-actions[bot]\"\ngit config user.email \"41898282+github-actions[bot]@users.noreply.github.com\"\n"
+            }
+          },
+          {
+            "key": "shell",
+            "value": {
+              "type": 0,
+              "file": 1,
+              "line": 32,
+              "col": 16,
+              "lit": "pwsh"
+            }
+          }
+        ]
+      },
+      "condition": "success()",
+      "id": "8c25f13b-aa1a-4396-a604-435fce05ee8d",
+      "name": "__run"
+    },
+    {
+      "type": "action",
+      "reference": {
+        "type": "script"
+      },
+      "displayNameToken": {
+        "type": 0,
+        "file": 1,
+        "line": 37,
+        "col": 15,
+        "lit": "Ensure prerequisites"
+      },
+      "contextName": "__run_2",
+      "inputs": {
+        "type": 2,
+        "map": [
+          {
+            "key": "script",
+            "value": {
+              "type": 0,
+              "file": 1,
+              "line": 39,
+              "col": 14,
+              "lit": "if (-not (Get-Command gh -ErrorAction SilentlyContinue)) { throw \"gh CLI not found on self-hosted runner\" }\nif (-not (Get-Command claude -ErrorAction SilentlyContinue)) { throw \"claude CLI not found on self-hosted runner\" }\n"
+            }
+          },
+          {
+            "key": "shell",
+            "value": {
+              "type": 0,
+              "file": 1,
+              "line": 38,
+              "col": 16,
+              "lit": "pwsh"
+            }
+          }
+        ]
+      },
+      "condition": "success()",
+      "id": "58d378f5-b241-4d92-b9a6-2957985d6eb1",
+      "name": "__run_2"
+    },
+    {
+      "type": "action",
+      "reference": {
+        "type": "script"
+      },
+      "displayNameToken": {
+        "type": 0,
+        "file": 1,
+        "line": 43,
+        "col": 15,
+        "lit": "Run agent loop"
+      },
+      "contextName": "__run_3",
+      "environment": {
+        "type": 2,
+        "file": 1,
+        "line": 46,
+        "col": 11,
+        "map": [
+          {
+            "key": {
+              "type": 0,
+              "file": 1,
+              "line": 46,
+              "col": 11,
+              "lit": "GH_TOKEN"
+            },
+            "value": {
+              "type": 3,
+              "file": 1,
+              "line": 46,
+              "col": 21,
+              "expr": "github.token"
+            }
+          }
+        ]
+      },
+      "inputs": {
+        "type": 2,
+        "map": [
+          {
+            "key": "script",
+            "value": {
+              "type": 0,
+              "file": 1,
+              "line": 47,
+              "col": 14,
+              "lit": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/run_agent_loop.ps1 -BaseBranch dev -DefaultBranch main -MaxFixAttempts 1\n"
+            }
+          },
+          {
+            "key": "shell",
+            "value": {
+              "type": 0,
+              "file": 1,
+              "line": 44,
+              "col": 16,
+              "lit": "pwsh"
+            }
+          }
+        ]
+      },
+      "condition": "success()",
+      "id": "99222866-14ec-4335-bec6-b1f8f654d610",
+      "name": "__run_3"
+    }
+  ],
+  "variables": {
+    "Actions.EnableHttpRedirects": {
+      "value": "true"
+    },
+    "DistributedTask.AddWarningToNode12Action": {
+      "value": "true"
+    },
+    "DistributedTask.AddWarningToNode16Action": {
+      "value": "true"
+    },
+    "DistributedTask.AllowRunnerContainerHooks": {
+      "value": "true"
+    },
+    "DistributedTask.DeprecateStepOutputCommands": {
+      "value": "true"
+    },
+    "DistributedTask.DetailUntarFailure": {
+      "value": "true"
+    },
+    "DistributedTask.EnableCompositeActions": {
+      "value": "true"
+    },
+    "DistributedTask.EnableJobServerQueueTelemetry": {
+      "value": "true"
+    },
+    "DistributedTask.EnhancedAnnotations": {
+      "value": "true"
+    },
+    "DistributedTask.ForceGithubJavascriptActionsToNode16": {
+      "value": "true"
+    },
+    "DistributedTask.ForceGithubJavascriptActionsToNode20": {
+      "value": "true"
+    },
+    "DistributedTask.LogTemplateErrorsAsDebugMessages": {
+      "value": "true"
+    },
+    "DistributedTask.MarkJobAsFailedOnWorkerCrash": {
+      "value": "true"
+    },
+    "DistributedTask.NewActionMetadata": {
+      "value": "true"
+    },
+    "DistributedTask.UploadStepSummary": {
+      "value": "true"
+    },
+    "DistributedTask.UseActionArchiveCache": {
+      "value": "true"
+    },
+    "DistributedTask.UseWhich2": {
+      "value": "true"
+    },
+    "RunService.FixEmbeddedIssues": {
+      "value": "true"
+    },
+    "actions.runner.requirenode24": {
+      "value": "false"
+    },
+    "actions.runner.usenode24bydefault": {
+      "value": "false"
+    },
+    "actions.runner.warnonnode20": {
+      "value": "true"
+    },
+    "actions_add_check_run_id_to_job_context": {
+      "value": "true"
+    },
+    "actions_batch_action_resolution": {
+      "value": "false"
+    },
+    "actions_container_action_runner_temp": {
+      "value": "true"
+    },
+    "actions_display_helpful_actions_download_errors": {
+      "value": "true"
+    },
+    "actions_runner_compare_workflow_parser": {
+      "value": "false"
+    },
+    "actions_runner_deprecate_linux_arm32": {
+      "value": "false"
+    },
+    "actions_runner_emit_composite_markers": {
+      "value": "false"
+    },
+    "actions_runner_kill_linux_arm32": {
+      "value": "false"
+    },
+    "actions_runner_node20_removal_date": {
+      "value": ""
+    },
+    "actions_runner_node24_default_date": {
+      "value": ""
+    },
+    "actions_service_container_command": {
+      "value": "true"
+    },
+    "actions_set_orchestration_id_env_for_actions": {
+      "value": "true"
+    },
+    "actions_skip_retry_complete_job_upon_known_errors": {
+      "value": "true"
+    },
+    "actions_snapshot_preflight_hosted_runner_check": {
+      "value": "false"
+    },
+    "actions_snapshot_preflight_image_gen_pool_check": {
+      "value": "false"
+    },
+    "actions_use_bearer_token_for_codeload": {
+      "value": "false"
+    },
+    "actions_uses_cache_service_v2": {
+      "value": "true"
+    },
+    "github_token": {
+      "value": "***",
+      "isSecret": true
+    },
+    "system.from_run_service": {
+      "value": "true"
+    },
+    "system.github.job": {
+      "value": "remediate"
+    },
+    "system.github.launch_endpoint": {
+      "value": "https://launch.actions.githubusercontent.com"
+    },
+    "system.github.results_endpoint": {
+      "value": "https://results-receiver.actions.githubusercontent.com/"
+    },
+    "system.github.results_upload_with_sdk": {
+      "value": "true"
+    },
+    "system.github.token": {
+      "value": "***",
+      "isSecret": true
+    },
+    "system.github.token.permissions": {
+      "value": "{\"Actions\":\"read\",\"Contents\":\"write\",\"Metadata\":\"read\",\"PullRequests\":\"write\"}"
+    },
+    "system.orchestrationId": {
+      "value": "4e302514-6f58-46d8-a1df-b882be0c11d8.remediate.__default"
+    },
+    "system.phaseDisplayName": {
+      "value": "remediate-failed-ci"
+    },
+    "system.runner.lowdiskspacethreshold": {
+      "value": "100"
+    },
+    "system.runnerEnvironment": {
+      "value": "self-hosted"
+    },
+    "system.runnerGroupName": {
+      "value": "Default"
+    }
+  },
+  "messageType": "RunnerJobRequest",
+  "plan": {
+    "scopeIdentifier": "00000000-0000-0000-0000-000000000000",
+    "planType": "actions",
+    "version": 0,
+    "planId": "4e302514-6f58-46d8-a1df-b882be0c11d8",
+    "planGroup": null,
+    "artifactUri": null,
+    "artifactLocation": null,
+    "definition": null,
+    "owner": null
+  },
+  "timeline": {
+    "id": "4e302514-6f58-46d8-a1df-b882be0c11d8",
+    "changeId": 0,
+    "location": null
+  },
+  "jobId": "a91199c7-1e9a-5fed-a88b-c29d6612254b",
+  "jobDisplayName": "remediate-failed-ci",
+  "jobName": "__default",
+  "requestId": 0,
+  "lockedUntil": "0001-01-01T00:00:00",
+  "resources": {
+    "endpoints": [
+      {
+        "data": {
+          "ServerId": "",
+          "ServerName": "",
+          "CacheServerUrl": "https://artifactcache.actions.githubusercontent.com/aUGxOLPrpyZ6dauDoNFCSAUeAfpJkysV8cmIA8JuhJVU0VNLhG/",
+          "FeedStreamUrl": "wss://results-receiver.actions.githubusercontent.com/_ws/ingest.sock",
+          "ResultsServiceUrl": "https://results-receiver.actions.githubusercontent.com/",
+          "PipelinesServiceUrl": "https://pipelinesghubeus21.actions.githubusercontent.com/aUGxOLPrpyZ6dauDoNFCSAUeAfpJkysV8cmIA8JuhJVU0VNLhG/",
+          "GenerateIdTokenUrl": "",
+          "ConnectivityChecks": "[\"https://broker.actions.githubusercontent.com/health\",\"https://token.actions.githubusercontent.com/ready\",\"https://run.actions.githubusercontent.com/health\"]"
+        },
+        "name": "SystemVssConnection",
+        "url": "https://run-actions-2-azure-eastus.actions.githubusercontent.com/147/",
+        "authorization": {
+          "parameters": {
+            "AccessToken": "***"
+          },
+          "scheme": "OAuth"
+        },
+        "isShared": false,
+        "isReady": true
+      }
+    ]
+  },
+  "contextData": {
+    "github": {
+      "t": 2,
+      "d": [
+        {
+          "k": "ref",
+          "v": "refs/heads/main"
+        },
+        {
+          "k": "sha",
+          "v": "2c1fbd7254e10a6d3fcc9c07c8164d179c9094c7"
+        },
+        {
+          "k": "repository",
+          "v": "paulboys/Ussher-In"
+        },
+        {
+          "k": "repository_owner",
+          "v": "paulboys"
+        },
+        {
+          "k": "repository_owner_id",
+          "v": "63876937"
+        },
+        {
+          "k": "repositoryUrl",
+          "v": "git://github.com/paulboys/Ussher-In.git"
+        },
+        {
+          "k": "run_id",
+          "v": "24613200341"
+        },
+        {
+          "k": "run_number",
+          "v": "12"
+        },
+        {
+          "k": "retention_days",
+          "v": "90"
+        },
+        {
+          "k": "run_attempt",
+          "v": "1"
+        },
+        {
+          "k": "artifact_cache_size_limit",
+          "v": "10"
+        },
+        {
+          "k": "repository_visibility",
+          "v": "public"
+        },
+        {
+          "k": "actor_id",
+          "v": "63876937"
+        },
+        {
+          "k": "actor",
+          "v": "paulboys"
+        },
+        {
+          "k": "workflow",
+          "v": "Agent Remediation"
+        },
+        {
+          "k": "head_ref",
+          "v": ""
+        },
+        {
+          "k": "base_ref",
+          "v": ""
+        },
+        {
+          "k": "event_name",
+          "v": "workflow_run"
+        },
+        {
+          "k": "server_url",
+          "v": "https://github.com"
+        },
+        {
+          "k": "api_url",
+          "v": "https://api.github.com"
+        },
+        {
+          "k": "graphql_url",
+          "v": "https://api.github.com/graphql"
+        },
+        {
+          "k": "ref_name",
+          "v": "main"
+        },
+        {
+          "k": "ref_protected",
+          "v": true
+        },
+        {
+          "k": "ref_type",
+          "v": "branch"
+        },
+        {
+          "k": "secret_source",
+          "v": "Actions"
+        },
+        {
+          "k": "event",
+          "v": {
+            "t": 2,
+            "d": [
+              {
+                "k": "action",
+                "v": "completed"
+              },
+              {
+                "k": "repository",
+                "v": {
+                  "t": 2,
+                  "d": [
+                    {
+                      "k": "allow_forking",
+                      "v": true
+                    },
+                    {
+                      "k": "archive_url",
+                      "v": "https://api.github.com/repos/paulboys/Ussher-In/{archive_format}{/ref}"
+                    },
+                    {
+                      "k": "archived",
+                      "v": false
+                    },
+                    {
+                      "k": "assignees_url",
+                      "v": "https://api.github.com/repos/paulboys/Ussher-In/assignees{/user}"
+                    },
+                    {
+                      "k": "blobs_url",
+                      "v": "https://api.github.com/repos/paulboys/Ussher-In/git/blobs{/sha}"
+                    },
+                    {
+                      "k": "branches_url",
+                      "v": "https://api.github.com/repos/paulboys/Ussher-In/branches{/branch}"
+                    },
+                    {
+                      "k": "clone_url",
+                      "v": "https://github.com/paulboys/Ussher-In.git"
+                    },
+                    {
+                      "k": "collaborators_url",
+                      "v": "https://api.github.com/repos/paulboys/Ussher-In/collaborators{/collaborator}"
+                    },
+                    {
+                      "k": "comments_url",
+                      "v": "https://api.github.com/repos/paulboys/Ussher-In/comments{/number}"
+                    },
+                    {
+                      "k": "commits_url",
+                      "v": "https://api.github.com/repos/paulboys/Ussher-In/commits{/sha}"
+                    },
+                    {
+                      "k": "compare_url",
+                      "v": "https://api.github.com/repos/paulboys/Ussher-In/compare/{base}...{head}"
+                    },
+                    {
+                      "k": "contents_url",
+                      "v": "https://api.github.com/repos/paulboys/Ussher-In/contents/{+path}"
+                    },
+                    {
+                      "k": "contributors_url",
+                      "v": "https://api.github.com/repos/paulboys/Ussher-In/contributors"
+                    },
+                    {
+                      "k": "created_at",
+                      "v": "2026-04-18T15:18:37Z"
+                    },
+                    {
+                      "k": "default_branch",
+                      "v": "main"
+                    },
+                    {
+                      "k": "deployments_url",
+                      "v": "https://api.github.com/repos/paulboys/Ussher-In/deployments"
+                    },
+                    {
+                      "k": "description",
+                      "v": "OCR and English translation pipeline for James Ussher's \"Britannicarum Ecclesiarum Antiquitates\" (1639). Extracts structured Latin text from photocopied book PDFs using Tesseract with LSTM fine-tuning for historical print, then produces bilingual Latin-English reading documents. Includes annotation tooling and QA workflows."
+                    },
+                    {
+                      "k": "disabled",
+                      "v": false
+                    },
+                    {
+                      "k": "downloads_url",
+                      "v": "https://api.github.com/repos/paulboys/Ussher-In/downloads"
+                    },
+                    {
+                      "k": "events_url",
+                      "v": "https://api.github.com/repos/paulboys/Ussher-In/events"
+                    },
+                    {
+                      "k": "fork",
+                      "v": false
+                    },
+                    {
+                      "k": "forks",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "forks_count",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "forks_url",
+                      "v": "https://api.github.com/repos/paulboys/Ussher-In/forks"
+                    },
+                    {
+                      "k": "full_name",
+                      "v": "paulboys/Ussher-In"
+                    },
+                    {
+                      "k": "git_commits_url",
+                      "v": "https://api.github.com/repos/paulboys/Ussher-In/git/commits{/sha}"
+                    },
+                    {
+                      "k": "git_refs_url",
+                      "v": "https://api.github.com/repos/paulboys/Ussher-In/git/refs{/sha}"
+                    },
+                    {
+                      "k": "git_tags_url",
+                      "v": "https://api.github.com/repos/paulboys/Ussher-In/git/tags{/sha}"
+                    },
+                    {
+                      "k": "git_url",
+                      "v": "git://github.com/paulboys/Ussher-In.git"
+                    },
+                    {
+                      "k": "has_discussions",
+                      "v": false
+                    },
+                    {
+                      "k": "has_downloads",
+                      "v": true
+                    },
+                    {
+                      "k": "has_issues",
+                      "v": true
+                    },
+                    {
+                      "k": "has_pages",
+                      "v": false
+                    },
+                    {
+                      "k": "has_projects",
+                      "v": true
+                    },
+                    {
+                      "k": "has_pull_requests",
+                      "v": true
+                    },
+                    {
+                      "k": "has_wiki",
+                      "v": true
+                    },
+                    {
+                      "k": "homepage",
+                      "v": null
+                    },
+                    {
+                      "k": "hooks_url",
+                      "v": "https://api.github.com/repos/paulboys/Ussher-In/hooks"
+                    },
+                    {
+                      "k": "html_url",
+                      "v": "https://github.com/paulboys/Ussher-In"
+                    },
+                    {
+                      "k": "id",
+                      "v": 1214435819.0
+                    },
+                    {
+                      "k": "is_template",
+                      "v": false
+                    },
+                    {
+                      "k": "issue_comment_url",
+                      "v": "https://api.github.com/repos/paulboys/Ussher-In/issues/comments{/number}"
+                    },
+                    {
+                      "k": "issue_events_url",
+                      "v": "https://api.github.com/repos/paulboys/Ussher-In/issues/events{/number}"
+                    },
+                    {
+                      "k": "issues_url",
+                      "v": "https://api.github.com/repos/paulboys/Ussher-In/issues{/number}"
+                    },
+                    {
+                      "k": "keys_url",
+                      "v": "https://api.github.com/repos/paulboys/Ussher-In/keys{/key_id}"
+                    },
+                    {
+                      "k": "labels_url",
+                      "v": "https://api.github.com/repos/paulboys/Ussher-In/labels{/name}"
+                    },
+                    {
+                      "k": "language",
+                      "v": "Python"
+                    },
+                    {
+                      "k": "languages_url",
+                      "v": "https://api.github.com/repos/paulboys/Ussher-In/languages"
+                    },
+                    {
+                      "k": "license",
+                      "v": {
+                        "t": 2,
+                        "d": [
+                          {
+                            "k": "key",
+                            "v": "mit"
+                          },
+                          {
+                            "k": "name",
+                            "v": "MIT License"
+                          },
+                          {
+                            "k": "node_id",
+                            "v": "MDc6TGljZW5zZTEz"
+                          },
+                          {
+                            "k": "spdx_id",
+                            "v": "MIT"
+                          },
+                          {
+                            "k": "url",
+                            "v": "https://api.github.com/licenses/mit"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "k": "merges_url",
+                      "v": "https://api.github.com/repos/paulboys/Ussher-In/merges"
+                    },
+                    {
+                      "k": "milestones_url",
+                      "v": "https://api.github.com/repos/paulboys/Ussher-In/milestones{/number}"
+                    },
+                    {
+                      "k": "mirror_url",
+                      "v": null
+                    },
+                    {
+                      "k": "name",
+                      "v": "Ussher-In"
+                    },
+                    {
+                      "k": "node_id",
+                      "v": "R_kgDOSGLR6w"
+                    },
+                    {
+                      "k": "notifications_url",
+                      "v": "https://api.github.com/repos/paulboys/Ussher-In/notifications{?since,all,participating}"
+                    },
+                    {
+                      "k": "open_issues",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "open_issues_count",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "owner",
+                      "v": {
+                        "t": 2,
+                        "d": [
+                          {
+                            "k": "avatar_url",
+                            "v": "https://avatars.githubusercontent.com/u/63876937?v=4"
+                          },
+                          {
+                            "k": "events_url",
+                            "v": "https://api.github.com/users/paulboys/events{/privacy}"
+                          },
+                          {
+                            "k": "followers_url",
+                            "v": "https://api.github.com/users/paulboys/followers"
+                          },
+                          {
+                            "k": "following_url",
+                            "v": "https://api.github.com/users/paulboys/following{/other_user}"
+                          },
+                          {
+                            "k": "gists_url",
+                            "v": "https://api.github.com/users/paulboys/gists{/gist_id}"
+                          },
+                          {
+                            "k": "gravatar_id",
+                            "v": ""
+                          },
+                          {
+                            "k": "html_url",
+                            "v": "https://github.com/paulboys"
+                          },
+                          {
+                            "k": "id",
+                            "v": 63876937.0
+                          },
+                          {
+                            "k": "login",
+                            "v": "paulboys"
+                          },
+                          {
+                            "k": "node_id",
+                            "v": "MDQ6VXNlcjYzODc2OTM3"
+                          },
+                          {
+                            "k": "organizations_url",
+                            "v": "https://api.github.com/users/paulboys/orgs"
+                          },
+                          {
+                            "k": "received_events_url",
+                            "v": "https://api.github.com/users/paulboys/received_events"
+                          },
+                          {
+                            "k": "repos_url",
+                            "v": "https://api.github.com/users/paulboys/repos"
+                          },
+                          {
+                            "k": "site_admin",
+                            "v": false
+                          },
+                          {
+                            "k": "starred_url",
+                            "v": "https://api.github.com/users/paulboys/starred{/owner}{/repo}"
+                          },
+                          {
+                            "k": "subscriptions_url",
+                            "v": "https://api.github.com/users/paulboys/subscriptions"
+                          },
+                          {
+                            "k": "type",
+                            "v": "User"
+                          },
+                          {
+                            "k": "url",
+                            "v": "https://api.github.com/users/paulboys"
+                          },
+                          {
+                            "k": "user_view_type",
+                            "v": "public"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "k": "private",
+                      "v": false
+                    },
+                    {
+                      "k": "pull_request_creation_policy",
+                      "v": "all"
+                    },
+                    {
+                      "k": "pulls_url",
+                      "v": "https://api.github.com/repos/paulboys/Ussher-In/pulls{/number}"
+                    },
+                    {
+                      "k": "pushed_at",
+                      "v": "2026-04-18T20:25:59Z"
+                    },
+                    {
+                      "k": "releases_url",
+                      "v": "https://api.github.com/repos/paulboys/Ussher-In/releases{/id}"
+                    },
+                    {
+                      "k": "size",
+                      "v": 4055.0
+                    },
+                    {
+                      "k": "ssh_url",
+                      "v": "git@github.com:paulboys/Ussher-In.git"
+                    },
+                    {
+                      "k": "stargazers_count",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "stargazers_url",
+                      "v": "https://api.github.com/repos/paulboys/Ussher-In/stargazers"
+                    },
+                    {
+                      "k": "statuses_url",
+                      "v": "https://api.github.com/repos/paulboys/Ussher-In/statuses/{sha}"
+                    },
+                    {
+                      "k": "subscribers_url",
+                      "v": "https://api.github.com/repos/paulboys/Ussher-In/subscribers"
+                    },
+                    {
+                      "k": "subscription_url",
+                      "v": "https://api.github.com/repos/paulboys/Ussher-In/subscription"
+                    },
+                    {
+                      "k": "svn_url",
+                      "v": "https://github.com/paulboys/Ussher-In"
+                    },
+                    {
+                      "k": "tags_url",
+                      "v": "https://api.github.com/repos/paulboys/Ussher-In/tags"
+                    },
+                    {
+                      "k": "teams_url",
+                      "v": "https://api.github.com/repos/paulboys/Ussher-In/teams"
+                    },
+                    {
+                      "k": "topics",
+                      "v": {
+                        "t": 1
+                      }
+                    },
+                    {
+                      "k": "trees_url",
+                      "v": "https://api.github.com/repos/paulboys/Ussher-In/git/trees{/sha}"
+                    },
+                    {
+                      "k": "updated_at",
+                      "v": "2026-04-18T20:26:03Z"
+                    },
+                    {
+                      "k": "url",
+                      "v": "https://api.github.com/repos/paulboys/Ussher-In"
+                    },
+                    {
+                      "k": "visibility",
+                      "v": "public"
+                    },
+                    {
+                      "k": "watchers",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "watchers_count",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "web_commit_signoff_required",
+                      "v": false
+                    }
+                  ]
+                }
+              },
+              {
+                "k": "sender",
+                "v": {
+                  "t": 2,
+                  "d": [
+                    {
+                      "k": "avatar_url",
+                      "v": "https://avatars.githubusercontent.com/u/63876937?v=4"
+                    },
+                    {
+                      "k": "events_url",
+                      "v": "https://api.github.com/users/paulboys/events{/privacy}"
+                    },
+                    {
+                      "k": "followers_url",
+                      "v": "https://api.github.com/users/paulboys/followers"
+                    },
+                    {
+                      "k": "following_url",
+                      "v": "https://api.github.com/users/paulboys/following{/other_user}"
+                    },
+                    {
+                      "k": "gists_url",
+                      "v": "https://api.github.com/users/paulboys/gists{/gist_id}"
+                    },
+                    {
+                      "k": "gravatar_id",
+                      "v": ""
+                    },
+                    {
+                      "k": "html_url",
+                      "v": "https://github.com/paulboys"
+                    },
+                    {
+                      "k": "id",
+                      "v": 63876937.0
+                    },
+                    {
+                      "k": "login",
+                      "v": "paulboys"
+                    },
+                    {
+                      "k": "node_id",
+                      "v": "MDQ6VXNlcjYzODc2OTM3"
+                    },
+                    {
+                      "k": "organizations_url",
+                      "v": "https://api.github.com/users/paulboys/orgs"
+                    },
+                    {
+                      "k": "received_events_url",
+                      "v": "https://api.github.com/users/paulboys/received_events"
+                    },
+                    {
+                      "k": "repos_url",
+                      "v": "https://api.github.com/users/paulboys/repos"
+                    },
+                    {
+                      "k": "site_admin",
+                      "v": false
+                    },
+                    {
+                      "k": "starred_url",
+                      "v": "https://api.github.com/users/paulboys/starred{/owner}{/repo}"
+                    },
+                    {
+                      "k": "subscriptions_url",
+                      "v": "https://api.github.com/users/paulboys/subscriptions"
+                    },
+                    {
+                      "k": "type",
+                      "v": "User"
+                    },
+                    {
+                      "k": "url",
+                      "v": "https://api.github.com/users/paulboys"
+                    },
+                    {
+                      "k": "user_view_type",
+                      "v": "public"
+                    }
+                  ]
+                }
+              },
+              {
+                "k": "workflow",
+                "v": {
+                  "t": 2,
+                  "d": [
+                    {
+                      "k": "badge_url",
+                      "v": "https://github.com/paulboys/Ussher-In/workflows/CI/badge.svg"
+                    },
+                    {
+                      "k": "created_at",
+                      "v": "2026-04-18T17:19:48.000Z"
+                    },
+                    {
+                      "k": "html_url",
+                      "v": "https://github.com/paulboys/Ussher-In/blob/main/.github/workflows/ci.yml"
+                    },
+                    {
+                      "k": "id",
+                      "v": 262833771.0
+                    },
+                    {
+                      "k": "name",
+                      "v": "CI"
+                    },
+                    {
+                      "k": "node_id",
+                      "v": "W_kwDOSGLR684PqoZr"
+                    },
+                    {
+                      "k": "path",
+                      "v": ".github/workflows/ci.yml"
+                    },
+                    {
+                      "k": "state",
+                      "v": "active"
+                    },
+                    {
+                      "k": "updated_at",
+                      "v": "2026-04-18T17:19:48.000Z"
+                    },
+                    {
+                      "k": "url",
+                      "v": "https://api.github.com/repos/paulboys/Ussher-In/actions/workflows/262833771"
+                    }
+                  ]
+                }
+              },
+              {
+                "k": "workflow_run",
+                "v": {
+                  "t": 2,
+                  "d": [
+                    {
+                      "k": "actor",
+                      "v": {
+                        "t": 2,
+                        "d": [
+                          {
+                            "k": "avatar_url",
+                            "v": "https://avatars.githubusercontent.com/u/63876937?v=4"
+                          },
+                          {
+                            "k": "events_url",
+                            "v": "https://api.github.com/users/paulboys/events{/privacy}"
+                          },
+                          {
+                            "k": "followers_url",
+                            "v": "https://api.github.com/users/paulboys/followers"
+                          },
+                          {
+                            "k": "following_url",
+                            "v": "https://api.github.com/users/paulboys/following{/other_user}"
+                          },
+                          {
+                            "k": "gists_url",
+                            "v": "https://api.github.com/users/paulboys/gists{/gist_id}"
+                          },
+                          {
+                            "k": "gravatar_id",
+                            "v": ""
+                          },
+                          {
+                            "k": "html_url",
+                            "v": "https://github.com/paulboys"
+                          },
+                          {
+                            "k": "id",
+                            "v": 63876937.0
+                          },
+                          {
+                            "k": "login",
+                            "v": "paulboys"
+                          },
+                          {
+                            "k": "node_id",
+                            "v": "MDQ6VXNlcjYzODc2OTM3"
+                          },
+                          {
+                            "k": "organizations_url",
+                            "v": "https://api.github.com/users/paulboys/orgs"
+                          },
+                          {
+                            "k": "received_events_url",
+                            "v": "https://api.github.com/users/paulboys/received_events"
+                          },
+                          {
+                            "k": "repos_url",
+                            "v": "https://api.github.com/users/paulboys/repos"
+                          },
+                          {
+                            "k": "site_admin",
+                            "v": false
+                          },
+                          {
+                            "k": "starred_url",
+                            "v": "https://api.github.com/users/paulboys/starred{/owner}{/repo}"
+                          },
+                          {
+                            "k": "subscriptions_url",
+                            "v": "https://api.github.com/users/paulboys/subscriptions"
+                          },
+                          {
+                            "k": "type",
+                            "v": "User"
+                          },
+                          {
+                            "k": "url",
+                            "v": "https://api.github.com/users/paulboys"
+                          },
+                          {
+                            "k": "user_view_type",
+                            "v": "public"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "k": "artifacts_url",
+                      "v": "https://api.github.com/repos/paulboys/Ussher-In/actions/runs/24613192463/artifacts"
+                    },
+                    {
+                      "k": "cancel_url",
+                      "v": "https://api.github.com/repos/paulboys/Ussher-In/actions/runs/24613192463/cancel"
+                    },
+                    {
+                      "k": "check_suite_id",
+                      "v": 65207210479.0
+                    },
+                    {
+                      "k": "check_suite_node_id",
+                      "v": "CS_kwDOSGLR688AAAAPLqcR7w"
+                    },
+                    {
+                      "k": "check_suite_url",
+                      "v": "https://api.github.com/repos/paulboys/Ussher-In/check-suites/65207210479"
+                    },
+                    {
+                      "k": "conclusion",
+                      "v": "failure"
+                    },
+                    {
+                      "k": "created_at",
+                      "v": "2026-04-18T20:25:46Z"
+                    },
+                    {
+                      "k": "display_title",
+                      "v": "Dev"
+                    },
+                    {
+                      "k": "event",
+                      "v": "pull_request"
+                    },
+                    {
+                      "k": "head_branch",
+                      "v": "dev"
+                    },
+                    {
+                      "k": "head_commit",
+                      "v": {
+                        "t": 2,
+                        "d": [
+                          {
+                            "k": "author",
+                            "v": {
+                              "t": 2,
+                              "d": [
+                                {
+                                  "k": "email",
+                                  "v": "paul.d.boys@gmail.com"
+                                },
+                                {
+                                  "k": "name",
+                                  "v": "paulboys"
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "k": "committer",
+                            "v": {
+                              "t": 2,
+                              "d": [
+                                {
+                                  "k": "email",
+                                  "v": "paul.d.boys@gmail.com"
+                                },
+                                {
+                                  "k": "name",
+                                  "v": "paulboys"
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "k": "id",
+                            "v": "0d6725b0a9b549f8559ba8d03b7516fcf6baac97"
+                          },
+                          {
+                            "k": "message",
+                            "v": "Allow Claude to write files without prompting in CI runner"
+                          },
+                          {
+                            "k": "timestamp",
+                            "v": "2026-04-18T20:15:31Z"
+                          },
+                          {
+                            "k": "tree_id",
+                            "v": "cf8c043b2989fd87ab813d5b5f5446d0866a1c4f"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "k": "head_repository",
+                      "v": {
+                        "t": 2,
+                        "d": [
+                          {
+                            "k": "archive_url",
+                            "v": "https://api.github.com/repos/paulboys/Ussher-In/{archive_format}{/ref}"
+                          },
+                          {
+                            "k": "assignees_url",
+                            "v": "https://api.github.com/repos/paulboys/Ussher-In/assignees{/user}"
+                          },
+                          {
+                            "k": "blobs_url",
+                            "v": "https://api.github.com/repos/paulboys/Ussher-In/git/blobs{/sha}"
+                          },
+                          {
+                            "k": "branches_url",
+                            "v": "https://api.github.com/repos/paulboys/Ussher-In/branches{/branch}"
+                          },
+                          {
+                            "k": "collaborators_url",
+                            "v": "https://api.github.com/repos/paulboys/Ussher-In/collaborators{/collaborator}"
+                          },
+                          {
+                            "k": "comments_url",
+                            "v": "https://api.github.com/repos/paulboys/Ussher-In/comments{/number}"
+                          },
+                          {
+                            "k": "commits_url",
+                            "v": "https://api.github.com/repos/paulboys/Ussher-In/commits{/sha}"
+                          },
+                          {
+                            "k": "compare_url",
+                            "v": "https://api.github.com/repos/paulboys/Ussher-In/compare/{base}...{head}"
+                          },
+                          {
+                            "k": "contents_url",
+                            "v": "https://api.github.com/repos/paulboys/Ussher-In/contents/{+path}"
+                          },
+                          {
+                            "k": "contributors_url",
+                            "v": "https://api.github.com/repos/paulboys/Ussher-In/contributors"
+                          },
+                          {
+                            "k": "deployments_url",
+                            "v": "https://api.github.com/repos/paulboys/Ussher-In/deployments"
+                          },
+                          {
+                            "k": "description",
+                            "v": "OCR and English translation pipeline for James Ussher's \"Britannicarum Ecclesiarum Antiquitates\" (1639). Extracts structured Latin text from photocopied book PDFs using Tesseract with LSTM fine-tuning for historical print, then produces bilingual Latin-English reading documents. Includes annotation tooling and QA workflows."
+                          },
+                          {
+                            "k": "downloads_url",
+                            "v": "https://api.github.com/repos/paulboys/Ussher-In/downloads"
+                          },
+                          {
+                            "k": "events_url",
+                            "v": "https://api.github.com/repos/paulboys/Ussher-In/events"
+                          },
+                          {
+                            "k": "fork",
+                            "v": false
+                          },
+                          {
+                            "k": "forks_url",
+                            "v": "https://api.github.com/repos/paulboys/Ussher-In/forks"
+                          },
+                          {
+                            "k": "full_name",
+                            "v": "paulboys/Ussher-In"
+                          },
+                          {
+                            "k": "git_commits_url",
+                            "v": "https://api.github.com/repos/paulboys/Ussher-In/git/commits{/sha}"
+                          },
+                          {
+                            "k": "git_refs_url",
+                            "v": "https://api.github.com/repos/paulboys/Ussher-In/git/refs{/sha}"
+                          },
+                          {
+                            "k": "git_tags_url",
+                            "v": "https://api.github.com/repos/paulboys/Ussher-In/git/tags{/sha}"
+                          },
+                          {
+                            "k": "hooks_url",
+                            "v": "https://api.github.com/repos/paulboys/Ussher-In/hooks"
+                          },
+                          {
+                            "k": "html_url",
+                            "v": "https://github.com/paulboys/Ussher-In"
+                          },
+                          {
+                            "k": "id",
+                            "v": 1214435819.0
+                          },
+                          {
+                            "k": "issue_comment_url",
+                            "v": "https://api.github.com/repos/paulboys/Ussher-In/issues/comments{/number}"
+                          },
+                          {
+                            "k": "issue_events_url",
+                            "v": "https://api.github.com/repos/paulboys/Ussher-In/issues/events{/number}"
+                          },
+                          {
+                            "k": "issues_url",
+                            "v": "https://api.github.com/repos/paulboys/Ussher-In/issues{/number}"
+                          },
+                          {
+                            "k": "keys_url",
+                            "v": "https://api.github.com/repos/paulboys/Ussher-In/keys{/key_id}"
+                          },
+                          {
+                            "k": "labels_url",
+                            "v": "https://api.github.com/repos/paulboys/Ussher-In/labels{/name}"
+                          },
+                          {
+                            "k": "languages_url",
+                            "v": "https://api.github.com/repos/paulboys/Ussher-In/languages"
+                          },
+                          {
+                            "k": "merges_url",
+                            "v": "https://api.github.com/repos/paulboys/Ussher-In/merges"
+                          },
+                          {
+                            "k": "milestones_url",
+                            "v": "https://api.github.com/repos/paulboys/Ussher-In/milestones{/number}"
+                          },
+                          {
+                            "k": "name",
+                            "v": "Ussher-In"
+                          },
+                          {
+                            "k": "node_id",
+                            "v": "R_kgDOSGLR6w"
+                          },
+                          {
+                            "k": "notifications_url",
+                            "v": "https://api.github.com/repos/paulboys/Ussher-In/notifications{?since,all,participating}"
+                          },
+                          {
+                            "k": "owner",
+                            "v": {
+                              "t": 2,
+                              "d": [
+                                {
+                                  "k": "avatar_url",
+                                  "v": "https://avatars.githubusercontent.com/u/63876937?v=4"
+                                },
+                                {
+                                  "k": "events_url",
+                                  "v": "https://api.github.com/users/paulboys/events{/privacy}"
+                                },
+                                {
+                                  "k": "followers_url",
+                                  "v": "https://api.github.com/users/paulboys/followers"
+                                },
+                                {
+                                  "k": "following_url",
+                                  "v": "https://api.github.com/users/paulboys/following{/other_user}"
+                                },
+                                {
+                                  "k": "gists_url",
+                                  "v": "https://api.github.com/users/paulboys/gists{/gist_id}"
+                                },
+                                {
+                                  "k": "gravatar_id",
+                                  "v": ""
+                                },
+                                {
+                                  "k": "html_url",
+                                  "v": "https://github.com/paulboys"
+                                },
+                                {
+                                  "k": "id",
+                                  "v": 63876937.0
+                                },
+                                {
+                                  "k": "login",
+                                  "v": "paulboys"
+                                },
+                                {
+                                  "k": "node_id",
+                                  "v": "MDQ6VXNlcjYzODc2OTM3"
+                                },
+                                {
+                                  "k": "organizations_url",
+                                  "v": "https://api.github.com/users/paulboys/orgs"
+                                },
+                                {
+                                  "k": "received_events_url",
+                                  "v": "https://api.github.com/users/paulboys/received_events"
+                                },
+                                {
+                                  "k": "repos_url",
+                                  "v": "https://api.github.com/users/paulboys/repos"
+                                },
+                                {
+                                  "k": "site_admin",
+                                  "v": false
+                                },
+                                {
+                                  "k": "starred_url",
+                                  "v": "https://api.github.com/users/paulboys/starred{/owner}{/repo}"
+                                },
+                                {
+                                  "k": "subscriptions_url",
+                                  "v": "https://api.github.com/users/paulboys/subscriptions"
+                                },
+                                {
+                                  "k": "type",
+                                  "v": "User"
+                                },
+                                {
+                                  "k": "url",
+                                  "v": "https://api.github.com/users/paulboys"
+                                },
+                                {
+                                  "k": "user_view_type",
+                                  "v": "public"
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "k": "private",
+                            "v": false
+                          },
+                          {
+                            "k": "pulls_url",
+                            "v": "https://api.github.com/repos/paulboys/Ussher-In/pulls{/number}"
+                          },
+                          {
+                            "k": "releases_url",
+                            "v": "https://api.github.com/repos/paulboys/Ussher-In/releases{/id}"
+                          },
+                          {
+                            "k": "stargazers_url",
+                            "v": "https://api.github.com/repos/paulboys/Ussher-In/stargazers"
+                          },
+                          {
+                            "k": "statuses_url",
+                            "v": "https://api.github.com/repos/paulboys/Ussher-In/statuses/{sha}"
+                          },
+                          {
+                            "k": "subscribers_url",
+                            "v": "https://api.github.com/repos/paulboys/Ussher-In/subscribers"
+                          },
+                          {
+                            "k": "subscription_url",
+                            "v": "https://api.github.com/repos/paulboys/Ussher-In/subscription"
+                          },
+                          {
+                            "k": "tags_url",
+                            "v": "https://api.github.com/repos/paulboys/Ussher-In/tags"
+                          },
+                          {
+                            "k": "teams_url",
+                            "v": "https://api.github.com/repos/paulboys/Ussher-In/teams"
+                          },
+                          {
+                            "k": "trees_url",
+                            "v": "https://api.github.com/repos/paulboys/Ussher-In/git/trees{/sha}"
+                          },
+                          {
+                            "k": "url",
+                            "v": "https://api.github.com/repos/paulboys/Ussher-In"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "k": "head_sha",
+                      "v": "0d6725b0a9b549f8559ba8d03b7516fcf6baac97"
+                    },
+                    {
+                      "k": "html_url",
+                      "v": "https://github.com/paulboys/Ussher-In/actions/runs/24613192463"
+                    },
+                    {
+                      "k": "id",
+                      "v": 24613192463.0
+                    },
+                    {
+                      "k": "jobs_url",
+                      "v": "https://api.github.com/repos/paulboys/Ussher-In/actions/runs/24613192463/jobs"
+                    },
+                    {
+                      "k": "logs_url",
+                      "v": "https://api.github.com/repos/paulboys/Ussher-In/actions/runs/24613192463/logs"
+                    },
+                    {
+                      "k": "name",
+                      "v": "CI"
+                    },
+                    {
+                      "k": "node_id",
+                      "v": "WFR_kwLOSGLR688AAAAFuw-DDw"
+                    },
+                    {
+                      "k": "path",
+                      "v": ".github/workflows/ci.yml"
+                    },
+                    {
+                      "k": "previous_attempt_url",
+                      "v": null
+                    },
+                    {
+                      "k": "pull_requests",
+                      "v": {
+                        "t": 1
+                      }
+                    },
+                    {
+                      "k": "referenced_workflows",
+                      "v": {
+                        "t": 1
+                      }
+                    },
+                    {
+                      "k": "repository",
+                      "v": {
+                        "t": 2,
+                        "d": [
+                          {
+                            "k": "archive_url",
+                            "v": "https://api.github.com/repos/paulboys/Ussher-In/{archive_format}{/ref}"
+                          },
+                          {
+                            "k": "assignees_url",
+                            "v": "https://api.github.com/repos/paulboys/Ussher-In/assignees{/user}"
+                          },
+                          {
+                            "k": "blobs_url",
+                            "v": "https://api.github.com/repos/paulboys/Ussher-In/git/blobs{/sha}"
+                          },
+                          {
+                            "k": "branches_url",
+                            "v": "https://api.github.com/repos/paulboys/Ussher-In/branches{/branch}"
+                          },
+                          {
+                            "k": "collaborators_url",
+                            "v": "https://api.github.com/repos/paulboys/Ussher-In/collaborators{/collaborator}"
+                          },
+                          {
+                            "k": "comments_url",
+                            "v": "https://api.github.com/repos/paulboys/Ussher-In/comments{/number}"
+                          },
+                          {
+                            "k": "commits_url",
+                            "v": "https://api.github.com/repos/paulboys/Ussher-In/commits{/sha}"
+                          },
+                          {
+                            "k": "compare_url",
+                            "v": "https://api.github.com/repos/paulboys/Ussher-In/compare/{base}...{head}"
+                          },
+                          {
+                            "k": "contents_url",
+                            "v": "https://api.github.com/repos/paulboys/Ussher-In/contents/{+path}"
+                          },
+                          {
+                            "k": "contributors_url",
+                            "v": "https://api.github.com/repos/paulboys/Ussher-In/contributors"
+                          },
+                          {
+                            "k": "deployments_url",
+                            "v": "https://api.github.com/repos/paulboys/Ussher-In/deployments"
+                          },
+                          {
+                            "k": "description",
+                            "v": "OCR and English translation pipeline for James Ussher's \"Britannicarum Ecclesiarum Antiquitates\" (1639). Extracts structured Latin text from photocopied book PDFs using Tesseract with LSTM fine-tuning for historical print, then produces bilingual Latin-English reading documents. Includes annotation tooling and QA workflows."
+                          },
+                          {
+                            "k": "downloads_url",
+                            "v": "https://api.github.com/repos/paulboys/Ussher-In/downloads"
+                          },
+                          {
+                            "k": "events_url",
+                            "v": "https://api.github.com/repos/paulboys/Ussher-In/events"
+                          },
+                          {
+                            "k": "fork",
+                            "v": false
+                          },
+                          {
+                            "k": "forks_url",
+                            "v": "https://api.github.com/repos/paulboys/Ussher-In/forks"
+                          },
+                          {
+                            "k": "full_name",
+                            "v": "paulboys/Ussher-In"
+                          },
+                          {
+                            "k": "git_commits_url",
+                            "v": "https://api.github.com/repos/paulboys/Ussher-In/git/commits{/sha}"
+                          },
+                          {
+                            "k": "git_refs_url",
+                            "v": "https://api.github.com/repos/paulboys/Ussher-In/git/refs{/sha}"
+                          },
+                          {
+                            "k": "git_tags_url",
+                            "v": "https://api.github.com/repos/paulboys/Ussher-In/git/tags{/sha}"
+                          },
+                          {
+                            "k": "hooks_url",
+                            "v": "https://api.github.com/repos/paulboys/Ussher-In/hooks"
+                          },
+                          {
+                            "k": "html_url",
+                            "v": "https://github.com/paulboys/Ussher-In"
+                          },
+                          {
+                            "k": "id",
+                            "v": 1214435819.0
+                          },
+                          {
+                            "k": "issue_comment_url",
+                            "v": "https://api.github.com/repos/paulboys/Ussher-In/issues/comments{/number}"
+                          },
+                          {
+                            "k": "issue_events_url",
+                            "v": "https://api.github.com/repos/paulboys/Ussher-In/issues/events{/number}"
+                          },
+                          {
+                            "k": "issues_url",
+                            "v": "https://api.github.com/repos/paulboys/Ussher-In/issues{/number}"
+                          },
+                          {
+                            "k": "keys_url",
+                            "v": "https://api.github.com/repos/paulboys/Ussher-In/keys{/key_id}"
+                          },
+                          {
+                            "k": "labels_url",
+                            "v": "https://api.github.com/repos/paulboys/Ussher-In/labels{/name}"
+                          },
+                          {
+                            "k": "languages_url",
+                            "v": "https://api.github.com/repos/paulboys/Ussher-In/languages"
+                          },
+                          {
+                            "k": "merges_url",
+                            "v": "https://api.github.com/repos/paulboys/Ussher-In/merges"
+                          },
+                          {
+                            "k": "milestones_url",
+                            "v": "https://api.github.com/repos/paulboys/Ussher-In/milestones{/number}"
+                          },
+                          {
+                            "k": "name",
+                            "v": "Ussher-In"
+                          },
+                          {
+                            "k": "node_id",
+                            "v": "R_kgDOSGLR6w"
+                          },
+                          {
+                            "k": "notifications_url",
+                            "v": "https://api.github.com/repos/paulboys/Ussher-In/notifications{?since,all,participating}"
+                          },
+                          {
+                            "k": "owner",
+                            "v": {
+                              "t": 2,
+                              "d": [
+                                {
+                                  "k": "avatar_url",
+                                  "v": "https://avatars.githubusercontent.com/u/63876937?v=4"
+                                },
+                                {
+                                  "k": "events_url",
+                                  "v": "https://api.github.com/users/paulboys/events{/privacy}"
+                                },
+                                {
+                                  "k": "followers_url",
+                                  "v": "https://api.github.com/users/paulboys/followers"
+                                },
+                                {
+                                  "k": "following_url",
+                                  "v": "https://api.github.com/users/paulboys/following{/other_user}"
+                                },
+                                {
+                                  "k": "gists_url",
+                                  "v": "https://api.github.com/users/paulboys/gists{/gist_id}"
+                                },
+                                {
+                                  "k": "gravatar_id",
+                                  "v": ""
+                                },
+                                {
+                                  "k": "html_url",
+                                  "v": "https://github.com/paulboys"
+                                },
+                                {
+                                  "k": "id",
+                                  "v": 63876937.0
+                                },
+                                {
+                                  "k": "login",
+                                  "v": "paulboys"
+                                },
+                                {
+                                  "k": "node_id",
+                                  "v": "MDQ6VXNlcjYzODc2OTM3"
+                                },
+                                {
+                                  "k": "organizations_url",
+                                  "v": "https://api.github.com/users/paulboys/orgs"
+                                },
+                                {
+                                  "k": "received_events_url",
+                                  "v": "https://api.github.com/users/paulboys/received_events"
+                                },
+                                {
+                                  "k": "repos_url",
+                                  "v": "https://api.github.com/users/paulboys/repos"
+                                },
+                                {
+                                  "k": "site_admin",
+                                  "v": false
+                                },
+                                {
+                                  "k": "starred_url",
+                                  "v": "https://api.github.com/users/paulboys/starred{/owner}{/repo}"
+                                },
+                                {
+                                  "k": "subscriptions_url",
+                                  "v": "https://api.github.com/users/paulboys/subscriptions"
+                                },
+                                {
+                                  "k": "type",
+                                  "v": "User"
+                                },
+                                {
+                                  "k": "url",
+                                  "v": "https://api.github.com/users/paulboys"
+                                },
+                                {
+                                  "k": "user_view_type",
+                                  "v": "public"
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "k": "private",
+                            "v": false
+                          },
+                          {
+                            "k": "pulls_url",
+                            "v": "https://api.github.com/repos/paulboys/Ussher-In/pulls{/number}"
+                          },
+                          {
+                            "k": "releases_url",
+                            "v": "https://api.github.com/repos/paulboys/Ussher-In/releases{/id}"
+                          },
+                          {
+                            "k": "stargazers_url",
+                            "v": "https://api.github.com/repos/paulboys/Ussher-In/stargazers"
+                          },
+                          {
+                            "k": "statuses_url",
+                            "v": "https://api.github.com/repos/paulboys/Ussher-In/statuses/{sha}"
+                          },
+                          {
+                            "k": "subscribers_url",
+                            "v": "https://api.github.com/repos/paulboys/Ussher-In/subscribers"
+                          },
+                          {
+                            "k": "subscription_url",
+                            "v": "https://api.github.com/repos/paulboys/Ussher-In/subscription"
+                          },
+                          {
+                            "k": "tags_url",
+                            "v": "https://api.github.com/repos/paulboys/Ussher-In/tags"
+                          },
+                          {
+                            "k": "teams_url",
+                            "v": "https://api.github.com/repos/paulboys/Ussher-In/teams"
+                          },
+                          {
+                            "k": "trees_url",
+                            "v": "https://api.github.com/repos/paulboys/Ussher-In/git/trees{/sha}"
+                          },
+                          {
+                            "k": "url",
+                            "v": "https://api.github.com/repos/paulboys/Ussher-In"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "k": "rerun_url",
+                      "v": "https://api.github.com/repos/paulboys/Ussher-In/actions/runs/24613192463/rerun"
+                    },
+                    {
+                      "k": "run_attempt",
+                      "v": 1.0
+                    },
+                    {
+                      "k": "run_number",
+                      "v": 29.0
+                    },
+                    {
+                      "k": "run_started_at",
+                      "v": "2026-04-18T20:25:46Z"
+                    },
+                    {
+                      "k": "status",
+                      "v": "completed"
+                    },
+                    {
+                      "k": "triggering_actor",
+                      "v": {
+                        "t": 2,
+                        "d": [
+                          {
+                            "k": "avatar_url",
+                            "v": "https://avatars.githubusercontent.com/u/63876937?v=4"
+                          },
+                          {
+                            "k": "events_url",
+                            "v": "https://api.github.com/users/paulboys/events{/privacy}"
+                          },
+                          {
+                            "k": "followers_url",
+                            "v": "https://api.github.com/users/paulboys/followers"
+                          },
+                          {
+                            "k": "following_url",
+                            "v": "https://api.github.com/users/paulboys/following{/other_user}"
+                          },
+                          {
+                            "k": "gists_url",
+                            "v": "https://api.github.com/users/paulboys/gists{/gist_id}"
+                          },
+                          {
+                            "k": "gravatar_id",
+                            "v": ""
+                          },
+                          {
+                            "k": "html_url",
+                            "v": "https://github.com/paulboys"
+                          },
+                          {
+                            "k": "id",
+                            "v": 63876937.0
+                          },
+                          {
+                            "k": "login",
+                            "v": "paulboys"
+                          },
+                          {
+                            "k": "node_id",
+                            "v": "MDQ6VXNlcjYzODc2OTM3"
+                          },
+                          {
+                            "k": "organizations_url",
+                            "v": "https://api.github.com/users/paulboys/orgs"
+                          },
+                          {
+                            "k": "received_events_url",
+                            "v": "https://api.github.com/users/paulboys/received_events"
+                          },
+                          {
+                            "k": "repos_url",
+                            "v": "https://api.github.com/users/paulboys/repos"
+                          },
+                          {
+                            "k": "site_admin",
+                            "v": false
+                          },
+                          {
+                            "k": "starred_url",
+                            "v": "https://api.github.com/users/paulboys/starred{/owner}{/repo}"
+                          },
+                          {
+                            "k": "subscriptions_url",
+                            "v": "https://api.github.com/users/paulboys/subscriptions"
+                          },
+                          {
+                            "k": "type",
+                            "v": "User"
+                          },
+                          {
+                            "k": "url",
+                            "v": "https://api.github.com/users/paulboys"
+                          },
+                          {
+                            "k": "user_view_type",
+                            "v": "public"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "k": "updated_at",
+                      "v": "2026-04-18T20:26:12Z"
+                    },
+                    {
+                      "k": "url",
+                      "v": "https://api.github.com/repos/paulboys/Ussher-In/actions/runs/24613192463"
+                    },
+                    {
+                      "k": "workflow_id",
+                      "v": 262833771.0
+                    },
+                    {
+                      "k": "workflow_url",
+                      "v": "https://api.github.com/repos/paulboys/Ussher-In/actions/workflows/262833771"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "k": "workflow_ref",
+          "v": "paulboys/Ussher-In/.github/workflows/agent-remediation.yml@refs/heads/main"
+        },
+        {
+          "k": "workflow_sha",
+          "v": "2c1fbd7254e10a6d3fcc9c07c8164d179c9094c7"
+        },
+        {
+          "k": "repository_id",
+          "v": "1214435819"
+        },
+        {
+          "k": "triggering_actor",
+          "v": "paulboys"
+        }
+      ]
+    },
+    "inputs": {
+      "t": 2
+    },
+    "job": {
+      "t": 2,
+      "d": [
+        {
+          "k": "check_run_id",
+          "v": 71971028254.0
+        },
+        {
+          "k": "workflow_ref",
+          "v": "paulboys/Ussher-In/.github/workflows/agent-remediation.yml@refs/heads/main"
+        },
+        {
+          "k": "workflow_sha",
+          "v": "2c1fbd7254e10a6d3fcc9c07c8164d179c9094c7"
+        },
+        {
+          "k": "workflow_repository",
+          "v": "paulboys/Ussher-In"
+        },
+        {
+          "k": "workflow_file_path",
+          "v": ".github/workflows/agent-remediation.yml"
+        }
+      ]
+    },
+    "matrix": null,
+    "needs": {
+      "t": 2
+    },
+    "strategy": {
+      "t": 2,
+      "d": [
+        {
+          "k": "fail-fast",
+          "v": true
+        },
+        {
+          "k": "job-index",
+          "v": 0.0
+        },
+        {
+          "k": "job-total",
+          "v": 1.0
+        },
+        {
+          "k": "max-parallel",
+          "v": 1.0
+        }
+      ]
+    },
+    "vars": {
+      "t": 2
+    }
+  },
+  "billingOwnerId": "U_kgDOA86vSQ"
+}
+[2026-04-18 20:26:17Z INFO JobRunner] Job ID a91199c7-1e9a-5fed-a88b-c29d6612254b
+[2026-04-18 20:26:17Z INFO ConfigurationStore] currentAssemblyLocation: C:\Users\User\Documents\UssherIn\actions-runner\bin\Runner.Worker.dll
+[2026-04-18 20:26:17Z INFO HostContext] Well known directory 'Bin': 'C:\Users\User\Documents\UssherIn\actions-runner\bin'
+[2026-04-18 20:26:17Z INFO ConfigurationStore] binPath: C:\Users\User\Documents\UssherIn\actions-runner\bin
+[2026-04-18 20:26:17Z INFO HostContext] Well known directory 'Bin': 'C:\Users\User\Documents\UssherIn\actions-runner\bin'
+[2026-04-18 20:26:17Z INFO HostContext] Well known directory 'Root': 'C:\Users\User\Documents\UssherIn\actions-runner'
+[2026-04-18 20:26:17Z INFO ConfigurationStore] RootFolder: C:\Users\User\Documents\UssherIn\actions-runner
+[2026-04-18 20:26:17Z INFO HostContext] Well known directory 'Bin': 'C:\Users\User\Documents\UssherIn\actions-runner\bin'
+[2026-04-18 20:26:17Z INFO HostContext] Well known directory 'Root': 'C:\Users\User\Documents\UssherIn\actions-runner'
+[2026-04-18 20:26:17Z INFO HostContext] Well known config file 'Runner': 'C:\Users\User\Documents\UssherIn\actions-runner\.runner'
+[2026-04-18 20:26:17Z INFO ConfigurationStore] ConfigFilePath: C:\Users\User\Documents\UssherIn\actions-runner\.runner
+[2026-04-18 20:26:17Z INFO HostContext] Well known directory 'Bin': 'C:\Users\User\Documents\UssherIn\actions-runner\bin'
+[2026-04-18 20:26:17Z INFO HostContext] Well known directory 'Root': 'C:\Users\User\Documents\UssherIn\actions-runner'
+[2026-04-18 20:26:17Z INFO HostContext] Well known config file 'MigratedRunner': 'C:\Users\User\Documents\UssherIn\actions-runner\.runner_migrated'
+[2026-04-18 20:26:17Z INFO ConfigurationStore] MigratedConfigFilePath: C:\Users\User\Documents\UssherIn\actions-runner\.runner_migrated
+[2026-04-18 20:26:17Z INFO HostContext] Well known directory 'Bin': 'C:\Users\User\Documents\UssherIn\actions-runner\bin'
+[2026-04-18 20:26:17Z INFO HostContext] Well known directory 'Root': 'C:\Users\User\Documents\UssherIn\actions-runner'
+[2026-04-18 20:26:17Z INFO HostContext] Well known config file 'Credentials': 'C:\Users\User\Documents\UssherIn\actions-runner\.credentials'
+[2026-04-18 20:26:17Z INFO ConfigurationStore] CredFilePath: C:\Users\User\Documents\UssherIn\actions-runner\.credentials
+[2026-04-18 20:26:17Z INFO HostContext] Well known directory 'Bin': 'C:\Users\User\Documents\UssherIn\actions-runner\bin'
+[2026-04-18 20:26:17Z INFO HostContext] Well known directory 'Root': 'C:\Users\User\Documents\UssherIn\actions-runner'
+[2026-04-18 20:26:17Z INFO HostContext] Well known config file 'MigratedCredentials': 'C:\Users\User\Documents\UssherIn\actions-runner\.credentials_migrated'
+[2026-04-18 20:26:17Z INFO ConfigurationStore] MigratedCredFilePath: C:\Users\User\Documents\UssherIn\actions-runner\.credentials_migrated
+[2026-04-18 20:26:17Z INFO HostContext] Well known directory 'Bin': 'C:\Users\User\Documents\UssherIn\actions-runner\bin'
+[2026-04-18 20:26:17Z INFO HostContext] Well known directory 'Root': 'C:\Users\User\Documents\UssherIn\actions-runner'
+[2026-04-18 20:26:17Z INFO HostContext] Well known config file 'Service': 'C:\Users\User\Documents\UssherIn\actions-runner\.service'
+[2026-04-18 20:26:17Z INFO ConfigurationStore] ServiceConfigFilePath: C:\Users\User\Documents\UssherIn\actions-runner\.service
+[2026-04-18 20:26:17Z INFO ConfigurationStore] Read setting file: 397 chars
+[2026-04-18 20:26:17Z INFO JobRunner] Initializing launch client
+[2026-04-18 20:26:17Z INFO JobServerQueue] Initializing results client
+[2026-04-18 20:26:17Z INFO ResultServer] Creating websocket client ...wss://results-receiver.actions.githubusercontent.com/_ws/ingest.sock
+[2026-04-18 20:26:17Z INFO ResultServer] Attempting to start websocket client with delay 00:00:00.
+[2026-04-18 20:26:17Z INFO JobServerQueue] Start process web console line queue.
+[2026-04-18 20:26:17Z INFO JobServerQueue] Start process file upload queue.
+[2026-04-18 20:26:17Z INFO JobServerQueue] Start results file upload queue.
+[2026-04-18 20:26:17Z INFO JobServerQueue] Starting results-based upload queue...
+[2026-04-18 20:26:17Z INFO JobServerQueue] Start process timeline update queue.
+[2026-04-18 20:26:17Z INFO ExecutionContext] Initializing Job context
+[2026-04-18 20:26:17Z INFO ExecutionContext] Initialize GitHub context
+[2026-04-18 20:26:17Z INFO ExecutionContext] Initialize Env context
+[2026-04-18 20:26:17Z INFO HostContext] Well known directory 'Bin': 'C:\Users\User\Documents\UssherIn\actions-runner\bin'
+[2026-04-18 20:26:17Z INFO HostContext] Well known directory 'Root': 'C:\Users\User\Documents\UssherIn\actions-runner'
+[2026-04-18 20:26:17Z INFO HostContext] Well known directory 'Diag': 'C:\Users\User\Documents\UssherIn\actions-runner\_diag'
+[2026-04-18 20:26:17Z INFO HostContext] Well known directory 'Bin': 'C:\Users\User\Documents\UssherIn\actions-runner\bin'
+[2026-04-18 20:26:17Z INFO HostContext] Well known directory 'Root': 'C:\Users\User\Documents\UssherIn\actions-runner'
+[2026-04-18 20:26:17Z INFO HostContext] Well known directory 'Diag': 'C:\Users\User\Documents\UssherIn\actions-runner\_diag'
+[2026-04-18 20:26:17Z INFO JobRunner] Starting the job execution context.
+[2026-04-18 20:26:17Z INFO HostContext] Well known directory 'Bin': 'C:\Users\User\Documents\UssherIn\actions-runner\bin'
+[2026-04-18 20:26:17Z INFO HostContext] Well known directory 'Root': 'C:\Users\User\Documents\UssherIn\actions-runner'
+[2026-04-18 20:26:17Z INFO HostContext] Well known directory 'Work': 'C:\Users\User\Documents\UssherIn\actions-runner\_work'
+[2026-04-18 20:26:17Z INFO JobRunner] Validating directory permissions for: 'C:\Users\User\Documents\UssherIn\actions-runner\_work'
+[2026-04-18 20:26:17Z INFO HostContext] Well known directory 'Bin': 'C:\Users\User\Documents\UssherIn\actions-runner\bin'
+[2026-04-18 20:26:17Z INFO HostContext] Well known directory 'Root': 'C:\Users\User\Documents\UssherIn\actions-runner'
+[2026-04-18 20:26:17Z INFO HostContext] Well known directory 'Work': 'C:\Users\User\Documents\UssherIn\actions-runner\_work'
+[2026-04-18 20:26:17Z INFO HostContext] Well known directory 'Tools': 'C:\Users\User\Documents\UssherIn\actions-runner\_work\_tool'
+[2026-04-18 20:26:17Z INFO HostContext] Well known directory 'Bin': 'C:\Users\User\Documents\UssherIn\actions-runner\bin'
+[2026-04-18 20:26:17Z INFO HostContext] Well known directory 'Root': 'C:\Users\User\Documents\UssherIn\actions-runner'
+[2026-04-18 20:26:17Z INFO HostContext] Well known directory 'Work': 'C:\Users\User\Documents\UssherIn\actions-runner\_work'
+[2026-04-18 20:26:17Z INFO HostContext] Well known directory 'Temp': 'C:\Users\User\Documents\UssherIn\actions-runner\_work\_temp'
+[2026-04-18 20:26:17Z INFO JobRunner] Getting job extension.
+[2026-04-18 20:26:17Z INFO JobRunner] Initialize job. Getting all job steps.
+[2026-04-18 20:26:17Z INFO HostContext] Well known directory 'Bin': 'C:\Users\User\Documents\UssherIn\actions-runner\bin'
+[2026-04-18 20:26:17Z INFO HostContext] Well known directory 'Root': 'C:\Users\User\Documents\UssherIn\actions-runner'
+[2026-04-18 20:26:17Z INFO HostContext] Well known directory 'Diag': 'C:\Users\User\Documents\UssherIn\actions-runner\_diag'
+[2026-04-18 20:26:17Z INFO HostContext] Well known directory 'Bin': 'C:\Users\User\Documents\UssherIn\actions-runner\bin'
+[2026-04-18 20:26:17Z INFO HostContext] Well known directory 'Root': 'C:\Users\User\Documents\UssherIn\actions-runner'
+[2026-04-18 20:26:17Z INFO HostContext] Well known directory 'Diag': 'C:\Users\User\Documents\UssherIn\actions-runner\_diag'
+[2026-04-18 20:26:17Z INFO HostContext] Well known directory 'Bin': 'C:\Users\User\Documents\UssherIn\actions-runner\bin'
+[2026-04-18 20:26:17Z INFO HostContext] Well known directory 'Root': 'C:\Users\User\Documents\UssherIn\actions-runner'
+[2026-04-18 20:26:17Z INFO HostContext] Well known config file 'Credentials': 'C:\Users\User\Documents\UssherIn\actions-runner\.credentials'
+[2026-04-18 20:26:17Z INFO HostContext] Well known directory 'Bin': 'C:\Users\User\Documents\UssherIn\actions-runner\bin'
+[2026-04-18 20:26:17Z INFO HostContext] Well known directory 'Root': 'C:\Users\User\Documents\UssherIn\actions-runner'
+[2026-04-18 20:26:17Z INFO HostContext] Well known config file 'SetupInfo': 'C:\Users\User\Documents\UssherIn\actions-runner\.setup_info'
+[2026-04-18 20:26:17Z INFO HostContext] Well known directory 'Bin': 'C:\Users\User\Documents\UssherIn\actions-runner\bin'
+[2026-04-18 20:26:17Z INFO HostContext] Well known directory 'Root': 'C:\Users\User\Documents\UssherIn\actions-runner'
+[2026-04-18 20:26:17Z INFO HostContext] Well known directory 'Work': 'C:\Users\User\Documents\UssherIn\actions-runner\_work'
+[2026-04-18 20:26:17Z INFO PipelineDirectoryManager] Loading tracking config if exists: C:\Users\User\Documents\UssherIn\actions-runner\_work\_PipelineMapping\paulboys/Ussher-In\PipelineFolder.json
+[2026-04-18 20:26:17Z INFO PipelineDirectoryManager] Updating job run properties.
+[2026-04-18 20:26:17Z INFO HostContext] Well known directory 'Bin': 'C:\Users\User\Documents\UssherIn\actions-runner\bin'
+[2026-04-18 20:26:17Z INFO HostContext] Well known directory 'Root': 'C:\Users\User\Documents\UssherIn\actions-runner'
+[2026-04-18 20:26:17Z INFO HostContext] Well known directory 'Work': 'C:\Users\User\Documents\UssherIn\actions-runner\_work'
+[2026-04-18 20:26:17Z INFO HostContext] Well known directory 'Bin': 'C:\Users\User\Documents\UssherIn\actions-runner\bin'
+[2026-04-18 20:26:17Z INFO HostContext] Well known directory 'Root': 'C:\Users\User\Documents\UssherIn\actions-runner'
+[2026-04-18 20:26:17Z INFO HostContext] Well known directory 'Work': 'C:\Users\User\Documents\UssherIn\actions-runner\_work'
+[2026-04-18 20:26:17Z INFO HostContext] Well known directory 'Bin': 'C:\Users\User\Documents\UssherIn\actions-runner\bin'
+[2026-04-18 20:26:17Z INFO HostContext] Well known directory 'Root': 'C:\Users\User\Documents\UssherIn\actions-runner'
+[2026-04-18 20:26:17Z INFO HostContext] Well known directory 'Work': 'C:\Users\User\Documents\UssherIn\actions-runner\_work'
+[2026-04-18 20:26:17Z INFO JobExtension] Downloading actions
+[2026-04-18 20:26:17Z INFO HostContext] Well known directory 'Bin': 'C:\Users\User\Documents\UssherIn\actions-runner\bin'
+[2026-04-18 20:26:17Z INFO HostContext] Well known directory 'Root': 'C:\Users\User\Documents\UssherIn\actions-runner'
+[2026-04-18 20:26:17Z INFO HostContext] Well known directory 'Work': 'C:\Users\User\Documents\UssherIn\actions-runner\_work'
+[2026-04-18 20:26:17Z INFO HostContext] Well known directory 'Actions': 'C:\Users\User\Documents\UssherIn\actions-runner\_work\_actions'
+[2026-04-18 20:26:17Z INFO Worker] Listening for cancel message from the channel.
+[2026-04-18 20:26:17Z INFO Worker] Waiting for the job to complete or for a cancel message from the channel.
+[2026-04-18 20:26:17Z INFO ResultServer] Successfully started websocket client.
+[2026-04-18 20:26:17Z INFO JobServerQueue] Try to append 1 batches web console lines for record '34b89883-c81d-4556-b89e-d0b6118e93d8', success rate: 1/1.
+[2026-04-18 20:26:17Z INFO HostContext] Well known directory 'Bin': 'C:\Users\User\Documents\UssherIn\actions-runner\bin'
+[2026-04-18 20:26:17Z INFO HostContext] Well known directory 'Root': 'C:\Users\User\Documents\UssherIn\actions-runner'
+[2026-04-18 20:26:17Z INFO HostContext] Well known directory 'Work': 'C:\Users\User\Documents\UssherIn\actions-runner\_work'
+[2026-04-18 20:26:17Z INFO HostContext] Well known directory 'Actions': 'C:\Users\User\Documents\UssherIn\actions-runner\_work\_actions'
+[2026-04-18 20:26:17Z INFO HostContext] Well known directory 'Bin': 'C:\Users\User\Documents\UssherIn\actions-runner\bin'
+[2026-04-18 20:26:17Z INFO HostContext] Well known directory 'Root': 'C:\Users\User\Documents\UssherIn\actions-runner'
+[2026-04-18 20:26:17Z INFO HostContext] Well known directory 'Work': 'C:\Users\User\Documents\UssherIn\actions-runner\_work'
+[2026-04-18 20:26:17Z INFO HostContext] Well known directory 'Actions': 'C:\Users\User\Documents\UssherIn\actions-runner\_work\_actions'
+[2026-04-18 20:26:17Z INFO ActionManager] Save archive 'https://api.github.com/repos/actions/checkout/zipball/34e114876b0b11c390a56381ad16ebd13914f8d5' into C:\Users\User\Documents\UssherIn\actions-runner\_work\_actions\_temp_b713c48d-11fe-438b-9c77-14f0e393619f\31d5ef7e-e84c-4198-9868-be3c63dd0a47.zip.
+[2026-04-18 20:26:18Z INFO JobServerQueue] Job timeline record has been updated for the first time.
+[2026-04-18 20:26:18Z INFO JobServerQueue] Try to append 1 batches web console lines for record '34b89883-c81d-4556-b89e-d0b6118e93d8', success rate: 1/1.
+[2026-04-18 20:26:18Z INFO ActionManager] Request URL: https://api.github.com/repos/actions/checkout/zipball/34e114876b0b11c390a56381ad16ebd13914f8d5 X-GitHub-Request-Id: D595:6FDB9:BC618:12A9D9:69E3E8EA Http Status: OK
+[2026-04-18 20:26:19Z INFO ActionManager] Finished getting action repository.
+[2026-04-18 20:26:19Z INFO HostContext] Well known directory 'Bin': 'C:\Users\User\Documents\UssherIn\actions-runner\bin'
+[2026-04-18 20:26:19Z INFO HostContext] Well known directory 'Root': 'C:\Users\User\Documents\UssherIn\actions-runner'
+[2026-04-18 20:26:19Z INFO HostContext] Well known directory 'Work': 'C:\Users\User\Documents\UssherIn\actions-runner\_work'
+[2026-04-18 20:26:19Z INFO HostContext] Well known directory 'Actions': 'C:\Users\User\Documents\UssherIn\actions-runner\_work\_actions'
+[2026-04-18 20:26:19Z INFO ActionManifestManagerLegacy] Load schema file with definitions: [
+  "null",
+  "boolean",
+  "number",
+  "string",
+  "sequence",
+  "mapping",
+  "any",
+  "action-root",
+  "inputs",
+  "input",
+  "outputs",
+  "output-definition",
+  "runs",
+  "container-runs",
+  "container-runs-args",
+  "container-runs-env",
+  "node-runs",
+  "plugin-runs",
+  "composite-runs",
+  "composite-steps",
+  "composite-step",
+  "run-step",
+  "uses-step",
+  "container-runs-context",
+  "output-value",
+  "input-default-context",
+  "non-empty-string",
+  "string-steps-context",
+  "boolean-steps-context",
+  "step-env",
+  "step-if",
+  "step-with"
+]
+[2026-04-18 20:26:19Z INFO ActionManifestManager] Load schema file with definitions: [
+  "null",
+  "boolean",
+  "number",
+  "string",
+  "sequence",
+  "mapping",
+  "any",
+  "action-root",
+  "inputs",
+  "input",
+  "outputs",
+  "output-definition",
+  "runs",
+  "container-runs",
+  "container-runs-args",
+  "container-runs-env",
+  "node-runs",
+  "plugin-runs",
+  "composite-runs",
+  "composite-steps",
+  "composite-step",
+  "run-step",
+  "uses-step",
+  "container-runs-context",
+  "output-value",
+  "input-default-context",
+  "non-empty-string",
+  "string-steps-context",
+  "boolean-steps-context",
+  "step-env",
+  "step-if",
+  "step-with"
+]
+[2026-04-18 20:26:19Z INFO HostContext] Well known directory 'Bin': 'C:\Users\User\Documents\UssherIn\actions-runner\bin'
+[2026-04-18 20:26:19Z INFO HostContext] Well known directory 'Root': 'C:\Users\User\Documents\UssherIn\actions-runner'
+[2026-04-18 20:26:19Z INFO HostContext] Well known directory 'Work': 'C:\Users\User\Documents\UssherIn\actions-runner\_work'
+[2026-04-18 20:26:19Z INFO HostContext] Well known directory 'Actions': 'C:\Users\User\Documents\UssherIn\actions-runner\_work\_actions'
+[2026-04-18 20:26:19Z INFO ActionManifestManagerLegacy] Loaded action.yml file: {
+  "name": "Checkout",
+  "description": "Checkout a Git repository at a particular version",
+  "inputs": {
+    "type": 2,
+    "map": [
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 4,
+          "col": 3,
+          "lit": "repository"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 6,
+          "col": 14,
+          "expr": "github.repository"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 7,
+          "col": 3,
+          "lit": "ref"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 12,
+          "col": 3,
+          "lit": "token"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 24,
+          "col": 14,
+          "expr": "github.token"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 25,
+          "col": 3,
+          "lit": "ssh-key"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 37,
+          "col": 3,
+          "lit": "ssh-known-hosts"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 42,
+          "col": 3,
+          "lit": "ssh-strict"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 47,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 48,
+          "col": 3,
+          "lit": "ssh-user"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 51,
+          "col": 14,
+          "lit": "git"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 52,
+          "col": 3,
+          "lit": "persist-credentials"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 54,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 55,
+          "col": 3,
+          "lit": "path"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 57,
+          "col": 3,
+          "lit": "clean"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 59,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 60,
+          "col": 3,
+          "lit": "filter"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 64,
+          "col": 14,
+          "lit": ""
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 65,
+          "col": 3,
+          "lit": "sparse-checkout"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 69,
+          "col": 14,
+          "lit": ""
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 70,
+          "col": 3,
+          "lit": "sparse-checkout-cone-mode"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 73,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 74,
+          "col": 3,
+          "lit": "fetch-depth"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 76,
+          "col": 14,
+          "lit": "1"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 77,
+          "col": 3,
+          "lit": "fetch-tags"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 79,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 80,
+          "col": 3,
+          "lit": "show-progress"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 82,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 83,
+          "col": 3,
+          "lit": "lfs"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 85,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 86,
+          "col": 3,
+          "lit": "submodules"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 94,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 95,
+          "col": 3,
+          "lit": "set-safe-directory"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 97,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 98,
+          "col": 3,
+          "lit": "github-server-url"
+        },
+        "value": ""
+      }
+    ]
+  },
+  "execution": {
+    "executionType": "nodeJS",
+    "hasPre": false,
+    "hasPost": true,
+    "script": "dist/index.js",
+    "pre": null,
+    "post": "dist/index.js",
+    "nodeVersion": "node20",
+    "cleanupCondition": "always()",
+    "initCondition": "always()"
+  },
+  "deprecated": null
+}
+[2026-04-18 20:26:19Z INFO ActionManager] Action node.js file: dist/index.js, no more preparation.
+[2026-04-18 20:26:19Z INFO HostContext] Well known directory 'Bin': 'C:\Users\User\Documents\UssherIn\actions-runner\bin'
+[2026-04-18 20:26:19Z INFO HostContext] Well known directory 'Root': 'C:\Users\User\Documents\UssherIn\actions-runner'
+[2026-04-18 20:26:19Z INFO HostContext] Well known directory 'Work': 'C:\Users\User\Documents\UssherIn\actions-runner\_work'
+[2026-04-18 20:26:19Z INFO HostContext] Well known directory 'Actions': 'C:\Users\User\Documents\UssherIn\actions-runner\_work\_actions'
+[2026-04-18 20:26:19Z INFO ActionManager] Load action that reference repository from 'C:\Users\User\Documents\UssherIn\actions-runner\_work\_actions\actions\checkout\v4'
+[2026-04-18 20:26:19Z INFO HostContext] Well known directory 'Bin': 'C:\Users\User\Documents\UssherIn\actions-runner\bin'
+[2026-04-18 20:26:19Z INFO HostContext] Well known directory 'Root': 'C:\Users\User\Documents\UssherIn\actions-runner'
+[2026-04-18 20:26:19Z INFO HostContext] Well known directory 'Work': 'C:\Users\User\Documents\UssherIn\actions-runner\_work'
+[2026-04-18 20:26:19Z INFO HostContext] Well known directory 'Actions': 'C:\Users\User\Documents\UssherIn\actions-runner\_work\_actions'
+[2026-04-18 20:26:19Z INFO ActionManifestManagerLegacy] Loaded action.yml file: {
+  "name": "Checkout",
+  "description": "Checkout a Git repository at a particular version",
+  "inputs": {
+    "type": 2,
+    "map": [
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 4,
+          "col": 3,
+          "lit": "repository"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 6,
+          "col": 14,
+          "expr": "github.repository"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 7,
+          "col": 3,
+          "lit": "ref"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 12,
+          "col": 3,
+          "lit": "token"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 24,
+          "col": 14,
+          "expr": "github.token"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 25,
+          "col": 3,
+          "lit": "ssh-key"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 37,
+          "col": 3,
+          "lit": "ssh-known-hosts"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 42,
+          "col": 3,
+          "lit": "ssh-strict"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 47,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 48,
+          "col": 3,
+          "lit": "ssh-user"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 51,
+          "col": 14,
+          "lit": "git"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 52,
+          "col": 3,
+          "lit": "persist-credentials"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 54,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 55,
+          "col": 3,
+          "lit": "path"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 57,
+          "col": 3,
+          "lit": "clean"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 59,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 60,
+          "col": 3,
+          "lit": "filter"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 64,
+          "col": 14,
+          "lit": ""
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 65,
+          "col": 3,
+          "lit": "sparse-checkout"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 69,
+          "col": 14,
+          "lit": ""
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 70,
+          "col": 3,
+          "lit": "sparse-checkout-cone-mode"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 73,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 74,
+          "col": 3,
+          "lit": "fetch-depth"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 76,
+          "col": 14,
+          "lit": "1"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 77,
+          "col": 3,
+          "lit": "fetch-tags"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 79,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 80,
+          "col": 3,
+          "lit": "show-progress"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 82,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 83,
+          "col": 3,
+          "lit": "lfs"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 85,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 86,
+          "col": 3,
+          "lit": "submodules"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 94,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 95,
+          "col": 3,
+          "lit": "set-safe-directory"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 97,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 98,
+          "col": 3,
+          "lit": "github-server-url"
+        },
+        "value": ""
+      }
+    ]
+  },
+  "execution": {
+    "executionType": "nodeJS",
+    "hasPre": false,
+    "hasPost": true,
+    "script": "dist/index.js",
+    "pre": null,
+    "post": "dist/index.js",
+    "nodeVersion": "node20",
+    "cleanupCondition": "always()",
+    "initCondition": "always()"
+  },
+  "deprecated": null
+}
+[2026-04-18 20:26:19Z INFO ActionManager] Action pre node.js file: N/A.
+[2026-04-18 20:26:19Z INFO ActionManager] Action node.js file: dist/index.js.
+[2026-04-18 20:26:19Z INFO ActionManager] Action post node.js file: dist/index.js.
+[2026-04-18 20:26:19Z INFO JobExtension] Adding .
+[2026-04-18 20:26:19Z INFO JobExtension] Adding .
+[2026-04-18 20:26:19Z INFO JobExtension] Adding .
+[2026-04-18 20:26:19Z INFO JobExtension] Adding .
+[2026-04-18 20:26:19Z INFO HostContext] Well known directory 'Bin': 'C:\Users\User\Documents\UssherIn\actions-runner\bin'
+[2026-04-18 20:26:19Z INFO HostContext] Well known directory 'Root': 'C:\Users\User\Documents\UssherIn\actions-runner'
+[2026-04-18 20:26:19Z INFO HostContext] Well known directory 'Diag': 'C:\Users\User\Documents\UssherIn\actions-runner\_diag'
+[2026-04-18 20:26:19Z INFO HostContext] Well known directory 'Bin': 'C:\Users\User\Documents\UssherIn\actions-runner\bin'
+[2026-04-18 20:26:19Z INFO HostContext] Well known directory 'Root': 'C:\Users\User\Documents\UssherIn\actions-runner'
+[2026-04-18 20:26:19Z INFO HostContext] Well known directory 'Diag': 'C:\Users\User\Documents\UssherIn\actions-runner\_diag'
+[2026-04-18 20:26:19Z INFO HostContext] Well known directory 'Bin': 'C:\Users\User\Documents\UssherIn\actions-runner\bin'
+[2026-04-18 20:26:19Z INFO HostContext] Well known directory 'Root': 'C:\Users\User\Documents\UssherIn\actions-runner'
+[2026-04-18 20:26:19Z INFO HostContext] Well known directory 'Diag': 'C:\Users\User\Documents\UssherIn\actions-runner\_diag'
+[2026-04-18 20:26:19Z INFO HostContext] Well known directory 'Bin': 'C:\Users\User\Documents\UssherIn\actions-runner\bin'
+[2026-04-18 20:26:19Z INFO HostContext] Well known directory 'Root': 'C:\Users\User\Documents\UssherIn\actions-runner'
+[2026-04-18 20:26:19Z INFO HostContext] Well known directory 'Diag': 'C:\Users\User\Documents\UssherIn\actions-runner\_diag'
+[2026-04-18 20:26:19Z INFO HostContext] Well known directory 'Bin': 'C:\Users\User\Documents\UssherIn\actions-runner\bin'
+[2026-04-18 20:26:19Z INFO HostContext] Well known directory 'Root': 'C:\Users\User\Documents\UssherIn\actions-runner'
+[2026-04-18 20:26:19Z INFO HostContext] Well known directory 'Diag': 'C:\Users\User\Documents\UssherIn\actions-runner\_diag'
+[2026-04-18 20:26:19Z INFO HostContext] Well known directory 'Bin': 'C:\Users\User\Documents\UssherIn\actions-runner\bin'
+[2026-04-18 20:26:19Z INFO HostContext] Well known directory 'Root': 'C:\Users\User\Documents\UssherIn\actions-runner'
+[2026-04-18 20:26:19Z INFO HostContext] Well known directory 'Diag': 'C:\Users\User\Documents\UssherIn\actions-runner\_diag'
+[2026-04-18 20:26:19Z INFO HostContext] Well known directory 'Bin': 'C:\Users\User\Documents\UssherIn\actions-runner\bin'
+[2026-04-18 20:26:19Z INFO HostContext] Well known directory 'Root': 'C:\Users\User\Documents\UssherIn\actions-runner'
+[2026-04-18 20:26:19Z INFO HostContext] Well known directory 'Diag': 'C:\Users\User\Documents\UssherIn\actions-runner\_diag'
+[2026-04-18 20:26:19Z INFO HostContext] Well known directory 'Bin': 'C:\Users\User\Documents\UssherIn\actions-runner\bin'
+[2026-04-18 20:26:19Z INFO HostContext] Well known directory 'Root': 'C:\Users\User\Documents\UssherIn\actions-runner'
+[2026-04-18 20:26:19Z INFO HostContext] Well known directory 'Diag': 'C:\Users\User\Documents\UssherIn\actions-runner\_diag'
+[2026-04-18 20:26:19Z INFO JobExtension] Total accessible running process: 252.
+[2026-04-18 20:26:19Z INFO HostContext] Well known directory 'Bin': 'C:\Users\User\Documents\UssherIn\actions-runner\bin'
+[2026-04-18 20:26:19Z INFO HostContext] Well known directory 'Root': 'C:\Users\User\Documents\UssherIn\actions-runner'
+[2026-04-18 20:26:19Z INFO HostContext] Well known directory 'Work': 'C:\Users\User\Documents\UssherIn\actions-runner\_work'
+[2026-04-18 20:26:19Z INFO JobExtension] Start checking server connectivity.
+[2026-04-18 20:26:19Z INFO JobExtension] Check server connectivity for https://broker.actions.githubusercontent.com/health.
+[2026-04-18 20:26:19Z INFO JobExtension] Check server connectivity for https://token.actions.githubusercontent.com/ready.
+[2026-04-18 20:26:19Z INFO JobExtension] Check server connectivity for https://run.actions.githubusercontent.com/health.
+[2026-04-18 20:26:19Z INFO JobExtension] Start checking service connectivity in background.
+[2026-04-18 20:26:19Z INFO ExecutionContext] Publish step telemetry for current step {
+  "action": "setup_job",
+  "type": "runner",
+  "stage": "Pre",
+  "stepId": "34b89883-c81d-4556-b89e-d0b6118e93d8",
+  "result": "succeeded",
+  "errorMessages": [],
+  "executionTimeInSeconds": 3,
+  "startTime": "2026-04-18T20:26:17.3619492Z",
+  "finishTime": "2026-04-18T20:26:19.7298102Z"
+}.
+[2026-04-18 20:26:19Z INFO JobRunner] Total job steps: 4.
+[2026-04-18 20:26:19Z INFO JobRunner] Run all job steps.
+[2026-04-18 20:26:19Z INFO StepsRunner] Processing step: DisplayName='Checkout dev'
+[2026-04-18 20:26:19Z INFO StepsRunner] Evaluating: success()
+[2026-04-18 20:26:19Z INFO StepsRunner] Result: true
+[2026-04-18 20:26:19Z INFO StepsRunner] Starting the step.
+[2026-04-18 20:26:19Z INFO HostContext] Well known directory 'Bin': 'C:\Users\User\Documents\UssherIn\actions-runner\bin'
+[2026-04-18 20:26:19Z INFO HostContext] Well known directory 'Root': 'C:\Users\User\Documents\UssherIn\actions-runner'
+[2026-04-18 20:26:19Z INFO HostContext] Well known directory 'Work': 'C:\Users\User\Documents\UssherIn\actions-runner\_work'
+[2026-04-18 20:26:19Z INFO StepsRunner] Which2: 'chcp'
+[2026-04-18 20:26:19Z INFO StepsRunner] Location: 'C:\WINDOWS\system32\chcp.COM'
+[2026-04-18 20:26:19Z INFO ProcessInvokerWrapper] Starting process:
+[2026-04-18 20:26:19Z INFO ProcessInvokerWrapper]   File name: 'C:\WINDOWS\system32\chcp.COM'
+[2026-04-18 20:26:19Z INFO ProcessInvokerWrapper]   Arguments: '65001'
+[2026-04-18 20:26:19Z INFO ProcessInvokerWrapper]   Working directory: 'C:\Users\User\Documents\UssherIn\actions-runner\_work'
+[2026-04-18 20:26:19Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2026-04-18 20:26:19Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2026-04-18 20:26:19Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2026-04-18 20:26:19Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2026-04-18 20:26:19Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2026-04-18 20:26:19Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2026-04-18 20:26:19Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2026-04-18 20:26:19Z INFO ProcessInvokerWrapper] Process started with process id 17484, waiting for process exit.
+[2026-04-18 20:26:19Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2026-04-18 20:26:19Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2026-04-18 20:26:19Z INFO ProcessInvokerWrapper] Finished process 17484 with exit code 0, and elapsed time 00:00:00.0417165.
+[2026-04-18 20:26:19Z INFO StepsRunner] Successfully returned to code page 65001 (UTF8)
+[2026-04-18 20:26:19Z INFO HostContext] Well known directory 'Bin': 'C:\Users\User\Documents\UssherIn\actions-runner\bin'
+[2026-04-18 20:26:19Z INFO HostContext] Well known directory 'Root': 'C:\Users\User\Documents\UssherIn\actions-runner'
+[2026-04-18 20:26:19Z INFO HostContext] Well known directory 'Work': 'C:\Users\User\Documents\UssherIn\actions-runner\_work'
+[2026-04-18 20:26:19Z INFO HostContext] Well known directory 'Actions': 'C:\Users\User\Documents\UssherIn\actions-runner\_work\_actions'
+[2026-04-18 20:26:19Z INFO ActionManager] Load action that reference repository from 'C:\Users\User\Documents\UssherIn\actions-runner\_work\_actions\actions\checkout\v4'
+[2026-04-18 20:26:19Z INFO HostContext] Well known directory 'Bin': 'C:\Users\User\Documents\UssherIn\actions-runner\bin'
+[2026-04-18 20:26:19Z INFO HostContext] Well known directory 'Root': 'C:\Users\User\Documents\UssherIn\actions-runner'
+[2026-04-18 20:26:19Z INFO HostContext] Well known directory 'Work': 'C:\Users\User\Documents\UssherIn\actions-runner\_work'
+[2026-04-18 20:26:19Z INFO HostContext] Well known directory 'Actions': 'C:\Users\User\Documents\UssherIn\actions-runner\_work\_actions'
+[2026-04-18 20:26:19Z INFO ActionManifestManagerLegacy] Loaded action.yml file: {
+  "name": "Checkout",
+  "description": "Checkout a Git repository at a particular version",
+  "inputs": {
+    "type": 2,
+    "map": [
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 4,
+          "col": 3,
+          "lit": "repository"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 6,
+          "col": 14,
+          "expr": "github.repository"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 7,
+          "col": 3,
+          "lit": "ref"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 12,
+          "col": 3,
+          "lit": "token"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 24,
+          "col": 14,
+          "expr": "github.token"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 25,
+          "col": 3,
+          "lit": "ssh-key"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 37,
+          "col": 3,
+          "lit": "ssh-known-hosts"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 42,
+          "col": 3,
+          "lit": "ssh-strict"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 47,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 48,
+          "col": 3,
+          "lit": "ssh-user"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 51,
+          "col": 14,
+          "lit": "git"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 52,
+          "col": 3,
+          "lit": "persist-credentials"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 54,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 55,
+          "col": 3,
+          "lit": "path"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 57,
+          "col": 3,
+          "lit": "clean"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 59,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 60,
+          "col": 3,
+          "lit": "filter"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 64,
+          "col": 14,
+          "lit": ""
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 65,
+          "col": 3,
+          "lit": "sparse-checkout"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 69,
+          "col": 14,
+          "lit": ""
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 70,
+          "col": 3,
+          "lit": "sparse-checkout-cone-mode"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 73,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 74,
+          "col": 3,
+          "lit": "fetch-depth"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 76,
+          "col": 14,
+          "lit": "1"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 77,
+          "col": 3,
+          "lit": "fetch-tags"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 79,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 80,
+          "col": 3,
+          "lit": "show-progress"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 82,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 83,
+          "col": 3,
+          "lit": "lfs"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 85,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 86,
+          "col": 3,
+          "lit": "submodules"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 94,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 95,
+          "col": 3,
+          "lit": "set-safe-directory"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 97,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 98,
+          "col": 3,
+          "lit": "github-server-url"
+        },
+        "value": ""
+      }
+    ]
+  },
+  "execution": {
+    "executionType": "nodeJS",
+    "hasPre": false,
+    "hasPost": true,
+    "script": "dist/index.js",
+    "pre": null,
+    "post": "dist/index.js",
+    "nodeVersion": "node20",
+    "cleanupCondition": "always()",
+    "initCondition": "always()"
+  },
+  "deprecated": null
+}
+[2026-04-18 20:26:19Z INFO ActionManager] Action pre node.js file: N/A.
+[2026-04-18 20:26:19Z INFO ActionManager] Action node.js file: dist/index.js.
+[2026-04-18 20:26:19Z INFO ActionManager] Action post node.js file: dist/index.js.
+[2026-04-18 20:26:19Z INFO ExecutionContext] Reserve record order 6 to 10 for post job actions.
+[2026-04-18 20:26:19Z INFO HostContext] Well known directory 'Bin': 'C:\Users\User\Documents\UssherIn\actions-runner\bin'
+[2026-04-18 20:26:19Z INFO HostContext] Well known directory 'Root': 'C:\Users\User\Documents\UssherIn\actions-runner'
+[2026-04-18 20:26:19Z INFO HostContext] Well known directory 'Diag': 'C:\Users\User\Documents\UssherIn\actions-runner\_diag'
+[2026-04-18 20:26:19Z INFO HostContext] Well known directory 'Bin': 'C:\Users\User\Documents\UssherIn\actions-runner\bin'
+[2026-04-18 20:26:19Z INFO HostContext] Well known directory 'Root': 'C:\Users\User\Documents\UssherIn\actions-runner'
+[2026-04-18 20:26:19Z INFO HostContext] Well known directory 'Diag': 'C:\Users\User\Documents\UssherIn\actions-runner\_diag'
+[2026-04-18 20:26:19Z INFO HostContext] Well known directory 'Bin': 'C:\Users\User\Documents\UssherIn\actions-runner\bin'
+[2026-04-18 20:26:19Z INFO HostContext] Well known directory 'Root': 'C:\Users\User\Documents\UssherIn\actions-runner'
+[2026-04-18 20:26:19Z INFO HostContext] Well known directory 'Work': 'C:\Users\User\Documents\UssherIn\actions-runner\_work'
+[2026-04-18 20:26:19Z INFO HostContext] Well known directory 'Temp': 'C:\Users\User\Documents\UssherIn\actions-runner\_work\_temp'
+[2026-04-18 20:26:19Z INFO ExecutionContext] Write event payload to C:\Users\User\Documents\UssherIn\actions-runner\_work\_temp\_github_workflow\event.json
+[2026-04-18 20:26:19Z INFO HostContext] Well known directory 'Bin': 'C:\Users\User\Documents\UssherIn\actions-runner\bin'
+[2026-04-18 20:26:19Z INFO HostContext] Well known directory 'Root': 'C:\Users\User\Documents\UssherIn\actions-runner'
+[2026-04-18 20:26:19Z INFO HostContext] Well known directory 'Work': 'C:\Users\User\Documents\UssherIn\actions-runner\_work'
+[2026-04-18 20:26:19Z INFO HostContext] Well known directory 'Temp': 'C:\Users\User\Documents\UssherIn\actions-runner\_work\_temp'
+[2026-04-18 20:26:19Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IFileCommandExtension'
+[2026-04-18 20:26:19Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.AddPathFileCommand, Runner.Worker
+[2026-04-18 20:26:19Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SetEnvFileCommand, Runner.Worker
+[2026-04-18 20:26:19Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.CreateStepSummaryCommand, Runner.Worker
+[2026-04-18 20:26:19Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SaveStateFileCommand, Runner.Worker
+[2026-04-18 20:26:19Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SetOutputFileCommand, Runner.Worker
+[2026-04-18 20:26:19Z INFO ActionManifestManagerLegacy] Input 'repository': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 6,
+  "col": 14,
+  "lit": "paulboys/Ussher-In"
+}
+[2026-04-18 20:26:19Z INFO ActionManifestManagerLegacy] Input 'token': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 24,
+  "col": 14,
+  "lit": "***"
+}
+[2026-04-18 20:26:19Z INFO ActionManifestManagerLegacy] Input 'ssh-key': default value evaluate result: ""
+[2026-04-18 20:26:19Z INFO ActionManifestManagerLegacy] Input 'ssh-known-hosts': default value evaluate result: ""
+[2026-04-18 20:26:19Z INFO ActionManifestManagerLegacy] Input 'ssh-strict': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 47,
+  "col": 14,
+  "lit": "true"
+}
+[2026-04-18 20:26:19Z INFO ActionManifestManagerLegacy] Input 'ssh-user': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 51,
+  "col": 14,
+  "lit": "git"
+}
+[2026-04-18 20:26:19Z INFO ActionManifestManagerLegacy] Input 'persist-credentials': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 54,
+  "col": 14,
+  "lit": "true"
+}
+[2026-04-18 20:26:19Z INFO ActionManifestManagerLegacy] Input 'path': default value evaluate result: ""
+[2026-04-18 20:26:19Z INFO ActionManifestManagerLegacy] Input 'clean': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 59,
+  "col": 14,
+  "lit": "true"
+}
+[2026-04-18 20:26:19Z INFO ActionManifestManagerLegacy] Input 'filter': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 64,
+  "col": 14,
+  "lit": ""
+}
+[2026-04-18 20:26:19Z INFO ActionManifestManagerLegacy] Input 'sparse-checkout': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 69,
+  "col": 14,
+  "lit": ""
+}
+[2026-04-18 20:26:19Z INFO ActionManifestManagerLegacy] Input 'sparse-checkout-cone-mode': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 73,
+  "col": 14,
+  "lit": "true"
+}
+[2026-04-18 20:26:19Z INFO ActionManifestManagerLegacy] Input 'fetch-tags': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 79,
+  "col": 14,
+  "lit": "false"
+}
+[2026-04-18 20:26:19Z INFO ActionManifestManagerLegacy] Input 'show-progress': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 82,
+  "col": 14,
+  "lit": "true"
+}
+[2026-04-18 20:26:19Z INFO ActionManifestManagerLegacy] Input 'lfs': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 85,
+  "col": 14,
+  "lit": "false"
+}
+[2026-04-18 20:26:19Z INFO ActionManifestManagerLegacy] Input 'submodules': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 94,
+  "col": 14,
+  "lit": "false"
+}
+[2026-04-18 20:26:19Z INFO ActionManifestManagerLegacy] Input 'set-safe-directory': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 97,
+  "col": 14,
+  "lit": "true"
+}
+[2026-04-18 20:26:19Z INFO ActionManifestManagerLegacy] Input 'github-server-url': default value evaluate result: ""
+[2026-04-18 20:26:19Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IActionCommandExtension'
+[2026-04-18 20:26:19Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.InternalPluginSetRepoPathCommandExtension, Runner.Worker
+[2026-04-18 20:26:19Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SetEnvCommandExtension, Runner.Worker
+[2026-04-18 20:26:19Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SetOutputCommandExtension, Runner.Worker
+[2026-04-18 20:26:19Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SaveStateCommandExtension, Runner.Worker
+[2026-04-18 20:26:19Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.AddPathCommandExtension, Runner.Worker
+[2026-04-18 20:26:19Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.AddMaskCommandExtension, Runner.Worker
+[2026-04-18 20:26:19Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.AddMatcherCommandExtension, Runner.Worker
+[2026-04-18 20:26:19Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.RemoveMatcherCommandExtension, Runner.Worker
+[2026-04-18 20:26:19Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.WarningCommandExtension, Runner.Worker
+[2026-04-18 20:26:19Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.ErrorCommandExtension, Runner.Worker
+[2026-04-18 20:26:19Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.NoticeCommandExtension, Runner.Worker
+[2026-04-18 20:26:19Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.DebugCommandExtension, Runner.Worker
+[2026-04-18 20:26:19Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.GroupCommandExtension, Runner.Worker
+[2026-04-18 20:26:19Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.EndGroupCommandExtension, Runner.Worker
+[2026-04-18 20:26:19Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.EchoCommandExtension, Runner.Worker
+[2026-04-18 20:26:19Z INFO ActionCommandManager] Register action command extension for command internal-set-repo-path
+[2026-04-18 20:26:19Z INFO ActionCommandManager] Register action command extension for command set-env
+[2026-04-18 20:26:19Z INFO ActionCommandManager] Register action command extension for command set-output
+[2026-04-18 20:26:19Z INFO ActionCommandManager] Register action command extension for command save-state
+[2026-04-18 20:26:19Z INFO ActionCommandManager] Register action command extension for command add-path
+[2026-04-18 20:26:19Z INFO ActionCommandManager] Register action command extension for command add-mask
+[2026-04-18 20:26:19Z INFO ActionCommandManager] Register action command extension for command add-matcher
+[2026-04-18 20:26:19Z INFO ActionCommandManager] Register action command extension for command remove-matcher
+[2026-04-18 20:26:19Z INFO ActionCommandManager] Register action command extension for command warning
+[2026-04-18 20:26:19Z INFO ActionCommandManager] Register action command extension for command error
+[2026-04-18 20:26:19Z INFO ActionCommandManager] Register action command extension for command notice
+[2026-04-18 20:26:19Z INFO ActionCommandManager] Register action command extension for command debug
+[2026-04-18 20:26:19Z INFO ActionCommandManager] Register action command extension for command group
+[2026-04-18 20:26:19Z INFO ActionCommandManager] Register action command extension for command endgroup
+[2026-04-18 20:26:19Z INFO ActionCommandManager] Register action command extension for command echo
+[2026-04-18 20:26:19Z INFO HostContext] Well known directory 'Bin': 'C:\Users\User\Documents\UssherIn\actions-runner\bin'
+[2026-04-18 20:26:19Z INFO HostContext] Well known directory 'Root': 'C:\Users\User\Documents\UssherIn\actions-runner'
+[2026-04-18 20:26:19Z INFO HostContext] Well known directory 'Externals': 'C:\Users\User\Documents\UssherIn\actions-runner\externals'
+[2026-04-18 20:26:19Z INFO ProcessInvokerWrapper] Starting process:
+[2026-04-18 20:26:19Z INFO ProcessInvokerWrapper]   File name: 'C:\Users\User\Documents\UssherIn\actions-runner\externals\node20\bin\node.exe'
+[2026-04-18 20:26:19Z INFO ProcessInvokerWrapper]   Arguments: '"C:\Users\User\Documents\UssherIn\actions-runner\_work\_actions\actions\checkout\v4\dist/index.js"'
+[2026-04-18 20:26:19Z INFO ProcessInvokerWrapper]   Working directory: 'C:\Users\User\Documents\UssherIn\actions-runner\_work\Ussher-In\Ussher-In'
+[2026-04-18 20:26:19Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2026-04-18 20:26:19Z INFO ProcessInvokerWrapper]   Encoding web name: utf-8 ; code page: '65001'
+[2026-04-18 20:26:19Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2026-04-18 20:26:19Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2026-04-18 20:26:19Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2026-04-18 20:26:19Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2026-04-18 20:26:19Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2026-04-18 20:26:19Z INFO JobServerQueue] Try to append 1 batches web console lines for record '34b89883-c81d-4556-b89e-d0b6118e93d8', success rate: 1/1.
+[2026-04-18 20:26:19Z INFO JobServerQueue] Try to append 1 batches web console lines for record '582be594-3b9f-4737-bf2a-15540f48d2b8', success rate: 1/1.
+[2026-04-18 20:26:19Z INFO ProcessInvokerWrapper] Process started with process id 11504, waiting for process exit.
+[2026-04-18 20:26:20Z INFO JobServerQueue] Got a step log file to send to results service.
+[2026-04-18 20:26:20Z INFO JobServerQueue] Starting upload of step log file to results service ResultsLog, C:\Users\User\Documents\UssherIn\actions-runner\_diag\blocks\4e302514-6f58-46d8-a1df-b882be0c11d8_34b89883-c81d-4556-b89e-d0b6118e93d8.1
+[2026-04-18 20:26:20Z INFO JobServerQueue] Try to upload 1 log files or attachments, success rate: 1/1.
+[2026-04-18 20:26:20Z INFO JobServerQueue] Try to append 1 batches web console lines for record '582be594-3b9f-4737-bf2a-15540f48d2b8', success rate: 1/1.
+[2026-04-18 20:26:20Z INFO AddMaskCommandExtension] Add new secret mask with length of 76
+[2026-04-18 20:26:20Z INFO JobServerQueue] Try to append 1 batches web console lines for record '582be594-3b9f-4737-bf2a-15540f48d2b8', success rate: 1/1.
+[2026-04-18 20:26:20Z INFO JobServerQueue] Tried to upload 1 file(s) to results, success rate: 1/1.
+[2026-04-18 20:26:20Z INFO JobServerQueue] Try to append 1 batches web console lines for record '582be594-3b9f-4737-bf2a-15540f48d2b8', success rate: 1/1.
+[2026-04-18 20:26:21Z INFO JobServerQueue] Try to append 1 batches web console lines for record '582be594-3b9f-4737-bf2a-15540f48d2b8', success rate: 1/1.
+[2026-04-18 20:26:23Z INFO JobServerQueue] Try to append 1 batches web console lines for record '582be594-3b9f-4737-bf2a-15540f48d2b8', success rate: 1/1.
+[2026-04-18 20:26:23Z INFO JobServerQueue] Try to append 1 batches web console lines for record '582be594-3b9f-4737-bf2a-15540f48d2b8', success rate: 1/1.
+[2026-04-18 20:26:23Z INFO JobServerQueue] Try to append 1 batches web console lines for record '582be594-3b9f-4737-bf2a-15540f48d2b8', success rate: 1/1.
+[2026-04-18 20:26:25Z INFO JobServerQueue] Try to append 1 batches web console lines for record '582be594-3b9f-4737-bf2a-15540f48d2b8', success rate: 1/1.
+[2026-04-18 20:26:26Z INFO JobServerQueue] Try to append 1 batches web console lines for record '582be594-3b9f-4737-bf2a-15540f48d2b8', success rate: 1/1.
+[2026-04-18 20:26:26Z INFO JobServerQueue] Try to append 1 batches web console lines for record '582be594-3b9f-4737-bf2a-15540f48d2b8', success rate: 1/1.
+[2026-04-18 20:26:28Z INFO JobServerQueue] Try to append 1 batches web console lines for record '582be594-3b9f-4737-bf2a-15540f48d2b8', success rate: 1/1.
+[2026-04-18 20:26:28Z INFO JobServerQueue] Try to append 1 batches web console lines for record '582be594-3b9f-4737-bf2a-15540f48d2b8', success rate: 1/1.
+[2026-04-18 20:26:29Z INFO JobServerQueue] Try to append 1 batches web console lines for record '582be594-3b9f-4737-bf2a-15540f48d2b8', success rate: 1/1.
+[2026-04-18 20:26:29Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2026-04-18 20:26:29Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2026-04-18 20:26:29Z INFO ProcessInvokerWrapper] Finished process 11504 with exit code 0, and elapsed time 00:00:09.2225662.
+[2026-04-18 20:26:29Z INFO CreateStepSummaryCommand] Step Summary file (C:\Users\User\Documents\UssherIn\actions-runner\_work\_temp\_runner_file_commands\step_summary_806fcde0-9d01-44b5-8c62-da9eb4d68e0f) is empty; skipping attachment upload
+[2026-04-18 20:26:29Z INFO StepsRunner] Step result: 
+[2026-04-18 20:26:29Z INFO ExecutionContext] Publish step telemetry for current step {
+  "action": "actions/checkout",
+  "ref": "v4",
+  "type": "node20",
+  "stage": "Main",
+  "stepId": "582be594-3b9f-4737-bf2a-15540f48d2b8",
+  "stepContextName": "__actions_checkout",
+  "hasPreStep": false,
+  "hasPostStep": true,
+  "result": "succeeded",
+  "errorMessages": [],
+  "executionTimeInSeconds": 10,
+  "startTime": "2026-04-18T20:26:19.7552969Z",
+  "finishTime": "2026-04-18T20:26:29.1640761Z"
+}.
+[2026-04-18 20:26:29Z INFO StepsRunner] No need for updating job result with current step result 'Succeeded'.
+[2026-04-18 20:26:29Z INFO StepsRunner] Current state: job state = ''
+[2026-04-18 20:26:29Z INFO StepsRunner] Processing step: DisplayName='Configure git identity'
+[2026-04-18 20:26:29Z INFO StepsRunner] Evaluating: success()
+[2026-04-18 20:26:29Z INFO StepsRunner] Result: true
+[2026-04-18 20:26:29Z INFO StepsRunner] Starting the step.
+[2026-04-18 20:26:29Z INFO HostContext] Well known directory 'Bin': 'C:\Users\User\Documents\UssherIn\actions-runner\bin'
+[2026-04-18 20:26:29Z INFO HostContext] Well known directory 'Root': 'C:\Users\User\Documents\UssherIn\actions-runner'
+[2026-04-18 20:26:29Z INFO HostContext] Well known directory 'Work': 'C:\Users\User\Documents\UssherIn\actions-runner\_work'
+[2026-04-18 20:26:29Z INFO StepsRunner] Which2: 'chcp'
+[2026-04-18 20:26:29Z INFO StepsRunner] Location: 'C:\WINDOWS\system32\chcp.COM'
+[2026-04-18 20:26:29Z INFO ProcessInvokerWrapper] Starting process:
+[2026-04-18 20:26:29Z INFO ProcessInvokerWrapper]   File name: 'C:\WINDOWS\system32\chcp.COM'
+[2026-04-18 20:26:29Z INFO ProcessInvokerWrapper]   Arguments: '65001'
+[2026-04-18 20:26:29Z INFO ProcessInvokerWrapper]   Working directory: 'C:\Users\User\Documents\UssherIn\actions-runner\_work'
+[2026-04-18 20:26:29Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2026-04-18 20:26:29Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2026-04-18 20:26:29Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2026-04-18 20:26:29Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2026-04-18 20:26:29Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2026-04-18 20:26:29Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2026-04-18 20:26:29Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2026-04-18 20:26:29Z INFO ProcessInvokerWrapper] Process started with process id 2436, waiting for process exit.
+[2026-04-18 20:26:29Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2026-04-18 20:26:29Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2026-04-18 20:26:29Z INFO ProcessInvokerWrapper] Finished process 2436 with exit code 0, and elapsed time 00:00:00.0118201.
+[2026-04-18 20:26:29Z INFO StepsRunner] Successfully returned to code page 65001 (UTF8)
+[2026-04-18 20:26:29Z INFO HostContext] Well known directory 'Bin': 'C:\Users\User\Documents\UssherIn\actions-runner\bin'
+[2026-04-18 20:26:29Z INFO HostContext] Well known directory 'Root': 'C:\Users\User\Documents\UssherIn\actions-runner'
+[2026-04-18 20:26:29Z INFO HostContext] Well known directory 'Work': 'C:\Users\User\Documents\UssherIn\actions-runner\_work'
+[2026-04-18 20:26:29Z INFO HostContext] Well known directory 'Temp': 'C:\Users\User\Documents\UssherIn\actions-runner\_work\_temp'
+[2026-04-18 20:26:29Z INFO ExecutionContext] Write event payload to C:\Users\User\Documents\UssherIn\actions-runner\_work\_temp\_github_workflow\event.json
+[2026-04-18 20:26:29Z INFO HostContext] Well known directory 'Bin': 'C:\Users\User\Documents\UssherIn\actions-runner\bin'
+[2026-04-18 20:26:29Z INFO HostContext] Well known directory 'Root': 'C:\Users\User\Documents\UssherIn\actions-runner'
+[2026-04-18 20:26:29Z INFO HostContext] Well known directory 'Work': 'C:\Users\User\Documents\UssherIn\actions-runner\_work'
+[2026-04-18 20:26:29Z INFO HostContext] Well known directory 'Temp': 'C:\Users\User\Documents\UssherIn\actions-runner\_work\_temp'
+[2026-04-18 20:26:29Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IFileCommandExtension'
+[2026-04-18 20:26:29Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IActionCommandExtension'
+[2026-04-18 20:26:29Z INFO ActionCommandManager] Register action command extension for command internal-set-repo-path
+[2026-04-18 20:26:29Z INFO ActionCommandManager] Register action command extension for command set-env
+[2026-04-18 20:26:29Z INFO ActionCommandManager] Register action command extension for command set-output
+[2026-04-18 20:26:29Z INFO ActionCommandManager] Register action command extension for command save-state
+[2026-04-18 20:26:29Z INFO ActionCommandManager] Register action command extension for command add-path
+[2026-04-18 20:26:29Z INFO ActionCommandManager] Register action command extension for command add-mask
+[2026-04-18 20:26:29Z INFO ActionCommandManager] Register action command extension for command add-matcher
+[2026-04-18 20:26:29Z INFO ActionCommandManager] Register action command extension for command remove-matcher
+[2026-04-18 20:26:29Z INFO ActionCommandManager] Register action command extension for command warning
+[2026-04-18 20:26:29Z INFO ActionCommandManager] Register action command extension for command error
+[2026-04-18 20:26:29Z INFO ActionCommandManager] Register action command extension for command notice
+[2026-04-18 20:26:29Z INFO ActionCommandManager] Register action command extension for command debug
+[2026-04-18 20:26:29Z INFO ActionCommandManager] Register action command extension for command group
+[2026-04-18 20:26:29Z INFO ActionCommandManager] Register action command extension for command endgroup
+[2026-04-18 20:26:29Z INFO ActionCommandManager] Register action command extension for command echo
+[2026-04-18 20:26:29Z INFO ScriptHandler] Which2: 'pwsh'
+[2026-04-18 20:26:29Z INFO ScriptHandler] Location: 'C:\Program Files\PowerShell\7\pwsh.EXE'
+[2026-04-18 20:26:29Z INFO HostContext] Well known directory 'Bin': 'C:\Users\User\Documents\UssherIn\actions-runner\bin'
+[2026-04-18 20:26:29Z INFO HostContext] Well known directory 'Root': 'C:\Users\User\Documents\UssherIn\actions-runner'
+[2026-04-18 20:26:29Z INFO HostContext] Well known directory 'Work': 'C:\Users\User\Documents\UssherIn\actions-runner\_work'
+[2026-04-18 20:26:29Z INFO HostContext] Well known directory 'Temp': 'C:\Users\User\Documents\UssherIn\actions-runner\_work\_temp'
+[2026-04-18 20:26:29Z INFO ScriptHandler] Which2: 'pwsh'
+[2026-04-18 20:26:29Z INFO ScriptHandler] Location: 'C:\Program Files\PowerShell\7\pwsh.EXE'
+[2026-04-18 20:26:29Z INFO ProcessInvokerWrapper] Starting process:
+[2026-04-18 20:26:29Z INFO ProcessInvokerWrapper]   File name: 'C:\Program Files\PowerShell\7\pwsh.EXE'
+[2026-04-18 20:26:29Z INFO ProcessInvokerWrapper]   Arguments: '-command ". 'C:\Users\User\Documents\UssherIn\actions-runner\_work\_temp\20d18341-2bc4-4c80-91b8-bb6301c9a0fb.ps1'"'
+[2026-04-18 20:26:29Z INFO ProcessInvokerWrapper]   Working directory: 'C:\Users\User\Documents\UssherIn\actions-runner\_work\Ussher-In\Ussher-In'
+[2026-04-18 20:26:29Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2026-04-18 20:26:29Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2026-04-18 20:26:29Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2026-04-18 20:26:29Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2026-04-18 20:26:29Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2026-04-18 20:26:29Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2026-04-18 20:26:29Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2026-04-18 20:26:29Z INFO ProcessInvokerWrapper] Process started with process id 16568, waiting for process exit.
+[2026-04-18 20:26:29Z INFO JobServerQueue] Try to append 1 batches web console lines for record '582be594-3b9f-4737-bf2a-15540f48d2b8', success rate: 1/1.
+[2026-04-18 20:26:29Z INFO JobServerQueue] Try to append 1 batches web console lines for record '8c25f13b-aa1a-4396-a604-435fce05ee8d', success rate: 1/1.
+[2026-04-18 20:26:29Z INFO JobServerQueue] Try to upload 1 log files or attachments, success rate: 1/1.
+[2026-04-18 20:26:29Z INFO HostContext] Well known directory 'Bin': 'C:\Users\User\Documents\UssherIn\actions-runner\bin'
+[2026-04-18 20:26:29Z INFO HostContext] Well known directory 'Root': 'C:\Users\User\Documents\UssherIn\actions-runner'
+[2026-04-18 20:26:29Z INFO HostContext] Well known directory 'Work': 'C:\Users\User\Documents\UssherIn\actions-runner\_work'
+[2026-04-18 20:26:29Z INFO JobServerQueue] Got a step log file to send to results service.
+[2026-04-18 20:26:29Z INFO JobServerQueue] Starting upload of step log file to results service ResultsLog, C:\Users\User\Documents\UssherIn\actions-runner\_diag\blocks\4e302514-6f58-46d8-a1df-b882be0c11d8_582be594-3b9f-4737-bf2a-15540f48d2b8.1
+[2026-04-18 20:26:30Z INFO JobServerQueue] Tried to upload 1 file(s) to results, success rate: 1/1.
+[2026-04-18 20:26:35Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2026-04-18 20:26:35Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2026-04-18 20:26:35Z INFO ProcessInvokerWrapper] Finished process 16568 with exit code 0, and elapsed time 00:00:06.4216494.
+[2026-04-18 20:26:35Z INFO CreateStepSummaryCommand] Step Summary file (C:\Users\User\Documents\UssherIn\actions-runner\_work\_temp\_runner_file_commands\step_summary_23d3e5c5-ece2-4b85-a461-64dfbb82547a) is empty; skipping attachment upload
+[2026-04-18 20:26:35Z INFO StepsRunner] Step result: 
+[2026-04-18 20:26:35Z INFO ExecutionContext] Publish step telemetry for current step {
+  "action": "pwsh",
+  "type": "run",
+  "stage": "Main",
+  "stepId": "8c25f13b-aa1a-4396-a604-435fce05ee8d",
+  "stepContextName": "__run",
+  "result": "succeeded",
+  "errorMessages": [],
+  "executionTimeInSeconds": 7,
+  "startTime": "2026-04-18T20:26:29.1660621Z",
+  "finishTime": "2026-04-18T20:26:35.6341952Z"
+}.
+[2026-04-18 20:26:35Z INFO StepsRunner] No need for updating job result with current step result 'Succeeded'.
+[2026-04-18 20:26:35Z INFO StepsRunner] Current state: job state = ''
+[2026-04-18 20:26:35Z INFO StepsRunner] Processing step: DisplayName='Ensure prerequisites'
+[2026-04-18 20:26:35Z INFO StepsRunner] Evaluating: success()
+[2026-04-18 20:26:35Z INFO StepsRunner] Result: true
+[2026-04-18 20:26:35Z INFO StepsRunner] Starting the step.
+[2026-04-18 20:26:35Z INFO HostContext] Well known directory 'Bin': 'C:\Users\User\Documents\UssherIn\actions-runner\bin'
+[2026-04-18 20:26:35Z INFO HostContext] Well known directory 'Root': 'C:\Users\User\Documents\UssherIn\actions-runner'
+[2026-04-18 20:26:35Z INFO HostContext] Well known directory 'Work': 'C:\Users\User\Documents\UssherIn\actions-runner\_work'
+[2026-04-18 20:26:35Z INFO StepsRunner] Which2: 'chcp'
+[2026-04-18 20:26:35Z INFO StepsRunner] Location: 'C:\WINDOWS\system32\chcp.COM'
+[2026-04-18 20:26:35Z INFO ProcessInvokerWrapper] Starting process:
+[2026-04-18 20:26:35Z INFO ProcessInvokerWrapper]   File name: 'C:\WINDOWS\system32\chcp.COM'
+[2026-04-18 20:26:35Z INFO ProcessInvokerWrapper]   Arguments: '65001'
+[2026-04-18 20:26:35Z INFO ProcessInvokerWrapper]   Working directory: 'C:\Users\User\Documents\UssherIn\actions-runner\_work'
+[2026-04-18 20:26:35Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2026-04-18 20:26:35Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2026-04-18 20:26:35Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2026-04-18 20:26:35Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2026-04-18 20:26:35Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2026-04-18 20:26:35Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2026-04-18 20:26:35Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2026-04-18 20:26:35Z INFO ProcessInvokerWrapper] Process started with process id 5508, waiting for process exit.
+[2026-04-18 20:26:35Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2026-04-18 20:26:35Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2026-04-18 20:26:35Z INFO ProcessInvokerWrapper] Finished process 5508 with exit code 0, and elapsed time 00:00:00.0305546.
+[2026-04-18 20:26:35Z INFO StepsRunner] Successfully returned to code page 65001 (UTF8)
+[2026-04-18 20:26:35Z INFO HostContext] Well known directory 'Bin': 'C:\Users\User\Documents\UssherIn\actions-runner\bin'
+[2026-04-18 20:26:35Z INFO HostContext] Well known directory 'Root': 'C:\Users\User\Documents\UssherIn\actions-runner'
+[2026-04-18 20:26:35Z INFO HostContext] Well known directory 'Work': 'C:\Users\User\Documents\UssherIn\actions-runner\_work'
+[2026-04-18 20:26:35Z INFO HostContext] Well known directory 'Temp': 'C:\Users\User\Documents\UssherIn\actions-runner\_work\_temp'
+[2026-04-18 20:26:35Z INFO ExecutionContext] Write event payload to C:\Users\User\Documents\UssherIn\actions-runner\_work\_temp\_github_workflow\event.json
+[2026-04-18 20:26:35Z INFO HostContext] Well known directory 'Bin': 'C:\Users\User\Documents\UssherIn\actions-runner\bin'
+[2026-04-18 20:26:35Z INFO HostContext] Well known directory 'Root': 'C:\Users\User\Documents\UssherIn\actions-runner'
+[2026-04-18 20:26:35Z INFO HostContext] Well known directory 'Work': 'C:\Users\User\Documents\UssherIn\actions-runner\_work'
+[2026-04-18 20:26:35Z INFO HostContext] Well known directory 'Temp': 'C:\Users\User\Documents\UssherIn\actions-runner\_work\_temp'
+[2026-04-18 20:26:35Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IFileCommandExtension'
+[2026-04-18 20:26:35Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IActionCommandExtension'
+[2026-04-18 20:26:35Z INFO ActionCommandManager] Register action command extension for command internal-set-repo-path
+[2026-04-18 20:26:35Z INFO ActionCommandManager] Register action command extension for command set-env
+[2026-04-18 20:26:35Z INFO ActionCommandManager] Register action command extension for command set-output
+[2026-04-18 20:26:35Z INFO ActionCommandManager] Register action command extension for command save-state
+[2026-04-18 20:26:35Z INFO ActionCommandManager] Register action command extension for command add-path
+[2026-04-18 20:26:35Z INFO ActionCommandManager] Register action command extension for command add-mask
+[2026-04-18 20:26:35Z INFO ActionCommandManager] Register action command extension for command add-matcher
+[2026-04-18 20:26:35Z INFO ActionCommandManager] Register action command extension for command remove-matcher
+[2026-04-18 20:26:35Z INFO ActionCommandManager] Register action command extension for command warning
+[2026-04-18 20:26:35Z INFO ActionCommandManager] Register action command extension for command error
+[2026-04-18 20:26:35Z INFO ActionCommandManager] Register action command extension for command notice
+[2026-04-18 20:26:35Z INFO ActionCommandManager] Register action command extension for command debug
+[2026-04-18 20:26:35Z INFO ActionCommandManager] Register action command extension for command group
+[2026-04-18 20:26:35Z INFO ActionCommandManager] Register action command extension for command endgroup
+[2026-04-18 20:26:35Z INFO ActionCommandManager] Register action command extension for command echo
+[2026-04-18 20:26:35Z INFO ScriptHandler] Which2: 'pwsh'
+[2026-04-18 20:26:35Z INFO ScriptHandler] Location: 'C:\Program Files\PowerShell\7\pwsh.EXE'
+[2026-04-18 20:26:35Z INFO HostContext] Well known directory 'Bin': 'C:\Users\User\Documents\UssherIn\actions-runner\bin'
+[2026-04-18 20:26:35Z INFO HostContext] Well known directory 'Root': 'C:\Users\User\Documents\UssherIn\actions-runner'
+[2026-04-18 20:26:35Z INFO HostContext] Well known directory 'Work': 'C:\Users\User\Documents\UssherIn\actions-runner\_work'
+[2026-04-18 20:26:35Z INFO HostContext] Well known directory 'Temp': 'C:\Users\User\Documents\UssherIn\actions-runner\_work\_temp'
+[2026-04-18 20:26:35Z INFO ScriptHandler] Which2: 'pwsh'
+[2026-04-18 20:26:35Z INFO ScriptHandler] Location: 'C:\Program Files\PowerShell\7\pwsh.EXE'
+[2026-04-18 20:26:35Z INFO ProcessInvokerWrapper] Starting process:
+[2026-04-18 20:26:35Z INFO ProcessInvokerWrapper]   File name: 'C:\Program Files\PowerShell\7\pwsh.EXE'
+[2026-04-18 20:26:35Z INFO ProcessInvokerWrapper]   Arguments: '-command ". 'C:\Users\User\Documents\UssherIn\actions-runner\_work\_temp\4555a5f9-ebb5-4f69-9e3d-2da52682ec78.ps1'"'
+[2026-04-18 20:26:35Z INFO ProcessInvokerWrapper]   Working directory: 'C:\Users\User\Documents\UssherIn\actions-runner\_work\Ussher-In\Ussher-In'
+[2026-04-18 20:26:35Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2026-04-18 20:26:35Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2026-04-18 20:26:35Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2026-04-18 20:26:35Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2026-04-18 20:26:35Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2026-04-18 20:26:35Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2026-04-18 20:26:35Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2026-04-18 20:26:35Z INFO ProcessInvokerWrapper] Process started with process id 15704, waiting for process exit.
+[2026-04-18 20:26:35Z INFO JobServerQueue] Try to append 1 batches web console lines for record '58d378f5-b241-4d92-b9a6-2957985d6eb1', success rate: 1/1.
+[2026-04-18 20:26:36Z INFO JobServerQueue] Got a step log file to send to results service.
+[2026-04-18 20:26:36Z INFO JobServerQueue] Starting upload of step log file to results service ResultsLog, C:\Users\User\Documents\UssherIn\actions-runner\_diag\blocks\4e302514-6f58-46d8-a1df-b882be0c11d8_8c25f13b-aa1a-4396-a604-435fce05ee8d.1
+[2026-04-18 20:26:36Z INFO JobServerQueue] Tried to upload 1 file(s) to results, success rate: 1/1.
+[2026-04-18 20:26:36Z INFO JobServerQueue] Try to upload 1 log files or attachments, success rate: 1/1.
+[2026-04-18 20:26:39Z INFO HostContext] Well known directory 'Bin': 'C:\Users\User\Documents\UssherIn\actions-runner\bin'
+[2026-04-18 20:26:39Z INFO HostContext] Well known directory 'Root': 'C:\Users\User\Documents\UssherIn\actions-runner'
+[2026-04-18 20:26:39Z INFO HostContext] Well known directory 'Work': 'C:\Users\User\Documents\UssherIn\actions-runner\_work'
+[2026-04-18 20:26:43Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2026-04-18 20:26:43Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2026-04-18 20:26:43Z INFO ProcessInvokerWrapper] Finished process 15704 with exit code 0, and elapsed time 00:00:08.1387805.
+[2026-04-18 20:26:43Z INFO CreateStepSummaryCommand] Step Summary file (C:\Users\User\Documents\UssherIn\actions-runner\_work\_temp\_runner_file_commands\step_summary_e6d52204-eb43-4954-8244-b6a19d4e9828) is empty; skipping attachment upload
+[2026-04-18 20:26:43Z INFO StepsRunner] Step result: 
+[2026-04-18 20:26:43Z INFO ExecutionContext] Publish step telemetry for current step {
+  "action": "pwsh",
+  "type": "run",
+  "stage": "Main",
+  "stepId": "58d378f5-b241-4d92-b9a6-2957985d6eb1",
+  "stepContextName": "__run_2",
+  "result": "succeeded",
+  "errorMessages": [],
+  "executionTimeInSeconds": 9,
+  "startTime": "2026-04-18T20:26:35.6366122Z",
+  "finishTime": "2026-04-18T20:26:43.8315688Z"
+}.
+[2026-04-18 20:26:43Z INFO StepsRunner] No need for updating job result with current step result 'Succeeded'.
+[2026-04-18 20:26:43Z INFO StepsRunner] Current state: job state = ''
+[2026-04-18 20:26:43Z INFO StepsRunner] Processing step: DisplayName='Run agent loop'
+[2026-04-18 20:26:43Z INFO StepsRunner] Evaluating: success()
+[2026-04-18 20:26:43Z INFO StepsRunner] Result: true
+[2026-04-18 20:26:43Z INFO StepsRunner] Starting the step.
+[2026-04-18 20:26:43Z INFO HostContext] Well known directory 'Bin': 'C:\Users\User\Documents\UssherIn\actions-runner\bin'
+[2026-04-18 20:26:43Z INFO HostContext] Well known directory 'Root': 'C:\Users\User\Documents\UssherIn\actions-runner'
+[2026-04-18 20:26:43Z INFO HostContext] Well known directory 'Work': 'C:\Users\User\Documents\UssherIn\actions-runner\_work'
+[2026-04-18 20:26:43Z INFO StepsRunner] Which2: 'chcp'
+[2026-04-18 20:26:43Z INFO StepsRunner] Location: 'C:\WINDOWS\system32\chcp.COM'
+[2026-04-18 20:26:43Z INFO ProcessInvokerWrapper] Starting process:
+[2026-04-18 20:26:43Z INFO ProcessInvokerWrapper]   File name: 'C:\WINDOWS\system32\chcp.COM'
+[2026-04-18 20:26:43Z INFO ProcessInvokerWrapper]   Arguments: '65001'
+[2026-04-18 20:26:43Z INFO ProcessInvokerWrapper]   Working directory: 'C:\Users\User\Documents\UssherIn\actions-runner\_work'
+[2026-04-18 20:26:43Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2026-04-18 20:26:43Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2026-04-18 20:26:43Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2026-04-18 20:26:43Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2026-04-18 20:26:43Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2026-04-18 20:26:43Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2026-04-18 20:26:43Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2026-04-18 20:26:43Z INFO ProcessInvokerWrapper] Process started with process id 8628, waiting for process exit.
+[2026-04-18 20:26:43Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2026-04-18 20:26:43Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2026-04-18 20:26:43Z INFO ProcessInvokerWrapper] Finished process 8628 with exit code 0, and elapsed time 00:00:00.0372970.
+[2026-04-18 20:26:43Z INFO StepsRunner] Successfully returned to code page 65001 (UTF8)
+[2026-04-18 20:26:43Z INFO HostContext] Well known directory 'Bin': 'C:\Users\User\Documents\UssherIn\actions-runner\bin'
+[2026-04-18 20:26:43Z INFO HostContext] Well known directory 'Root': 'C:\Users\User\Documents\UssherIn\actions-runner'
+[2026-04-18 20:26:43Z INFO HostContext] Well known directory 'Work': 'C:\Users\User\Documents\UssherIn\actions-runner\_work'
+[2026-04-18 20:26:43Z INFO HostContext] Well known directory 'Temp': 'C:\Users\User\Documents\UssherIn\actions-runner\_work\_temp'
+[2026-04-18 20:26:43Z INFO ExecutionContext] Write event payload to C:\Users\User\Documents\UssherIn\actions-runner\_work\_temp\_github_workflow\event.json
+[2026-04-18 20:26:43Z INFO HostContext] Well known directory 'Bin': 'C:\Users\User\Documents\UssherIn\actions-runner\bin'
+[2026-04-18 20:26:43Z INFO HostContext] Well known directory 'Root': 'C:\Users\User\Documents\UssherIn\actions-runner'
+[2026-04-18 20:26:43Z INFO HostContext] Well known directory 'Work': 'C:\Users\User\Documents\UssherIn\actions-runner\_work'
+[2026-04-18 20:26:43Z INFO HostContext] Well known directory 'Temp': 'C:\Users\User\Documents\UssherIn\actions-runner\_work\_temp'
+[2026-04-18 20:26:43Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IFileCommandExtension'
+[2026-04-18 20:26:43Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IActionCommandExtension'
+[2026-04-18 20:26:43Z INFO ActionCommandManager] Register action command extension for command internal-set-repo-path
+[2026-04-18 20:26:43Z INFO ActionCommandManager] Register action command extension for command set-env
+[2026-04-18 20:26:43Z INFO ActionCommandManager] Register action command extension for command set-output
+[2026-04-18 20:26:43Z INFO ActionCommandManager] Register action command extension for command save-state
+[2026-04-18 20:26:43Z INFO ActionCommandManager] Register action command extension for command add-path
+[2026-04-18 20:26:43Z INFO ActionCommandManager] Register action command extension for command add-mask
+[2026-04-18 20:26:43Z INFO ActionCommandManager] Register action command extension for command add-matcher
+[2026-04-18 20:26:43Z INFO ActionCommandManager] Register action command extension for command remove-matcher
+[2026-04-18 20:26:43Z INFO ActionCommandManager] Register action command extension for command warning
+[2026-04-18 20:26:43Z INFO ActionCommandManager] Register action command extension for command error
+[2026-04-18 20:26:43Z INFO ActionCommandManager] Register action command extension for command notice
+[2026-04-18 20:26:43Z INFO ActionCommandManager] Register action command extension for command debug
+[2026-04-18 20:26:43Z INFO ActionCommandManager] Register action command extension for command group
+[2026-04-18 20:26:43Z INFO ActionCommandManager] Register action command extension for command endgroup
+[2026-04-18 20:26:43Z INFO ActionCommandManager] Register action command extension for command echo
+[2026-04-18 20:26:43Z INFO ScriptHandler] Which2: 'pwsh'
+[2026-04-18 20:26:43Z INFO ScriptHandler] Location: 'C:\Program Files\PowerShell\7\pwsh.EXE'
+[2026-04-18 20:26:43Z INFO HostContext] Well known directory 'Bin': 'C:\Users\User\Documents\UssherIn\actions-runner\bin'
+[2026-04-18 20:26:43Z INFO HostContext] Well known directory 'Root': 'C:\Users\User\Documents\UssherIn\actions-runner'
+[2026-04-18 20:26:43Z INFO HostContext] Well known directory 'Work': 'C:\Users\User\Documents\UssherIn\actions-runner\_work'
+[2026-04-18 20:26:43Z INFO HostContext] Well known directory 'Temp': 'C:\Users\User\Documents\UssherIn\actions-runner\_work\_temp'
+[2026-04-18 20:26:43Z INFO ScriptHandler] Which2: 'pwsh'
+[2026-04-18 20:26:43Z INFO ScriptHandler] Location: 'C:\Program Files\PowerShell\7\pwsh.EXE'
+[2026-04-18 20:26:43Z INFO ProcessInvokerWrapper] Starting process:
+[2026-04-18 20:26:43Z INFO ProcessInvokerWrapper]   File name: 'C:\Program Files\PowerShell\7\pwsh.EXE'
+[2026-04-18 20:26:43Z INFO ProcessInvokerWrapper]   Arguments: '-command ". 'C:\Users\User\Documents\UssherIn\actions-runner\_work\_temp\79ff7b48-c5e6-4cff-8551-931e5e0b4c58.ps1'"'
+[2026-04-18 20:26:43Z INFO ProcessInvokerWrapper]   Working directory: 'C:\Users\User\Documents\UssherIn\actions-runner\_work\Ussher-In\Ussher-In'
+[2026-04-18 20:26:43Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2026-04-18 20:26:43Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2026-04-18 20:26:43Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2026-04-18 20:26:43Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2026-04-18 20:26:43Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2026-04-18 20:26:43Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2026-04-18 20:26:43Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2026-04-18 20:26:43Z INFO ProcessInvokerWrapper] Process started with process id 15236, waiting for process exit.
+[2026-04-18 20:26:44Z INFO JobServerQueue] Try to append 1 batches web console lines for record '99222866-14ec-4335-bec6-b1f8f654d610', success rate: 1/1.
+[2026-04-18 20:26:44Z INFO JobServerQueue] Got a step log file to send to results service.
+[2026-04-18 20:26:44Z INFO JobServerQueue] Starting upload of step log file to results service ResultsLog, C:\Users\User\Documents\UssherIn\actions-runner\_diag\blocks\4e302514-6f58-46d8-a1df-b882be0c11d8_58d378f5-b241-4d92-b9a6-2957985d6eb1.1
+[2026-04-18 20:26:44Z INFO JobServerQueue] Try to upload 1 log files or attachments, success rate: 1/1.
+[2026-04-18 20:26:44Z INFO JobServerQueue] Tried to upload 1 file(s) to results, success rate: 1/1.
+[2026-04-18 20:26:49Z INFO HostContext] Well known directory 'Bin': 'C:\Users\User\Documents\UssherIn\actions-runner\bin'
+[2026-04-18 20:26:49Z INFO HostContext] Well known directory 'Root': 'C:\Users\User\Documents\UssherIn\actions-runner'
+[2026-04-18 20:26:49Z INFO HostContext] Well known directory 'Work': 'C:\Users\User\Documents\UssherIn\actions-runner\_work'
+[2026-04-18 20:26:51Z INFO JobServerQueue] Try to append 1 batches web console lines for record '99222866-14ec-4335-bec6-b1f8f654d610', success rate: 1/1.
+[2026-04-18 20:26:59Z INFO HostContext] Well known directory 'Bin': 'C:\Users\User\Documents\UssherIn\actions-runner\bin'
+[2026-04-18 20:26:59Z INFO HostContext] Well known directory 'Root': 'C:\Users\User\Documents\UssherIn\actions-runner'
+[2026-04-18 20:26:59Z INFO HostContext] Well known directory 'Work': 'C:\Users\User\Documents\UssherIn\actions-runner\_work'
+[2026-04-18 20:27:09Z INFO HostContext] Well known directory 'Bin': 'C:\Users\User\Documents\UssherIn\actions-runner\bin'
+[2026-04-18 20:27:09Z INFO HostContext] Well known directory 'Root': 'C:\Users\User\Documents\UssherIn\actions-runner'
+[2026-04-18 20:27:09Z INFO HostContext] Well known directory 'Work': 'C:\Users\User\Documents\UssherIn\actions-runner\_work'
+[2026-04-18 20:27:15Z INFO JobServerQueue] Try to append 1 batches web console lines for record '99222866-14ec-4335-bec6-b1f8f654d610', success rate: 1/1.
+[2026-04-18 20:27:19Z INFO HostContext] Well known directory 'Bin': 'C:\Users\User\Documents\UssherIn\actions-runner\bin'
+[2026-04-18 20:27:19Z INFO HostContext] Well known directory 'Root': 'C:\Users\User\Documents\UssherIn\actions-runner'
+[2026-04-18 20:27:19Z INFO HostContext] Well known directory 'Work': 'C:\Users\User\Documents\UssherIn\actions-runner\_work'
+[2026-04-18 20:27:19Z INFO JobServerQueue] Stop aggressive process web console line queue.
+[2026-04-18 20:27:29Z INFO HostContext] Well known directory 'Bin': 'C:\Users\User\Documents\UssherIn\actions-runner\bin'
+[2026-04-18 20:27:29Z INFO HostContext] Well known directory 'Root': 'C:\Users\User\Documents\UssherIn\actions-runner'
+[2026-04-18 20:27:29Z INFO HostContext] Well known directory 'Work': 'C:\Users\User\Documents\UssherIn\actions-runner\_work'
+[2026-04-18 20:27:37Z INFO JobServerQueue] Try to append 1 batches web console lines for record '99222866-14ec-4335-bec6-b1f8f654d610', success rate: 1/1.
+[2026-04-18 20:27:38Z INFO JobServerQueue] Try to append 1 batches web console lines for record '99222866-14ec-4335-bec6-b1f8f654d610', success rate: 1/1.
+[2026-04-18 20:27:39Z INFO JobServerQueue] Try to append 1 batches web console lines for record '99222866-14ec-4335-bec6-b1f8f654d610', success rate: 1/1.
+[2026-04-18 20:27:39Z INFO HostContext] Well known directory 'Bin': 'C:\Users\User\Documents\UssherIn\actions-runner\bin'
+[2026-04-18 20:27:39Z INFO HostContext] Well known directory 'Root': 'C:\Users\User\Documents\UssherIn\actions-runner'
+[2026-04-18 20:27:39Z INFO HostContext] Well known directory 'Work': 'C:\Users\User\Documents\UssherIn\actions-runner\_work'
+[2026-04-18 20:27:40Z INFO JobServerQueue] Try to append 1 batches web console lines for record '99222866-14ec-4335-bec6-b1f8f654d610', success rate: 1/1.
+[2026-04-18 20:27:40Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2026-04-18 20:27:40Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2026-04-18 20:27:40Z INFO ProcessInvokerWrapper] Finished process 15236 with exit code 0, and elapsed time 00:00:56.9927062.
+[2026-04-18 20:27:40Z INFO CreateStepSummaryCommand] Step Summary file (C:\Users\User\Documents\UssherIn\actions-runner\_work\_temp\_runner_file_commands\step_summary_e50807c1-5bb5-45ec-83d5-b1cbd5c391c2) is empty; skipping attachment upload
+[2026-04-18 20:27:40Z INFO StepsRunner] Step result: 
+[2026-04-18 20:27:40Z INFO ExecutionContext] Publish step telemetry for current step {
+  "action": "pwsh",
+  "type": "run",
+  "stage": "Main",
+  "stepId": "99222866-14ec-4335-bec6-b1f8f654d610",
+  "stepContextName": "__run_3",
+  "result": "succeeded",
+  "errorMessages": [],
+  "executionTimeInSeconds": 58,
+  "startTime": "2026-04-18T20:26:43.8335376Z",
+  "finishTime": "2026-04-18T20:27:40.8870622Z"
+}.
+[2026-04-18 20:27:40Z INFO StepsRunner] No need for updating job result with current step result 'Succeeded'.
+[2026-04-18 20:27:40Z INFO StepsRunner] Current state: job state = ''
+[2026-04-18 20:27:40Z INFO StepsRunner] Processing step: DisplayName='Post Checkout dev'
+[2026-04-18 20:27:40Z INFO StepsRunner] Evaluating: always()
+[2026-04-18 20:27:40Z INFO StepsRunner] Result: true
+[2026-04-18 20:27:40Z INFO StepsRunner] Starting the step.
+[2026-04-18 20:27:40Z INFO HostContext] Well known directory 'Bin': 'C:\Users\User\Documents\UssherIn\actions-runner\bin'
+[2026-04-18 20:27:40Z INFO HostContext] Well known directory 'Root': 'C:\Users\User\Documents\UssherIn\actions-runner'
+[2026-04-18 20:27:40Z INFO HostContext] Well known directory 'Work': 'C:\Users\User\Documents\UssherIn\actions-runner\_work'
+[2026-04-18 20:27:40Z INFO StepsRunner] Which2: 'chcp'
+[2026-04-18 20:27:40Z INFO StepsRunner] Location: 'C:\WINDOWS\system32\chcp.COM'
+[2026-04-18 20:27:40Z INFO ProcessInvokerWrapper] Starting process:
+[2026-04-18 20:27:40Z INFO ProcessInvokerWrapper]   File name: 'C:\WINDOWS\system32\chcp.COM'
+[2026-04-18 20:27:40Z INFO ProcessInvokerWrapper]   Arguments: '65001'
+[2026-04-18 20:27:40Z INFO ProcessInvokerWrapper]   Working directory: 'C:\Users\User\Documents\UssherIn\actions-runner\_work'
+[2026-04-18 20:27:40Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2026-04-18 20:27:40Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2026-04-18 20:27:40Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2026-04-18 20:27:40Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2026-04-18 20:27:40Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2026-04-18 20:27:40Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2026-04-18 20:27:40Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2026-04-18 20:27:40Z INFO ProcessInvokerWrapper] Process started with process id 19972, waiting for process exit.
+[2026-04-18 20:27:40Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2026-04-18 20:27:40Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2026-04-18 20:27:40Z INFO ProcessInvokerWrapper] Finished process 19972 with exit code 0, and elapsed time 00:00:00.0174169.
+[2026-04-18 20:27:40Z INFO StepsRunner] Successfully returned to code page 65001 (UTF8)
+[2026-04-18 20:27:40Z INFO HostContext] Well known directory 'Bin': 'C:\Users\User\Documents\UssherIn\actions-runner\bin'
+[2026-04-18 20:27:40Z INFO HostContext] Well known directory 'Root': 'C:\Users\User\Documents\UssherIn\actions-runner'
+[2026-04-18 20:27:40Z INFO HostContext] Well known directory 'Work': 'C:\Users\User\Documents\UssherIn\actions-runner\_work'
+[2026-04-18 20:27:40Z INFO HostContext] Well known directory 'Actions': 'C:\Users\User\Documents\UssherIn\actions-runner\_work\_actions'
+[2026-04-18 20:27:40Z INFO ActionManager] Load action that reference repository from 'C:\Users\User\Documents\UssherIn\actions-runner\_work\_actions\actions\checkout\v4'
+[2026-04-18 20:27:40Z INFO HostContext] Well known directory 'Bin': 'C:\Users\User\Documents\UssherIn\actions-runner\bin'
+[2026-04-18 20:27:40Z INFO HostContext] Well known directory 'Root': 'C:\Users\User\Documents\UssherIn\actions-runner'
+[2026-04-18 20:27:40Z INFO HostContext] Well known directory 'Work': 'C:\Users\User\Documents\UssherIn\actions-runner\_work'
+[2026-04-18 20:27:40Z INFO HostContext] Well known directory 'Actions': 'C:\Users\User\Documents\UssherIn\actions-runner\_work\_actions'
+[2026-04-18 20:27:40Z INFO ActionManifestManagerLegacy] Loaded action.yml file: {
+  "name": "Checkout",
+  "description": "Checkout a Git repository at a particular version",
+  "inputs": {
+    "type": 2,
+    "map": [
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 4,
+          "col": 3,
+          "lit": "repository"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 6,
+          "col": 14,
+          "expr": "github.repository"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 7,
+          "col": 3,
+          "lit": "ref"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 12,
+          "col": 3,
+          "lit": "token"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 24,
+          "col": 14,
+          "expr": "github.token"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 25,
+          "col": 3,
+          "lit": "ssh-key"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 37,
+          "col": 3,
+          "lit": "ssh-known-hosts"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 42,
+          "col": 3,
+          "lit": "ssh-strict"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 47,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 48,
+          "col": 3,
+          "lit": "ssh-user"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 51,
+          "col": 14,
+          "lit": "git"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 52,
+          "col": 3,
+          "lit": "persist-credentials"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 54,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 55,
+          "col": 3,
+          "lit": "path"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 57,
+          "col": 3,
+          "lit": "clean"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 59,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 60,
+          "col": 3,
+          "lit": "filter"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 64,
+          "col": 14,
+          "lit": ""
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 65,
+          "col": 3,
+          "lit": "sparse-checkout"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 69,
+          "col": 14,
+          "lit": ""
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 70,
+          "col": 3,
+          "lit": "sparse-checkout-cone-mode"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 73,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 74,
+          "col": 3,
+          "lit": "fetch-depth"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 76,
+          "col": 14,
+          "lit": "1"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 77,
+          "col": 3,
+          "lit": "fetch-tags"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 79,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 80,
+          "col": 3,
+          "lit": "show-progress"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 82,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 83,
+          "col": 3,
+          "lit": "lfs"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 85,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 86,
+          "col": 3,
+          "lit": "submodules"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 94,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 95,
+          "col": 3,
+          "lit": "set-safe-directory"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 97,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 98,
+          "col": 3,
+          "lit": "github-server-url"
+        },
+        "value": ""
+      }
+    ]
+  },
+  "execution": {
+    "executionType": "nodeJS",
+    "hasPre": false,
+    "hasPost": true,
+    "script": "dist/index.js",
+    "pre": null,
+    "post": "dist/index.js",
+    "nodeVersion": "node20",
+    "cleanupCondition": "always()",
+    "initCondition": "always()"
+  },
+  "deprecated": null
+}
+[2026-04-18 20:27:40Z INFO ActionManager] Action pre node.js file: N/A.
+[2026-04-18 20:27:40Z INFO ActionManager] Action node.js file: dist/index.js.
+[2026-04-18 20:27:40Z INFO ActionManager] Action post node.js file: dist/index.js.
+[2026-04-18 20:27:40Z INFO HostContext] Well known directory 'Bin': 'C:\Users\User\Documents\UssherIn\actions-runner\bin'
+[2026-04-18 20:27:40Z INFO HostContext] Well known directory 'Root': 'C:\Users\User\Documents\UssherIn\actions-runner'
+[2026-04-18 20:27:40Z INFO HostContext] Well known directory 'Work': 'C:\Users\User\Documents\UssherIn\actions-runner\_work'
+[2026-04-18 20:27:40Z INFO HostContext] Well known directory 'Temp': 'C:\Users\User\Documents\UssherIn\actions-runner\_work\_temp'
+[2026-04-18 20:27:40Z INFO ExecutionContext] Write event payload to C:\Users\User\Documents\UssherIn\actions-runner\_work\_temp\_github_workflow\event.json
+[2026-04-18 20:27:40Z INFO HostContext] Well known directory 'Bin': 'C:\Users\User\Documents\UssherIn\actions-runner\bin'
+[2026-04-18 20:27:40Z INFO HostContext] Well known directory 'Root': 'C:\Users\User\Documents\UssherIn\actions-runner'
+[2026-04-18 20:27:40Z INFO HostContext] Well known directory 'Work': 'C:\Users\User\Documents\UssherIn\actions-runner\_work'
+[2026-04-18 20:27:40Z INFO HostContext] Well known directory 'Temp': 'C:\Users\User\Documents\UssherIn\actions-runner\_work\_temp'
+[2026-04-18 20:27:40Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IFileCommandExtension'
+[2026-04-18 20:27:40Z INFO ActionManifestManagerLegacy] Input 'repository': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 6,
+  "col": 14,
+  "lit": "paulboys/Ussher-In"
+}
+[2026-04-18 20:27:40Z INFO ActionManifestManagerLegacy] Input 'token': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 24,
+  "col": 14,
+  "lit": "***"
+}
+[2026-04-18 20:27:40Z INFO ActionManifestManagerLegacy] Input 'ssh-key': default value evaluate result: ""
+[2026-04-18 20:27:40Z INFO ActionManifestManagerLegacy] Input 'ssh-known-hosts': default value evaluate result: ""
+[2026-04-18 20:27:40Z INFO ActionManifestManagerLegacy] Input 'ssh-strict': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 47,
+  "col": 14,
+  "lit": "true"
+}
+[2026-04-18 20:27:40Z INFO ActionManifestManagerLegacy] Input 'ssh-user': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 51,
+  "col": 14,
+  "lit": "git"
+}
+[2026-04-18 20:27:40Z INFO ActionManifestManagerLegacy] Input 'persist-credentials': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 54,
+  "col": 14,
+  "lit": "true"
+}
+[2026-04-18 20:27:40Z INFO ActionManifestManagerLegacy] Input 'path': default value evaluate result: ""
+[2026-04-18 20:27:40Z INFO ActionManifestManagerLegacy] Input 'clean': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 59,
+  "col": 14,
+  "lit": "true"
+}
+[2026-04-18 20:27:40Z INFO ActionManifestManagerLegacy] Input 'filter': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 64,
+  "col": 14,
+  "lit": ""
+}
+[2026-04-18 20:27:40Z INFO ActionManifestManagerLegacy] Input 'sparse-checkout': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 69,
+  "col": 14,
+  "lit": ""
+}
+[2026-04-18 20:27:40Z INFO ActionManifestManagerLegacy] Input 'sparse-checkout-cone-mode': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 73,
+  "col": 14,
+  "lit": "true"
+}
+[2026-04-18 20:27:40Z INFO ActionManifestManagerLegacy] Input 'fetch-tags': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 79,
+  "col": 14,
+  "lit": "false"
+}
+[2026-04-18 20:27:40Z INFO ActionManifestManagerLegacy] Input 'show-progress': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 82,
+  "col": 14,
+  "lit": "true"
+}
+[2026-04-18 20:27:40Z INFO ActionManifestManagerLegacy] Input 'lfs': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 85,
+  "col": 14,
+  "lit": "false"
+}
+[2026-04-18 20:27:40Z INFO ActionManifestManagerLegacy] Input 'submodules': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 94,
+  "col": 14,
+  "lit": "false"
+}
+[2026-04-18 20:27:40Z INFO ActionManifestManagerLegacy] Input 'set-safe-directory': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 97,
+  "col": 14,
+  "lit": "true"
+}
+[2026-04-18 20:27:40Z INFO ActionManifestManagerLegacy] Input 'github-server-url': default value evaluate result: ""
+[2026-04-18 20:27:40Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IActionCommandExtension'
+[2026-04-18 20:27:40Z INFO ActionCommandManager] Register action command extension for command internal-set-repo-path
+[2026-04-18 20:27:40Z INFO ActionCommandManager] Register action command extension for command set-env
+[2026-04-18 20:27:40Z INFO ActionCommandManager] Register action command extension for command set-output
+[2026-04-18 20:27:40Z INFO ActionCommandManager] Register action command extension for command save-state
+[2026-04-18 20:27:40Z INFO ActionCommandManager] Register action command extension for command add-path
+[2026-04-18 20:27:40Z INFO ActionCommandManager] Register action command extension for command add-mask
+[2026-04-18 20:27:40Z INFO ActionCommandManager] Register action command extension for command add-matcher
+[2026-04-18 20:27:40Z INFO ActionCommandManager] Register action command extension for command remove-matcher
+[2026-04-18 20:27:40Z INFO ActionCommandManager] Register action command extension for command warning
+[2026-04-18 20:27:40Z INFO ActionCommandManager] Register action command extension for command error
+[2026-04-18 20:27:40Z INFO ActionCommandManager] Register action command extension for command notice
+[2026-04-18 20:27:40Z INFO ActionCommandManager] Register action command extension for command debug
+[2026-04-18 20:27:40Z INFO ActionCommandManager] Register action command extension for command group
+[2026-04-18 20:27:40Z INFO ActionCommandManager] Register action command extension for command endgroup
+[2026-04-18 20:27:40Z INFO ActionCommandManager] Register action command extension for command echo
+[2026-04-18 20:27:40Z INFO HostContext] Well known directory 'Bin': 'C:\Users\User\Documents\UssherIn\actions-runner\bin'
+[2026-04-18 20:27:40Z INFO HostContext] Well known directory 'Root': 'C:\Users\User\Documents\UssherIn\actions-runner'
+[2026-04-18 20:27:40Z INFO HostContext] Well known directory 'Externals': 'C:\Users\User\Documents\UssherIn\actions-runner\externals'
+[2026-04-18 20:27:40Z INFO ProcessInvokerWrapper] Starting process:
+[2026-04-18 20:27:40Z INFO ProcessInvokerWrapper]   File name: 'C:\Users\User\Documents\UssherIn\actions-runner\externals\node20\bin\node.exe'
+[2026-04-18 20:27:40Z INFO ProcessInvokerWrapper]   Arguments: '"C:\Users\User\Documents\UssherIn\actions-runner\_work\_actions\actions\checkout\v4\dist/index.js"'
+[2026-04-18 20:27:40Z INFO ProcessInvokerWrapper]   Working directory: 'C:\Users\User\Documents\UssherIn\actions-runner\_work\Ussher-In\Ussher-In'
+[2026-04-18 20:27:40Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2026-04-18 20:27:40Z INFO ProcessInvokerWrapper]   Encoding web name: utf-8 ; code page: '65001'
+[2026-04-18 20:27:40Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2026-04-18 20:27:40Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2026-04-18 20:27:40Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2026-04-18 20:27:40Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2026-04-18 20:27:40Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2026-04-18 20:27:40Z INFO ProcessInvokerWrapper] Process started with process id 9792, waiting for process exit.
+[2026-04-18 20:27:41Z INFO JobServerQueue] Try to upload 1 log files or attachments, success rate: 1/1.
+[2026-04-18 20:27:41Z INFO JobServerQueue] Got a step log file to send to results service.
+[2026-04-18 20:27:41Z INFO JobServerQueue] Starting upload of step log file to results service ResultsLog, C:\Users\User\Documents\UssherIn\actions-runner\_diag\blocks\4e302514-6f58-46d8-a1df-b882be0c11d8_99222866-14ec-4335-bec6-b1f8f654d610.1
+[2026-04-18 20:27:41Z INFO JobServerQueue] Try to append 1 batches web console lines for record '48c99d26-379d-42b6-8322-f4cae0339db9', success rate: 1/1.
+[2026-04-18 20:27:41Z INFO JobServerQueue] Tried to upload 1 file(s) to results, success rate: 1/1.
+[2026-04-18 20:27:41Z INFO AddMaskCommandExtension] Add new secret mask with length of 32
+[2026-04-18 20:27:41Z INFO JobServerQueue] Try to append 1 batches web console lines for record '48c99d26-379d-42b6-8322-f4cae0339db9', success rate: 1/1.
+[2026-04-18 20:27:42Z INFO JobServerQueue] Try to append 1 batches web console lines for record '48c99d26-379d-42b6-8322-f4cae0339db9', success rate: 1/1.
+[2026-04-18 20:27:43Z INFO JobServerQueue] Try to append 1 batches web console lines for record '48c99d26-379d-42b6-8322-f4cae0339db9', success rate: 1/1.
+[2026-04-18 20:27:44Z INFO JobServerQueue] Try to append 1 batches web console lines for record '48c99d26-379d-42b6-8322-f4cae0339db9', success rate: 1/1.
+[2026-04-18 20:27:45Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2026-04-18 20:27:45Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2026-04-18 20:27:45Z INFO ProcessInvokerWrapper] Finished process 9792 with exit code 0, and elapsed time 00:00:04.7137792.
+[2026-04-18 20:27:45Z INFO CreateStepSummaryCommand] Step Summary file (C:\Users\User\Documents\UssherIn\actions-runner\_work\_temp\_runner_file_commands\step_summary_a49faba5-f1ae-4846-bf80-eaeccf2c6331) is empty; skipping attachment upload
+[2026-04-18 20:27:45Z INFO StepsRunner] Step result: 
+[2026-04-18 20:27:45Z INFO ExecutionContext] Publish step telemetry for current step {
+  "action": "actions/checkout",
+  "ref": "v4",
+  "type": "node20",
+  "stage": "Post",
+  "stepId": "48c99d26-379d-42b6-8322-f4cae0339db9",
+  "result": "succeeded",
+  "errorMessages": [],
+  "executionTimeInSeconds": 5,
+  "startTime": "2026-04-18T20:27:40.8889993Z",
+  "finishTime": "2026-04-18T20:27:45.6505776Z"
+}.
+[2026-04-18 20:27:45Z INFO StepsRunner] No need for updating job result with current step result 'Succeeded'.
+[2026-04-18 20:27:45Z INFO StepsRunner] Current state: job state = ''
+[2026-04-18 20:27:45Z INFO JobRunner] Finalize job.
+[2026-04-18 20:27:45Z INFO HostContext] Well known directory 'Bin': 'C:\Users\User\Documents\UssherIn\actions-runner\bin'
+[2026-04-18 20:27:45Z INFO HostContext] Well known directory 'Root': 'C:\Users\User\Documents\UssherIn\actions-runner'
+[2026-04-18 20:27:45Z INFO HostContext] Well known directory 'Diag': 'C:\Users\User\Documents\UssherIn\actions-runner\_diag'
+[2026-04-18 20:27:45Z INFO HostContext] Well known directory 'Bin': 'C:\Users\User\Documents\UssherIn\actions-runner\bin'
+[2026-04-18 20:27:45Z INFO HostContext] Well known directory 'Root': 'C:\Users\User\Documents\UssherIn\actions-runner'
+[2026-04-18 20:27:45Z INFO HostContext] Well known directory 'Diag': 'C:\Users\User\Documents\UssherIn\actions-runner\_diag'
+[2026-04-18 20:27:45Z INFO JobExtension] Initialize Env context
+[2026-04-18 20:27:45Z INFO JobExtension] Initialize steps context
+[2026-04-18 20:27:45Z INFO JobExtension] Total accessible running process: 249.
+[2026-04-18 20:27:45Z INFO JobExtension] Wait for all connectivity checks to finish.
+[2026-04-18 20:27:45Z INFO JobExtension] Connectivity check result: GitHub.Runner.Worker.JobExtension+CheckResult
+[2026-04-18 20:27:45Z INFO JobExtension] Connectivity check result: GitHub.Runner.Worker.JobExtension+CheckResult
+[2026-04-18 20:27:45Z INFO JobExtension] Connectivity check result: GitHub.Runner.Worker.JobExtension+CheckResult
+[2026-04-18 20:27:45Z INFO ExecutionContext] Publish step telemetry for current step {
+  "action": "complete_job",
+  "type": "runner",
+  "stage": "Post",
+  "stepId": "12c44a6e-6797-41be-af60-896d6f960c0f",
+  "result": "succeeded",
+  "errorMessages": [
+    "Node.js 20 actions are deprecated. The following actions are running on Node.js 20 and may not work as expected: actions/checkout@v4. Actions will be forced to run with Node.js 24 by default starting June 2nd, 2026. Node.js 20 will be removed from the runn"
+  ],
+  "executionTimeInSeconds": 1,
+  "startTime": "2026-04-18T20:27:45.6613085Z",
+  "finishTime": "2026-04-18T20:27:45.6832672Z"
+}.
+[2026-04-18 20:27:45Z INFO JobRunner] Job result after all job steps finish: Succeeded
+[2026-04-18 20:27:45Z INFO JobRunner] Completing the job execution context.
+[2026-04-18 20:27:45Z INFO JobRunner] Shutting down the job server queue.
+[2026-04-18 20:27:45Z INFO JobServerQueue] Fire signal to shutdown all queues.
+[2026-04-18 20:27:46Z INFO JobServerQueue] All queue process task stopped.
+[2026-04-18 20:27:46Z INFO JobServerQueue] Try to append 1 batches web console lines for record '12c44a6e-6797-41be-af60-896d6f960c0f', success rate: 1/1.
+[2026-04-18 20:27:46Z INFO JobServerQueue] Web console line queue drained.
+[2026-04-18 20:27:46Z INFO JobServerQueue] Uploading 3 files in one shot.
+[2026-04-18 20:27:46Z INFO JobServerQueue] Try to upload 3 log files or attachments, success rate: 3/3.
+[2026-04-18 20:27:46Z INFO JobServerQueue] File upload queue drained.
+[2026-04-18 20:27:46Z INFO JobServerQueue] Starting results-based upload queue...
+[2026-04-18 20:27:46Z INFO JobServerQueue] Uploading 3 file(s) in one shot through results service.
+[2026-04-18 20:27:46Z INFO JobServerQueue] Got a step log file to send to results service.
+[2026-04-18 20:27:46Z INFO JobServerQueue] Starting upload of step log file to results service ResultsLog, C:\Users\User\Documents\UssherIn\actions-runner\_diag\blocks\4e302514-6f58-46d8-a1df-b882be0c11d8_48c99d26-379d-42b6-8322-f4cae0339db9.1
+[2026-04-18 20:27:46Z INFO JobServerQueue] Got a step log file to send to results service.
+[2026-04-18 20:27:46Z INFO JobServerQueue] Starting upload of step log file to results service ResultsLog, C:\Users\User\Documents\UssherIn\actions-runner\_diag\blocks\4e302514-6f58-46d8-a1df-b882be0c11d8_12c44a6e-6797-41be-af60-896d6f960c0f.1
+[2026-04-18 20:27:46Z INFO JobServerQueue] Got a job log file to send to results service.
+[2026-04-18 20:27:46Z INFO JobServerQueue] Starting upload of job log file to results service ResultsLog, C:\Users\User\Documents\UssherIn\actions-runner\_diag\blocks\4e302514-6f58-46d8-a1df-b882be0c11d8_a91199c7-1e9a-5fed-a88b-c29d6612254b.1
+[2026-04-18 20:27:46Z INFO JobServerQueue] Tried to upload 3 file(s) to results, success rate: 3/3.
+[2026-04-18 20:27:46Z INFO JobServerQueue] Results upload queue drained.
+[2026-04-18 20:27:46Z INFO JobServerQueue] Timeline update queue drained.
+[2026-04-18 20:27:46Z INFO JobServerQueue] Disposing job server ...
+[2026-04-18 20:27:46Z INFO JobServerQueue] Disposing results server ...
+[2026-04-18 20:27:46Z INFO JobServerQueue] All queue process tasks have been stopped, and all queues are drained.
+[2026-04-18 20:27:46Z INFO TempDirectoryManager] Cleaning runner temp folder: C:\Users\User\Documents\UssherIn\actions-runner\_work\_temp
+[2026-04-18 20:27:46Z INFO HostContext] Well known directory 'Bin': 'C:\Users\User\Documents\UssherIn\actions-runner\bin'
+[2026-04-18 20:27:46Z INFO HostContext] Well known directory 'Root': 'C:\Users\User\Documents\UssherIn\actions-runner'
+[2026-04-18 20:27:46Z INFO HostContext] Well known directory 'Diag': 'C:\Users\User\Documents\UssherIn\actions-runner\_diag'
+[2026-04-18 20:27:46Z INFO HostContext] Well known config file 'Telemetry': 'C:\Users\User\Documents\UssherIn\actions-runner\_diag\.telemetry'
+[2026-04-18 20:27:46Z INFO JobRunner] Raising job completed against run service
+[2026-04-18 20:27:47Z INFO Worker] Job completed.
