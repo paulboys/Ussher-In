@@ -12,7 +12,7 @@ As a foundational history of the early British and Irish churches—their origin
 
 ## Background
 
-This project was born from two historical questions I have asking for years:
+This project was born from two historical questions I have been asking for years:
 1.  How significant was James Ussher's influence on the Westminster Assembly, given the deep parallels between his earlier works and their famous Confession?
 2.  How did St. Basil's monastic rule travel from 4th-century Cappadocia to the Celtic monasteries of Ireland and Scotland?
 
