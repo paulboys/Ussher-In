@@ -6,7 +6,7 @@
 
 **The first English translation of James Ussher's *Britannicarum Ecclesiarum Antiquitates* (1639).**
 
-Ussher's *Antiquitates* is a foundational history of the early British and Irish churches — their origins, their monasticism, their ties to the wider Christian world — written entirely in Latin. Despite its importance to church history, it has never been translated into English. This project aims to change that.
+Ussher's *Britannicarum Ecclesiarum Antiquitates* (1639) has never been translated into English in its entirety. One chapter—the second, on Glastonbury traditions—was translated by H. Kendra Baker, but the remaining sixteen chapters, comprising the full body of Ussher's scholarship on the origins of Christianity in Britain and Ireland, remain accessible only in Latin. This project aims to change that.
 
 ## Background
 
