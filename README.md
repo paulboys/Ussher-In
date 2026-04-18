@@ -22,10 +22,11 @@ As a data scientist unable to read Latin, the only way to answer these questions
 
 ## How It Works
 
-The pipeline has two stages:
+The pipeline has three linked stages:
 
 1. **OCR** — Extract structured Latin text from photocopied book PDFs. The initial approach uses Tesseract with LSTM fine-tuning for historical print, but this is a starting point, not a final one; the project may progress to other tools as needed. Each page is segmented into body, footnotes, and marginalia, then quality-checked.
-2. **Translation** — Translate the structured Latin into literal, academic-register English using machine translation with human post-editing. The output is bilingual Latin–English reading documents.
+2. **Reference English** — OCR and structure the existing English translation PDF/images into aligned English text where that witness is available. This serves as an initial gold-standard benchmark for evaluating machine translation from Latin to English.
+3. **Translation** — Translate the structured Latin into literal, academic-register English using machine translation with human post-editing. Where aligned English reference text exists, machine output can be scored with BLEU, COMET, or similar metrics, and those aligned pairs may later inform model training or selection. The output remains bilingual Latin-English reading documents.
 
 ### Fine-Tuning for Historical Print
 
@@ -38,6 +39,7 @@ The source material is a 19th-century edition with ligatures (æ/Æ), footnote m
 | Project scaffold & docs | ✅ Complete |
 | Environment setup & pilot OCR (pages 30–35) | ✅ Complete |
 | Annotation pipeline for fine-tuning | ✅ Built, annotation in progress |
+| English reference benchmark set | ⬜ Pending ingestion/OCR/alignment |
 | LSTM fine-tuning | ⬜ Pending gold-set completion |
 | Full OCR run (~800 pages) | ⬜ Pending |
 | Translation | ⬜ Pending |
