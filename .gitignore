@@ -1,5 +1,6 @@
 # Source PDFs (too large for git)
 00_source_pdf/*.pdf
+00_source_pdf/**/*.pdf
 
 # Tesseract trained data (large binary)
 06_tools_config/tessdata/*.traineddata
@@ -14,3 +15,5 @@ __pycache__/
 Thumbs.db
 Desktop.ini
 .DS_Store
+
+\00_source_pdf\local
