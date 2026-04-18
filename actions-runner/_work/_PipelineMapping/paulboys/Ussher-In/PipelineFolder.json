@@ -1,0 +1,12 @@
+﻿{
+  "repositoryName": "paulboys/Ussher-In",
+  "pipelineDirectory": "Ussher-In",
+  "workspaceDirectory": "Ussher-In\\Ussher-In",
+  "repositories": {
+    "paulboys/Ussher-In": {
+      "repositoryPath": "Ussher-In\\Ussher-In",
+      "lastRunOn": "04/18/2026 16:06:27 -04:00"
+    }
+  },
+  "lastRunOn": "04/18/2026 16:26:17 -04:00"
+}

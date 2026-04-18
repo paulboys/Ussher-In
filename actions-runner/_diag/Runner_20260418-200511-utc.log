@@ -1,0 +1,165 @@
+[2026-04-18 20:05:11Z INFO HostContext] No proxy settings were found based on environmental variables (http_proxy/https_proxy/HTTP_PROXY/HTTPS_PROXY)
+[2026-04-18 20:05:11Z INFO HostContext] Well known directory 'Bin': 'C:\Users\User\Documents\UssherIn\actions-runner\bin'
+[2026-04-18 20:05:11Z INFO HostContext] Well known directory 'Root': 'C:\Users\User\Documents\UssherIn\actions-runner'
+[2026-04-18 20:05:11Z INFO HostContext] Well known config file 'Credentials': 'C:\Users\User\Documents\UssherIn\actions-runner\.credentials'
+[2026-04-18 20:05:11Z INFO HostContext] Well known directory 'Bin': 'C:\Users\User\Documents\UssherIn\actions-runner\bin'
+[2026-04-18 20:05:11Z INFO HostContext] Well known directory 'Root': 'C:\Users\User\Documents\UssherIn\actions-runner'
+[2026-04-18 20:05:11Z INFO HostContext] Well known config file 'Runner': 'C:\Users\User\Documents\UssherIn\actions-runner\.runner'
+[2026-04-18 20:05:11Z INFO Listener] Runner is built for Windows (X64) - win-x64.
+[2026-04-18 20:05:11Z INFO Listener] RuntimeInformation: Microsoft Windows 10.0.19045.
+[2026-04-18 20:05:11Z INFO Listener] Version: 2.333.1
+[2026-04-18 20:05:11Z INFO Listener] Commit: 6792966801e8925346735b68c03bf9f347af4646
+[2026-04-18 20:05:11Z INFO Listener] Culture: en-US
+[2026-04-18 20:05:11Z INFO Listener] UI Culture: en-US
+[2026-04-18 20:05:11Z INFO HostContext] Well known directory 'Bin': 'C:\Users\User\Documents\UssherIn\actions-runner\bin'
+[2026-04-18 20:05:11Z INFO HostContext] Well known directory 'Root': 'C:\Users\User\Documents\UssherIn\actions-runner'
+[2026-04-18 20:05:11Z INFO Listener] Validating directory permissions for: 'C:\Users\User\Documents\UssherIn\actions-runner'
+[2026-04-18 20:05:11Z INFO CommandLineParser] Parse
+[2026-04-18 20:05:11Z INFO CommandLineParser] Parsing 13 args
+[2026-04-18 20:05:11Z INFO CommandLineParser] parsing argument
+[2026-04-18 20:05:11Z INFO CommandLineParser] HasArgs: False
+[2026-04-18 20:05:11Z INFO CommandLineParser] Adding Command: configure
+[2026-04-18 20:05:11Z INFO CommandLineParser] parsing argument
+[2026-04-18 20:05:11Z INFO CommandLineParser] HasArgs: True
+[2026-04-18 20:05:11Z INFO CommandLineParser] arg: url
+[2026-04-18 20:05:11Z INFO CommandLineParser] parsing argument
+[2026-04-18 20:05:11Z INFO CommandLineParser] HasArgs: True
+[2026-04-18 20:05:11Z INFO CommandLineParser] Adding option 'url': 'https://github.com/paulboys/Ussher-In'
+[2026-04-18 20:05:11Z INFO CommandLineParser] parsing argument
+[2026-04-18 20:05:11Z INFO CommandLineParser] HasArgs: True
+[2026-04-18 20:05:11Z INFO CommandLineParser] arg: token
+[2026-04-18 20:05:11Z INFO CommandLineParser] parsing argument
+[2026-04-18 20:05:11Z INFO CommandLineParser] HasArgs: True
+[2026-04-18 20:05:11Z INFO CommandLineParser] Adding option 'token': '***'
+[2026-04-18 20:05:11Z INFO CommandLineParser] parsing argument
+[2026-04-18 20:05:11Z INFO CommandLineParser] HasArgs: True
+[2026-04-18 20:05:11Z INFO CommandLineParser] arg: unattended
+[2026-04-18 20:05:11Z INFO CommandLineParser] parsing argument
+[2026-04-18 20:05:11Z INFO CommandLineParser] HasArgs: True
+[2026-04-18 20:05:11Z INFO CommandLineParser] arg: name
+[2026-04-18 20:05:11Z INFO CommandLineParser] Adding flag: unattended
+[2026-04-18 20:05:11Z INFO CommandLineParser] parsing argument
+[2026-04-18 20:05:11Z INFO CommandLineParser] HasArgs: True
+[2026-04-18 20:05:11Z INFO CommandLineParser] Adding option 'name': 'UssherIn-Runner'
+[2026-04-18 20:05:11Z INFO CommandLineParser] parsing argument
+[2026-04-18 20:05:11Z INFO CommandLineParser] HasArgs: True
+[2026-04-18 20:05:11Z INFO CommandLineParser] arg: labels
+[2026-04-18 20:05:11Z INFO CommandLineParser] parsing argument
+[2026-04-18 20:05:11Z INFO CommandLineParser] HasArgs: True
+[2026-04-18 20:05:11Z INFO CommandLineParser] Adding option 'labels': 'self-hosted'
+[2026-04-18 20:05:11Z INFO CommandLineParser] parsing argument
+[2026-04-18 20:05:11Z INFO CommandLineParser] HasArgs: True
+[2026-04-18 20:05:11Z INFO CommandLineParser] arg: runnergroup
+[2026-04-18 20:05:11Z INFO CommandLineParser] parsing argument
+[2026-04-18 20:05:11Z INFO CommandLineParser] HasArgs: True
+[2026-04-18 20:05:11Z INFO CommandLineParser] Adding option 'runnergroup': 'Default'
+[2026-04-18 20:05:11Z INFO CommandLineParser] parsing argument
+[2026-04-18 20:05:11Z INFO CommandLineParser] HasArgs: True
+[2026-04-18 20:05:11Z INFO CommandLineParser] arg: replace
+[2026-04-18 20:05:11Z INFO Listener] Arguments parsed
+[2026-04-18 20:05:11Z INFO Runner] ExecuteCommand
+[2026-04-18 20:05:11Z INFO ConfigurationStore] currentAssemblyLocation: C:\Users\User\Documents\UssherIn\actions-runner\bin\Runner.Listener.dll
+[2026-04-18 20:05:11Z INFO HostContext] Well known directory 'Bin': 'C:\Users\User\Documents\UssherIn\actions-runner\bin'
+[2026-04-18 20:05:11Z INFO ConfigurationStore] binPath: C:\Users\User\Documents\UssherIn\actions-runner\bin
+[2026-04-18 20:05:11Z INFO HostContext] Well known directory 'Bin': 'C:\Users\User\Documents\UssherIn\actions-runner\bin'
+[2026-04-18 20:05:11Z INFO HostContext] Well known directory 'Root': 'C:\Users\User\Documents\UssherIn\actions-runner'
+[2026-04-18 20:05:11Z INFO ConfigurationStore] RootFolder: C:\Users\User\Documents\UssherIn\actions-runner
+[2026-04-18 20:05:11Z INFO HostContext] Well known directory 'Bin': 'C:\Users\User\Documents\UssherIn\actions-runner\bin'
+[2026-04-18 20:05:11Z INFO HostContext] Well known directory 'Root': 'C:\Users\User\Documents\UssherIn\actions-runner'
+[2026-04-18 20:05:11Z INFO HostContext] Well known config file 'Runner': 'C:\Users\User\Documents\UssherIn\actions-runner\.runner'
+[2026-04-18 20:05:11Z INFO ConfigurationStore] ConfigFilePath: C:\Users\User\Documents\UssherIn\actions-runner\.runner
+[2026-04-18 20:05:11Z INFO HostContext] Well known directory 'Bin': 'C:\Users\User\Documents\UssherIn\actions-runner\bin'
+[2026-04-18 20:05:11Z INFO HostContext] Well known directory 'Root': 'C:\Users\User\Documents\UssherIn\actions-runner'
+[2026-04-18 20:05:11Z INFO HostContext] Well known config file 'MigratedRunner': 'C:\Users\User\Documents\UssherIn\actions-runner\.runner_migrated'
+[2026-04-18 20:05:11Z INFO ConfigurationStore] MigratedConfigFilePath: C:\Users\User\Documents\UssherIn\actions-runner\.runner_migrated
+[2026-04-18 20:05:11Z INFO HostContext] Well known directory 'Bin': 'C:\Users\User\Documents\UssherIn\actions-runner\bin'
+[2026-04-18 20:05:11Z INFO HostContext] Well known directory 'Root': 'C:\Users\User\Documents\UssherIn\actions-runner'
+[2026-04-18 20:05:11Z INFO HostContext] Well known config file 'Credentials': 'C:\Users\User\Documents\UssherIn\actions-runner\.credentials'
+[2026-04-18 20:05:11Z INFO ConfigurationStore] CredFilePath: C:\Users\User\Documents\UssherIn\actions-runner\.credentials
+[2026-04-18 20:05:11Z INFO HostContext] Well known directory 'Bin': 'C:\Users\User\Documents\UssherIn\actions-runner\bin'
+[2026-04-18 20:05:11Z INFO HostContext] Well known directory 'Root': 'C:\Users\User\Documents\UssherIn\actions-runner'
+[2026-04-18 20:05:11Z INFO HostContext] Well known config file 'MigratedCredentials': 'C:\Users\User\Documents\UssherIn\actions-runner\.credentials_migrated'
+[2026-04-18 20:05:11Z INFO ConfigurationStore] MigratedCredFilePath: C:\Users\User\Documents\UssherIn\actions-runner\.credentials_migrated
+[2026-04-18 20:05:11Z INFO HostContext] Well known directory 'Bin': 'C:\Users\User\Documents\UssherIn\actions-runner\bin'
+[2026-04-18 20:05:11Z INFO HostContext] Well known directory 'Root': 'C:\Users\User\Documents\UssherIn\actions-runner'
+[2026-04-18 20:05:11Z INFO HostContext] Well known config file 'Service': 'C:\Users\User\Documents\UssherIn\actions-runner\.service'
+[2026-04-18 20:05:11Z INFO ConfigurationStore] ServiceConfigFilePath: C:\Users\User\Documents\UssherIn\actions-runner\.service
+[2026-04-18 20:05:11Z INFO CommandSettings] Flag 'help': 'False'
+[2026-04-18 20:05:11Z INFO CommandSettings] Flag 'version': 'False'
+[2026-04-18 20:05:11Z INFO CommandSettings] Flag 'commit': 'False'
+[2026-04-18 20:05:11Z INFO CommandSettings] Flag 'check': 'False'
+[2026-04-18 20:05:11Z INFO CommandSettings] Command 'configure': 'True'
+[2026-04-18 20:05:11Z INFO Terminal] WRITE LINE: 
+[2026-04-18 20:05:11Z INFO Terminal] WRITE LINE: --------------------------------------------------------------------------------
+[2026-04-18 20:05:11Z INFO Terminal] WRITE LINE: |        ____ _ _   _   _       _          _        _   _                      |
+[2026-04-18 20:05:11Z INFO Terminal] WRITE LINE: |       / ___(_) |_| | | |_   _| |__      / \   ___| |_(_) ___  _ __  ___      |
+[2026-04-18 20:05:11Z INFO Terminal] WRITE LINE: |      | |  _| | __| |_| | | | | '_ \    / _ \ / __| __| |/ _ \| '_ \/ __|     |
+[2026-04-18 20:05:11Z INFO Terminal] WRITE LINE: |      | |_| | | |_|  _  | |_| | |_) |  / ___ \ (__| |_| | (_) | | | \__ \     |
+[2026-04-18 20:05:11Z INFO Terminal] WRITE LINE: |       \____|_|\__|_| |_|\__,_|_.__/  /_/   \_\___|\__|_|\___/|_| |_|___/     |
+[2026-04-18 20:05:11Z INFO Terminal] WRITE LINE: |                                                                              |
+[2026-04-18 20:05:11Z INFO Terminal] WRITE: |                       
+[2026-04-18 20:05:11Z INFO Terminal] WRITE: Self-hosted runner registration
+[2026-04-18 20:05:11Z INFO Terminal] WRITE LINE:                         |
+[2026-04-18 20:05:11Z INFO Terminal] WRITE LINE: |                                                                              |
+[2026-04-18 20:05:11Z INFO Terminal] WRITE LINE: --------------------------------------------------------------------------------
+[2026-04-18 20:05:11Z INFO ConfigurationManager] ConfigureAsync
+[2026-04-18 20:05:11Z INFO CommandSettings] Flag 'generateServiceConfig': 'False'
+[2026-04-18 20:05:11Z INFO ConfigurationStore] IsConfigured()
+[2026-04-18 20:05:11Z INFO ConfigurationStore] IsConfigured: False
+[2026-04-18 20:05:11Z INFO ConfigurationManager] Is configured: False
+[2026-04-18 20:05:11Z INFO CommandSettings] Arg 'url': 'https://github.com/paulboys/Ussher-In'
+[2026-04-18 20:05:11Z INFO CommandSettings] Remove url from Arg dictionary.
+[2026-04-18 20:05:11Z INFO CommandSettings] Arg 'token': '***'
+[2026-04-18 20:05:11Z INFO CommandSettings] Remove token from Arg dictionary.
+[2026-04-18 20:05:12Z INFO ConfigurationManager] Http response code: OK from 'POST https://api.github.com/actions/runner-registration' (D31A:27DD1A:30FB2AF:C8689EF:69E3E3F8)
+[2026-04-18 20:05:12Z INFO ConfigurationManager] Using runner-admin flow: False
+[2026-04-18 20:05:12Z INFO ConfigurationManager] cred retrieved via GitHub auth
+[2026-04-18 20:05:12Z INFO RunnerServer] EstablishVssConnection
+[2026-04-18 20:05:12Z INFO RunnerServer] Establish connection with 100 seconds timeout.
+[2026-04-18 20:05:12Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2026-04-18 20:05:12Z INFO RunnerServer] EstablishVssConnection
+[2026-04-18 20:05:12Z INFO RunnerServer] Establish connection with 60 seconds timeout.
+[2026-04-18 20:05:12Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2026-04-18 20:05:12Z INFO RunnerServer] EstablishVssConnection
+[2026-04-18 20:05:12Z INFO RunnerServer] Establish connection with 60 seconds timeout.
+[2026-04-18 20:05:12Z INFO GitHubActionsService] Starting operation Location.GetConnectionData
+[2026-04-18 20:05:13Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2026-04-18 20:05:13Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2026-04-18 20:05:13Z INFO GitHubActionsService] Finished operation Location.GetConnectionData
+[2026-04-18 20:05:13Z INFO Terminal] WRITE LINE: 
+[2026-04-18 20:05:13Z INFO ConfigurationManager] Test Connection complete.
+[2026-04-18 20:05:13Z INFO HostContext] Well known directory 'Bin': 'C:\Users\User\Documents\UssherIn\actions-runner\bin'
+[2026-04-18 20:05:13Z INFO HostContext] Well known directory 'Root': 'C:\Users\User\Documents\UssherIn\actions-runner'
+[2026-04-18 20:05:13Z INFO HostContext] Well known config file 'RSACredentials': 'C:\Users\User\Documents\UssherIn\actions-runner\.credentials_rsaparams'
+[2026-04-18 20:05:13Z INFO RSAEncryptedFileKeyManager] Found existing RSA key parameters file C:\Users\User\Documents\UssherIn\actions-runner\.credentials_rsaparams
+[2026-04-18 20:05:13Z INFO CommandSettings] Arg 'runnergroup': 'Default'
+[2026-04-18 20:05:13Z INFO CommandSettings] Remove runnergroup from Arg dictionary.
+[2026-04-18 20:05:13Z INFO Terminal] WRITE LINE: 
+[2026-04-18 20:05:13Z INFO ConfigurationManager] Found a self-hosted runner group with id 1 and name Default
+[2026-04-18 20:05:13Z INFO CommandSettings] Flag 'disableupdate': 'False'
+[2026-04-18 20:05:13Z INFO CommandSettings] Flag 'ephemeral': 'False'
+[2026-04-18 20:05:13Z INFO CommandSettings] Arg 'name': 'UssherIn-Runner'
+[2026-04-18 20:05:13Z INFO CommandSettings] Remove name from Arg dictionary.
+[2026-04-18 20:05:13Z INFO Terminal] WRITE LINE: 
+[2026-04-18 20:05:13Z INFO CommandSettings] Arg 'labels': 'self-hosted'
+[2026-04-18 20:05:13Z INFO CommandSettings] Remove labels from Arg dictionary.
+[2026-04-18 20:05:13Z INFO Terminal] WRITE LINE: 
+[2026-04-18 20:05:13Z INFO CommandSettings] Flag 'disableupdate': 'False'
+[2026-04-18 20:05:13Z INFO CommandSettings] Flag 'no-default-labels': 'False'
+[2026-04-18 20:05:13Z INFO CommandSettings] Flag 'disableupdate': 'False'
+[2026-04-18 20:05:13Z INFO CommandSettings] Flag 'ephemeral': 'False'
+[2026-04-18 20:05:13Z INFO ConfigurationStore] Saving OAuth credential @ C:\Users\User\Documents\UssherIn\actions-runner\.credentials
+[2026-04-18 20:05:13Z INFO ConfigurationStore] Credentials Saved.
+[2026-04-18 20:05:13Z INFO ConfigurationManager] Service enforced serverUrlV2: https://broker.actions.githubusercontent.com/
+[2026-04-18 20:05:13Z INFO ConfigurationManager] Service enforced useV2Flow: True
+[2026-04-18 20:05:13Z INFO CommandSettings] Arg 'work': ''
+[2026-04-18 20:05:13Z INFO CommandSettings] Flag 'unattended': 'True'
+[2026-04-18 20:05:13Z INFO PromptManager] ReadValue
+[2026-04-18 20:05:13Z INFO ConfigurationStore] Saving runner settings.
+[2026-04-18 20:05:13Z INFO ConfigurationStore] Settings Saved.
+[2026-04-18 20:05:13Z INFO Terminal] WRITE LINE: 
+[2026-04-18 20:05:13Z INFO Terminal] WRITE LINE: 
+[2026-04-18 20:05:13Z INFO CommandSettings] Flag 'runasservice': 'False'
+[2026-04-18 20:05:13Z INFO CommandSettings] Flag 'unattended': 'True'
+[2026-04-18 20:05:13Z INFO PromptManager] ReadValue
+[2026-04-18 20:05:13Z INFO Listener] Runner execution has finished with return code 0
