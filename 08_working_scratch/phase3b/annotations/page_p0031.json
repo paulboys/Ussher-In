@@ -1,0 +1,36 @@
+{
+  "page_id": "p0031",
+  "part": "part1",
+  "source_pdf": "C:\\Users\\User\\Documents\\UssherIn\\00_source_pdf\\JamesUssher_Britannicarum ecclesiarum antiquitates_Part1.pdf",
+  "page_num": 31,
+  "regions": {
+    "header": [],
+    "body": [],
+    "footnote": [
+      {
+        "page_id": "p0031",
+        "region": "footnote",
+        "line_id": "p0031_footnote_l0001",
+        "text_gold": "[fn01|?] — -—mÀ— - - T- - * \"e . » ' Dig | LY A ^",
+        "contains_ae_target": false,
+        "contains_marker": true,
+        "marker_id": "",
+        "marker_link_target": "",
+        "uncertain_ae": false,
+        "marker_uncertain": false,
+        "reviewer": "",
+        "review_status": "draft",
+        "notes": ""
+      }
+    ]
+  },
+  "marker_links": [],
+  "meta": {
+    "contains_ae_focus": false,
+    "contains_marker_focus": true,
+    "annotation_status": "draft",
+    "review_status": "draft",
+    "reviewer": "",
+    "notes": "Seeded from raw OCR output; verify against PDF and then lock reviewed lines."
+  }
+}

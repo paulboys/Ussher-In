@@ -1,0 +1,4 @@
+# Tesseract config for Latin body text first pass
+# Use with: tesseract input.tif output -l lat --psm 6 --oem 1
+
+preserve_interword_spaces 1

@@ -1,0 +1,133 @@
+import argparse
+import json
+import re
+from pathlib import Path
+
+
+def split_body_and_footnotes(text: str) -> tuple[list[str], list[str]]:
+    marker = "[FOOTNOTES]"
+    if marker in text:
+        body_text, footnote_text = text.split(marker, 1)
+    else:
+        body_text, footnote_text = text, ""
+
+    body_lines = [line.strip() for line in body_text.splitlines() if line.strip()]
+    footnote_lines = [line.strip() for line in footnote_text.splitlines() if line.strip()]
+    return body_lines, footnote_lines
+
+
+def has_ae_target(text: str) -> bool:
+    return bool(re.search(r"(ae|AE|Æ|æ)", text))
+
+
+def has_marker(text: str) -> bool:
+    return bool(re.search(r"\[[^\]]+\]|^[\?\*!†‡]\s|\bfn\d+\b", text))
+
+
+def make_line(page_id: str, region: str, index: int, text_gold: str) -> dict:
+    line_id = f"{page_id}_{region}_l{index:04d}"
+    return {
+        "page_id": page_id,
+        "region": region,
+        "line_id": line_id,
+        "text_gold": text_gold,
+        "contains_ae_target": has_ae_target(text_gold),
+        "contains_marker": has_marker(text_gold),
+        "marker_id": "",
+        "marker_link_target": "",
+        "uncertain_ae": False,
+        "marker_uncertain": False,
+        "reviewer": "",
+        "review_status": "draft",
+        "notes": "",
+    }
+
+
+def build_payload(part: str, source_pdf: str, page_num: int, raw_text: str) -> dict:
+    page_id = f"p{page_num:04d}"
+    body_lines, footnote_lines = split_body_and_footnotes(raw_text)
+
+    body_payload = [make_line(page_id, "body", i, text) for i, text in enumerate(body_lines, start=1)]
+    footnote_payload = [
+        make_line(page_id, "footnote", i, text) for i, text in enumerate(footnote_lines, start=1)
+    ]
+
+    return {
+        "page_id": page_id,
+        "part": part,
+        "source_pdf": source_pdf,
+        "page_num": page_num,
+        "regions": {
+            "header": [],
+            "body": body_payload,
+            "footnote": footnote_payload,
+        },
+        "marker_links": [],
+        "meta": {
+            "contains_ae_focus": any(line["contains_ae_target"] for line in body_payload + footnote_payload),
+            "contains_marker_focus": any(line["contains_marker"] for line in body_payload + footnote_payload),
+            "annotation_status": "draft",
+            "review_status": "draft",
+            "reviewer": "",
+            "notes": "Seeded from raw OCR output; verify against PDF and then lock reviewed lines.",
+        },
+    }
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(description="Seed Phase 3b annotation files from raw OCR text output.")
+    parser.add_argument("--part", required=True, choices=["part1", "part2"])
+    parser.add_argument("--source-pdf", required=True)
+    parser.add_argument("--start-page", type=int, required=True)
+    parser.add_argument("--end-page", type=int, required=True)
+    parser.add_argument(
+        "--raw-ocr-dir",
+        default="01_raw_ocr_output",
+        help="Root raw OCR directory containing part folders",
+    )
+    parser.add_argument(
+        "--annotations-dir",
+        default="08_working_scratch/phase3b/annotations",
+        help="Output directory for annotation JSON files",
+    )
+    parser.add_argument("--force", action="store_true", help="Overwrite existing page annotation JSON files")
+    args = parser.parse_args()
+
+    if args.start_page > args.end_page:
+        raise ValueError("--start-page must be <= --end-page")
+
+    raw_part_dir = Path(args.raw_ocr_dir) / args.part
+    annotations_dir = Path(args.annotations_dir)
+    annotations_dir.mkdir(parents=True, exist_ok=True)
+
+    created = 0
+    skipped = 0
+    missing_raw = 0
+
+    for page_num in range(args.start_page, args.end_page + 1):
+        page_id = f"p{page_num:04d}"
+        raw_txt = raw_part_dir / f"page_{page_num:04d}_raw.txt"
+        out_json = annotations_dir / f"page_{page_id}.json"
+
+        if out_json.exists() and not args.force:
+            skipped += 1
+            continue
+
+        if not raw_txt.exists():
+            missing_raw += 1
+            continue
+
+        raw_text = raw_txt.read_text(encoding="utf-8")
+        payload = build_payload(args.part, args.source_pdf, page_num, raw_text)
+        out_json.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+        created += 1
+
+    print(
+        "Seed complete. "
+        f"created={created} skipped={skipped} missing_raw={missing_raw} "
+        f"annotations_dir={annotations_dir}"
+    )
+
+
+if __name__ == "__main__":
+    main()

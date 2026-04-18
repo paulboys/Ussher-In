@@ -1,0 +1,5 @@
+pytesseract>=0.3.10
+pdf2image>=1.17.0
+Pillow>=10.0.0
+pandas>=2.2.0
+numpy>=1.26.0

@@ -1,0 +1,7 @@
+part,page_num,page_id,avg_confidence,severity,review_required,reviewed_by,review_date,qc_status,notes
+part1,30,p0030,90.2,green,no,,,pending,
+part1,31,p0031,65.75,red,yes,,,pending,
+part1,32,p0032,90.55,green,no,,,pending,
+part1,33,p0033,91.72,green,no,,,pending,
+part1,34,p0034,88.48,green,no,,,pending,
+part1,35,p0035,89.13,green,no,,,pending,

@@ -1,0 +1,128 @@
+[
+  {
+    "part": "part1",
+    "page_num": 30,
+    "page_id": "p0030",
+    "ocr_engine": "tesseract",
+    "ocr_lang": [
+      "lat"
+    ],
+    "raw_text_path": "C:\\Users\\User\\Documents\\UssherIn\\01_raw_ocr_output\\part1\\page_0030_raw.txt",
+    "raw_confidence_avg": 90.19,
+    "raw_confidence_min": 0.0,
+    "body_confidence_avg": 90.19,
+    "body_confidence_min": 0.0,
+    "footnote_confidence_avg": 51.0,
+    "footnote_confidence_min": 27.0,
+    "footnote_split_enabled": true,
+    "footnote_top_ratio": 0.8,
+    "body_psm": 3,
+    "footnote_psm": 6,
+    "qc_status": "pending"
+  },
+  {
+    "part": "part1",
+    "page_num": 31,
+    "page_id": "p0031",
+    "ocr_engine": "tesseract",
+    "ocr_lang": [
+      "lat"
+    ],
+    "raw_text_path": "C:\\Users\\User\\Documents\\UssherIn\\01_raw_ocr_output\\part1\\page_0031_raw.txt",
+    "raw_confidence_avg": 0.0,
+    "raw_confidence_min": 0.0,
+    "body_confidence_avg": 0.0,
+    "body_confidence_min": 0.0,
+    "footnote_confidence_avg": 65.75,
+    "footnote_confidence_min": 22.0,
+    "footnote_split_enabled": true,
+    "footnote_top_ratio": 0.8,
+    "body_psm": 3,
+    "footnote_psm": 6,
+    "qc_status": "pending"
+  },
+  {
+    "part": "part1",
+    "page_num": 32,
+    "page_id": "p0032",
+    "ocr_engine": "tesseract",
+    "ocr_lang": [
+      "lat"
+    ],
+    "raw_text_path": "C:\\Users\\User\\Documents\\UssherIn\\01_raw_ocr_output\\part1\\page_0032_raw.txt",
+    "raw_confidence_avg": 89.89,
+    "raw_confidence_min": 2.0,
+    "body_confidence_avg": 89.89,
+    "body_confidence_min": 2.0,
+    "footnote_confidence_avg": 91.24,
+    "footnote_confidence_min": 50.0,
+    "footnote_split_enabled": true,
+    "footnote_top_ratio": 0.8,
+    "body_psm": 3,
+    "footnote_psm": 6,
+    "qc_status": "pending"
+  },
+  {
+    "part": "part1",
+    "page_num": 33,
+    "page_id": "p0033",
+    "ocr_engine": "tesseract",
+    "ocr_lang": [
+      "lat"
+    ],
+    "raw_text_path": "C:\\Users\\User\\Documents\\UssherIn\\01_raw_ocr_output\\part1\\page_0033_raw.txt",
+    "raw_confidence_avg": 91.54,
+    "raw_confidence_min": 12.0,
+    "body_confidence_avg": 91.54,
+    "body_confidence_min": 12.0,
+    "footnote_confidence_avg": 90.8,
+    "footnote_confidence_min": 45.0,
+    "footnote_split_enabled": true,
+    "footnote_top_ratio": 0.8,
+    "body_psm": 3,
+    "footnote_psm": 6,
+    "qc_status": "pending"
+  },
+  {
+    "part": "part1",
+    "page_num": 34,
+    "page_id": "p0034",
+    "ocr_engine": "tesseract",
+    "ocr_lang": [
+      "lat"
+    ],
+    "raw_text_path": "C:\\Users\\User\\Documents\\UssherIn\\01_raw_ocr_output\\part1\\page_0034_raw.txt",
+    "raw_confidence_avg": 88.2,
+    "raw_confidence_min": 0.0,
+    "body_confidence_avg": 88.2,
+    "body_confidence_min": 0.0,
+    "footnote_confidence_avg": 92.03,
+    "footnote_confidence_min": 53.0,
+    "footnote_split_enabled": true,
+    "footnote_top_ratio": 0.8,
+    "body_psm": 3,
+    "footnote_psm": 6,
+    "qc_status": "pending"
+  },
+  {
+    "part": "part1",
+    "page_num": 35,
+    "page_id": "p0035",
+    "ocr_engine": "tesseract",
+    "ocr_lang": [
+      "lat"
+    ],
+    "raw_text_path": "C:\\Users\\User\\Documents\\UssherIn\\01_raw_ocr_output\\part1\\page_0035_raw.txt",
+    "raw_confidence_avg": 88.84,
+    "raw_confidence_min": 0.0,
+    "body_confidence_avg": 88.84,
+    "body_confidence_min": 0.0,
+    "footnote_confidence_avg": 91.36,
+    "footnote_confidence_min": 19.0,
+    "footnote_split_enabled": true,
+    "footnote_top_ratio": 0.8,
+    "body_psm": 3,
+    "footnote_psm": 6,
+    "qc_status": "pending"
+  }
+]
