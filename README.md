@@ -10,13 +10,13 @@ Ussher's *Antiquitates* is a foundational history of the early British and Irish
 
 ## Background
 
-My interest in Ussher began with his *Irish Articles* and *Body of Divinity*. Reading them, I was struck by how closely they anticipate the Westminster Confession and Larger Catechism — in structure, language, and theological instinct. His treatment of God's nature and the Lord's Prayer in particular left me wondering just how deep his influence on the Westminster Assembly really was.
+This project was born from two historical questions:
+1.  How significant was James Ussher's influence on the Westminster Assembly, given the deep parallels between his earlier works and their famous Confession?
+2.  How did St. Basil's monastic rule travel from 4th-century Cappadocia to the Celtic monasteries of Ireland and Scotland?
 
-Separately, I had been tracing the transmission of St Basil's monastic rule from fourth-century Cappadocia to the Celtic monasteries of Ireland and Scotland — how a tradition born in what is now Turkey reached Iona. That trail leads, almost inevitably, to Ussher. His *Antiquitates* is precisely where he documented that history: Columba, the early insular churches, and their connections to the broader Christian world.
+Both lines of inquiry lead to a single, untranslated primary source: Ussher's *Antiquitates*. This work documents the history of the early insular church, its key figures like Columba, and its connections to the wider Christian world.
 
-Then I discovered no English translation exists.
-
-I cannot read Latin. But I am a data scientist with some spare time and enough stubbornness to try. *Ussher In* is the result: OCR of the 19th-century Elrington & Todd edition, machine-assisted Latin-to-English translation, and careful human review. A nights-and-weekends project, driven entirely by wanting to read this book.
+As a data scientist unable to read Latin, the only way to answer these questions was to build the tools to make the book accessible. This repository is the result—a data-driven attempt to produce the first English translation through a combination of OCR, machine learning, and careful human review.
 
 ## How It Works
 
