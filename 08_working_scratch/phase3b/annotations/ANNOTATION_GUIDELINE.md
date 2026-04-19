@@ -51,6 +51,35 @@ Use `--force` only when you intentionally want to replace existing annotation JS
 - Record explicit link `marker_id -> footnote_id`.
 - If uncertain, set `marker_uncertain=true` and note alternatives.
 
+## Footnote format (plain language)
+
+Use this simple pattern in `text_gold` for each footnote line:
+
+`[fnNN|marker] footnote text`
+
+Meaning:
+- `fnNN` = footnote number on that page (`fn01`, `fn02`, etc.).
+- `marker` = the printed note marker (`a`, `4`, `*`, `ᵈ`, etc.).
+- After the bracket, copy the footnote text as printed.
+
+Examples:
+- `[fn01|4] Bradwardin. Praefat. in libros de causa Dei contra Pelag.`
+- `[fn02|a] Act. cap. 17. ver. 30.`
+- `[fn03|?] Camden. Britann. pag. 47.`
+
+Use `?` when you cannot confidently read the marker yet.
+
+### Marker fields (save-safe rule)
+
+To avoid validation errors in the current UI/backend:
+- Put the real link on the **body** line that contains the marker.
+- On the body line:
+	- `contains_marker=true`
+	- `marker_id=<printed marker>`
+	- `marker_link_target=<matching footnote line_id>`
+- Keep the visible marker in footnotes inside `text_gold` (the `[fnNN|marker]` part).
+- If a footnote line causes marker-field validation errors, leave footnote `marker_id` and `marker_link_target` blank and keep linking on the body line.
+
 ## Required fields per line
 
 - `page_id`
