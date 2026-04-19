@@ -52,8 +52,8 @@ def _all_lines(payload: dict) -> list[dict]:
 
 def _refresh_meta_flags(payload: dict) -> None:
     lines = _all_lines(payload)
-    ae_pattern = re.compile(r"(ae|AE|??|??)")
-    marker_pattern = re.compile(r"\[[^\]]+\]|\bfn\d+\b|[\*??????]")
+    ae_pattern = re.compile(r"(ae|AE|æ|Æ)")
+    marker_pattern = re.compile(r"\[[^\]]+\]|\bfn\d+\b|[\*†‡]")
 
     contains_ae_focus = any(ae_pattern.search(str(line.get("text_gold", ""))) for line in lines)
     contains_marker_focus = any(
