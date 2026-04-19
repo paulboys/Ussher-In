@@ -12,8 +12,11 @@ const metaAnnotationStatus = document.getElementById("metaAnnotationStatus");
 const metaReviewStatus = document.getElementById("metaReviewStatus");
 const metaNotes = document.getElementById("metaNotes");
 
+const headerTable = document.getElementById("headerTable");
 const bodyTable = document.getElementById("bodyTable");
 const footnoteTable = document.getElementById("footnoteTable");
+const addHeaderBtn = document.getElementById("addHeaderBtn");
+const addFootnoteBtn = document.getElementById("addFootnoteBtn");
 
 const glyphBar = document.getElementById("glyphBar");
 
@@ -58,7 +61,120 @@ function insertGlyph(text) {
   activeInput.focus();
 }
 
-function buildLineCard(line, idx, regionName) {
+function pad4(number) {
+  return String(number).padStart(4, "0");
+}
+
+function makeLineId(pageId, regionName, ordinal) {
+  return `${pageId}_${regionName}_l${pad4(ordinal)}`;
+}
+
+function createEmptyLine(pageId, regionName, ordinal) {
+  return {
+    page_id: pageId,
+    region: regionName,
+    line_id: makeLineId(pageId, regionName, ordinal),
+    text_gold: "",
+    contains_ae_target: false,
+    contains_marker: false,
+    marker_id: "",
+    marker_link_target: "",
+    uncertain_ae: false,
+    marker_uncertain: false,
+    reviewer: "",
+    review_status: "draft",
+    notes: "",
+  };
+}
+
+function getNextOrdinal(regionName) {
+  const pageId = currentPayload?.page_id || pageSelect.value;
+  const lines = currentPayload?.regions?.[regionName] || [];
+  let maxOrdinal = 0;
+  const pattern = new RegExp(`^${pageId}_${regionName}_l(\\d{4})$`);
+  lines.forEach((line, idx) => {
+    const candidate = String(line?.line_id || "");
+    const match = candidate.match(pattern);
+    if (match) {
+      maxOrdinal = Math.max(maxOrdinal, Number(match[1]));
+    } else {
+      maxOrdinal = Math.max(maxOrdinal, idx + 1);
+    }
+  });
+  return maxOrdinal + 1;
+}
+
+function normalizeRegionLines(regionName) {
+  if (!currentPayload) return;
+  const pageId = currentPayload.page_id || pageSelect.value;
+  currentPayload.regions = currentPayload.regions || {};
+  const regionValue = currentPayload.regions[regionName];
+  if (!Array.isArray(regionValue)) {
+    currentPayload.regions[regionName] = [];
+    return;
+  }
+
+  currentPayload.regions[regionName] = regionValue.map((line, idx) => {
+    if (typeof line === "string") {
+      const newLine = createEmptyLine(pageId, regionName, idx + 1);
+      newLine.text_gold = line;
+      return newLine;
+    }
+
+    if (!line || typeof line !== "object") {
+      return createEmptyLine(pageId, regionName, idx + 1);
+    }
+
+    return {
+      page_id: line.page_id || pageId,
+      region: line.region || regionName,
+      line_id: line.line_id || makeLineId(pageId, regionName, idx + 1),
+      text_gold: line.text_gold || "",
+      contains_ae_target: Boolean(line.contains_ae_target),
+      contains_marker: Boolean(line.contains_marker),
+      marker_id: line.marker_id || "",
+      marker_link_target: line.marker_link_target || "",
+      uncertain_ae: Boolean(line.uncertain_ae),
+      marker_uncertain: Boolean(line.marker_uncertain),
+      reviewer: line.reviewer || "",
+      review_status: line.review_status || "draft",
+      notes: line.notes || "",
+    };
+  });
+}
+
+function renumberRegionLines(regionName, removedLineIds = []) {
+  if (!currentPayload) return;
+  const pageId = currentPayload.page_id || pageSelect.value;
+  const regionLines = currentPayload.regions?.[regionName] || [];
+  const idMap = new Map();
+
+  regionLines.forEach((line, idx) => {
+    const oldId = String(line.line_id || "");
+    const newId = makeLineId(pageId, regionName, idx + 1);
+    line.page_id = pageId;
+    line.region = regionName;
+    line.line_id = newId;
+    if (oldId) {
+      idMap.set(oldId, newId);
+    }
+  });
+
+  if (regionName === "footnote") {
+    const bodyLines = currentPayload.regions?.body || [];
+    bodyLines.forEach((line) => {
+      const target = String(line.marker_link_target || "");
+      if (!target) return;
+      if (idMap.has(target)) {
+        line.marker_link_target = idMap.get(target);
+      } else if (removedLineIds.includes(target)) {
+        line.marker_link_target = "";
+      }
+    });
+  }
+}
+
+function buildLineCard(line, idx, regionName, options = {}) {
   const card = document.createElement("div");
   card.className = "line-card";
   const safeLineId = escapeHtml(line.line_id || `${regionName}_${idx + 1}`);
@@ -71,7 +187,10 @@ function buildLineCard(line, idx, regionName) {
   card.innerHTML = `
     <div class="line-head">
       <span>${safeLineId}</span>
-      <span>${safeRegionName}</span>
+      <div>
+        <span>${safeRegionName}</span>
+        ${options.showRemove ? '<button type="button" class="line-remove-btn">Remove</button>' : ""}
+      </div>
     </div>
     <label>text_gold
       <textarea class="text-gold" data-field="text_gold" rows="2">${safeTextGold}</textarea>
@@ -117,13 +236,56 @@ function buildLineCard(line, idx, regionName) {
   });
 
   bindFocusTracking(card);
+
+  if (options.showRemove) {
+    const removeBtn = card.querySelector(".line-remove-btn");
+    if (removeBtn) {
+      removeBtn.addEventListener("click", () => {
+        options.onRemove?.(idx);
+      });
+    }
+  }
+
   return card;
 }
 
-function renderRegion(container, regionName, lines) {
+function renderRegion(container, regionName, lines, options = {}) {
   container.innerHTML = "";
   (lines || []).forEach((line, idx) => {
-    container.appendChild(buildLineCard(line, idx, regionName));
+    container.appendChild(buildLineCard(line, idx, regionName, options));
+  });
+}
+
+function renderAllRegions() {
+  if (!currentPayload) return;
+
+  renderRegion(headerTable, "header", currentPayload.regions?.header || [], {
+    showRemove: true,
+    onRemove: (idx) => {
+      currentPayload.regions.header.splice(idx, 1);
+      renumberRegionLines("header");
+      renderAllRegions();
+    },
+  });
+
+  renderRegion(bodyTable, "body", currentPayload.regions?.body || [], {
+    showRemove: true,
+    onRemove: (idx) => {
+      currentPayload.regions.body.splice(idx, 1);
+      renumberRegionLines("body");
+      renderAllRegions();
+    },
+  });
+
+  renderRegion(footnoteTable, "footnote", currentPayload.regions?.footnote || [], {
+    showRemove: true,
+    onRemove: (idx) => {
+      const removed = currentPayload.regions.footnote[idx];
+      const removedId = removed?.line_id ? [String(removed.line_id)] : [];
+      currentPayload.regions.footnote.splice(idx, 1);
+      renumberRegionLines("footnote", removedId);
+      renderAllRegions();
+    },
   });
 }
 
@@ -147,9 +309,12 @@ async function loadPage(pageId) {
       throw new Error(`Load failed: ${res.status}`);
     }
     currentPayload = await res.json();
+    currentPayload.regions = currentPayload.regions || {};
+    normalizeRegionLines("header");
+    normalizeRegionLines("body");
+    normalizeRegionLines("footnote");
     bindMeta(currentPayload.meta || (currentPayload.meta = {}));
-    renderRegion(bodyTable, "body", currentPayload.regions?.body || []);
-    renderRegion(footnoteTable, "footnote", currentPayload.regions?.footnote || []);
+    renderAllRegions();
     pdfFrame.src = `/pdf/${pageId}`;
     setStatus(`Loaded ${pageId}`);
   } catch (err) {
@@ -181,6 +346,22 @@ async function savePage() {
 loadBtn.addEventListener("click", () => loadPage(pageSelect.value));
 saveBtn.addEventListener("click", savePage);
 
+addHeaderBtn.addEventListener("click", () => {
+  if (!currentPayload) return;
+  const nextOrdinal = getNextOrdinal("header");
+  currentPayload.regions.header.push(createEmptyLine(currentPayload.page_id || pageSelect.value, "header", nextOrdinal));
+  renumberRegionLines("header");
+  renderAllRegions();
+});
+
+addFootnoteBtn.addEventListener("click", () => {
+  if (!currentPayload) return;
+  const nextOrdinal = getNextOrdinal("footnote");
+  currentPayload.regions.footnote.push(createEmptyLine(currentPayload.page_id || pageSelect.value, "footnote", nextOrdinal));
+  renumberRegionLines("footnote");
+  renderAllRegions();
+});
+
 glyphBar.querySelectorAll("button[data-glyph]").forEach((btn) => {
   btn.addEventListener("click", () => insertGlyph(btn.dataset.glyph));
 });
@@ -200,6 +381,12 @@ document.addEventListener("keydown", (event) => {
   } else if (event.key === "E" || (event.key === "e" && event.shiftKey)) {
     event.preventDefault();
     insertGlyph("Æ");
+  } else if (event.key === "o" && !event.shiftKey) {
+    event.preventDefault();
+    insertGlyph("œ");
+  } else if (event.key === "O" || (event.key === "o" && event.shiftKey)) {
+    event.preventDefault();
+    insertGlyph("Œ");
   } else if (event.key === "6") {
     event.preventDefault();
     insertGlyph("Ↄ");
