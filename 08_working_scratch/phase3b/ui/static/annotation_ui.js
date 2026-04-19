@@ -196,22 +196,22 @@ document.addEventListener("keydown", (event) => {
 
   if (event.key === "e" && !event.shiftKey) {
     event.preventDefault();
-    insertGlyph("??");
+    insertGlyph("æ");
   } else if (event.key === "E" || (event.key === "e" && event.shiftKey)) {
     event.preventDefault();
-    insertGlyph("??");
+    insertGlyph("Æ");
   } else if (event.key === "6") {
     event.preventDefault();
-    insertGlyph("???");
+    insertGlyph("Ↄ");
   } else if (event.key === "7") {
     event.preventDefault();
-    insertGlyph("???");
+    insertGlyph("ↄ");
   } else if (event.key.toLowerCase() === "d") {
     event.preventDefault();
-    insertGlyph("???");
+    insertGlyph("ᵈ");
   } else if (event.key.toLowerCase() === "n") {
     event.preventDefault();
-    insertGlyph("???");
+    insertGlyph("ⁿ");
   }
 });
 
