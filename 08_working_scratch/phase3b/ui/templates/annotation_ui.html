@@ -26,6 +26,8 @@
     <span class="glyph-label">Glyph tools</span>
     <button type="button" data-glyph="æ" title="Alt+e">æ</button>
     <button type="button" data-glyph="Æ" title="Alt+Shift+E">Æ</button>
+    <button type="button" data-glyph="œ" title="Alt+o">œ</button>
+    <button type="button" data-glyph="Œ" title="Alt+Shift+O">Œ</button>
     <button type="button" data-glyph="Ↄ" title="Alt+6">Ↄ</button>
     <button type="button" data-glyph="ↄ" title="Alt+7">ↄ</button>
     <button type="button" data-glyph="ↀ">ↀ</button>
@@ -57,10 +59,19 @@
         <textarea id="metaNotes" rows="2"></textarea>
       </label>
 
+      <div class="section-head">
+        <h2>Header lines</h2>
+        <button id="addHeaderBtn" type="button" class="small-btn">+ Header line</button>
+      </div>
+      <div id="headerTable"></div>
+
       <h2>Body lines</h2>
       <div id="bodyTable"></div>
 
-      <h2>Footnote lines</h2>
+      <div class="section-head">
+        <h2>Footnote lines</h2>
+        <button id="addFootnoteBtn" type="button" class="small-btn">+ Footnote line</button>
+      </div>
       <div id="footnoteTable"></div>
     </section>
 
