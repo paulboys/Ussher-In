@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Phase3b Annotator</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='annotation_ui.css') }}">
+</head>
+<body>
+  <header class="topbar">
+    <h1>Phase3b Annotator</h1>
+    <div class="controls">
+      <label for="pageSelect">Page</label>
+      <select id="pageSelect">
+        {% for page in pages %}
+        <option value="{{ page }}">{{ page }}</option>
+        {% endfor %}
+      </select>
+      <button id="loadBtn" type="button">Load</button>
+      <button id="saveBtn" type="button">Save</button>
+      <span id="status" class="status"></span>
+    </div>
+  </header>
+
+  <section class="glyph-bar" id="glyphBar">
+    <span class="glyph-label">Glyph tools</span>
+    <button type="button" data-glyph="??" title="Alt+e">??</button>
+    <button type="button" data-glyph="??" title="Alt+Shift+E">??</button>
+    <button type="button" data-glyph="???" title="Alt+6">???</button>
+    <button type="button" data-glyph="???" title="Alt+7">???</button>
+    <button type="button" data-glyph="???">???</button>
+    <button type="button" data-glyph="???">???</button>
+    <button type="button" data-glyph="???">???</button>
+    <button type="button" data-glyph="???">???</button>
+    <button type="button" data-glyph="???">???</button>
+    <button type="button" data-glyph="???">???</button>
+    <button type="button" data-glyph="???" title="Alt+d">???</button>
+    <button type="button" data-glyph="???">???</button>
+    <button type="button" data-glyph="???" title="Alt+n">???</button>
+  </section>
+
+  <main class="layout">
+    <section class="editor-pane">
+      <h2>Page metadata</h2>
+      <div class="meta-grid">
+        <label>Reviewer <input id="metaReviewer" type="text"></label>
+        <label>Annotation status <input id="metaAnnotationStatus" type="text"></label>
+        <label>Review status
+          <select id="metaReviewStatus">
+            <option value="draft">draft</option>
+            <option value="reviewed">reviewed</option>
+            <option value="locked">locked</option>
+          </select>
+        </label>
+      </div>
+      <label>Notes
+        <textarea id="metaNotes" rows="2"></textarea>
+      </label>
+
+      <h2>Body lines</h2>
+      <div id="bodyTable"></div>
+
+      <h2>Footnote lines</h2>
+      <div id="footnoteTable"></div>
+    </section>
+
+    <section class="pdf-pane">
+      <h2>Source PDF</h2>
+      <iframe id="pdfFrame" title="Source PDF"></iframe>
+    </section>
+  </main>
+
+  <script>
+    window.__PAGES__ = {{ pages|tojson }};
+  </script>
+  <script src="{{ url_for('static', filename='annotation_ui.js') }}"></script>
+</body>
+</html>
