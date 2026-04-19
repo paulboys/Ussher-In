@@ -100,9 +100,37 @@ input[type="text"], select, textarea {
 .line-head {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   font-size: 0.78rem;
   color: #555;
   margin-bottom: 0.25rem;
+}
+
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.small-btn {
+  border: 1px solid var(--accent);
+  background: var(--panel);
+  color: var(--accent);
+  border-radius: 4px;
+  padding: 0.2rem 0.5rem;
+  cursor: pointer;
+  font-size: 0.82rem;
+}
+
+.line-remove-btn {
+  border: 1px solid #b94834;
+  background: #fff4f1;
+  color: #922a1b;
+  border-radius: 4px;
+  padding: 0.15rem 0.45rem;
+  cursor: pointer;
+  font-size: 0.75rem;
 }
 
 .line-grid {
