@@ -17,6 +17,33 @@ def ensure_dir(path: Path) -> None:
     path.mkdir(parents=True, exist_ok=True)
 
 
+def resolve_model(model: str) -> str:
+    """Resolve a model identifier to a filesystem path.
+
+    If *model* is an existing file, return it as-is.  Otherwise try to
+    resolve it via htrmopo (Zenodo DOI lookup).  The special value
+    ``"default"`` resolves to the standard Kraken default model DOI.
+    """
+    if Path(model).exists():
+        return model
+
+    DEFAULT_DOI = "10.5281/zenodo.10592716"
+    doi = DEFAULT_DOI if model == "default" else model
+
+    try:
+        from htrmopo import get_model
+        model_dir = Path(get_model(doi))
+        mlmodels = list(model_dir.glob("*.mlmodel"))
+        if mlmodels:
+            return str(mlmodels[0])
+    except Exception as exc:
+        print(f"WARNING: htrmopo lookup failed for {doi}: {exc}", file=sys.stderr)
+
+    raise FileNotFoundError(
+        f"Cannot resolve model '{model}'. Supply a file path, DOI, or 'default'."
+    )
+
+
 def ocr_page_with_kraken(image, model_path: str) -> tuple[str, float]:
     """Run Kraken segmentation and OCR on a single PIL image.
 
@@ -64,6 +91,9 @@ def run_kraken_pilot(
     """Run Kraken OCR on a range of PDF pages and write output files."""
     from pdf2image import convert_from_path
 
+    resolved_model = resolve_model(model)
+    print(f"Using Kraken model: {resolved_model}")
+
     part_dir = output_root / part
     ensure_dir(part_dir)
 
@@ -76,7 +106,7 @@ def run_kraken_pilot(
 
     records = []
     for index, image in enumerate(images, start=start_page):
-        text, avg_conf = ocr_page_with_kraken(image, model)
+        text, avg_conf = ocr_page_with_kraken(image, resolved_model)
 
         page_id = f"p{index:04d}"
         txt_path = part_dir / f"page_{index:04d}_raw.txt"
@@ -105,7 +135,7 @@ def run_kraken_pilot(
 
         print(f"  Page {index}: {len(text)} chars, confidence={avg_conf:.1f}%")
 
-    output_json = part_dir / f"{part}_pilot_ocr.json"
+    output_json = part_dir / f"{part}_pilot_ocr_kraken.json"
     output_json.write_text(json.dumps(records, ensure_ascii=False, indent=2), encoding="utf-8")
     return output_json
 
