@@ -1,0 +1,68 @@
+[
+  {
+    "page_id": "p0030",
+    "status": "compared",
+    "kraken_chars": 374,
+    "tesseract_chars": 374,
+    "kraken_conf": 74.51,
+    "tesseract_conf": 90.19,
+    "char_diff_pct": 0.0,
+    "kraken_lines": 117,
+    "tesseract_lines": 117
+  },
+  {
+    "page_id": "p0031",
+    "status": "compared",
+    "kraken_chars": 85,
+    "tesseract_chars": 85,
+    "kraken_conf": 52.04,
+    "tesseract_conf": 0.0,
+    "char_diff_pct": 0.0,
+    "kraken_lines": 40,
+    "tesseract_lines": 40
+  },
+  {
+    "page_id": "p0032",
+    "status": "compared",
+    "kraken_chars": 541,
+    "tesseract_chars": 541,
+    "kraken_conf": 86.29,
+    "tesseract_conf": 89.89,
+    "char_diff_pct": 0.0,
+    "kraken_lines": 130,
+    "tesseract_lines": 130
+  },
+  {
+    "page_id": "p0033",
+    "status": "compared",
+    "kraken_chars": 1317,
+    "tesseract_chars": 1317,
+    "kraken_conf": 85.4,
+    "tesseract_conf": 91.54,
+    "char_diff_pct": 0.0,
+    "kraken_lines": 240,
+    "tesseract_lines": 240
+  },
+  {
+    "page_id": "p0034",
+    "status": "compared",
+    "kraken_chars": 1158,
+    "tesseract_chars": 1158,
+    "kraken_conf": 84.97,
+    "tesseract_conf": 88.2,
+    "char_diff_pct": 0.0,
+    "kraken_lines": 215,
+    "tesseract_lines": 215
+  },
+  {
+    "page_id": "p0035",
+    "status": "compared",
+    "kraken_chars": 1439,
+    "tesseract_chars": 1439,
+    "kraken_conf": 89.75,
+    "tesseract_conf": 88.84,
+    "char_diff_pct": 0.0,
+    "kraken_lines": 219,
+    "tesseract_lines": 219
+  }
+]
