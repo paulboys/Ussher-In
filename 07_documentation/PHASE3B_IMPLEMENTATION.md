@@ -28,13 +28,13 @@ Resolved and out of active scope:
 
 ## User-Friendly Daily Loop
 
-1. Run OCR for selected pages.
+1. Run OCR for selected pages (Kraken via WSL by default, Tesseract as fallback).
 2. Seed annotation JSON from OCR text.
 3. Open PDF + raw text + page JSON side-by-side.
 4. Correct `text_gold` only where OCR is wrong.
 5. Lock corrected lines.
 6. Rebuild manifest.
-7. Export locked lines to `.gt.txt` training files.
+7. Export locked lines to training files.
 
 ## Promotion gate (must all pass)
 
@@ -44,25 +44,43 @@ Resolved and out of active scope:
 
 ## Commands
 
-Initialize annotation skeletons for a page range:
+### Run OCR (Kraken via WSL — recommended)
+
+```powershell
+.\scripts\Invoke-KrakenOcr.ps1 -PdfPath "00_source_pdf\JamesUssher_Britannicarum ecclesiarum antiquitates_Part1.pdf" -Part part1 -StartPage 30 -EndPage 35
+```
+
+### Run OCR (Tesseract fallback)
+
+```powershell
+.\scripts\Invoke-KrakenOcr.ps1 -PdfPath "00_source_pdf\JamesUssher_Britannicarum ecclesiarum antiquitates_Part1.pdf" -Part part1 -StartPage 30 -EndPage 35 -OcrEngine tesseract
+```
+
+### Compare engines on the same pages
+
+```powershell
+& "C:\Users\User\miniforge3\envs\ussher\python.exe" "C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\compare_ocr_engines.py" --kraken-json 01_raw_ocr_output/part1/part1_pilot_ocr_kraken.json --tesseract-json 01_raw_ocr_output/part1/part1_pilot_ocr.json
+```
+
+### Initialize annotation skeletons for a page range
 
 ```powershell
 & "C:\Users\User\miniforge3\envs\ussher\python.exe" "C:\Users\User\Documents\UssherIn\08_working_scratch\phase3b\scripts\init_gold_annotations.py" --part part1 --source-pdf "C:\Users\User\Documents\UssherIn\00_source_pdf\JamesUssher_Britannicarum ecclesiarum antiquitates_Part1.pdf" --start-page 30 --end-page 35
 ```
 
-Seed annotation JSON directly from raw OCR output (recommended):
+### Seed annotation JSON directly from raw OCR output (recommended)
 
 ```powershell
 & "C:\Users\User\miniforge3\envs\ussher\python.exe" "C:\Users\User\Documents\UssherIn\08_working_scratch\phase3b\scripts\seed_annotations_from_raw_ocr.py" --part part1 --source-pdf "C:\Users\User\Documents\UssherIn\00_source_pdf\JamesUssher_Britannicarum ecclesiarum antiquitates_Part1.pdf" --start-page 30 --end-page 35 --force
 ```
 
-Build/update manifest from annotation JSON files:
+### Build/update manifest from annotation JSON files
 
 ```powershell
 & "C:\Users\User\miniforge3\envs\ussher\python.exe" "C:\Users\User\Documents\UssherIn\08_working_scratch\phase3b\scripts\build_manifest.py"
 ```
 
-Export locked annotations into Tesseract line-level ground-truth files:
+### Export locked annotations into line-level ground-truth files
 
 ```powershell
 & "C:\Users\User\miniforge3\envs\ussher\python.exe" "C:\Users\User\Documents\UssherIn\08_working_scratch\phase3b\scripts\export_tesseract_ground_truth.py"
@@ -73,3 +91,8 @@ Optional mode: include non-locked pages but export only line-level entries marke
 ```powershell
 & "C:\Users\User\miniforge3\envs\ussher\python.exe" "C:\Users\User\Documents\UssherIn\08_working_scratch\phase3b\scripts\export_tesseract_ground_truth.py" --include-line-level-locked
 ```
+
+### Rollback to Tesseract
+
+To revert OCR to Tesseract, pass `--ocr-engine tesseract` to the wrapper or pilot script.
+All annotation and export infrastructure remains engine-neutral.
