@@ -74,3 +74,14 @@ Fallback (Tesseract):
 ```powershell
 .\scripts\Invoke-KrakenOcr.ps1 -PdfPath "00_source_pdf\JamesUssher_Britannicarum ecclesiarum antiquitates_Part1.pdf" -Part part1 -StartPage 30 -EndPage 35 -OcrEngine tesseract
 ```
+
+## 6. Engine comparison and rollback
+
+After running both engines on the same pages, compare output quality:
+
+```powershell
+python 08_working_scratch/pipeline_scripts/compare_ocr_engines.py --kraken-json 01_raw_ocr_output/part1/part1_pilot_ocr_kraken.json --tesseract-json 01_raw_ocr_output/part1/part1_pilot_ocr.json
+```
+
+If Kraken output is inferior or WSL is unavailable, see
+`07_documentation/OCR_ENGINE_ROLLBACK.md` for the rollback procedure.
