@@ -1,0 +1,5 @@
+# Kraken OCR dependencies (install inside WSL Ubuntu virtual environment)
+# Usage: pip install -r python_wsl_requirements.txt
+kraken>=5.0.0
+Pillow>=10.0.0
+pdf2image>=1.17.0

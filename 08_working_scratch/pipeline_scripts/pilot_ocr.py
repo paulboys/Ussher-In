@@ -224,6 +224,17 @@ def main() -> None:
         help="Output root directory for OCR records",
     )
     parser.add_argument(
+        "--ocr-engine",
+        choices=["kraken", "tesseract"],
+        default="kraken",
+        help="OCR engine to use (default: kraken)",
+    )
+    parser.add_argument(
+        "--kraken-model",
+        default="default",
+        help="Kraken model name or path (only used with --ocr-engine kraken)",
+    )
+    parser.add_argument(
         "--tessdata-dir",
         default="06_tools_config/tessdata",
         help="Directory containing traineddata files (default project local path)",
@@ -268,35 +279,86 @@ def main() -> None:
     )
     args = parser.parse_args()
 
-    tesseract_cmd = resolve_tesseract_cmd(args.tesseract_cmd)
-    if tesseract_cmd is None:
-        raise RuntimeError("Tesseract executable not found. Install Tesseract or pass --tesseract-cmd.")
-    pytesseract.pytesseract.tesseract_cmd = tesseract_cmd
+    if args.ocr_engine == "kraken":
+        # Kraken path: delegate to kraken_ocr_runner via WSL or direct call
+        from wsl_paths import is_windows
 
-    tessdata_dir = Path(args.tessdata_dir)
-    if not tessdata_dir.exists():
-        raise RuntimeError(f"Tessdata directory not found: {tessdata_dir}")
-    if not (tessdata_dir / "lat.traineddata").exists():
-        raise RuntimeError(f"Latin model not found: {tessdata_dir / 'lat.traineddata'}")
+        if is_windows():
+            from wsl_paths import run_in_wsl, windows_to_wsl, ensure_wsl_available
 
-    tesseract_config = build_tesseract_config(tessdata_dir)
+            if not ensure_wsl_available():
+                raise RuntimeError(
+                    "WSL is not available. Install WSL2 and Ubuntu, then set up Kraken. "
+                    "See 06_tools_config/wsl_kraken_setup.md"
+                )
 
-    output_path = run_pilot(
-        pdf_path=Path(args.pdf),
-        part=args.part,
-        start_page=args.start_page,
-        end_page=args.end_page,
-        output_root=Path(args.output_root),
-        tesseract_config=tesseract_config,
-        body_psm=args.body_psm,
-        footnote_psm=args.footnote_psm,
-        split_footnotes=args.split_footnotes,
-        footnote_top_ratio=args.footnote_top_ratio,
-        normalize_open_c=args.normalize_open_c,
-        normalize_ae=args.normalize_ae,
-    )
+            wsl_pdf = windows_to_wsl(args.pdf)
+            wsl_output = windows_to_wsl(args.output_root)
+            project_root = Path(__file__).resolve().parents[2]
+            wsl_script = windows_to_wsl(
+                project_root / "08_working_scratch" / "pipeline_scripts" / "kraken_ocr_runner.py"
+            )
 
-    print(f"Pilot OCR written to {output_path}")
+            cmd = [
+                "bash", "-c",
+                f"source ~/kraken-env/bin/activate && python3 '{wsl_script}'"
+                f" --pdf '{wsl_pdf}'"
+                f" --part {args.part}"
+                f" --start-page {args.start_page}"
+                f" --end-page {args.end_page}"
+                f" --output-root '{wsl_output}'"
+                f" --model {args.kraken_model}",
+            ]
+            result = run_in_wsl(cmd, check=False)
+            print(result.stdout)
+            if result.returncode != 0:
+                print(result.stderr, file=__import__("sys").stderr)
+                raise RuntimeError(f"Kraken OCR failed with exit code {result.returncode}")
+        else:
+            # Running on Linux directly
+            from kraken_ocr_runner import run_kraken_pilot
+
+            output_path = run_kraken_pilot(
+                pdf_path=Path(args.pdf),
+                part=args.part,
+                start_page=args.start_page,
+                end_page=args.end_page,
+                output_root=Path(args.output_root),
+                model=args.kraken_model,
+            )
+            print(f"Kraken OCR written to {output_path}")
+
+    else:
+        # Tesseract fallback path
+        tesseract_cmd = resolve_tesseract_cmd(args.tesseract_cmd)
+        if tesseract_cmd is None:
+            raise RuntimeError("Tesseract executable not found. Install Tesseract or pass --tesseract-cmd.")
+        pytesseract.pytesseract.tesseract_cmd = tesseract_cmd
+
+        tessdata_dir = Path(args.tessdata_dir)
+        if not tessdata_dir.exists():
+            raise RuntimeError(f"Tessdata directory not found: {tessdata_dir}")
+        if not (tessdata_dir / "lat.traineddata").exists():
+            raise RuntimeError(f"Latin model not found: {tessdata_dir / 'lat.traineddata'}")
+
+        tesseract_config = build_tesseract_config(tessdata_dir)
+
+        output_path = run_pilot(
+            pdf_path=Path(args.pdf),
+            part=args.part,
+            start_page=args.start_page,
+            end_page=args.end_page,
+            output_root=Path(args.output_root),
+            tesseract_config=tesseract_config,
+            body_psm=args.body_psm,
+            footnote_psm=args.footnote_psm,
+            split_footnotes=args.split_footnotes,
+            footnote_top_ratio=args.footnote_top_ratio,
+            normalize_open_c=args.normalize_open_c,
+            normalize_ae=args.normalize_ae,
+        )
+
+        print(f"Pilot OCR written to {output_path}")
 
 
 if __name__ == "__main__":
