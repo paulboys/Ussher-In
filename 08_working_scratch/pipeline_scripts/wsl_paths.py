@@ -19,10 +19,10 @@ def windows_to_wsl(path: str | Path) -> str:
         C:\\Users\\User\\file.pdf -> /mnt/c/Users/User/file.pdf
         D:\\Data\\image.tif      -> /mnt/d/Data/image.tif
     """
-    resolved = str(Path(path).resolve())
-    match = re.match(r"^([A-Za-z]):[/\\](.*)$", resolved)
+    raw = str(path)
+    match = re.match(r"^([A-Za-z]):[/\\](.*)$", raw)
     if not match:
-        raise ValueError(f"Not a Windows absolute path: {resolved}")
+        raise ValueError(f"Not a Windows absolute path: {raw}")
 
     drive_letter = match.group(1).lower()
     rest = match.group(2).replace("\\", "/")
