@@ -68,6 +68,22 @@ def _header_lines(payload: dict) -> list[dict]:
     return [line for line in values if isinstance(line, dict)]
 
 
+def _body_lines(payload: dict) -> list[dict]:
+    regions = payload.get("regions", {})
+    values = regions.get("body", [])
+    if not isinstance(values, list):
+        return []
+    return [line for line in values if isinstance(line, dict)]
+
+
+def _opposite_side(side: str) -> str:
+    if side == "left":
+        return "right"
+    if side == "right":
+        return "left"
+    return ""
+
+
 def _side_for_header_index(index: int, total: int) -> str:
     if total < 2:
         return "unknown"
@@ -117,6 +133,7 @@ def _parse_side(value: object, default: str = "") -> str:
 def _refresh_meta_flags(payload: dict) -> None:
     lines = _all_lines(payload)
     header_lines = _header_lines(payload)
+    body_lines = _body_lines(payload)
     ae_pattern = re.compile(r"(ae|AE|æ|Æ)")
     marker_pattern = re.compile(r"\[[^\]]+\]|\bfn\d+\b|[\*†‡]")
 
@@ -140,10 +157,12 @@ def _refresh_meta_flags(payload: dict) -> None:
     contains_header_page_number = False
     contains_header_chapter_number = False
 
-    total_header = len(header_lines)
-    for index, line in enumerate(header_lines):
+    # Prefer explicit header region; if absent, scan first body lines where seeded OCR often keeps header text.
+    candidate_lines = header_lines if header_lines else body_lines[:2]
+    total_candidates = len(candidate_lines)
+    for index, line in enumerate(candidate_lines):
         text = str(line.get("text_gold", ""))
-        side = _side_for_header_index(index, total_header)
+        side = _side_for_header_index(index, total_candidates)
 
         if page_num is not None and _contains_page_number_token(text, page_num):
             contains_header_page_number = True
@@ -159,6 +178,14 @@ def _refresh_meta_flags(payload: dict) -> None:
     if contains_header_page_number and header_page_number_side == "" and expected_side:
         # Fallback to known layout rule when side is not inferable from header line structure.
         header_page_number_side = expected_side
+
+    if (
+        contains_header_chapter_number
+        and header_chapter_side == ""
+        and header_page_number_side in {"left", "right"}
+    ):
+        # Based on page design, chapter indicator appears opposite the page number.
+        header_chapter_side = _opposite_side(header_page_number_side)
 
     header_parity_consistent = bool(
         contains_header_page_number
@@ -190,12 +217,16 @@ def _refresh_meta_flags(payload: dict) -> None:
 
         if field_type == "bool":
             default_value = bool(derived_values[key])
-            parsed_value = _parse_bool(meta.get(value_key, default_value), default=default_value)
+            parsed_value = _parse_bool(
+                meta.get(value_key, default_value), default=default_value
+            )
             meta[value_key] = parsed_value
             meta[key] = parsed_value if enabled else default_value
         else:
             default_value = _parse_side(derived_values[key], default="")
-            parsed_value = _parse_side(meta.get(value_key, default_value), default=default_value)
+            parsed_value = _parse_side(
+                meta.get(value_key, default_value), default=default_value
+            )
             meta[value_key] = parsed_value
             meta[key] = parsed_value if enabled else default_value
 
