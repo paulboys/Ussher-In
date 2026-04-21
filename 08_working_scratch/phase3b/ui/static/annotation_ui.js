@@ -13,6 +13,23 @@ const metaAnnotationStatus = document.getElementById("metaAnnotationStatus");
 const metaReviewStatus = document.getElementById("metaReviewStatus");
 const metaNotes = document.getElementById("metaNotes");
 
+const derivedContainsHeaderPageNumber = document.getElementById("derivedContainsHeaderPageNumber");
+const derivedContainsHeaderChapterNumber = document.getElementById("derivedContainsHeaderChapterNumber");
+const derivedHeaderParityConsistent = document.getElementById("derivedHeaderParityConsistent");
+const derivedHeaderPageNumberSide = document.getElementById("derivedHeaderPageNumberSide");
+const derivedHeaderChapterSide = document.getElementById("derivedHeaderChapterSide");
+
+const overrideContainsHeaderPageNumberEnabled = document.getElementById("overrideContainsHeaderPageNumberEnabled");
+const overrideContainsHeaderPageNumberValue = document.getElementById("overrideContainsHeaderPageNumberValue");
+const overrideContainsHeaderChapterNumberEnabled = document.getElementById("overrideContainsHeaderChapterNumberEnabled");
+const overrideContainsHeaderChapterNumberValue = document.getElementById("overrideContainsHeaderChapterNumberValue");
+const overrideHeaderParityConsistentEnabled = document.getElementById("overrideHeaderParityConsistentEnabled");
+const overrideHeaderParityConsistentValue = document.getElementById("overrideHeaderParityConsistentValue");
+const overrideHeaderPageNumberSideEnabled = document.getElementById("overrideHeaderPageNumberSideEnabled");
+const overrideHeaderPageNumberSideValue = document.getElementById("overrideHeaderPageNumberSideValue");
+const overrideHeaderChapterSideEnabled = document.getElementById("overrideHeaderChapterSideEnabled");
+const overrideHeaderChapterSideValue = document.getElementById("overrideHeaderChapterSideValue");
+
 const headerTable = document.getElementById("headerTable");
 const bodyTable = document.getElementById("bodyTable");
 const footnoteTable = document.getElementById("footnoteTable");
@@ -104,6 +121,133 @@ function setStatus(message, isError = false) {
 
 function clone(obj) {
   return JSON.parse(JSON.stringify(obj));
+}
+
+function toBoolString(value) {
+  return value ? "true" : "false";
+}
+
+function normalizeSide(value) {
+  const normalized = String(value || "").trim().toLowerCase();
+  if (normalized === "left" || normalized === "right") {
+    return normalized;
+  }
+  return "";
+}
+
+function normalizeHeaderMeta(meta) {
+  meta.derived_contains_header_page_number = Boolean(meta.derived_contains_header_page_number ?? meta.contains_header_page_number);
+  meta.derived_contains_header_chapter_number = Boolean(
+    meta.derived_contains_header_chapter_number ?? meta.contains_header_chapter_number,
+  );
+  meta.derived_header_parity_consistent = Boolean(meta.derived_header_parity_consistent ?? meta.header_parity_consistent);
+  meta.derived_header_page_number_side = normalizeSide(meta.derived_header_page_number_side ?? meta.header_page_number_side);
+  meta.derived_header_chapter_side = normalizeSide(meta.derived_header_chapter_side ?? meta.header_chapter_side);
+
+  meta.override_contains_header_page_number_enabled = Boolean(meta.override_contains_header_page_number_enabled);
+  meta.override_contains_header_page_number_value = Boolean(
+    meta.override_contains_header_page_number_value ?? meta.contains_header_page_number,
+  );
+  meta.override_contains_header_chapter_number_enabled = Boolean(meta.override_contains_header_chapter_number_enabled);
+  meta.override_contains_header_chapter_number_value = Boolean(
+    meta.override_contains_header_chapter_number_value ?? meta.contains_header_chapter_number,
+  );
+  meta.override_header_parity_consistent_enabled = Boolean(meta.override_header_parity_consistent_enabled);
+  meta.override_header_parity_consistent_value = Boolean(
+    meta.override_header_parity_consistent_value ?? meta.header_parity_consistent,
+  );
+  meta.override_header_page_number_side_enabled = Boolean(meta.override_header_page_number_side_enabled);
+  meta.override_header_page_number_side_value = normalizeSide(
+    meta.override_header_page_number_side_value ?? meta.header_page_number_side,
+  );
+  meta.override_header_chapter_side_enabled = Boolean(meta.override_header_chapter_side_enabled);
+  meta.override_header_chapter_side_value = normalizeSide(
+    meta.override_header_chapter_side_value ?? meta.header_chapter_side,
+  );
+}
+
+function refreshHeaderIndicatorDisplay(meta) {
+  if (!meta) return;
+  if (derivedContainsHeaderPageNumber) {
+    derivedContainsHeaderPageNumber.value = toBoolString(Boolean(meta.derived_contains_header_page_number));
+  }
+  if (derivedContainsHeaderChapterNumber) {
+    derivedContainsHeaderChapterNumber.value = toBoolString(Boolean(meta.derived_contains_header_chapter_number));
+  }
+  if (derivedHeaderParityConsistent) {
+    derivedHeaderParityConsistent.value = toBoolString(Boolean(meta.derived_header_parity_consistent));
+  }
+  if (derivedHeaderPageNumberSide) {
+    derivedHeaderPageNumberSide.value = normalizeSide(meta.derived_header_page_number_side);
+  }
+  if (derivedHeaderChapterSide) {
+    derivedHeaderChapterSide.value = normalizeSide(meta.derived_header_chapter_side);
+  }
+}
+
+function bindHeaderOverrideControls(meta) {
+  if (!meta) return;
+
+  const syncState = () => {
+    overrideContainsHeaderPageNumberValue.disabled = !overrideContainsHeaderPageNumberEnabled.checked;
+    overrideContainsHeaderChapterNumberValue.disabled = !overrideContainsHeaderChapterNumberEnabled.checked;
+    overrideHeaderParityConsistentValue.disabled = !overrideHeaderParityConsistentEnabled.checked;
+    overrideHeaderPageNumberSideValue.disabled = !overrideHeaderPageNumberSideEnabled.checked;
+    overrideHeaderChapterSideValue.disabled = !overrideHeaderChapterSideEnabled.checked;
+  };
+
+  overrideContainsHeaderPageNumberEnabled.checked = Boolean(meta.override_contains_header_page_number_enabled);
+  overrideContainsHeaderPageNumberValue.checked = Boolean(meta.override_contains_header_page_number_value);
+  overrideContainsHeaderChapterNumberEnabled.checked = Boolean(meta.override_contains_header_chapter_number_enabled);
+  overrideContainsHeaderChapterNumberValue.checked = Boolean(meta.override_contains_header_chapter_number_value);
+  overrideHeaderParityConsistentEnabled.checked = Boolean(meta.override_header_parity_consistent_enabled);
+  overrideHeaderParityConsistentValue.checked = Boolean(meta.override_header_parity_consistent_value);
+  overrideHeaderPageNumberSideEnabled.checked = Boolean(meta.override_header_page_number_side_enabled);
+  overrideHeaderPageNumberSideValue.value = normalizeSide(meta.override_header_page_number_side_value);
+  overrideHeaderChapterSideEnabled.checked = Boolean(meta.override_header_chapter_side_enabled);
+  overrideHeaderChapterSideValue.value = normalizeSide(meta.override_header_chapter_side_value);
+
+  syncState();
+
+  overrideContainsHeaderPageNumberEnabled.onchange = () => {
+    meta.override_contains_header_page_number_enabled = overrideContainsHeaderPageNumberEnabled.checked;
+    syncState();
+  };
+  overrideContainsHeaderPageNumberValue.onchange = () => {
+    meta.override_contains_header_page_number_value = overrideContainsHeaderPageNumberValue.checked;
+  };
+
+  overrideContainsHeaderChapterNumberEnabled.onchange = () => {
+    meta.override_contains_header_chapter_number_enabled = overrideContainsHeaderChapterNumberEnabled.checked;
+    syncState();
+  };
+  overrideContainsHeaderChapterNumberValue.onchange = () => {
+    meta.override_contains_header_chapter_number_value = overrideContainsHeaderChapterNumberValue.checked;
+  };
+
+  overrideHeaderParityConsistentEnabled.onchange = () => {
+    meta.override_header_parity_consistent_enabled = overrideHeaderParityConsistentEnabled.checked;
+    syncState();
+  };
+  overrideHeaderParityConsistentValue.onchange = () => {
+    meta.override_header_parity_consistent_value = overrideHeaderParityConsistentValue.checked;
+  };
+
+  overrideHeaderPageNumberSideEnabled.onchange = () => {
+    meta.override_header_page_number_side_enabled = overrideHeaderPageNumberSideEnabled.checked;
+    syncState();
+  };
+  overrideHeaderPageNumberSideValue.onchange = () => {
+    meta.override_header_page_number_side_value = normalizeSide(overrideHeaderPageNumberSideValue.value);
+  };
+
+  overrideHeaderChapterSideEnabled.onchange = () => {
+    meta.override_header_chapter_side_enabled = overrideHeaderChapterSideEnabled.checked;
+    syncState();
+  };
+  overrideHeaderChapterSideValue.onchange = () => {
+    meta.override_header_chapter_side_value = normalizeSide(overrideHeaderChapterSideValue.value);
+  };
 }
 
 function bindFocusTracking(container) {
@@ -484,10 +628,13 @@ function renderAllRegions() {
 
 function bindMeta(meta) {
   meta.reviewer = DEFAULT_REVIEWER;
+  normalizeHeaderMeta(meta);
   metaReviewer.value = DEFAULT_REVIEWER;
   metaAnnotationStatus.value = meta.annotation_status || "draft";
   metaReviewStatus.value = meta.review_status || "draft";
   metaNotes.value = meta.notes || "";
+  refreshHeaderIndicatorDisplay(meta);
+  bindHeaderOverrideControls(meta);
 
   metaReviewer.oninput = () => {
     meta.reviewer = DEFAULT_REVIEWER;
@@ -535,6 +682,12 @@ async function savePage() {
     if (!res.ok || !data.ok) {
       const errors = (data.errors || ["Save failed"]).join(" | ");
       throw new Error(errors);
+    }
+    if (data.meta && currentPayload?.meta) {
+      currentPayload.meta = { ...currentPayload.meta, ...data.meta };
+      normalizeHeaderMeta(currentPayload.meta);
+      refreshHeaderIndicatorDisplay(currentPayload.meta);
+      bindHeaderOverrideControls(currentPayload.meta);
     }
     setStatus(`Saved ${pageId}`);
   } catch (err) {
