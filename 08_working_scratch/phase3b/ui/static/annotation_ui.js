@@ -670,13 +670,12 @@ async function loadPage(pageId) {
 
     const sourcePdfKey = String(currentPayload.source_pdf || "");
     if (!pdfFrame.src || currentPdfSource !== sourcePdfKey) {
-      // New source PDF: load it fresh at the target page.
+      // New source PDF: load dedicated PDF.js viewer at target page.
       currentPdfSource = sourcePdfKey;
-      pdfFrame.src = `/pdf/${pageId}#page=${pdfPageNum}`;
+      pdfFrame.src = `/pdfjs/${pageId}?page=${pdfPageNum}#page=${pdfPageNum}`;
     } else {
-      // Same source PDF: update only the page fragment to avoid full reload resets.
-      const currentBase = pdfFrame.src.split("#")[0];
-      pdfFrame.src = `${currentBase}#page=${pdfPageNum}`;
+      // Same source PDF: keep viewer loaded and instruct it to switch pages.
+      pdfFrame.contentWindow?.postMessage({ type: "setPage", page: pdfPageNum }, window.location.origin);
     }
     setStatus(`Loaded ${pageId}`);
   } catch (err) {
