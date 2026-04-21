@@ -12,6 +12,15 @@ TEMPLATE_DIR = PHASE3B_ROOT / "ui" / "templates"
 STATIC_DIR = PHASE3B_ROOT / "ui" / "static"
 
 ALLOWED_REVIEW_STATUS = {"draft", "reviewed", "locked"}
+SIDE_VALUES = {"", "left", "right"}
+
+HEADER_OVERRIDE_FIELDS: dict[str, str] = {
+    "contains_header_page_number": "bool",
+    "contains_header_chapter_number": "bool",
+    "header_page_number_side": "side",
+    "header_chapter_side": "side",
+    "header_parity_consistent": "bool",
+}
 
 app = Flask(__name__, template_folder=str(TEMPLATE_DIR), static_folder=str(STATIC_DIR))
 
@@ -84,6 +93,27 @@ def _is_chapter_header(text: str) -> bool:
     return bool(re.search(r"\bCAP\.?\s*[IVXLCDM]+\.?\b", text, flags=re.IGNORECASE))
 
 
+def _parse_bool(value: object, default: bool = False) -> bool:
+    if isinstance(value, bool):
+        return value
+    if isinstance(value, str):
+        normalized = value.strip().lower()
+        if normalized in {"true", "1", "yes", "y", "on"}:
+            return True
+        if normalized in {"false", "0", "no", "n", "off", ""}:
+            return False
+    return bool(default)
+
+
+def _parse_side(value: object, default: str = "") -> str:
+    if value is None:
+        return default
+    normalized = str(value).strip().lower()
+    if normalized in SIDE_VALUES:
+        return normalized
+    return default
+
+
 def _refresh_meta_flags(payload: dict) -> None:
     lines = _all_lines(payload)
     header_lines = _header_lines(payload)
@@ -140,11 +170,34 @@ def _refresh_meta_flags(payload: dict) -> None:
     meta = payload.setdefault("meta", {})
     meta["contains_ae_focus"] = bool(contains_ae_focus)
     meta["contains_marker_focus"] = bool(contains_marker_focus)
-    meta["contains_header_page_number"] = bool(contains_header_page_number)
-    meta["contains_header_chapter_number"] = bool(contains_header_chapter_number)
-    meta["header_page_number_side"] = header_page_number_side
-    meta["header_chapter_side"] = header_chapter_side
-    meta["header_parity_consistent"] = bool(header_parity_consistent)
+
+    derived_values: dict[str, object] = {
+        "contains_header_page_number": bool(contains_header_page_number),
+        "contains_header_chapter_number": bool(contains_header_chapter_number),
+        "header_page_number_side": header_page_number_side,
+        "header_chapter_side": header_chapter_side,
+        "header_parity_consistent": bool(header_parity_consistent),
+    }
+
+    for key, derived in derived_values.items():
+        meta[f"derived_{key}"] = derived
+
+    for key, field_type in HEADER_OVERRIDE_FIELDS.items():
+        enabled_key = f"override_{key}_enabled"
+        value_key = f"override_{key}_value"
+        enabled = _parse_bool(meta.get(enabled_key, False), default=False)
+        meta[enabled_key] = enabled
+
+        if field_type == "bool":
+            default_value = bool(derived_values[key])
+            parsed_value = _parse_bool(meta.get(value_key, default_value), default=default_value)
+            meta[value_key] = parsed_value
+            meta[key] = parsed_value if enabled else default_value
+        else:
+            default_value = _parse_side(derived_values[key], default="")
+            parsed_value = _parse_side(meta.get(value_key, default_value), default=default_value)
+            meta[value_key] = parsed_value
+            meta[key] = parsed_value if enabled else default_value
 
 
 def _validate_payload(payload: dict) -> list[str]:
@@ -177,6 +230,24 @@ def _validate_payload(payload: dict) -> list[str]:
     meta_review_status = str(payload.get("meta", {}).get("review_status", ""))
     if meta_review_status and meta_review_status not in ALLOWED_REVIEW_STATUS:
         errors.append(f"meta.review_status: invalid value '{meta_review_status}'")
+
+    meta = payload.get("meta", {})
+    if not isinstance(meta, dict):
+        errors.append("meta: must be an object")
+        return errors
+
+    for key, field_type in HEADER_OVERRIDE_FIELDS.items():
+        enabled_key = f"override_{key}_enabled"
+        value_key = f"override_{key}_value"
+        enabled = _parse_bool(meta.get(enabled_key, False), default=False)
+        if not enabled:
+            continue
+
+        raw_value = meta.get(value_key)
+        if field_type == "side":
+            normalized = _parse_side(raw_value, default="<invalid>")
+            if normalized not in SIDE_VALUES:
+                errors.append(f"meta.{value_key}: invalid side '{raw_value}'")
 
     return errors
 
@@ -235,7 +306,7 @@ def api_save_page(page_id: str):
 
     _refresh_meta_flags(incoming)
     _write_payload_atomic(path, incoming)
-    return jsonify({"ok": True})
+    return jsonify({"ok": True, "meta": incoming.get("meta", {})})
 
 
 @app.get("/pdf/<page_id>")
