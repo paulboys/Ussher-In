@@ -19,6 +19,11 @@ def create_page_template(part: str, source_pdf: str, page_num: int) -> dict:
         "meta": {
             "contains_ae_focus": False,
             "contains_marker_focus": False,
+            "contains_header_page_number": False,
+            "contains_header_chapter_number": False,
+            "header_page_number_side": "",
+            "header_chapter_side": "",
+            "header_parity_consistent": False,
             "annotation_status": "draft",
             "review_status": "draft",
             "reviewer": "",
@@ -28,7 +33,9 @@ def create_page_template(part: str, source_pdf: str, page_num: int) -> dict:
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Initialize Phase 3b annotation JSON files for a page range.")
+    parser = argparse.ArgumentParser(
+        description="Initialize Phase 3b annotation JSON files for a page range."
+    )
     parser.add_argument("--part", required=True, choices=["part1", "part2"])
     parser.add_argument("--source-pdf", required=True)
     parser.add_argument("--start-page", type=int, required=True)
@@ -62,10 +69,14 @@ def main() -> None:
             continue
 
         payload = create_page_template(args.part, args.source_pdf, page_num)
-        target.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+        target.write_text(
+            json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8"
+        )
         created += 1
 
-    print(f"Annotation init complete. created={created} skipped={skipped} output_dir={output_dir}")
+    print(
+        f"Annotation init complete. created={created} skipped={skipped} output_dir={output_dir}"
+    )
 
 
 if __name__ == "__main__":
