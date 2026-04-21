@@ -96,21 +96,6 @@ body {
   gap: 0.45rem;
 }
 
-.header-indicator-grid {
-  margin-bottom: 0.45rem;
-}
-
-.override-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.45rem;
-  margin-bottom: 0.7rem;
-  padding: 0.45rem;
-  border: 1px solid var(--line);
-  border-radius: 5px;
-  background: #fffaf1;
-}
-
 label { font-size: 0.9rem; display: block; }
 input[type="text"], select, textarea {
   width: 100%;
