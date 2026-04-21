@@ -1,10 +1,37 @@
 {
+  "marker_links": [],
+  "meta": {
+    "annotation_status": "draft",
+    "contains_ae_focus": true,
+    "contains_header_chapter_number": true,
+    "contains_header_page_number": false,
+    "contains_marker_focus": true,
+    "header_chapter_side": "left",
+    "header_page_number_side": "",
+    "header_parity_consistent": false,
+    "notes": "Seeded from raw OCR output; verify against PDF and then lock reviewed lines.",
+    "review_status": "draft",
+    "reviewer": "Paul Boys",
+    "derived_contains_header_page_number": false,
+    "derived_contains_header_chapter_number": true,
+    "derived_header_parity_consistent": false,
+    "derived_header_page_number_side": "",
+    "derived_header_chapter_side": "left",
+    "override_contains_header_page_number_enabled": false,
+    "override_contains_header_page_number_value": false,
+    "override_contains_header_chapter_number_enabled": false,
+    "override_contains_header_chapter_number_value": false,
+    "override_header_parity_consistent_enabled": false,
+    "override_header_parity_consistent_value": false,
+    "override_header_page_number_side_enabled": false,
+    "override_header_page_number_side_value": "",
+    "override_header_chapter_side_enabled": false,
+    "override_header_chapter_side_value": ""
+  },
   "page_id": "p0036",
-  "part": "part1",
-  "source_pdf": "00_source_pdf/JamesUssher_Britannicarum ecclesiarum antiquitates_Part1.pdf",
   "page_num": 36,
+  "part": "part1",
   "regions": {
-    "header": [],
     "body": [
       {
         "page_id": "p0036",
@@ -17,9 +44,10 @@
         "marker_link_target": "",
         "uncertain_ae": false,
         "marker_uncertain": false,
-        "reviewer": "",
+        "reviewer": "Paul Boys",
         "review_status": "draft",
-        "notes": ""
+        "notes": "",
+        "glyph_counts": {}
       },
       {
         "page_id": "p0036",
@@ -32,9 +60,10 @@
         "marker_link_target": "",
         "uncertain_ae": false,
         "marker_uncertain": false,
-        "reviewer": "",
+        "reviewer": "Paul Boys",
         "review_status": "draft",
-        "notes": ""
+        "notes": "",
+        "glyph_counts": {}
       },
       {
         "page_id": "p0036",
@@ -47,9 +76,10 @@
         "marker_link_target": "",
         "uncertain_ae": false,
         "marker_uncertain": false,
-        "reviewer": "",
+        "reviewer": "Paul Boys",
         "review_status": "draft",
-        "notes": ""
+        "notes": "",
+        "glyph_counts": {}
       },
       {
         "page_id": "p0036",
@@ -62,9 +92,10 @@
         "marker_link_target": "",
         "uncertain_ae": false,
         "marker_uncertain": false,
-        "reviewer": "",
+        "reviewer": "Paul Boys",
         "review_status": "draft",
-        "notes": ""
+        "notes": "",
+        "glyph_counts": {}
       },
       {
         "page_id": "p0036",
@@ -77,9 +108,10 @@
         "marker_link_target": "",
         "uncertain_ae": false,
         "marker_uncertain": false,
-        "reviewer": "",
+        "reviewer": "Paul Boys",
         "review_status": "draft",
-        "notes": ""
+        "notes": "",
+        "glyph_counts": {}
       },
       {
         "page_id": "p0036",
@@ -92,9 +124,10 @@
         "marker_link_target": "",
         "uncertain_ae": false,
         "marker_uncertain": false,
-        "reviewer": "",
+        "reviewer": "Paul Boys",
         "review_status": "draft",
-        "notes": ""
+        "notes": "",
+        "glyph_counts": {}
       },
       {
         "page_id": "p0036",
@@ -107,9 +140,10 @@
         "marker_link_target": "",
         "uncertain_ae": false,
         "marker_uncertain": false,
-        "reviewer": "",
+        "reviewer": "Paul Boys",
         "review_status": "draft",
-        "notes": ""
+        "notes": "",
+        "glyph_counts": {}
       },
       {
         "page_id": "p0036",
@@ -122,9 +156,10 @@
         "marker_link_target": "",
         "uncertain_ae": false,
         "marker_uncertain": false,
-        "reviewer": "",
+        "reviewer": "Paul Boys",
         "review_status": "draft",
-        "notes": ""
+        "notes": "",
+        "glyph_counts": {}
       },
       {
         "page_id": "p0036",
@@ -137,9 +172,10 @@
         "marker_link_target": "",
         "uncertain_ae": false,
         "marker_uncertain": false,
-        "reviewer": "",
+        "reviewer": "Paul Boys",
         "review_status": "draft",
-        "notes": ""
+        "notes": "",
+        "glyph_counts": {}
       },
       {
         "page_id": "p0036",
@@ -152,9 +188,10 @@
         "marker_link_target": "",
         "uncertain_ae": false,
         "marker_uncertain": false,
-        "reviewer": "",
+        "reviewer": "Paul Boys",
         "review_status": "draft",
-        "notes": ""
+        "notes": "",
+        "glyph_counts": {}
       },
       {
         "page_id": "p0036",
@@ -167,9 +204,10 @@
         "marker_link_target": "",
         "uncertain_ae": false,
         "marker_uncertain": false,
-        "reviewer": "",
+        "reviewer": "Paul Boys",
         "review_status": "draft",
-        "notes": ""
+        "notes": "",
+        "glyph_counts": {}
       },
       {
         "page_id": "p0036",
@@ -182,9 +220,10 @@
         "marker_link_target": "",
         "uncertain_ae": false,
         "marker_uncertain": false,
-        "reviewer": "",
+        "reviewer": "Paul Boys",
         "review_status": "draft",
-        "notes": ""
+        "notes": "",
+        "glyph_counts": {}
       },
       {
         "page_id": "p0036",
@@ -197,9 +236,10 @@
         "marker_link_target": "",
         "uncertain_ae": false,
         "marker_uncertain": false,
-        "reviewer": "",
+        "reviewer": "Paul Boys",
         "review_status": "draft",
-        "notes": ""
+        "notes": "",
+        "glyph_counts": {}
       },
       {
         "page_id": "p0036",
@@ -212,9 +252,10 @@
         "marker_link_target": "",
         "uncertain_ae": false,
         "marker_uncertain": false,
-        "reviewer": "",
+        "reviewer": "Paul Boys",
         "review_status": "draft",
-        "notes": ""
+        "notes": "",
+        "glyph_counts": {}
       },
       {
         "page_id": "p0036",
@@ -227,9 +268,10 @@
         "marker_link_target": "",
         "uncertain_ae": false,
         "marker_uncertain": false,
-        "reviewer": "",
+        "reviewer": "Paul Boys",
         "review_status": "draft",
-        "notes": ""
+        "notes": "",
+        "glyph_counts": {}
       },
       {
         "page_id": "p0036",
@@ -242,9 +284,10 @@
         "marker_link_target": "",
         "uncertain_ae": false,
         "marker_uncertain": false,
-        "reviewer": "",
+        "reviewer": "Paul Boys",
         "review_status": "draft",
-        "notes": ""
+        "notes": "",
+        "glyph_counts": {}
       },
       {
         "page_id": "p0036",
@@ -257,9 +300,10 @@
         "marker_link_target": "",
         "uncertain_ae": false,
         "marker_uncertain": false,
-        "reviewer": "",
+        "reviewer": "Paul Boys",
         "review_status": "draft",
-        "notes": ""
+        "notes": "",
+        "glyph_counts": {}
       },
       {
         "page_id": "p0036",
@@ -272,9 +316,10 @@
         "marker_link_target": "",
         "uncertain_ae": false,
         "marker_uncertain": false,
-        "reviewer": "",
+        "reviewer": "Paul Boys",
         "review_status": "draft",
-        "notes": ""
+        "notes": "",
+        "glyph_counts": {}
       },
       {
         "page_id": "p0036",
@@ -287,9 +332,10 @@
         "marker_link_target": "",
         "uncertain_ae": false,
         "marker_uncertain": false,
-        "reviewer": "",
+        "reviewer": "Paul Boys",
         "review_status": "draft",
-        "notes": ""
+        "notes": "",
+        "glyph_counts": {}
       },
       {
         "page_id": "p0036",
@@ -302,9 +348,10 @@
         "marker_link_target": "",
         "uncertain_ae": false,
         "marker_uncertain": false,
-        "reviewer": "",
+        "reviewer": "Paul Boys",
         "review_status": "draft",
-        "notes": ""
+        "notes": "",
+        "glyph_counts": {}
       },
       {
         "page_id": "p0036",
@@ -317,9 +364,10 @@
         "marker_link_target": "",
         "uncertain_ae": false,
         "marker_uncertain": false,
-        "reviewer": "",
+        "reviewer": "Paul Boys",
         "review_status": "draft",
-        "notes": ""
+        "notes": "",
+        "glyph_counts": {}
       },
       {
         "page_id": "p0036",
@@ -332,9 +380,10 @@
         "marker_link_target": "",
         "uncertain_ae": false,
         "marker_uncertain": false,
-        "reviewer": "",
+        "reviewer": "Paul Boys",
         "review_status": "draft",
-        "notes": ""
+        "notes": "",
+        "glyph_counts": {}
       },
       {
         "page_id": "p0036",
@@ -347,9 +396,10 @@
         "marker_link_target": "",
         "uncertain_ae": false,
         "marker_uncertain": false,
-        "reviewer": "",
+        "reviewer": "Paul Boys",
         "review_status": "draft",
-        "notes": ""
+        "notes": "",
+        "glyph_counts": {}
       },
       {
         "page_id": "p0036",
@@ -362,9 +412,10 @@
         "marker_link_target": "",
         "uncertain_ae": false,
         "marker_uncertain": false,
-        "reviewer": "",
+        "reviewer": "Paul Boys",
         "review_status": "draft",
-        "notes": ""
+        "notes": "",
+        "glyph_counts": {}
       },
       {
         "page_id": "p0036",
@@ -377,9 +428,10 @@
         "marker_link_target": "",
         "uncertain_ae": false,
         "marker_uncertain": false,
-        "reviewer": "",
+        "reviewer": "Paul Boys",
         "review_status": "draft",
-        "notes": ""
+        "notes": "",
+        "glyph_counts": {}
       },
       {
         "page_id": "p0036",
@@ -392,9 +444,10 @@
         "marker_link_target": "",
         "uncertain_ae": false,
         "marker_uncertain": false,
-        "reviewer": "",
+        "reviewer": "Paul Boys",
         "review_status": "draft",
-        "notes": ""
+        "notes": "",
+        "glyph_counts": {}
       },
       {
         "page_id": "p0036",
@@ -407,9 +460,10 @@
         "marker_link_target": "",
         "uncertain_ae": false,
         "marker_uncertain": false,
-        "reviewer": "",
+        "reviewer": "Paul Boys",
         "review_status": "draft",
-        "notes": ""
+        "notes": "",
+        "glyph_counts": {}
       },
       {
         "page_id": "p0036",
@@ -422,9 +476,10 @@
         "marker_link_target": "",
         "uncertain_ae": false,
         "marker_uncertain": false,
-        "reviewer": "",
+        "reviewer": "Paul Boys",
         "review_status": "draft",
-        "notes": ""
+        "notes": "",
+        "glyph_counts": {}
       },
       {
         "page_id": "p0036",
@@ -437,9 +492,10 @@
         "marker_link_target": "",
         "uncertain_ae": false,
         "marker_uncertain": false,
-        "reviewer": "",
+        "reviewer": "Paul Boys",
         "review_status": "draft",
-        "notes": ""
+        "notes": "",
+        "glyph_counts": {}
       },
       {
         "page_id": "p0036",
@@ -452,9 +508,10 @@
         "marker_link_target": "",
         "uncertain_ae": false,
         "marker_uncertain": false,
-        "reviewer": "",
+        "reviewer": "Paul Boys",
         "review_status": "draft",
-        "notes": ""
+        "notes": "",
+        "glyph_counts": {}
       },
       {
         "page_id": "p0036",
@@ -467,9 +524,10 @@
         "marker_link_target": "",
         "uncertain_ae": false,
         "marker_uncertain": false,
-        "reviewer": "",
+        "reviewer": "Paul Boys",
         "review_status": "draft",
-        "notes": ""
+        "notes": "",
+        "glyph_counts": {}
       },
       {
         "page_id": "p0036",
@@ -482,9 +540,10 @@
         "marker_link_target": "",
         "uncertain_ae": false,
         "marker_uncertain": false,
-        "reviewer": "",
+        "reviewer": "Paul Boys",
         "review_status": "draft",
-        "notes": ""
+        "notes": "",
+        "glyph_counts": {}
       },
       {
         "page_id": "p0036",
@@ -497,9 +556,10 @@
         "marker_link_target": "",
         "uncertain_ae": false,
         "marker_uncertain": false,
-        "reviewer": "",
+        "reviewer": "Paul Boys",
         "review_status": "draft",
-        "notes": ""
+        "notes": "",
+        "glyph_counts": {}
       },
       {
         "page_id": "p0036",
@@ -512,9 +572,10 @@
         "marker_link_target": "",
         "uncertain_ae": false,
         "marker_uncertain": false,
-        "reviewer": "",
+        "reviewer": "Paul Boys",
         "review_status": "draft",
-        "notes": ""
+        "notes": "",
+        "glyph_counts": {}
       },
       {
         "page_id": "p0036",
@@ -527,9 +588,10 @@
         "marker_link_target": "",
         "uncertain_ae": false,
         "marker_uncertain": false,
-        "reviewer": "",
+        "reviewer": "Paul Boys",
         "review_status": "draft",
-        "notes": ""
+        "notes": "",
+        "glyph_counts": {}
       },
       {
         "page_id": "p0036",
@@ -542,9 +604,10 @@
         "marker_link_target": "",
         "uncertain_ae": false,
         "marker_uncertain": false,
-        "reviewer": "",
+        "reviewer": "Paul Boys",
         "review_status": "draft",
-        "notes": ""
+        "notes": "",
+        "glyph_counts": {}
       },
       {
         "page_id": "p0036",
@@ -557,9 +620,10 @@
         "marker_link_target": "",
         "uncertain_ae": false,
         "marker_uncertain": false,
-        "reviewer": "",
+        "reviewer": "Paul Boys",
         "review_status": "draft",
-        "notes": ""
+        "notes": "",
+        "glyph_counts": {}
       },
       {
         "page_id": "p0036",
@@ -572,9 +636,10 @@
         "marker_link_target": "",
         "uncertain_ae": false,
         "marker_uncertain": false,
-        "reviewer": "",
+        "reviewer": "Paul Boys",
         "review_status": "draft",
-        "notes": ""
+        "notes": "",
+        "glyph_counts": {}
       },
       {
         "page_id": "p0036",
@@ -587,25 +652,14 @@
         "marker_link_target": "",
         "uncertain_ae": false,
         "marker_uncertain": false,
-        "reviewer": "",
+        "reviewer": "Paul Boys",
         "review_status": "draft",
-        "notes": ""
+        "notes": "",
+        "glyph_counts": {}
       }
     ],
-    "footnote": []
+    "footnote": [],
+    "header": []
   },
-  "marker_links": [],
-  "meta": {
-    "contains_ae_focus": true,
-    "contains_marker_focus": false,
-    "contains_header_page_number": false,
-    "contains_header_chapter_number": false,
-    "header_page_number_side": "",
-    "header_chapter_side": "",
-    "header_parity_consistent": false,
-    "annotation_status": "draft",
-    "review_status": "draft",
-    "reviewer": "",
-    "notes": "Seeded from raw OCR output; verify against PDF and then lock reviewed lines."
-  }
+  "source_pdf": "00_source_pdf/JamesUssher_Britannicarum ecclesiarum antiquitates_Part1.pdf"
 }
