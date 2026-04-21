@@ -1,20 +1,20 @@
 {
+  "page_id": "p0031",
+  "part": "part1",
+  "source_pdf": "00_source_pdf/JamesUssher_Britannicarum ecclesiarum antiquitates_Part1.pdf",
+  "page_num": 31,
+  "regions": {
+    "header": [],
+    "body": [],
+    "footnote": []
+  },
   "marker_links": [],
   "meta": {
-    "annotation_status": "draft",
     "contains_ae_focus": false,
     "contains_marker_focus": false,
-    "notes": "Seeded from raw OCR output; verify against PDF and then lock reviewed lines. Page is blank.",
-    "review_status": "reviewed",
-    "reviewer": "PB"
-  },
-  "page_id": "p0031",
-  "page_num": 31,
-  "part": "part1",
-  "regions": {
-    "body": [],
-    "footnote": [],
-    "header": []
-  },
-  "source_pdf": "C:\\Users\\User\\Documents\\UssherIn\\00_source_pdf\\JamesUssher_Britannicarum ecclesiarum antiquitates_Part1.pdf"
+    "annotation_status": "draft",
+    "review_status": "draft",
+    "reviewer": "",
+    "notes": "Seeded from raw OCR output; verify against PDF and then lock reviewed lines."
+  }
 }
