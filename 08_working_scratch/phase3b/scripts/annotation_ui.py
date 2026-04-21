@@ -3,7 +3,7 @@ import re
 import tempfile
 from pathlib import Path
 
-from flask import Flask, abort, jsonify, render_template, request, send_file
+from flask import Flask, abort, jsonify, render_template, request, send_file, url_for
 
 ROOT = Path(__file__).resolve().parents[3]
 PHASE3B_ROOT = ROOT / "08_working_scratch" / "phase3b"
@@ -48,6 +48,18 @@ def _write_payload_atomic(path: Path, payload: dict) -> None:
         handle.write("\n")
         temp_name = handle.name
     Path(temp_name).replace(path)
+
+
+def _resolve_source_pdf(payload: dict) -> tuple[Path, str]:
+    source_pdf_value = str(payload.get("source_pdf", "")).strip()
+    source_pdf = Path(source_pdf_value)
+    if not source_pdf.is_absolute():
+        candidates = [
+            ROOT / source_pdf,
+            ROOT / "00_source_pdf" / source_pdf_value,
+        ]
+        source_pdf = next((candidate for candidate in candidates if candidate.exists()), source_pdf)
+    return source_pdf, source_pdf_value
 
 
 def _all_lines(payload: dict) -> list[dict]:
@@ -351,21 +363,42 @@ def page_pdf(page_id: str):
         abort(404)
 
     payload = _read_payload(path)
-    source_pdf_value = str(payload.get("source_pdf", "")).strip()
-    source_pdf = Path(source_pdf_value)
-    if not source_pdf.is_absolute():
-        candidates = [
-            ROOT / source_pdf,
-            ROOT / "00_source_pdf" / source_pdf_value,
-        ]
-        source_pdf = next(
-            (candidate for candidate in candidates if candidate.exists()), source_pdf
-        )
+    source_pdf, source_pdf_value = _resolve_source_pdf(payload)
 
     if not source_pdf.exists():
         return f"Source PDF not found: {source_pdf_value}", 404
 
     return send_file(source_pdf)
+
+
+@app.get("/pdfjs/<page_id>")
+def pdfjs_viewer(page_id: str):
+    try:
+        path = _annotation_path(page_id)
+    except ValueError:
+        abort(400)
+
+    if not path.exists():
+        abort(404)
+
+    payload = _read_payload(path)
+    source_pdf, source_pdf_value = _resolve_source_pdf(payload)
+    if not source_pdf.exists():
+        return f"Source PDF not found: {source_pdf_value}", 404
+
+    requested_page = request.args.get("page", default="", type=str)
+    try:
+        initial_page = int(requested_page)
+    except (TypeError, ValueError):
+        initial_page = int(payload.get("page_num", 1) or 1)
+    if initial_page < 1:
+        initial_page = 1
+
+    return render_template(
+        "pdf_viewer.html",
+        pdf_url=url_for("page_pdf", page_id=page_id),
+        initial_page=initial_page,
+    )
 
 
 if __name__ == "__main__":
