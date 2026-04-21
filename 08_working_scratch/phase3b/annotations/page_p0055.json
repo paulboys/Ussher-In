@@ -598,6 +598,11 @@
   "meta": {
     "contains_ae_focus": true,
     "contains_marker_focus": false,
+    "contains_header_page_number": false,
+    "contains_header_chapter_number": false,
+    "header_page_number_side": "",
+    "header_chapter_side": "",
+    "header_parity_consistent": false,
     "annotation_status": "draft",
     "review_status": "draft",
     "reviewer": "",
