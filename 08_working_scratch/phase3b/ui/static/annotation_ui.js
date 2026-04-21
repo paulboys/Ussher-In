@@ -1,5 +1,6 @@
 let currentPayload = null;
 let activeInput = null;
+let currentPdfSource = "";
 const DEFAULT_REVIEWER = "Paul Boys";
 
 const pageSelect = document.getElementById("pageSelect");
@@ -660,7 +661,23 @@ async function loadPage(pageId) {
     applyDefaultReviewer(currentPayload);
     bindMeta(currentPayload.meta || (currentPayload.meta = {}));
     renderAllRegions();
-    pdfFrame.src = `/pdf/${pageId}`;
+
+    const parsedPageNum = Number(currentPayload.page_num);
+    const fallbackPageNum = Number(String(pageId || "").replace(/^p/, ""));
+    const pdfPageNum = Number.isFinite(parsedPageNum) && parsedPageNum > 0
+      ? parsedPageNum
+      : (Number.isFinite(fallbackPageNum) && fallbackPageNum > 0 ? fallbackPageNum : 1);
+
+    const sourcePdfKey = String(currentPayload.source_pdf || "");
+    if (!pdfFrame.src || currentPdfSource !== sourcePdfKey) {
+      // New source PDF: load it fresh at the target page.
+      currentPdfSource = sourcePdfKey;
+      pdfFrame.src = `/pdf/${pageId}#page=${pdfPageNum}`;
+    } else {
+      // Same source PDF: update only the page fragment to avoid full reload resets.
+      const currentBase = pdfFrame.src.split("#")[0];
+      pdfFrame.src = `${currentBase}#page=${pdfPageNum}`;
+    }
     setStatus(`Loaded ${pageId}`);
   } catch (err) {
     setStatus(String(err), true);
