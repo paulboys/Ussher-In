@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PDF Viewer</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      background: #f5f1e8;
+      overflow: hidden;
+      font-family: "Source Serif 4", Georgia, serif;
+    }
+    .viewer-root {
+      height: 100%;
+      display: grid;
+      grid-template-rows: auto 1fr;
+    }
+    .toolbar {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.35rem 0.5rem;
+      border-bottom: 1px solid #d7cbb8;
+      background: #fff9ee;
+      font-size: 0.85rem;
+    }
+    .toolbar button,
+    .toolbar input {
+      border: 1px solid #c7b79f;
+      border-radius: 4px;
+      background: #fff;
+      padding: 0.2rem 0.4rem;
+      font-size: 0.85rem;
+    }
+    .toolbar input {
+      width: 4.5rem;
+      text-align: center;
+    }
+    .stage {
+      overflow: auto;
+      display: flex;
+      justify-content: center;
+      padding: 0.5rem;
+    }
+    canvas {
+      box-shadow: 0 0 0 1px #d7cbb8;
+      background: #fff;
+    }
+  </style>
+</head>
+<body>
+  <div class="viewer-root">
+    <div class="toolbar">
+      <button id="prevBtn" type="button" title="Previous page">Prev</button>
+      <label>
+        Page
+        <input id="pageInput" type="number" min="1" step="1">
+      </label>
+      <span id="pageInfo"></span>
+      <button id="nextBtn" type="button" title="Next page">Next</button>
+    </div>
+    <div class="stage">
+      <canvas id="pdfCanvas"></canvas>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <script>
+    const pdfUrl = {{ pdf_url|tojson }};
+    let currentPage = Number({{ initial_page|int }}) || 1;
+    let pdfDoc = null;
+    let renderToken = 0;
+
+    const canvas = document.getElementById("pdfCanvas");
+    const ctx = canvas.getContext("2d", { alpha: false });
+    const pageInput = document.getElementById("pageInput");
+    const pageInfo = document.getElementById("pageInfo");
+    const prevBtn = document.getElementById("prevBtn");
+    const nextBtn = document.getElementById("nextBtn");
+
+    function clampPage(pageNum) {
+      if (!pdfDoc) return 1;
+      return Math.max(1, Math.min(pdfDoc.numPages, Number(pageNum) || 1));
+    }
+
+    function updateControls() {
+      if (!pdfDoc) return;
+      pageInput.value = String(currentPage);
+      pageInfo.textContent = `of ${pdfDoc.numPages}`;
+      prevBtn.disabled = currentPage <= 1;
+      nextBtn.disabled = currentPage >= pdfDoc.numPages;
+    }
+
+    async function renderPage(pageNum) {
+      if (!pdfDoc) return;
+      currentPage = clampPage(pageNum);
+      updateControls();
+
+      const token = ++renderToken;
+      const page = await pdfDoc.getPage(currentPage);
+      const viewport = page.getViewport({ scale: 1.25 });
+      canvas.width = Math.ceil(viewport.width);
+      canvas.height = Math.ceil(viewport.height);
+
+      await page.render({
+        canvasContext: ctx,
+        viewport,
+      }).promise;
+
+      if (token !== renderToken) {
+        return;
+      }
+
+      // Keep iframe URL hash in sync so refresh/open-in-new-tab preserves the page.
+      if (location.hash !== `#page=${currentPage}`) {
+        history.replaceState(null, "", `#page=${currentPage}`);
+      }
+    }
+
+    function fallbackToNativePdf(pageNum) {
+      window.location.replace(`${pdfUrl}#page=${pageNum}`);
+    }
+
+    async function loadPdf(targetPage) {
+      if (!window.pdfjsLib) {
+        fallbackToNativePdf(targetPage);
+        return;
+      }
+
+      pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+      const loadingTask = pdfjsLib.getDocument({ url: pdfUrl, withCredentials: false });
+      pdfDoc = await loadingTask.promise;
+      await renderPage(targetPage);
+    }
+
+    prevBtn.addEventListener("click", () => {
+      if (currentPage > 1) {
+        renderPage(currentPage - 1);
+      }
+    });
+
+    nextBtn.addEventListener("click", () => {
+      if (pdfDoc && currentPage < pdfDoc.numPages) {
+        renderPage(currentPage + 1);
+      }
+    });
+
+    pageInput.addEventListener("change", () => {
+      renderPage(pageInput.value);
+    });
+
+    window.addEventListener("message", (event) => {
+      if (!event || typeof event.data !== "object" || event.data === null) {
+        return;
+      }
+      if (event.data.type === "setPage") {
+        renderPage(event.data.page);
+      }
+      if (event.data.type === "setDocument") {
+        const nextPdfUrl = String(event.data.pdfUrl || "");
+        const nextPage = Number(event.data.page) || 1;
+        if (!nextPdfUrl) {
+          return;
+        }
+        if (nextPdfUrl === pdfUrl) {
+          renderPage(nextPage);
+          return;
+        }
+        location.href = `${nextPdfUrl}#page=${nextPage}`;
+      }
+    });
+
+    const hashMatch = window.location.hash.match(/^#page=(\d+)$/);
+    if (hashMatch) {
+      currentPage = Number(hashMatch[1]);
+    }
+
+    loadPdf(currentPage).catch((err) => {
+      pageInfo.textContent = "Falling back to native PDF viewer";
+      console.error(err);
+      fallbackToNativePdf(currentPage);
+    });
+  </script>
+</body>
+</html>
