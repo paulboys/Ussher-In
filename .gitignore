@@ -19,3 +19,9 @@ __pycache__/
 Thumbs.db
 Desktop.ini
 .DS_Store
+
+# VS Code workspace settings
+.vscode/
+
+# GitHub Actions self-hosted runner (local artifacts)
+actions-runner/
