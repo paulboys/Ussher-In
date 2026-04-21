@@ -1,0 +1,62 @@
+[
+  {
+    "part": "part1",
+    "page_num": 33,
+    "page_id": "p0033",
+    "ocr_engine": "kraken",
+    "ocr_model": "/home/paul/.local/share/htrmopo/48097fc5-ca4a-5bfa-b1c5-d33bb6838156/reichenau_lat_cat_099218.mlmodel",
+    "ocr_lang": [
+      "lat"
+    ],
+    "raw_text_path": "01_raw_ocr_output/part1/page_0033_raw.txt",
+    "raw_confidence_avg": 91.95,
+    "raw_confidence_min": 0.0,
+    "body_confidence_avg": 91.95,
+    "body_confidence_min": 0.0,
+    "footnote_confidence_avg": 0.0,
+    "footnote_confidence_min": 0.0,
+    "footnote_split_enabled": false,
+    "footnote_top_ratio": 0.0,
+    "qc_status": "pending"
+  },
+  {
+    "part": "part1",
+    "page_num": 34,
+    "page_id": "p0034",
+    "ocr_engine": "kraken",
+    "ocr_model": "/home/paul/.local/share/htrmopo/48097fc5-ca4a-5bfa-b1c5-d33bb6838156/reichenau_lat_cat_099218.mlmodel",
+    "ocr_lang": [
+      "lat"
+    ],
+    "raw_text_path": "01_raw_ocr_output/part1/page_0034_raw.txt",
+    "raw_confidence_avg": 87.93,
+    "raw_confidence_min": 0.0,
+    "body_confidence_avg": 87.93,
+    "body_confidence_min": 0.0,
+    "footnote_confidence_avg": 0.0,
+    "footnote_confidence_min": 0.0,
+    "footnote_split_enabled": false,
+    "footnote_top_ratio": 0.0,
+    "qc_status": "pending"
+  },
+  {
+    "part": "part1",
+    "page_num": 35,
+    "page_id": "p0035",
+    "ocr_engine": "kraken",
+    "ocr_model": "/home/paul/.local/share/htrmopo/48097fc5-ca4a-5bfa-b1c5-d33bb6838156/reichenau_lat_cat_099218.mlmodel",
+    "ocr_lang": [
+      "lat"
+    ],
+    "raw_text_path": "01_raw_ocr_output/part1/page_0035_raw.txt",
+    "raw_confidence_avg": 91.18,
+    "raw_confidence_min": 0.0,
+    "body_confidence_avg": 91.18,
+    "body_confidence_min": 0.0,
+    "footnote_confidence_avg": 0.0,
+    "footnote_confidence_min": 0.0,
+    "footnote_split_enabled": false,
+    "footnote_top_ratio": 0.0,
+    "qc_status": "pending"
+  }
+]
