@@ -132,6 +132,7 @@ def run_pilot(
     end_page: int,
     output_root: Path,
     tesseract_config: str,
+    lang: str,
     body_psm: int,
     footnote_psm: int,
     split_footnotes: bool,
@@ -164,10 +165,10 @@ def run_pilot(
 
         if split_footnotes:
             body_image, footnote_image = split_page_regions(image, footnote_top_ratio)
-            body_text, body_avg_conf, body_min_conf = score_image_text(ocr_engine, body_image, "lat", body_config)
-            footnote_text, footnote_avg_conf, footnote_min_conf = score_image_text(ocr_engine, footnote_image, "lat", footnote_config)
+            body_text, body_avg_conf, body_min_conf = score_image_text(ocr_engine, body_image, lang, body_config)
+            footnote_text, footnote_avg_conf, footnote_min_conf = score_image_text(ocr_engine, footnote_image, lang, footnote_config)
         else:
-            body_text, body_avg_conf, body_min_conf = score_image_text(ocr_engine, image, "lat", body_config)
+            body_text, body_avg_conf, body_min_conf = score_image_text(ocr_engine, image, lang, body_config)
             footnote_text, footnote_avg_conf, footnote_min_conf = "", 0.0, 0.0
 
         body_text = text_normalizer.apply(body_text)
@@ -191,7 +192,7 @@ def run_pilot(
                 "page_num": index,
                 "page_id": page_id,
                 "ocr_engine": "tesseract",
-                "ocr_lang": ["lat"],
+                "ocr_lang": lang.split("+"),
                 "raw_text_path": str(txt_path),
                 "raw_confidence_avg": body_avg_conf,
                 "raw_confidence_min": body_min_conf,
@@ -238,6 +239,11 @@ def main() -> None:
         "--tessdata-dir",
         default="06_tools_config/tessdata",
         help="Directory containing traineddata files (default project local path)",
+    )
+    parser.add_argument(
+        "--lang",
+        default="lat+grc",
+        help="Tesseract language string (default: lat+grc for Latin + Ancient Greek)",
     )
     parser.add_argument(
         "--tesseract-cmd",
@@ -338,8 +344,9 @@ def main() -> None:
         tessdata_dir = Path(args.tessdata_dir)
         if not tessdata_dir.exists():
             raise RuntimeError(f"Tessdata directory not found: {tessdata_dir}")
-        if not (tessdata_dir / "lat.traineddata").exists():
-            raise RuntimeError(f"Latin model not found: {tessdata_dir / 'lat.traineddata'}")
+        for lang_code in args.lang.split("+"):
+            if not (tessdata_dir / f"{lang_code}.traineddata").exists():
+                raise RuntimeError(f"Model not found: {tessdata_dir / f'{lang_code}.traineddata'}")
 
         tesseract_config = build_tesseract_config(tessdata_dir)
 
@@ -350,6 +357,7 @@ def main() -> None:
             end_page=args.end_page,
             output_root=Path(args.output_root),
             tesseract_config=tesseract_config,
+            lang=args.lang,
             body_psm=args.body_psm,
             footnote_psm=args.footnote_psm,
             split_footnotes=args.split_footnotes,
