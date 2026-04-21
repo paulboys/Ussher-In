@@ -1,22 +1,30 @@
 {
-  "marker_links": [],
-  "meta": {
-    "annotation_status": "draft",
-    "contains_ae_focus": true,
-    "contains_marker_focus": true,
-    "notes": "Seeded from raw OCR output; verify against PDF and then lock reviewed lines.",
-    "review_status": "draft",
-    "reviewer": "Paul Boys"
-  },
   "page_id": "p0030",
-  "page_num": 30,
   "part": "part1",
+  "source_pdf": "00_source_pdf/JamesUssher_Britannicarum ecclesiarum antiquitates_Part1.pdf",
+  "page_num": 30,
   "regions": {
+    "header": [],
     "body": [
       {
         "page_id": "p0030",
         "region": "body",
         "line_id": "p0030_body_l0001",
+        "text_gold": "PRJEFATIO. 9",
+        "contains_ae_target": false,
+        "contains_marker": false,
+        "marker_id": "",
+        "marker_link_target": "",
+        "uncertain_ae": false,
+        "marker_uncertain": false,
+        "reviewer": "",
+        "review_status": "draft",
+        "notes": ""
+      },
+      {
+        "page_id": "p0030",
+        "region": "body",
+        "line_id": "p0030_body_l0002",
         "text_gold": "tanto periculosius) propagare,\" et Thomas Bradwardi-",
         "contains_ae_target": false,
         "contains_marker": false,
@@ -24,33 +32,29 @@
         "marker_link_target": "",
         "uncertain_ae": false,
         "marker_uncertain": false,
-        "reviewer": "Paul Boys",
-        "review_status": "locked",
-        "notes": "",
-        "glyph_counts": {}
-      },
-      {
-        "page_id": "p0030",
-        "region": "body",
-        "line_id": "p0030_body_l0002",
-        "text_gold": "nusᵈ conquestus est olim, et nos hodie non sine causa con-",
-        "contains_ae_target": false,
-        "contains_marker": true,
-        "marker_id": "ᵈ",
-        "marker_link_target": "p0030_footnote_l0001",
-        "uncertain_ae": false,
-        "marker_uncertain": false,
-        "reviewer": "Paul Boys",
-        "review_status": "locked",
-        "notes": "mistook `ᵈ` for `?`",
-        "glyph_counts": {
-          "ᵈ": 1
-        }
+        "reviewer": "",
+        "review_status": "draft",
+        "notes": ""
       },
       {
         "page_id": "p0030",
         "region": "body",
         "line_id": "p0030_body_l0003",
+        "text_gold": "nus? conquestus est olim, et nos hodie non sine causa con-",
+        "contains_ae_target": false,
+        "contains_marker": false,
+        "marker_id": "",
+        "marker_link_target": "",
+        "uncertain_ae": false,
+        "marker_uncertain": false,
+        "reviewer": "",
+        "review_status": "draft",
+        "notes": ""
+      },
+      {
+        "page_id": "p0030",
+        "region": "body",
+        "line_id": "p0030_body_l0004",
         "text_gold": "querimur. Sicubi vero, vel in hoc, vel in argumento illo",
         "contains_ae_target": false,
         "contains_marker": false,
@@ -58,15 +62,14 @@
         "marker_link_target": "",
         "uncertain_ae": false,
         "marker_uncertain": false,
-        "reviewer": "Paul Boys",
-        "review_status": "locked",
-        "notes": "",
-        "glyph_counts": {}
+        "reviewer": "",
+        "review_status": "draft",
+        "notes": ""
       },
       {
         "page_id": "p0030",
         "region": "body",
-        "line_id": "p0030_body_l0004",
+        "line_id": "p0030_body_l0005",
         "text_gold": "altero, aliorum expectationi minus satisfecerim: occu-",
         "contains_ae_target": false,
         "contains_marker": false,
@@ -74,67 +77,59 @@
         "marker_link_target": "",
         "uncertain_ae": false,
         "marker_uncertain": false,
-        "reviewer": "Paul Boys",
-        "review_status": "locked",
-        "notes": "",
-        "glyph_counts": {}
-      },
-      {
-        "page_id": "p0030",
-        "region": "body",
-        "line_id": "p0030_body_l0005",
-        "text_gold": "pationes quibus indies distineor maximœ, aliquid excu-",
-        "contains_ae_target": false,
-        "contains_marker": false,
-        "marker_id": "",
-        "marker_link_target": "",
-        "uncertain_ae": false,
-        "marker_uncertain": false,
-        "reviewer": "Paul Boys",
-        "review_status": "locked",
-        "notes": "",
-        "glyph_counts": {
-          "œ": 1
-        }
+        "reviewer": "",
+        "review_status": "draft",
+        "notes": ""
       },
       {
         "page_id": "p0030",
         "region": "body",
         "line_id": "p0030_body_l0006",
-        "text_gold": "sationis ab sequis, ut spero, rerum œstimatoribus im-",
+        "text_gold": "pationes quibus indies distineor maxims, aliquid excu-",
         "contains_ae_target": false,
         "contains_marker": false,
         "marker_id": "",
         "marker_link_target": "",
         "uncertain_ae": false,
         "marker_uncertain": false,
-        "reviewer": "Paul Boys",
-        "review_status": "locked",
-        "notes": "",
-        "glyph_counts": {
-          "œ": 1
-        }
+        "reviewer": "",
+        "review_status": "draft",
+        "notes": ""
       },
       {
         "page_id": "p0030",
         "region": "body",
         "line_id": "p0030_body_l0007",
-        "text_gold": "petrabunt. Dublinii, anno CIƆ IƆC XXXIX. IV. Non.",
+        "text_gold": "sationis ab sequis, ut spero, rerum zstimatoribus im-",
         "contains_ae_target": false,
         "contains_marker": false,
         "marker_id": "",
         "marker_link_target": "",
         "uncertain_ae": false,
         "marker_uncertain": false,
-        "reviewer": "Paul Boys",
-        "review_status": "locked",
-        "notes": "",
-        "glyph_counts": {}
+        "reviewer": "",
+        "review_status": "draft",
+        "notes": ""
       },
       {
         "page_id": "p0030",
         "region": "body",
         "line_id": "p0030_body_l0008",
+        "text_gold": "petrabunt. Dublinii, anno CID I2C XXXIX. IV. Non.",
+        "contains_ae_target": false,
+        "contains_marker": false,
+        "marker_id": "",
+        "marker_link_target": "",
+        "uncertain_ae": false,
+        "marker_uncertain": false,
+        "reviewer": "",
+        "review_status": "draft",
+        "notes": ""
+      },
+      {
+        "page_id": "p0030",
+        "region": "body",
+        "line_id": "p0030_body_l0009",
         "text_gold": "August.",
         "contains_ae_target": false,
         "contains_marker": false,
@@ -142,52 +137,50 @@
         "marker_link_target": "",
         "uncertain_ae": false,
         "marker_uncertain": false,
-        "reviewer": "Paul Boys",
-        "review_status": "locked",
-        "notes": "",
-        "glyph_counts": {}
-      }
-    ],
-    "footnote": [
+        "reviewer": "",
+        "review_status": "draft",
+        "notes": ""
+      },
       {
         "page_id": "p0030",
-        "region": "footnote",
-        "line_id": "p0030_footnote_l0001",
-        "text_gold": "[fn01|ᵈ] 4 Bradwardin. Prafat. in libros de causa Dei contra Pelag.",
+        "region": "body",
+        "line_id": "p0030_body_l0010",
+        "text_gold": "4 Bradwardin. Prafat. in libros de causa Dei contra Pelag.",
         "contains_ae_target": false,
-        "contains_marker": true,
-        "marker_id": "d",
-        "marker_link_target": "p0030_footnote_l0001",
-        "uncertain_ae": false,
-        "marker_uncertain": false,
-        "reviewer": "Paul Boys",
-        "review_status": "locked",
-        "notes": "",
-        "glyph_counts": {
-          "ᵈ": 1
-        }
-      }
-    ],
-    "header": [
-      {
-        "page_id": "p0030",
-        "region": "header",
-        "line_id": "p0030_header_l0001",
-        "text_gold": "PRÆFATIO. 9",
-        "contains_ae_target": true,
         "contains_marker": false,
         "marker_id": "",
         "marker_link_target": "",
         "uncertain_ae": false,
         "marker_uncertain": false,
-        "reviewer": "Paul Boys",
-        "review_status": "locked",
-        "notes": "moved up from Body lines",
-        "glyph_counts": {
-          "Æ": 1
-        }
+        "reviewer": "",
+        "review_status": "draft",
+        "notes": ""
+      },
+      {
+        "page_id": "p0030",
+        "region": "body",
+        "line_id": "p0030_body_l0011",
+        "text_gold": "Ἂ",
+        "contains_ae_target": false,
+        "contains_marker": false,
+        "marker_id": "",
+        "marker_link_target": "",
+        "uncertain_ae": false,
+        "marker_uncertain": false,
+        "reviewer": "",
+        "review_status": "draft",
+        "notes": ""
       }
-    ]
+    ],
+    "footnote": []
   },
-  "source_pdf": "C:\\Users\\User\\Documents\\UssherIn\\00_source_pdf\\JamesUssher_Britannicarum ecclesiarum antiquitates_Part1.pdf"
+  "marker_links": [],
+  "meta": {
+    "contains_ae_focus": false,
+    "contains_marker_focus": false,
+    "annotation_status": "draft",
+    "review_status": "draft",
+    "reviewer": "",
+    "notes": "Seeded from raw OCR output; verify against PDF and then lock reviewed lines."
+  }
 }
