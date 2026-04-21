@@ -5,7 +5,7 @@ from __future__ import annotations
 import platform
 import re
 import subprocess
-from pathlib import Path, PurePosixPath
+from pathlib import Path, PurePosixPath, PureWindowsPath
 
 
 def is_windows() -> bool:
@@ -29,7 +29,7 @@ def windows_to_wsl(path: str | Path) -> str:
     return f"/mnt/{drive_letter}/{rest}"
 
 
-def wsl_to_windows(wsl_path: str) -> Path:
+def wsl_to_windows(wsl_path: str) -> PureWindowsPath:
     """Convert a WSL /mnt/ path back to a Windows Path.
 
     Examples:
@@ -41,7 +41,7 @@ def wsl_to_windows(wsl_path: str) -> Path:
 
     drive_letter = match.group(1).upper()
     rest = match.group(2)
-    return Path(f"{drive_letter}:/{rest}")
+    return PureWindowsPath(f"{drive_letter}:/{rest}")
 
 
 def run_in_wsl(
