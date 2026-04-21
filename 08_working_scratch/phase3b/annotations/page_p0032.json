@@ -1,90 +1,58 @@
 {
+  "marker_links": [],
+  "meta": {
+    "annotation_status": "reviewed",
+    "contains_ae_focus": true,
+    "contains_marker_focus": true,
+    "notes": "Seeded from raw OCR output; verify against PDF and then lock reviewed lines.",
+    "review_status": "reviewed",
+    "reviewer": "Paul Boys"
+  },
   "page_id": "p0032",
-  "part": "part1",
-  "source_pdf": "C:\\Users\\User\\Documents\\UssherIn\\00_source_pdf\\JamesUssher_Britannicarum ecclesiarum antiquitates_Part1.pdf",
   "page_num": 32,
+  "part": "part1",
   "regions": {
-    "header": [],
     "body": [
       {
         "page_id": "p0032",
         "region": "body",
         "line_id": "p0032_body_l0001",
-        "text_gold": "BRITANNICARUM ECCLESIARUM",
-        "contains_ae_target": false,
+        "text_gold": "Britanni ante acceptam fidem Christianam idololatræ. De apostolis, qui in Bri-",
+        "contains_ae_target": true,
         "contains_marker": false,
         "marker_id": "",
         "marker_link_target": "",
         "uncertain_ae": false,
         "marker_uncertain": false,
-        "reviewer": "",
-        "review_status": "draft",
-        "notes": ""
+        "reviewer": "Paul Boys",
+        "review_status": "locked",
+        "notes": "",
+        "glyph_counts": {
+          "æ": 1
+        }
       },
       {
         "page_id": "p0032",
         "region": "body",
         "line_id": "p0032_body_l0002",
-        "text_gold": "ANTIQUITATES.",
-        "contains_ae_target": false,
+        "text_gold": "tannicis insulis evangelium primi prædicasse dicuntur : Jacobo Zebedæi,",
+        "contains_ae_target": true,
         "contains_marker": false,
         "marker_id": "",
         "marker_link_target": "",
         "uncertain_ae": false,
         "marker_uncertain": false,
-        "reviewer": "",
-        "review_status": "draft",
-        "notes": ""
+        "reviewer": "Paul Boys",
+        "review_status": "locked",
+        "notes": "two æ targets here",
+        "glyph_counts": {
+          "æ": 2
+        }
       },
       {
         "page_id": "p0032",
         "region": "body",
         "line_id": "p0032_body_l0003",
-        "text_gold": "CAPUT I.",
-        "contains_ae_target": false,
-        "contains_marker": false,
-        "marker_id": "",
-        "marker_link_target": "",
-        "uncertain_ae": false,
-        "marker_uncertain": false,
-        "reviewer": "",
-        "review_status": "draft",
-        "notes": ""
-      },
-      {
-        "page_id": "p0032",
-        "region": "body",
-        "line_id": "p0032_body_l0004",
-        "text_gold": "Britanni ante acceptam fidem Christianam idololatre. De apostolis, qui in Bri-",
-        "contains_ae_target": false,
-        "contains_marker": false,
-        "marker_id": "",
-        "marker_link_target": "",
-        "uncertain_ae": false,
-        "marker_uncertain": false,
-        "reviewer": "",
-        "review_status": "draft",
-        "notes": ""
-      },
-      {
-        "page_id": "p0032",
-        "region": "body",
-        "line_id": "p0032_body_l0005",
-        "text_gold": "tannicis insulis evangelium primi predicasse dicuntur : Jacobo Zebedzi,",
-        "contains_ae_target": false,
-        "contains_marker": false,
-        "marker_id": "",
-        "marker_link_target": "",
-        "uncertain_ae": false,
-        "marker_uncertain": false,
-        "reviewer": "",
-        "review_status": "draft",
-        "notes": ""
-      },
-      {
-        "page_id": "p0032",
-        "region": "body",
-        "line_id": "p0032_body_l0006",
         "text_gold": "Simone Zelota, Simone Petro, et B. Paulo. De Aristobulo item, et Claudia",
         "contains_ae_target": false,
         "contains_marker": false,
@@ -92,14 +60,15 @@
         "marker_link_target": "",
         "uncertain_ae": false,
         "marker_uncertain": false,
-        "reviewer": "",
-        "review_status": "draft",
-        "notes": ""
+        "reviewer": "Paul Boys",
+        "review_status": "locked",
+        "notes": "",
+        "glyph_counts": {}
       },
       {
         "page_id": "p0032",
         "region": "body",
-        "line_id": "p0032_body_l0007",
+        "line_id": "p0032_body_l0004",
         "text_gold": "Britanna.",
         "contains_ae_target": false,
         "contains_marker": false,
@@ -107,44 +76,54 @@
         "marker_link_target": "",
         "uncertain_ae": false,
         "marker_uncertain": false,
-        "reviewer": "",
-        "review_status": "draft",
-        "notes": ""
+        "reviewer": "Paul Boys",
+        "review_status": "locked",
+        "notes": "",
+        "glyph_counts": {}
       },
       {
         "page_id": "p0032",
         "region": "body",
-        "line_id": "p0032_body_l0008",
-        "text_gold": "Pnisce illius ignorantie* temporibus, qua salutarem",
-        "contains_ae_target": false,
+        "line_id": "p0032_body_l0005",
+        "text_gold": "PRISCÆ illius ignorantiæᵃ temporibus, quœ salutarem",
+        "contains_ae_target": true,
+        "contains_marker": true,
+        "marker_id": "ᵃ",
+        "marker_link_target": "p0032_footnote_l0001",
+        "uncertain_ae": false,
+        "marker_uncertain": false,
+        "reviewer": "Paul Boys",
+        "review_status": "locked",
+        "notes": "two ligature targets: æ and Æ",
+        "glyph_counts": {
+          "æ": 1,
+          "Æ": 1,
+          "œ": 1,
+          "ᵃ": 1
+        }
+      },
+      {
+        "page_id": "p0032",
+        "region": "body",
+        "line_id": "p0032_body_l0006",
+        "text_gold": "Christi adventum præcesserunt, Britannos et Hibernos",
+        "contains_ae_target": true,
         "contains_marker": false,
         "marker_id": "",
         "marker_link_target": "",
         "uncertain_ae": false,
         "marker_uncertain": false,
-        "reviewer": "",
-        "review_status": "draft",
-        "notes": ""
+        "reviewer": "Paul Boys",
+        "review_status": "locked",
+        "notes": "",
+        "glyph_counts": {
+          "æ": 1
+        }
       },
       {
         "page_id": "p0032",
         "region": "body",
-        "line_id": "p0032_body_l0009",
-        "text_gold": "Christi adventum precesserunt, Britannos et Hibernos",
-        "contains_ae_target": false,
-        "contains_marker": false,
-        "marker_id": "",
-        "marker_link_target": "",
-        "uncertain_ae": false,
-        "marker_uncertain": false,
-        "reviewer": "",
-        "review_status": "draft",
-        "notes": ""
-      },
-      {
-        "page_id": "p0032",
-        "region": "body",
-        "line_id": "p0032_body_l0010",
+        "line_id": "p0032_body_l0007",
         "text_gold": "nostros communem reliquarum gentium sortem subiisse,",
         "contains_ae_target": false,
         "contains_marker": false,
@@ -152,44 +131,51 @@
         "marker_link_target": "",
         "uncertain_ae": false,
         "marker_uncertain": false,
-        "reviewer": "",
-        "review_status": "draft",
-        "notes": ""
+        "reviewer": "Paul Boys",
+        "review_status": "locked",
+        "notes": "",
+        "glyph_counts": {}
       },
       {
         "page_id": "p0032",
         "region": "body",
-        "line_id": "p0032_body_l0011",
-        "text_gold": "id est, ** fuisse^ absque Christo, alienos a republica Is-",
+        "line_id": "p0032_body_l0008",
+        "text_gold": "id est, \" fuisseᵇ absque Christo, alienos a republica Is-",
         "contains_ae_target": false,
-        "contains_marker": false,
-        "marker_id": "",
-        "marker_link_target": "",
+        "contains_marker": true,
+        "marker_id": "ᵇ",
+        "marker_link_target": "p0032_footnote_l0002",
         "uncertain_ae": false,
         "marker_uncertain": false,
-        "reviewer": "",
-        "review_status": "draft",
-        "notes": ""
+        "reviewer": "Paul Boys",
+        "review_status": "locked",
+        "notes": "mistook quotation marks for **",
+        "glyph_counts": {
+          "ᵇ": 1
+        }
       },
       {
         "page_id": "p0032",
         "region": "body",
-        "line_id": "p0032_body_l0012",
-        "text_gold": "raelis, et extraneos quod ad fcedera promissionis attinet,",
+        "line_id": "p0032_body_l0009",
+        "text_gold": "raelis, et extraneos quod ad fœdera promissionis attinet,",
         "contains_ae_target": true,
         "contains_marker": false,
         "marker_id": "",
         "marker_link_target": "",
         "uncertain_ae": false,
         "marker_uncertain": false,
-        "reviewer": "",
-        "review_status": "draft",
-        "notes": ""
+        "reviewer": "Paul Boys",
+        "review_status": "locked",
+        "notes": "contains oe glyph",
+        "glyph_counts": {
+          "œ": 1
+        }
       },
       {
         "page_id": "p0032",
         "region": "body",
-        "line_id": "p0032_body_l0013",
+        "line_id": "p0032_body_l0010",
         "text_gold": "spem non habentes, et sine Deo in mundo:\" non est quod",
         "contains_ae_target": false,
         "contains_marker": false,
@@ -197,89 +183,103 @@
         "marker_link_target": "",
         "uncertain_ae": false,
         "marker_uncertain": false,
-        "reviewer": "",
-        "review_status": "draft",
-        "notes": ""
+        "reviewer": "Paul Boys",
+        "review_status": "locked",
+        "notes": "",
+        "glyph_counts": {}
+      },
+      {
+        "page_id": "p0032",
+        "region": "body",
+        "line_id": "p0032_body_l0011",
+        "text_gold": "quisquam dubitet. \" Neque enim Britannia fertilis pro-",
+        "contains_ae_target": false,
+        "contains_marker": false,
+        "marker_id": "",
+        "marker_link_target": "",
+        "uncertain_ae": false,
+        "marker_uncertain": false,
+        "reviewer": "Paul Boys",
+        "review_status": "locked",
+        "notes": "mistook \" for **",
+        "glyph_counts": {}
+      },
+      {
+        "page_id": "p0032",
+        "region": "body",
+        "line_id": "p0032_body_l0012",
+        "text_gold": "vincia tyrannorum,\" inquiebat olim impius Porphyriusᶜ,",
+        "contains_ae_target": false,
+        "contains_marker": true,
+        "marker_id": "ᶜ",
+        "marker_link_target": "p0032_footnote_l0003",
+        "uncertain_ae": false,
+        "marker_uncertain": false,
+        "reviewer": "Paul Boys",
+        "review_status": "locked",
+        "notes": "trynnorum mis-transcribed as 'tyranporum'",
+        "glyph_counts": {
+          "ᶜ": 1
+        }
+      },
+      {
+        "page_id": "p0032",
+        "region": "body",
+        "line_id": "p0032_body_l0013",
+        "text_gold": "\" et Scoticsæ gentes omnesque usque ad oceanum per",
+        "contains_ae_target": true,
+        "contains_marker": false,
+        "marker_id": "",
+        "marker_link_target": "",
+        "uncertain_ae": false,
+        "marker_uncertain": false,
+        "reviewer": "Paul Boys",
+        "review_status": "locked",
+        "notes": "mistook \" for *",
+        "glyph_counts": {
+          "æ": 1
+        }
       },
       {
         "page_id": "p0032",
         "region": "body",
         "line_id": "p0032_body_l0014",
-        "text_gold": "quisquam dubitet. ** Neque enim Britannia fertilis pro-",
-        "contains_ae_target": false,
+        "text_gold": "circuitum barbaræ nationes Moysen prophetasque cogno-",
+        "contains_ae_target": true,
         "contains_marker": false,
         "marker_id": "",
         "marker_link_target": "",
         "uncertain_ae": false,
         "marker_uncertain": false,
-        "reviewer": "",
-        "review_status": "draft",
-        "notes": ""
+        "reviewer": "Paul Boys",
+        "review_status": "locked",
+        "notes": "",
+        "glyph_counts": {
+          "æ": 1
+        }
       },
       {
         "page_id": "p0032",
         "region": "body",
         "line_id": "p0032_body_l0015",
-        "text_gold": "vincia tyranporum,\" inquiebat olim impius Porphyrius',",
+        "text_gold": "verant.\" Neque minus falluntur viriᵈ docti, qui Britannos",
         "contains_ae_target": false,
-        "contains_marker": false,
-        "marker_id": "",
-        "marker_link_target": "",
+        "contains_marker": true,
+        "marker_id": "ᵈ",
+        "marker_link_target": "p0032_footnote_l0004",
         "uncertain_ae": false,
         "marker_uncertain": false,
-        "reviewer": "",
-        "review_status": "draft",
-        "notes": ""
+        "reviewer": "Paul Boys",
+        "review_status": "locked",
+        "notes": "mistook \" for ᵈ",
+        "glyph_counts": {
+          "ᵈ": 1
+        }
       },
       {
         "page_id": "p0032",
         "region": "body",
         "line_id": "p0032_body_l0016",
-        "text_gold": "* et Scoticsee gentes omnesque usque ad oceanum per",
-        "contains_ae_target": false,
-        "contains_marker": true,
-        "marker_id": "",
-        "marker_link_target": "",
-        "uncertain_ae": false,
-        "marker_uncertain": false,
-        "reviewer": "",
-        "review_status": "draft",
-        "notes": ""
-      },
-      {
-        "page_id": "p0032",
-        "region": "body",
-        "line_id": "p0032_body_l0017",
-        "text_gold": "circuitum barbarz nationes Moysen prophetasque cogno-",
-        "contains_ae_target": false,
-        "contains_marker": false,
-        "marker_id": "",
-        "marker_link_target": "",
-        "uncertain_ae": false,
-        "marker_uncertain": false,
-        "reviewer": "",
-        "review_status": "draft",
-        "notes": ""
-      },
-      {
-        "page_id": "p0032",
-        "region": "body",
-        "line_id": "p0032_body_l0018",
-        "text_gold": "verant.\" Neque minus falluntur viri? docti, qui Britannos",
-        "contains_ae_target": false,
-        "contains_marker": false,
-        "marker_id": "",
-        "marker_link_target": "",
-        "uncertain_ae": false,
-        "marker_uncertain": false,
-        "reviewer": "",
-        "review_status": "draft",
-        "notes": ""
-      },
-      {
-        "page_id": "p0032",
-        "region": "body",
-        "line_id": "p0032_body_l0019",
         "text_gold": "a Druydibus suis in unius Dei cultu semper institutos",
         "contains_ae_target": false,
         "contains_marker": false,
@@ -287,14 +287,15 @@
         "marker_link_target": "",
         "uncertain_ae": false,
         "marker_uncertain": false,
-        "reviewer": "",
-        "review_status": "draft",
-        "notes": ""
+        "reviewer": "Paul Boys",
+        "review_status": "locked",
+        "notes": "",
+        "glyph_counts": {}
       },
       {
         "page_id": "p0032",
         "region": "body",
-        "line_id": "p0032_body_l0020",
+        "line_id": "p0032_body_l0017",
         "text_gold": "fuisse tradunt, quam nugatus est Postellus, quum ab He-",
         "contains_ae_target": false,
         "contains_marker": false,
@@ -302,9 +303,10 @@
         "marker_link_target": "",
         "uncertain_ae": false,
         "marker_uncertain": false,
-        "reviewer": "",
-        "review_status": "draft",
-        "notes": ""
+        "reviewer": "Paul Boys",
+        "review_status": "locked",
+        "notes": "",
+        "glyph_counts": {}
       }
     ],
     "footnote": [
@@ -312,56 +314,125 @@
         "page_id": "p0032",
         "region": "footnote",
         "line_id": "p0032_footnote_l0001",
-        "text_gold": "[fn01|*.] Act. cap. 17. ver. 30. 5 Ephes. cap. 2. ver. 12.",
+        "text_gold": "[fn01|ᵃ] Act. cap. 17. ver. 30. 5",
         "contains_ae_target": false,
         "contains_marker": true,
-        "marker_id": "",
-        "marker_link_target": "",
+        "marker_id": "ᵃ",
+        "marker_link_target": "p0032_footnote_l0001",
         "uncertain_ae": false,
         "marker_uncertain": false,
-        "reviewer": "",
-        "review_status": "draft",
-        "notes": ""
+        "reviewer": "Paul Boys",
+        "review_status": "locked",
+        "notes": "mistakenly concatenated footnote ᵇ into this footnote",
+        "glyph_counts": {
+          "ᵃ": 1
+        }
       },
       {
         "page_id": "p0032",
         "region": "footnote",
         "line_id": "p0032_footnote_l0002",
-        "text_gold": "[fn02|*] Apud Hieronymum ad Ctesiphontem advers. Pelag.",
+        "text_gold": "[fn02|ᵇ] Ephes. cap. 2. ver. 12.",
         "contains_ae_target": false,
         "contains_marker": true,
-        "marker_id": "",
-        "marker_link_target": "",
+        "marker_id": "ᵇ",
+        "marker_link_target": "p0032_footnote_l0002",
         "uncertain_ae": false,
         "marker_uncertain": false,
-        "reviewer": "",
-        "review_status": "draft",
-        "notes": ""
+        "reviewer": "Paul Boys",
+        "review_status": "locked",
+        "notes": "",
+        "glyph_counts": {
+          "ᵇ": 1
+        }
       },
       {
         "page_id": "p0032",
         "region": "footnote",
         "line_id": "p0032_footnote_l0003",
-        "text_gold": "[fn03|4] Camden. Britann. pag. 47, 48. edit. Londini ann. 1607. Fr. Godwin. de convers. Britann. cap. 3. part. 23. apud quem Origenes pro Tertulliano est reponendus.",
+        "text_gold": "[fn03|ᶜ] Apud Hieronymum ad Ctesiphontem advers. Pelag.",
         "contains_ae_target": false,
         "contains_marker": true,
+        "marker_id": "ᶜ",
+        "marker_link_target": "p0032_footnote_l0003",
+        "uncertain_ae": false,
+        "marker_uncertain": false,
+        "reviewer": "Paul Boys",
+        "review_status": "locked",
+        "notes": "",
+        "glyph_counts": {
+          "ᶜ": 1
+        }
+      },
+      {
+        "page_id": "p0032",
+        "region": "footnote",
+        "line_id": "p0032_footnote_l0004",
+        "text_gold": "[fn04|ᵈ] Camden. Britann. pag. 47, 48. edit. Londini ann. 1607. Fr. Godwin. de convers. Britann. cap. 3. part. 23. apud quem Origenes pro Tertulliano est reponendus.",
+        "contains_ae_target": false,
+        "contains_marker": true,
+        "marker_id": "ᵈ",
+        "marker_link_target": "p0032_footnote_l0004",
+        "uncertain_ae": false,
+        "marker_uncertain": false,
+        "reviewer": "Paul Boys",
+        "review_status": "locked",
+        "notes": "",
+        "glyph_counts": {
+          "ᵈ": 1
+        }
+      }
+    ],
+    "header": [
+      {
+        "page_id": "p0032",
+        "region": "header",
+        "line_id": "p0032_header_l0001",
+        "text_gold": "BRITANNICARUM ECCLESIARUM",
+        "contains_ae_target": false,
+        "contains_marker": false,
         "marker_id": "",
         "marker_link_target": "",
         "uncertain_ae": false,
         "marker_uncertain": false,
-        "reviewer": "",
-        "review_status": "draft",
-        "notes": ""
+        "reviewer": "Paul Boys",
+        "review_status": "locked",
+        "notes": "",
+        "glyph_counts": {}
+      },
+      {
+        "page_id": "p0032",
+        "region": "header",
+        "line_id": "p0032_header_l0002",
+        "text_gold": "ANTIQUITATES.",
+        "contains_ae_target": false,
+        "contains_marker": false,
+        "marker_id": "",
+        "marker_link_target": "",
+        "uncertain_ae": false,
+        "marker_uncertain": false,
+        "reviewer": "Paul Boys",
+        "review_status": "locked",
+        "notes": "",
+        "glyph_counts": {}
+      },
+      {
+        "page_id": "p0032",
+        "region": "header",
+        "line_id": "p0032_header_l0003",
+        "text_gold": "CAPUT I.",
+        "contains_ae_target": false,
+        "contains_marker": false,
+        "marker_id": "",
+        "marker_link_target": "",
+        "uncertain_ae": false,
+        "marker_uncertain": false,
+        "reviewer": "Paul Boys",
+        "review_status": "locked",
+        "notes": "",
+        "glyph_counts": {}
       }
     ]
   },
-  "marker_links": [],
-  "meta": {
-    "contains_ae_focus": true,
-    "contains_marker_focus": true,
-    "annotation_status": "draft",
-    "review_status": "draft",
-    "reviewer": "",
-    "notes": "Seeded from raw OCR output; verify against PDF and then lock reviewed lines."
-  }
+  "source_pdf": "C:\\Users\\User\\Documents\\UssherIn\\00_source_pdf\\JamesUssher_Britannicarum ecclesiarum antiquitates_Part1.pdf"
 }

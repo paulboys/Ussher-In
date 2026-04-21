@@ -33,19 +33,19 @@
     <button type="button" data-glyph="ↀ">ↀ</button>
     <button type="button" data-glyph="ↁ">ↁ</button>
     <button type="button" data-glyph="ↂ">ↂ</button>
-    <button type="button" data-glyph="ᵃ">ᵃ</button>
-    <button type="button" data-glyph="ᵇ">ᵇ</button>
-    <button type="button" data-glyph="ᶜ">ᶜ</button>
-    <button type="button" data-glyph="ᵈ" title="Alt+d">ᵈ</button>
-    <button type="button" data-glyph="ᵉ">ᵉ</button>
-    <button type="button" data-glyph="ⁿ" title="Alt+n">ⁿ</button>
+    <div class="superscript-entry-row">
+      <span class="glyph-label">Superscript entry</span>
+      <input id="superscriptInput" class="glyph-entry" type="text" maxlength="10" placeholder="">
+      <button id="insertSuperscriptRawBtn" type="button" title="Insert exactly as typed">Insert raw</button>
+      <button id="insertSuperscriptBtn" type="button" title="Convert to superscript where available, then insert">Insert superscript</button>
+    </div>
   </section>
 
   <main class="layout">
     <section class="editor-pane">
       <h2>Page metadata</h2>
       <div class="meta-grid">
-        <label>Reviewer <input id="metaReviewer" type="text"></label>
+        <label>Reviewer <input id="metaReviewer" type="text" readonly></label>
         <label>Annotation status <input id="metaAnnotationStatus" type="text"></label>
         <label>Review status
           <select id="metaReviewStatus">
