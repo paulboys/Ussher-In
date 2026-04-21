@@ -2,6 +2,16 @@
 
 This workflow is the gate between OCR and translation.
 
+## Engine-Specific Notes
+
+Confidence thresholds below apply to both Kraken and Tesseract output.
+Kraken and Tesseract may report confidence on different scales; after running
+the comparison script (`compare_ocr_engines.py`), adjust thresholds if needed.
+
+Current thresholds are calibrated for Tesseract output (0–100 scale).
+When switching to Kraken, re-run the comparison and update if the confidence
+distribution differs significantly.
+
 ## Automated Screening
 
 Run automated checks after each OCR batch:

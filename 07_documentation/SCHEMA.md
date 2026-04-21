@@ -11,7 +11,8 @@ This document defines the minimum structured records for OCR and translation.
   "part": "part1",
   "page_num": 1,
   "page_id": "p0001",
-  "ocr_engine": "tesseract-5.x",
+  "ocr_engine": "kraken",
+  "ocr_model": "default",
   "ocr_lang": ["lat"],
   "ocr_timestamp": "2026-04-17T00:00:00Z",
   "raw_text": "...",
@@ -27,6 +28,13 @@ This document defines the minimum structured records for OCR and translation.
   "qc_status": "pending",
   "qc_notes": ""
 }
+```
+
+Supported `ocr_engine` values:
+- `kraken` (primary, runs via WSL on Windows)
+- `tesseract` (fallback)
+
+The `ocr_model` field records which model was used (e.g. `default`, `lat.traineddata`).
 ```
 
 ## Segment Record (Translation Unit)
