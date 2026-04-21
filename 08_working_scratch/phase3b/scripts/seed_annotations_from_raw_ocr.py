@@ -12,7 +12,9 @@ def split_body_and_footnotes(text: str) -> tuple[list[str], list[str]]:
         body_text, footnote_text = text, ""
 
     body_lines = [line.strip() for line in body_text.splitlines() if line.strip()]
-    footnote_lines = [line.strip() for line in footnote_text.splitlines() if line.strip()]
+    footnote_lines = [
+        line.strip() for line in footnote_text.splitlines() if line.strip()
+    ]
     return body_lines, footnote_lines
 
 
@@ -47,9 +49,13 @@ def build_payload(part: str, source_pdf: str, page_num: int, raw_text: str) -> d
     page_id = f"p{page_num:04d}"
     body_lines, footnote_lines = split_body_and_footnotes(raw_text)
 
-    body_payload = [make_line(page_id, "body", i, text) for i, text in enumerate(body_lines, start=1)]
+    body_payload = [
+        make_line(page_id, "body", i, text)
+        for i, text in enumerate(body_lines, start=1)
+    ]
     footnote_payload = [
-        make_line(page_id, "footnote", i, text) for i, text in enumerate(footnote_lines, start=1)
+        make_line(page_id, "footnote", i, text)
+        for i, text in enumerate(footnote_lines, start=1)
     ]
 
     return {
@@ -64,8 +70,17 @@ def build_payload(part: str, source_pdf: str, page_num: int, raw_text: str) -> d
         },
         "marker_links": [],
         "meta": {
-            "contains_ae_focus": any(line["contains_ae_target"] for line in body_payload + footnote_payload),
-            "contains_marker_focus": any(line["contains_marker"] for line in body_payload + footnote_payload),
+            "contains_ae_focus": any(
+                line["contains_ae_target"] for line in body_payload + footnote_payload
+            ),
+            "contains_marker_focus": any(
+                line["contains_marker"] for line in body_payload + footnote_payload
+            ),
+            "contains_header_page_number": False,
+            "contains_header_chapter_number": False,
+            "header_page_number_side": "",
+            "header_chapter_side": "",
+            "header_parity_consistent": False,
             "annotation_status": "draft",
             "review_status": "draft",
             "reviewer": "",
@@ -75,7 +90,9 @@ def build_payload(part: str, source_pdf: str, page_num: int, raw_text: str) -> d
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Seed Phase 3b annotation files from raw OCR text output.")
+    parser = argparse.ArgumentParser(
+        description="Seed Phase 3b annotation files from raw OCR text output."
+    )
     parser.add_argument("--part", required=True, choices=["part1", "part2"])
     parser.add_argument("--source-pdf", required=True)
     parser.add_argument("--start-page", type=int, required=True)
@@ -90,7 +107,11 @@ def main() -> None:
         default="08_working_scratch/phase3b/annotations",
         help="Output directory for annotation JSON files",
     )
-    parser.add_argument("--force", action="store_true", help="Overwrite existing page annotation JSON files")
+    parser.add_argument(
+        "--force",
+        action="store_true",
+        help="Overwrite existing page annotation JSON files",
+    )
     args = parser.parse_args()
 
     if args.start_page > args.end_page:
@@ -119,7 +140,9 @@ def main() -> None:
 
         raw_text = raw_txt.read_text(encoding="utf-8")
         payload = build_payload(args.part, args.source_pdf, page_num, raw_text)
-        out_json.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+        out_json.write_text(
+            json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8"
+        )
         created += 1
 
     print(
