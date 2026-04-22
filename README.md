@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="Ussher_In_logo.png" alt="Ussher In" width="300"/>
+  <img src="Ussher_In_logo_v2.png" alt="Ussher In" width="300"/>
 </p>
 
 # Ussher In
