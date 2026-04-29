@@ -26,13 +26,27 @@ def has_marker(text: str) -> bool:
     return bool(re.search(r"\[[^\]]+\]|^[\?\*!†‡]\s|\bfn\d+\b", text))
 
 
-def make_line(page_id: str, region: str, index: int, text_gold: str) -> dict:
+def make_line(
+    page_id: str,
+    region: str,
+    index: int,
+    text_gold: str,
+    *,
+    text_raw_ocr: str | None = None,
+    normalized_form: str | None = None,
+    alignment_index: int | None = None,
+    confidence: float | None = None,
+) -> dict:
     line_id = f"{page_id}_{region}_l{index:04d}"
     return {
         "page_id": page_id,
         "region": region,
         "line_id": line_id,
         "text_gold": text_gold,
+        "text_raw_ocr": text_raw_ocr if text_raw_ocr is not None else text_gold,
+        "normalized_form": normalized_form if normalized_form is not None else text_gold,
+        "alignment_index": alignment_index if alignment_index is not None else index - 1,
+        "confidence": confidence,
         "contains_ae_target": has_ae_target(text_gold),
         "contains_marker": has_marker(text_gold),
         "marker_id": "",
@@ -58,13 +72,78 @@ def build_payload(part: str, source_pdf: str, page_num: int, raw_text: str) -> d
         for i, text in enumerate(footnote_lines, start=1)
     ]
 
+    return _wrap_payload(part, source_pdf, page_num, page_id, body_payload, footnote_payload, header_payload=[])
+
+
+def build_payload_from_gemini_record(part: str, source_pdf: str, record: dict) -> dict:
+    """Build an annotation payload from a Gemini pilot OCR record.
+
+    The record shape matches what ``pilot_ocr.run_gemini_pilot`` writes: a dict
+    with ``page_num`` plus a ``lines`` array of structured per-line entries.
+    """
+    page_num = int(record["page_num"])
+    page_id = record.get("page_id", f"p{page_num:04d}")
+    lines = record.get("lines", [])
+    if not isinstance(lines, list):
+        lines = []
+
+    region_payloads: dict[str, list[dict]] = {"header": [], "body": [], "footnote": []}
+    counters: dict[str, int] = {"header": 0, "body": 0, "footnote": 0}
+    for entry in lines:
+        if not isinstance(entry, dict):
+            continue
+        region = str(entry.get("region", "body"))
+        # Marginalia and catchword are folded into the body region for now;
+        # downstream Go verification (Step 10) reads them from raw pilot JSON.
+        if region not in region_payloads:
+            region = "body"
+        counters[region] += 1
+        gold = str(entry.get("normalized_form") or entry.get("text_raw_ocr") or "")
+        region_payloads[region].append(
+            make_line(
+                page_id,
+                region,
+                counters[region],
+                gold,
+                text_raw_ocr=str(entry.get("text_raw_ocr", gold)),
+                normalized_form=str(entry.get("normalized_form", gold)),
+                alignment_index=int(entry.get("alignment_index", counters[region] - 1)),
+                confidence=(
+                    float(entry["confidence"])
+                    if isinstance(entry.get("confidence"), (int, float))
+                    else None
+                ),
+            )
+        )
+
+    return _wrap_payload(
+        part,
+        source_pdf,
+        page_num,
+        page_id,
+        region_payloads["body"],
+        region_payloads["footnote"],
+        header_payload=region_payloads["header"],
+    )
+
+
+def _wrap_payload(
+    part: str,
+    source_pdf: str,
+    page_num: int,
+    page_id: str,
+    body_payload: list[dict],
+    footnote_payload: list[dict],
+    *,
+    header_payload: list[dict] | None = None,
+) -> dict:
     return {
         "page_id": page_id,
         "part": part,
         "source_pdf": source_pdf,
         "page_num": page_num,
         "regions": {
-            "header": [],
+            "header": list(header_payload or []),
             "body": body_payload,
             "footnote": footnote_payload,
         },
