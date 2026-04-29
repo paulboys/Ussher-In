@@ -18,7 +18,7 @@ This project was born from two historical questions I have been asking for years
 
 This second line of inquiry led to one, untranslated primary source: Ussher's *Antiquitates*. This work documents the history of the early insular church, its key figures like Columba, and its connections to the wider Christian world.
 
-As a data scientist unable to read Latin, the only way to answer these questions was to build the tools to make the book accessible. This repository is the result—a data-driven attempt to produce the first English translation through a combination of OCR, machine learning, and careful human review.
+As a data scientist unable to read Latin, the only way to answer these questions was to build the tools to make the book accessible. This repository is the result—a data-driven attempt to produce the first English translation through a combination of vision-LLM OCR, paleography-aware prompting, and careful human review.
 
 ## How It Works
 
@@ -42,30 +42,40 @@ provides deterministic catchword + marginalia verification and a read-only
 side-by-side review server (non-port-5000) that complements the Python
 Flask annotation UI.
 
-### Fine-Tuning for Historical Print
+### Paleography-Aware Prompting
 
-The source material is a 19th-century edition with ligatures (æ/Æ), footnote markers, and archaic numeral forms that stock OCR models misread. Rather than patching errors with regex, the project builds a carefully annotated gold set (15–25 representative pages) using a custom annotation pipeline with seeding, review, and ground-truth export scripts. This training data is used to fine-tune an OCR model so the pipeline remains accurate without constant reconfiguration.
+The source is a 1639 edition with long-s (ſ), historical ligatures (æ/Æ, œ/Œ, ct, st), polytonic Greek quotations, archaic numeral forms, and dense marginalia. Rather than relying on a stock OCR model and patching errors after the fact, this pipeline issues an explicit paleography-aware prompt to a vision-capable LLM (Gemini 3.1 Pro) that:
+
+- preserves long-s, ligatures, and early-modern abbreviations verbatim,
+- preserves polytonic Greek (breathings, accents, iota subscript),
+- anchors marginalia to the body line they sit beside,
+- emits a separate `catchword` region used by the Go verification layer, and
+- suppresses watermarks, show-through, and stamps as non-text noise.
+
+A small annotated gold set (Phase 3b, pages around p0030–p0060) is retained for regression checks and prompt evaluation rather than for model fine-tuning.
 
 ## Project Status
 
 | Phase | Status |
 |---|---|
 | Project scaffold & docs | ✅ Complete |
-| Environment setup & pilot OCR (pages 30–35) | ✅ Complete |
-| OCR model fine-tuning workflow | ✅ Built, validation in progress |
-| Annotation pipeline for fine-tuning | ✅ Built, annotation in progress |
-| English reference benchmark set | ⬜ Pending ingestion/OCR/alignment |
-| LSTM fine-tuning | ⬜ Pending gold-set completion |
-| Full OCR run (~800 pages) | ⬜ Pending |
-| Translation | ⬜ Pending |
+| Pilot OCR validation (pages 30–35) | ✅ Complete |
+| Provider config + Gemini OCR adapter | ✅ Complete |
+| Phase 3b annotation UI + gold set | ✅ Complete (ongoing review) |
+| Go Claw verification module (catchword + marginalia + side-by-side server) | ✅ Complete |
+| Paleography prompt evaluation against gold set | 🟡 In progress |
+| English reference benchmark ingestion/alignment | ⬜ Pending |
+| Full OCR run (~800 pages) via Gemini | ⬜ Pending |
+| Translation (Claude Opus 4.6 + post-editing) | ⬜ Pending |
 
 ## Quick Start
 
 1. Place source PDFs in `00_source_pdf/`.
 2. Follow setup instructions in `06_tools_config/tool_installation_guide.md`.
-3. Review the schema in `07_documentation/SCHEMA.md`.
-4. Run pilot OCR using scripts in `08_working_scratch/pipeline_scripts/`.
-5. Apply quality gates from `07_documentation/QA_WORKFLOW.md` before translation.
+3. Copy `06_tools_config/providers.example.json` to `providers.json` and set the Gemini API key, or export `USSHERIN_PROVIDERS_GEMINI_API_KEY`.
+4. Review the schema in `07_documentation/SCHEMA.md`.
+5. Run pilot OCR using scripts in `08_working_scratch/pipeline_scripts/` (default engine: Gemini 3.1 Pro).
+6. Apply quality gates from `07_documentation/QA_WORKFLOW.md` and run the Go Claw verifier (`08_working_scratch/phase3b/go-claw`) before translation.
 
 ## Repository Structure
 
@@ -77,9 +87,9 @@ The source material is a 19th-century edition with ligatures (æ/Æ), footnote m
 | `03_segmented_text/` | Cleaned and segmented Latin records |
 | `04_translation_work/` | Translation drafts and post-edit work |
 | `05_final_output/` | Release-ready bilingual documents |
-| `06_tools_config/` | Environment, Tesseract config, and tessdata |
+| `06_tools_config/` | Provider configuration, environment setup, legacy Tesseract/Kraken assets |
 | `07_documentation/` | Process docs, schema, execution plan |
-| `08_working_scratch/` | Pipeline scripts, annotation tooling, fine-tuning workspace |
+| `08_working_scratch/` | Pipeline scripts, annotation tooling, Go Claw verification module |
 
 ## Collaboration
 
