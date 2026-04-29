@@ -59,40 +59,89 @@
 
   <main class="layout">
     <section class="editor-pane">
-      <h2>Page metadata</h2>
-      <div class="meta-grid">
-        <label>Reviewer <input id="metaReviewer" type="text" readonly></label>
-        <label>Annotation status <input id="metaAnnotationStatus" type="text"></label>
-        <label>Review status
-          <select id="metaReviewStatus">
-            <option value="draft">draft</option>
-            <option value="reviewed">reviewed</option>
-            <option value="locked">locked</option>
-          </select>
+      <section class="meta-card">
+        <h2>Page metadata</h2>
+        <div class="meta-grid">
+          <label>Page #
+            <input id="metaPageNum" type="number" min="1">
+          </label>
+          <label>Source PDF
+            <input id="metaSourcePdf" type="text">
+          </label>
+          <label>Annotation status
+            <input id="metaAnnotationStatus" type="text">
+          </label>
+          <label>Review status
+            <select id="metaReviewStatus">
+              <option value="draft">draft</option>
+              <option value="reviewed">reviewed</option>
+              <option value="locked">locked</option>
+            </select>
+          </label>
+          <label>Reviewer
+            <input id="metaReviewer" type="text" readonly>
+          </label>
+        </div>
+        <label>OCR page summary
+          <textarea id="metaOcrPageSummary" rows="2"></textarea>
         </label>
-      </div>
-      <label>Notes
-        <textarea id="metaNotes" rows="2"></textarea>
-      </label>
+        <label>Notes
+          <textarea id="metaNotes" rows="2"></textarea>
+        </label>
+        <div class="meta-provenance">
+          <span class="meta-prov-label">Engine</span>
+          <span id="metaOcrEngine" class="meta-prov-value">&mdash;</span>
+          <span class="meta-prov-label">Model</span>
+          <span id="metaOcrModel" class="meta-prov-value">&mdash;</span>
+          <span class="meta-prov-label">Lang</span>
+          <span id="metaOcrLang" class="meta-prov-value">&mdash;</span>
+        </div>
+      </section>
 
-      <div class="section-head">
-        <h2>Header lines</h2>
-        <button id="addHeaderBtn" type="button" class="small-btn">+ Header line</button>
-      </div>
-      <div id="headerTable"></div>
+      <section class="region-section" id="headerSection">
+        <div class="section-head">
+          <h2>Header</h2>
+          <button id="addHeaderBtn" type="button" class="small-btn">+ Header line</button>
+        </div>
+        <div id="headerContainer"></div>
+      </section>
 
-      <h2>Body lines</h2>
-      <div id="bodyTable"></div>
+      <section class="region-section" id="bodySection">
+        <div class="section-head">
+          <h2>Body &amp; Marginalia</h2>
+          <button id="addBodyBtn" type="button" class="small-btn">+ Body line</button>
+        </div>
+        <div id="unanchoredMarginaliaContainer" class="unanchored-marginalia"></div>
+        <div id="bodyContainer" class="body-grid"></div>
+      </section>
 
-      <div class="section-head">
-        <h2>Footnote lines</h2>
-        <button id="addFootnoteBtn" type="button" class="small-btn">+ Footnote line</button>
-      </div>
-      <div id="footnoteTable"></div>
+      <section class="region-section" id="footnoteSection">
+        <div class="section-head">
+          <h2>Footnotes</h2>
+          <button id="addFootnoteBtn" type="button" class="small-btn">+ Footnote</button>
+        </div>
+        <div id="footnoteContainer"></div>
+      </section>
+
+      <section class="region-section" id="catchwordSection">
+        <div class="section-head">
+          <h2>Catchword</h2>
+          <button id="addCatchwordBtn" type="button" class="small-btn">+ Catchword</button>
+        </div>
+        <div id="catchwordContainer"></div>
+      </section>
     </section>
 
     <section class="pdf-pane">
-      <h2>Source PDF</h2>
+      <header class="pdf-pane-header">
+        <h2>Source PDF</h2>
+        <div class="pdf-pane-meta">
+          <span class="pdf-pane-meta-label">File</span>
+          <span id="pdfPaneSourceName" class="pdf-pane-meta-value" title="">&mdash;</span>
+          <span class="pdf-pane-meta-label">Page</span>
+          <span id="pdfPanePageNum" class="pdf-pane-meta-value">&mdash;</span>
+        </div>
+      </header>
       <iframe id="pdfFrame" title="Source PDF"></iframe>
     </section>
   </main>
