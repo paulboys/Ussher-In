@@ -312,6 +312,28 @@ input[type="text"], select, textarea {
   cursor: pointer;
 }
 
+.anchor-at-cursor-btn {
+  border: 1px dashed #5b7a3c;
+  background: transparent;
+  color: #3f5f25;
+  border-radius: 3px;
+  font-size: 0.72rem;
+  padding: 0.1rem 0.4rem;
+  cursor: pointer;
+  flex: 0 0 auto;
+}
+.anchor-at-cursor-btn:hover { background: #eef6e2; }
+
+#undoBtn {
+  border: 1px solid var(--line);
+  background: var(--panel);
+  color: var(--ink);
+  border-radius: 4px;
+  padding: 0.35rem 0.65rem;
+  cursor: pointer;
+}
+#undoBtn:disabled { opacity: 0.45; cursor: default; }
+
 .line-head-right {
   display: flex;
   gap: 0.3rem;
