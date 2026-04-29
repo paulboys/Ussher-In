@@ -46,11 +46,8 @@ const addBodyBtn = document.getElementById("addBodyBtn");
 const addFootnoteBtn = document.getElementById("addFootnoteBtn");
 const addCatchwordBtn = document.getElementById("addCatchwordBtn");
 
-// Glyph bar.
-const glyphBar = document.getElementById("glyphBar");
-const superscriptInput = document.getElementById("superscriptInput");
-const insertSuperscriptRawBtn = document.getElementById("insertSuperscriptRawBtn");
-const insertSuperscriptBtn = document.getElementById("insertSuperscriptBtn");
+// Formatting bar.
+const superscriptSelectionBtn = document.getElementById("superscriptSelectionBtn");
 
 const FOOTNOTE_KINDS = ["citation", "gloss", "cross_ref", "not_a_note", "other"];
 const REVIEW_STATUSES = ["draft", "reviewed", "locked"];
@@ -123,19 +120,6 @@ function bindFocusTracking(container) {
   });
 }
 
-function insertGlyph(text) {
-  if (!activeInput) return;
-  const start = activeInput.selectionStart ?? activeInput.value.length;
-  const end = activeInput.selectionEnd ?? activeInput.value.length;
-  const value = activeInput.value;
-  activeInput.value = value.slice(0, start) + text + value.slice(end);
-  const next = start + text.length;
-  activeInput.selectionStart = next;
-  activeInput.selectionEnd = next;
-  activeInput.dispatchEvent(new Event("input", { bubbles: true }));
-  activeInput.focus();
-}
-
 function toSuperscript(value) {
   let output = "";
   for (const ch of String(value || "")) {
@@ -144,11 +128,18 @@ function toSuperscript(value) {
   return output;
 }
 
-function insertCustomSuperscript(rawMode = false) {
-  if (!superscriptInput) return;
-  const value = superscriptInput.value || "";
-  if (!value.trim()) return;
-  insertGlyph(rawMode ? value : toSuperscript(value));
+function superscriptSelection() {
+  if (!activeInput) return;
+  const start = activeInput.selectionStart ?? 0;
+  const end = activeInput.selectionEnd ?? 0;
+  if (start === end) return; // nothing selected
+  const value = activeInput.value;
+  const replacement = toSuperscript(value.slice(start, end));
+  activeInput.value = value.slice(0, start) + replacement + value.slice(end);
+  activeInput.selectionStart = start;
+  activeInput.selectionEnd = start + replacement.length;
+  activeInput.dispatchEvent(new Event("input", { bubbles: true }));
+  activeInput.focus();
 }
 
 // ---------------------------------------------------------------------------
@@ -845,24 +836,12 @@ addCatchwordBtn.addEventListener("click", () => {
 });
 
 // ---------------------------------------------------------------------------
-// Glyph bar / superscripts
+// Formatting bar (superscript selection)
 // ---------------------------------------------------------------------------
-glyphBar.querySelectorAll("button[data-glyph]").forEach((btn) => {
-  btn.addEventListener("click", () => insertGlyph(btn.dataset.glyph));
-});
-if (insertSuperscriptRawBtn) {
-  insertSuperscriptRawBtn.addEventListener("click", () => insertCustomSuperscript(true));
-}
-if (insertSuperscriptBtn) {
-  insertSuperscriptBtn.addEventListener("click", () => insertCustomSuperscript(false));
-}
-if (superscriptInput) {
-  superscriptInput.addEventListener("keydown", (event) => {
-    if (event.key === "Enter") {
-      event.preventDefault();
-      insertCustomSuperscript(false);
-    }
-  });
+if (superscriptSelectionBtn) {
+  // Don't steal focus on mousedown so the active input's selection survives.
+  superscriptSelectionBtn.addEventListener("mousedown", (e) => e.preventDefault());
+  superscriptSelectionBtn.addEventListener("click", superscriptSelection);
 }
 
 document.addEventListener("keydown", (event) => {
@@ -871,12 +850,9 @@ document.addEventListener("keydown", (event) => {
     savePage();
     return;
   }
-  if (!event.altKey) return;
-  const k = event.key;
-  const map = { e: "æ", E: "Æ", o: "œ", O: "Œ", "6": "Ↄ", "7": "ↄ", d: "ᵈ", n: "ⁿ" };
-  if (map[k]) {
+  if (event.altKey && event.key.toLowerCase() === "s") {
     event.preventDefault();
-    insertGlyph(map[k]);
+    superscriptSelection();
   }
 });
 
