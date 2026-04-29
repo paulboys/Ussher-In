@@ -22,6 +22,22 @@
     </div>
   </header>
 
+  <section class="ocr-bar" id="ocrBar">
+    <span class="glyph-label">Run OCR</span>
+    <label for="ocrPdfSelect">PDF</label>
+    <select id="ocrPdfSelect"></select>
+    <label for="ocrPageInput">Page</label>
+    <input id="ocrPageInput" type="number" min="1" value="1" style="width: 5em">
+    <label for="ocrPartSelect">Part</label>
+    <select id="ocrPartSelect">
+      <option value="part1">part1</option>
+      <option value="part2">part2</option>
+    </select>
+    <label><input id="ocrOverwrite" type="checkbox"> Overwrite</label>
+    <button id="ocrRunBtn" type="button">Run Gemini OCR</button>
+    <span id="ocrStatus" class="status"></span>
+  </section>
+
   <section class="glyph-bar" id="glyphBar">
     <span class="glyph-label">Glyph tools</span>
     <button type="button" data-glyph="æ" title="Alt+e">æ</button>

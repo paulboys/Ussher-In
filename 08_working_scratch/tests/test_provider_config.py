@@ -25,7 +25,7 @@ def test_default_gemini_supports_ocr_and_vision():
     gemini = default_config().get("gemini")
     assert gemini.supports_ocr is True
     assert gemini.supports_vision is True
-    assert gemini.model == "gemini-3.1-pro"
+    assert gemini.model == "gemini-3.1-pro-preview"
 
 
 def test_default_anthropic_targets_opus_4_6():
@@ -130,3 +130,40 @@ def test_get_unknown_provider_raises():
     config = default_config()
     with pytest.raises(KeyError):
         config.get("does-not-exist")
+
+
+def test_short_form_alias_GEMINI_API_fills_api_key():
+    env = {"GEMINI_API": "sk-alias"}
+    gemini = load_config(path=None, environ=env).get("gemini")
+    assert gemini.api_key == "sk-alias"
+
+
+def test_explicit_ussher_var_wins_over_alias():
+    env = {
+        "GEMINI_API": "alias",
+        "USSHERIN_PROVIDERS_GEMINI_API_KEY": "explicit",
+    }
+    gemini = load_config(path=None, environ=env).get("gemini")
+    assert gemini.api_key == "explicit"
+
+
+def test_dotenv_file_is_loaded_when_present(tmp_path):
+    dotenv = tmp_path / ".env"
+    dotenv.write_text("GEMINI_API = abc-from-dotenv\n", encoding="utf-8")
+    config = load_config(path=None, environ={}, dotenv_path=dotenv)
+    assert config.get("gemini").api_key == "abc-from-dotenv"
+
+
+def test_dotenv_does_not_override_process_env():
+    import os
+    dotenv_lines = "GEMINI_API=fromfile"
+    from pathlib import Path as _P
+    p = _P('.test.env.tmp')
+    p.write_text(dotenv_lines, encoding='utf-8')
+    try:
+        env = {"GEMINI_API": "fromenv"}
+        gemini = load_config(path=None, environ=env, dotenv_path=p).get("gemini")
+        assert gemini.api_key == "fromenv"
+    finally:
+        p.unlink()
+
