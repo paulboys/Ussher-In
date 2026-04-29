@@ -101,6 +101,40 @@ body {
   overflow: auto;
 }
 
+.pdf-pane-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.3rem;
+}
+.pdf-pane-header h2 {
+  margin: 0;
+}
+.pdf-pane-meta {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  color: var(--text);
+}
+.pdf-pane-meta-label {
+  color: #6b6052;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.7rem;
+}
+.pdf-pane-meta-value {
+  font-weight: 600;
+  max-width: 24em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: inline-block;
+  vertical-align: bottom;
+}
+
 .meta-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(140px, 1fr));
@@ -175,6 +209,218 @@ input[type="text"], select, textarea {
 
 .inline-check input { width: auto; }
 
+
+/* === Phase C redesign === */
+
+.meta-card {
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 0.6rem;
+  margin-bottom: 0.6rem;
+  background: #fffaf0;
+}
+.meta-card .meta-grid {
+  grid-template-columns: repeat(5, minmax(120px, 1fr));
+}
+.meta-provenance {
+  margin-top: 0.4rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  font-size: 0.78rem;
+  color: #5b513f;
+}
+.meta-prov-label {
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 700;
+  margin-right: 0.2rem;
+}
+.meta-prov-value { margin-right: 0.6rem; }
+
+.region-section {
+  margin-top: 0.7rem;
+  border-top: 1px dashed var(--line);
+  padding-top: 0.5rem;
+}
+.region-section h2 {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.body-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  gap: 0.4rem;
+  align-items: start;
+}
+.body-row {
+  display: contents;
+}
+.body-cell, .marg-cell {
+  min-width: 0;
+}
+
+.line-card-body { background: #fcfaf3; }
+.line-card-marginalia {
+  background: #f3eedc;
+  border-color: #c2b58f;
+  font-size: 0.88rem;
+}
+.line-card-header { background: #f6efde; }
+.line-card-catchword { background: #f6efde; font-style: italic; }
+
+.marginalia-block {
+  border: 1px dashed #b39d65;
+  border-radius: 5px;
+  padding: 0.25rem;
+  background: #fbf6e3;
+}
+.marginalia-block .line-card-marginalia {
+  border-style: dotted;
+  margin-bottom: 0.25rem;
+}
+.marginalia-block .line-card-marginalia:last-child {
+  margin-bottom: 0;
+}
+
+.unanchored-marginalia {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: var(--panel);
+  padding: 0.25rem 0;
+  margin-bottom: 0.4rem;
+}
+.unanchored-heading {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #8a3a25;
+  margin-bottom: 0.2rem;
+  font-weight: 700;
+}
+
+.line-row {
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+  margin-top: 0.25rem;
+  flex-wrap: wrap;
+}
+.line-row .anchor-row { flex: 0 0 auto; font-size: 0.8rem; }
+.line-row .anchor-row select { min-width: 14ch; }
+.line-row .notes-field { flex: 1 1 auto; min-width: 12ch; }
+
+.add-marker-btn {
+  border: 1px dashed var(--accent);
+  background: transparent;
+  color: var(--accent);
+  border-radius: 3px;
+  font-size: 0.72rem;
+  padding: 0.1rem 0.4rem;
+  cursor: pointer;
+}
+
+.line-head-right {
+  display: flex;
+  gap: 0.3rem;
+  align-items: center;
+}
+
+.review-status-chip {
+  width: auto;
+  font-size: 0.75rem;
+  padding: 0.1rem 0.3rem;
+  margin-top: 0;
+}
+
+.marker-id-mini {
+  width: 4ch;
+  font-size: 0.78rem;
+  padding: 0.1rem 0.25rem;
+  margin-top: 0;
+}
+
+.marker-badge {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  border-radius: 999px;
+  padding: 0 0.35em;
+  font-size: 0.65em;
+  font-weight: 700;
+  margin: 0 0.15em;
+  vertical-align: super;
+  line-height: 1.4;
+  min-width: 1.4em;
+  text-align: center;
+}
+
+.body-markers-preview {
+  font-size: 0.95rem;
+  color: #5b513f;
+  margin-top: 0.15rem;
+  min-height: 0.9rem;
+}
+
+.footnote-card {
+  border: 1px solid #c4b48e;
+  background: #fbf5df;
+  border-radius: 5px;
+  padding: 0.4rem;
+  margin-bottom: 0.4rem;
+}
+.footnote-head {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.82rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.25rem;
+}
+.footnote-marker-badge {
+  background: var(--accent);
+  color: #fff;
+  border-radius: 999px;
+  padding: 0.05em 0.5em;
+  font-weight: 700;
+  font-size: 0.75rem;
+  vertical-align: middle;
+}
+.footnote-id {
+  font-family: ui-monospace, "Cascadia Code", Consolas, monospace;
+  font-size: 0.72rem;
+  color: #6b6052;
+}
+.footnote-anchor {
+  font-size: 0.78rem;
+  color: #6b6052;
+}
+.footnote-kind { width: auto; margin-top: 0; font-size: 0.78rem; padding: 0.15rem 0.3rem; }
+.footnote-empty {
+  color: #8a7e64;
+  font-style: italic;
+  font-size: 0.85rem;
+  padding: 0.3rem 0;
+}
+.footnote-remove-btn {
+  border: 1px solid #b94834;
+  background: #fff4f1;
+  color: #922a1b;
+  border-radius: 3px;
+  font-size: 0.7rem;
+  padding: 0.1rem 0.35rem;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.text-gold {
+  font-family: "Source Serif 4", Georgia, serif;
+  font-size: 0.95rem;
+  resize: vertical;
+}
+
 .text-gold {
   min-height: 2.1rem;
 }
@@ -193,3 +439,6 @@ input[type="text"], select, textarea {
   }
   #pdfFrame { height: 60vh; }
 }
+
+
+/* === Phase C redesign === */
