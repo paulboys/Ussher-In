@@ -1,6 +1,11 @@
 import json
 import re
+import subprocess
+import sys
 import tempfile
+import threading
+import time
+import uuid
 from pathlib import Path
 
 from flask import Flask, abort, jsonify, render_template, request, send_file, url_for
@@ -10,6 +15,9 @@ PHASE3B_ROOT = ROOT / "08_working_scratch" / "phase3b"
 ANNOTATIONS_DIR = PHASE3B_ROOT / "annotations"
 TEMPLATE_DIR = PHASE3B_ROOT / "ui" / "templates"
 STATIC_DIR = PHASE3B_ROOT / "ui" / "static"
+SOURCE_PDF_DIR = ROOT / "00_source_pdf"
+PILOT_OCR_DIR = ROOT / "01_raw_ocr_output"
+PIPELINE_SCRIPTS_DIR = ROOT / "08_working_scratch" / "pipeline_scripts"
 
 ALLOWED_REVIEW_STATUS = {"draft", "reviewed", "locked"}
 SIDE_VALUES = {"", "left", "right"}
@@ -65,7 +73,7 @@ def _resolve_source_pdf(payload: dict) -> tuple[Path, str]:
 def _all_lines(payload: dict) -> list[dict]:
     regions = payload.get("regions", {})
     lines = []
-    for region in ("header", "body", "footnote"):
+    for region in ("header", "body", "footnote", "marginalia", "catchword"):
         values = regions.get(region, [])
         if isinstance(values, list):
             lines.extend([line for line in values if isinstance(line, dict)])
@@ -298,11 +306,7 @@ def _validate_payload(payload: dict) -> list[str]:
 @app.get("/")
 def index() -> str:
     pages = [path.stem.replace("page_", "") for path in _annotation_paths()]
-    if not pages:
-        return (
-            "No annotation JSON files found in 08_working_scratch/phase3b/annotations",
-            404,
-        )
+    # Even with zero pages we render the UI so the user can run OCR from it.
     return render_template("annotation_ui.html", pages=pages)
 
 
@@ -399,6 +403,193 @@ def pdfjs_viewer(page_id: str):
         pdf_url=url_for("page_pdf", page_id=page_id),
         initial_page=initial_page,
     )
+
+
+# ---------------------------------------------------------------------------
+# OCR-from-UI: list source PDFs and run Gemini OCR on a chosen page in a
+# background thread, then convert the result into a Phase 3b annotation file.
+# Jobs are kept in-memory (single-user assumption matching the dev Flask app).
+# ---------------------------------------------------------------------------
+
+_OCR_JOBS: dict[str, dict] = {}
+_OCR_JOBS_LOCK = threading.Lock()
+
+
+def _list_source_pdfs() -> list[str]:
+    if not SOURCE_PDF_DIR.exists():
+        return []
+    return sorted(p.name for p in SOURCE_PDF_DIR.iterdir() if p.suffix.lower() == ".pdf")
+
+
+def _job_set(job_id: str, **fields) -> None:
+    with _OCR_JOBS_LOCK:
+        job = _OCR_JOBS.setdefault(job_id, {})
+        job.update(fields)
+
+
+def _job_get(job_id: str) -> dict | None:
+    with _OCR_JOBS_LOCK:
+        job = _OCR_JOBS.get(job_id)
+        return dict(job) if job is not None else None
+
+
+def _run_ocr_job(
+    job_id: str, pdf_path: Path, page_num: int, part: str, page_id: str, overwrite: bool
+) -> None:
+    pilot_dir = PILOT_OCR_DIR / part
+    pilot_json = pilot_dir / f"{part}_pilot_ocr.json"
+    target_annotation = ANNOTATIONS_DIR / f"page_{page_id}.json"
+
+    try:
+        _job_set(job_id, state="running", message="Rendering and calling Gemini...")
+        pilot_dir.mkdir(parents=True, exist_ok=True)
+
+        cmd = [
+            sys.executable,
+            str(PIPELINE_SCRIPTS_DIR / "pilot_ocr.py"),
+            "--pdf",
+            str(pdf_path),
+            "--part",
+            part,
+            "--start-page",
+            str(page_num),
+            "--end-page",
+            str(page_num),
+            "--ocr-engine",
+            "gemini",
+        ]
+        proc = subprocess.run(
+            cmd,
+            cwd=str(ROOT),
+            capture_output=True,
+            text=True,
+            check=False,
+        )
+        if proc.returncode != 0:
+            _job_set(
+                job_id,
+                state="error",
+                message=f"OCR subprocess failed (code {proc.returncode}). "
+                f"stderr tail: {proc.stderr[-400:].strip()}",
+            )
+            return
+
+        if not pilot_json.exists():
+            _job_set(job_id, state="error", message=f"Pilot JSON not produced: {pilot_json}")
+            return
+
+        records = json.loads(pilot_json.read_text(encoding="utf-8"))
+        if not isinstance(records, list) or not records:
+            _job_set(job_id, state="error", message="Pilot JSON empty (page out of range?)")
+            return
+
+        record = next((r for r in records if str(r.get("page_id")) == page_id), records[0])
+
+        # Lazy import so plain Flask import doesn't pull in pilot deps.
+        sys.path.insert(0, str(PIPELINE_SCRIPTS_DIR))
+        try:
+            from pilot_to_phase3b import convert_record  # noqa: WPS433
+        finally:
+            try:
+                sys.path.remove(str(PIPELINE_SCRIPTS_DIR))
+            except ValueError:
+                pass
+
+        # Source PDF stored relative to repo root for portability.
+        try:
+            rel_pdf = pdf_path.relative_to(ROOT).as_posix()
+        except ValueError:
+            rel_pdf = str(pdf_path)
+
+        payload = convert_record(record, source_pdf=rel_pdf)
+
+        if target_annotation.exists() and not overwrite:
+            _job_set(
+                job_id,
+                state="error",
+                message=f"Annotation already exists: {target_annotation.name}. "
+                "Re-run with overwrite=true to replace.",
+            )
+            return
+
+        _write_payload_atomic(target_annotation, payload)
+        _job_set(
+            job_id,
+            state="done",
+            message=f"Wrote {target_annotation.name}",
+            page_id=page_id,
+            stdout_tail=proc.stdout[-300:],
+        )
+    except Exception as exc:  # pragma: no cover - defensive
+        _job_set(job_id, state="error", message=f"{type(exc).__name__}: {exc}")
+
+
+@app.get("/api/source-pdfs")
+def api_source_pdfs():
+    return jsonify({"pdfs": _list_source_pdfs()})
+
+
+@app.post("/api/ocr/start")
+def api_ocr_start():
+    body = request.get_json(silent=True) or {}
+    pdf_name = str(body.get("pdf", "")).strip()
+    try:
+        page_num = int(body.get("page", 0))
+    except (TypeError, ValueError):
+        return jsonify({"ok": False, "error": "page must be an integer"}), 400
+    part = str(body.get("part", "part1")).strip() or "part1"
+    overwrite = bool(body.get("overwrite", False))
+
+    if not pdf_name:
+        return jsonify({"ok": False, "error": "pdf is required"}), 400
+    if page_num < 1:
+        return jsonify({"ok": False, "error": "page must be >= 1"}), 400
+    if part not in {"part1", "part2"}:
+        return jsonify({"ok": False, "error": "part must be 'part1' or 'part2'"}), 400
+
+    pdf_path = SOURCE_PDF_DIR / pdf_name
+    if not pdf_path.exists() or pdf_path.suffix.lower() != ".pdf":
+        return jsonify({"ok": False, "error": f"PDF not found: {pdf_name}"}), 404
+
+    page_id = f"p{page_num:04d}"
+    target = ANNOTATIONS_DIR / f"page_{page_id}.json"
+    if target.exists() and not overwrite:
+        return (
+            jsonify(
+                {
+                    "ok": False,
+                    "error": "annotation_exists",
+                    "page_id": page_id,
+                    "message": f"{target.name} already exists. Confirm overwrite to replace.",
+                }
+            ),
+            409,
+        )
+
+    job_id = uuid.uuid4().hex
+    _job_set(
+        job_id,
+        state="queued",
+        message="Queued",
+        started_at=time.time(),
+        page_id=page_id,
+        pdf=pdf_name,
+    )
+    thread = threading.Thread(
+        target=_run_ocr_job,
+        args=(job_id, pdf_path, page_num, part, page_id, overwrite),
+        daemon=True,
+    )
+    thread.start()
+    return jsonify({"ok": True, "job_id": job_id, "page_id": page_id}), 202
+
+
+@app.get("/api/ocr/status/<job_id>")
+def api_ocr_status(job_id: str):
+    job = _job_get(job_id)
+    if job is None:
+        abort(404)
+    return jsonify(job)
 
 
 if __name__ == "__main__":

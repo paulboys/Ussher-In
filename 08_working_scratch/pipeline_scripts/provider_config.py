@@ -98,7 +98,7 @@ def default_config() -> Config:
         providers={
             "gemini": ProviderConfig(
                 name="gemini",
-                model="gemini-3.1-pro",
+                model="gemini-3.1-pro-preview",
                 base_url="https://generativelanguage.googleapis.com",
                 timeout_seconds=120.0,
                 max_retries=2,
@@ -177,6 +177,28 @@ def _apply_env_overrides(config: Config, environ: dict[str, str]) -> Config:
     default_ocr = environ.get(default_ocr_key, config.default_ocr_provider)
     default_tr = environ.get(default_tr_key, config.default_translation_provider)
 
+    # Convenience aliases: short-form env vars commonly used in .env files.
+    # These only fill missing api_key values; explicit USSHERIN_PROVIDERS_*
+    # variables and JSON config still take precedence.
+    alias_map: dict[str, tuple[str, str]] = {
+        "GEMINI_API_KEY": ("gemini", "api_key"),
+        "GEMINI_API": ("gemini", "api_key"),
+        "GOOGLE_API_KEY": ("gemini", "api_key"),
+        "ANTHROPIC_API_KEY": ("anthropic", "api_key"),
+        "CLAUDE_API_KEY": ("anthropic", "api_key"),
+    }
+    for alias, (provider_name, field_name) in alias_map.items():
+        raw = environ.get(alias)
+        if not raw or provider_name not in providers:
+            continue
+        provider = providers[provider_name]
+        if getattr(provider, field_name, ""):  # don't override an already-set value
+            continue
+        current = getattr(provider, field_name)
+        providers[provider_name] = replace(
+            provider, **{field_name: _coerce_value(current, raw)}
+        )
+
     for env_key, raw_value in environ.items():
         if not env_key.startswith(PROVIDER_ENV_PREFIX):
             continue
@@ -207,15 +229,46 @@ def _apply_env_overrides(config: Config, environ: dict[str, str]) -> Config:
     )
 
 
+def _load_dotenv(path: Path) -> dict[str, str]:
+    """Minimal .env parser (no shell expansion, no quotes-with-escapes).
+
+    Lines like ``KEY=VALUE`` or ``KEY = VALUE`` are accepted. Lines starting
+    with ``#`` and blank lines are ignored. Surrounding single/double quotes
+    and backticks are stripped from the value. This avoids a hard dependency
+    on ``python-dotenv``.
+    """
+    out: dict[str, str] = {}
+    if not path.exists():
+        return out
+    for line in path.read_text(encoding="utf-8").splitlines():
+        stripped = line.strip()
+        if not stripped or stripped.startswith("#"):
+            continue
+        if "=" not in stripped:
+            continue
+        key, _, value = stripped.partition("=")
+        key = key.strip()
+        value = value.strip()
+        if not key:
+            continue
+        if len(value) >= 2 and value[0] == value[-1] and value[0] in {"'", '"', "`"}:
+            value = value[1:-1]
+        out[key] = value
+    return out
+
+
 def load_config(
     path: Path | str | None = None,
     *,
     environ: dict[str, str] | None = None,
+    dotenv_path: Path | str | None = None,
 ) -> Config:
-    """Load configuration, layering: defaults < JSON file < environment.
+    """Load configuration, layering: defaults < JSON file < .env < process env.
 
     ``path`` may be ``None`` to use defaults only. ``environ`` defaults to
-    ``os.environ`` when not supplied (useful for tests).
+    ``os.environ`` when not supplied (useful for tests). ``dotenv_path``
+    defaults to ``<repo_root>/.env`` when not supplied; pass ``False`` (via
+    ``Path("/dev/null")``) or an explicit non-existent path to skip.
     """
     config = default_config()
 
@@ -225,7 +278,22 @@ def load_config(
             data = json.loads(json_path.read_text(encoding="utf-8"))
             config = _apply_json(config, data)
 
-    env = environ if environ is not None else dict(os.environ)
+    env = dict(environ) if environ is not None else dict(os.environ)
+
+    # Layer .env into the environment view, but only for keys not already set
+    # in the process environment (process env wins for safety).
+    if dotenv_path is None and environ is None:
+        # Default lookup: <repo_root>/.env where repo_root is two parents up
+        # from this file (08_working_scratch/pipeline_scripts/provider_config.py).
+        candidate = Path(__file__).resolve().parents[2] / ".env"
+        dotenv_values = _load_dotenv(candidate)
+    elif dotenv_path is not None:
+        dotenv_values = _load_dotenv(Path(dotenv_path))
+    else:
+        dotenv_values = {}
+    for key, value in dotenv_values.items():
+        env.setdefault(key, value)
+
     return _apply_env_overrides(config, env)
 
 
