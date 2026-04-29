@@ -24,9 +24,23 @@ As a data scientist unable to read Latin, the only way to answer these questions
 
 The pipeline has three linked stages:
 
-1. **OCR** — Extract structured Latin text from photocopied book PDFs using a fine-tuned OCR model designed for this source material. The goal is a stable model that does not need continuous manual updating. Each page is segmented into body, footnotes, and marginalia, then quality-checked.
+1. **OCR** — Extract structured Latin (and polytonic Greek) text from the source PDFs using **Google Gemini 3.1 Pro** as the primary OCR engine, with paleography-aware prompts that preserve long-s, ligatures, and historical numerals. Each page is segmented into header, body, footnotes, marginalia, and catchword regions, then quality-checked. Tesseract and Kraken remain available as fallback engines during the migration.
 2. **Reference English** — OCR and structure the existing English translation PDF/images into aligned English text where that witness is available. This serves as an initial gold-standard benchmark for evaluating machine translation from Latin to English.
-3. **Translation** — Translate the structured Latin into literal, academic-register English using machine translation with human post-editing. Where aligned English reference text exists, machine output can be scored with BLEU, COMET, or similar metrics, and those aligned pairs may later inform model training or selection. The output remains bilingual Latin-English reading documents.
+3. **Translation** — Translate the structured Latin into literal, academic-register English using **Claude Opus 4.6** (configured via the same provider layer as Gemini) with human post-editing. Where aligned English reference text exists, machine output can be scored with BLEU, COMET, or similar metrics, and those aligned pairs may later inform model selection. The output remains bilingual Latin-English reading documents.
+
+### Provider configuration
+
+OCR and translation engines are selected via a unified provider config
+(see [06_tools_config/providers.README.md](06_tools_config/providers.README.md)).
+API keys may be supplied via `06_tools_config/providers.json` or environment
+variables of the form `USSHERIN_PROVIDERS_<NAME>_API_KEY`.
+
+### Verification (Go Claw)
+
+A Go module under [08_working_scratch/phase3b/go-claw](08_working_scratch/phase3b/go-claw)
+provides deterministic catchword + marginalia verification and a read-only
+side-by-side review server (non-port-5000) that complements the Python
+Flask annotation UI.
 
 ### Fine-Tuning for Historical Print
 
