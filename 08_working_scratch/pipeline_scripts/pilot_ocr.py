@@ -7,7 +7,8 @@ from pathlib import Path
 import pytesseract
 from core_interfaces import TextTransform
 from pdf2image import convert_from_path
-from ocr_adapters import TesseractOcrEngine
+from ocr_adapters import GeminiOcrEngine, TesseractOcrEngine
+from provider_config import load_config
 from text_normalization import (
     AeHeuristicNormalizer,
     CompositeTextNormalizer,
@@ -213,6 +214,98 @@ def run_pilot(
     return output_json
 
 
+def run_gemini_pilot(
+    pdf_path: Path,
+    part: str,
+    start_page: int,
+    end_page: int,
+    output_root: Path,
+    provider_config_path: Path | None,
+    lang: str,
+) -> Path:
+    """Run the Gemini OCR pipeline for a page range and write structured records.
+
+    Output JSON includes per-line records with text_raw_ocr, normalized_form,
+    and alignment_index fields so downstream annotation/QA can preserve raw
+    model output alongside post-normalization text.
+    """
+    config = load_config(provider_config_path)
+    provider = config.get("gemini")
+    missing = provider.missing_fields()
+    if missing:
+        raise RuntimeError(
+            "Gemini provider is not configured. Missing fields: "
+            f"{', '.join(missing)}. Set USSHERIN_PROVIDERS_GEMINI_API_KEY or "
+            "edit 06_tools_config/providers.json."
+        )
+
+    engine = GeminiOcrEngine(provider)
+    text_normalizer = CompositeTextNormalizer(
+        transforms=[LigatureNormalizer(), AeHeuristicNormalizer()]
+    )
+
+    part_dir = output_root / part
+    ensure_dir(part_dir)
+
+    images = convert_from_path(
+        str(pdf_path),
+        first_page=start_page,
+        last_page=end_page,
+        dpi=400,
+    )
+
+    records: list[dict] = []
+    for index, image in enumerate(images, start=start_page):
+        page_id = f"p{index:04d}"
+        detailed = engine.extract_detailed(image, lang=lang, page_id=page_id)
+
+        line_records: list[dict] = []
+        for alignment_index, line in enumerate(detailed.lines):
+            normalized = text_normalizer.apply(line.text)
+            line_records.append(
+                {
+                    "alignment_index": alignment_index,
+                    "region": line.region,
+                    "line_index": line.line_index,
+                    "text_raw_ocr": line.text,
+                    "normalized_form": normalized,
+                    "confidence": line.confidence,
+                    "illegible": line.illegible,
+                    "marker_id": line.marker_id,
+                    "marginalia_anchor_index": line.marginalia_anchor_index,
+                }
+            )
+
+        # Aggregate plain-text dump of body region for backward compatibility.
+        body_text = "\n".join(
+            line.text for line in detailed.lines if line.region == "body"
+        )
+        body_text = text_normalizer.apply(body_text)
+        txt_path = part_dir / f"page_{index:04d}_raw.txt"
+        txt_path.write_text(body_text, encoding="utf-8")
+
+        records.append(
+            {
+                "part": part,
+                "page_num": index,
+                "page_id": page_id,
+                "ocr_engine": "gemini",
+                "ocr_provider_model": provider.model,
+                "ocr_lang": lang.split("+"),
+                "raw_text_path": str(txt_path),
+                "raw_confidence_avg": detailed.result.avg_confidence,
+                "raw_confidence_min": detailed.result.min_confidence,
+                "page_summary": detailed.page_summary,
+                "lines": line_records,
+                "qc_status": "pending",
+            }
+        )
+
+    output_json = part_dir / f"{part}_pilot_ocr.json"
+    output_json.write_text(json.dumps(records, ensure_ascii=False, indent=2), encoding="utf-8")
+    return output_json
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="Run pilot OCR on a page range from a PDF.")
     parser.add_argument("--pdf", required=True, help="Path to source PDF")
@@ -226,9 +319,14 @@ def main() -> None:
     )
     parser.add_argument(
         "--ocr-engine",
-        choices=["kraken", "tesseract"],
-        default="kraken",
-        help="OCR engine to use (default: kraken)",
+        choices=["gemini", "kraken", "tesseract"],
+        default="gemini",
+        help="OCR engine to use (default: gemini)",
+    )
+    parser.add_argument(
+        "--provider-config",
+        default="06_tools_config/providers.json",
+        help="Path to providers JSON config (env vars override; missing file is OK)",
     )
     parser.add_argument(
         "--kraken-model",
@@ -284,6 +382,20 @@ def main() -> None:
         help="Apply heuristic fixes for common OCR losses of ae/AE in Latin words",
     )
     args = parser.parse_args()
+
+    if args.ocr_engine == "gemini":
+        provider_config_path = Path(args.provider_config) if args.provider_config else None
+        output_path = run_gemini_pilot(
+            pdf_path=Path(args.pdf),
+            part=args.part,
+            start_page=args.start_page,
+            end_page=args.end_page,
+            output_root=Path(args.output_root),
+            provider_config_path=provider_config_path,
+            lang=args.lang,
+        )
+        print(f"Gemini OCR written to {output_path}")
+        return
 
     if args.ocr_engine == "kraken":
         # Kraken path: delegate to kraken_ocr_runner via WSL or direct call
