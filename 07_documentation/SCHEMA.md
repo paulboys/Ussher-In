@@ -12,7 +12,7 @@ This document defines the minimum structured records for OCR and translation.
   "page_num": 1,
   "page_id": "p0001",
   "ocr_engine": "gemini",
-  "ocr_model": "gemini-3.1-pro",
+  "ocr_model": "gemini-3.1-pro-preview",
   "ocr_lang": ["lat", "grc"],
   "ocr_timestamp": "2026-04-17T00:00:00Z",
   "raw_text": "...",
@@ -44,7 +44,7 @@ Supported `ocr_engine` values:
 - `tesseract` (legacy fallback during migration)
 - `kraken` (legacy fallback; runs via WSL on Windows)
 
-`ocr_model` records the exact model identifier (e.g. `gemini-3.1-pro`,
+`ocr_model` records the exact model identifier (e.g. `gemini-3.1-pro-preview`,
 `lat.traineddata`). For Gemini, configuration is sourced from
 `06_tools_config/providers.json` plus `USSHERIN_PROVIDERS_*` env overrides.
 

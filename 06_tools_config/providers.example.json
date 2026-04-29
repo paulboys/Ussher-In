@@ -4,7 +4,7 @@
   "default_translation_provider": "anthropic",
   "providers": {
     "gemini": {
-      "model": "gemini-3.1-pro",
+      "model": "gemini-3.1-pro-preview",
       "api_key": "",
       "base_url": "https://generativelanguage.googleapis.com",
       "timeout_seconds": 120,
