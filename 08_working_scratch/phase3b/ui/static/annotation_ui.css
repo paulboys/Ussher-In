@@ -49,6 +49,17 @@ body {
   border-bottom: 1px solid var(--line);
   background: #fff;
 }
+.ocr-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid var(--line);
+  background: #f8f9fa;
+}
+.ocr-bar select, .ocr-bar input { font-size: 0.9rem; }
+.ocr-bar #ocrStatus { margin-left: auto; min-width: 200px; }
 .glyph-label { font-weight: 700; margin-right: 0.6rem; }
 .glyph-bar button {
   min-width: 2rem;
