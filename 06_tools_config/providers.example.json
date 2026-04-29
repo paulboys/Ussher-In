@@ -1,0 +1,35 @@
+{
+  "$schema_note": "Example provider configuration. Copy to providers.json and fill api_key fields, OR set USSHERIN_PROVIDERS_<NAME>_API_KEY env vars.",
+  "default_ocr_provider": "gemini",
+  "default_translation_provider": "anthropic",
+  "providers": {
+    "gemini": {
+      "model": "gemini-3.1-pro",
+      "api_key": "",
+      "base_url": "https://generativelanguage.googleapis.com",
+      "timeout_seconds": 120,
+      "max_retries": 2,
+      "supports_ocr": true,
+      "supports_translation": true,
+      "supports_vision": true
+    },
+    "anthropic": {
+      "model": "claude-opus-4-6",
+      "api_key": "",
+      "base_url": "https://api.anthropic.com",
+      "timeout_seconds": 120,
+      "max_retries": 2,
+      "supports_ocr": false,
+      "supports_translation": true,
+      "supports_vision": true
+    },
+    "tesseract": {
+      "model": "local",
+      "supports_ocr": true
+    },
+    "kraken": {
+      "model": "local",
+      "supports_ocr": true
+    }
+  }
+}
