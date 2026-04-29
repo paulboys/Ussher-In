@@ -1,3 +1,4 @@
+import datetime as _dt
 import json
 import re
 import subprocess
@@ -20,15 +21,8 @@ PILOT_OCR_DIR = ROOT / "01_raw_ocr_output"
 PIPELINE_SCRIPTS_DIR = ROOT / "08_working_scratch" / "pipeline_scripts"
 
 ALLOWED_REVIEW_STATUS = {"draft", "reviewed", "locked"}
-SIDE_VALUES = {"", "left", "right"}
-
-HEADER_OVERRIDE_FIELDS: dict[str, str] = {
-    "contains_header_page_number": "bool",
-    "contains_header_chapter_number": "bool",
-    "header_page_number_side": "side",
-    "header_chapter_side": "side",
-    "header_parity_consistent": "bool",
-}
+ALLOWED_FOOTNOTE_KIND = {"citation", "gloss", "cross_ref", "not_a_note", "other"}
+SCHEMA_REGIONS = ("header", "body", "marginalia", "catchword")
 
 app = Flask(__name__, template_folder=str(TEMPLATE_DIR), static_folder=str(STATIC_DIR))
 
@@ -73,234 +67,205 @@ def _resolve_source_pdf(payload: dict) -> tuple[Path, str]:
 def _all_lines(payload: dict) -> list[dict]:
     regions = payload.get("regions", {})
     lines = []
-    for region in ("header", "body", "footnote", "marginalia", "catchword"):
+    for region in SCHEMA_REGIONS:
         values = regions.get(region, [])
         if isinstance(values, list):
             lines.extend([line for line in values if isinstance(line, dict)])
     return lines
 
 
-def _header_lines(payload: dict) -> list[dict]:
-    regions = payload.get("regions", {})
-    values = regions.get("header", [])
+def _footnotes(payload: dict) -> list[dict]:
+    values = payload.get("footnotes", [])
     if not isinstance(values, list):
         return []
-    return [line for line in values if isinstance(line, dict)]
-
-
-def _body_lines(payload: dict) -> list[dict]:
-    regions = payload.get("regions", {})
-    values = regions.get("body", [])
-    if not isinstance(values, list):
-        return []
-    return [line for line in values if isinstance(line, dict)]
-
-
-def _opposite_side(side: str) -> str:
-    if side == "left":
-        return "right"
-    if side == "right":
-        return "left"
-    return ""
-
-
-def _side_for_header_index(index: int, total: int) -> str:
-    if total < 2:
-        return "unknown"
-    if index == 0:
-        return "left"
-    if index == 1:
-        return "right"
-    return "unknown"
-
-
-def _expected_page_number_side(page_num: int | None) -> str:
-    if not isinstance(page_num, int):
-        return ""
-    return "left" if page_num % 2 == 0 else "right"
-
-
-def _contains_page_number_token(text: str, page_num: int) -> bool:
-    return bool(re.search(rf"(?<!\\d){page_num}(?!\\d)", text))
-
-
-def _is_chapter_header(text: str) -> bool:
-    # Accept forms like "CAP. II." and minor punctuation/spacing variants.
-    return bool(re.search(r"\bCAP\.?\s*[IVXLCDM]+\.?\b", text, flags=re.IGNORECASE))
-
-
-def _parse_bool(value: object, default: bool = False) -> bool:
-    if isinstance(value, bool):
-        return value
-    if isinstance(value, str):
-        normalized = value.strip().lower()
-        if normalized in {"true", "1", "yes", "y", "on"}:
-            return True
-        if normalized in {"false", "0", "no", "n", "off", ""}:
-            return False
-    return bool(default)
-
-
-def _parse_side(value: object, default: str = "") -> str:
-    if value is None:
-        return default
-    normalized = str(value).strip().lower()
-    if normalized in SIDE_VALUES:
-        return normalized
-    return default
-
-
-def _refresh_meta_flags(payload: dict) -> None:
-    lines = _all_lines(payload)
-    header_lines = _header_lines(payload)
-    body_lines = _body_lines(payload)
-    ae_pattern = re.compile(r"(ae|AE|æ|Æ)")
-    marker_pattern = re.compile(r"\[[^\]]+\]|\bfn\d+\b|[\*†‡]")
-
-    contains_ae_focus = any(
-        ae_pattern.search(str(line.get("text_gold", ""))) for line in lines
-    )
-    contains_marker_focus = any(
-        bool(line.get("contains_marker", False))
-        or marker_pattern.search(str(line.get("text_gold", "")))
-        for line in lines
-    )
-
-    page_num_value = payload.get("page_num")
-    try:
-        page_num = int(page_num_value)
-    except (TypeError, ValueError):
-        page_num = None
-
-    header_page_number_side = ""
-    header_chapter_side = ""
-    contains_header_page_number = False
-    contains_header_chapter_number = False
-
-    # Prefer explicit header region; if absent, scan first body lines where seeded OCR often keeps header text.
-    candidate_lines = header_lines if header_lines else body_lines[:2]
-    total_candidates = len(candidate_lines)
-    for index, line in enumerate(candidate_lines):
-        text = str(line.get("text_gold", ""))
-        side = _side_for_header_index(index, total_candidates)
-
-        if page_num is not None and _contains_page_number_token(text, page_num):
-            contains_header_page_number = True
-            if side in {"left", "right"} and header_page_number_side == "":
-                header_page_number_side = side
-
-        if _is_chapter_header(text):
-            contains_header_chapter_number = True
-            if side in {"left", "right"} and header_chapter_side == "":
-                header_chapter_side = side
-
-    expected_side = _expected_page_number_side(page_num)
-    if contains_header_page_number and header_page_number_side == "" and expected_side:
-        # Fallback to known layout rule when side is not inferable from header line structure.
-        header_page_number_side = expected_side
-
-    if (
-        contains_header_chapter_number
-        and header_chapter_side == ""
-        and header_page_number_side in {"left", "right"}
-    ):
-        # Based on page design, chapter indicator appears opposite the page number.
-        header_chapter_side = _opposite_side(header_page_number_side)
-
-    header_parity_consistent = bool(
-        contains_header_page_number
-        and header_page_number_side in {"left", "right"}
-        and expected_side in {"left", "right"}
-        and header_page_number_side == expected_side
-    )
-
-    meta = payload.setdefault("meta", {})
-    meta["contains_ae_focus"] = bool(contains_ae_focus)
-    meta["contains_marker_focus"] = bool(contains_marker_focus)
-
-    derived_values: dict[str, object] = {
-        "contains_header_page_number": bool(contains_header_page_number),
-        "contains_header_chapter_number": bool(contains_header_chapter_number),
-        "header_page_number_side": header_page_number_side,
-        "header_chapter_side": header_chapter_side,
-        "header_parity_consistent": bool(header_parity_consistent),
-    }
-
-    for key, derived in derived_values.items():
-        meta[f"derived_{key}"] = derived
-
-    for key, field_type in HEADER_OVERRIDE_FIELDS.items():
-        enabled_key = f"override_{key}_enabled"
-        value_key = f"override_{key}_value"
-        enabled = _parse_bool(meta.get(enabled_key, False), default=False)
-        meta[enabled_key] = enabled
-
-        if field_type == "bool":
-            default_value = bool(derived_values[key])
-            parsed_value = _parse_bool(
-                meta.get(value_key, default_value), default=default_value
-            )
-            meta[value_key] = parsed_value
-            meta[key] = parsed_value if enabled else default_value
-        else:
-            default_value = _parse_side(derived_values[key], default="")
-            parsed_value = _parse_side(
-                meta.get(value_key, default_value), default=default_value
-            )
-            meta[value_key] = parsed_value
-            meta[key] = parsed_value if enabled else default_value
+    return [fn for fn in values if isinstance(fn, dict)]
 
 
 def _validate_payload(payload: dict) -> list[str]:
+    """Slim validator for the post-redesign schema.
+
+    Tolerates older payloads on read: legacy fields and the removed
+    ``regions.footnote`` are simply ignored. We validate the things we need
+    to be sure about for downstream consumers (review_status enums,
+    footnote_id integrity, footnote.kind enum).
+    """
     errors: list[str] = []
-    regions = payload.get("regions", {})
-    footnote_ids = {
+
+    body_line_ids = {
         str(line.get("line_id", ""))
-        for line in regions.get("footnote", [])
+        for line in payload.get("regions", {}).get("body", [])
         if isinstance(line, dict) and line.get("line_id")
+    }
+
+    footnote_ids = {
+        str(fn.get("footnote_id", ""))
+        for fn in _footnotes(payload)
+        if fn.get("footnote_id")
     }
 
     for line in _all_lines(payload):
         line_id = str(line.get("line_id", "<unknown>"))
-        review_status = str(line.get("review_status", ""))
+        review_status = str(line.get("review_status", "draft"))
         if review_status not in ALLOWED_REVIEW_STATUS:
             errors.append(f"{line_id}: invalid review_status '{review_status}'")
 
-        marker_id = str(line.get("marker_id", "")).strip()
-        marker_target = str(line.get("marker_link_target", "")).strip()
-        marker_uncertain = bool(line.get("marker_uncertain", False))
+        # Validate body markers reference real footnotes.
+        markers = line.get("markers")
+        if isinstance(markers, list):
+            for idx, marker in enumerate(markers):
+                if not isinstance(marker, dict):
+                    errors.append(f"{line_id}.markers[{idx}]: not an object")
+                    continue
+                fn_id = str(marker.get("footnote_id", ""))
+                if fn_id and fn_id not in footnote_ids:
+                    errors.append(
+                        f"{line_id}.markers[{idx}]: footnote_id '{fn_id}' not in footnotes[]"
+                    )
 
-        if marker_id and not marker_target and not marker_uncertain:
-            errors.append(f"{line_id}: marker_id set but marker_link_target is empty")
-
-        if marker_target and marker_target not in footnote_ids:
+    for idx, fn in enumerate(_footnotes(payload)):
+        fn_id = str(fn.get("footnote_id", f"<idx{idx}>"))
+        kind = str(fn.get("kind", "citation"))
+        if kind not in ALLOWED_FOOTNOTE_KIND:
+            errors.append(f"footnotes[{fn_id}]: invalid kind '{kind}'")
+        review_status = str(fn.get("review_status", "draft"))
+        if review_status not in ALLOWED_REVIEW_STATUS:
             errors.append(
-                f"{line_id}: marker_link_target '{marker_target}' not found in footnote line_ids"
+                f"footnotes[{fn_id}]: invalid review_status '{review_status}'"
             )
-
-    meta_review_status = str(payload.get("meta", {}).get("review_status", ""))
-    if meta_review_status and meta_review_status not in ALLOWED_REVIEW_STATUS:
-        errors.append(f"meta.review_status: invalid value '{meta_review_status}'")
+        body_line_id = str(fn.get("body_line_id", ""))
+        if body_line_id and body_line_id not in body_line_ids:
+            errors.append(
+                f"footnotes[{fn_id}]: body_line_id '{body_line_id}' not in body line_ids"
+            )
 
     meta = payload.get("meta", {})
     if not isinstance(meta, dict):
         errors.append("meta: must be an object")
         return errors
 
-    for key, field_type in HEADER_OVERRIDE_FIELDS.items():
-        enabled_key = f"override_{key}_enabled"
-        value_key = f"override_{key}_value"
-        enabled = _parse_bool(meta.get(enabled_key, False), default=False)
-        if not enabled:
-            continue
-
-        raw_value = meta.get(value_key)
-        if field_type == "side":
-            normalized = _parse_side(raw_value, default="<invalid>")
-            if normalized not in SIDE_VALUES:
-                errors.append(f"meta.{value_key}: invalid side '{raw_value}'")
+    meta_review_status = str(meta.get("review_status", "draft"))
+    if meta_review_status and meta_review_status not in ALLOWED_REVIEW_STATUS:
+        errors.append(f"meta.review_status: invalid value '{meta_review_status}'")
 
     return errors
+
+
+# ---------------------------------------------------------------------------
+# Edit log: append per-save diffs to a sidecar JSONL for prompt refinement.
+# ---------------------------------------------------------------------------
+
+# Fields we track per line/footnote/page-meta when computing the diff.
+_LINE_DIFF_FIELDS = ("text_gold", "marker_id", "notes", "review_status")
+_FOOTNOTE_DIFF_FIELDS = (
+    "text_gold",
+    "kind",
+    "marker_number",
+    "body_line_id",
+    "notes",
+    "review_status",
+)
+_PAGE_META_DIFF_FIELDS = (
+    "annotation_status",
+    "review_status",
+    "notes",
+    "ocr_page_summary",
+)
+_PAGE_TOPLEVEL_DIFF_FIELDS = ("page_num", "source_pdf")
+
+
+def _index_by(items, key: str) -> dict:
+    out: dict = {}
+    if not isinstance(items, list):
+        return out
+    for item in items:
+        if isinstance(item, dict):
+            value = item.get(key)
+            if value:
+                out[str(value)] = item
+    return out
+
+
+def _diff_payloads(old: dict, new: dict) -> list[dict]:
+    """Compute a flat list of edit entries between two payloads."""
+    entries: list[dict] = []
+    page_id = str(new.get("page_id") or old.get("page_id") or "")
+    reviewer = str(new.get("meta", {}).get("reviewer", "")) if isinstance(new.get("meta"), dict) else ""
+    timestamp = _dt.datetime.now(_dt.timezone.utc).isoformat()
+
+    def emit(scope: str, target_id: str, field: str, before, after) -> None:
+        if before == after:
+            return
+        entries.append(
+            {
+                "ts": timestamp,
+                "page_id": page_id,
+                "scope": scope,
+                "target_id": target_id,
+                "field": field,
+                "before": before,
+                "after": after,
+                "reviewer": reviewer,
+            }
+        )
+
+    # Page-level top-level fields.
+    for field in _PAGE_TOPLEVEL_DIFF_FIELDS:
+        emit("page", page_id, field, old.get(field), new.get(field))
+
+    # Page meta.
+    old_meta = old.get("meta") if isinstance(old.get("meta"), dict) else {}
+    new_meta = new.get("meta") if isinstance(new.get("meta"), dict) else {}
+    for field in _PAGE_META_DIFF_FIELDS:
+        emit("page_meta", page_id, field, old_meta.get(field), new_meta.get(field))
+
+    # Lines (across all current regions).
+    old_lines = {
+        str(line.get("line_id", "")): line
+        for line in _all_lines(old)
+        if line.get("line_id")
+    }
+    new_lines = {
+        str(line.get("line_id", "")): line
+        for line in _all_lines(new)
+        if line.get("line_id")
+    }
+    for line_id, new_line in new_lines.items():
+        old_line = old_lines.get(line_id, {})
+        for field in _LINE_DIFF_FIELDS:
+            emit("line", line_id, field, old_line.get(field), new_line.get(field))
+        # Marker structure changes (insert/delete/reorder) -> single entry.
+        old_markers = old_line.get("markers")
+        new_markers = new_line.get("markers")
+        if (old_markers or []) != (new_markers or []):
+            emit("body_marker", line_id, "markers", old_markers, new_markers)
+
+    # Footnotes (matched by footnote_id).
+    old_fn = _index_by(old.get("footnotes"), "footnote_id")
+    new_fn = _index_by(new.get("footnotes"), "footnote_id")
+    for fn_id, new_node in new_fn.items():
+        old_node = old_fn.get(fn_id, {})
+        for field in _FOOTNOTE_DIFF_FIELDS:
+            emit("footnote", fn_id, field, old_node.get(field), new_node.get(field))
+    for fn_id in old_fn.keys() - new_fn.keys():
+        emit("footnote", fn_id, "_deleted", old_fn[fn_id], None)
+    for fn_id in new_fn.keys() - old_fn.keys():
+        emit("footnote", fn_id, "_added", None, new_fn[fn_id])
+
+    return entries
+
+
+def _edits_path(page_id: str) -> Path:
+    return ANNOTATIONS_DIR / f"page_{page_id}.edits.jsonl"
+
+
+def _append_edit_log(page_id: str, entries: list[dict]) -> None:
+    if not entries:
+        return
+    path = _edits_path(page_id)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with path.open("a", encoding="utf-8") as handle:
+        for entry in entries:
+            handle.write(json.dumps(entry, ensure_ascii=False) + "\n")
 
 
 @app.get("/")
@@ -351,9 +316,18 @@ def api_save_page(page_id: str):
     if errors:
         return jsonify({"ok": False, "errors": errors}), 400
 
-    _refresh_meta_flags(incoming)
+    # Compute edit log entries against the on-disk payload before overwriting.
+    try:
+        existing = _read_payload(path)
+    except Exception:
+        existing = {}
+    edits = _diff_payloads(existing, incoming)
+    _append_edit_log(page_id, edits)
+
     _write_payload_atomic(path, incoming)
-    return jsonify({"ok": True, "meta": incoming.get("meta", {})})
+    return jsonify(
+        {"ok": True, "meta": incoming.get("meta", {}), "edits_recorded": len(edits)}
+    )
 
 
 @app.get("/pdf/<page_id>")
@@ -373,6 +347,48 @@ def page_pdf(page_id: str):
         return f"Source PDF not found: {source_pdf_value}", 404
 
     return send_file(source_pdf)
+
+
+@app.get("/source-pdf/<path:pdf_name>")
+def source_pdf_file(pdf_name: str):
+    """Stream a PDF directly from 00_source_pdf/ by filename."""
+    # Reject paths that try to escape the source dir.
+    candidate = (SOURCE_PDF_DIR / pdf_name).resolve()
+    try:
+        candidate.relative_to(SOURCE_PDF_DIR.resolve())
+    except ValueError:
+        abort(400)
+    if not candidate.exists() or candidate.suffix.lower() != ".pdf":
+        abort(404)
+    return send_file(candidate)
+
+
+@app.get("/pdfjs-source")
+def pdfjs_source_viewer():
+    """Render the PDF.js viewer for an arbitrary source PDF + page (no annotation required)."""
+    pdf_name = request.args.get("pdf", default="", type=str).strip()
+    if not pdf_name:
+        abort(400)
+    candidate = (SOURCE_PDF_DIR / pdf_name).resolve()
+    try:
+        candidate.relative_to(SOURCE_PDF_DIR.resolve())
+    except ValueError:
+        abort(400)
+    if not candidate.exists() or candidate.suffix.lower() != ".pdf":
+        abort(404)
+
+    try:
+        initial_page = int(request.args.get("page", default="1", type=str))
+    except (TypeError, ValueError):
+        initial_page = 1
+    if initial_page < 1:
+        initial_page = 1
+
+    return render_template(
+        "pdf_viewer.html",
+        pdf_url=url_for("source_pdf_file", pdf_name=pdf_name),
+        initial_page=initial_page,
+    )
 
 
 @app.get("/pdfjs/<page_id>")
