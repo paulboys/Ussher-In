@@ -15,6 +15,7 @@ const DEFAULT_REVIEWER = "Paul Boys";
 const pageSelect = document.getElementById("pageSelect");
 const loadBtn = document.getElementById("loadBtn");
 const saveBtn = document.getElementById("saveBtn");
+const undoBtn = document.getElementById("undoBtn");
 const statusEl = document.getElementById("status");
 const pdfFrame = document.getElementById("pdfFrame");
 const pdfPaneSourceName = document.getElementById("pdfPaneSourceName");
@@ -93,6 +94,51 @@ function updatePdfPaneHeader(sourcePdfKey, pageNum) {
 
 function clone(obj) {
   return JSON.parse(JSON.stringify(obj));
+}
+
+// ---------------------------------------------------------------------------
+// Undo stack: destructive ops (remove line, delete footnote) push an entry.
+// Cleared on page change. Capped at UNDO_LIMIT.
+// ---------------------------------------------------------------------------
+const undoStack = [];
+const UNDO_LIMIT = 30;
+
+function pushUndo(label, undoFn) {
+  undoStack.push({ label, undo: undoFn });
+  if (undoStack.length > UNDO_LIMIT) undoStack.shift();
+  refreshUndoButton();
+}
+
+function clearUndoStack() {
+  undoStack.length = 0;
+  refreshUndoButton();
+}
+
+function performUndo() {
+  const entry = undoStack.pop();
+  if (!entry) return;
+  try {
+    entry.undo();
+    setStatus(`Undid: ${entry.label}`);
+  } catch (err) {
+    console.error(err);
+    setStatus(`Undo failed: ${err}`, true);
+  }
+  refreshUndoButton();
+}
+
+function refreshUndoButton() {
+  if (!undoBtn) return;
+  if (undoStack.length === 0) {
+    undoBtn.disabled = true;
+    undoBtn.title = "Nothing to undo";
+    undoBtn.textContent = "Undo";
+  } else {
+    undoBtn.disabled = false;
+    const last = undoStack[undoStack.length - 1];
+    undoBtn.title = `Undo: ${last.label} (Ctrl+Z)`;
+    undoBtn.textContent = `Undo (${undoStack.length})`;
+  }
 }
 
 function pad4(n) { return String(n).padStart(4, "0"); }
@@ -225,6 +271,18 @@ function renumberFootnotes() {
   if (!currentPayload) return;
   const bodyLines = currentPayload.regions.body || [];
   const fns = currentPayload.footnotes || [];
+
+  // Preserve existing char_offset values keyed by footnote_id so re-numbering
+  // doesn't wipe out positional anchors set by the user.
+  const oldOffsetByFnId = new Map();
+  bodyLines.forEach((line) => {
+    (line.markers || []).forEach((m) => {
+      if (m && m.footnote_id != null && m.char_offset != null) {
+        oldOffsetByFnId.set(String(m.footnote_id), m.char_offset);
+      }
+    });
+  });
+
   // Sort: anchored (by body line position) first, then orphans in their
   // existing relative order.
   const orphanOrder = new Map();
@@ -252,10 +310,13 @@ function renumberFootnotes() {
       const bodyLine = bodyLines.find((l) => String(l.line_id) === String(fn.body_line_id));
       if (bodyLine) {
         bodyLine.markers = bodyLine.markers || [];
+        const preserved = oldOffsetByFnId.has(String(fn.footnote_id))
+          ? oldOffsetByFnId.get(String(fn.footnote_id))
+          : null;
         bodyLine.markers.push({
           number: idx + 1,
           footnote_id: fn.footnote_id,
-          char_offset: null,
+          char_offset: preserved,
         });
       }
     }
@@ -264,21 +325,33 @@ function renumberFootnotes() {
 }
 
 function renderBodyTextWithMarkers(line) {
-  // Returns HTML: text_gold escaped + <sup> markers appended at end of line.
-  // Markers with char_offset null render at end-of-line (default).
-  const safe = escapeHtml(line.text_gold || "");
-  const markers = (line.markers || []).slice().sort((a, b) => {
-    const oa = a.char_offset == null ? Number.MAX_SAFE_INTEGER : a.char_offset;
-    const ob = b.char_offset == null ? Number.MAX_SAFE_INTEGER : b.char_offset;
-    return oa - ob;
-  });
-  if (markers.length === 0) return safe;
-  // For now char_offset positions are not honoured for rendering; all markers
-  // stack at end. The structure is preserved for future positional rendering.
-  const sups = markers
-    .map((m) => `<sup class="marker-badge" data-fn-id="${escapeHtml(m.footnote_id)}" title="footnote ${m.number}">${m.number}</sup>`)
-    .join("");
-  return `${safe} ${sups}`;
+  // Returns HTML: text_gold escaped, with <sup> markers spliced inline at
+  // each marker.char_offset. Markers without an offset stack at end-of-line.
+  const text = line.text_gold || "";
+  const all = (line.markers || []).slice();
+  const positioned = all
+    .filter((m) => m && m.char_offset != null)
+    .sort((a, b) => a.char_offset - b.char_offset);
+  const trailing = all.filter((m) => !m || m.char_offset == null);
+  const fnByNumber = (n) => (currentPayload?.footnotes || []).find((fn) => fn.marker_number === n);
+  const renderBadge = (m) => {
+    const fn = fnByNumber(m.number);
+    const tip = fn ? escapeHtml((fn.text_gold || "").slice(0, 60)) : `footnote ${m.number}`;
+    return `<sup class="marker-badge" data-fn-id="${escapeHtml(m.footnote_id)}" title="${tip}">${m.number}</sup>`;
+  };
+  let html = "";
+  let cursor = 0;
+  for (const m of positioned) {
+    const offset = Math.max(cursor, Math.min(text.length, m.char_offset));
+    html += escapeHtml(text.slice(cursor, offset));
+    html += renderBadge(m);
+    cursor = offset;
+  }
+  html += escapeHtml(text.slice(cursor));
+  if (trailing.length > 0) {
+    html += " " + trailing.map(renderBadge).join(" ");
+  }
+  return html || "&nbsp;";
 }
 
 // ---------------------------------------------------------------------------
@@ -333,12 +406,12 @@ function buildBodyLineCard(line, idx, options = {}) {
     <div class="line-head">
       <span class="line-id">${safeId}</span>
       <div class="line-head-right">
-        <button type="button" class="add-marker-btn" title="Insert footnote marker at end of this line">+ Footnote here</button>
+        <button type="button" class="add-marker-btn" title="Insert footnote marker at the cursor position in this line (or end of line)">+ Footnote here</button>
         <select class="review-status-chip" data-field="review_status">${reviewOpts}</select>
         ${options.showRemove ? '<button type="button" class="line-remove-btn">Remove</button>' : ""}
       </div>
     </div>
-    <textarea class="text-gold" data-field="text_gold" rows="1">${safeText}</textarea>
+    <textarea class="text-gold body-text-gold" data-field="text_gold" data-line-id="${escapeHtml(line.line_id || "")}" rows="1">${safeText}</textarea>
     <div class="body-markers-preview"></div>
     <input class="notes-field" type="text" data-field="notes" placeholder="notes" value="${safeNotes}">
   `;
@@ -346,24 +419,23 @@ function buildBodyLineCard(line, idx, options = {}) {
   bindLineFieldEvents(card, line);
   bindFocusTracking(card);
 
-  // Render marker badges (live preview, derived from line.markers).
+  const ta = card.querySelector(".body-text-gold");
   const preview = card.querySelector(".body-markers-preview");
   const renderMarkers = () => {
-    const fnByNumber = (n) => (currentPayload.footnotes || []).find((fn) => fn.marker_number === n);
-    preview.innerHTML = (line.markers || [])
-      .slice()
-      .sort((a, b) => a.number - b.number)
-      .map((m) => {
-        const fn = fnByNumber(m.number);
-        const snippet = fn ? escapeHtml((fn.text_gold || "").slice(0, 60)) : "";
-        return `<sup class="marker-badge" data-fn-id="${escapeHtml(m.footnote_id)}" title="${snippet}">${m.number}</sup>`;
-      })
-      .join(" ");
+    preview.innerHTML = renderBodyTextWithMarkers(line);
   };
   renderMarkers();
+  // Re-render preview live as the user types.
+  ta.addEventListener("input", renderMarkers);
 
-  card.querySelector(".add-marker-btn").addEventListener("click", () => {
-    addFootnoteAnchored(line.line_id);
+  const addBtn = card.querySelector(".add-marker-btn");
+  // Don't steal focus on mousedown so the textarea selection survives.
+  addBtn.addEventListener("mousedown", (e) => e.preventDefault());
+  addBtn.addEventListener("click", () => {
+    const offset = (document.activeElement === ta || activeInput === ta)
+      ? (ta.selectionStart ?? null)
+      : null;
+    addFootnoteAnchored(line.line_id, offset);
   });
 
   if (options.showRemove) {
@@ -430,6 +502,7 @@ function buildMarginaliaCard(line) {
       <label class="anchor-row">Anchor
         <select class="anchor-select">${anchorOpts}</select>
       </label>
+      <button type="button" class="anchor-at-cursor-btn" title="Click in a body line at the desired position, then click here to anchor this marginalia to that position">📍 At body cursor</button>
       <input class="notes-field" type="text" data-field="notes" placeholder="notes" value="${safeNotes}">
     </div>
   `;
@@ -440,6 +513,18 @@ function buildMarginaliaCard(line) {
   card.querySelector(".anchor-select").addEventListener("change", (event) => {
     const newTarget = event.target.value || null;
     setMarginaliaAnchor(line, newTarget);
+    renderAll();
+  });
+  const atCursorBtn = card.querySelector(".anchor-at-cursor-btn");
+  atCursorBtn.addEventListener("mousedown", (e) => e.preventDefault());
+  atCursorBtn.addEventListener("click", () => {
+    if (!activeInput || !activeInput.classList.contains("body-text-gold")) {
+      setStatus("Click inside a body line first, then 📍 At body cursor.", true);
+      return;
+    }
+    const bodyLineId = activeInput.dataset.lineId || "";
+    const offset = activeInput.selectionStart ?? null;
+    setMarginaliaAnchor(line, bodyLineId, offset);
     renderAll();
   });
   return card;
@@ -455,7 +540,7 @@ function resolveMarginaliaAnchor(marginaliaLine) {
   return fn ? fn.body_line_id || "" : "";
 }
 
-function setMarginaliaAnchor(marginaliaLine, newBodyLineId) {
+function setMarginaliaAnchor(marginaliaLine, newBodyLineId, charOffset = null) {
   // Move this marginalia line out of any existing footnote and into either an
   // existing footnote anchored to newBodyLineId (if exactly one) or a new one.
   // Then renumber. Keeps things simple — full split/merge UI is a follow-up.
@@ -479,6 +564,7 @@ function setMarginaliaAnchor(marginaliaLine, newBodyLineId) {
       fns.splice(i, 1);
     }
   }
+  let targetFnId = null;
   if (newBodyLineId) {
     // Find an existing footnote on this body line, or create a new one.
     let target = fns.find((fn) => fn.body_line_id === newBodyLineId);
@@ -501,8 +587,18 @@ function setMarginaliaAnchor(marginaliaLine, newBodyLineId) {
     if (!target.source_marginalia_line_ids.includes(marginaliaLine.line_id)) {
       target.source_marginalia_line_ids.push(marginaliaLine.line_id);
     }
+    targetFnId = target.footnote_id;
   }
   renumberFootnotes();
+  if (charOffset != null && newBodyLineId && targetFnId) {
+    const bodyLine = (currentPayload.regions.body || []).find(
+      (l) => String(l.line_id) === String(newBodyLineId)
+    );
+    const marker = (bodyLine?.markers || []).find(
+      (m) => String(m.footnote_id) === String(targetFnId)
+    );
+    if (marker) marker.char_offset = charOffset;
+  }
 }
 
 // ---------------------------------------------------------------------------
@@ -548,6 +644,7 @@ function buildFootnoteCard(fn) {
       <label class="anchor-row">Anchor
         <select class="anchor-select">${anchorOpts}</select>
       </label>
+      <button type="button" class="anchor-at-cursor-btn" title="Click in a body line at the desired position, then click here to position this footnote's marker there">📍 At body cursor</button>
       <input class="notes-field" type="text" data-field="notes" placeholder="notes" value="${safeNotes}">
     </div>
   `;
@@ -568,22 +665,55 @@ function buildFootnoteCard(fn) {
     renderAll();
   });
 
+  const fnAtCursorBtn = card.querySelector(".anchor-at-cursor-btn");
+  fnAtCursorBtn.addEventListener("mousedown", (e) => e.preventDefault());
+  fnAtCursorBtn.addEventListener("click", () => {
+    if (!activeInput || !activeInput.classList.contains("body-text-gold")) {
+      setStatus("Click inside a body line first, then 📍 At body cursor.", true);
+      return;
+    }
+    const bodyLineId = activeInput.dataset.lineId || "";
+    const offset = activeInput.selectionStart ?? null;
+    fn.body_line_id = bodyLineId;
+    renumberFootnotes();
+    if (bodyLineId && offset != null) {
+      const bodyLine = (currentPayload.regions.body || []).find(
+        (l) => String(l.line_id) === String(bodyLineId)
+      );
+      const marker = (bodyLine?.markers || []).find(
+        (m) => String(m.footnote_id) === String(fn.footnote_id)
+      );
+      if (marker) marker.char_offset = offset;
+    }
+    renderAll();
+  });
+
   card.querySelector(".footnote-remove-btn").addEventListener("click", () => {
     const fns = currentPayload.footnotes || [];
     const idx = fns.indexOf(fn);
-    if (idx >= 0) fns.splice(idx, 1);
+    if (idx < 0) return;
+    const snapshot = clone(fn);
+    const labelNum = snapshot.marker_number || snapshot.footnote_id;
+    fns.splice(idx, 1);
     renumberFootnotes();
+    pushUndo(`Delete footnote ${labelNum}`, () => {
+      const list = currentPayload.footnotes || (currentPayload.footnotes = []);
+      list.splice(Math.min(idx, list.length), 0, snapshot);
+      renumberFootnotes();
+      renderAll();
+    });
     renderAll();
   });
 
   return card;
 }
 
-function addFootnoteAnchored(bodyLineId) {
+function addFootnoteAnchored(bodyLineId, charOffset = null) {
   if (!currentPayload) return;
   const fns = currentPayload.footnotes || (currentPayload.footnotes = []);
+  const newId = nextFootnoteId(currentPayload.page_id, fns);
   fns.push({
-    footnote_id: nextFootnoteId(currentPayload.page_id, fns),
+    footnote_id: newId,
     page_id: currentPayload.page_id,
     marker_number: 0,
     body_line_id: bodyLineId || "",
@@ -596,6 +726,13 @@ function addFootnoteAnchored(bodyLineId) {
     notes: "",
   });
   renumberFootnotes();
+  if (charOffset != null && bodyLineId) {
+    const bodyLine = (currentPayload.regions.body || []).find(
+      (l) => String(l.line_id) === String(bodyLineId)
+    );
+    const marker = (bodyLine?.markers || []).find((m) => String(m.footnote_id) === String(newId));
+    if (marker) marker.char_offset = charOffset;
+  }
   renderAll();
 }
 
@@ -610,7 +747,13 @@ function renderHeader() {
       buildLineCardSimple(line, "header", {
         showRemove: true,
         onRemove: () => {
+          const removed = lines[idx];
+          const removedClone = clone(removed);
           lines.splice(idx, 1);
+          pushUndo(`Remove header line ${removedClone.line_id || idx + 1}`, () => {
+            (currentPayload.regions.header || []).splice(idx, 0, removedClone);
+            renderHeader();
+          });
           renderHeader();
         },
       })
@@ -658,8 +801,14 @@ function renderBodyWithMarginalia() {
       buildBodyLineCard(line, idx, {
         showRemove: true,
         onRemove: () => {
+          const removedClone = clone(line);
           bodyLines.splice(idx, 1);
           renumberFootnotes();
+          pushUndo(`Remove body line ${removedClone.line_id || idx + 1}`, () => {
+            (currentPayload.regions.body || []).splice(idx, 0, removedClone);
+            renumberFootnotes();
+            renderAll();
+          });
           renderAll();
         },
       })
@@ -699,7 +848,12 @@ function renderCatchword() {
       buildLineCardSimple(line, "catchword", {
         showRemove: true,
         onRemove: () => {
+          const removedClone = clone(lines[idx]);
           lines.splice(idx, 1);
+          pushUndo(`Remove catchword ${removedClone.line_id || idx + 1}`, () => {
+            (currentPayload.regions.catchword || []).splice(idx, 0, removedClone);
+            renderCatchword();
+          });
           renderCatchword();
         },
       })
@@ -757,6 +911,7 @@ async function loadPage(pageId) {
     renumberFootnotes();
     bindMeta(currentPayload);
     renderAll();
+    clearUndoStack();
 
     const parsed = Number(currentPayload.page_num);
     const fallback = Number(String(pageId || "").replace(/^p/, ""));
@@ -805,6 +960,7 @@ async function savePage() {
 
 loadBtn.addEventListener("click", () => loadPage(pageSelect.value));
 saveBtn.addEventListener("click", savePage);
+if (undoBtn) undoBtn.addEventListener("click", performUndo);
 
 addHeaderBtn.addEventListener("click", () => {
   if (!currentPayload) return;
@@ -848,6 +1004,17 @@ document.addEventListener("keydown", (event) => {
   if (event.ctrlKey && event.key.toLowerCase() === "s") {
     event.preventDefault();
     savePage();
+    return;
+  }
+  if (event.ctrlKey && !event.shiftKey && event.key.toLowerCase() === "z") {
+    // Don't hijack undo inside textarea/input — let the browser do native
+    // text-edit undo. Only intercept when focus is outside an editable.
+    const tag = (document.activeElement && document.activeElement.tagName) || "";
+    const editable = tag === "INPUT" || tag === "TEXTAREA" || (document.activeElement && document.activeElement.isContentEditable);
+    if (!editable) {
+      event.preventDefault();
+      performUndo();
+    }
     return;
   }
   if (event.altKey && event.key.toLowerCase() === "s") {
