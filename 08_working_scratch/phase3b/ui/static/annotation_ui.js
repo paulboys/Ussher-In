@@ -641,3 +641,142 @@ if (window.__PAGES__ && window.__PAGES__.length > 0) {
   pageSelect.value = window.__PAGES__[0];
   loadPage(window.__PAGES__[0]);
 }
+
+// ---------------------------------------------------------------------------
+// OCR-from-UI controls: pick a source PDF and page, run Gemini in the
+// background, poll for completion, then auto-load the new annotation.
+// ---------------------------------------------------------------------------
+
+const ocrPdfSelect = document.getElementById("ocrPdfSelect");
+const ocrPageInput = document.getElementById("ocrPageInput");
+const ocrPartSelect = document.getElementById("ocrPartSelect");
+const ocrOverwrite = document.getElementById("ocrOverwrite");
+const ocrRunBtn = document.getElementById("ocrRunBtn");
+const ocrStatus = document.getElementById("ocrStatus");
+
+function setOcrStatus(msg, isError = false) {
+  if (!ocrStatus) return;
+  ocrStatus.textContent = msg;
+  ocrStatus.style.color = isError ? "#c0392b" : "";
+}
+
+async function loadSourcePdfList() {
+  if (!ocrPdfSelect) return;
+  try {
+    const res = await fetch("/api/source-pdfs");
+    const data = await res.json();
+    const pdfs = data.pdfs || [];
+    ocrPdfSelect.innerHTML = "";
+    if (pdfs.length === 0) {
+      const opt = document.createElement("option");
+      opt.textContent = "(no PDFs in 00_source_pdf/)";
+      opt.value = "";
+      ocrPdfSelect.appendChild(opt);
+      return;
+    }
+    for (const name of pdfs) {
+      const opt = document.createElement("option");
+      opt.value = name;
+      opt.textContent = name;
+      ocrPdfSelect.appendChild(opt);
+    }
+  } catch (err) {
+    setOcrStatus(`PDF list failed: ${err}`, true);
+  }
+}
+
+async function pollOcrJob(jobId, pageId) {
+  const start = Date.now();
+  while (true) {
+    await new Promise((r) => setTimeout(r, 4000));
+    const res = await fetch(`/api/ocr/status/${jobId}`);
+    if (!res.ok) {
+      throw new Error(`status fetch failed: ${res.status}`);
+    }
+    const job = await res.json();
+    const elapsed = Math.round((Date.now() - start) / 1000);
+    setOcrStatus(`${job.state} (${elapsed}s): ${job.message || ""}`);
+    if (job.state === "done") {
+      return job;
+    }
+    if (job.state === "error") {
+      throw new Error(job.message || "OCR job failed");
+    }
+  }
+}
+
+async function runOcr(forceOverwrite) {
+  const pdf = ocrPdfSelect?.value;
+  const page = parseInt(ocrPageInput?.value || "0", 10);
+  const part = ocrPartSelect?.value || "part1";
+  if (!pdf) {
+    setOcrStatus("Pick a PDF first.", true);
+    return;
+  }
+  if (!Number.isFinite(page) || page < 1) {
+    setOcrStatus("Page must be a positive integer.", true);
+    return;
+  }
+
+  ocrRunBtn.disabled = true;
+  setOcrStatus("Starting...");
+  try {
+    const res = await fetch("/api/ocr/start", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        pdf,
+        page,
+        part,
+        overwrite: !!(forceOverwrite || ocrOverwrite?.checked),
+      }),
+    });
+    const data = await res.json().catch(() => ({}));
+
+    if (res.status === 409 && data.error === "annotation_exists") {
+      const proceed = window.confirm(
+        `${data.message}\n\nOverwrite the existing annotation?`
+      );
+      if (!proceed) {
+        setOcrStatus("Cancelled (existing annotation kept).");
+        return;
+      }
+      ocrRunBtn.disabled = false;
+      return runOcr(true);
+    }
+
+    if (!res.ok || !data.ok) {
+      throw new Error(data.error || data.message || `HTTP ${res.status}`);
+    }
+
+    const { job_id: jobId, page_id: pageId } = data;
+    setOcrStatus(`Queued (${pageId})`);
+    const finalJob = await pollOcrJob(jobId, pageId);
+    setOcrStatus(`Done: ${finalJob.message || pageId}`);
+
+    // Refresh page selector and load the new page.
+    const pagesRes = await fetch("/api/pages");
+    const pagesData = await pagesRes.json();
+    const pages = pagesData.pages || [];
+    pageSelect.innerHTML = "";
+    for (const p of pages) {
+      const opt = document.createElement("option");
+      opt.value = p;
+      opt.textContent = p;
+      pageSelect.appendChild(opt);
+    }
+    if (pages.includes(pageId)) {
+      pageSelect.value = pageId;
+      await loadPage(pageId);
+    }
+  } catch (err) {
+    setOcrStatus(String(err.message || err), true);
+  } finally {
+    ocrRunBtn.disabled = false;
+  }
+}
+
+if (ocrRunBtn) {
+  ocrRunBtn.addEventListener("click", () => runOcr(false));
+  loadSourcePdfList();
+}

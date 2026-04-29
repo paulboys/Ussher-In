@@ -260,6 +260,19 @@ def _default_gemini_request(model: str, prompt: str, image_png: bytes, provider:
         f"{provider.base_url.rstrip('/')}/v1beta/models/{model}:generateContent"
         f"?key={provider.api_key}"
     )
+    generation_config: dict = {"response_mime_type": "application/json"}
+    # Gemini 3.x reasoning models can otherwise spend many minutes on a single
+    # page. For OCR a small thinking budget is sufficient; keep it bounded so
+    # the request completes within the configured HTTP timeout. The provider
+    # ``extra`` dict can override via ``thinking_budget``.
+    thinking_budget = provider.extra.get("thinking_budget", 4096)
+    if isinstance(thinking_budget, str):
+        try:
+            thinking_budget = int(thinking_budget)
+        except ValueError:
+            thinking_budget = 4096
+    if thinking_budget is not None and thinking_budget >= 0:
+        generation_config["thinkingConfig"] = {"thinkingBudget": int(thinking_budget)}
     body = json.dumps(
         {
             "contents": [
@@ -271,7 +284,7 @@ def _default_gemini_request(model: str, prompt: str, image_png: bytes, provider:
                     ],
                 }
             ],
-            "generationConfig": {"response_mime_type": "application/json"},
+            "generationConfig": generation_config,
         }
     ).encode("utf-8")
 
