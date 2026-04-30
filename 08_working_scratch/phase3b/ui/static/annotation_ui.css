@@ -454,3 +454,121 @@ input[type="text"], select, textarea {
 
 
 /* === Phase C redesign === */
+
+/* ---------------------------------------------------------------------------
+ * Edition support: badge in meta card, blurb in OCR bar, chooser modal,
+ * sticky footnote pane for the 1847 layout.
+ * --------------------------------------------------------------------------- */
+.edition-blurb {
+  flex: 1 1 100%;
+  margin-top: 0.25rem;
+  font-size: 0.78rem;
+  color: #6b6052;
+  font-style: italic;
+}
+.edition-badge-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.edition-badge {
+  display: inline-block;
+  padding: 0.1rem 0.5rem;
+  background: #f1e7d0;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: 0.78rem;
+}
+.edition-badge[data-edition="1847_elrington_todd"] {
+  background: #e1ecf2;
+  border-color: #b3c9d3;
+}
+
+/* Sticky footnote pane (1847 layout) — pinned at the bottom of the editor pane. */
+.sticky-footnote-pane {
+  position: sticky;
+  bottom: 0;
+  background: var(--panel);
+  border-top: 2px solid var(--accent);
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.05);
+  z-index: 5;
+  max-height: 40vh;
+  overflow-y: auto;
+}
+
+/* In 1847 mode, body rows take full width (no marginalia column). */
+body.layout-1847 .body-grid {
+  grid-template-columns: 1fr !important;
+}
+body.layout-1847 .body-row {
+  grid-template-columns: 1fr !important;
+}
+body.layout-1847 .marg-cell {
+  display: none;
+}
+
+/* Edition chooser modal. */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(20, 14, 4, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+.modal-overlay[hidden] { display: none; }
+.modal-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 1.25rem 1.5rem;
+  max-width: 32rem;
+  width: 92%;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.25);
+}
+.modal-card h2 {
+  margin: 0 0 0.5rem;
+  font-size: 1.1rem;
+}
+.modal-intro {
+  margin: 0 0 0.85rem;
+  font-size: 0.88rem;
+  color: #4d4434;
+}
+.edition-choices {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.edition-choice {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto auto;
+  gap: 0.15rem 0.6rem;
+  padding: 0.55rem 0.7rem;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  cursor: pointer;
+  background: #fbf7ec;
+}
+.edition-choice:hover { background: #f4ecd5; }
+.edition-choice input { grid-row: 1 / span 2; align-self: center; }
+.edition-choice-title { font-weight: 600; font-size: 0.95rem; }
+.edition-choice-desc { font-size: 0.82rem; color: #6b6052; }
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+.primary-btn {
+  border: 1px solid var(--accent);
+  background: var(--accent);
+  color: #fff;
+  border-radius: 4px;
+  padding: 0.3rem 0.8rem;
+  font: inherit;
+  cursor: pointer;
+}
+.primary-btn:hover { filter: brightness(1.05); }

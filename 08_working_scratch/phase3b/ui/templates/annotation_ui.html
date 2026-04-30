@@ -29,9 +29,15 @@
     <select id="ocrPdfSelect"></select>
     <label for="ocrPageInput">Page</label>
     <input id="ocrPageInput" type="number" min="1" value="1" style="width: 5em">
+    <label for="ocrEditionSelect">Edition</label>
+    <select id="ocrEditionSelect">
+      <option value="1687_second">1687 Second Edition</option>
+      <option value="1847_elrington_todd">Elrington &amp; Todd 1847</option>
+    </select>
     <label><input id="ocrOverwrite" type="checkbox"> Overwrite</label>
     <button id="ocrRunBtn" type="button">Run Gemini OCR</button>
     <span id="ocrStatus" class="status"></span>
+    <span id="ocrEditionBlurb" class="edition-blurb"></span>
   </section>
 
   <section class="glyph-bar" id="glyphBar">
@@ -63,6 +69,12 @@
           </label>
           <label>Reviewer
             <input id="metaReviewer" type="text" readonly>
+          </label>
+          <label>Edition
+            <span class="edition-badge-row">
+              <span id="metaEditionBadge" class="edition-badge">&mdash;</span>
+              <button id="metaEditionChangeBtn" type="button" class="small-btn" title="Change edition for this page">Change…</button>
+            </span>
           </label>
         </div>
         <label>OCR page summary
@@ -106,6 +118,14 @@
         <div id="footnoteContainer"></div>
       </section>
 
+      <section class="region-section sticky-footnote-pane" id="stickyFootnoteSection" hidden>
+        <div class="section-head">
+          <h2>Footnotes (1847)</h2>
+          <button id="addStickyFootnoteBtn" type="button" class="small-btn">+ Footnote</button>
+        </div>
+        <div id="stickyFootnoteContainer"></div>
+      </section>
+
       <section class="region-section" id="catchwordSection">
         <div class="section-head">
           <h2>Catchword</h2>
@@ -128,6 +148,29 @@
       <iframe id="pdfFrame" title="Source PDF"></iframe>
     </section>
   </main>
+
+  <div id="editionChooserModal" class="modal-overlay" hidden>
+    <div class="modal-card" role="dialog" aria-labelledby="editionChooserTitle" aria-modal="true">
+      <h2 id="editionChooserTitle">Select edition</h2>
+      <p class="modal-intro">This page does not have an edition recorded yet. Pick which edition this page belongs to so the editor can show the right layout.</p>
+      <div class="edition-choices">
+        <label class="edition-choice">
+          <input type="radio" name="editionChoice" value="1687_second" checked>
+          <span class="edition-choice-title">1687 Second Edition</span>
+          <span class="edition-choice-desc">Second-edition typesetting with marginalia rail; long-s, ligatures, Greek/Latin paleography.</span>
+        </label>
+        <label class="edition-choice">
+          <input type="radio" name="editionChoice" value="1847_elrington_todd">
+          <span class="edition-choice-title">Elrington &amp; Todd 1847</span>
+          <span class="edition-choice-desc">Reprint with no marginalia; footnotes typeset at the bottom of the page; 19th-c. Latin/Greek lithography and ligatures.</span>
+        </label>
+      </div>
+      <div class="modal-actions">
+        <button id="editionChooserCancelBtn" type="button" class="small-btn">Cancel</button>
+        <button id="editionChooserConfirmBtn" type="button" class="primary-btn">Apply</button>
+      </div>
+    </div>
+  </div>
 
   <script>
     window.__PAGES__ = {{ pages|tojson }};

@@ -44,6 +44,14 @@ from typing import Iterable
 PHASE3B_REGIONS = ("header", "body", "marginalia", "catchword")
 FOOTNOTE_KIND_DEFAULT = "citation"
 
+ALLOWED_EDITIONS = ("1687_second", "1847_elrington_todd")
+DEFAULT_EDITION = "1687_second"
+# Editions whose layout has no marginalia rail (footnotes typeset at bottom
+# of page). The converter still preserves any marginalia text the OCR
+# returned so a later edition switch is non-destructive, but the editor
+# hides the rail for these editions.
+EDITIONS_WITHOUT_MARGINALIA = frozenset({"1847_elrington_todd"})
+
 
 def _line_id(page_id: str, region: str, ordinal: int) -> str:
     return f"{page_id}_{region}_l{ordinal:04d}"
@@ -229,8 +237,16 @@ def _build_footnotes(
     return footnotes
 
 
-def convert_record(record: dict, *, source_pdf: str | None = None) -> dict:
+def convert_record(
+    record: dict,
+    *,
+    source_pdf: str | None = None,
+    edition: str | None = None,
+) -> dict:
     """Convert a single pilot-OCR page record into a Phase 3b payload."""
+    edition_value = edition or str(record.get("edition") or "") or DEFAULT_EDITION
+    if edition_value not in ALLOWED_EDITIONS:
+        edition_value = DEFAULT_EDITION
     page_id = str(record.get("page_id") or f"p{int(record.get('page_num', 0)):04d}")
     part = str(record.get("part", ""))
     page_num = int(record.get("page_num", 0))
@@ -281,6 +297,7 @@ def convert_record(record: dict, *, source_pdf: str | None = None) -> dict:
     payload: dict = {
         "page_id": page_id,
         "part": part,
+        "edition": edition_value,
         "source_pdf": source_pdf or "",
         "page_num": page_num,
         "regions": regions,
@@ -306,6 +323,7 @@ def write_phase3b_files(
     out_dir: Path,
     *,
     source_pdf: str | None = None,
+    edition: str | None = None,
     overwrite: bool = False,
 ) -> list[Path]:
     """Write one ``page_pNNNN.json`` per pilot record. Returns paths written.
@@ -315,7 +333,7 @@ def write_phase3b_files(
     out_dir.mkdir(parents=True, exist_ok=True)
     written: list[Path] = []
     for record in pilot_records:
-        payload = convert_record(record, source_pdf=source_pdf)
+        payload = convert_record(record, source_pdf=source_pdf, edition=edition)
         target = out_dir / f"page_{payload['page_id']}.json"
         if target.exists() and not overwrite:
             raise FileExistsError(str(target))
@@ -336,6 +354,12 @@ def main() -> int:
         help="Phase 3b annotations directory",
     )
     parser.add_argument("--source-pdf", default="", help="Source PDF path to embed")
+    parser.add_argument(
+        "--edition",
+        default=DEFAULT_EDITION,
+        choices=list(ALLOWED_EDITIONS),
+        help="Edition key written into the payload (default: %(default)s)",
+    )
     parser.add_argument("--overwrite", action="store_true")
     args = parser.parse_args()
 
@@ -346,6 +370,7 @@ def main() -> int:
         records,
         Path(args.out_dir),
         source_pdf=args.source_pdf or None,
+        edition=args.edition,
         overwrite=args.overwrite,
     )
     for path in written:

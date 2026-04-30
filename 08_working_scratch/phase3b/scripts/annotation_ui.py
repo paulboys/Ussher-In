@@ -22,6 +22,7 @@ PIPELINE_SCRIPTS_DIR = ROOT / "08_working_scratch" / "pipeline_scripts"
 
 ALLOWED_REVIEW_STATUS = {"draft", "reviewed", "locked"}
 ALLOWED_FOOTNOTE_KIND = {"citation", "gloss", "cross_ref", "not_a_note", "other"}
+ALLOWED_EDITIONS = {"1687_second", "1847_elrington_todd"}
 SCHEMA_REGIONS = ("header", "body", "marginalia", "catchword")
 
 app = Flask(__name__, template_folder=str(TEMPLATE_DIR), static_folder=str(STATIC_DIR))
@@ -147,6 +148,12 @@ def _validate_payload(payload: dict) -> list[str]:
     if meta_review_status and meta_review_status not in ALLOWED_REVIEW_STATUS:
         errors.append(f"meta.review_status: invalid value '{meta_review_status}'")
 
+    # Edition is optional for legacy payloads, but must be from the allowed
+    # set when present. Treat empty/missing as legacy 1687.
+    edition = payload.get("edition", "")
+    if edition and str(edition) not in ALLOWED_EDITIONS:
+        errors.append(f"edition: invalid value '{edition}'")
+
     return errors
 
 
@@ -170,7 +177,7 @@ _PAGE_META_DIFF_FIELDS = (
     "notes",
     "ocr_page_summary",
 )
-_PAGE_TOPLEVEL_DIFF_FIELDS = ("page_num", "source_pdf")
+_PAGE_TOPLEVEL_DIFF_FIELDS = ("page_num", "source_pdf", "edition")
 
 
 def _index_by(items, key: str) -> dict:
@@ -450,7 +457,13 @@ def _job_get(job_id: str) -> dict | None:
 
 
 def _run_ocr_job(
-    job_id: str, pdf_path: Path, page_num: int, part: str, page_id: str, overwrite: bool
+    job_id: str,
+    pdf_path: Path,
+    page_num: int,
+    part: str,
+    page_id: str,
+    overwrite: bool,
+    edition: str,
 ) -> None:
     pilot_dir = PILOT_OCR_DIR / part
     pilot_json = pilot_dir / f"{part}_pilot_ocr.json"
@@ -517,7 +530,7 @@ def _run_ocr_job(
         except ValueError:
             rel_pdf = str(pdf_path)
 
-        payload = convert_record(record, source_pdf=rel_pdf)
+        payload = convert_record(record, source_pdf=rel_pdf, edition=edition)
 
         if target_annotation.exists() and not overwrite:
             _job_set(
@@ -554,6 +567,7 @@ def api_ocr_start():
     except (TypeError, ValueError):
         return jsonify({"ok": False, "error": "page must be an integer"}), 400
     part = str(body.get("part", "part1")).strip() or "part1"
+    edition = str(body.get("edition", "")).strip() or "1687_second"
     overwrite = bool(body.get("overwrite", False))
 
     if not pdf_name:
@@ -562,6 +576,16 @@ def api_ocr_start():
         return jsonify({"ok": False, "error": "page must be >= 1"}), 400
     if part not in {"part1", "part2"}:
         return jsonify({"ok": False, "error": "part must be 'part1' or 'part2'"}), 400
+    if edition not in ALLOWED_EDITIONS:
+        return (
+            jsonify(
+                {
+                    "ok": False,
+                    "error": f"edition must be one of {sorted(ALLOWED_EDITIONS)}",
+                }
+            ),
+            400,
+        )
 
     pdf_path = SOURCE_PDF_DIR / pdf_name
     if not pdf_path.exists() or pdf_path.suffix.lower() != ".pdf":
@@ -593,7 +617,7 @@ def api_ocr_start():
     )
     thread = threading.Thread(
         target=_run_ocr_job,
-        args=(job_id, pdf_path, page_num, part, page_id, overwrite),
+        args=(job_id, pdf_path, page_num, part, page_id, overwrite, edition),
         daemon=True,
     )
     thread.start()
