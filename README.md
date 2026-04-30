@@ -6,7 +6,7 @@
 
 **The first English translation of James Ussher's *Britannicarum Ecclesiarum Antiquitates* (1639).**
 
-Ussher's *Britannicarum Ecclesiarum Antiquitates* (1639) has never been translated into English in its entirety. One chapter—the second, on Glastonbury traditions—was translated by H. Kendra Baker, but the remaining sixteen chapters remain accessible only in Latin. 
+Ussher's *Britannicarum Ecclesiarum Antiquitates* (1639) has never been translated into English in its entirety. One chapter—the second, on Glastonbury traditions—was translated by H. Kendra Baker, but the remaining sixteen chapters are accessible only in Latin. 
 
 As a foundational history of the early British and Irish churches—their origins, monasticism, and ties to the wider Christian world—this has left the full body of Ussher's scholarship out of reach for English readers. This project aims to change that.
 
