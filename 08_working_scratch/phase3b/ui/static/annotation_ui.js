@@ -495,6 +495,7 @@ function buildMarginaliaCard(line) {
       <span class="line-id">${safeId}</span>
       <div class="line-head-right">
         <input class="marker-id-mini" type="text" data-field="marker_id" placeholder="m" value="${safeMarker}">
+        <button type="button" class="line-remove-btn marginalia-remove-btn" title="Remove this marginalia line">Remove</button>
       </div>
     </div>
     <textarea class="text-gold" data-field="text_gold" rows="1">${safeText}</textarea>
@@ -527,7 +528,72 @@ function buildMarginaliaCard(line) {
     setMarginaliaAnchor(line, bodyLineId, offset);
     renderAll();
   });
+  const removeBtn = card.querySelector(".marginalia-remove-btn");
+  if (removeBtn) {
+    removeBtn.addEventListener("click", () => removeMarginaliaLine(line));
+  }
   return card;
+}
+
+function removeMarginaliaLine(line) {
+  if (!currentPayload) return;
+  const marg = currentPayload.regions?.marginalia;
+  if (!Array.isArray(marg)) return;
+  const idx = marg.findIndex((l) => l.line_id === line.line_id);
+  if (idx < 0) return;
+
+  // Snapshot the line and any footnote(s) referencing it so undo can restore both.
+  const lineSnapshot = clone(marg[idx]);
+  const fns = currentPayload.footnotes || [];
+  const fnSnapshots = fns
+    .map((fn, i) => ({ index: i, fn: clone(fn) }))
+    .filter(({ fn }) =>
+      Array.isArray(fn.source_marginalia_line_ids) &&
+      fn.source_marginalia_line_ids.includes(line.line_id)
+    );
+
+  // Remove the marginalia line.
+  marg.splice(idx, 1);
+
+  // Detach from any footnote and drop now-empty marginalia-derived footnotes.
+  fns.forEach((fn) => {
+    if (Array.isArray(fn.source_marginalia_line_ids)) {
+      fn.source_marginalia_line_ids = fn.source_marginalia_line_ids.filter(
+        (id) => id !== line.line_id
+      );
+    }
+  });
+  for (let i = fns.length - 1; i >= 0; i--) {
+    const fn = fns[i];
+    if (
+      fn.source_region === "marginalia" &&
+      (!fn.source_marginalia_line_ids || fn.source_marginalia_line_ids.length === 0) &&
+      !fn.text_gold
+    ) {
+      fns.splice(i, 1);
+    }
+  }
+  renumberFootnotes();
+
+  pushUndo(`Remove marginalia ${lineSnapshot.line_id || idx + 1}`, () => {
+    const margList = currentPayload.regions.marginalia || (currentPayload.regions.marginalia = []);
+    margList.splice(Math.min(idx, margList.length), 0, lineSnapshot);
+    const fnList = currentPayload.footnotes || (currentPayload.footnotes = []);
+    fnSnapshots
+      .slice()
+      .sort((a, b) => a.index - b.index)
+      .forEach(({ index, fn }) => {
+        const existing = fnList.findIndex((f) => f.footnote_id === fn.footnote_id);
+        if (existing >= 0) {
+          fnList[existing] = fn;
+        } else {
+          fnList.splice(Math.min(index, fnList.length), 0, fn);
+        }
+      });
+    renumberFootnotes();
+    renderAll();
+  });
+  renderAll();
 }
 
 function resolveMarginaliaAnchor(marginaliaLine) {
@@ -1033,7 +1099,6 @@ if (window.__PAGES__ && window.__PAGES__.length > 0) {
 // ---------------------------------------------------------------------------
 const ocrPdfSelect = document.getElementById("ocrPdfSelect");
 const ocrPageInput = document.getElementById("ocrPageInput");
-const ocrPartSelect = document.getElementById("ocrPartSelect");
 const ocrOverwrite = document.getElementById("ocrOverwrite");
 const ocrRunBtn = document.getElementById("ocrRunBtn");
 const ocrStatus = document.getElementById("ocrStatus");
@@ -1086,7 +1151,8 @@ async function pollOcrJob(jobId, pageId) {
 async function runOcr(forceOverwrite) {
   const pdf = ocrPdfSelect?.value;
   const page = parseInt(ocrPageInput?.value || "0", 10);
-  const part = ocrPartSelect?.value || "part1";
+  // Derive part from the PDF filename (e.g. "..._Part2.pdf" -> part2; default part1).
+  const part = /_part2/i.test(String(pdf || "")) ? "part2" : "part1";
   if (!pdf) { setOcrStatus("Pick a PDF first.", true); return; }
   if (!Number.isFinite(page) || page < 1) { setOcrStatus("Page must be a positive integer.", true); return; }
 
