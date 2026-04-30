@@ -41,6 +41,43 @@ const unanchoredMarginaliaContainer = document.getElementById(
 );
 const footnoteContainer = document.getElementById("footnoteContainer");
 const catchwordContainer = document.getElementById("catchwordContainer");
+const footnoteSection = document.getElementById("footnoteSection");
+const stickyFootnoteSection = document.getElementById("stickyFootnoteSection");
+const stickyFootnoteContainer = document.getElementById("stickyFootnoteContainer");
+const bodySection = document.getElementById("bodySection");
+const metaEditionBadge = document.getElementById("metaEditionBadge");
+const metaEditionChangeBtn = document.getElementById("metaEditionChangeBtn");
+
+// Edition chooser modal.
+const editionChooserModal = document.getElementById("editionChooserModal");
+const editionChooserConfirmBtn = document.getElementById("editionChooserConfirmBtn");
+const editionChooserCancelBtn = document.getElementById("editionChooserCancelBtn");
+
+const EDITIONS = {
+  "1687_second": {
+    label: "1687 Second Edition",
+    blurb: "Second-edition typesetting with marginalia rail; long-s, ligatures, Greek/Latin paleography.",
+    hasMarginalia: true,
+    stickyFootnotes: false,
+  },
+  "1847_elrington_todd": {
+    label: "Elrington & Todd 1847",
+    blurb: "Reprint with no marginalia; footnotes typeset at the bottom of the page; 19th-c. Latin/Greek lithography and ligatures.",
+    hasMarginalia: false,
+    stickyFootnotes: true,
+  },
+};
+const DEFAULT_EDITION = "1687_second";
+const EDITION_LS_KEY = "ussherInEdition";
+
+function editionConfig(key) {
+  return EDITIONS[key] || EDITIONS[DEFAULT_EDITION];
+}
+
+function currentEdition() {
+  const v = String(currentPayload?.edition || "");
+  return EDITIONS[v] ? v : DEFAULT_EDITION;
+}
 
 const addHeaderBtn = document.getElementById("addHeaderBtn");
 const addBodyBtn = document.getElementById("addBodyBtn");
@@ -213,6 +250,9 @@ function normalizePayload(payload) {
 
   payload.meta = payload.meta || {};
   payload.meta.reviewer = DEFAULT_REVIEWER;
+  // Normalise edition: empty/legacy stays empty so loadPage can prompt.
+  if (typeof payload.edition !== "string") payload.edition = "";
+  if (payload.edition && !EDITIONS[payload.edition]) payload.edition = "";
 }
 
 function applyDefaultReviewer(payload) {
@@ -833,22 +873,26 @@ function renderBodyWithMarginalia() {
 
   const bodyLines = currentPayload?.regions?.body || [];
   const marginaliaLines = currentPayload?.regions?.marginalia || [];
+  const cfg = editionConfig(currentEdition());
+  const showMarginalia = cfg.hasMarginalia;
 
   // Group marginalia by anchored body_line_id (resolved via footnotes).
   const bodyToMarginalia = new Map();
   const unanchored = [];
-  marginaliaLines.forEach((line) => {
-    const anchor = resolveMarginaliaAnchor(line);
-    if (anchor) {
-      if (!bodyToMarginalia.has(anchor)) bodyToMarginalia.set(anchor, []);
-      bodyToMarginalia.get(anchor).push(line);
-    } else {
-      unanchored.push(line);
-    }
-  });
+  if (showMarginalia) {
+    marginaliaLines.forEach((line) => {
+      const anchor = resolveMarginaliaAnchor(line);
+      if (anchor) {
+        if (!bodyToMarginalia.has(anchor)) bodyToMarginalia.set(anchor, []);
+        bodyToMarginalia.get(anchor).push(line);
+      } else {
+        unanchored.push(line);
+      }
+    });
+  }
 
   // Unanchored rail at the top.
-  if (unanchored.length > 0) {
+  if (showMarginalia && unanchored.length > 0) {
     const heading = document.createElement("div");
     heading.className = "unanchored-heading";
     heading.textContent = `Unanchored marginalia (${unanchored.length})`;
@@ -882,9 +926,11 @@ function renderBodyWithMarginalia() {
 
     const margCell = document.createElement("div");
     margCell.className = "marg-cell";
-    const margForLine = bodyToMarginalia.get(line.line_id) || [];
-    if (margForLine.length > 0) {
-      margCell.appendChild(buildMarginaliaBlock(margForLine));
+    if (showMarginalia) {
+      const margForLine = bodyToMarginalia.get(line.line_id) || [];
+      if (margForLine.length > 0) {
+        margCell.appendChild(buildMarginaliaBlock(margForLine));
+      }
     }
 
     row.appendChild(bodyCell);
@@ -894,16 +940,21 @@ function renderBodyWithMarginalia() {
 }
 
 function renderFootnotes() {
-  footnoteContainer.innerHTML = "";
+  const cfg = editionConfig(currentEdition());
+  const target = cfg.stickyFootnotes ? stickyFootnoteContainer : footnoteContainer;
+  // Clear both so stale cards from the other edition layout don't linger.
+  if (footnoteContainer) footnoteContainer.innerHTML = "";
+  if (stickyFootnoteContainer) stickyFootnoteContainer.innerHTML = "";
+  if (!target) return;
   const fns = currentPayload?.footnotes || [];
   if (fns.length === 0) {
     const empty = document.createElement("div");
     empty.className = "footnote-empty";
     empty.textContent = "No footnotes yet. Use \u201c+ Footnote here\u201d on a body line, or anchor a marginalia.";
-    footnoteContainer.appendChild(empty);
+    target.appendChild(empty);
     return;
   }
-  fns.forEach((fn) => footnoteContainer.appendChild(buildFootnoteCard(fn)));
+  fns.forEach((fn) => target.appendChild(buildFootnoteCard(fn)));
 }
 
 function renderCatchword() {
@@ -929,10 +980,31 @@ function renderCatchword() {
 
 function renderAll() {
   if (!currentPayload) return;
+  applyEditionLayout();
   renderHeader();
   renderBodyWithMarginalia();
   renderFootnotes();
   renderCatchword();
+}
+
+function applyEditionLayout() {
+  const cfg = editionConfig(currentEdition());
+  // Toggle a class on <body> so CSS can target the layout variant.
+  document.body.classList.toggle("layout-1847", !cfg.hasMarginalia);
+  document.body.classList.toggle("layout-1687", cfg.hasMarginalia);
+  // Show/hide marginalia rail container; the renderer also checks the flag,
+  // but hiding the empty container avoids leaving a gap above the body grid.
+  if (unanchoredMarginaliaContainer) {
+    unanchoredMarginaliaContainer.hidden = !cfg.hasMarginalia;
+  }
+  // Inline footnote section vs. sticky pane at bottom.
+  if (footnoteSection) footnoteSection.hidden = cfg.stickyFootnotes;
+  if (stickyFootnoteSection) stickyFootnoteSection.hidden = !cfg.stickyFootnotes;
+  // Edition badge in meta-card.
+  if (metaEditionBadge) {
+    metaEditionBadge.textContent = cfg.label;
+    metaEditionBadge.dataset.edition = currentEdition();
+  }
 }
 
 // ---------------------------------------------------------------------------
@@ -975,6 +1047,10 @@ async function loadPage(pageId) {
     normalizePayload(currentPayload);
     applyDefaultReviewer(currentPayload);
     renumberFootnotes();
+    if (!currentPayload.edition) {
+      const picked = await chooseEditionInteractive({ title: "Select edition for this page" });
+      currentPayload.edition = picked || DEFAULT_EDITION;
+    }
     bindMeta(currentPayload);
     renderAll();
     clearUndoStack();
@@ -1099,9 +1175,90 @@ if (window.__PAGES__ && window.__PAGES__.length > 0) {
 // ---------------------------------------------------------------------------
 const ocrPdfSelect = document.getElementById("ocrPdfSelect");
 const ocrPageInput = document.getElementById("ocrPageInput");
+const ocrEditionSelect = document.getElementById("ocrEditionSelect");
+const ocrEditionBlurb = document.getElementById("ocrEditionBlurb");
 const ocrOverwrite = document.getElementById("ocrOverwrite");
 const ocrRunBtn = document.getElementById("ocrRunBtn");
 const ocrStatus = document.getElementById("ocrStatus");
+
+// Restore last-picked edition from localStorage and wire the blurb.
+if (ocrEditionSelect) {
+  const saved = (typeof localStorage !== "undefined" && localStorage.getItem(EDITION_LS_KEY)) || "";
+  if (EDITIONS[saved]) ocrEditionSelect.value = saved;
+  const updateBlurb = () => {
+    if (ocrEditionBlurb) {
+      ocrEditionBlurb.textContent = editionConfig(ocrEditionSelect.value).blurb;
+    }
+  };
+  updateBlurb();
+  ocrEditionSelect.addEventListener("change", () => {
+    try { localStorage.setItem(EDITION_LS_KEY, ocrEditionSelect.value); } catch (e) { /* ignore */ }
+    updateBlurb();
+  });
+}
+
+// ---------------------------------------------------------------------------
+// Edition chooser modal (shown when loading a page with no edition recorded
+// or when the user clicks "Change..." in the meta card).
+// ---------------------------------------------------------------------------
+let _editionChooserResolver = null;
+
+function chooseEditionInteractive({ title, currentValue } = {}) {
+  if (!editionChooserModal) return Promise.resolve(DEFAULT_EDITION);
+  const titleEl = document.getElementById("editionChooserTitle");
+  if (titleEl && title) titleEl.textContent = title;
+  const initial = EDITIONS[currentValue] ? currentValue : DEFAULT_EDITION;
+  editionChooserModal.querySelectorAll('input[name="editionChoice"]').forEach((r) => {
+    r.checked = r.value === initial;
+  });
+  editionChooserModal.hidden = false;
+  return new Promise((resolve) => {
+    _editionChooserResolver = resolve;
+  });
+}
+
+function closeEditionChooser(value) {
+  if (!editionChooserModal) return;
+  editionChooserModal.hidden = true;
+  const resolve = _editionChooserResolver;
+  _editionChooserResolver = null;
+  if (resolve) resolve(value);
+}
+
+if (editionChooserConfirmBtn) {
+  editionChooserConfirmBtn.addEventListener("click", () => {
+    const picked = editionChooserModal.querySelector('input[name="editionChoice"]:checked');
+    closeEditionChooser(picked ? picked.value : DEFAULT_EDITION);
+  });
+}
+if (editionChooserCancelBtn) {
+  editionChooserCancelBtn.addEventListener("click", () => closeEditionChooser(null));
+}
+if (editionChooserModal) {
+  editionChooserModal.addEventListener("click", (event) => {
+    if (event.target === editionChooserModal) closeEditionChooser(null);
+  });
+}
+
+if (metaEditionChangeBtn) {
+  metaEditionChangeBtn.addEventListener("click", async () => {
+    if (!currentPayload) return;
+    const picked = await chooseEditionInteractive({
+      title: "Change edition for this page",
+      currentValue: currentEdition(),
+    });
+    if (!picked || picked === currentEdition()) return;
+    currentPayload.edition = picked;
+    renderAll();
+    setStatus(`Edition changed to ${editionConfig(picked).label} (unsaved)`);
+  });
+}
+
+// "+ Footnote" in the sticky pane uses the same flow as the inline button.
+const addStickyFootnoteBtn = document.getElementById("addStickyFootnoteBtn");
+if (addStickyFootnoteBtn) {
+  addStickyFootnoteBtn.addEventListener("click", () => addFootnoteAnchored(""));
+}
 
 function setOcrStatus(msg, isError = false) {
   if (!ocrStatus) return;
@@ -1153,6 +1310,9 @@ async function runOcr(forceOverwrite) {
   const page = parseInt(ocrPageInput?.value || "0", 10);
   // Derive part from the PDF filename (e.g. "..._Part2.pdf" -> part2; default part1).
   const part = /_part2/i.test(String(pdf || "")) ? "part2" : "part1";
+  const edition = ocrEditionSelect?.value && EDITIONS[ocrEditionSelect.value]
+    ? ocrEditionSelect.value
+    : DEFAULT_EDITION;
   if (!pdf) { setOcrStatus("Pick a PDF first.", true); return; }
   if (!Number.isFinite(page) || page < 1) { setOcrStatus("Page must be a positive integer.", true); return; }
 
@@ -1162,7 +1322,7 @@ async function runOcr(forceOverwrite) {
     const res = await fetch("/api/ocr/start", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ pdf, page, part, overwrite: !!(forceOverwrite || ocrOverwrite?.checked) }),
+      body: JSON.stringify({ pdf, page, part, edition, overwrite: !!(forceOverwrite || ocrOverwrite?.checked) }),
     });
     const data = await res.json().catch(() => ({}));
     if (res.status === 409 && data.error === "annotation_exists") {

@@ -257,3 +257,25 @@ def test_write_phase3b_files_overwrite_replaces(tmp_path):
     assert payload["page_id"] == "p0001"
     assert payload["regions"]["body"][0]["text_gold"] == "First body line."
     assert isinstance(payload["footnotes"], list)
+
+
+def test_default_edition_is_1687_when_not_specified():
+    payload = convert_record(_sample_record())
+    assert payload["edition"] == "1687_second"
+
+
+def test_edition_kwarg_overrides_default():
+    payload = convert_record(_sample_record(), edition="1847_elrington_todd")
+    assert payload["edition"] == "1847_elrington_todd"
+
+
+def test_unknown_edition_falls_back_to_default():
+    payload = convert_record(_sample_record(), edition="bogus_edition")
+    assert payload["edition"] == "1687_second"
+
+
+def test_edition_can_be_carried_on_record():
+    record = _sample_record()
+    record["edition"] = "1847_elrington_todd"
+    payload = convert_record(record)
+    assert payload["edition"] == "1847_elrington_todd"
