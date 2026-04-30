@@ -53,6 +53,12 @@
       background: #d7cbb8;
       margin: 0 0.25rem;
     }
+    .zoom-label {
+      min-width: 3.2rem;
+      text-align: right;
+      color: #6b5a40;
+      font-variant-numeric: tabular-nums;
+    }
     .stage {
       overflow: auto;
       display: flex;
@@ -90,6 +96,7 @@
         <option value="4">400%</option>
       </select>
       <button id="zoomInBtn" type="button" title="Zoom in (+)">+</button>
+      <span id="zoomLabel" class="zoom-label"></span>
     </div>
     <div class="stage">
       <canvas id="pdfCanvas"></canvas>
@@ -112,7 +119,10 @@
     const zoomInBtn = document.getElementById("zoomInBtn");
     const zoomOutBtn = document.getElementById("zoomOutBtn");
     const zoomSelect = document.getElementById("zoomSelect");
+    const zoomLabel = document.getElementById("zoomLabel");
     const stageEl = document.querySelector(".stage");
+    let activeRenderTask = null;
+    let lastRenderedScale = null;
 
     const ZOOM_STEPS = [0.5, 0.75, 1, 1.25, 1.5, 2, 3, 4];
     const ZOOM_KEY = "ussherInPdfZoom";
@@ -150,10 +160,19 @@
     }
 
     function syncZoomSelect() {
-      if (!zoomSelect) return;
-      const asString = String(currentZoom);
-      const has = Array.from(zoomSelect.options).some((o) => o.value === asString);
-      zoomSelect.value = has ? asString : "";
+      if (zoomSelect) {
+        const asString = String(currentZoom);
+        const has = Array.from(zoomSelect.options).some((o) => o.value === asString);
+        zoomSelect.value = has ? asString : "";
+      }
+      if (zoomLabel) {
+        if (currentZoom === "page-fit" || currentZoom === "page-width") {
+          const pct = lastRenderedScale ? Math.round(lastRenderedScale * 100) + "%" : "…";
+          zoomLabel.textContent = pct;
+        } else {
+          zoomLabel.textContent = Math.round(Number(currentZoom) * 100) + "%";
+        }
+      }
     }
 
     function stepZoom(direction) {
@@ -188,22 +207,43 @@
       currentPage = clampPage(pageNum);
       updateControls();
 
+      // Cancel any in-flight render so a new zoom or page change takes effect immediately.
+      if (activeRenderTask) {
+        try { activeRenderTask.cancel(); } catch (e) { /* ignore */ }
+        activeRenderTask = null;
+      }
+
       const token = ++renderToken;
       const page = await pdfDoc.getPage(currentPage);
+      if (token !== renderToken) return;
       const viewport1 = page.getViewport({ scale: 1 });
       const scale = effectiveScale(viewport1);
+      lastRenderedScale = scale;
       const viewport = page.getViewport({ scale });
       canvas.width = Math.ceil(viewport.width);
       canvas.height = Math.ceil(viewport.height);
+      canvas.style.width = Math.ceil(viewport.width) + "px";
+      canvas.style.height = Math.ceil(viewport.height) + "px";
 
-      await page.render({
-        canvasContext: ctx,
-        viewport,
-      }).promise;
+      const task = page.render({ canvasContext: ctx, viewport });
+      activeRenderTask = task;
+      try {
+        await task.promise;
+      } catch (err) {
+        // Render cancelled by a newer call; safe to ignore.
+        if (!err || err.name !== "RenderingCancelledException") {
+          console.error(err);
+        }
+        return;
+      } finally {
+        if (activeRenderTask === task) activeRenderTask = null;
+      }
 
       if (token !== renderToken) {
         return;
       }
+
+      syncZoomSelect();
 
       // Keep iframe URL hash in sync so refresh/open-in-new-tab preserves the page.
       if (location.hash !== `#page=${currentPage}`) {
