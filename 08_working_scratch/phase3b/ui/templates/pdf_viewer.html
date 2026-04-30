@@ -40,6 +40,19 @@
       width: 4.5rem;
       text-align: center;
     }
+    .toolbar select {
+      border: 1px solid #c7b79f;
+      border-radius: 4px;
+      background: #fff;
+      padding: 0.2rem 0.3rem;
+      font-size: 0.85rem;
+    }
+    .toolbar-sep {
+      flex: 0 0 1px;
+      align-self: stretch;
+      background: #d7cbb8;
+      margin: 0 0.25rem;
+    }
     .stage {
       overflow: auto;
       display: flex;
@@ -62,6 +75,21 @@
       </label>
       <span id="pageInfo"></span>
       <button id="nextBtn" type="button" title="Next page">Next</button>
+      <span class="toolbar-sep"></span>
+      <button id="zoomOutBtn" type="button" title="Zoom out (-)">−</button>
+      <select id="zoomSelect" title="Zoom">
+        <option value="page-fit">Fit page</option>
+        <option value="page-width">Fit width</option>
+        <option value="0.5">50%</option>
+        <option value="0.75">75%</option>
+        <option value="1">100%</option>
+        <option value="1.25">125%</option>
+        <option value="1.5">150%</option>
+        <option value="2">200%</option>
+        <option value="3">300%</option>
+        <option value="4">400%</option>
+      </select>
+      <button id="zoomInBtn" type="button" title="Zoom in (+)">+</button>
     </div>
     <div class="stage">
       <canvas id="pdfCanvas"></canvas>
@@ -81,6 +109,66 @@
     const pageInfo = document.getElementById("pageInfo");
     const prevBtn = document.getElementById("prevBtn");
     const nextBtn = document.getElementById("nextBtn");
+    const zoomInBtn = document.getElementById("zoomInBtn");
+    const zoomOutBtn = document.getElementById("zoomOutBtn");
+    const zoomSelect = document.getElementById("zoomSelect");
+    const stageEl = document.querySelector(".stage");
+
+    const ZOOM_STEPS = [0.5, 0.75, 1, 1.25, 1.5, 2, 3, 4];
+    const ZOOM_KEY = "ussherInPdfZoom";
+    // currentZoom is either a number (explicit scale) or 'page-fit' / 'page-width'.
+    let currentZoom = (() => {
+      const saved = (typeof localStorage !== "undefined" && localStorage.getItem(ZOOM_KEY)) || "";
+      if (saved === "page-fit" || saved === "page-width") return saved;
+      const num = parseFloat(saved);
+      return Number.isFinite(num) && num > 0 ? num : 1.25;
+    })();
+
+    function persistZoom() {
+      try { localStorage.setItem(ZOOM_KEY, String(currentZoom)); } catch (e) { /* ignore */ }
+    }
+
+    function effectiveScale(viewport1) {
+      // viewport1 is the page's natural viewport at scale 1.
+      if (currentZoom === "page-fit") {
+        const availW = Math.max(50, stageEl.clientWidth - 16);
+        const availH = Math.max(50, stageEl.clientHeight - 16);
+        return Math.min(availW / viewport1.width, availH / viewport1.height);
+      }
+      if (currentZoom === "page-width") {
+        const availW = Math.max(50, stageEl.clientWidth - 16);
+        return availW / viewport1.width;
+      }
+      return Number(currentZoom) || 1.25;
+    }
+
+    function setZoom(value) {
+      currentZoom = value;
+      persistZoom();
+      syncZoomSelect();
+      if (pdfDoc) renderPage(currentPage);
+    }
+
+    function syncZoomSelect() {
+      if (!zoomSelect) return;
+      const asString = String(currentZoom);
+      const has = Array.from(zoomSelect.options).some((o) => o.value === asString);
+      zoomSelect.value = has ? asString : "";
+    }
+
+    function stepZoom(direction) {
+      // direction: +1 in, -1 out. Snap to nearest ZOOM_STEPS index.
+      let current = (typeof currentZoom === "number") ? currentZoom : 1;
+      // Find closest step.
+      let idx = 0;
+      let best = Infinity;
+      ZOOM_STEPS.forEach((s, i) => {
+        const d = Math.abs(s - current);
+        if (d < best) { best = d; idx = i; }
+      });
+      const next = Math.max(0, Math.min(ZOOM_STEPS.length - 1, idx + direction));
+      setZoom(ZOOM_STEPS[next]);
+    }
 
     function clampPage(pageNum) {
       if (!pdfDoc) return 1;
@@ -102,7 +190,9 @@
 
       const token = ++renderToken;
       const page = await pdfDoc.getPage(currentPage);
-      const viewport = page.getViewport({ scale: 1.25 });
+      const viewport1 = page.getViewport({ scale: 1 });
+      const scale = effectiveScale(viewport1);
+      const viewport = page.getViewport({ scale });
       canvas.width = Math.ceil(viewport.width);
       canvas.height = Math.ceil(viewport.height);
 
@@ -151,6 +241,41 @@
 
     pageInput.addEventListener("change", () => {
       renderPage(pageInput.value);
+    });
+
+    if (zoomInBtn) zoomInBtn.addEventListener("click", () => stepZoom(+1));
+    if (zoomOutBtn) zoomOutBtn.addEventListener("click", () => stepZoom(-1));
+    if (zoomSelect) {
+      syncZoomSelect();
+      zoomSelect.addEventListener("change", () => {
+        const v = zoomSelect.value;
+        if (v === "page-fit" || v === "page-width") setZoom(v);
+        else {
+          const num = parseFloat(v);
+          if (Number.isFinite(num) && num > 0) setZoom(num);
+        }
+      });
+    }
+
+    // Re-render fit modes on resize.
+    let resizeTimer = 0;
+    window.addEventListener("resize", () => {
+      if (currentZoom !== "page-fit" && currentZoom !== "page-width") return;
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => { if (pdfDoc) renderPage(currentPage); }, 120);
+    });
+
+    // Keyboard: + / = / - to zoom in/out (when focus is not in input).
+    document.addEventListener("keydown", (event) => {
+      const tag = (document.activeElement && document.activeElement.tagName) || "";
+      if (tag === "INPUT" || tag === "TEXTAREA" || tag === "SELECT") return;
+      if (event.key === "+" || event.key === "=") {
+        event.preventDefault();
+        stepZoom(+1);
+      } else if (event.key === "-" || event.key === "_") {
+        event.preventDefault();
+        stepZoom(-1);
+      }
     });
 
     window.addEventListener("message", (event) => {
