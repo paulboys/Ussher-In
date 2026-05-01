@@ -26,7 +26,7 @@ import argparse
 import json
 import sys
 import time
-from dataclasses import asdict
+from dataclasses import asdict, replace
 from pathlib import Path
 from typing import Any, Iterable, Sequence
 
@@ -46,6 +46,7 @@ from translation_prompts import (  # noqa: E402
     LEXICON_PROFILES,
     _build_marker_lookup,
     _inject_markers,
+    build_marker_placement_prompt,
     build_translation_prompt,
 )
 
@@ -301,6 +302,94 @@ def _build_body_marker_metadata(
     return injected_text, metadata
 
 
+# ---------------------------------------------------------------------------
+# Marker placement (second-pass LLM call with end-of-line fallback)
+# ---------------------------------------------------------------------------
+
+
+def _normalize_ws(text: str) -> str:
+    return " ".join((text or "").split())
+
+
+def _validate_placement(
+    response: str,
+    *,
+    input_english: str,
+    marker_id: str,
+) -> str | None:
+    """Return *response* unchanged if it differs from *input_english*
+    only by exactly one inserted ``^<marker_id>`` token (modulo
+    whitespace normalization). Otherwise return ``None`` so the
+    caller can fall back.
+    """
+    token = f"^{marker_id}"
+    if response is None:
+        return None
+    response = response.strip()
+    if not response or token not in response:
+        return None
+    idx = response.find(token)
+    stripped = response[:idx] + response[idx + len(token):]
+    if _normalize_ws(stripped) != _normalize_ws(input_english):
+        return None
+    return response
+
+
+def _place_markers_in_english(
+    *,
+    english: str,
+    latin_with_caret: str,
+    markers: Sequence[dict],
+    adapter: AnthropicTranslationAdapter | None,
+) -> tuple[str, list[str]]:
+    """Insert one ``^<marker_id>`` token per marker into *english*.
+
+    Strategy: for each marker, ask Claude to place that single token
+    in the English at the position equivalent to the Latin anchor.
+    On any failure (no adapter, CLI error, malformed response), fall
+    back to appending ``^<marker_id>`` at the end of the English so
+    the footnote anchor is never silently dropped.
+
+    Returns ``(english_with_carets, warnings)``.
+    """
+    warnings: list[str] = []
+    if not markers:
+        return english, warnings
+
+    current = english
+    for m in markers:
+        marker_id = (m or {}).get("marker_id")
+        if not marker_id:
+            continue
+        placed: str | None = None
+        if adapter is not None:
+            prompt = build_marker_placement_prompt(
+                english=current,
+                marker_id=marker_id,
+                latin_with_caret=latin_with_caret,
+            )
+            try:
+                raw = adapter.complete_text(prompt)
+            except TranslationError as exc:
+                warnings.append(
+                    f"marker '{marker_id}' placement call failed: "
+                    f"{exc.__class__.__name__}; using end-of-line fallback"
+                )
+                raw = ""
+            placed = _validate_placement(
+                raw, input_english=current, marker_id=marker_id
+            )
+            if placed is None and raw:
+                warnings.append(
+                    f"marker '{marker_id}' placement validation failed; "
+                    f"using end-of-line fallback"
+                )
+        if placed is None:
+            placed = current.rstrip() + f"^{marker_id}"
+        current = placed
+    return current, warnings
+
+
 def translate_page(
     payload: dict,
     *,
@@ -446,6 +535,7 @@ def translate_page(
 
     model = adapter.provider.model
     translated_ids: list[str] = []
+    placement_warnings: list[str] = []
 
     for line in units_for_prompt:
         seg_id = _segment_id_for_body(line)
@@ -453,6 +543,25 @@ def translate_page(
         latin_with_carets, markers_meta = _build_body_marker_metadata(
             line, footnotes
         )
+        # Second-pass marker placement: insert each ^<marker_id> token
+        # into the English at the position equivalent to the Latin
+        # anchor. End-of-line fallback if any call fails.
+        if unit is not None and markers_meta:
+            placed_english, placement_msgs = _place_markers_in_english(
+                english=unit.english,
+                latin_with_caret=latin_with_carets,
+                markers=markers_meta,
+                adapter=adapter,
+            )
+            if placed_english != unit.english:
+                unit = TranslationUnit(
+                    unit_id=unit.unit_id,
+                    english=placed_english,
+                    notes=unit.notes,
+                    uncertain=unit.uncertain,
+                )
+            for msg in placement_msgs:
+                placement_warnings.append(f"{seg_id}: {msg}")
         if seg_id in existing_segments:
             existing_segments[seg_id] = _append_translation_history(
                 existing_segments[seg_id],
@@ -530,7 +639,7 @@ def translate_page(
         "status": "ok",
         "skipped": skipped,
         "translated": translated_ids,
-        "warnings": list(result.errors),
+        "warnings": list(result.errors) + placement_warnings,
         "usage_tokens": result.usage_tokens,
     }
 
@@ -589,6 +698,16 @@ def _build_argument_parser() -> argparse.ArgumentParser:
             "backfilling schema changes."
         ),
     )
+    parser.add_argument(
+        "--timeout-seconds",
+        type=float,
+        default=None,
+        help=(
+            "Override the translation provider timeout (in seconds) "
+            "for this run. Defaults to the value in providers.json or "
+            "the built-in default."
+        ),
+    )
     return parser
 
 
@@ -609,6 +728,8 @@ def main(argv: Sequence[str] | None = None) -> int:
 
     config = default_config()
     provider = config.translation_provider()
+    if args.timeout_seconds is not None:
+        provider = replace(provider, timeout_seconds=float(args.timeout_seconds))
 
     adapter: AnthropicTranslationAdapter | None = None
     if not args.dry_run and not args.metadata_only:

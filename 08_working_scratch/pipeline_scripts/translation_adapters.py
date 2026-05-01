@@ -94,15 +94,21 @@ class TranslationResult:
 # ---------------------------------------------------------------------------
 
 
-CommandRunner = Callable[[Sequence[str], str, float], CommandResult]
+CommandRunner = Callable[[Sequence[str], str, float | None], CommandResult]
 
 
 def _default_command_runner(
     argv: Sequence[str],
     stdin_text: str,
-    timeout_seconds: float,
+    timeout_seconds: float | None,
 ) -> CommandResult:
-    """Default runner that invokes the Claude CLI via subprocess."""
+    """Default runner that invokes the Claude CLI via subprocess.
+
+    ``timeout_seconds=None`` disables the timeout entirely (the CLI
+    runs until it returns). This is the recommended setting for the
+    Claude Code CLI, which streams a long-running interactive session
+    and may legitimately take many minutes on large prompts.
+    """
 
     try:
         completed = subprocess.run(
@@ -332,7 +338,14 @@ class AnthropicTranslationAdapter:
 
         for _ in range(attempts):
             argv = self._build_argv(prompt)
-            result = self._runner(argv, "", float(self.provider.timeout_seconds))
+            timeout_value: float | None
+            if self.provider.timeout_seconds is None or float(
+                self.provider.timeout_seconds
+            ) <= 0:
+                timeout_value = None
+            else:
+                timeout_value = float(self.provider.timeout_seconds)
+            result = self._runner(argv, "", timeout_value)
             last_raw = result.stdout
 
             if result.returncode != 0:
@@ -368,6 +381,42 @@ class AnthropicTranslationAdapter:
         raise last_error
 
     # -- single-line compatibility shim -----------------------------------
+
+    def complete_text(self, prompt: str) -> str:
+        """Send *prompt* to Claude CLI and return the raw stdout text.
+
+        Unlike :meth:`translate_units`, this performs no JSON parsing
+        and no retry: it is intended for short auxiliary prompts (e.g.
+        marker-placement post-processing) whose output is a single
+        free-form line. The caller is responsible for validating the
+        response and choosing a fallback.
+
+        Permission and timeout failures still raise the typed errors
+        used elsewhere; non-zero exits are surfaced as
+        :class:`MalformedOutputError` with the stderr summary.
+        """
+
+        argv = self._build_argv(prompt)
+        timeout_value: float | None
+        if self.provider.timeout_seconds is None or float(
+            self.provider.timeout_seconds
+        ) <= 0:
+            timeout_value = None
+        else:
+            timeout_value = float(self.provider.timeout_seconds)
+        result = self._runner(argv, "", timeout_value)
+        if result.returncode != 0:
+            stderr = result.stderr or ""
+            lowered = stderr.lower()
+            if "permission" in lowered or "not allowed" in lowered:
+                raise TranslationPermissionError(stderr.strip())
+            raise MalformedOutputError(
+                f"Claude CLI exited with code {result.returncode}: "
+                f"{stderr.strip()[:200]}"
+            )
+        return _strip_code_fence(result.stdout or "").strip()
+
+    # -- single-line compatibility shim (legacy) --------------------------
 
     def translate_text(
         self,
