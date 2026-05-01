@@ -351,9 +351,201 @@ __all__ = [
     "LEXICON_GREEK_HINTS",
     "LEXICON_PROFILES",
     "OUTPUT_CONTRACT",
+    "POLISH_OUTPUT_CONTRACT",
     "build_marker_placement_prompt",
+    "build_polishing_prompt",
     "build_translation_prompt",
     "contains_greek",
     "_inject_markers",
     "_build_marker_lookup",
 ]
+
+
+# ---------------------------------------------------------------------------
+# Polished translation prompt (page-scoped, prose output)
+# ---------------------------------------------------------------------------
+
+POLISH_OUTPUT_CONTRACT = """\
+Output rules:
+- Return ONLY the polished English prose. No JSON, no code fences, no
+  preface, no commentary, no headings, no labels.
+- The prose should read as continuous modern English suited for a
+  scholarly but general reader. Break paragraphs by sense (topic
+  shifts, change of speaker, change of cited authority); do NOT break
+  paragraphs to mirror the printed line breaks of the source.
+- Preserve every footnote-anchor sentinel. Each '^X' token from the
+  source body lines below must appear exactly once in your output, at
+  the idiomatic English position closest to where it sits in the
+  Latin. Do not invent new '^X' tokens. Do not echo the footnote
+  text; the reader sees footnotes as superscripts that link to the
+  notes section.
+- Preserve proper nouns. Transliterate Greek proper nouns by the
+  same convention used in the literal pass.
+- Do not introduce editorial brackets, scare quotes, or '[sic]'
+  marks. Do not add translator's notes.
+- The literal line-by-line English provided below is the source of
+  meaning: rewrite for fluency, do not re-translate from the Latin.
+  If the literal English is plainly wrong on a small point, prefer
+  the literal reading over speculation.
+- Do not quote lexicon entries verbatim under any circumstances."""
+
+
+def _format_polish_body_block(body_units: Sequence[dict]) -> str:
+    """Format body units for the polishing prompt.
+
+    Each unit is presented with its Latin (carets preserved) and the
+    existing literal English (carets preserved). The literal English
+    is the source of meaning for the polishing pass; the Latin is
+    provided for disambiguation only.
+    """
+    if not body_units:
+        return "  (no body lines)"
+    out: list[str] = []
+    for unit in body_units:
+        seg_id = unit.get("segment_id") or unit.get("line_id") or ""
+        latin = unit.get("latin_text") or ""
+        english = unit.get("literal_english") or unit.get("english") or ""
+        out.append(f"  [{seg_id}]")
+        out.append(f"    LA: {latin}")
+        out.append(f"    EN: {english}")
+    return "\n".join(out)
+
+
+def _format_polish_footnotes(footnotes: Sequence[dict]) -> str:
+    """Format footnote glosses for polishing context.
+
+    Footnotes are shown only so the model knows which markers are
+    valid and what they refer to; the polished prose must NOT echo
+    the footnote text.
+    """
+    if not footnotes:
+        return "  (no footnotes on this page)"
+    out: list[str] = []
+    for fn in footnotes:
+        marker = fn.get("marker_id") or ""
+        english = fn.get("english") or ""
+        out.append(f"  ^{marker}: {english}")
+    return "\n".join(out)
+
+
+def _required_markers(body_units: Sequence[dict]) -> list[str]:
+    """Return the ordered list of distinct marker ids that appear in
+    the body units' Latin text (which carries the caret sentinels)."""
+    seen: list[str] = []
+    seen_set: set[str] = set()
+    for unit in body_units:
+        latin = unit.get("latin_text") or ""
+        for match in _MARKER_SCAN_RE.finditer(latin):
+            marker = match.group(1)
+            if marker not in seen_set:
+                seen_set.add(marker)
+                seen.append(marker)
+    return seen
+
+
+_MARKER_SCAN_RE = re.compile(r"\^([A-Za-z0-9]{1,2})")
+
+
+def build_polishing_prompt(
+    *,
+    page_id: str,
+    body_units: Sequence[dict],
+    footnotes: Sequence[dict] = (),
+    lexicon_profile: str = "auto",
+    extra_context: str | None = None,
+) -> str:
+    """Assemble a page-level prompt that rewrites literal English into
+    flowing readable prose, preserving footnote-anchor sentinels.
+
+    Parameters
+    ----------
+    page_id:
+        Identifier of the page being polished; included in the prompt
+        so Claude can echo it back if needed.
+    body_units:
+        Sequence of dicts with keys ``segment_id``, ``latin_text`` (the
+        caret-bearing Latin), and ``literal_english`` (the existing
+        machine-draft English with carets in place). The order of this
+        sequence is the printed order on the page.
+    footnotes:
+        Sequence of dicts with ``marker_id`` and ``english`` describing
+        the linked footnotes. Provided as context only; the polished
+        prose must not echo footnote text.
+    lexicon_profile:
+        One of LEXICON_PROFILES. Same semantics as the literal pass:
+        ``auto`` adds Greek hints when the page contains Greek script.
+    extra_context:
+        Optional free-form context string appended verbatim.
+    """
+
+    if lexicon_profile not in LEXICON_PROFILES:
+        raise ValueError(
+            f"Unknown lexicon_profile {lexicon_profile!r}; "
+            f"must be one of {LEXICON_PROFILES}"
+        )
+
+    # Lexicon gating uses the Latin text on the page. Greek detection
+    # mirrors the literal pass so the two stages stay in sync.
+    combined_text = "\n".join(
+        unit.get("latin_text") or "" for unit in body_units
+    )
+    greek_present = contains_greek(combined_text)
+
+    include_latin = lexicon_profile in ("auto", "latin_only", "latin_greek")
+    if lexicon_profile == "auto":
+        include_greek = greek_present
+    elif lexicon_profile == "latin_greek":
+        include_greek = True
+    else:
+        include_greek = False
+
+    lexicon_blocks: list[str] = []
+    if include_latin:
+        lexicon_blocks.append(LEXICON_LATIN_HINTS)
+    if include_greek:
+        lexicon_blocks.append(LEXICON_GREEK_HINTS)
+    lexicon_section = "\n\n".join(lexicon_blocks) if lexicon_blocks else ""
+
+    required_markers = _required_markers(body_units)
+    if required_markers:
+        marker_list = ", ".join(f"^{m}" for m in required_markers)
+        marker_clause = (
+            "Footnote anchors required in your output (each must "
+            f"appear exactly once, in printed order): {marker_list}."
+        )
+    else:
+        marker_clause = (
+            "This page has no footnote anchors; do not introduce any "
+            "'^X' tokens."
+        )
+
+    sections: list[str] = [
+        "You are producing a polished, readable English translation "
+        "of one page from James Ussher's 1639 Britannicarum "
+        "Ecclesiarum Antiquitates (1847 Elrington edition). A literal "
+        "machine-draft English already exists for each body line; your "
+        "task is to rewrite that draft as flowing prose suited for a "
+        "modern reader, while preserving the meaning of the literal "
+        "rendering.",
+        f"Page identifier: {page_id}",
+    ]
+    if lexicon_section:
+        sections.append(lexicon_section)
+    sections.append(marker_clause)
+    sections.append(
+        "Body lines (printed order; LA = Latin with footnote-anchor "
+        "sentinels '^X', EN = existing literal English with carets "
+        "already placed):\n"
+        + _format_polish_body_block(body_units)
+    )
+    sections.append(
+        "Linked footnotes (provided as context; do NOT include their "
+        "text in the polished prose — readers will see them as "
+        "footnotes via the '^X' superscripts):\n"
+        + _format_polish_footnotes(footnotes)
+    )
+    if extra_context:
+        sections.append("Additional page context:\n" + extra_context.rstrip())
+    sections.append(POLISH_OUTPUT_CONTRACT)
+
+    return "\n\n".join(sections) + "\n"
