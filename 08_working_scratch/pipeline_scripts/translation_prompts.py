@@ -99,6 +99,9 @@ Rules:
 - Do not collapse footnote markers into body text; the body line's
   caret sentinel (e.g. 'Arnobius^y') marks where a footnote attaches
   but the footnote itself is translated under its own footnote_id.
+  Translate the body line WITHOUT echoing the caret or the marker
+  symbol in the English; marker placement in the English is handled
+  by a separate downstream pass.
 - Do not echo lexicon entries verbatim under any circumstances."""
 
 
@@ -279,10 +282,10 @@ def build_translation_prompt(
         "locates a printed superscript footnote anchor in the source. "
         "The same symbol X appears as the marker_id of one of the "
         "linked footnotes below. Translate the body line WITHOUT "
-        "echoing the caret or the marker symbol in the English; the "
-        "footnote itself is translated separately under its "
-        "footnote_id. The caret character ('^') is reserved for this "
-        "sentinel and never appears as ordinary punctuation."
+        "echoing the caret or the marker symbol in the English; "
+        "marker placement into the English is handled by a separate "
+        "downstream pass. The caret character ('^') is reserved for "
+        "this sentinel and never appears as ordinary punctuation."
     )
     sections.append(
         "Body lines (each must be translated as a single unit, keyed "
@@ -303,11 +306,52 @@ def build_translation_prompt(
     return "\n\n".join(sections) + "\n"
 
 
+# ---------------------------------------------------------------------------
+# Marker-placement prompt (second-pass, per-marker)
+# ---------------------------------------------------------------------------
+
+
+def build_marker_placement_prompt(
+    *,
+    english: str,
+    marker_id: str,
+    latin_with_caret: str,
+) -> str:
+    """Build a minimal prompt that asks Claude to insert a single
+    ``^<marker_id>`` token into *english* at the position
+    corresponding to the same anchor in *latin_with_caret*.
+
+    The expected response is the English string with exactly one
+    ``^<marker_id>`` token inserted and no other character changed.
+    Code fences and surrounding commentary are tolerated by the
+    downstream parser but discouraged here.
+    """
+
+    return (
+        "You are inserting a single footnote-anchor sentinel into an "
+        "English translation. The Latin source contains the sentinel "
+        f"'^{marker_id}' at the exact character position where a "
+        "printed superscript footnote letter attaches in the source. "
+        "Your task is to insert the same single token "
+        f"'^{marker_id}' into the English at the position that "
+        "corresponds idiomatically to the same anchor (immediately "
+        "after the equivalent word, phrase, or punctuation boundary "
+        "in English word order). Do NOT change any other character "
+        "of the English. Do NOT add quotation marks, code fences, or "
+        "commentary. Output exactly the English sentence with "
+        f"'^{marker_id}' inserted once.\n\n"
+        f"Latin (with sentinel): {latin_with_caret}\n"
+        f"English (no sentinel): {english}\n\n"
+        f"English (with '^{marker_id}' inserted):"
+    )
+
+
 __all__ = [
     "LEXICON_LATIN_HINTS",
     "LEXICON_GREEK_HINTS",
     "LEXICON_PROFILES",
     "OUTPUT_CONTRACT",
+    "build_marker_placement_prompt",
     "build_translation_prompt",
     "contains_greek",
     "_inject_markers",

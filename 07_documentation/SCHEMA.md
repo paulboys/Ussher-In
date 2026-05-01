@@ -140,7 +140,12 @@ Segment Record shape above with these conventions:
   - `version` (1, 2, ... append-only)
   - `stage` (`machine_draft`)
   - `timestamp` (UTC ISO-8601)
-  - `english`, `notes`, `uncertain` (from the model)
+  - `english`, `notes`, `uncertain` (from the model). For body
+    segments, `english` mirrors the body line's `^<marker_id>` caret
+    sentinels at the position that corresponds idiomatically to the
+    same anchor in English word order, so both languages can be
+    rendered with footnote superscripts at matching points. Footnote
+    `english` values never contain caret sentinels.
   - `model` (e.g. `claude-opus-4-6`)
   - `lexicon_profile` (`auto` | `latin_only` | `latin_greek` | `minimal`)
   - `source_unit_id` (the `line_id` or `footnote_id` keyed in the prompt)
