@@ -118,6 +118,22 @@ Segment Record shape above with these conventions:
 - `segment_id` — `seg_<line_id>` for body lines, `seg_<footnote_id>` for footnotes.
 - `segment_type` — `body` or `footnote`.
 - `latin_text` — `text_gold` from the Phase 3b annotation (falls back to `text_ocr_original`).
+  Body lines additionally have `^<marker_id>` caret sentinels spliced in
+  at each marker's `char_offset` so the artifact is self-describing
+  (e.g. `Hinc Arnobius^y “ Tam velociter…`). The caret character is
+  reserved for this sentinel and never appears in source text.
+- `markers` — body segments carry a list of structured marker
+  cross-references (empty for footnote segments and for body lines
+  without footnote anchors):
+  ```json
+  [
+    {
+      "marker_id": "y",
+      "char_offset": 13,
+      "footnote_segment_id": "seg_p0036_fn_001"
+    }
+  ]
+  ```
 - Footnote records additionally carry `body_segment_id` and `marker_id` so the
   body→footnote anchor relationship survives outside the annotation file.
 - `translation_history[]` entries include:
