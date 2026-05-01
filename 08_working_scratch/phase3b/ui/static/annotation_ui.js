@@ -377,7 +377,10 @@ function renderBodyTextWithMarkers(line) {
   const renderBadge = (m) => {
     const fn = fnByNumber(m.number);
     const tip = fn ? escapeHtml((fn.text_gold || "").slice(0, 60)) : `footnote ${m.number}`;
-    return `<sup class="marker-badge" data-fn-id="${escapeHtml(m.footnote_id)}" title="${tip}">${m.number}</sup>`;
+    // Prefer the printed marker_id glyph (e.g. 'y') over the sequential
+    // marker_number so the preview matches the source page typography.
+    const label = fn && fn.marker_id ? fn.marker_id : m.number;
+    return `<sup class="marker-badge" data-fn-id="${escapeHtml(m.footnote_id)}" title="${tip}">${escapeHtml(String(label))}</sup>`;
   };
   let html = "";
   let cursor = 0;
@@ -757,7 +760,7 @@ function buildFootnoteCard(fn) {
 
   card.innerHTML = `
     <div class="footnote-head">
-      <sup class="footnote-marker-badge">${fn.marker_number || "?"}</sup>
+      <sup class="footnote-marker-badge">${escapeHtml(String(fn.marker_id || fn.marker_number || "?"))}</sup>
       <span class="footnote-id">${safeId}</span>
       <span class="footnote-anchor">→ ${safeAnchor}</span>
       <select class="footnote-kind" data-field="kind">${kindOpts}</select>
