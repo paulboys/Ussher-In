@@ -7,9 +7,11 @@ import pytest
 from translation_prompts import (
     LEXICON_GREEK_HINTS,
     LEXICON_LATIN_HINTS,
+    POLISH_OUTPUT_CONTRACT,
     _build_marker_lookup,
     _inject_markers,
     build_marker_placement_prompt,
+    build_polishing_prompt,
     build_translation_prompt,
     contains_greek,
 )
@@ -196,6 +198,151 @@ def test_inject_markers_clamps_out_of_range_offset_to_end():
     assert out == "alpha^a"
 
 
+# ---------------------------------------------------------------------------
+# Polishing prompt
+# ---------------------------------------------------------------------------
+
+
+_POLISH_BODY = [
+    {
+        "segment_id": "seg_p0036_body_l0001",
+        "latin_text": "Hinc Arnobius^y \" Tam velociter currit sermo ejus ut,",
+        "literal_english": 'Hence Arnobius^y: "So swiftly does his word run that,',
+    },
+    {
+        "segment_id": "seg_p0036_body_l0002",
+        "latin_text": "cum per tot millia annorum in sola Judæa notus fuerit",
+        "literal_english": "although for so many thousands of years",
+    },
+]
+
+_POLISH_FOOTNOTES = [
+    {
+        "marker_id": "y",
+        "segment_id": "seg_p0036_fn_001",
+        "english": "On Psalm 147.",
+    },
+]
+
+
+def test_build_polishing_prompt_includes_literal_english_and_latin():
+    prompt = build_polishing_prompt(
+        page_id="p0036",
+        body_units=_POLISH_BODY,
+        footnotes=_POLISH_FOOTNOTES,
+        lexicon_profile="auto",
+    )
+    # Page id surfaces in the prompt.
+    assert "p0036" in prompt
+    # Latin (with carets) and literal English both visible to the model.
+    assert "Hinc Arnobius^y" in prompt
+    assert "Hence Arnobius^y" in prompt
+    # Footnote glosses appear as context (so the model knows what '^y' refers to).
+    assert "On Psalm 147." in prompt
+    # Output contract pinned in.
+    assert POLISH_OUTPUT_CONTRACT.split("\n", 1)[0] in prompt
+
+
+def test_build_polishing_prompt_lists_required_markers_in_order():
+    body = [
+        {
+            "segment_id": "seg_p0036_body_l0001",
+            "latin_text": "alpha^a beta",
+            "literal_english": "alpha^a beta",
+        },
+        {
+            "segment_id": "seg_p0036_body_l0002",
+            "latin_text": "gamma^b delta^c epsilon",
+            "literal_english": "gamma^b delta^c epsilon",
+        },
+        {
+            "segment_id": "seg_p0036_body_l0003",
+            "latin_text": "zeta^a again",
+            "literal_english": "zeta^a again",
+        },
+    ]
+    prompt = build_polishing_prompt(
+        page_id="p0036",
+        body_units=body,
+        footnotes=[],
+        lexicon_profile="minimal",
+    )
+    # Markers required exactly once each in printed order: a, b, c.
+    assert "^a, ^b, ^c" in prompt
+    # 'minimal' profile suppresses lexicon blocks.
+    assert LEXICON_LATIN_HINTS not in prompt
+    assert LEXICON_GREEK_HINTS not in prompt
+
+
+def test_build_polishing_prompt_no_markers_uses_no_marker_clause():
+    body = [
+        {
+            "segment_id": "seg_p0036_body_l0001",
+            "latin_text": "alpha beta gamma",
+            "literal_english": "alpha beta gamma",
+        }
+    ]
+    prompt = build_polishing_prompt(
+        page_id="p0036",
+        body_units=body,
+        footnotes=[],
+        lexicon_profile="minimal",
+    )
+    assert "no footnote anchors" in prompt
+    assert "do not introduce any" in prompt
+
+
+def test_build_polishing_prompt_auto_includes_greek_when_present():
+    body = [
+        {
+            "segment_id": "seg_p0036_body_l0001",
+            "latin_text": "ὁ λόγος αὐτοῦ τρέχει ταχέως",
+            "literal_english": "his word runs swiftly",
+        }
+    ]
+    prompt = build_polishing_prompt(
+        page_id="p0036",
+        body_units=body,
+        footnotes=[],
+        lexicon_profile="auto",
+    )
+    assert LEXICON_GREEK_HINTS in prompt
+
+
+def test_build_polishing_prompt_auto_omits_greek_when_absent():
+    prompt = build_polishing_prompt(
+        page_id="p0036",
+        body_units=_POLISH_BODY,
+        footnotes=_POLISH_FOOTNOTES,
+        lexicon_profile="auto",
+    )
+    # No Greek script in this page → Greek hints should be omitted.
+    assert LEXICON_GREEK_HINTS not in prompt
+    # Latin hints still present under 'auto'.
+    assert LEXICON_LATIN_HINTS in prompt
+
+
+def test_build_polishing_prompt_extra_context_is_appended_verbatim():
+    prompt = build_polishing_prompt(
+        page_id="p0036",
+        body_units=_POLISH_BODY,
+        footnotes=_POLISH_FOOTNOTES,
+        lexicon_profile="minimal",
+        extra_context="Catchword on previous page reads 'sermo'.",
+    )
+    assert "Catchword on previous page reads 'sermo'." in prompt
+
+
+def test_build_polishing_prompt_rejects_unknown_lexicon_profile():
+    with pytest.raises(ValueError):
+        build_polishing_prompt(
+            page_id="p0036",
+            body_units=_POLISH_BODY,
+            footnotes=_POLISH_FOOTNOTES,
+            lexicon_profile="bogus",
+        )
+
+
 def test_build_translation_prompt_emits_caret_sentinel_in_body_line():
     prompt = build_translation_prompt(
         page_id="p0036",
@@ -243,3 +390,5 @@ def test_build_marker_placement_prompt_includes_both_strings_and_marker():
     assert "English (with '^y' inserted)" in prompt
     # No code-fence or commentary instructions leak in.
     assert "code fence" in prompt.lower()
+
+
