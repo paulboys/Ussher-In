@@ -447,6 +447,7 @@ function buildBodyLineCard(line, idx, options = {}) {
       <span class="line-id">${safeId}</span>
       <div class="line-head-right">
         <button type="button" class="add-marker-btn" title="Insert footnote marker at the cursor position in this line (or end of line)">+ Footnote here</button>
+        <button type="button" class="make-sup-btn" title="Select exactly one character in the text below, then click here to convert it into a superscript footnote marker">⁺ Make superscript</button>
         <select class="review-status-chip" data-field="review_status">${reviewOpts}</select>
         ${options.showRemove ? '<button type="button" class="line-remove-btn">Remove</button>' : ""}
       </div>
@@ -476,6 +477,24 @@ function buildBodyLineCard(line, idx, options = {}) {
       ? (ta.selectionStart ?? null)
       : null;
     addFootnoteAnchored(line.line_id, offset);
+  });
+
+  const supBtn = card.querySelector(".make-sup-btn");
+  supBtn.addEventListener("mousedown", (e) => e.preventDefault());
+  supBtn.addEventListener("click", () => {
+    const target = (document.activeElement === ta || activeInput === ta) ? ta : null;
+    markSelectionAsSuperscript(line, target);
+  });
+
+  // Shift+click on a rendered <sup> badge in the preview unmarks it,
+  // restoring the original character to text_gold at its char_offset.
+  preview.addEventListener("click", (event) => {
+    const sup = event.target.closest("sup.marker-badge");
+    if (!sup) return;
+    if (!event.shiftKey) return;
+    event.preventDefault();
+    const fnId = sup.getAttribute("data-fn-id") || "";
+    unmarkSuperscript(line, fnId);
   });
 
   if (options.showRemove) {
@@ -839,6 +858,133 @@ function addFootnoteAnchored(bodyLineId, charOffset = null) {
     const marker = (bodyLine?.markers || []).find((m) => String(m.footnote_id) === String(newId));
     if (marker) marker.char_offset = charOffset;
   }
+  renderAll();
+}
+
+// Convert a single selected character in a body textarea into a superscript
+// footnote marker. The character is removed from text_gold; if an orphan
+// footnote with marker_id == symbol exists, it is linked; otherwise a new
+// footnote is created with that marker_id so the user can fill in the text.
+function markSelectionAsSuperscript(line, ta) {
+  if (!currentPayload || !line) return;
+  if (!ta) {
+    setStatus("Click into the body line text first, then select a single character.", true);
+    return;
+  }
+  const start = ta.selectionStart ?? 0;
+  const end = ta.selectionEnd ?? 0;
+  if (end - start !== 1) {
+    setStatus("Select exactly one character to mark as superscript.", true);
+    return;
+  }
+  const text = String(line.text_gold || "");
+  const symbol = text.slice(start, end);
+  if (!/^[A-Za-z0-9*†‡§]$/.test(symbol)) {
+    setStatus(`Cannot use '${symbol}' as a marker symbol.`, true);
+    return;
+  }
+
+  const beforeText = text;
+  const beforeMarkers = clone(line.markers || []);
+  const beforeFootnotes = clone(currentPayload.footnotes || []);
+
+  // Strip the chosen char from the text.
+  const cleanText = text.slice(0, start) + text.slice(end);
+  line.text_gold = cleanText;
+
+  // Try to claim an existing orphan footnote whose marker_id matches.
+  const fns = currentPayload.footnotes || (currentPayload.footnotes = []);
+  let target = fns.find(
+    (fn) =>
+      String(fn.marker_id || "") === symbol &&
+      (!fn.body_line_id || fn.body_line_id === line.line_id)
+  );
+  let createdNew = false;
+  if (!target) {
+    const newId = nextFootnoteId(currentPayload.page_id, fns);
+    target = {
+      footnote_id: newId,
+      page_id: currentPayload.page_id,
+      marker_number: 0,
+      marker_id: symbol,
+      body_line_id: line.line_id,
+      text_gold: "",
+      text_ocr_original: "",
+      kind: "citation",
+      source_region: "manual",
+      source_marginalia_line_ids: [],
+      review_status: "draft",
+      notes: "",
+    };
+    fns.push(target);
+    createdNew = true;
+  } else {
+    target.body_line_id = line.line_id;
+  }
+
+  renumberFootnotes();
+  // Set the char_offset on the marker that renumberFootnotes just rebuilt.
+  const marker = (line.markers || []).find(
+    (m) => String(m.footnote_id) === String(target.footnote_id)
+  );
+  if (marker) marker.char_offset = start;
+
+  pushUndo(`Mark '${symbol}' superscript on ${line.line_id}`, () => {
+    line.text_gold = beforeText;
+    line.markers = beforeMarkers;
+    currentPayload.footnotes = beforeFootnotes;
+    renumberFootnotes();
+    renderAll();
+  });
+
+  setStatus(
+    createdNew
+      ? `Created footnote with marker '${symbol}' — fill in its text.`
+      : `Linked superscript '${symbol}' to existing footnote.`
+  );
+  renderAll();
+}
+
+// Inverse of markSelectionAsSuperscript: drop the marker and re-insert
+// its symbol character into text_gold at the marker's char_offset. Used
+// by Shift+click on a rendered <sup> badge.
+function unmarkSuperscript(line, footnoteId) {
+  if (!currentPayload || !line || !footnoteId) return;
+  const markers = line.markers || [];
+  const idx = markers.findIndex((m) => String(m.footnote_id) === String(footnoteId));
+  if (idx < 0) return;
+  const marker = markers[idx];
+  const fn = (currentPayload.footnotes || []).find(
+    (f) => String(f.footnote_id) === String(footnoteId)
+  );
+  const symbol = String(fn?.marker_id || "").slice(0, 1);
+  if (!symbol) {
+    setStatus("This marker has no symbol recorded; cannot reinsert. Remove it via the footnote list instead.", true);
+    return;
+  }
+  const offset =
+    typeof marker.char_offset === "number"
+      ? Math.max(0, Math.min((line.text_gold || "").length, marker.char_offset))
+      : (line.text_gold || "").length;
+
+  const beforeText = line.text_gold || "";
+  const beforeMarkers = clone(markers);
+  const beforeFnAnchor = fn ? { id: fn.footnote_id, body_line_id: fn.body_line_id } : null;
+
+  line.text_gold = beforeText.slice(0, offset) + symbol + beforeText.slice(offset);
+  markers.splice(idx, 1);
+  if (fn) fn.body_line_id = "";
+  renumberFootnotes();
+
+  pushUndo(`Unmark superscript '${symbol}' on ${line.line_id}`, () => {
+    line.text_gold = beforeText;
+    line.markers = beforeMarkers;
+    if (fn && beforeFnAnchor) fn.body_line_id = beforeFnAnchor.body_line_id;
+    renumberFootnotes();
+    renderAll();
+  });
+
+  setStatus(`Unmarked superscript '${symbol}'; character returned to text.`);
   renderAll();
 }
 
