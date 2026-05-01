@@ -38,11 +38,43 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
+import sys
 from pathlib import Path
 from typing import Iterable
 
 PHASE3B_REGIONS = ("header", "body", "marginalia", "catchword")
 FOOTNOTE_KIND_DEFAULT = "citation"
+
+# Sentinel: caret followed by a single marker-symbol character, used by
+# the OCR prompt to flag inline superscript footnote anchors in body text
+# (e.g. "Arnobius^y" -> body text "Arnobius" + marker linked to footnote 'y').
+_INLINE_MARKER_RE = re.compile(r"\^([A-Za-z0-9*†‡§])")
+
+
+def _extract_inline_markers(text: str) -> tuple[str, list[dict]]:
+    """Strip ``^X`` sentinels from ``text`` and return (clean_text, markers).
+
+    Each entry in ``markers`` is ``{"symbol": str, "char_offset": int}``
+    where ``char_offset`` is the index in ``clean_text`` immediately
+    after the character the superscript was attached to.
+    """
+    if not text or "^" not in text:
+        return text, []
+
+    clean_parts: list[str] = []
+    markers: list[dict] = []
+    pos = 0
+    clean_len = 0
+    for match in _INLINE_MARKER_RE.finditer(text):
+        # Append text up to (but not including) the caret.
+        chunk = text[pos:match.start()]
+        clean_parts.append(chunk)
+        clean_len += len(chunk)
+        markers.append({"symbol": match.group(1), "char_offset": clean_len})
+        pos = match.end()
+    clean_parts.append(text[pos:])
+    return "".join(clean_parts), markers
 
 ALLOWED_EDITIONS = ("1687_second", "1847_elrington_todd")
 DEFAULT_EDITION = "1687_second"
@@ -71,6 +103,13 @@ def _convert_line(
     marker_id = str(src.get("marker_id") or "")
     anchor = src.get("marginalia_anchor_index")
 
+    # Strip inline-superscript sentinels from body text only. Marginalia /
+    # footnote / header / catchword text is left untouched (the leading
+    # marker letter on marginalia is already carried in ``marker_id``).
+    pending_inline_markers: list[dict] = []
+    if region == "body":
+        text_gold, pending_inline_markers = _extract_inline_markers(text_gold)
+
     line: dict = {
         "page_id": page_id,
         "region": region,
@@ -88,6 +127,8 @@ def _convert_line(
     }
     if region == "body":
         line["markers"] = []  # Populated when footnotes are built.
+        # Private: drained by _build_footnotes, then deleted before output.
+        line["_pending_inline_markers"] = pending_inline_markers
     return line
 
 
@@ -190,6 +231,50 @@ def _build_footnotes(
 
     groups = _coalesce_marginalia_groups(marginalia_lines, body_anchor_to_lineid)
 
+    # Stamp each group with marker_id (first non-empty from its fragments)
+    # and a slot for the matched body anchor's char_offset.
+    for group in groups:
+        marker_symbol = ""
+        for frag in group["fragments"]:
+            mid = str(frag.get("marker_id") or "").strip()
+            if mid:
+                marker_symbol = mid
+                break
+        group["marker_symbol"] = marker_symbol
+        group["char_offset"] = None
+
+    # Symbol-matching pass: bind body inline ^X sentinels to the
+    # marginalia group whose marker_id matches. Each body line consumes
+    # its pending markers in order; a group can claim only one anchor.
+    consumed_groups: set[int] = set()
+    unmatched: list[tuple[str, str]] = []  # (body_line_id, symbol)
+    for body_line in body_lines:
+        pending = body_line.pop("_pending_inline_markers", []) or []
+        for entry in pending:
+            symbol = entry.get("symbol", "")
+            offset = entry.get("char_offset")
+            match = None
+            for group in groups:
+                if id(group) in consumed_groups:
+                    continue
+                if group.get("marker_symbol") == symbol:
+                    match = group
+                    break
+            if match is None:
+                unmatched.append((body_line["line_id"], symbol))
+                continue
+            consumed_groups.add(id(match))
+            match["body_line_id"] = body_line["line_id"]
+            match["char_offset"] = offset
+
+    if unmatched:
+        details = ", ".join(f"{lid}:'{sym}'" for lid, sym in unmatched)
+        print(
+            f"[pilot_to_phase3b] {page_id}: {len(unmatched)} inline superscript "
+            f"sentinel(s) had no matching marginalia marker_id: {details}",
+            file=sys.stderr,
+        )
+
     # Stable ordering: anchored notes by body-line position; orphans last in
     # the order they appeared. This drives marker_number assignment.
     orphan_index: dict[int, int] = {id(g): i for i, g in enumerate(groups)}
@@ -214,6 +299,7 @@ def _build_footnotes(
                 "footnote_id": fn_id,
                 "page_id": page_id,
                 "marker_number": ordinal,
+                "marker_id": group.get("marker_symbol", ""),
                 "body_line_id": body_line_id,
                 "text_gold": text_gold,
                 "text_ocr_original": text_gold,
@@ -230,9 +316,14 @@ def _build_footnotes(
                 {
                     "number": ordinal,
                     "footnote_id": fn_id,
-                    "char_offset": None,  # null = render at end of line.
+                    "char_offset": group.get("char_offset"),  # int or None.
                 }
             )
+
+    # Drain any pending markers on body lines that were never consumed
+    # (e.g. body lines with no marginalia at all on this page).
+    for body_line in body_lines:
+        body_line.pop("_pending_inline_markers", None)
 
     return footnotes
 

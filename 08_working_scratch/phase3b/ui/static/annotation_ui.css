@@ -312,6 +312,23 @@ input[type="text"], select, textarea {
   cursor: pointer;
 }
 
+.make-sup-btn {
+  border: 1px dashed #6a4a8a;
+  background: transparent;
+  color: #5a3d75;
+  border-radius: 3px;
+  font-size: 0.72rem;
+  padding: 0.1rem 0.4rem;
+  cursor: pointer;
+}
+.make-sup-btn:hover { background: #f1ecf6; }
+
+sup.marker-badge { cursor: pointer; }
+sup.marker-badge:hover {
+  outline: 1px dashed #6a4a8a;
+  outline-offset: 1px;
+}
+
 .anchor-at-cursor-btn {
   border: 1px dashed #5b7a3c;
   background: transparent;
