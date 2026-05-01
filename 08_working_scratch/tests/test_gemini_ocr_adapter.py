@@ -181,11 +181,19 @@ def test_claude_provider_is_not_ready_without_api_key():
     assert claude.is_ready() is False
 
 
-def test_claude_provider_translate_is_not_implemented():
+def test_claude_provider_translate_uses_injected_adapter():
+    """ClaudeProvider.translate should delegate to the translation
+    adapter and return the plain English string from the response."""
+
+    class _FakeAdapter:
+        def translate_text(self, text, *, unit_id="unit_0", prompt_builder=None):
+            assert text == "Salve mundi"
+            return "Hello world"
+
     provider = default_config().get("anthropic")
-    claude = ClaudeProvider(provider)
-    with pytest.raises(NotImplementedError):
-        claude.translate("text", source_lang="lat", target_lang="eng")
+    claude = ClaudeProvider(provider, translation_adapter=_FakeAdapter())
+    out = claude.translate("Salve mundi", source_lang="lat", target_lang="eng")
+    assert out == "Hello world"
 
 
 def test_claude_provider_rejects_wrong_provider_name():
