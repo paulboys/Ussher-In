@@ -401,3 +401,28 @@ def test_group_by_page_attaches_polished_when_part_supplied(tmp_path, monkeypatc
     assert bundles[0].polished is not None
     assert bundles[0].polished["english"] == "polished^y here"
 
+
+
+# ---------------------------------------------------------------------------
+# Per-line anchor ids (for deep-linking comments to body lines)
+# ---------------------------------------------------------------------------
+
+
+def test_render_page_markdown_includes_per_line_anchors(page_bundle):
+    md = ri.render_page_markdown(page_bundle)
+    # Each body line gets its own id="line-<page>-l<NNNN>".
+    assert 'id="line-p0036-l0001"' in md
+    assert 'id="line-p0036-l0002"' in md
+
+
+def test_render_page_html_row_carries_line_id(page_bundle):
+    out = ri.render_page_html(page_bundle)
+    # The row div carries the id so anchor links jump to the LA/EN pair.
+    assert '<div class="row" id="line-p0036-l0001">' in out
+    assert '<div class="row" id="line-p0036-l0002">' in out
+
+
+def test_line_anchor_id_helper_returns_blank_for_unrecognized_segment():
+    assert ri._line_anchor_id({"segment_id": "seg_p0036_fn_001"}, "p0036") == ""
+    assert ri._line_anchor_id({}, "p0036") == ""
+

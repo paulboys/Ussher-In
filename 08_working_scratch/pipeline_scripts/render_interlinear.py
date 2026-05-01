@@ -150,6 +150,20 @@ def _segment_sort_key(seg: dict) -> tuple:
     return (2, 0, seg_id)
 
 
+def _line_anchor_id(seg: dict, page_id: str) -> str:
+    """Return ``line-<page>-l<NNNN>`` for a body segment, or ``""``.
+
+    These ids are emitted on each interlinear body row so collaborators
+    can deep-link a comment to a specific line (e.g. the URL fragment
+    ``#line-p0036-l0007`` jumps to the seventh body line of p0036).
+    """
+    seg_id = seg.get("segment_id", "")
+    match = re.search(r"_l(\d+)$", seg_id)
+    if not match:
+        return ""
+    return f"line-{page_id}-l{int(match.group(1)):04d}"
+
+
 def group_by_page(
     segments: Iterable[dict],
     *,
@@ -322,6 +336,8 @@ def render_page_markdown(
         lines.append("## Interlinear")
         lines.append("")
         for seg in bundle.body:
+            anchor_id = _line_anchor_id(seg, bundle.page_id)
+            anchor = f'<a id="{anchor_id}"></a>' if anchor_id else ""
             latin = _carets_to_anchors(
                 seg.get("latin_text") or "",
                 page_id=bundle.page_id,
@@ -336,7 +352,7 @@ def render_page_markdown(
                 fmt="markdown",
                 emit_backref_id=False,
             )
-            lines.append(f"**LA**  {latin}")
+            lines.append(f"{anchor}**LA**  {latin}")
             lines.append("")
             lines.append(f"**EN**  {english}")
             lines.append("")
@@ -430,6 +446,8 @@ def render_page_html(
     if not reading_only:
         body_parts: list[str] = ["<h2>Interlinear</h2>"]
         for seg in bundle.body:
+            anchor_id = _line_anchor_id(seg, bundle.page_id)
+            row_id_attr = f' id="{anchor_id}"' if anchor_id else ""
             latin = _carets_to_anchors(
                 seg.get("latin_text") or "",
                 page_id=bundle.page_id,
@@ -445,7 +463,7 @@ def render_page_html(
                 emit_backref_id=False,
             )
             body_parts.append(
-                "<div class=\"row\">\n"
+                f'<div class="row"{row_id_attr}>\n'
                 f"  <div><span class=\"lang\">LA</span><span class=\"la\">{latin}</span></div>\n"
                 f"  <div><span class=\"lang\">EN</span><span class=\"en\">{english}</span></div>\n"
                 "</div>"
