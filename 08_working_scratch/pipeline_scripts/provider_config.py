@@ -110,7 +110,10 @@ def default_config() -> Config:
                 name="anthropic",
                 model="claude-opus-4-6",
                 base_url="https://api.anthropic.com",
-                timeout_seconds=120.0,
+                # The Claude Code CLI streams a long-running session;
+                # 0 disables the wall-clock timeout so prompts run to
+                # completion regardless of length.
+                timeout_seconds=0.0,
                 max_retries=2,
                 supports_ocr=False,
                 supports_translation=True,

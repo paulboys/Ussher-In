@@ -9,6 +9,7 @@ from translation_prompts import (
     LEXICON_LATIN_HINTS,
     _build_marker_lookup,
     _inject_markers,
+    build_marker_placement_prompt,
     build_translation_prompt,
     contains_greek,
 )
@@ -203,9 +204,12 @@ def test_build_translation_prompt_emits_caret_sentinel_in_body_line():
         lexicon_profile="auto",
     )
     assert "Hinc Arnobius^y" in prompt
-    # And the caret-sentinel instruction is present so Claude knows
-    # to drop the marker symbol in its translation.
+    # The caret-sentinel instruction is present so Claude knows the
+    # caret is a sentinel, NOT to echo it in the English (placement
+    # is handled by a separate downstream pass).
     assert "Footnote-marker sentinels" in prompt
+    assert "WITHOUT" in prompt
+    assert "downstream pass" in prompt
 
 
 def test_build_translation_prompt_omits_marker_when_footnote_excluded():
@@ -219,3 +223,23 @@ def test_build_translation_prompt_omits_marker_when_footnote_excluded():
     )
     assert "Hinc Arnobius^" not in prompt
     assert "Hinc Arnobius “" in prompt
+
+
+# ---------------------------------------------------------------------------
+# Marker-placement prompt builder
+# ---------------------------------------------------------------------------
+
+
+def test_build_marker_placement_prompt_includes_both_strings_and_marker():
+    prompt = build_marker_placement_prompt(
+        english='Hence Arnobius: "So swiftly does his word run, that,',
+        marker_id="y",
+        latin_with_caret='Hinc Arnobius^y “ Tam velociter currit sermo ejus ut,',
+    )
+    assert "^y" in prompt
+    assert "Hinc Arnobius^y" in prompt
+    assert "Hence Arnobius:" in prompt
+    # The footer cue the test fake_runner keys off of must be stable.
+    assert "English (with '^y' inserted)" in prompt
+    # No code-fence or commentary instructions leak in.
+    assert "code fence" in prompt.lower()
