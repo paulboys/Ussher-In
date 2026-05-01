@@ -282,3 +282,122 @@ def test_load_segments_missing_artifact_raises(tmp_path, monkeypatch):
     monkeypatch.setattr(ri, "ARTIFACTS_DIR", tmp_path)
     with pytest.raises(FileNotFoundError):
         ri.load_segments("nonexistent")
+
+
+# ---------------------------------------------------------------------------
+# Polished translation: Reading section
+# ---------------------------------------------------------------------------
+
+
+def _polished_artifact(english: str) -> dict:
+    return {
+        "page_id": "p0036",
+        "stage": "polished",
+        "version": 1,
+        "timestamp": "2026-05-01T16:00:00Z",
+        "model": "claude-opus-4-6",
+        "lexicon_profile": "auto",
+        "source_versions": {"seg_p0036_body_l0001": 4},
+        "english": english,
+        "warnings": [],
+    }
+
+
+def test_render_page_markdown_includes_reading_section_when_polished_present(page_bundle):
+    page_bundle.polished = _polished_artifact(
+        "Hence Arnobius^y declared that the gospel ran swiftly across the world."
+    )
+    md = ri.render_page_markdown(page_bundle)
+    assert "## Interlinear" in md
+    assert "## Reading" in md
+    # Polished prose appears under Reading with caret converted to a
+    # link-only sup (no duplicate id attr from the polished line).
+    assert "Hence Arnobius<sup>" in md.split("## Reading", 1)[1]
+    # The Reading caret links to the same footnote target.
+    assert 'href="#fn-seg_p0036_fn_001"' in md
+
+
+def test_render_page_markdown_polished_caret_has_no_duplicate_backref_id(page_bundle):
+    page_bundle.polished = _polished_artifact("Polished prose with anchor^y here.")
+    md = ri.render_page_markdown(page_bundle)
+    # The fnref backref id must appear exactly ONCE (on the Latin
+    # interlinear line); not in the polished prose.
+    assert md.count('id="fnref-p0036-y"') == 1
+
+
+def test_render_page_markdown_skips_reading_when_no_polished(page_bundle):
+    page_bundle.polished = None
+    md = ri.render_page_markdown(page_bundle)
+    assert "## Reading" not in md
+    assert "## Interlinear" in md
+
+
+def test_render_page_markdown_reading_only_omits_interlinear(page_bundle):
+    page_bundle.polished = _polished_artifact("Just the reading^y.")
+    md = ri.render_page_markdown(page_bundle, reading_only=True)
+    assert "## Interlinear" not in md
+    assert "## Footnotes" not in md
+    assert "## Reading" in md
+
+
+def test_render_page_markdown_no_reading_flag_suppresses_section(page_bundle):
+    page_bundle.polished = _polished_artifact("Polished prose^y.")
+    md = ri.render_page_markdown(page_bundle, include_reading=False)
+    assert "## Reading" not in md
+    assert "## Interlinear" in md
+
+
+def test_render_page_html_includes_reading_section_when_polished_present(page_bundle):
+    page_bundle.polished = _polished_artifact(
+        "Hence Arnobius^y declared that the gospel ran swiftly."
+    )
+    out = ri.render_page_html(page_bundle)
+    assert "<h2>Interlinear</h2>" in out
+    assert "<h2>Reading</h2>" in out
+    assert '<section class="reading">' in out
+    # Each polished paragraph wrapped in <p>.
+    assert "<p>" in out.split("Reading", 1)[1]
+    # No second copy of the body's backref id ends up in the polished prose.
+    assert out.count('id="fnref-p0036-y"') == 1
+
+
+def test_render_page_html_paragraph_breaks_split_on_blank_lines(page_bundle):
+    page_bundle.polished = _polished_artifact(
+        "First paragraph^y here.\n\nSecond paragraph follows."
+    )
+    out = ri.render_page_html(page_bundle)
+    reading = out.split("Reading", 1)[1]
+    # Two distinct <p> blocks under the reading section.
+    assert reading.count("<p>") >= 2
+
+
+def test_load_polished_returns_none_when_artifact_absent(tmp_path, monkeypatch):
+    monkeypatch.setattr(ri, "ARTIFACTS_DIR", tmp_path / "03_segmented_text")
+    assert ri.load_polished("part1", "p0036") is None
+
+
+def test_load_polished_reads_artifact(tmp_path, monkeypatch):
+    monkeypatch.setattr(ri, "ARTIFACTS_DIR", tmp_path / "03_segmented_text")
+    pdir = tmp_path / "03_segmented_text" / "part1" / "polished"
+    pdir.mkdir(parents=True)
+    (pdir / "p0036.json").write_text(
+        '{"page_id": "p0036", "english": "x^y"}', encoding="utf-8"
+    )
+    artifact = ri.load_polished("part1", "p0036")
+    assert artifact == {"page_id": "p0036", "english": "x^y"}
+
+
+def test_group_by_page_attaches_polished_when_part_supplied(tmp_path, monkeypatch):
+    monkeypatch.setattr(ri, "ARTIFACTS_DIR", tmp_path / "03_segmented_text")
+    pdir = tmp_path / "03_segmented_text" / "part1" / "polished"
+    pdir.mkdir(parents=True)
+    (pdir / "p0036.json").write_text(
+        '{"page_id": "p0036", "english": "polished^y here"}', encoding="utf-8"
+    )
+    bundles = ri.group_by_page(
+        [_body_seg(1, "alpha^y", "Alpha^y"), _fn_seg(1, "y", 1, "fn", "fn")],
+        part="part1",
+    )
+    assert bundles[0].polished is not None
+    assert bundles[0].polished["english"] == "polished^y here"
+

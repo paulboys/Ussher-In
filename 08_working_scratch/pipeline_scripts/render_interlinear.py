@@ -52,6 +52,33 @@ DEFAULT_OUT_DIR = WORKSPACE_ROOT / "05_final_output"
 
 
 # ---------------------------------------------------------------------------
+# Polished-translation artifact loader
+# ---------------------------------------------------------------------------
+
+
+def _polished_path(part: str, page_id: str) -> Path:
+    return ARTIFACTS_DIR / part / "polished" / f"{page_id}.json"
+
+
+def load_polished(part: str, page_id: str) -> dict | None:
+    """Return the parsed polished artifact for *page_id* or None.
+
+    The artifact is written by :mod:`polish_translations` and carries
+    a single flowing-prose ``english`` field (with ``^X`` carets at
+    footnote-anchor positions) plus provenance metadata.
+    """
+    path = _polished_path(part, page_id)
+    if not path.exists():
+        return None
+    try:
+        return json.loads(path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError as exc:
+        raise ValueError(
+            f"{path}: malformed polished artifact: {exc}"
+        ) from exc
+
+
+# ---------------------------------------------------------------------------
 # Public formats
 # ---------------------------------------------------------------------------
 
@@ -94,11 +121,18 @@ def load_segments(part: str) -> list[dict]:
 
 @dataclass
 class PageBundle:
-    """Body + footnote records for a single page, ready for rendering."""
+    """Body + footnote records for a single page, ready for rendering.
+
+    ``polished`` is the parsed per-page polished artifact (or ``None``
+    when no polished pass has run for this page). When present, its
+    ``english`` field is rendered as a separate ``## Reading`` section
+    after the interlinear block.
+    """
 
     page_id: str
     body: list[dict]
     footnotes: list[dict]
+    polished: dict | None = None
 
 
 def _segment_sort_key(seg: dict) -> tuple:
@@ -116,12 +150,18 @@ def _segment_sort_key(seg: dict) -> tuple:
     return (2, 0, seg_id)
 
 
-def group_by_page(segments: Iterable[dict]) -> list[PageBundle]:
+def group_by_page(
+    segments: Iterable[dict],
+    *,
+    part: str | None = None,
+) -> list[PageBundle]:
     """Group segments by ``page_id`` and split body vs. footnote.
 
     The output is sorted by page_id (lexicographic, which preserves
     p0001…pNNNN ordering), and within each page body lines come first
-    in line-number order, then footnotes in marker order.
+    in line-number order, then footnotes in marker order. When *part*
+    is supplied, an attempt is made to load the per-page polished
+    artifact for each page and attach it to the bundle.
     """
     by_page: dict[str, dict[str, list[dict]]] = {}
     for seg in segments:
@@ -139,7 +179,15 @@ def group_by_page(segments: Iterable[dict]) -> list[PageBundle]:
     for page_id in sorted(by_page.keys()):
         body = sorted(by_page[page_id]["body"], key=_segment_sort_key)
         footnotes = sorted(by_page[page_id]["footnote"], key=_segment_sort_key)
-        bundles.append(PageBundle(page_id=page_id, body=body, footnotes=footnotes))
+        polished = load_polished(part, page_id) if part else None
+        bundles.append(
+            PageBundle(
+                page_id=page_id,
+                body=body,
+                footnotes=footnotes,
+                polished=polished,
+            )
+        )
     return bundles
 
 
@@ -220,6 +268,20 @@ def _strip_carets(text: str) -> str:
     return _CARET_RE.sub("", text or "")
 
 
+def _split_paragraphs(text: str) -> list[str]:
+    """Split *text* into paragraphs on blank lines.
+
+    The polished pass writes flowing prose; we honor any blank-line
+    breaks the model produced (sense-driven paragraphing) and fall
+    back to a single paragraph when the model returned a continuous
+    run of text. Empty paragraphs are dropped.
+    """
+    if not text:
+        return []
+    chunks = re.split(r"\n\s*\n+", text.strip())
+    return [chunk.strip() for chunk in chunks if chunk.strip()]
+
+
 def _fn_lookup_for_page(footnotes: Sequence[dict]) -> dict[str, str]:
     """Map ``marker_id -> segment_id`` for a single page's footnotes."""
     out: dict[str, str] = {}
@@ -236,48 +298,81 @@ def _fn_lookup_for_page(footnotes: Sequence[dict]) -> dict[str, str]:
 # ---------------------------------------------------------------------------
 
 
-def render_page_markdown(bundle: PageBundle) -> str:
-    """Render *bundle* as Pandoc-friendly Markdown with HTML supers."""
+def render_page_markdown(
+    bundle: PageBundle,
+    *,
+    include_reading: bool = True,
+    reading_only: bool = False,
+) -> str:
+    """Render *bundle* as Pandoc-friendly Markdown with HTML supers.
+
+    The output has up to two sections per page:
+
+    - ``## Interlinear`` — paired Latin/English lines and the footnote
+      block (always rendered unless ``reading_only`` is True).
+    - ``## Reading`` — the polished flowing-prose translation, with
+      ``^X`` carets converted to footnote-linked ``<sup>`` tags
+      (rendered when ``include_reading`` is True and a polished
+      artifact is attached to the bundle).
+    """
     fn_lookup = _fn_lookup_for_page(bundle.footnotes)
     lines: list[str] = [f"# Page {bundle.page_id}", ""]
 
-    for seg in bundle.body:
-        latin = _carets_to_anchors(
-            seg.get("latin_text") or "",
-            page_id=bundle.page_id,
-            fn_id_for_marker=fn_lookup,
-            fmt="markdown",
-            emit_backref_id=True,
-        )
-        english = _carets_to_anchors(
-            latest_english(seg),
+    if not reading_only:
+        lines.append("## Interlinear")
+        lines.append("")
+        for seg in bundle.body:
+            latin = _carets_to_anchors(
+                seg.get("latin_text") or "",
+                page_id=bundle.page_id,
+                fn_id_for_marker=fn_lookup,
+                fmt="markdown",
+                emit_backref_id=True,
+            )
+            english = _carets_to_anchors(
+                latest_english(seg),
+                page_id=bundle.page_id,
+                fn_id_for_marker=fn_lookup,
+                fmt="markdown",
+                emit_backref_id=False,
+            )
+            lines.append(f"**LA**  {latin}")
+            lines.append("")
+            lines.append(f"**EN**  {english}")
+            lines.append("")
+
+        if bundle.footnotes:
+            lines.append("## Footnotes")
+            lines.append("")
+            for fn in bundle.footnotes:
+                marker = fn.get("marker_id") or ""
+                seg_id = fn.get("segment_id") or ""
+                anchor = f'<a id="fn-{seg_id}"></a>' if seg_id else ""
+                backref_marker = (
+                    f'<a href="#fnref-{bundle.page_id}-{marker}">^{marker}</a>'
+                    if marker
+                    else ""
+                )
+                latin_fn = _strip_carets(fn.get("latin_text") or "")
+                english_fn = _strip_carets(latest_english(fn))
+                lines.append(f"{anchor}**{backref_marker}**  *LA:* {latin_fn}")
+                lines.append("")
+                lines.append(f"**EN:** {english_fn}")
+                lines.append("")
+
+    if include_reading and bundle.polished:
+        polished_english = bundle.polished.get("english") or ""
+        rendered_reading = _carets_to_anchors(
+            polished_english,
             page_id=bundle.page_id,
             fn_id_for_marker=fn_lookup,
             fmt="markdown",
             emit_backref_id=False,
         )
-        lines.append(f"**LA**  {latin}")
+        lines.append("## Reading")
         lines.append("")
-        lines.append(f"**EN**  {english}")
-        lines.append("")
-
-    if bundle.footnotes:
-        lines.append("## Footnotes")
-        lines.append("")
-        for fn in bundle.footnotes:
-            marker = fn.get("marker_id") or ""
-            seg_id = fn.get("segment_id") or ""
-            anchor = f'<a id="fn-{seg_id}"></a>' if seg_id else ""
-            backref_marker = (
-                f'<a href="#fnref-{bundle.page_id}-{marker}">^{marker}</a>'
-                if marker
-                else ""
-            )
-            latin_fn = _strip_carets(fn.get("latin_text") or "")
-            english_fn = _strip_carets(latest_english(fn))
-            lines.append(f"{anchor}**{backref_marker}**  *LA:* {latin_fn}")
-            lines.append("")
-            lines.append(f"**EN:** {english_fn}")
+        for paragraph in _split_paragraphs(rendered_reading):
+            lines.append(paragraph)
             lines.append("")
 
     return "\n".join(lines).rstrip() + "\n"
@@ -303,76 +398,103 @@ h2 {{ font-size: 1.1rem; margin-top: 2.5rem; border-top: 1px solid #ccc;
 .fn {{ margin: 0.6rem 0 1.2rem 0; font-size: 0.95rem; }}
 .fn-marker {{ font-weight: 700; margin-right: 0.4rem; }}
 .fn-la {{ font-style: italic; color: #333; }}
+section.reading {{ font-size: 1.05rem; line-height: 1.7;
+                   text-align: justify; }}
+section.reading p {{ margin: 0 0 1rem 0; }}
 sup a {{ text-decoration: none; color: #0a58ca; }}
 sup a:hover {{ text-decoration: underline; }}
 </style>
 </head>
 <body>
 <h1>Page {page_id}</h1>
-{body}
-{footnotes}
+{interlinear}
+{reading}
 </body>
 </html>
 """
 
 
-def render_page_html(bundle: PageBundle) -> str:
-    """Render *bundle* as a standalone HTML5 document."""
-    fn_lookup = _fn_lookup_for_page(bundle.footnotes)
-    body_parts: list[str] = []
+def render_page_html(
+    bundle: PageBundle,
+    *,
+    include_reading: bool = True,
+    reading_only: bool = False,
+) -> str:
+    """Render *bundle* as a standalone HTML5 document.
 
-    for seg in bundle.body:
-        latin = _carets_to_anchors(
-            seg.get("latin_text") or "",
-            page_id=bundle.page_id,
-            fn_id_for_marker=fn_lookup,
-            fmt="html",
-            emit_backref_id=True,
-        )
-        english = _carets_to_anchors(
-            latest_english(seg),
+    See :func:`render_page_markdown` for the section-structure rules.
+    """
+    fn_lookup = _fn_lookup_for_page(bundle.footnotes)
+    interlinear_block = ""
+
+    if not reading_only:
+        body_parts: list[str] = ["<h2>Interlinear</h2>"]
+        for seg in bundle.body:
+            latin = _carets_to_anchors(
+                seg.get("latin_text") or "",
+                page_id=bundle.page_id,
+                fn_id_for_marker=fn_lookup,
+                fmt="html",
+                emit_backref_id=True,
+            )
+            english = _carets_to_anchors(
+                latest_english(seg),
+                page_id=bundle.page_id,
+                fn_id_for_marker=fn_lookup,
+                fmt="html",
+                emit_backref_id=False,
+            )
+            body_parts.append(
+                "<div class=\"row\">\n"
+                f"  <div><span class=\"lang\">LA</span><span class=\"la\">{latin}</span></div>\n"
+                f"  <div><span class=\"lang\">EN</span><span class=\"en\">{english}</span></div>\n"
+                "</div>"
+            )
+
+        if bundle.footnotes:
+            body_parts.append("<h2>Footnotes</h2>")
+            for fn in bundle.footnotes:
+                marker = fn.get("marker_id") or ""
+                seg_id = fn.get("segment_id") or ""
+                marker_safe = html.escape(marker, quote=True)
+                backref = (
+                    f'<a href="#fnref-{bundle.page_id}-{marker_safe}">^</a>'
+                    if marker
+                    else ""
+                )
+                latin_fn = html.escape(_strip_carets(fn.get("latin_text") or ""))
+                english_fn = html.escape(_strip_carets(latest_english(fn)))
+                body_parts.append(
+                    f'<div class="fn" id="fn-{seg_id}">\n'
+                    f'  <span class="fn-marker">{backref}{marker_safe}</span>\n'
+                    f'  <span class="fn-la"><em>LA:</em> {latin_fn}</span><br>\n'
+                    f'  <span><em>EN:</em> {english_fn}</span>\n'
+                    "</div>"
+                )
+        interlinear_block = "\n".join(body_parts)
+
+    reading_block = ""
+    if include_reading and bundle.polished:
+        polished_english = bundle.polished.get("english") or ""
+        rendered = _carets_to_anchors(
+            polished_english,
             page_id=bundle.page_id,
             fn_id_for_marker=fn_lookup,
             fmt="html",
             emit_backref_id=False,
         )
-        body_parts.append(
-            "<div class=\"row\">\n"
-            f"  <div><span class=\"lang\">LA</span><span class=\"la\">{latin}</span></div>\n"
-            f"  <div><span class=\"lang\">EN</span><span class=\"en\">{english}</span></div>\n"
-            "</div>"
+        paragraphs = "\n".join(
+            f"<p>{p}</p>" for p in _split_paragraphs(rendered)
         )
-
-    body_block = "\n".join(body_parts)
-
-    fn_parts: list[str] = []
-    if bundle.footnotes:
-        fn_parts.append("<h2>Footnotes</h2>")
-        for fn in bundle.footnotes:
-            marker = fn.get("marker_id") or ""
-            seg_id = fn.get("segment_id") or ""
-            marker_safe = html.escape(marker, quote=True)
-            backref = (
-                f'<a href="#fnref-{bundle.page_id}-{marker_safe}">^</a>'
-                if marker
-                else ""
-            )
-            latin_fn = html.escape(_strip_carets(fn.get("latin_text") or ""))
-            english_fn = html.escape(_strip_carets(latest_english(fn)))
-            fn_parts.append(
-                f'<div class="fn" id="fn-{seg_id}">\n'
-                f'  <span class="fn-marker">{backref}{marker_safe}</span>\n'
-                f'  <span class="fn-la"><em>LA:</em> {latin_fn}</span><br>\n'
-                f'  <span><em>EN:</em> {english_fn}</span>\n'
-                "</div>"
-            )
-
-    fn_block = "\n".join(fn_parts)
+        reading_block = (
+            "<h2>Reading</h2>\n"
+            f'<section class="reading">\n{paragraphs}\n</section>'
+        )
 
     return _HTML_DOCUMENT_TEMPLATE.format(
         page_id=html.escape(bundle.page_id),
-        body=body_block,
-        footnotes=fn_block,
+        interlinear=interlinear_block,
+        reading=reading_block,
     )
 
 
@@ -402,13 +524,15 @@ def render_pages(
     fmt: str,
     start_page: int | None,
     end_page: int | None,
+    include_reading: bool = True,
+    reading_only: bool = False,
 ) -> list[Path]:
     """Render selected pages and return the list of files written."""
     if fmt not in FORMATS:
         raise ValueError(f"format {fmt!r} not in {FORMATS}")
     segments = load_segments(part)
     bundles = [
-        b for b in group_by_page(segments)
+        b for b in group_by_page(segments, part=part)
         if _page_in_range(b.page_id, start_page, end_page)
     ]
     if not bundles:
@@ -420,9 +544,17 @@ def render_pages(
     written: list[Path] = []
     for bundle in bundles:
         if fmt == "markdown":
-            text = render_page_markdown(bundle)
+            text = render_page_markdown(
+                bundle,
+                include_reading=include_reading,
+                reading_only=reading_only,
+            )
         else:
-            text = render_page_html(bundle)
+            text = render_page_html(
+                bundle,
+                include_reading=include_reading,
+                reading_only=reading_only,
+            )
         out_path = target_dir / f"{bundle.page_id}_interlinear.{ext}"
         out_path.write_text(text, encoding="utf-8")
         written.append(out_path)
@@ -456,6 +588,26 @@ def _build_argument_parser() -> argparse.ArgumentParser:
         default=DEFAULT_OUT_DIR,
         help="Output root directory (default: 05_final_output/).",
     )
+    reading_group = parser.add_mutually_exclusive_group()
+    reading_group.add_argument(
+        "--no-reading",
+        dest="include_reading",
+        action="store_false",
+        help=(
+            "Suppress the polished-prose Reading section even when a "
+            "polished artifact is available for the page."
+        ),
+    )
+    reading_group.add_argument(
+        "--reading-only",
+        dest="reading_only",
+        action="store_true",
+        help=(
+            "Emit only the Reading section (no Interlinear or Footnotes "
+            "blocks). Has no effect when no polished artifact exists."
+        ),
+    )
+    parser.set_defaults(include_reading=True, reading_only=False)
     return parser
 
 
@@ -467,6 +619,8 @@ def main(argv: Sequence[str] | None = None) -> int:
         fmt=args.format,
         start_page=args.start_page,
         end_page=args.end_page,
+        include_reading=args.include_reading,
+        reading_only=args.reading_only,
     )
     if not written:
         print("No pages rendered (no matching records).", file=sys.stderr)
@@ -484,6 +638,7 @@ __all__ = [
     "PageBundle",
     "group_by_page",
     "latest_english",
+    "load_polished",
     "load_segments",
     "render_page_html",
     "render_page_markdown",

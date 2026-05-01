@@ -1,5 +1,7 @@
 # Page p0036
 
+## Interlinear
+
 **LA**  Hinc Arnobius<sup id="fnref-p0036-y"><a href="#fn-seg_p0036_fn_001">y</a></sup> “ Tam velociter currit sermo ejus ut,
 
 **EN**  Hence Arnobius<sup><a href="#fn-seg_p0036_fn_001">y</a></sup>: "So swiftly does his word run that,
@@ -153,3 +155,15 @@
 <a id="fn-seg_p0036_fn_001"></a>**<a href="#fnref-p0036-y">^y</a>**  *LA:* in Psalm. 147.
 
 **EN:** On Psalm 147.
+
+## Reading
+
+Hence Arnobius<sup><a href="#fn-seg_p0036_fn_001">y</a></sup>: "So swiftly does his word run that, although for so many thousands of years God was known in Judaea alone, now within a few years he is hidden neither from the Indians on the eastern side, nor from the Britons on the western side. Everywhere his word has run swiftly."
+
+Gildas, for his part, indicates that Christ first vouchsafed the rays of his truth to Britain somewhere between the closing years of Tiberius Caesar — when the light of the Gospel began to be spread throughout the whole world — and the action carried out by the Romans against the Britons of which he had just been speaking: namely, the recovery of the province by Paulinus Suetonius, after that very great defeat suffered at the hands of Queen Boadicia, whom Gildas calls a treacherous lioness, in which eighty thousand Britons were slain. That is to say, between the year 36 of our common Christian era and the year 61.
+
+Theodoret accordingly numbers the Britons among the nations converted to the faith through the ministry of the apostles, in the ninth book of his Cure of the Greek Maladies: "Οἱ δὲ ἡμέτεροι ἁλιεῖς," he says, "καὶ οἱ τελώναι, καὶ ὁ σκυτοτόμος ἅπασιν ἀνθρώποις τοὺς εὐαγγελικοὺς προσενηνόχασι νόμους· καὶ οὐ μονον ῾Ρωμαίους καὶ ὑπὸ τούτοις τελοῦντας, ἀλλὰ καὶ τὰ Σκυθικὰ καὶ τὰ Σαυροματικὰ ἔθνη, καὶ Ἰνδοὺς καὶ Αἰθίοπας, καὶ Πέρσας καὶ Σῆρας, καὶ Ὑρκανοὺς, καὶ Βακτριανοὺς, καὶ Βρεττανοὺς, καὶ Κίμβρους, καὶ Γερμανοὺς, καὶ ἁπαξαπλῶς πᾶν ἔθνος καὶ γένος ἀνθρώπων, δέξασθαι τοῦ σταυρωθέντος τοὺς νόμους ἀνέπεισαν." That is to say: "Those fishermen of ours, and the tax-collectors, and that leather-worker of ours, brought the evangelical law to all nations — not only to the Romans and those who live under Roman rule, but also to the Scythian and Sauromatic peoples, to the Indians and Ethiopians, to the Persians and Seres, to the Hyrcanians and Bactrians, to the Britons, the Cimbrians and the Germans; and, to put it once for all, every race of men and every nation they persuaded to accept the laws of the Crucified."
+
+But just which member of that apostolic company came to our British isles is a point on which the authors are not all of one mind.
+
+That St. James, son of Zebedee, brother of John, went into the West and worked many miracles in those parts is gathered from the book of Anastasius, patriarch of Antioch, On the Sufferings of the Mart-
