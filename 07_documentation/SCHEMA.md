@@ -156,6 +156,61 @@ Gating policy (enforced by the runner):
 - Footnotes: any footnote whose `body_line_id` references an included body
   line is sent regardless of footnote review_status.
 
+## Polished Translations (Phase 5b output)
+
+A second pass driven by `08_working_scratch/pipeline_scripts/polish_translations.py`
+rewrites each page's literal `machine_draft` body lines as a single
+flowing-prose narrative suited for reading. The polished output is
+persisted as a per-page artifact at
+`03_segmented_text/<part>/polished/<page_id>.json` with the following
+shape:
+
+```json
+{
+  "page_id": "p0036",
+  "stage": "polished",
+  "version": 1,
+  "timestamp": "2026-05-01T16:00:00Z",
+  "model": "claude-opus-4-6",
+  "lexicon_profile": "auto",
+  "source_versions": {
+    "seg_p0036_body_l0001": 4,
+    "seg_p0036_body_l0002": 4
+  },
+  "english": "Hence Arnobius^y declared that the gospel ran swiftly…",
+  "warnings": []
+}
+```
+
+Conventions:
+- The polished pass is page-scoped: one artifact per `page_id`. Body
+  lines and their footnote markers are joined into continuous prose;
+  paragraph breaks reflect sense, not OCR line breaks.
+- Footnote-anchor sentinels (`^X`) are preserved exactly once each at
+  the idiomatic English position. The renderer turns these into
+  footnote-linked superscripts in the same way as for `machine_draft`
+  body lines.
+- The polished pass does NOT overwrite `translation_history` on any
+  segment; it is a separate, page-level artifact.
+- Footnotes themselves are not polished; they remain at
+  `machine_draft` and are rendered from the segment artifact.
+- `source_versions` records which `translation_history.version` of
+  each body segment was the input to this polish run, so a polished
+  artifact can be invalidated when the underlying literal pass
+  advances.
+- `--force` re-runs increment `version` (1 → 2 → …); the artifact
+  file is overwritten in place.
+- Run logs are written to `03_segmented_text/<part>/.logs/polish_run_<timestamp>.json`.
+
+The final renderer (`render_interlinear.py`) emits one combined file
+per page in `05_final_output/<part>/p<NNNN>_interlinear.{md,html}`
+with up to two sections: `## Interlinear` (paired Latin/literal
+English lines plus the footnote block) and `## Reading` (the polished
+prose, when the polished artifact is present). Footnote anchors in
+both sections link to the same in-page footnote targets; only the
+Latin line carries the `id="fnref-..."` backref attribute, so the
+HTML stays valid (no duplicate ids).
+
 ## Traceability Rules
 
 - Every segment must map to a single `page_id`.
