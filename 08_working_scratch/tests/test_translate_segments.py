@@ -108,17 +108,36 @@ def test_translate_page_writes_segment_records_via_adapter():
     seg_body = existing["seg_p0036_body_l0001"]
     assert seg_body["page_id"] == "p0036"
     assert seg_body["segment_type"] == "body"
-    assert seg_body["latin_text"].startswith("Hinc Arnobius")
+    # latin_text carries the caret sentinel so the artifact is
+    # self-describing (no need to cross-reference annotation files).
+    assert seg_body["latin_text"] == (
+        "Hinc Arnobius^y “ Tam velociter currit sermo ejus ut,"
+    )
+    # And the structured markers metadata cross-links to the footnote
+    # segment so renderers don't have to parse the caret string.
+    assert seg_body["markers"] == [
+        {
+            "marker_id": "y",
+            "char_offset": 13,
+            "footnote_segment_id": "seg_p0036_fn_001",
+        }
+    ]
     assert seg_body["translation_status"] == "machine_draft"
     assert len(seg_body["translation_history"]) == 1
     assert seg_body["translation_history"][0]["english"] == "EN:p0036_body_l0001"
     assert seg_body["translation_history"][0]["lexicon_profile"] == "auto"
+
+    # A body line without markers gets an empty markers list and no caret.
+    seg_l2 = existing["seg_p0036_body_l0002"]
+    assert seg_l2["markers"] == []
+    assert "^" not in seg_l2["latin_text"]
 
     # Footnote segment shape
     seg_fn = existing["seg_p0036_fn_001"]
     assert seg_fn["segment_type"] == "footnote"
     assert seg_fn["body_segment_id"] == "seg_p0036_body_l0001"
     assert seg_fn["marker_id"] == "y"
+    assert seg_fn["markers"] == []
 
 
 def test_translate_page_is_idempotent_unless_force():
@@ -205,3 +224,102 @@ def test_load_existing_segments_round_trip(tmp_path, monkeypatch):
     ts.write_segments("part1", segments)
     loaded = ts.load_existing_segments("part1")
     assert loaded == segments
+
+
+# ---------------------------------------------------------------------------
+# Metadata-only backfill path (no Claude call)
+# ---------------------------------------------------------------------------
+
+
+def test_metadata_only_refreshes_latin_text_and_markers_without_adapter():
+    """An older segment record (no caret, no markers[]) should be
+    upgraded by a metadata-only run without invoking the adapter or
+    appending a new translation_history entry."""
+    payload = ts.load_phase3b_page(P0036)
+
+    # Pre-populate "old" records as the v1 runner would have written them:
+    # plain latin_text, no markers[], one history entry.
+    existing = {
+        "seg_p0036_body_l0001": {
+            "segment_id": "seg_p0036_body_l0001",
+            "page_id": "p0036",
+            "segment_type": "body",
+            "latin_text": "Hinc Arnobius “ Tam velociter currit sermo ejus ut,",
+            "translation_history": [
+                {"version": 1, "stage": "machine_draft", "english": "old"}
+            ],
+            "final_english": "",
+            "translation_status": "machine_draft",
+        },
+        "seg_p0036_fn_001": {
+            "segment_id": "seg_p0036_fn_001",
+            "page_id": "p0036",
+            "segment_type": "footnote",
+            "latin_text": "in Psalm. 147.",
+            "translation_history": [
+                {"version": 1, "stage": "machine_draft", "english": "old fn"}
+            ],
+            "final_english": "",
+            "translation_status": "machine_draft",
+        },
+    }
+
+    page_log = ts.translate_page(
+        payload,
+        adapter=None,  # metadata-only path must not need an adapter
+        existing_segments=existing,
+        lexicon_profile="auto",
+        extra_context=None,
+        force=False,
+        dry_run=False,
+        timestamp="2026-05-01T00:00:00Z",
+        metadata_only=True,
+    )
+
+    assert page_log["status"] == "metadata_refreshed"
+    assert "seg_p0036_body_l0001" in page_log["refreshed"]
+
+    body = existing["seg_p0036_body_l0001"]
+    assert body["latin_text"] == (
+        "Hinc Arnobius^y “ Tam velociter currit sermo ejus ut,"
+    )
+    assert body["markers"] == [
+        {
+            "marker_id": "y",
+            "char_offset": 13,
+            "footnote_segment_id": "seg_p0036_fn_001",
+        }
+    ]
+    # History must NOT be appended on a metadata-only refresh.
+    assert len(body["translation_history"]) == 1
+    assert body["translation_history"][0]["english"] == "old"
+
+    # Footnote backlinks are added/refreshed too.
+    fn = existing["seg_p0036_fn_001"]
+    assert fn["body_segment_id"] == "seg_p0036_body_l0001"
+    assert fn["marker_id"] == "y"
+    assert fn["markers"] == []
+    assert len(fn["translation_history"]) == 1
+
+
+def test_metadata_only_skips_segments_not_already_in_artifact():
+    """A metadata-only run must not create new segments; it only
+    refreshes derived fields on segments that already exist."""
+    payload = ts.load_phase3b_page(P0036)
+    existing: dict = {}
+
+    page_log = ts.translate_page(
+        payload,
+        adapter=None,
+        existing_segments=existing,
+        lexicon_profile="auto",
+        extra_context=None,
+        force=False,
+        dry_run=False,
+        timestamp="2026-05-01T00:00:00Z",
+        metadata_only=True,
+    )
+
+    assert page_log["status"] == "metadata_refreshed"
+    assert page_log["refreshed"] == []
+    assert existing == {}

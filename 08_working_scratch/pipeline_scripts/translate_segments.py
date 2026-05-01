@@ -44,6 +44,8 @@ from translation_adapters import (  # noqa: E402
 )
 from translation_prompts import (  # noqa: E402
     LEXICON_PROFILES,
+    _build_marker_lookup,
+    _inject_markers,
     build_translation_prompt,
 )
 
@@ -145,6 +147,7 @@ def _build_segment_record(
     timestamp: str,
     model: str,
     lexicon_profile: str,
+    markers: Sequence[dict] | None = None,
 ) -> dict:
     """Build the persisted segment record matching SCHEMA.md semantics."""
 
@@ -164,6 +167,7 @@ def _build_segment_record(
         "page_id": page_id,
         "segment_type": segment_type,
         "latin_text": latin_text,
+        "markers": list(markers) if markers else [],
         "translation_history": [history_entry],
         "final_english": "",
         "translation_status": "machine_draft" if unit else "pending",
@@ -171,6 +175,28 @@ def _build_segment_record(
     if extra_links:
         record.update(extra_links)
     return record
+
+
+def _refresh_metadata_fields(
+    existing: dict,
+    *,
+    latin_text: str,
+    markers: Sequence[dict] | None = None,
+    extra_links: dict[str, Any] | None = None,
+) -> dict:
+    """Overwrite annotation-derived fields on an existing record.
+
+    These fields (``latin_text``, ``markers``, footnote backlinks) are
+    derived from the current annotation file and are NOT history-stable;
+    they should always reflect the latest annotation state. The
+    ``translation_history`` list is left untouched.
+    """
+    updated = dict(existing)
+    updated["latin_text"] = latin_text
+    updated["markers"] = list(markers) if markers else []
+    if extra_links:
+        updated.update(extra_links)
+    return updated
 
 
 def _append_translation_history(
@@ -228,6 +254,53 @@ def _segment_id_for_footnote(fn: dict) -> str:
     return f"seg_{fn.get('footnote_id', 'unknown')}"
 
 
+def _build_body_marker_metadata(
+    line: dict,
+    footnotes: Sequence[dict],
+) -> tuple[str, list[dict]]:
+    """Return ``(latin_text_with_carets, markers_metadata)`` for a body line.
+
+    The Latin text gains ``^<marker_id>`` sentinels at each marker offset
+    so the persisted artifact carries the same anchor information the
+    translation prompt sent to Claude. The metadata list provides
+    machine-readable cross-references to footnote segments.
+
+    Markers without a resolvable footnote in *footnotes* are dropped
+    from both outputs to keep the artifact internally consistent.
+    """
+    raw_text = line.get("text_gold") or line.get("text_ocr_original") or ""
+    raw_markers = line.get("markers") or []
+    if not raw_markers:
+        return raw_text, []
+
+    fn_lookup = _build_marker_lookup(footnotes)
+    fn_by_id = {fn.get("footnote_id"): fn for fn in footnotes if fn.get("footnote_id")}
+
+    metadata: list[dict] = []
+    valid_for_injection: list[dict] = []
+    for m in raw_markers:
+        fn_id = m.get("footnote_id")
+        offset = m.get("char_offset")
+        if not fn_id or fn_id not in fn_by_id:
+            continue
+        marker_symbol = fn_lookup.get(str(fn_id))
+        if not marker_symbol:
+            continue
+        try:
+            offset_int = int(offset) if offset is not None else None
+        except (TypeError, ValueError):
+            offset_int = None
+        metadata.append({
+            "marker_id": marker_symbol,
+            "char_offset": offset_int,
+            "footnote_segment_id": f"seg_{fn_id}",
+        })
+        valid_for_injection.append(m)
+
+    injected_text = _inject_markers(raw_text, valid_for_injection, fn_lookup)
+    return injected_text, metadata
+
+
 def translate_page(
     payload: dict,
     *,
@@ -238,14 +311,63 @@ def translate_page(
     force: bool,
     dry_run: bool,
     timestamp: str,
+    metadata_only: bool = False,
 ) -> dict[str, Any]:
     """Translate one page payload and update *existing_segments* in place.
 
     Returns a per-page log dict.
+
+    When ``metadata_only`` is True, the runner refreshes annotation-derived
+    fields (``latin_text`` with caret sentinels, ``markers``, footnote
+    backlinks) on existing records without invoking Claude. This is a
+    cheap way to backfill schema changes after the prompt-side marker
+    work landed.
     """
 
     page_id = payload["page_id"]
     body_lines, footnotes = extract_units(payload)
+
+    # ---------- metadata-only path: no Claude call ---------------------
+    if metadata_only:
+        refreshed: list[str] = []
+        for line in body_lines:
+            seg_id = _segment_id_for_body(line)
+            if seg_id not in existing_segments:
+                continue
+            latin_with_carets, markers_meta = _build_body_marker_metadata(
+                line, footnotes
+            )
+            existing_segments[seg_id] = _refresh_metadata_fields(
+                existing_segments[seg_id],
+                latin_text=latin_with_carets,
+                markers=markers_meta,
+            )
+            refreshed.append(seg_id)
+        for fn in footnotes:
+            seg_id = _segment_id_for_footnote(fn)
+            if seg_id not in existing_segments:
+                continue
+            body_link_id = fn.get("body_line_id", "")
+            existing_segments[seg_id] = _refresh_metadata_fields(
+                existing_segments[seg_id],
+                latin_text=fn.get("text_gold")
+                or fn.get("text_ocr_original")
+                or "",
+                markers=[],
+                extra_links={
+                    "body_segment_id": f"seg_{body_link_id}" if body_link_id else "",
+                    "marker_id": fn.get("marker_id", ""),
+                },
+            )
+            refreshed.append(seg_id)
+        return {
+            "page_id": page_id,
+            "status": "metadata_refreshed",
+            "skipped": [],
+            "translated": [],
+            "refreshed": refreshed,
+            "warnings": [],
+        }
 
     # Idempotency: skip units that already have at least one history entry,
     # unless --force is set.
@@ -328,6 +450,9 @@ def translate_page(
     for line in units_for_prompt:
         seg_id = _segment_id_for_body(line)
         unit = result.translations.get(line.get("line_id", ""))
+        latin_with_carets, markers_meta = _build_body_marker_metadata(
+            line, footnotes
+        )
         if seg_id in existing_segments:
             existing_segments[seg_id] = _append_translation_history(
                 existing_segments[seg_id],
@@ -337,19 +462,23 @@ def translate_page(
                 lexicon_profile=lexicon_profile,
                 source_unit_id=line.get("line_id", ""),
             )
+            existing_segments[seg_id] = _refresh_metadata_fields(
+                existing_segments[seg_id],
+                latin_text=latin_with_carets,
+                markers=markers_meta,
+            )
         else:
             existing_segments[seg_id] = _build_segment_record(
                 page_id=page_id,
                 segment_id=seg_id,
                 segment_type="body",
-                latin_text=line.get("text_gold")
-                or line.get("text_ocr_original")
-                or "",
+                latin_text=latin_with_carets,
                 unit=unit,
                 source_unit_id=line.get("line_id", ""),
                 timestamp=timestamp,
                 model=model,
                 lexicon_profile=lexicon_profile,
+                markers=markers_meta,
             )
         translated_ids.append(seg_id)
 
@@ -358,6 +487,10 @@ def translate_page(
         unit = result.translations.get(fn.get("footnote_id", ""))
         body_link_id = fn.get("body_line_id", "")
         body_seg_link = f"seg_{body_link_id}" if body_link_id else ""
+        fn_extra_links = {
+            "body_segment_id": body_seg_link,
+            "marker_id": fn.get("marker_id", ""),
+        }
         if seg_id in existing_segments:
             existing_segments[seg_id] = _append_translation_history(
                 existing_segments[seg_id],
@@ -366,6 +499,14 @@ def translate_page(
                 model=model,
                 lexicon_profile=lexicon_profile,
                 source_unit_id=fn.get("footnote_id", ""),
+            )
+            existing_segments[seg_id] = _refresh_metadata_fields(
+                existing_segments[seg_id],
+                latin_text=fn.get("text_gold")
+                or fn.get("text_ocr_original")
+                or "",
+                markers=[],
+                extra_links=fn_extra_links,
             )
         else:
             existing_segments[seg_id] = _build_segment_record(
@@ -377,10 +518,7 @@ def translate_page(
                 or "",
                 unit=unit,
                 source_unit_id=fn.get("footnote_id", ""),
-                extra_links={
-                    "body_segment_id": body_seg_link,
-                    "marker_id": fn.get("marker_id", ""),
-                },
+                extra_links=fn_extra_links,
                 timestamp=timestamp,
                 model=model,
                 lexicon_profile=lexicon_profile,
@@ -441,6 +579,16 @@ def _build_argument_parser() -> argparse.ArgumentParser:
         action="store_true",
         help="Re-translate units that already have translation_history.",
     )
+    parser.add_argument(
+        "--metadata-only",
+        action="store_true",
+        help=(
+            "Refresh annotation-derived fields (latin_text with caret "
+            "sentinels, markers[], footnote backlinks) on existing "
+            "segment records without calling Claude. Useful for "
+            "backfilling schema changes."
+        ),
+    )
     return parser
 
 
@@ -463,7 +611,7 @@ def main(argv: Sequence[str] | None = None) -> int:
     provider = config.translation_provider()
 
     adapter: AnthropicTranslationAdapter | None = None
-    if not args.dry_run:
+    if not args.dry_run and not args.metadata_only:
         adapter = AnthropicTranslationAdapter(provider)
 
     extra_context = _load_claw_context(args.claw_report)
@@ -478,6 +626,7 @@ def main(argv: Sequence[str] | None = None) -> int:
         "lexicon_profile": args.lexicon_profile,
         "dry_run": args.dry_run,
         "force": args.force,
+        "metadata_only": args.metadata_only,
         "model": provider.model,
         "pages": [],
     }
@@ -493,6 +642,7 @@ def main(argv: Sequence[str] | None = None) -> int:
             force=args.force,
             dry_run=args.dry_run,
             timestamp=timestamp,
+            metadata_only=args.metadata_only,
         )
         run_log["pages"].append(page_log)
         # Persist progress per page so a long batch can resume cleanly.
