@@ -40,7 +40,28 @@ Paleography rules (strict, do not silently modernize):
 - Preserve historical numerals (Roman numerals, including 'IIJ', 'iiij').
 - Marginalia (printed in the outer margin) MUST remain anchored to the
   body line they sit beside. Emit them on their own line with
-  region='marginalia' and the index of the body line they reference."""
+  region='marginalia' and the index of the body line they reference.
+
+Footnote-marker rules (REQUIRED — these are the typographic anchors
+that link body text to marginalia/footnotes):
+- Inline superscript markers in BODY text: when a small superscript
+  letter or symbol sits above the line attached to a word (e.g. a tiny
+  italic 'y' just after 'Arnobius'), emit it in 'text' using a caret
+  sentinel: write 'Arnobius^y' (literal '^' + the marker symbol with
+  no space). The marker symbol must be a single character drawn from
+  [A-Za-z0-9*†‡§]. Do NOT use '^' for anything else; ordinary on-the-
+  line text is preserved verbatim with no caret.
+- If a glyph is ambiguous between superscript and on-the-line, emit
+  it as on-the-line text and lower 'confidence' rather than guessing.
+- Marginalia / footnote LEADING marker: when a marginalia or footnote
+  line begins with a letter or symbol that identifies which body
+  anchor it belongs to (typically printed italic or superscript at
+  the start of the note), put that symbol in the 'marker_id' field
+  and OMIT it from 'text'. Example: a marginalia line printed as
+  'y in Psalm. 147.' must be emitted as
+  marker_id='y', text='in Psalm. 147.'.
+- If no leading marker is visible on a marginalia/footnote line,
+  leave marker_id=''."""
 
 LAYOUT_RULES = """\
 Layout rules:
@@ -74,7 +95,12 @@ Return ONLY a JSON object matching this shape (no prose, no code fence):
 
 Confidence semantics: 1.0 means certain; <0.6 means likely error;
 treat smudged / partial glyphs by lowering confidence rather than
-guessing."""
+guessing.
+
+Reminder: '^X' sentinels in body 'text' are the ONLY use of the caret
+character. They MUST appear wherever a printed superscript marker
+attaches to a body word, and the same symbol MUST appear as
+marker_id on the corresponding marginalia/footnote line."""
 
 
 def build_ocr_prompt(lang: str = "lat+grc", *, page_id: str | None = None) -> str:

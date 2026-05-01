@@ -241,6 +241,165 @@ def test_orphan_marginalia_appears_in_footnotes_without_body_anchor():
     assert orphans[0]["text_gold"] == "Orphan note."
 
 
+# --------------------------------------------------------------------------
+# Inline superscript sentinels (^X) and marker_id linking
+# --------------------------------------------------------------------------
+
+
+def _record_with_inline_sentinel() -> dict:
+    """Body line with ^y sentinel + marginalia carrying marker_id='y'."""
+    return {
+        "part": "part1",
+        "page_num": 36,
+        "page_id": "p0036",
+        "lines": [
+            {
+                "region": "body",
+                "line_index": 0,
+                "text_raw_ocr": "Hinc Arnobius^y Tam velociter currit",
+                "confidence": 0.97,
+                "marker_id": "",
+                "marginalia_anchor_index": None,
+            },
+            {
+                "region": "marginalia",
+                "line_index": 1,
+                "text_raw_ocr": "in Psalm. 147.",
+                "confidence": 0.9,
+                "marker_id": "y",
+                # No anchor index; should still match by symbol.
+                "marginalia_anchor_index": None,
+            },
+        ],
+    }
+
+
+def test_inline_sentinel_strips_caret_and_links_marker_to_footnote():
+    payload = convert_record(_record_with_inline_sentinel())
+    body = payload["regions"]["body"]
+    assert body[0]["text_gold"] == "Hinc Arnobius Tam velociter currit"
+    assert "_pending_inline_markers" not in body[0]
+
+    assert len(body[0]["markers"]) == 1
+    marker = body[0]["markers"][0]
+    # 'Hinc Arnobius' is 13 chars; superscript anchored immediately after.
+    assert marker["char_offset"] == 13
+
+    fns = payload["footnotes"]
+    assert len(fns) == 1
+    fn = fns[0]
+    assert fn["marker_id"] == "y"
+    assert fn["text_gold"] == "in Psalm. 147."
+    assert fn["body_line_id"] == body[0]["line_id"]
+    assert marker["footnote_id"] == fn["footnote_id"]
+
+
+def test_multiple_sentinels_one_line_link_to_distinct_footnotes():
+    record = {
+        "part": "part1",
+        "page_num": 2,
+        "page_id": "p0002",
+        "lines": [
+            {
+                "region": "body",
+                "line_index": 0,
+                "text_raw_ocr": "alpha^a beta^b end",
+                "confidence": 0.95,
+                "marker_id": "",
+                "marginalia_anchor_index": None,
+            },
+            {
+                "region": "marginalia",
+                "line_index": 1,
+                "text_raw_ocr": "first note.",
+                "confidence": 0.9,
+                "marker_id": "a",
+                "marginalia_anchor_index": None,
+            },
+            {
+                "region": "marginalia",
+                "line_index": 2,
+                "text_raw_ocr": "second note.",
+                "confidence": 0.9,
+                "marker_id": "b",
+                "marginalia_anchor_index": None,
+            },
+        ],
+    }
+    payload = convert_record(record)
+    body = payload["regions"]["body"][0]
+    assert body["text_gold"] == "alpha beta end"
+    offsets = sorted(m["char_offset"] for m in body["markers"])
+    assert offsets == [5, 10]  # after 'alpha' and after 'alpha beta'.
+
+    by_symbol = {fn["marker_id"]: fn for fn in payload["footnotes"]}
+    assert by_symbol["a"]["text_gold"] == "first note."
+    assert by_symbol["b"]["text_gold"] == "second note."
+    assert all(fn["body_line_id"] == body["line_id"] for fn in payload["footnotes"])
+
+
+def test_inline_sentinel_without_matching_marker_is_dropped(capsys):
+    record = {
+        "part": "part1",
+        "page_num": 3,
+        "page_id": "p0003",
+        "lines": [
+            {
+                "region": "body",
+                "line_index": 0,
+                "text_raw_ocr": "lonely^q word",
+                "confidence": 0.9,
+                "marker_id": "",
+                "marginalia_anchor_index": None,
+            },
+        ],
+    }
+    payload = convert_record(record)
+    body = payload["regions"]["body"][0]
+    # Sentinel stripped from text even when no footnote matches.
+    assert body["text_gold"] == "lonely word"
+    # No marker created (would be unlinked / invalid).
+    assert body["markers"] == []
+    assert payload["footnotes"] == []
+    err = capsys.readouterr().err
+    assert "p0003" in err and "'q'" in err
+
+
+def test_legacy_anchor_index_path_still_links_when_no_sentinel():
+    """Pages produced before the sentinel feature must keep working."""
+    record = {
+        "part": "part1",
+        "page_num": 4,
+        "page_id": "p0004",
+        "lines": [
+            {
+                "region": "body",
+                "line_index": 0,
+                "text_raw_ocr": "plain body text",
+                "confidence": 0.95,
+                "marker_id": "",
+                "marginalia_anchor_index": None,
+            },
+            {
+                "region": "marginalia",
+                "line_index": 1,
+                "text_raw_ocr": "legacy note.",
+                "confidence": 0.9,
+                "marker_id": "",
+                "marginalia_anchor_index": 0,  # anchors to body line_index 0.
+            },
+        ],
+    }
+    payload = convert_record(record)
+    body = payload["regions"]["body"][0]
+    assert body["text_gold"] == "plain body text"
+    assert len(body["markers"]) == 1
+    # No sentinel → char_offset stays None (end-of-line render).
+    assert body["markers"][0]["char_offset"] is None
+    fn = payload["footnotes"][0]
+    assert fn["body_line_id"] == body["line_id"]
+    assert fn["marker_id"] == ""
+
 def test_write_phase3b_files_refuses_overwrite_by_default(tmp_path):
     target = tmp_path / "page_p0001.json"
     target.write_text("{}", encoding="utf-8")
@@ -279,3 +438,5 @@ def test_edition_can_be_carried_on_record():
     record["edition"] = "1847_elrington_todd"
     payload = convert_record(record)
     assert payload["edition"] == "1847_elrington_todd"
+
+
