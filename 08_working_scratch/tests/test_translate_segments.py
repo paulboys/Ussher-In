@@ -61,6 +61,26 @@ def test_extract_units_drops_footnotes_when_body_anchor_unlocked():
 
 def _make_adapter_returning(translations: dict[str, dict]):
     def fake_runner(argv, stdin, timeout):
+        prompt = argv[2] if len(argv) > 2 else ""
+        # Detect a marker-placement (second-pass) prompt by its
+        # signature footer and synthesize a deterministic placed
+        # response: insert ^<marker_id> immediately before the first
+        # period in the English (or at the end if no period).
+        if "English (with '^" in prompt:
+            import re as _re
+
+            m = _re.search(r"English \(with '\^([^']+)' inserted\)", prompt)
+            marker = m.group(1) if m else "?"
+            m2 = _re.search(
+                r"English \(no sentinel\): (.*?)\n\nEnglish", prompt, _re.DOTALL
+            )
+            english = (m2.group(1) if m2 else "").strip()
+            if "." in english:
+                idx = english.find(".")
+                placed = english[:idx] + f"^{marker}" + english[idx:]
+            else:
+                placed = english + f"^{marker}"
+            return CommandResult(stdout=placed)
         return CommandResult(
             stdout=json.dumps({"translations": translations})
         )
@@ -77,7 +97,7 @@ def test_translate_page_writes_segment_records_via_adapter():
     canned = {}
     for line in body:
         canned[line["line_id"]] = {
-            "english": f"EN:{line['line_id']}",
+            "english": f"EN:{line['line_id']}.",
             "notes": "",
             "uncertain": False,
         }
@@ -124,13 +144,25 @@ def test_translate_page_writes_segment_records_via_adapter():
     ]
     assert seg_body["translation_status"] == "machine_draft"
     assert len(seg_body["translation_history"]) == 1
-    assert seg_body["translation_history"][0]["english"] == "EN:p0036_body_l0001"
+    # Marker placement (second-pass) put ^y before the first period
+    # in the English; this proves the placement seam fires for body
+    # lines that have markers.
+    assert (
+        seg_body["translation_history"][0]["english"]
+        == "EN:p0036_body_l0001^y."
+    )
     assert seg_body["translation_history"][0]["lexicon_profile"] == "auto"
 
     # A body line without markers gets an empty markers list and no caret.
     seg_l2 = existing["seg_p0036_body_l0002"]
     assert seg_l2["markers"] == []
     assert "^" not in seg_l2["latin_text"]
+    # Lines without markers do NOT trigger a placement call, so the
+    # English stays exactly as the model returned it.
+    assert (
+        seg_l2["translation_history"][0]["english"]
+        == "EN:p0036_body_l0002."
+    )
 
     # Footnote segment shape
     seg_fn = existing["seg_p0036_fn_001"]
@@ -323,3 +355,127 @@ def test_metadata_only_skips_segments_not_already_in_artifact():
     assert page_log["status"] == "metadata_refreshed"
     assert page_log["refreshed"] == []
     assert existing == {}
+
+
+# ---------------------------------------------------------------------------
+# Marker placement (second-pass) helpers
+# ---------------------------------------------------------------------------
+
+
+def test_validate_placement_accepts_inserted_token_only():
+    """Placement is valid when the response differs from the input
+    by exactly one inserted ``^<marker>`` token."""
+    out = ts._validate_placement(
+        "Hence Arnobius^y: hello.",
+        input_english="Hence Arnobius: hello.",
+        marker_id="y",
+    )
+    assert out == "Hence Arnobius^y: hello."
+
+
+def test_validate_placement_rejects_changed_text():
+    """Placement is rejected if the LLM altered any other character."""
+    out = ts._validate_placement(
+        "Hence Arnobius^y: HELLO.",  # casing differs
+        input_english="Hence Arnobius: hello.",
+        marker_id="y",
+    )
+    assert out is None
+
+
+def test_validate_placement_rejects_missing_token():
+    out = ts._validate_placement(
+        "Hence Arnobius: hello.",
+        input_english="Hence Arnobius: hello.",
+        marker_id="y",
+    )
+    assert out is None
+
+
+def test_place_markers_falls_back_to_end_of_line_on_validation_failure():
+    """If the placement call returns a malformed response, the
+    fallback appends ``^<marker>`` so the anchor is never lost."""
+
+    def bad_runner(argv, stdin, timeout):
+        # Drop the marker entirely and rewrite the sentence — invalid.
+        return CommandResult(stdout="something completely different")
+
+    adapter = AnthropicTranslationAdapter(
+        default_config().get("anthropic"),
+        command_runner=bad_runner,
+    )
+    placed, warnings = ts._place_markers_in_english(
+        english="Hence Arnobius: hello.",
+        latin_with_caret="Hinc Arnobius^y hello.",
+        markers=[
+            {"marker_id": "y", "char_offset": 13, "footnote_segment_id": "x"}
+        ],
+        adapter=adapter,
+    )
+    assert placed == "Hence Arnobius: hello.^y"
+    assert any("validation failed" in w for w in warnings)
+
+
+def test_place_markers_handles_missing_adapter_with_fallback():
+    """No adapter means no second pass: the fallback fires for every
+    marker so the artifact still records the anchor."""
+    placed, warnings = ts._place_markers_in_english(
+        english="Hence Arnobius: hello.",
+        latin_with_caret="Hinc Arnobius^y hello.",
+        markers=[
+            {"marker_id": "y", "char_offset": 13, "footnote_segment_id": "x"}
+        ],
+        adapter=None,
+    )
+    assert placed == "Hence Arnobius: hello.^y"
+    # No warnings emitted when the adapter is absent (silent path).
+    assert warnings == []
+
+
+def test_place_markers_runs_per_marker_sequentially():
+    """Multiple markers on one line each get their own placement call,
+    and the input to each subsequent call carries the previously
+    inserted token."""
+    seen_prompts: list[str] = []
+
+    def fake_runner(argv, stdin, timeout):
+        prompt = argv[2] if len(argv) > 2 else ""
+        seen_prompts.append(prompt)
+        # Always return input_english + token (end-of-line style, but
+        # delivered through the normal placement path so validation
+        # accepts it).
+        import re as _re
+
+        m = _re.search(r"English \(with '\^([^']+)' inserted\)", prompt)
+        marker = m.group(1) if m else "?"
+        m2 = _re.search(
+            r"English \(no sentinel\): (.*?)\n\nEnglish",
+            prompt,
+            _re.DOTALL,
+        )
+        english = (m2.group(1) if m2 else "").strip()
+        return CommandResult(stdout=f"{english}^{marker}")
+
+    adapter = AnthropicTranslationAdapter(
+        default_config().get("anthropic"),
+        command_runner=fake_runner,
+    )
+    placed, warnings = ts._place_markers_in_english(
+        english="alpha beta",
+        latin_with_caret="alpha^a beta^b",
+        markers=[
+            {"marker_id": "a", "char_offset": 5, "footnote_segment_id": "x"},
+            {"marker_id": "b", "char_offset": 10, "footnote_segment_id": "y"},
+        ],
+        adapter=adapter,
+    )
+    # Two calls, one per marker.
+    assert len(seen_prompts) == 2
+    # First call asks for ^a placement; second asks for ^b.
+    assert "English (with '^a' inserted)" in seen_prompts[0]
+    assert "English (with '^b' inserted)" in seen_prompts[1]
+    # Second call's input English already has ^a so the model can see
+    # the previous placement context.
+    assert "English (no sentinel): alpha beta^a" in seen_prompts[1]
+    assert placed == "alpha beta^a^b"
+    assert warnings == []
