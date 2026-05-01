@@ -43,6 +43,12 @@ Body text may proceed to translation only when:
 - All reviewed pages have `qc_status` set
 - Known OCR limitations are documented in `qc_notes`
 
+Machine-draft runs (Phase 5) enforce this gate at the line level:
+the `translate_segments.py` runner only sends body lines whose
+`review_status == locked`. Footnotes anchored to selected body
+lines are translated alongside them regardless of the footnote's own
+review status, since their meaning depends on the body context.
+
 ## Output Artifacts
 
 - `02_ocr_qc/ocr_confidence_report.json`

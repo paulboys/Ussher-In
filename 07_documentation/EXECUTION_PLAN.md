@@ -32,7 +32,18 @@
 
 ## Phase 5 (Translation)
 
-- Generate machine drafts
+- Generate machine drafts via the Claude Code CLI adapter
+  (`08_working_scratch/pipeline_scripts/translate_segments.py`,
+  `translation_adapters.py`, `translation_prompts.py`).
+- Prompts include era-specific lexicon hints: 17th-century Latin
+  (Forcellini + Du Cange, with Lewis & Short fallback) and Patristic
+  Greek (Lampe, with Sophocles + LSJ fallback). The Greek block is
+  emitted automatically when Greek script is present in a batch
+  (`auto` profile) or forced via `--lexicon-profile latin_greek`.
+- Body lines and linked footnotes are translated together in one
+  whole-page request; outputs are persisted as append-only
+  `translation_history` entries under
+  `03_segmented_text/<part>/segments_with_translations.jsonl`.
 - Score machine drafts against the English benchmark set where aligned reference text exists
 - Human post-edit to literal/academic register
 - Track provenance in translation history

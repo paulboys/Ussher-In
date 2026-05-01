@@ -369,23 +369,46 @@ class GeminiOcrEngine:
 class ClaudeProvider:
     """Compatibility hook for Claude Opus 4.6.
 
-    Claude is not used for OCR in this phase; this class exists so that
-    provider config wiring, health checks, and downstream translation
-    callers can address the same configuration surface as Gemini. The
-    ``translate`` method intentionally raises ``NotImplementedError``
-    until the translation phase lands.
+    OCR is delegated to Gemini. For translation, this class delegates
+    to :class:`translation_adapters.AnthropicTranslationAdapter`, which
+    shells out to the Claude Code CLI. The original API-key readiness
+    check is preserved for callers that intend to use a future direct
+    Anthropic-API path; CLI-backed callers should consult the adapter
+    directly.
     """
 
-    def __init__(self, provider: ProviderConfig) -> None:
+    def __init__(
+        self,
+        provider: ProviderConfig,
+        *,
+        translation_adapter: Any | None = None,
+    ) -> None:
         if provider.name != "anthropic":
             raise ValueError(f"ClaudeProvider expects provider.name='anthropic', got {provider.name!r}")
         self.provider = provider
+        self._translation_adapter = translation_adapter
 
     def is_ready(self) -> bool:
         return self.provider.is_configured() and self.provider.supports_translation
 
-    def translate(self, _text: str, *, source_lang: str, target_lang: str) -> str:
-        raise NotImplementedError(
-            "Claude translation is not yet implemented; configured for forward compatibility"
-        )
+    def translate(
+        self,
+        text: str,
+        *,
+        source_lang: str,
+        target_lang: str,
+    ) -> str:
+        """Translate *text* via the Claude CLI and return plain English.
+
+        This is the simple compatibility path. Production runs should
+        use :class:`translation_adapters.AnthropicTranslationAdapter`
+        directly with a fully-built page prompt.
+        """
+        del source_lang, target_lang  # honored implicitly via adapter prompts
+        adapter = self._translation_adapter
+        if adapter is None:
+            from translation_adapters import AnthropicTranslationAdapter
+
+            adapter = AnthropicTranslationAdapter(self.provider)
+        return adapter.translate_text(text)
 

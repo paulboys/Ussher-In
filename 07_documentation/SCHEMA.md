@@ -108,6 +108,33 @@ research consumers can audit OCR fidelity:
 - `post_edit_in_progress`
 - `finalized`
 
+## Translation Artifacts (Phase 5 output)
+
+Machine drafts produced by `08_working_scratch/pipeline_scripts/translate_segments.py`
+are written to `03_segmented_text/<part>/segments_with_translations.jsonl`
+(one JSON object per line, keyed by `segment_id`). Each record uses the
+Segment Record shape above with these conventions:
+
+- `segment_id` — `seg_<line_id>` for body lines, `seg_<footnote_id>` for footnotes.
+- `segment_type` — `body` or `footnote`.
+- `latin_text` — `text_gold` from the Phase 3b annotation (falls back to `text_ocr_original`).
+- Footnote records additionally carry `body_segment_id` and `marker_id` so the
+  body→footnote anchor relationship survives outside the annotation file.
+- `translation_history[]` entries include:
+  - `version` (1, 2, ... append-only)
+  - `stage` (`machine_draft`)
+  - `timestamp` (UTC ISO-8601)
+  - `english`, `notes`, `uncertain` (from the model)
+  - `model` (e.g. `claude-opus-4-6`)
+  - `lexicon_profile` (`auto` | `latin_only` | `latin_greek` | `minimal`)
+  - `source_unit_id` (the `line_id` or `footnote_id` keyed in the prompt)
+- Run logs are written to `03_segmented_text/<part>/.logs/translation_run_<timestamp>.json`.
+
+Gating policy (enforced by the runner):
+- Body lines: only `review_status == locked` are sent to translation.
+- Footnotes: any footnote whose `body_line_id` references an included body
+  line is sent regardless of footnote review_status.
+
 ## Traceability Rules
 
 - Every segment must map to a single `page_id`.
