@@ -4,11 +4,13 @@
 
 # Ussher In
 
-**The first English translation of James Ussher's *Britannicarum Ecclesiarum Antiquitates* (1639).**
+**The first English translation of James Ussher's *Britannicarum Ecclesiarum Antiquitates* (1639), working from the 1847 Elrington / Todd Latin edition.**
 
-Ussher's *Britannicarum Ecclesiarum Antiquitates* (1639) has never been translated into English in its entirety. One chapter—the second, on Glastonbury traditions—was translated by H. Kendra Baker, but the remaining sixteen chapters are accessible only in Latin. 
+Ussher's *Britannicarum Ecclesiarum Antiquitates* (1639) has never been translated into English in its entirety. One chapter—the second, on Glastonbury traditions—was translated by H. Kendra Baker, but the remaining sixteen chapters are accessible only in Latin.
 
-As a foundational history of the early British and Irish churches—their origins, monasticism, and ties to the wider Christian world—this has left the full body of Ussher's scholarship out of reach for English readers. This project aims to change that.
+This project works from the Latin text as reissued in volumes V–VI of *The Whole Works of the Most Rev. James Ussher, D.D.*, edited by Charles Richard Elrington and (after his death in 1850) James Henthorn Todd, published in Dublin by Hodges & Smith from 1847. The Elrington/Todd edition modernizes some of the 1639 orthography, regularizes references, and supplies an editorial apparatus, while preserving Ussher's text. References to "Ussher's 1639 corpus" elsewhere in this repository should be read as the 1639 work as transmitted by the 1847 Elrington/Todd reissue.
+
+As a foundational history of the early British and Irish churches—their origins, monasticism, and ties to the wider Christian world—this work has remained out of reach for English readers. This project aims to change that.
 
 ## Background
 
@@ -44,7 +46,7 @@ Flask annotation UI.
 
 ### Paleography-Aware Prompting
 
-The source is a 1639 edition with long-s (ſ), historical ligatures (æ/Æ, œ/Œ, ct, st), polytonic Greek quotations, archaic numeral forms, and dense marginalia. Rather than relying on a stock OCR model and patching errors after the fact, this pipeline issues an explicit paleography-aware prompt to a vision-capable LLM (Gemini 3.1 Pro) that:
+The source is the 1847 Elrington/Todd Latin reissue of Ussher's 1639 work, which retains many early-modern features: ligatures (æ/Æ, œ/Œ), polytonic Greek quotations, archaic numeral forms, and a dense scholarly apparatus of footnotes and marginalia. (Long-s is generally regularized in the 1847 setting, but appears in directly reproduced quotations and may surface in OCR of degraded scans.) Rather than relying on a stock OCR model and patching errors after the fact, this pipeline issues an explicit paleography-aware prompt to a vision-capable LLM (Gemini 3.1 Pro) that:
 
 - preserves long-s, ligatures, and early-modern abbreviations verbatim,
 - preserves polytonic Greek (breathings, accents, iota subscript),
