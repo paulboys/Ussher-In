@@ -2,151 +2,151 @@
 
 ## Interlinear
 
-**LA**  Hinc Arnobius<sup id="fnref-p0036-y"><a href="#fn-seg_p0036_fn_001">y</a></sup> “ Tam velociter currit sermo ejus ut,
+<a id="line-p0036-l0001"></a>**LA**  Hinc Arnobius<sup id="fnref-p0036-y"><a href="#fn-seg_p0036_fn_001">y</a></sup> “ Tam velociter currit sermo ejus ut,
 
 **EN**  Hence Arnobius<sup><a href="#fn-seg_p0036_fn_001">y</a></sup>: "So swiftly does his word run that,
 
-**LA**  cum per tot millia annorum in sola Judæa notus fuerit
+<a id="line-p0036-l0002"></a>**LA**  cum per tot millia annorum in sola Judæa notus fuerit
 
 **EN**  although for so many thousands of years God was known
 
-**LA**  Deus, nunc intra paucos annos, nec ipsos Iɴᴅᴏs lateat a
+<a id="line-p0036-l0003"></a>**LA**  Deus, nunc intra paucos annos, nec ipsos Iɴᴅᴏs lateat a
 
 **EN**  in Judaea alone, now within a few years he is not hidden even from the Indians
 
-**LA**  parte orientis, nec ipsos Bʀɪᴛᴏɴᴇs a parte occidentis.
+<a id="line-p0036-l0004"></a>**LA**  parte orientis, nec ipsos Bʀɪᴛᴏɴᴇs a parte occidentis.
 
 **EN**  on the eastern side, nor from the Britons on the western side.
 
-**LA**  Ubique cucurrit velociter sermo ejus.” Gildas vero inter
+<a id="line-p0036-l0005"></a>**LA**  Ubique cucurrit velociter sermo ejus.” Gildas vero inter
 
 **EN**  Everywhere his word has run swiftly." But Gildas, between
 
-**LA**  tempus hoc summum Tiberii Cæsariis, quo lumen Evange-
+<a id="line-p0036-l0006"></a>**LA**  tempus hoc summum Tiberii Cæsariis, quo lumen Evange-
 
 **EN**  this latest period of Tiberius Caesar, in which the light of the Gospel
 
-**LA**  lii per universum terrarum orbem spargi cœptum est, et rem
+<a id="line-p0036-l0007"></a>**LA**  lii per universum terrarum orbem spargi cœptum est, et rem
 
 **EN**  began to be spread throughout the entire world, and the action
 
-**LA**  a Romanis, (post acceptam a Boadicia regina, quam Leænam
+<a id="line-p0036-l0008"></a>**LA**  a Romanis, (post acceptam a Boadicia regina, quam Leænam
 
 **EN**  carried out by the Romans (after that very great defeat received from Queen Boadicia, whom
 
-**LA**  ille appellat dolosam, cladem illam maximam) adversus
+<a id="line-p0036-l0009"></a>**LA**  ille appellat dolosam, cladem illam maximam) adversus
 
 **EN**  he calls a treacherous Lioness)
 
-**LA**  Britannos gestam, de qua proxime verba fecerat; hoc est,
+<a id="line-p0036-l0010"></a>**LA**  Britannos gestam, de qua proxime verba fecerat; hoc est,
 
 **EN**  against the Britons, of which he had just been speaking; that is,
 
-**LA**  inter XXXVI. vulgatæ nostræ æræ Christianæ annum, et
+<a id="line-p0036-l0011"></a>**LA**  inter XXXVI. vulgatæ nostræ æræ Christianæ annum, et
 
 **EN**  between the year 36 of our common Christian era and
 
-**LA**  LXI. (quo a Paulino Suetonio recuperata iterum provincia
+<a id="line-p0036-l0012"></a>**LA**  LXI. (quo a Paulino Suetonio recuperata iterum provincia
 
 **EN**  the year 61 (in which the province was recovered again by Paulinus Suetonius,
 
-**LA**  est, cæsis Britannorum octoginta millibus) veritatis suæ
+<a id="line-p0036-l0013"></a>**LA**  est, cæsis Britannorum octoginta millibus) veritatis suæ
 
 **EN**  with eighty thousand of the Britons being slain), Christ first
 
-**LA**  radios Britanniæ primum indulsisse Christum significat.
+<a id="line-p0036-l0014"></a>**LA**  radios Britanniæ primum indulsisse Christum significat.
 
 **EN**  vouchsafed to Britain the rays of his truth, he indicates.
 
-**LA**  Unde inter gentes apostolorum ministerio ad fidem con-
+<a id="line-p0036-l0015"></a>**LA**  Unde inter gentes apostolorum ministerio ad fidem con-
 
 **EN**  Whence among the nations converted to the faith by the ministry of the apostles,
 
-**LA**  versas, Britannos quoque connumerat Theodoretus libro
+<a id="line-p0036-l0016"></a>**LA**  versas, Britannos quoque connumerat Theodoretus libro
 
 **EN**  Theodoret also numbers the Britons in his ninth book
 
-**LA**  nono Ἑλλήνων παθημάτων θεραπευτικῆς. Οἱ δὲ ἡμέτεροι
+<a id="line-p0036-l0017"></a>**LA**  nono Ἑλλήνων παθημάτων θεραπευτικῆς. Οἱ δὲ ἡμέτεροι
 
 **EN**  of the Cure of the Greek Maladies. "Now our
 
-**LA**  ἁλιεῖς, inquit, καὶ οἱ τελώναι, καὶ ὁ σκυτοτόμος ἅπασιν
+<a id="line-p0036-l0018"></a>**LA**  ἁλιεῖς, inquit, καὶ οἱ τελώναι, καὶ ὁ σκυτοτόμος ἅπασιν
 
 **EN**  fishermen," he says, "and the tax-collectors, and the leather-worker have brought the evangelical
 
-**LA**  ἀνθρώποις τοὺς εὐαγγελικοὺς προσενηνόχασι νόμους· καὶ οὐ
+<a id="line-p0036-l0019"></a>**LA**  ἀνθρώποις τοὺς εὐαγγελικοὺς προσενηνόχασι νόμους· καὶ οὐ
 
 **EN**  laws to all men; and not
 
-**LA**  μονον ῾Ρωμαίους καὶ ὑπὸ τούτοις τελοῦντας, ἀλλὰ καὶ τὰ Σκυ-
+<a id="line-p0036-l0020"></a>**LA**  μονον ῾Ρωμαίους καὶ ὑπὸ τούτοις τελοῦντας, ἀλλὰ καὶ τὰ Σκυ-
 
 **EN**  only the Romans and those who pay tribute under them, but also the Scythian
 
-**LA**  θικὰ καὶ τὰ Σαυροματικὰ ἔθνη, καὶ Ἰνδοὺς καὶ Αἰθίοπας, καὶ
+<a id="line-p0036-l0021"></a>**LA**  θικὰ καὶ τὰ Σαυροματικὰ ἔθνη, καὶ Ἰνδοὺς καὶ Αἰθίοπας, καὶ
 
 **EN**  and Sarmatian peoples, and Indians and Ethiopians, and
 
-**LA**  Πέρσας καὶ Σῆρας, καὶ Ὑρκανοὺς, καὶ Βακτριανοὺς, καὶ Βρετ-
+<a id="line-p0036-l0022"></a>**LA**  Πέρσας καὶ Σῆρας, καὶ Ὑρκανοὺς, καὶ Βακτριανοὺς, καὶ Βρετ-
 
 **EN**  Persians and Seres, and Hyrcanians, and Bactrians, and Brit-
 
-**LA**  τανοὺς, καὶ Κίμβρους, καὶ Γερμανοὺς, καὶ ἁπαξαπλῶς πᾶν
+<a id="line-p0036-l0023"></a>**LA**  τανοὺς, καὶ Κίμβρους, καὶ Γερμανοὺς, καὶ ἁπαξαπλῶς πᾶν
 
 **EN**  ons, and Cimbrians, and Germans, and, in a word, every
 
-**LA**  ἔθνος καὶ γένος ἀνθρώπων, δέξασθαι τοῦ σταυρωθέντος τοὺς
+<a id="line-p0036-l0024"></a>**LA**  ἔθνος καὶ γένος ἀνθρώπων, δέξασθαι τοῦ σταυρωθέντος τοὺς
 
 **EN**  nation and race of men, they have persuaded to receive the laws of him who was crucified."
 
-**LA**  νόμους ἀνέπεισαν. Nostri illi piscatores ac publicani, su-
+<a id="line-p0036-l0025"></a>**LA**  νόμους ἀνέπεισαν. Nostri illi piscatores ac publicani, su-
 
 **EN**  "Those fishermen of ours and tax-collectors, and
 
-**LA**  torque ille noster, cunctis nationibus legem evangelicam
+<a id="line-p0036-l0026"></a>**LA**  torque ille noster, cunctis nationibus legem evangelicam
 
 **EN**  that leather-worker of ours, brought the evangelical law
 
-**LA**  detulerunt. Neque solum Romanos, quique sub Romano
+<a id="line-p0036-l0027"></a>**LA**  detulerunt. Neque solum Romanos, quique sub Romano
 
 **EN**  to all nations. Not only the Romans and those who live under Roman
 
-**LA**  vivunt imperio, sed Scythas quoque ac Sauromatas, Indos
+<a id="line-p0036-l0028"></a>**LA**  vivunt imperio, sed Scythas quoque ac Sauromatas, Indos
 
 **EN**  rule, but also the Scythians and Sauromatae, the Indians
 
-**LA**  præterea, Æthiopas, Persas, Seras, Hyrcanos, Bʀɪᴛᴀɴ-
+<a id="line-p0036-l0029"></a>**LA**  præterea, Æthiopas, Persas, Seras, Hyrcanos, Bʀɪᴛᴀɴ-
 
 **EN**  besides, the Ethiopians, Persians, Seres, Hyrcanians, Brit-
 
-**LA**  ɴᴏs, Cimmerios et Germanos, utque semel dicatur, omne
+<a id="line-p0036-l0030"></a>**LA**  ɴᴏs, Cimmerios et Germanos, utque semel dicatur, omne
 
 **EN**  ons, Cimmerians and Germans, and, to say it once for all, every
 
-**LA**  hominum genus, nationesque omnes induxerunt crucifixi
+<a id="line-p0036-l0031"></a>**LA**  hominum genus, nationesque omnes induxerunt crucifixi
 
 **EN**  race of men, and all nations, they led to accept the laws
 
-**LA**  leges accipere.” Sed quisnam ex illo apostolorum choro
+<a id="line-p0036-l0032"></a>**LA**  leges accipere.” Sed quisnam ex illo apostolorum choro
 
 **EN**  of the Crucified." But just who out of that company of apostles
 
-**LA**  ad Britannicas nostras insulas accesserit; non eadem est
+<a id="line-p0036-l0033"></a>**LA**  ad Britannicas nostras insulas accesserit; non eadem est
 
 **EN**  came to our British isles is not the same
 
-**LA**  omnium authorum sententia.
+<a id="line-p0036-l0034"></a>**LA**  omnium authorum sententia.
 
 **EN**  in the opinion of all authors.
 
-**LA**  S. Jᴀᴄᴏʙᴜᴍ Zebedæi filium, fratrem Johannis, abi-
+<a id="line-p0036-l0035"></a>**LA**  S. Jᴀᴄᴏʙᴜᴍ Zebedæi filium, fratrem Johannis, abi-
 
 **EN**  That St. James, son of Zebedee, brother of John, went
 
-**LA**  isse in occidentem, multaque iis locis fecisse miracula; ex
+<a id="line-p0036-l0036"></a>**LA**  isse in occidentem, multaque iis locis fecisse miracula; ex
 
 **EN**  into the West, and performed many miracles in those places, is gathered from
 
-**LA**  Anastasii patriarchæ Antiocheni libro de passionibus mar-
+<a id="line-p0036-l0037"></a>**LA**  Anastasii patriarchæ Antiocheni libro de passionibus mar-
 
 **EN**  the book of Anastasius, patriarch of Antioch, On the Sufferings of the Mart-
 
