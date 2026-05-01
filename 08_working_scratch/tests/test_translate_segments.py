@@ -1,7 +1,11 @@
 """Tests for the translate_segments runner.
 
 These tests cover extraction gating, idempotent artifact writes, and a
-dry-run smoke test against the real ``page_p0036.json`` fixture.
+dry-run smoke test against a static fixture committed under
+``tests/fixtures/``. The fixture mirrors the structural invariants of
+real Phase 3b annotation files (locked + draft body lines, a footnote
+linked to a locked body line) without depending on live reviewer
+state, so the suite is portable across local and CI environments.
 """
 
 from __future__ import annotations
@@ -19,8 +23,8 @@ from translation_adapters import (
 from provider_config import default_config
 
 
-FIXTURE_DIR = Path(__file__).resolve().parents[1] / "phase3b" / "annotations"
-P0036 = FIXTURE_DIR / "page_p0036.json"
+FIXTURE_DIR = Path(__file__).resolve().parent / "fixtures"
+P0036 = FIXTURE_DIR / "page_p0036_test.json"
 
 
 # ---------------------------------------------------------------------------

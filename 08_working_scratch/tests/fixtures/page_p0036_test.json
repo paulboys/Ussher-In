@@ -1,0 +1,126 @@
+{
+  "edition": "1847_elrington_todd",
+  "footnotes": [
+    {
+      "body_line_id": "p0036_body_l0001",
+      "footnote_id": "p0036_fn_001",
+      "kind": "citation",
+      "marker_id": "y",
+      "marker_number": 1,
+      "notes": "",
+      "page_id": "p0036",
+      "review_status": "draft",
+      "source_marginalia_line_ids": [
+        "p0036_marginalia_l0001"
+      ],
+      "source_region": "marginalia",
+      "text_gold": "in Psalm. 147.",
+      "text_ocr_original": "in Psalm. 147.",
+      "reviewer": "test"
+    }
+  ],
+  "meta": {
+    "annotation_status": "test_fixture",
+    "notes": "Static fixture for translate_segments tests. Do NOT edit to match live reviewer state.",
+    "ocr_confidence_avg": 99.0,
+    "ocr_confidence_min": 95.0,
+    "ocr_engine": "gemini",
+    "ocr_lang": ["lat", "grc"],
+    "ocr_page_summary": "Synthetic test fixture mirroring p0036 invariants.",
+    "ocr_provider_model": "gemini-3.1-pro-preview",
+    "review_status": "draft",
+    "reviewer": "test"
+  },
+  "page_id": "p0036",
+  "page_num": 36,
+  "part": "part1",
+  "regions": {
+    "body": [
+      {
+        "line_id": "p0036_body_l0001",
+        "marker_id": "",
+        "markers": [
+          {
+            "number": 1,
+            "footnote_id": "p0036_fn_001",
+            "char_offset": 13
+          }
+        ],
+        "notes": "",
+        "ocr_confidence": 0.98,
+        "ocr_illegible": false,
+        "ocr_marginalia_anchor_index": null,
+        "page_id": "p0036",
+        "region": "body",
+        "review_status": "locked",
+        "reviewer": "test",
+        "text_gold": "Hinc Arnobius “ Tam velociter currit sermo ejus ut,",
+        "text_ocr_original": "Hinc Arnobius “ Tam velociter currit sermo ejus ut,"
+      },
+      {
+        "line_id": "p0036_body_l0002",
+        "marker_id": "",
+        "markers": [],
+        "notes": "",
+        "ocr_confidence": 1.0,
+        "ocr_illegible": false,
+        "ocr_marginalia_anchor_index": null,
+        "page_id": "p0036",
+        "region": "body",
+        "review_status": "locked",
+        "reviewer": "test",
+        "text_gold": "cum per tot millia annorum in sola Judæa notus fuerit",
+        "text_ocr_original": "cum per tot millia annorum in sola Judæa notus fuerit"
+      },
+      {
+        "line_id": "p0036_body_l0003",
+        "marker_id": "",
+        "markers": [],
+        "notes": "",
+        "ocr_confidence": 0.85,
+        "ocr_illegible": false,
+        "ocr_marginalia_anchor_index": null,
+        "page_id": "p0036",
+        "region": "body",
+        "review_status": "draft",
+        "reviewer": "test",
+        "text_gold": "Deus, nunc intra paucos annos, nec ipsos Indos lateat",
+        "text_ocr_original": "Deus, nunc intra paucos annos, nec ipsos Indos lateat"
+      }
+    ],
+    "catchword": [],
+    "header": [
+      {
+        "line_id": "p0036_header_l0001",
+        "marker_id": "",
+        "notes": "",
+        "ocr_confidence": 1.0,
+        "ocr_illegible": false,
+        "ocr_marginalia_anchor_index": null,
+        "page_id": "p0036",
+        "region": "header",
+        "review_status": "locked",
+        "reviewer": "test",
+        "text_gold": "CAP. I. ANTIQUITATES. 15",
+        "text_ocr_original": "CAP. I. ANTIQUITATES. 15"
+      }
+    ],
+    "marginalia": [
+      {
+        "line_id": "p0036_marginalia_l0001",
+        "marker_id": "y",
+        "notes": "",
+        "ocr_confidence": 1.0,
+        "ocr_illegible": false,
+        "ocr_marginalia_anchor_index": null,
+        "page_id": "p0036",
+        "region": "marginalia",
+        "review_status": "draft",
+        "reviewer": "test",
+        "text_gold": "in Psalm. 147.",
+        "text_ocr_original": "in Psalm. 147."
+      }
+    ]
+  },
+  "source_pdf": "00_source_pdf/JamesUssher_Britannicarum ecclesiarum antiquitates_Part1.pdf"
+}
