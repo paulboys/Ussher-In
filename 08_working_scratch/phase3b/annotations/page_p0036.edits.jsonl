@@ -51,3 +51,4 @@
 {"ts": "2026-05-01T01:40:16.060797+00:00", "page_id": "p0036", "scope": "line", "target_id": "p0036_body_l0036", "field": "review_status", "before": "draft", "after": "locked", "reviewer": "Paul Boys"}
 {"ts": "2026-05-01T01:40:16.060797+00:00", "page_id": "p0036", "scope": "line", "target_id": "p0036_body_l0037", "field": "review_status", "before": "draft", "after": "locked", "reviewer": "Paul Boys"}
 {"ts": "2026-05-01T02:11:17.516405+00:00", "page_id": "p0036", "scope": "footnote", "target_id": "p0036_fn_001", "field": "review_status", "before": "draft", "after": "locked", "reviewer": "Paul Boys"}
+{"ts": "2026-05-02T12:34:54.059532+00:00", "page_id": "p0036", "scope": "page_meta", "target_id": "p0036", "field": "review_status", "before": "draft", "after": "locked", "reviewer": "Paul Boys"}
