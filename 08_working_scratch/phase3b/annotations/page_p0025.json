@@ -16,7 +16,8 @@
       "source_region": "marginalia",
       "text_gold": "Tertullian. Apologetic. sect. 30.",
       "text_ocr_original": "Tertullian. Apologetic. sect. 30.",
-      "reviewer": "Paul Boys"
+      "reviewer": "Paul Boys",
+      "seq": 1
     }
   ],
   "meta": {
@@ -52,7 +53,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "fuerat, quam florentissimarum harum insularum",
-        "text_ocr_original": "fuerat, quam florentissimarum harum insularum"
+        "text_ocr_original": "fuerat, quam florentissimarum harum insularum",
+        "seq": 1
       },
       {
         "line_id": "p0025_body_l0002",
@@ -67,7 +69,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "summi Domini atque Monarchæ? Scriptum de-",
-        "text_ocr_original": "summi Domini atque Monarchæ? Scriptum de-"
+        "text_ocr_original": "summi Domini atque Monarchæ? Scriptum de-",
+        "seq": 2
       },
       {
         "line_id": "p0025_body_l0003",
@@ -82,7 +85,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "inde, felicissimæ memoriæ JACOBI regis jussu et",
-        "text_ocr_original": "inde, felicissimæ memoriæ JACOBI regis jussu et"
+        "text_ocr_original": "inde, felicissimæ memoriæ JACOBI regis jussu et",
+        "seq": 3
       },
       {
         "line_id": "p0025_body_l0004",
@@ -97,7 +101,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "auspiciis susceptum, eo ad meliorem vitam re-",
-        "text_ocr_original": "auspiciis susceptum, eo ad meliorem vitam re-"
+        "text_ocr_original": "auspiciis susceptum, eo ad meliorem vitam re-",
+        "seq": 4
       },
       {
         "line_id": "p0025_body_l0005",
@@ -112,7 +117,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "cepto, cui potiore jure debebatur quam præstan-",
-        "text_ocr_original": "cepto, cui potiore jure debebatur quam præstan-"
+        "text_ocr_original": "cepto, cui potiore jure debebatur quam præstan-",
+        "seq": 5
       },
       {
         "line_id": "p0025_body_l0006",
@@ -127,7 +133,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "tissimi parentis optimo hæredi ; accedit et regiæ",
-        "text_ocr_original": "tissimi parentis optimo hæredi ; accedit et regiæ"
+        "text_ocr_original": "tissimi parentis optimo hæredi ; accedit et regiæ",
+        "seq": 6
       },
       {
         "line_id": "p0025_body_l0007",
@@ -142,7 +149,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "tuæ benignitatis recordatio, cujus fructus sæpe",
-        "text_ocr_original": "tuæ benignitatis recordatio, cujus fructus sæpe"
+        "text_ocr_original": "tuæ benignitatis recordatio, cujus fructus sæpe",
+        "seq": 7
       },
       {
         "line_id": "p0025_body_l0008",
@@ -157,7 +165,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "tuli lætos atque uberes : quæ cum me nexu et",
-        "text_ocr_original": "tuli lætos atque uberes : quæ cum me nexu et"
+        "text_ocr_original": "tuli lætos atque uberes : quæ cum me nexu et",
+        "seq": 8
       },
       {
         "line_id": "p0025_body_l0009",
@@ -172,7 +181,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "mancipio totum tuum effecerit, peculium etiam",
-        "text_ocr_original": "mancipio totum tuum effecerit, peculium etiam"
+        "text_ocr_original": "mancipio totum tuum effecerit, peculium etiam",
+        "seq": 9
       },
       {
         "line_id": "p0025_body_l0010",
@@ -187,7 +197,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "omne, et quicquid mei est, in tuam pariter tra-",
-        "text_ocr_original": "omne, et quicquid mei est, in tuam pariter tra-"
+        "text_ocr_original": "omne, et quicquid mei est, in tuam pariter tra-",
+        "seq": 10
       },
       {
         "line_id": "p0025_body_l0011",
@@ -202,7 +213,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "duxit potestatem. DEUS OPTIMUS MAXIMUS, re-",
-        "text_ocr_original": "duxit potestatem. DEUS OPTIMUS MAXIMUS, re-"
+        "text_ocr_original": "duxit potestatem. DEUS OPTIMUS MAXIMUS, re-",
+        "seq": 11
       },
       {
         "line_id": "p0025_body_l0012",
@@ -223,7 +235,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "gum suorum custos et vindex, “Vitam TIBI det",
-        "text_ocr_original": "gum suorum custos et vindex, “Vitam TIBI det"
+        "text_ocr_original": "gum suorum custos et vindex, “Vitam TIBI det",
+        "seq": 12
       },
       {
         "line_id": "p0025_body_l0013",
@@ -238,7 +251,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "prolixam, imperium securum, domum tutam,",
-        "text_ocr_original": "prolixam, imperium securum, domum tutam,"
+        "text_ocr_original": "prolixam, imperium securum, domum tutam,",
+        "seq": 13
       },
       {
         "line_id": "p0025_body_l0014",
@@ -253,7 +267,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "exercitus fortes, senatum fidelem, populum pro-",
-        "text_ocr_original": "exercitus fortes, senatum fidelem, populum pro-"
+        "text_ocr_original": "exercitus fortes, senatum fidelem, populum pro-",
+        "seq": 14
       },
       {
         "line_id": "p0025_body_l0015",
@@ -268,7 +283,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "bum.” Veteris Ecclesiæ pro imperatoribus suis",
-        "text_ocr_original": "bum.” Veteris Ecclesiæ pro imperatoribus suis"
+        "text_ocr_original": "bum.” Veteris Ecclesiæ pro imperatoribus suis",
+        "seq": 15
       },
       {
         "line_id": "p0025_body_l0016",
@@ -283,7 +299,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "vota hæc solennia, pro tua et tuorum salute,",
-        "text_ocr_original": "vota hæc solennia, pro tua et tuorum salute,"
+        "text_ocr_original": "vota hæc solennia, pro tua et tuorum salute,",
+        "seq": 16
       },
       {
         "line_id": "p0025_body_l0017",
@@ -298,7 +315,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "redintegrat, et toto animi affectu Numini divino",
-        "text_ocr_original": "redintegrat, et toto animi affectu Numini divino"
+        "text_ocr_original": "redintegrat, et toto animi affectu Numini divino",
+        "seq": 17
       },
       {
         "line_id": "p0025_body_l0018",
@@ -313,7 +331,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "nuncupat",
-        "text_ocr_original": "nuncupat"
+        "text_ocr_original": "nuncupat",
+        "seq": 18
       },
       {
         "line_id": "p0025_body_l0019",
@@ -328,7 +347,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "Serenissimæ Tuæ Majestatis",
-        "text_ocr_original": "Serenissimæ Tuæ Majestatis"
+        "text_ocr_original": "Serenissimæ Tuæ Majestatis",
+        "seq": 19
       },
       {
         "line_id": "p0025_body_l0020",
@@ -343,7 +363,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "Servus humillimus,",
-        "text_ocr_original": "Servus humillimus,"
+        "text_ocr_original": "Servus humillimus,",
+        "seq": 20
       },
       {
         "line_id": "p0025_body_l0021",
@@ -358,7 +379,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "JACOBUS ARMACHANUS.",
-        "text_ocr_original": "JACOBUS ARMACHANUS."
+        "text_ocr_original": "JACOBUS ARMACHANUS.",
+        "seq": 21
       }
     ],
     "catchword": [],
@@ -375,7 +397,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "4 EPISTOLA DEDICATORIA.",
-        "text_ocr_original": "4 EPISTOLA DEDICATORIA."
+        "text_ocr_original": "4 EPISTOLA DEDICATORIA.",
+        "seq": 1
       }
     ],
     "marginalia": [
@@ -391,7 +414,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "Tertullian. Apologetic. sect. 30.",
-        "text_ocr_original": "Tertullian. Apologetic. sect. 30."
+        "text_ocr_original": "Tertullian. Apologetic. sect. 30.",
+        "seq": 1
       }
     ]
   },

@@ -149,8 +149,14 @@ def _build_segment_record(
     model: str,
     lexicon_profile: str,
     markers: Sequence[dict] | None = None,
+    seq: int | None = None,
 ) -> dict:
-    """Build the persisted segment record matching SCHEMA.md semantics."""
+    """Build the persisted segment record matching SCHEMA.md semantics.
+
+    ``seq`` carries the source line/footnote's 1-based ordering value
+    so downstream consumers (polish_translations, render_interlinear)
+    can sort by it instead of regex-parsing ``segment_id``.
+    """
 
     history_entry: dict[str, Any] = {
         "version": 1,
@@ -173,6 +179,8 @@ def _build_segment_record(
         "final_english": "",
         "translation_status": "machine_draft" if unit else "pending",
     }
+    if seq is not None:
+        record["seq"] = int(seq)
     if extra_links:
         record.update(extra_links)
     return record
@@ -184,17 +192,20 @@ def _refresh_metadata_fields(
     latin_text: str,
     markers: Sequence[dict] | None = None,
     extra_links: dict[str, Any] | None = None,
+    seq: int | None = None,
 ) -> dict:
     """Overwrite annotation-derived fields on an existing record.
 
-    These fields (``latin_text``, ``markers``, footnote backlinks) are
-    derived from the current annotation file and are NOT history-stable;
-    they should always reflect the latest annotation state. The
-    ``translation_history`` list is left untouched.
+    These fields (``latin_text``, ``markers``, footnote backlinks,
+    ``seq``) are derived from the current annotation file and are NOT
+    history-stable; they should always reflect the latest annotation
+    state. The ``translation_history`` list is left untouched.
     """
     updated = dict(existing)
     updated["latin_text"] = latin_text
     updated["markers"] = list(markers) if markers else []
+    if seq is not None:
+        updated["seq"] = int(seq)
     if extra_links:
         updated.update(extra_links)
     return updated
@@ -230,14 +241,28 @@ def _append_translation_history(
     return updated
 
 
+def _segment_write_key(record: dict) -> tuple:
+    """Sort key for the persisted JSONL: by page_id, then body before
+    footnotes, then ``seq`` (ordering authority), with ``segment_id``
+    as a deterministic tie-breaker for legacy records lacking ``seq``.
+    """
+    page = str(record.get("page_id", ""))
+    type_rank = 1 if record.get("segment_type") == "footnote" else 0
+    seq = record.get("seq")
+    seq_key = int(seq) if isinstance(seq, int) else 10**9
+    seg_id = str(record.get("segment_id", ""))
+    return (page, type_rank, seq_key, seg_id)
+
+
 def write_segments(part: str, segments: dict[str, dict]) -> Path:
     """Rewrite the part's JSONL artifact from the in-memory map."""
     path = _artifact_path_for_part(part)
     path.parent.mkdir(parents=True, exist_ok=True)
     tmp = path.with_suffix(path.suffix + ".tmp")
+    ordered = sorted(segments.values(), key=_segment_write_key)
     with tmp.open("w", encoding="utf-8") as handle:
-        for seg_id in sorted(segments.keys()):
-            handle.write(json.dumps(segments[seg_id], ensure_ascii=False) + "\n")
+        for record in ordered:
+            handle.write(json.dumps(record, ensure_ascii=False) + "\n")
     tmp.replace(path)
     return path
 
@@ -575,6 +600,7 @@ def translate_page(
                 existing_segments[seg_id],
                 latin_text=latin_with_carets,
                 markers=markers_meta,
+                seq=line.get("seq"),
             )
         else:
             existing_segments[seg_id] = _build_segment_record(
@@ -588,6 +614,7 @@ def translate_page(
                 model=model,
                 lexicon_profile=lexicon_profile,
                 markers=markers_meta,
+                seq=line.get("seq"),
             )
         translated_ids.append(seg_id)
 
@@ -616,6 +643,7 @@ def translate_page(
                 or "",
                 markers=[],
                 extra_links=fn_extra_links,
+                seq=fn.get("seq"),
             )
         else:
             existing_segments[seg_id] = _build_segment_record(
@@ -631,6 +659,7 @@ def translate_page(
                 timestamp=timestamp,
                 model=model,
                 lexicon_profile=lexicon_profile,
+                seq=fn.get("seq"),
             )
         translated_ids.append(seg_id)
 

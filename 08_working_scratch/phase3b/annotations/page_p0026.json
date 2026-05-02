@@ -34,7 +34,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "QUOD de Gallicana, nobis proxima, ecclesia notavit",
-        "text_ocr_original": "QUOD de Gallicana, nobis proxíma, ecclesia notavít"
+        "text_ocr_original": "QUOD de Gallicana, nobis proxíma, ecclesia notavít",
+        "seq": 1
       },
       {
         "line_id": "p0026_body_l0002",
@@ -49,7 +50,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "nuper prætor Narbonensis Franciscus Bosquetus; “ in-",
-        "text_ocr_original": "nuper prætor Narbonensis Franciscus Bosquetus; “ in-"
+        "text_ocr_original": "nuper prætor Narbonensis Franciscus Bosquetus; “ in-",
+        "seq": 2
       },
       {
         "line_id": "p0026_body_l0003",
@@ -64,7 +66,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "certam longa antiquitate, et posterorum commentis, ori-",
-        "text_ocr_original": "certam longa antiquitate, et posterorum commentis, ori-"
+        "text_ocr_original": "certam longa antiquitate, et posterorum commentis, ori-",
+        "seq": 3
       },
       {
         "line_id": "p0026_body_l0004",
@@ -79,7 +82,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "ginem” illius extitisse : idem in nostris quoque Britannicis",
-        "text_ocr_original": "ginem” illius extitisse : idem in nostris quoque Britannicis"
+        "text_ocr_original": "ginem” illius extitisse : idem in nostris quoque Britannicis",
+        "seq": 4
       },
       {
         "line_id": "p0026_body_l0005",
@@ -94,7 +98,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "verissimum fuisse comperimus. In quibus illud etiam",
-        "text_ocr_original": "verissimum fuisse comperimus. In quibus illud etiam"
+        "text_ocr_original": "verissimum fuisse comperimus. In quibus illud etiam",
+        "seq": 5
       },
       {
         "line_id": "p0026_body_l0006",
@@ -109,7 +114,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "locum habere negari non potest, quod de primís hujus-",
-        "text_ocr_original": "locum habere negari non potest, quod de primís hujus-"
+        "text_ocr_original": "locum habere negari non potest, quod de primís hujus-",
+        "seq": 6
       },
       {
         "line_id": "p0026_body_l0007",
@@ -124,7 +130,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "modi commentorum authoribus idem addidit : “ Primos,",
-        "text_ocr_original": "modi commentorum authoribus idem addidit : “ Primos,"
+        "text_ocr_original": "modi commentorum authoribus idem addidit : “ Primos,",
+        "seq": 7
       },
       {
         "line_id": "p0026_body_l0008",
@@ -139,7 +146,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "si verum amamus, hujusmodi zelotas monachos in Galliis",
-        "text_ocr_original": "si verum amamus, hujusmodi zelotas monachos in Galliis"
+        "text_ocr_original": "si verum amamus, hujusmodi zelotas monachos in Galliis",
+        "seq": 8
       },
       {
         "line_id": "p0026_body_l0009",
@@ -154,7 +162,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "habuimus. Illi simplici ac fervida, ideoque minus cauta",
-        "text_ocr_original": "habuimus. Illi simplicí ac fervida, ideoque minus cauta"
+        "text_ocr_original": "habuimus. Illi simplicí ac fervida, ideoque minus cauta",
+        "seq": 9
       },
       {
         "line_id": "p0026_body_l0010",
@@ -169,7 +178,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "et sæpe inconsulta, religione perculsi, ad illiciendas ho-",
-        "text_ocr_original": "et sæpe inconsulta, religione perculsi, ad illiciendas ho-"
+        "text_ocr_original": "et sæpe inconsulta, religione perculsi, ad illiciendas ho-",
+        "seq": 10
       },
       {
         "line_id": "p0026_body_l0011",
@@ -184,7 +194,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "minum mentes et augustiori sanctorum nomine ad eorum",
-        "text_ocr_original": "minum mentes et augustiori sanctorum nomine ad eorum"
+        "text_ocr_original": "minum mentes et augustiori sanctorum nomine ad eorum",
+        "seq": 11
       },
       {
         "line_id": "p0026_body_l0012",
@@ -199,7 +210,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "cultum revocandas, illustres eorum titulos, primum sibi,",
-        "text_ocr_original": "cultum revocandas, illustres eorum titulos, primum sibi,"
+        "text_ocr_original": "cultum revocandas, illustres eorum titulos, primum sibi,",
+        "seq": 12
       },
       {
         "line_id": "p0026_body_l0013",
@@ -214,7 +226,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "dein credulæ plebi persuasos proposuerunt. Ex horum",
-        "text_ocr_original": "dein credulæ plebi persuasos proposuerunt. Ex horum"
+        "text_ocr_original": "dein credulæ plebi persuasos proposuerunt. Ex horum",
+        "seq": 13
       },
       {
         "line_id": "p0026_body_l0014",
@@ -229,7 +242,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "officina Martialis Lemovicensis apostolatus, Ursini Bitu-",
-        "text_ocr_original": "officina Martialis Lemovicensis apostolatus, Ursini Bitu-"
+        "text_ocr_original": "officina Martialis Lemovicensis apostolatus, Ursini Bitu-",
+        "seq": 14
       },
       {
         "line_id": "p0026_body_l0015",
@@ -244,7 +258,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "ricensis discipulatus, Dionysii Parisiensis areopagitica,",
-        "text_ocr_original": "ricensis discipulatus, Dionysii Parisiensis areopagitica,"
+        "text_ocr_original": "ricensis discipulatus, Dionysii Parisiensis areopagitica,",
+        "seq": 15
       },
       {
         "line_id": "p0026_body_l0016",
@@ -259,7 +274,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "Pauli Narbonensis proconsularis dignitas, amborum apos-",
-        "text_ocr_original": "Pauli Narbonensis proconsularis dignitas, amborum apos-"
+        "text_ocr_original": "Pauli Narbonensis proconsularis dignitas, amborum apos-",
+        "seq": 16
       },
       {
         "line_id": "p0026_body_l0017",
@@ -274,7 +290,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "toli Pauli magisterium, et in aliis Ecclesiis similia, pro-",
-        "text_ocr_original": "toli Pauli magisterium, et in aliis Ecclesiis similia, pro-"
+        "text_ocr_original": "toli Pauli magisterium, et in aliis Ecclesiis similia, pro-",
+        "seq": 17
       },
       {
         "line_id": "p0026_body_l0018",
@@ -289,7 +306,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "diere. Quibus quidem, sano judicio et constanti animo,",
-        "text_ocr_original": "diere. Quibus quidem, sano judicio et constanti animo,"
+        "text_ocr_original": "diere. Quibus quidem, sano judicio et constanti animo,",
+        "seq": 18
       },
       {
         "line_id": "p0026_body_l0019",
@@ -304,7 +322,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "Galli primum episcopi restitere. At ubi ecclesiæ Gal-",
-        "text_ocr_original": "Galli primum episcopi restitere. At ubi ecclesiæ Gal-"
+        "text_ocr_original": "Galli primum episcopi restitere. At ubi ecclesiæ Gal-",
+        "seq": 19
       },
       {
         "line_id": "p0026_body_l0020",
@@ -319,7 +338,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "licanæ parentibus, sanctissimis fidei præconibus, detractis",
-        "text_ocr_original": "licanæ parentibus, sanctissimis fidei præconibus, detractis"
+        "text_ocr_original": "licanæ parentibus, sanctissimis fidei præconibus, detractis",
+        "seq": 20
       },
       {
         "line_id": "p0026_body_l0021",
@@ -334,7 +354,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "his spoliis injuriam fieri mentibus ingenuis et probis",
-        "text_ocr_original": "his spoliis injuriam fieri mentibus ingenuis et probis"
+        "text_ocr_original": "his spoliis injuriam fieri mentibus ingenuis et probis",
+        "seq": 21
       },
       {
         "line_id": "p0026_body_l0022",
@@ -349,7 +370,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "persuasum est : paulatim error communi consensu consur-",
-        "text_ocr_original": "persuasum est : paulatim error communi consensu consur-"
+        "text_ocr_original": "persuasum est : paulatim error communi consensu consur-",
+        "seq": 22
       },
       {
         "line_id": "p0026_body_l0023",
@@ -364,7 +386,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "gere, et tandem antiquitate sua contra veritatem præ-",
-        "text_ocr_original": "gere, et tandem antiquitate sua contra veritatem præ-"
+        "text_ocr_original": "gere, et tandem antiquitate sua contra veritatem præ-",
+        "seq": 23
       },
       {
         "line_id": "p0026_body_l0024",
@@ -379,7 +402,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "scribere.” Hæc in primi ecclesiæ Gallicanæ historiarum",
-        "text_ocr_original": "scribere.” Hæc in primi ecclesiæ Gallicanæ historiarum"
+        "text_ocr_original": "scribere.” Hæc in primi ecclesiæ Gallicanæ historiarum",
+        "seq": 24
       },
       {
         "line_id": "p0026_body_l0025",
@@ -394,7 +418,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "libri editione prima (secunda enim tantam παῤῥησίαν ferre",
-        "text_ocr_original": "libri editione prima (secunda enim tantam παῤῥησίαν ferre"
+        "text_ocr_original": "libri editione prima (secunda enim tantam παῤῥησίαν ferre",
+        "seq": 25
       },
       {
         "line_id": "p0026_body_l0026",
@@ -409,7 +434,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "non poterat) eruditissimus Bosquetus.",
-        "text_ocr_original": "non poterat) eruditissimus Bosquetus."
+        "text_ocr_original": "non poterat) eruditissimus Bosquetus.",
+        "seq": 26
       }
     ],
     "catchword": [],
@@ -426,7 +452,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "LECTORI.",
-        "text_ocr_original": "LECTORI."
+        "text_ocr_original": "LECTORI.",
+        "seq": 1
       }
     ],
     "marginalia": []

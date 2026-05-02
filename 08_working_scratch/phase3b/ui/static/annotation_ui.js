@@ -215,10 +215,12 @@ function attachSortable(container, arrayRef, regionLabel, options = {}) {
       const [moved] = arrayRef.splice(evt.oldIndex, 1);
       arrayRef.splice(evt.newIndex, 0, moved);
       if (options.onReorder) options.onReorder();
+      applySeq(currentPayload);
       pushUndo(`Reorder ${regionLabel}`, () => {
         arrayRef.length = 0;
         arrayRef.push(...snapshot);
         if (options.onReorder) options.onReorder();
+        applySeq(currentPayload);
         renderAll();
       });
       renderAll();
@@ -316,6 +318,28 @@ function applyDefaultReviewer(payload) {
   });
 }
 
+// Stamp `seq` on every region array and the footnotes array so it matches
+// the current array order (1-based, dense). This is the single source of
+// truth for translation / rendering order; `line_id` and `footnote_id`
+// stay immutable identifiers.
+function applySeq(payload) {
+  if (!payload || typeof payload !== "object") return;
+  const regions = payload.regions || {};
+  REGION_NAMES.forEach((r) => {
+    const arr = regions[r];
+    if (!Array.isArray(arr)) return;
+    arr.forEach((line, idx) => {
+      if (line && typeof line === "object") line.seq = idx + 1;
+    });
+  });
+  const fns = payload.footnotes;
+  if (Array.isArray(fns)) {
+    fns.forEach((fn, idx) => {
+      if (fn && typeof fn === "object") fn.seq = idx + 1;
+    });
+  }
+}
+
 function getNextOrdinal(regionName) {
   const lines = currentPayload?.regions?.[regionName] || [];
   let max = 0;
@@ -409,6 +433,7 @@ function renumberFootnotes() {
     }
   });
   currentPayload.footnotes = sorted;
+  applySeq(currentPayload);
 }
 
 function renderBodyTextWithMarkers(line) {
@@ -1314,6 +1339,7 @@ async function savePage() {
     }
     setStatus("Saving...");
     applyDefaultReviewer(currentPayload);
+    applySeq(currentPayload);
     const res = await fetch(`/api/page/${pageId}`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },

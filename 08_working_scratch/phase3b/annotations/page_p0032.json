@@ -16,7 +16,8 @@
       ],
       "source_region": "marginalia",
       "text_gold": "Act. cap. 17. ver. 30.",
-      "text_ocr_original": "Act. cap. 17. ver. 30. ^b Ephes. cap. 2. ver. 12."
+      "text_ocr_original": "Act. cap. 17. ver. 30. ^b Ephes. cap. 2. ver. 12.",
+      "seq": 1
     },
     {
       "footnote_id": "p0032_fn_006",
@@ -31,7 +32,8 @@
       "source_marginalia_line_ids": [],
       "review_status": "locked",
       "notes": "",
-      "reviewer": "Paul Boys"
+      "reviewer": "Paul Boys",
+      "seq": 2
     },
     {
       "body_line_id": "p0032_body_l0015",
@@ -48,7 +50,8 @@
       ],
       "source_region": "marginalia",
       "text_gold": "Apud Hieronymum ad Ctesiphontem advers. Pelag.",
-      "text_ocr_original": "Apud Hieronymum ad Ctesiphontem advers. Pelag."
+      "text_ocr_original": "Apud Hieronymum ad Ctesiphontem advers. Pelag.",
+      "seq": 3
     },
     {
       "body_line_id": "p0032_body_l0018",
@@ -65,7 +68,8 @@
       ],
       "source_region": "marginalia",
       "text_gold": "Camden. Britann. pag. 47, 48. edit. Londini ann. 1607. Fr. Godwin. de convers. Britann. cap. 3. part. 23. apud quem Origenes pro Tertulliano est reponendus.",
-      "text_ocr_original": "Camden. Britann. pag. 47, 48. edit. Londini ann. 1607. Fr. Godwin. de"
+      "text_ocr_original": "Camden. Britann. pag. 47, 48. edit. Londini ann. 1607. Fr. Godwin. de",
+      "seq": 4
     },
     {
       "footnote_id": "p0032_fn_007",
@@ -79,7 +83,8 @@
       "source_marginalia_line_ids": [],
       "review_status": "draft",
       "notes": "",
-      "reviewer": "Paul Boys"
+      "reviewer": "Paul Boys",
+      "seq": 5
     }
   ],
   "meta": {
@@ -115,7 +120,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "BRITANNICARUM ECCLESIARUM",
-        "text_ocr_original": "BRITANNICARUM ECCLESIARUM"
+        "text_ocr_original": "BRITANNICARUM ECCLESIARUM",
+        "seq": 1
       },
       {
         "line_id": "p0032_body_l0002",
@@ -130,7 +136,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "ANTIQUITATES.",
-        "text_ocr_original": "ANTIQUITATES."
+        "text_ocr_original": "ANTIQUITATES.",
+        "seq": 2
       },
       {
         "line_id": "p0032_body_l0003",
@@ -145,7 +152,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "CAPUT I.",
-        "text_ocr_original": "CAPUT I."
+        "text_ocr_original": "CAPUT I.",
+        "seq": 3
       },
       {
         "line_id": "p0032_body_l0004",
@@ -160,7 +168,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "Britanni ante acceptam fidem Christianam idololatræ. De apostolis, qui in Bri-",
-        "text_ocr_original": "Britanni ante acceptam fidem Christianam idololatræ. De apostolis, qui in Bri-"
+        "text_ocr_original": "Britanni ante acceptam fidem Christianam idololatræ. De apostolis, qui in Bri-",
+        "seq": 4
       },
       {
         "line_id": "p0032_body_l0005",
@@ -175,7 +184,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "tannicis insulis evangelium primi prædicasse dicuntur : Jacobo Zebedæi,",
-        "text_ocr_original": "tannicis insulis evangelium primi prædicasse dicuntur : Jacobo Zebedæi,"
+        "text_ocr_original": "tannicis insulis evangelium primi prædicasse dicuntur : Jacobo Zebedæi,",
+        "seq": 5
       },
       {
         "line_id": "p0032_body_l0006",
@@ -190,7 +200,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "Simone Zelota, Simone Petro, et B. Paulo. De Aristobulo item, et Claudia",
-        "text_ocr_original": "Simone Zelota, Simone Petro, et B. Paulo. De Aristobulo item, et Claudia"
+        "text_ocr_original": "Simone Zelota, Simone Petro, et B. Paulo. De Aristobulo item, et Claudia",
+        "seq": 6
       },
       {
         "line_id": "p0032_body_l0007",
@@ -205,7 +216,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "Britanna.",
-        "text_ocr_original": "Britanna."
+        "text_ocr_original": "Britanna.",
+        "seq": 7
       },
       {
         "line_id": "p0032_body_l0008",
@@ -226,7 +238,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "PRISCÆ illius ignorantiæ temporibus, quæ salutarem",
-        "text_ocr_original": "PRISCÆ illius ignorantiæ temporibus, quæ salutarem"
+        "text_ocr_original": "PRISCÆ illius ignorantiæ temporibus, quæ salutarem",
+        "seq": 8
       },
       {
         "line_id": "p0032_body_l0009",
@@ -241,7 +254,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "Christi adventum præcesserunt, Britannos et Hibernos",
-        "text_ocr_original": "Christi adventum præcesserunt, Britannos et Hibernos"
+        "text_ocr_original": "Christi adventum præcesserunt, Britannos et Hibernos",
+        "seq": 9
       },
       {
         "line_id": "p0032_body_l0010",
@@ -256,7 +270,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "nostros communem reliquarum gentium sortem subiisse,",
-        "text_ocr_original": "nostros communem reliquarum gentium sortem subisse,"
+        "text_ocr_original": "nostros communem reliquarum gentium sortem subisse,",
+        "seq": 10
       },
       {
         "line_id": "p0032_body_l0011",
@@ -277,7 +292,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "id est, “fuisse absque Christo, alienos a republica Is-",
-        "text_ocr_original": "id est, “fuisse absque Christo, alienos a republica Is-"
+        "text_ocr_original": "id est, “fuisse absque Christo, alienos a republica Is-",
+        "seq": 11
       },
       {
         "line_id": "p0032_body_l0012",
@@ -292,7 +308,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "raelis, et extraneos quod ad fœdera promissionis attinet,",
-        "text_ocr_original": "raelis, et extraneos quod ad fœdera promissionis attinet,"
+        "text_ocr_original": "raelis, et extraneos quod ad fœdera promissionis attinet,",
+        "seq": 12
       },
       {
         "line_id": "p0032_body_l0013",
@@ -307,7 +324,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "spem non habentes, et sine Deo in mundo:” non est quod",
-        "text_ocr_original": "spem non habentes, et sine Deo in mundo:” non est quod"
+        "text_ocr_original": "spem non habentes, et sine Deo in mundo:” non est quod",
+        "seq": 13
       },
       {
         "line_id": "p0032_body_l0014",
@@ -322,7 +340,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "quisquam dubitet. “Neque enim Britannia fertilis pro-",
-        "text_ocr_original": "quisquam dubitet. “Neque enim Britannia fertilis pro-"
+        "text_ocr_original": "quisquam dubitet. “Neque enim Britannia fertilis pro-",
+        "seq": 14
       },
       {
         "line_id": "p0032_body_l0015",
@@ -343,7 +362,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "vincia tyrannorum,” inquiebat olim impius Porphyrius,",
-        "text_ocr_original": "vincia tyrannorum,” inquiebat olim impius Porphyrius,"
+        "text_ocr_original": "vincia tyrannorum,” inquiebat olim impius Porphyrius,",
+        "seq": 15
       },
       {
         "line_id": "p0032_body_l0016",
@@ -358,7 +378,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "“et Scoticæ gentes omnesque usque ad oceanum per",
-        "text_ocr_original": "“et Scoticæ gentes omnesque usque ad oceanum per"
+        "text_ocr_original": "“et Scoticæ gentes omnesque usque ad oceanum per",
+        "seq": 16
       },
       {
         "line_id": "p0032_body_l0017",
@@ -373,7 +394,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "circuitum barbaræ nationes Moysen prophetasque cogno-",
-        "text_ocr_original": "circuitum barbaræ nationes Moysen prophetasque cogno-"
+        "text_ocr_original": "circuitum barbaræ nationes Moysen prophetasque cogno-",
+        "seq": 17
       },
       {
         "line_id": "p0032_body_l0018",
@@ -394,7 +416,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "verant.” Neque minus falluntur viri docti, qui Britannos",
-        "text_ocr_original": "verant.” Neque minus falluntur viri docti, qui Britannos"
+        "text_ocr_original": "verant.” Neque minus falluntur viri docti, qui Britannos",
+        "seq": 18
       },
       {
         "line_id": "p0032_body_l0019",
@@ -409,7 +432,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "a Druydibus suis in unius Dei cultu semper institutos",
-        "text_ocr_original": "a Druydibus suis in unius Dei cultu semper institutos"
+        "text_ocr_original": "a Druydibus suis in unius Dei cultu semper institutos",
+        "seq": 19
       },
       {
         "line_id": "p0032_body_l0020",
@@ -424,7 +448,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "fuisse tradunt, quam nugatus est Postellus, quum ab He-",
-        "text_ocr_original": "fuisse tradunt, quam nugatus est Postellus, quum ab He-"
+        "text_ocr_original": "fuisse tradunt, quam nugatus est Postellus, quum ab He-",
+        "seq": 20
       }
     ],
     "catchword": [],
@@ -438,7 +463,8 @@
         "marker_id": "",
         "review_status": "draft",
         "reviewer": "Paul Boys",
-        "notes": ""
+        "notes": "",
+        "seq": 1
       }
     ],
     "marginalia": [
@@ -454,7 +480,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "Act. cap. 17. ver. 30. ^b Ephes. cap. 2. ver. 12.",
-        "text_ocr_original": "Act. cap. 17. ver. 30. ^b Ephes. cap. 2. ver. 12."
+        "text_ocr_original": "Act. cap. 17. ver. 30. ^b Ephes. cap. 2. ver. 12.",
+        "seq": 1
       },
       {
         "line_id": "p0032_marginalia_l0002",
@@ -468,7 +495,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "Apud Hieronymum ad Ctesiphontem advers. Pelag.",
-        "text_ocr_original": "Apud Hieronymum ad Ctesiphontem advers. Pelag."
+        "text_ocr_original": "Apud Hieronymum ad Ctesiphontem advers. Pelag.",
+        "seq": 2
       },
       {
         "line_id": "p0032_marginalia_l0003",
@@ -482,7 +510,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "Camden. Britann. pag. 47, 48. edit. Londini ann. 1607. Fr. Godwin. de",
-        "text_ocr_original": "Camden. Britann. pag. 47, 48. edit. Londini ann. 1607. Fr. Godwin. de"
+        "text_ocr_original": "Camden. Britann. pag. 47, 48. edit. Londini ann. 1607. Fr. Godwin. de",
+        "seq": 3
       },
       {
         "line_id": "p0032_marginalia_l0004",
@@ -496,7 +525,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "convers. Britann. cap. 3. part. 23. apud quem Origenes pro Tertulliano est",
-        "text_ocr_original": "convers. Britann. cap. 3. part. 23. apud quem Origenes pro Tertulliano est"
+        "text_ocr_original": "convers. Britann. cap. 3. part. 23. apud quem Origenes pro Tertulliano est",
+        "seq": 4
       },
       {
         "line_id": "p0032_marginalia_l0005",
@@ -510,7 +540,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "reponendus.",
-        "text_ocr_original": "reponendus."
+        "text_ocr_original": "reponendus.",
+        "seq": 5
       }
     ]
   },

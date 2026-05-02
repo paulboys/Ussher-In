@@ -34,7 +34,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "THE",
-        "text_ocr_original": "THE"
+        "text_ocr_original": "THE",
+        "seq": 1
       },
       {
         "line_id": "p0014_body_l0002",
@@ -49,7 +50,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "WHOLE WORKS",
-        "text_ocr_original": "WHOLE WORKS"
+        "text_ocr_original": "WHOLE WORKS",
+        "seq": 2
       },
       {
         "line_id": "p0014_body_l0003",
@@ -64,7 +66,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "OF THE",
-        "text_ocr_original": "OF THE"
+        "text_ocr_original": "OF THE",
+        "seq": 3
       },
       {
         "line_id": "p0014_body_l0004",
@@ -79,7 +82,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "MOST REV. JAMES USSHER, D. D.",
-        "text_ocr_original": "MOST REV. JAMES USSHER, D. D."
+        "text_ocr_original": "MOST REV. JAMES USSHER, D. D.",
+        "seq": 4
       },
       {
         "line_id": "p0014_body_l0005",
@@ -94,7 +98,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "LORD ARCHBISHOP OF ARMAGH,",
-        "text_ocr_original": "LORD ARCHBISHOP OF ARMAGH,"
+        "text_ocr_original": "LORD ARCHBISHOP OF ARMAGH,",
+        "seq": 5
       },
       {
         "line_id": "p0014_body_l0006",
@@ -109,7 +114,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "AND",
-        "text_ocr_original": "AND"
+        "text_ocr_original": "AND",
+        "seq": 6
       },
       {
         "line_id": "p0014_body_l0007",
@@ -124,7 +130,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "PRIMATE OF ALL IRELAND.",
-        "text_ocr_original": "PRIMATE OF ALL IRELAND."
+        "text_ocr_original": "PRIMATE OF ALL IRELAND.",
+        "seq": 7
       },
       {
         "line_id": "p0014_body_l0008",
@@ -139,7 +146,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "VOLUME V.",
-        "text_ocr_original": "VOLUME V."
+        "text_ocr_original": "VOLUME V.",
+        "seq": 8
       }
     ],
     "catchword": [],

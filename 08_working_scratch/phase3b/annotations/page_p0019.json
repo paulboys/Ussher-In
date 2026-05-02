@@ -34,7 +34,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "CAPUT V. PAG.",
-        "text_ocr_original": "CAPUT V. PAG."
+        "text_ocr_original": "CAPUT V. PAG.",
+        "seq": 1
       },
       {
         "line_id": "p0019_body_l0002",
@@ -49,7 +50,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "De XXV. episcopatibus et archiepiscopatibus III. qui Lucii tem-",
-        "text_ocr_original": "De XXV. episcopatibus et archiepiscopatibus III. qui Lucii tem-"
+        "text_ocr_original": "De XXV. episcopatibus et archiepiscopatibus III. qui Lucii tem-",
+        "seq": 2
       },
       {
         "line_id": "p0019_body_l0003",
@@ -64,7 +66,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "poribus, flaminum et archiflaminum loco, instituti fuisse dicuntur.",
-        "text_ocr_original": "poribus, flaminum et archiflaminum loco, instituti fuisse dicuntur."
+        "text_ocr_original": "poribus, flaminum et archiflaminum loco, instituti fuisse dicuntur.",
+        "seq": 3
       },
       {
         "line_id": "p0019_body_l0004",
@@ -79,7 +82,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "De Londinensi sede metropolitica, et ejus translatione ad Can-",
-        "text_ocr_original": "De Londinensi sede metropolitica, et ejus translatione ad Can-"
+        "text_ocr_original": "De Londinensi sede metropolitica, et ejus translatione ad Can-",
+        "seq": 4
       },
       {
         "line_id": "p0019_body_l0005",
@@ -94,7 +98,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "tuariensem. De Eboracensi, et pallio inde translato ad Dolen-",
-        "text_ocr_original": "tuariensem. De Eboracensi, et pallio inde translato ad Dolen-"
+        "text_ocr_original": "tuariensem. De Eboracensi, et pallio inde translato ad Dolen-",
+        "seq": 5
       },
       {
         "line_id": "p0019_body_l0006",
@@ -109,7 +114,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "sem in Britannia Armorica. De Legionensi, et ejus translatione",
-        "text_ocr_original": "sem in Britannia Armorica. De Legionensi, et ejus translatione"
+        "text_ocr_original": "sem in Britannia Armorica. De Legionensi, et ejus translatione",
+        "seq": 6
       },
       {
         "line_id": "p0019_body_l0007",
@@ -124,7 +130,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "ad sedem Menevensem ac Landavensem. De tomo Anacleti;",
-        "text_ocr_original": "ad sedem Menevensem ac Landavensem. De tomo Anacleti;"
+        "text_ocr_original": "ad sedem Menevensem ac Landavensem. De tomo Anacleti;",
+        "seq": 7
       },
       {
         "line_id": "p0019_body_l0008",
@@ -139,7 +146,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "et provinciarum numero, in quas a Romanis divisa est Britannia 79",
-        "text_ocr_original": "et provinciarum numero, in quas a Romanis divisa est Britannia 79"
+        "text_ocr_original": "et provinciarum numero, in quas a Romanis divisa est Britannia 79",
+        "seq": 8
       },
       {
         "line_id": "p0019_body_l0009",
@@ -154,7 +162,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "CAPUT VI.",
-        "text_ocr_original": "CAPUT VI."
+        "text_ocr_original": "CAPUT VI.",
+        "seq": 9
       },
       {
         "line_id": "p0019_body_l0010",
@@ -169,7 +178,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "Fagani et Duviani iter Romanum, et reditus in Britanniam. Eleu-",
-        "text_ocr_original": "Fagani et Duviani iter Romanum, et reditus in Britanniam. Eleu-"
+        "text_ocr_original": "Fagani et Duviani iter Romanum, et reditus in Britanniam. Eleu-",
+        "seq": 10
       },
       {
         "line_id": "p0019_body_l0011",
@@ -184,7 +194,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "theri papæ epistola ad Lucium. Fagani et Duviani res gestæ",
-        "text_ocr_original": "theri papæ epistola ad Lucium. Fagani et Duviani res gestæ"
+        "text_ocr_original": "theri papæ epistola ad Lucium. Fagani et Duviani res gestæ",
+        "seq": 11
       },
       {
         "line_id": "p0019_body_l0012",
@@ -199,7 +210,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "in insula Avaloniæ. Antiquitatis ecclesiæ Glastoniensis assertio:",
-        "text_ocr_original": "in insula Avaloniæ. Antiquitatis ecclesiæ Glastoniensis assertio:"
+        "text_ocr_original": "in insula Avaloniæ. Antiquitatis ecclesiæ Glastoniensis assertio:",
+        "seq": 12
       },
       {
         "line_id": "p0019_body_l0013",
@@ -214,7 +226,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "et nova ab Ina et Dunstano facta restauratio. Privilegia varia",
-        "text_ocr_original": "et nova ab Ina et Dunstano facta restauratio. Privilegia varia"
+        "text_ocr_original": "et nova ab Ina et Dunstano facta restauratio. Privilegia varia",
+        "seq": 13
       },
       {
         "line_id": "p0019_body_l0014",
@@ -229,7 +242,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "a Saxonicis regibus eidem concessa. Arthuri donatio, et se-",
-        "text_ocr_original": "a Saxonicis regibus eidem concessa. Arthuri donatio, et se-"
+        "text_ocr_original": "a Saxonicis regibus eidem concessa. Arthuri donatio, et se-",
+        "seq": 14
       },
       {
         "line_id": "p0019_body_l0015",
@@ -244,7 +258,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "pulchri inventio. Henrici II. et Edvardi III. diplomata. Pos-",
-        "text_ocr_original": "pulchri inventio. Henrici II. et Edvardi III. diplomata. Pos-"
+        "text_ocr_original": "pulchri inventio. Henrici II. et Edvardi III. diplomata. Pos-",
+        "seq": 15
       },
       {
         "line_id": "p0019_body_l0016",
@@ -259,7 +274,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "sessiones et libertates ecclesiis a Lucio tributæ. Wintoniensis",
-        "text_ocr_original": "sessiones et libertates ecclesiis a Lucio tributæ. Wintoniensis"
+        "text_ocr_original": "sessiones et libertates ecclesiis a Lucio tributæ. Wintoniensis",
+        "seq": 16
       },
       {
         "line_id": "p0019_body_l0017",
@@ -274,7 +290,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "ecclesiæ antiquitates. Fundatio ecclesiæ S. Petri Westmonas-",
-        "text_ocr_original": "ecclesiæ antiquitates. Fundatio ecclesiæ S. Petri Westmonas-"
+        "text_ocr_original": "ecclesiæ antiquitates. Fundatio ecclesiæ S. Petri Westmonas-",
+        "seq": 17
       },
       {
         "line_id": "p0019_body_l0018",
@@ -289,7 +306,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "teriensis, B. Mariæ Doverensis, et S. Martini Cantuariensis.",
-        "text_ocr_original": "teriensis, B. Mariæ Doverensis, et S. Martini Cantuariensis."
+        "text_ocr_original": "teriensis, B. Mariæ Doverensis, et S. Martini Cantuariensis.",
+        "seq": 18
       },
       {
         "line_id": "p0019_body_l0019",
@@ -304,7 +322,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "De Cantabrigiensi et Bannochorensi gymnasio: et Lucii regis",
-        "text_ocr_original": "De Cantabrigiensi et Bannochorensi gymnasio: et Lucii regis"
+        "text_ocr_original": "De Cantabrigiensi et Bannochorensi gymnasio: et Lucii regis",
+        "seq": 19
       },
       {
         "line_id": "p0019_body_l0020",
@@ -319,7 +338,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "exitu . . . . . . . . . . . . . . . 126",
-        "text_ocr_original": "exitu . . . . . . . . . . . . . . . 126"
+        "text_ocr_original": "exitu . . . . . . . . . . . . . . . 126",
+        "seq": 20
       },
       {
         "line_id": "p0019_body_l0021",
@@ -334,7 +354,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "CAPUT VII.",
-        "text_ocr_original": "CAPUT VII."
+        "text_ocr_original": "CAPUT VII.",
+        "seq": 21
       },
       {
         "line_id": "p0019_body_l0022",
@@ -349,7 +370,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "De fide a Britannis usque ad Diocletiani tempora conservata: cum",
-        "text_ocr_original": "De fide a Britannis usque ad Diocletiani tempora conservata: cum"
+        "text_ocr_original": "De fide a Britannis usque ad Diocletiani tempora conservata: cum",
+        "seq": 22
       },
       {
         "line_id": "p0019_body_l0023",
@@ -364,7 +386,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "Origenis et Tertulliani ea de re testimonio. De Mellone Bri-",
-        "text_ocr_original": "Origenis et Tertulliani ea de re testimonio. De Mellone Bri-"
+        "text_ocr_original": "Origenis et Tertulliani ea de re testimonio. De Mellone Bri-",
+        "seq": 23
       },
       {
         "line_id": "p0019_body_l0024",
@@ -379,7 +402,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "tanno, Rothomagensium præsule. De sævissima hic a Maxi-",
-        "text_ocr_original": "tanno, Rothomagensium præsule. De sævissima hic a Maxi-"
+        "text_ocr_original": "tanno, Rothomagensium præsule. De sævissima hic a Maxi-",
+        "seq": 24
       },
       {
         "line_id": "p0019_body_l0025",
@@ -394,7 +418,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "miano Herculio excitata persecutione; et passis in ea Albano,",
-        "text_ocr_original": "miano Herculio excitata persecutione; et passis in ea Albano,"
+        "text_ocr_original": "miano Herculio excitata persecutione; et passis in ea Albano,",
+        "seq": 25
       },
       {
         "line_id": "p0019_body_l0026",
@@ -409,7 +434,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "Amphibalo, Julio, Aarone, Socrate, Stephano, Augulio, et aliis",
-        "text_ocr_original": "Amphibalo, Julio, Aarone, Socrate, Stephano, Augulio, et aliis"
+        "text_ocr_original": "Amphibalo, Julio, Aarone, Socrate, Stephano, Augulio, et aliis",
+        "seq": 26
       },
       {
         "line_id": "p0019_body_l0027",
@@ -424,7 +450,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "innumeris. De pace Britannicis ecclesiis, altero post cœptam",
-        "text_ocr_original": "innumeris. De pace Britannicis ecclesiis, altero post cœptam"
+        "text_ocr_original": "innumeris. De pace Britannicis ecclesiis, altero post cœptam",
+        "seq": 27
       },
       {
         "line_id": "p0019_body_l0028",
@@ -439,7 +466,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "persecutionem anno, a Constantio Chloro Augusti Constantini",
-        "text_ocr_original": "persecutionem anno, a Constantio Chloro Augusti Constantini"
+        "text_ocr_original": "persecutionem anno, a Constantio Chloro Augusti Constantini",
+        "seq": 28
       },
       {
         "line_id": "p0019_body_l0029",
@@ -454,7 +482,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "magni patre restituta . . . . . . . . . . 170",
-        "text_ocr_original": "magni patre restituta . . . . . . . . . . 170"
+        "text_ocr_original": "magni patre restituta . . . . . . . . . . 170",
+        "seq": 29
       },
       {
         "line_id": "p0019_body_l0030",
@@ -469,7 +498,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "CAPUT VIII.",
-        "text_ocr_original": "CAPUT VIII."
+        "text_ocr_original": "CAPUT VIII.",
+        "seq": 30
       },
       {
         "line_id": "p0019_body_l0031",
@@ -484,7 +514,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "De patria Constantini Magni, et matris ejus Helenæ, variæ et dis-",
-        "text_ocr_original": "De patria Constantini Magni, et matris ejus Helenæ, variæ et dis-"
+        "text_ocr_original": "De patria Constantini Magni, et matris ejus Helenæ, variæ et dis-",
+        "seq": 31
       },
       {
         "line_id": "p0019_body_l0032",
@@ -499,7 +530,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "crepantes authorum sententiæ: quam alii Britanniam, alii Gal-",
-        "text_ocr_original": "crepantes authorum sententiæ: quam alii Britanniam, alii Gal-"
+        "text_ocr_original": "crepantes authorum sententiæ: quam alii Britanniam, alii Gal-",
+        "seq": 32
       },
       {
         "line_id": "p0019_body_l0033",
@@ -514,7 +546,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "liam, alii Bithyniam, nonnulli etiam Daciam fuisse volunt:",
-        "text_ocr_original": "liam, alii Bithyniam, nonnulli etiam Daciam fuisse volunt:"
+        "text_ocr_original": "liam, alii Bithyniam, nonnulli etiam Daciam fuisse volunt:",
+        "seq": 33
       },
       {
         "line_id": "p0019_body_l0034",
@@ -529,7 +562,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "Guilielmi Camdeni et Justi Lipsii de Britannica Constantini",
-        "text_ocr_original": "Guilielmi Camdeni et Justi Lipsii de Britannica Constantini"
+        "text_ocr_original": "Guilielmi Camdeni et Justi Lipsii de Britannica Constantini",
+        "seq": 34
       },
       {
         "line_id": "p0019_body_l0035",
@@ -544,7 +578,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "origine amica concertatio. De pace Ecclesiæ reddita: deque",
-        "text_ocr_original": "origine amica concertatio. De pace Ecclesiæ reddita: deque"
+        "text_ocr_original": "origine amica concertatio. De pace Ecclesiæ reddita: deque",
+        "seq": 35
       },
       {
         "line_id": "p0019_body_l0036",
@@ -559,7 +594,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "basilica S. Albani quam Verolamii, et S. Amphibali quam Win-",
-        "text_ocr_original": "basilica S. Albani quam Verolamii, et S. Amphibali quam Win-"
+        "text_ocr_original": "basilica S. Albani quam Verolamii, et S. Amphibali quam Win-",
+        "seq": 36
       },
       {
         "line_id": "p0019_body_l0037",
@@ -574,7 +610,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "toniæ tunc constructam aiunt. De Britannicis episcopis qui",
-        "text_ocr_original": "toniæ tunc constructam aiunt. De Britannicis episcopis qui"
+        "text_ocr_original": "toniæ tunc constructam aiunt. De Britannicis episcopis qui",
+        "seq": 37
       },
       {
         "line_id": "p0019_body_l0038",
@@ -589,7 +626,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "concilio Arelatensi interfuerunt; et Britannorum cum patribus",
-        "text_ocr_original": "concilio Arelatensi interfuerunt; et Britannorum cum patribus"
+        "text_ocr_original": "concilio Arelatensi interfuerunt; et Britannorum cum patribus",
+        "seq": 38
       },
       {
         "line_id": "p0019_body_l0039",
@@ -604,7 +642,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "Nicænis in Paschatis observatione et Arianæ hæreseos condem-",
-        "text_ocr_original": "Nicænis in Paschatis observatione et Arianæ hæreseos condem-"
+        "text_ocr_original": "Nicænis in Paschatis observatione et Arianæ hæreseos condem-",
+        "seq": 39
       }
     ],
     "catchword": [],
@@ -621,7 +660,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "vi CONTENTS.",
-        "text_ocr_original": "vi CONTENTS."
+        "text_ocr_original": "vi CONTENTS.",
+        "seq": 1
       }
     ],
     "marginalia": []

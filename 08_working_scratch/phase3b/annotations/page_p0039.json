@@ -16,7 +16,8 @@
       "source_region": "marginalia",
       "text_gold": "Niceph. hist. ecclesiast. lib. 2. cap. 40.",
       "text_ocr_original": "Niceph. hist. ecclesiast. lib. 2. cap. 40.",
-      "reviewer": "Paul Boys"
+      "reviewer": "Paul Boys",
+      "seq": 1
     },
     {
       "body_line_id": "p0039_body_l0015",
@@ -33,7 +34,8 @@
       "source_region": "marginalia",
       "text_gold": "Menolog. tom. 2. Antiqu. lect. Henr. Canisii. Antholog. Græc. edit. Rom.",
       "text_ocr_original": "Menolog. tom. 2. Antiqu. lect. Henr. Canisii. Antholog. Græc. edit. Rom.",
-      "reviewer": "Paul Boys"
+      "reviewer": "Paul Boys",
+      "seq": 2
     },
     {
       "body_line_id": "p0039_body_l0029",
@@ -50,7 +52,8 @@
       "source_region": "marginalia",
       "text_gold": "Metaphrast. commentar. de Petro et Paulo, ad diem 29. Junii, de quo vid.",
       "text_ocr_original": "Metaphrast. commentar. de Petro et Paulo, ad diem 29. Junii, de quo vid.",
-      "reviewer": "Paul Boys"
+      "reviewer": "Paul Boys",
+      "seq": 3
     },
     {
       "body_line_id": "",
@@ -67,7 +70,8 @@
       "source_region": "marginalia",
       "text_gold": "ann. 1598. pag. 406. et Menæis edit. Venet. ann. 1588.",
       "text_ocr_original": "ann. 1598. pag. 406. et Menæis edit. Venet. ann. 1588.",
-      "reviewer": "Paul Boys"
+      "reviewer": "Paul Boys",
+      "seq": 4
     },
     {
       "body_line_id": "",
@@ -84,7 +88,8 @@
       "source_region": "marginalia",
       "text_gold": "Baron. annal. tom. 1. an. 61. sec. 4.",
       "text_ocr_original": "Baron. annal. tom. 1. an. 61. sec. 4.",
-      "reviewer": "Paul Boys"
+      "reviewer": "Paul Boys",
+      "seq": 5
     }
   ],
   "meta": {
@@ -120,7 +125,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "rum ibi subjicitur, de Jacobo legitur: “ Hic Hispaniæ, et",
-        "text_ocr_original": "rum ibi subjicitur, de Jacobo legitur: “ Hic Hispaniæ, et"
+        "text_ocr_original": "rum ibi subjicitur, de Jacobo legitur: “ Hic Hispaniæ, et",
+        "seq": 1
       },
       {
         "line_id": "p0039_body_l0002",
@@ -135,7 +141,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "in occidentalia loca prædicavit: et sub Herode gladio",
-        "text_ocr_original": "in occidentalia loca prædicavit: et sub Herode gladio"
+        "text_ocr_original": "in occidentalia loca prædicavit: et sub Herode gladio",
+        "seq": 2
       },
       {
         "line_id": "p0039_body_l0003",
@@ -150,7 +157,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "cæsus occubuit.” Addit Ordericus Vitalis Uticensis mo-",
-        "text_ocr_original": "cæsus occubuit.” Addit Ordericus Vitalis Uticensis mo-"
+        "text_ocr_original": "cæsus occubuit.” Addit Ordericus Vitalis Uticensis mo-",
+        "seq": 3
       },
       {
         "line_id": "p0039_body_l0004",
@@ -165,7 +173,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "nachus, libro secundo ecclesiasticæ historiæ, septem",
-        "text_ocr_original": "nachus, libro secundo ecclesiasticæ historiæ, septem"
+        "text_ocr_original": "nachus, libro secundo ecclesiasticæ historiæ, septem",
+        "seq": 4
       },
       {
         "line_id": "p0039_body_l0005",
@@ -180,7 +189,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "ipsius discipulos cadaver ejus in Hispaniam detulisse, “ et",
-        "text_ocr_original": "ipsius discipulos cadaver ejus in Hispaniam detulisse, “ et"
+        "text_ocr_original": "ipsius discipulos cadaver ejus in Hispaniam detulisse, “ et",
+        "seq": 5
       },
       {
         "line_id": "p0039_body_l0006",
@@ -195,7 +205,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "a rege Galliciæ susceptos, primum fidem et religionem",
-        "text_ocr_original": "a rege Galliciæ susceptos, primum fidem et religionem"
+        "text_ocr_original": "a rege Galliciæ susceptos, primum fidem et religionem",
+        "seq": 6
       },
       {
         "line_id": "p0039_body_l0007",
@@ -210,7 +221,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "Hiberis prædicavisse.” An pro Hiberis Vincentius alicubi",
-        "text_ocr_original": "Hiberis prædicavisse.” An pro Hiberis Vincentius alicubi"
+        "text_ocr_original": "Hiberis prædicavisse.” An pro Hiberis Vincentius alicubi",
+        "seq": 7
       },
       {
         "line_id": "p0039_body_l0008",
@@ -225,7 +237,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "Hibernis exaratum repererit, aliis conjiciendum relinquo :",
-        "text_ocr_original": "Hibernis exaratum repererit, aliis conjiciendum relinquo :"
+        "text_ocr_original": "Hibernis exaratum repererit, aliis conjiciendum relinquo :",
+        "seq": 8
       },
       {
         "line_id": "p0039_body_l0009",
@@ -240,7 +253,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "certe hujusmodi aliquo errore dictos Jacobi discipulos ad",
-        "text_ocr_original": "certe hujusmodi aliquo errore dictos Jacobi discipulos ad"
+        "text_ocr_original": "certe hujusmodi aliquo errore dictos Jacobi discipulos ad",
+        "seq": 9
       },
       {
         "line_id": "p0039_body_l0010",
@@ -255,7 +269,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "Hiberniam translatos esse, a vero non est absimile.",
-        "text_ocr_original": "Hiberniam translatos esse, a vero non est absimile."
+        "text_ocr_original": "Hiberniam translatos esse, a vero non est absimile.",
+        "seq": 10
       },
       {
         "line_id": "p0039_body_l0011",
@@ -270,7 +285,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "Simonem Zelotem evangelii doctrinam “ ad occi-",
-        "text_ocr_original": "Simonem Zelotem evangelii doctrinam “ ad occi-"
+        "text_ocr_original": "Simonem Zelotem evangelii doctrinam “ ad occi-",
+        "seq": 11
       },
       {
         "line_id": "p0039_body_l0012",
@@ -285,7 +301,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "dentalem oceanum, Britannicasque insulas” pertulisse,",
-        "text_ocr_original": "dentalem oceanum, Britannicasque insulas” pertulisse,"
+        "text_ocr_original": "dentalem oceanum, Britannicasque insulas” pertulisse,",
+        "seq": 12
       },
       {
         "line_id": "p0039_body_l0013",
@@ -306,7 +323,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "author est Nicephorus Callisti. Eundem “ in Britannia",
-        "text_ocr_original": "author est Nicephorus Callisti. Eundem “ in Britannia"
+        "text_ocr_original": "author est Nicephorus Callisti. Eundem “ in Britannia",
+        "seq": 13
       },
       {
         "line_id": "p0039_body_l0014",
@@ -321,7 +339,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "crucifixum, occisum et sepultum esse,” tradit in synopsi",
-        "text_ocr_original": "crucifixum, occisum et sepultum esse,” tradit in synopsi"
+        "text_ocr_original": "crucifixum, occisum et sepultum esse,” tradit in synopsi",
+        "seq": 14
       },
       {
         "line_id": "p0039_body_l0015",
@@ -342,7 +361,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "Dorotheus: astipulantibus etiam Græcorum menologiis.",
-        "text_ocr_original": "Dorotheus: astipulantibus etiam Græcorum menologiis."
+        "text_ocr_original": "Dorotheus: astipulantibus etiam Græcorum menologiis.",
+        "seq": 15
       },
       {
         "line_id": "p0039_body_l0016",
@@ -357,7 +377,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "In quibus ad Maii diem decimum de Simone ita scriptum",
-        "text_ocr_original": "In quibus ad Maii diem decimum de Simone ita scriptum"
+        "text_ocr_original": "In quibus ad Maii diem decimum de Simone ita scriptum",
+        "seq": 16
       },
       {
         "line_id": "p0039_body_l0017",
@@ -372,7 +393,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "legimus. Ὕστερον δὲ ἐν Βρετανίᾳ γενόμενος, καὶ πολλοὺς",
-        "text_ocr_original": "legimus. Ὕστερον δὲ ἐν Βρετανίᾳ γενόμενος, καὶ πολλοὺς"
+        "text_ocr_original": "legimus. Ὕστερον δὲ ἐν Βρετανίᾳ γενόμενος, καὶ πολλοὺς",
+        "seq": 17
       },
       {
         "line_id": "p0039_body_l0018",
@@ -387,7 +409,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "τῷ λόγῳ τοῦ εὐαγγελίου φωτίσας, ὑπὸ τῶν ἀπίστων σταυ-",
-        "text_ocr_original": "τῷ λόγῳ τοῦ εὐαγγελίου φωτίσας, ὑπὸ τῶν ἀπίστων σταυ-"
+        "text_ocr_original": "τῷ λόγῳ τοῦ εὐαγγελίου φωτίσας, ὑπὸ τῶν ἀπίστων σταυ-",
+        "seq": 18
       },
       {
         "line_id": "p0039_body_l0019",
@@ -402,7 +425,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "ρωθεὶς καὶ τεθεὶς θάπτεται ἐκεῖ. Postremo in Britanniam",
-        "text_ocr_original": "ρωθεὶς καὶ τεθεὶς θάπτεται ἐκεῖ. Postremo in Britanniam"
+        "text_ocr_original": "ρωθεὶς καὶ τεθεὶς θάπτεται ἐκεῖ. Postremo in Britanniam",
+        "seq": 19
       },
       {
         "line_id": "p0039_body_l0020",
@@ -417,7 +441,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "profectus, cum multos evangelii verbo illustrasset, ab in-",
-        "text_ocr_original": "profectus, cum multos evangelii verbo illustrasset, ab in-"
+        "text_ocr_original": "profectus, cum multos evangelii verbo illustrasset, ab in-",
+        "seq": 20
       },
       {
         "line_id": "p0039_body_l0021",
@@ -432,7 +457,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "fidelibus crucifixus, illic sepultus est.” In martyrologio",
-        "text_ocr_original": "fidelibus crucifixus, illic sepultus est.” In martyrologio"
+        "text_ocr_original": "fidelibus crucifixus, illic sepultus est.” In martyrologio",
+        "seq": 21
       },
       {
         "line_id": "p0039_body_l0022",
@@ -447,7 +473,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "tamen et breviario Romano, ut et in Bedæ, Usuardi,",
-        "text_ocr_original": "tamen et breviario Romano, ut et in Bedæ, Usuardi,"
+        "text_ocr_original": "tamen et breviario Romano, ut et in Bedæ, Usuardi,",
+        "seq": 22
       },
       {
         "line_id": "p0039_body_l0023",
@@ -462,7 +489,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "atque Adonis martyrologiis, ad Octobris diem octavum",
-        "text_ocr_original": "atque Adonis martyrologiis, ad Octobris diem octavum"
+        "text_ocr_original": "atque Adonis martyrologiis, ad Octobris diem octavum",
+        "seq": 23
       },
       {
         "line_id": "p0039_body_l0024",
@@ -477,7 +505,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "et vigesimum in Perside martyrium subiisse legitur.",
-        "text_ocr_original": "et vigesimum in Perside martyrium subiisse legitur."
+        "text_ocr_original": "et vigesimum in Perside martyrium subiisse legitur.",
+        "seq": 24
       },
       {
         "line_id": "p0039_body_l0025",
@@ -492,7 +521,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "Simonem Petrum, “ duodecim quidem annos esse",
-        "text_ocr_original": "Simonem Petrum, “ duodecim quidem annos esse"
+        "text_ocr_original": "Simonem Petrum, “ duodecim quidem annos esse",
+        "seq": 25
       },
       {
         "line_id": "p0039_body_l0026",
@@ -507,7 +537,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "versatum in oriente, viginti autem et tres annos trans-",
-        "text_ocr_original": "versatum in oriente, viginti autem et tres annos trans-"
+        "text_ocr_original": "versatum in oriente, viginti autem et tres annos trans-",
+        "seq": 26
       },
       {
         "line_id": "p0039_body_l0027",
@@ -522,7 +553,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "egisse Romæ, et in Britannia, et in civitatibus quæ sunt",
-        "text_ocr_original": "egisse Romæ, et in Britannia, et in civitatibus quæ sunt"
+        "text_ocr_original": "egisse Romæ, et in Britannia, et in civitatibus quæ sunt",
+        "seq": 27
       },
       {
         "line_id": "p0039_body_l0028",
@@ -537,7 +569,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "in occidente,” retulit alicubi Eusebius Pamphili; siqui-",
-        "text_ocr_original": "in occidente,” retulit alicubi Eusebius Pamphili; siqui-"
+        "text_ocr_original": "in occidente,” retulit alicubi Eusebius Pamphili; siqui-",
+        "seq": 28
       },
       {
         "line_id": "p0039_body_l0029",
@@ -558,7 +591,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "dem Simeoni Metaphrastæ credimus. Apud quem etiam",
-        "text_ocr_original": "dem Simeoni Metaphrastæ credimus. Apud quem etiam"
+        "text_ocr_original": "dem Simeoni Metaphrastæ credimus. Apud quem etiam",
+        "seq": 29
       },
       {
         "line_id": "p0039_body_l0030",
@@ -573,7 +607,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "legimus, Petrum in Britannia “ longo tempore fuisse mo-",
-        "text_ocr_original": "legimus, Petrum in Britannia “ longo tempore fuisse mo-"
+        "text_ocr_original": "legimus, Petrum in Britannia “ longo tempore fuisse mo-",
+        "seq": 30
       },
       {
         "line_id": "p0039_body_l0031",
@@ -588,7 +623,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "ratum, et multas gentes non nominatas attraxisse ad fidem",
-        "text_ocr_original": "ratum, et multas gentes non nominatas attraxisse ad fidem"
+        "text_ocr_original": "ratum, et multas gentes non nominatas attraxisse ad fidem",
+        "seq": 31
       },
       {
         "line_id": "p0039_body_l0032",
@@ -603,7 +639,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "Christi;” ad extremum vero, cum “ verbo gratiæ multos",
-        "text_ocr_original": "Christi;” ad extremum vero, cum “ verbo gratiæ multos"
+        "text_ocr_original": "Christi;” ad extremum vero, cum “ verbo gratiæ multos",
+        "seq": 32
       },
       {
         "line_id": "p0039_body_l0033",
@@ -618,7 +655,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "illuminasset, et ecclesias constituisset, episcopos et pres-",
-        "text_ocr_original": "illuminasset, et ecclesias constituisset, episcopos et pres-"
+        "text_ocr_original": "illuminasset, et ecclesias constituisset, episcopos et pres-",
+        "seq": 33
       }
     ],
     "catchword": [],
@@ -635,7 +673,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "18 BRITANNICARUM ECCLESIARUM CAP. I.",
-        "text_ocr_original": "18 BRITANNICARUM ECCLESIARUM CAP. I."
+        "text_ocr_original": "18 BRITANNICARUM ECCLESIARUM CAP. I.",
+        "seq": 1
       }
     ],
     "marginalia": [
@@ -651,7 +690,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "Niceph. hist. ecclesiast. lib. 2. cap. 40.",
-        "text_ocr_original": "Niceph. hist. ecclesiast. lib. 2. cap. 40."
+        "text_ocr_original": "Niceph. hist. ecclesiast. lib. 2. cap. 40.",
+        "seq": 1
       },
       {
         "line_id": "p0039_marginalia_l0002",
@@ -665,7 +705,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "Menolog. tom. 2. Antiqu. lect. Henr. Canisii. Antholog. Græc. edit. Rom.",
-        "text_ocr_original": "Menolog. tom. 2. Antiqu. lect. Henr. Canisii. Antholog. Græc. edit. Rom."
+        "text_ocr_original": "Menolog. tom. 2. Antiqu. lect. Henr. Canisii. Antholog. Græc. edit. Rom.",
+        "seq": 2
       },
       {
         "line_id": "p0039_marginalia_l0003",
@@ -679,7 +720,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "ann. 1598. pag. 406. et Menæis edit. Venet. ann. 1588.",
-        "text_ocr_original": "ann. 1598. pag. 406. et Menæis edit. Venet. ann. 1588."
+        "text_ocr_original": "ann. 1598. pag. 406. et Menæis edit. Venet. ann. 1588.",
+        "seq": 3
       },
       {
         "line_id": "p0039_marginalia_l0004",
@@ -693,7 +735,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "Metaphrast. commentar. de Petro et Paulo, ad diem 29. Junii, de quo vid.",
-        "text_ocr_original": "Metaphrast. commentar. de Petro et Paulo, ad diem 29. Junii, de quo vid."
+        "text_ocr_original": "Metaphrast. commentar. de Petro et Paulo, ad diem 29. Junii, de quo vid.",
+        "seq": 4
       },
       {
         "line_id": "p0039_marginalia_l0005",
@@ -707,7 +750,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "Baron. annal. tom. 1. an. 61. sec. 4.",
-        "text_ocr_original": "Baron. annal. tom. 1. an. 61. sec. 4."
+        "text_ocr_original": "Baron. annal. tom. 1. an. 61. sec. 4.",
+        "seq": 5
       }
     ]
   },

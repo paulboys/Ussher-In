@@ -136,14 +136,18 @@ class PageBundle:
 
 
 def _segment_sort_key(seg: dict) -> tuple:
-    """Sort body lines by their ``l<NNNN>`` suffix and footnotes by
-    their numeric ``fn_<NNN>`` suffix. Falls back to the segment_id
-    string for anything that doesn't match the convention.
+    """Order segments by ``seq`` (the explicit ordering field). Falls
+    back to a regex on ``segment_id`` for legacy records that pre-date
+    ``seq``, so the migration window stays stable. ``segment_id`` is
+    always the final tie-breaker for determinism.
     """
     seg_id = seg.get("segment_id", "")
+    seq = seg.get("seq")
+    if isinstance(seq, int):
+        return (0, seq, seg_id)
     body_match = re.search(r"_l(\d+)$", seg_id)
     if body_match:
-        return (0, int(body_match.group(1)), seg_id)
+        return (1, int(body_match.group(1)), seg_id)
     fn_match = re.search(r"_fn_(\d+)$", seg_id)
     if fn_match:
         return (1, int(fn_match.group(1)), seg_id)
