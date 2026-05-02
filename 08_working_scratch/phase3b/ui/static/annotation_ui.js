@@ -1187,36 +1187,41 @@ function bindMeta(payload) {
 // ---------------------------------------------------------------------------
 // Load / Save
 // ---------------------------------------------------------------------------
+async function applyPayload(pageId, payload) {
+  currentPayload = payload;
+  normalizePayload(currentPayload);
+  applyDefaultReviewer(currentPayload);
+  renumberFootnotes();
+  if (!currentPayload.edition) {
+    const picked = await chooseEditionInteractive({ title: "Select edition for this page" });
+    currentPayload.edition = picked || DEFAULT_EDITION;
+  }
+  bindMeta(currentPayload);
+  renderAll();
+  clearUndoStack();
+
+  const parsed = Number(currentPayload.page_num);
+  const fallback = Number(String(pageId || "").replace(/^p/, ""));
+  const pdfPageNum = Number.isFinite(parsed) && parsed > 0 ? parsed
+    : (Number.isFinite(fallback) && fallback > 0 ? fallback : 1);
+
+  const sourcePdfKey = String(currentPayload.source_pdf || "");
+  if (!pdfFrame.src || currentPdfSource !== sourcePdfKey) {
+    currentPdfSource = sourcePdfKey;
+    pdfFrame.src = `/pdfjs/${pageId}?page=${pdfPageNum}#page=${pdfPageNum}`;
+  } else {
+    pdfFrame.contentWindow?.postMessage({ type: "setPage", page: pdfPageNum }, window.location.origin);
+  }
+  updatePdfPaneHeader(sourcePdfKey, pdfPageNum);
+}
+
 async function loadPage(pageId) {
   try {
     setStatus("Loading...");
     const res = await fetch(`/api/page/${pageId}`);
     if (!res.ok) throw new Error(`Load failed: ${res.status}`);
-    currentPayload = await res.json();
-    normalizePayload(currentPayload);
-    applyDefaultReviewer(currentPayload);
-    renumberFootnotes();
-    if (!currentPayload.edition) {
-      const picked = await chooseEditionInteractive({ title: "Select edition for this page" });
-      currentPayload.edition = picked || DEFAULT_EDITION;
-    }
-    bindMeta(currentPayload);
-    renderAll();
-    clearUndoStack();
-
-    const parsed = Number(currentPayload.page_num);
-    const fallback = Number(String(pageId || "").replace(/^p/, ""));
-    const pdfPageNum = Number.isFinite(parsed) && parsed > 0 ? parsed
-      : (Number.isFinite(fallback) && fallback > 0 ? fallback : 1);
-
-    const sourcePdfKey = String(currentPayload.source_pdf || "");
-    if (!pdfFrame.src || currentPdfSource !== sourcePdfKey) {
-      currentPdfSource = sourcePdfKey;
-      pdfFrame.src = `/pdfjs/${pageId}?page=${pdfPageNum}#page=${pdfPageNum}`;
-    } else {
-      pdfFrame.contentWindow?.postMessage({ type: "setPage", page: pdfPageNum }, window.location.origin);
-    }
-    updatePdfPaneHeader(sourcePdfKey, pdfPageNum);
+    const payload = await res.json();
+    await applyPayload(pageId, payload);
     setStatus(`Loaded ${pageId}`);
   } catch (err) {
     setStatus(String(err), true);
@@ -1526,11 +1531,112 @@ function previewOcrSelection() {
     pdfFrame.contentWindow?.postMessage({ type: "setPage", page: safePage }, window.location.origin);
   }
   updatePdfPaneHeader(pdfName, safePage);
+
+
+}
+
+// ---------------------------------------------------------------------------
+// JSON sync: when the OCR-bar page selector changes, also load the matching
+// annotation JSON (if it exists) or render an empty stub. Keeps the top
+// `pageSelect` in sync. Skipped silently when the editor is dirty unless the
+// user confirms; on cancel, OCR-bar inputs revert to their last committed
+// values.
+// ---------------------------------------------------------------------------
+let _lastOcrPdf = ocrPdfSelect ? String(ocrPdfSelect.value || "") : "";
+let _lastOcrPage = ocrPageInput ? String(ocrPageInput.value || "") : "";
+
+function pageIdFromOcrInputs() {
+  const n = parseInt(ocrPageInput?.value || "0", 10);
+  if (!Number.isFinite(n) || n < 1) return null;
+  return `p${String(n).padStart(4, "0")}`;
+}
+
+function ensurePageSelectOption(pageId) {
+  if (!pageSelect) return;
+  const exists = Array.from(pageSelect.options).some((o) => o.value === pageId);
+  if (!exists) {
+    const opt = document.createElement("option");
+    opt.value = pageId;
+    opt.textContent = pageId;
+    pageSelect.appendChild(opt);
+  }
+  pageSelect.value = pageId;
+}
+
+function buildStubPayload(pageId, pageNum) {
+  const edition = ocrEditionSelect?.value && EDITIONS[ocrEditionSelect.value]
+    ? ocrEditionSelect.value
+    : "";
+  return {
+    page_id: pageId,
+    page_num: pageNum,
+    source_pdf: String(ocrPdfSelect?.value || ""),
+    edition,
+    meta: {
+      annotation_status: "stub",
+      review_status: "draft",
+      reviewer: "",
+      notes: "",
+      ocr_page_summary: "",
+    },
+    regions: { header: [], body: [], marginalia: [], catchword: [] },
+    footnotes: [],
+  };
+}
+
+async function syncJsonToOcrSelection() {
+  const pageId = pageIdFromOcrInputs();
+  if (!pageId) return;
+  if (pageSelect && pageSelect.value === pageId) {
+    // Already showing this page; record committed values and exit.
+    _lastOcrPdf = String(ocrPdfSelect?.value || "");
+    _lastOcrPage = String(ocrPageInput?.value || "");
+    return;
+  }
+
+  // Dirty-buffer guard: the undo stack is the closest proxy for unsaved edits.
+  if (typeof undoStack !== "undefined" && undoStack.length > 0) {
+    const ok = window.confirm(
+      `You have unsaved edits. Discard them and load ${pageId}?`
+    );
+    if (!ok) {
+      // Revert OCR-bar inputs and PDF preview.
+      if (ocrPdfSelect) ocrPdfSelect.value = _lastOcrPdf;
+      if (ocrPageInput) ocrPageInput.value = _lastOcrPage;
+      previewOcrSelection();
+      return;
+    }
+  }
+
+  const pageNum = parseInt(ocrPageInput?.value || "0", 10);
+  try {
+    const res = await fetch(`/api/page/${pageId}`);
+    if (res.ok) {
+      const payload = await res.json();
+      ensurePageSelectOption(pageId);
+      await applyPayload(pageId, payload);
+      setStatus(`Loaded ${pageId}`);
+    } else if (res.status === 404) {
+      ensurePageSelectOption(pageId);
+      await applyPayload(pageId, buildStubPayload(pageId, pageNum));
+      setStatus(`New page ${pageId} (no annotation yet)`);
+    } else {
+      throw new Error(`Load failed: ${res.status}`);
+    }
+  } catch (err) {
+    setStatus(String(err), true);
+    return;
+  }
+
+  _lastOcrPdf = String(ocrPdfSelect?.value || "");
+  _lastOcrPage = String(ocrPageInput?.value || "");
 }
 
 if (ocrPdfSelect) ocrPdfSelect.addEventListener("change", previewOcrSelection);
+if (ocrPdfSelect) ocrPdfSelect.addEventListener("change", syncJsonToOcrSelection);
 if (ocrPageInput) {
   ocrPageInput.addEventListener("change", previewOcrSelection);
+  ocrPageInput.addEventListener("change", syncJsonToOcrSelection);
   ocrPageInput.addEventListener("input", () => {
     clearTimeout(ocrPageInput._previewTimer);
     ocrPageInput._previewTimer = setTimeout(previewOcrSelection, 300);
