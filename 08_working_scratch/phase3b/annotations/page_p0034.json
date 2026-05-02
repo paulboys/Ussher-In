@@ -1,0 +1,860 @@
+{
+  "page_id": "p0034",
+  "part": "part1",
+  "edition": "1847_elrington_todd",
+  "source_pdf": "00_source_pdf/JamesUssher_Britannicarum ecclesiarum antiquitates_Part1.pdf",
+  "page_num": 34,
+  "regions": {
+    "header": [
+      {
+        "page_id": "p0034",
+        "region": "header",
+        "line_id": "p0034_header_l0001",
+        "text_gold": "CAP. I. ANTIQUITATES. 13",
+        "text_ocr_original": "CAP. I. ANTIQUITATES. 13",
+        "marker_id": "",
+        "reviewer": "",
+        "review_status": "draft",
+        "notes": "",
+        "ocr_confidence": 1.0,
+        "ocr_illegible": false,
+        "ocr_marginalia_anchor_index": null
+      }
+    ],
+    "body": [
+      {
+        "page_id": "p0034",
+        "region": "body",
+        "line_id": "p0034_body_l0001",
+        "text_gold": "æterni Dei ad obedientiam fidei omnibus gentibus decla-",
+        "text_ocr_original": "æterni Dei ad obedientiam fidei omnibus gentibus decla-",
+        "marker_id": "",
+        "reviewer": "",
+        "review_status": "draft",
+        "notes": "",
+        "ocr_confidence": 1.0,
+        "ocr_illegible": false,
+        "ocr_marginalia_anchor_index": null,
+        "markers": []
+      },
+      {
+        "page_id": "p0034",
+        "region": "body",
+        "line_id": "p0034_body_l0002",
+        "text_gold": "ratum.” Indeque iis qui in tenebris et umbra mortis erant",
+        "text_ocr_original": "ratum.” Indeque iis qui in tenebris et umbra mortis erant",
+        "marker_id": "",
+        "reviewer": "",
+        "review_status": "draft",
+        "notes": "",
+        "ocr_confidence": 1.0,
+        "ocr_illegible": false,
+        "ocr_marginalia_anchor_index": null,
+        "markers": []
+      },
+      {
+        "page_id": "p0034",
+        "region": "body",
+        "line_id": "p0034_body_l0003",
+        "text_gold": "positi, lumen illud gentibus patefaciendum aﬀulsit: de",
+        "text_ocr_original": "positi, lumen illud gentibus patefaciendum aﬀulsit: de",
+        "marker_id": "",
+        "reviewer": "",
+        "review_status": "draft",
+        "notes": "",
+        "ocr_confidence": 1.0,
+        "ocr_illegible": false,
+        "ocr_marginalia_anchor_index": null,
+        "markers": []
+      },
+      {
+        "page_id": "p0034",
+        "region": "body",
+        "line_id": "p0034_body_l0004",
+        "text_gold": "quo apud prophetam Deus; “Constitui te ut sis lux",
+        "text_ocr_original": "quo apud prophetam Deus; “Constitui te ut sis lux",
+        "marker_id": "",
+        "reviewer": "",
+        "review_status": "draft",
+        "notes": "",
+        "ocr_confidence": 1.0,
+        "ocr_illegible": false,
+        "ocr_marginalia_anchor_index": null,
+        "markers": [
+          {
+            "number": 1,
+            "footnote_id": "p0034_fn_001",
+            "char_offset": 35
+          }
+        ]
+      },
+      {
+        "page_id": "p0034",
+        "region": "body",
+        "line_id": "p0034_body_l0005",
+        "text_gold": "gentium, ut sis saluti usque ad ﬁnes terræ.” Christo enim",
+        "text_ocr_original": "gentium, ut sis saluti usque ad ﬁnes terræ.” Christo enim",
+        "marker_id": "",
+        "reviewer": "",
+        "review_status": "draft",
+        "notes": "",
+        "ocr_confidence": 1.0,
+        "ocr_illegible": false,
+        "ocr_marginalia_anchor_index": null,
+        "markers": []
+      },
+      {
+        "page_id": "p0034",
+        "region": "body",
+        "line_id": "p0034_body_l0006",
+        "text_gold": "apostolis suis imperante, ut profecti in mundum univer-",
+        "text_ocr_original": "apostolis suis imperante, ut profecti in mundum univer-",
+        "marker_id": "",
+        "reviewer": "",
+        "review_status": "draft",
+        "notes": "",
+        "ocr_confidence": 1.0,
+        "ocr_illegible": false,
+        "ocr_marginalia_anchor_index": null,
+        "markers": [
+          {
+            "number": 2,
+            "footnote_id": "p0034_fn_002",
+            "char_offset": 28
+          }
+        ]
+      },
+      {
+        "page_id": "p0034",
+        "region": "body",
+        "line_id": "p0034_body_l0007",
+        "text_gold": "sum, prædicarent evangelium omni creaturæ; egressi illi",
+        "text_ocr_original": "sum, prædicarent evangelium omni creaturæ; egressi illi",
+        "marker_id": "",
+        "reviewer": "",
+        "review_status": "draft",
+        "notes": "",
+        "ocr_confidence": 1.0,
+        "ocr_illegible": false,
+        "ocr_marginalia_anchor_index": null,
+        "markers": []
+      },
+      {
+        "page_id": "p0034",
+        "region": "body",
+        "line_id": "p0034_body_l0008",
+        "text_gold": "prædicarunt ubique, ita ut nullum locum cœlesti doctrinæ",
+        "text_ocr_original": "prædicarunt ubique, ita ut nullum locum cœlesti doctrinæ",
+        "marker_id": "",
+        "reviewer": "",
+        "review_status": "draft",
+        "notes": "",
+        "ocr_confidence": 1.0,
+        "ocr_illegible": false,
+        "ocr_marginalia_anchor_index": null,
+        "markers": []
+      },
+      {
+        "page_id": "p0034",
+        "region": "body",
+        "line_id": "p0034_body_l0009",
+        "text_gold": "occultum esse sinerent; “μὴ νήσους, μὴ ἤπειρον, μηδ' εἴτινα",
+        "text_ocr_original": "occultum esse sinerent; “μὴ νήσους, μὴ ἤπειρον, μηδ' εἴτινα",
+        "marker_id": "",
+        "reviewer": "",
+        "review_status": "draft",
+        "notes": "",
+        "ocr_confidence": 0.95,
+        "ocr_illegible": false,
+        "ocr_marginalia_anchor_index": null,
+        "markers": []
+      },
+      {
+        "page_id": "p0034",
+        "region": "body",
+        "line_id": "p0034_body_l0010",
+        "text_gold": "τρίτην ἀνθρώποις κατοικίαν ἡ φύσις ἐδίδου, non insulas,",
+        "text_ocr_original": "τρίτην ἀνθρώποις κατοικίαν ἡ φύσις ἐδίδου, non insulas,",
+        "marker_id": "",
+        "reviewer": "",
+        "review_status": "draft",
+        "notes": "",
+        "ocr_confidence": 0.95,
+        "ocr_illegible": false,
+        "ocr_marginalia_anchor_index": null,
+        "markers": []
+      },
+      {
+        "page_id": "p0034",
+        "region": "body",
+        "line_id": "p0034_body_l0011",
+        "text_gold": "non continentem, non si quam tertiam habitationem homi-",
+        "text_ocr_original": "non continentem, non si quam tertiam habitationem homi-",
+        "marker_id": "",
+        "reviewer": "",
+        "review_status": "draft",
+        "notes": "",
+        "ocr_confidence": 1.0,
+        "ocr_illegible": false,
+        "ocr_marginalia_anchor_index": null,
+        "markers": []
+      },
+      {
+        "page_id": "p0034",
+        "region": "body",
+        "line_id": "p0034_body_l0012",
+        "text_gold": "nibus natura concessit:” quemadmodum Gregorius Nys-",
+        "text_ocr_original": "nibus natura concessit:” quemadmodum Gregorius Nys-",
+        "marker_id": "",
+        "reviewer": "",
+        "review_status": "draft",
+        "notes": "",
+        "ocr_confidence": 1.0,
+        "ocr_illegible": false,
+        "ocr_marginalia_anchor_index": null,
+        "markers": [
+          {
+            "number": 3,
+            "footnote_id": "p0034_fn_003",
+            "char_offset": 46
+          }
+        ]
+      },
+      {
+        "page_id": "p0034",
+        "region": "body",
+        "line_id": "p0034_body_l0013",
+        "text_gold": "senus loquitur. Atque ita completum est quod per Esaiam",
+        "text_ocr_original": "senus loquitur. Atque ita completum est quod per Esaiam",
+        "marker_id": "",
+        "reviewer": "",
+        "review_status": "draft",
+        "notes": "",
+        "ocr_confidence": 1.0,
+        "ocr_illegible": false,
+        "ocr_marginalia_anchor_index": null,
+        "markers": []
+      },
+      {
+        "page_id": "p0034",
+        "region": "body",
+        "line_id": "p0034_body_l0014",
+        "text_gold": "olim Deus prædixerat: “Mittam ex eis ad gentes in",
+        "text_ocr_original": "olim Deus prædixerat: “Mittam ex eis ad gentes in",
+        "marker_id": "",
+        "reviewer": "",
+        "review_status": "draft",
+        "notes": "",
+        "ocr_confidence": 1.0,
+        "ocr_illegible": false,
+        "ocr_marginalia_anchor_index": null,
+        "markers": [
+          {
+            "number": 4,
+            "footnote_id": "p0034_fn_004",
+            "char_offset": 29
+          }
+        ]
+      },
+      {
+        "page_id": "p0034",
+        "region": "body",
+        "line_id": "p0034_body_l0015",
+        "text_gold": "oceano, insulasque remotissimas, quæ non audiverant fa-",
+        "text_ocr_original": "oceano, insulasque remotissimas, quæ non audiverant fa-",
+        "marker_id": "",
+        "reviewer": "",
+        "review_status": "draft",
+        "notes": "",
+        "ocr_confidence": 1.0,
+        "ocr_illegible": false,
+        "ocr_marginalia_anchor_index": null,
+        "markers": []
+      },
+      {
+        "page_id": "p0034",
+        "region": "body",
+        "line_id": "p0034_body_l0016",
+        "text_gold": "mam meam, neque viderant gloriam meam, ut indicent",
+        "text_ocr_original": "mam meam, neque viderant gloriam meam, ut indicent",
+        "marker_id": "",
+        "reviewer": "",
+        "review_status": "draft",
+        "notes": "",
+        "ocr_confidence": 1.0,
+        "ocr_illegible": false,
+        "ocr_marginalia_anchor_index": null,
+        "markers": []
+      },
+      {
+        "page_id": "p0034",
+        "region": "body",
+        "line_id": "p0034_body_l0017",
+        "text_gold": "gloriam meam in gentibus.” Nam “verbum Dei,” Augus-",
+        "text_ocr_original": "gloriam meam in gentibus.” Nam “verbum Dei,” Augus-",
+        "marker_id": "",
+        "reviewer": "",
+        "review_status": "draft",
+        "notes": "",
+        "ocr_confidence": 1.0,
+        "ocr_illegible": false,
+        "ocr_marginalia_anchor_index": null,
+        "markers": []
+      },
+      {
+        "page_id": "p0034",
+        "region": "body",
+        "line_id": "p0034_body_l0018",
+        "text_gold": "tini verba hæc sunt, “non in sola continenti terra præ-",
+        "text_ocr_original": "tini verba hæc sunt, “non in sola continenti terra præ-",
+        "marker_id": "",
+        "reviewer": "",
+        "review_status": "draft",
+        "notes": "",
+        "ocr_confidence": 1.0,
+        "ocr_illegible": false,
+        "ocr_marginalia_anchor_index": null,
+        "markers": [
+          {
+            "number": 5,
+            "footnote_id": "p0034_fn_005",
+            "char_offset": 19
+          }
+        ]
+      },
+      {
+        "page_id": "p0034",
+        "region": "body",
+        "line_id": "p0034_body_l0019",
+        "text_gold": "dicatum est; sed etiam in insulis, quæ constitutæ sunt",
+        "text_ocr_original": "dicatum est; sed etiam in insulis, quæ constitutæ sunt",
+        "marker_id": "",
+        "reviewer": "",
+        "review_status": "draft",
+        "notes": "",
+        "ocr_confidence": 1.0,
+        "ocr_illegible": false,
+        "ocr_marginalia_anchor_index": null,
+        "markers": []
+      },
+      {
+        "page_id": "p0034",
+        "region": "body",
+        "line_id": "p0034_body_l0020",
+        "text_gold": "in medio mari: et ipsæ plenæ Christianis, plenæ sunt ser-",
+        "text_ocr_original": "in medio mari: et ipsæ plenæ Christianis, plenæ sunt ser-",
+        "marker_id": "",
+        "reviewer": "",
+        "review_status": "draft",
+        "notes": "",
+        "ocr_confidence": 1.0,
+        "ocr_illegible": false,
+        "ocr_marginalia_anchor_index": null,
+        "markers": []
+      },
+      {
+        "page_id": "p0034",
+        "region": "body",
+        "line_id": "p0034_body_l0021",
+        "text_gold": "vis Dei. Non enim separat mare eum, qui fecerat mare.",
+        "text_ocr_original": "vis Dei. Non enim separat mare eum, qui fecerat mare.",
+        "marker_id": "",
+        "reviewer": "",
+        "review_status": "draft",
+        "notes": "",
+        "ocr_confidence": 1.0,
+        "ocr_illegible": false,
+        "ocr_marginalia_anchor_index": null,
+        "markers": []
+      },
+      {
+        "page_id": "p0034",
+        "region": "body",
+        "line_id": "p0034_body_l0022",
+        "text_gold": "Quo naves possunt accedere, verba Dei non possunt?”",
+        "text_ocr_original": "Quo naves possunt accedere, verba Dei non possunt?”",
+        "marker_id": "",
+        "reviewer": "",
+        "review_status": "draft",
+        "notes": "",
+        "ocr_confidence": 1.0,
+        "ocr_illegible": false,
+        "ocr_marginalia_anchor_index": null,
+        "markers": []
+      },
+      {
+        "page_id": "p0034",
+        "region": "body",
+        "line_id": "p0034_body_l0023",
+        "text_gold": "Et quidem a primo exortu Evangelii suscepisse Britan-",
+        "text_ocr_original": "Et quidem a primo exortu Evangelii suscepisse Britan-",
+        "marker_id": "",
+        "reviewer": "",
+        "review_status": "draft",
+        "notes": "",
+        "ocr_confidence": 1.0,
+        "ocr_illegible": false,
+        "ocr_marginalia_anchor_index": null,
+        "markers": []
+      },
+      {
+        "page_id": "p0034",
+        "region": "body",
+        "line_id": "p0034_body_l0024",
+        "text_gold": "nos Christi ﬁdem, illa Gildæ satis indicant; “Interea",
+        "text_ocr_original": "nos Christi ﬁdem, illa Gildæ satis indicant; “Interea",
+        "marker_id": "",
+        "reviewer": "",
+        "review_status": "draft",
+        "notes": "",
+        "ocr_confidence": 1.0,
+        "ocr_illegible": false,
+        "ocr_marginalia_anchor_index": null,
+        "markers": []
+      },
+      {
+        "page_id": "p0034",
+        "region": "body",
+        "line_id": "p0034_body_l0025",
+        "text_gold": "glaciali frigore rigenti insulæ, et velut longiore terrarum",
+        "text_ocr_original": "glaciali frigore rigenti insulæ, et velut longiore terrarum",
+        "marker_id": "",
+        "reviewer": "",
+        "review_status": "draft",
+        "notes": "",
+        "ocr_confidence": 1.0,
+        "ocr_illegible": false,
+        "ocr_marginalia_anchor_index": null,
+        "markers": []
+      },
+      {
+        "page_id": "p0034",
+        "region": "body",
+        "line_id": "p0034_body_l0026",
+        "text_gold": "secessu soli visibili non proximæ verus ille non de ﬁrma-",
+        "text_ocr_original": "secessu soli visibili non proximæ verus ille non de ﬁrma-",
+        "marker_id": "",
+        "reviewer": "",
+        "review_status": "draft",
+        "notes": "",
+        "ocr_confidence": 1.0,
+        "ocr_illegible": false,
+        "ocr_marginalia_anchor_index": null,
+        "markers": []
+      },
+      {
+        "page_id": "p0034",
+        "region": "body",
+        "line_id": "p0034_body_l0027",
+        "text_gold": "mento solum temporali, sed de summa etiam cœlorum",
+        "text_ocr_original": "mento solum temporali, sed de summa etiam cœlorum",
+        "marker_id": "",
+        "reviewer": "",
+        "review_status": "draft",
+        "notes": "",
+        "ocr_confidence": 1.0,
+        "ocr_illegible": false,
+        "ocr_marginalia_anchor_index": null,
+        "markers": [
+          {
+            "number": 6,
+            "footnote_id": "p0034_fn_006",
+            "char_offset": 11
+          }
+        ]
+      },
+      {
+        "page_id": "p0034",
+        "region": "body",
+        "line_id": "p0034_body_l0028",
+        "text_gold": "arce tempora cuncta excedente, universo orbi præfulgi-",
+        "text_ocr_original": "arce tempora cuncta excedente, universo orbi præfulgi-",
+        "marker_id": "",
+        "reviewer": "",
+        "review_status": "draft",
+        "notes": "",
+        "ocr_confidence": 1.0,
+        "ocr_illegible": false,
+        "ocr_marginalia_anchor_index": null,
+        "markers": []
+      },
+      {
+        "page_id": "p0034",
+        "region": "body",
+        "line_id": "p0034_body_l0029",
+        "text_gold": "dum sui coruscum ostendens tempore, ut scimus, summo",
+        "text_ocr_original": "dum sui coruscum ostendens tempore, ut scimus, summo",
+        "marker_id": "",
+        "reviewer": "",
+        "review_status": "draft",
+        "notes": "",
+        "ocr_confidence": 1.0,
+        "ocr_illegible": false,
+        "ocr_marginalia_anchor_index": null,
+        "markers": []
+      },
+      {
+        "page_id": "p0034",
+        "region": "body",
+        "line_id": "p0034_body_l0030",
+        "text_gold": "Tiberii Cæsaris (quo absque ullo impedimento ejus propa-",
+        "text_ocr_original": "Tiberii Cæsaris (quo absque ullo impedimento ejus propa-",
+        "marker_id": "",
+        "reviewer": "",
+        "review_status": "draft",
+        "notes": "",
+        "ocr_confidence": 1.0,
+        "ocr_illegible": false,
+        "ocr_marginalia_anchor_index": null,
+        "markers": []
+      },
+      {
+        "page_id": "p0034",
+        "region": "body",
+        "line_id": "p0034_body_l0031",
+        "text_gold": "gabatur religio comminata, senatu nolente, a principe",
+        "text_ocr_original": "gabatur religio comminata, senatu nolente, a principe",
+        "marker_id": "",
+        "reviewer": "",
+        "review_status": "draft",
+        "notes": "",
+        "ocr_confidence": 1.0,
+        "ocr_illegible": false,
+        "ocr_marginalia_anchor_index": null,
+        "markers": [
+          {
+            "number": 7,
+            "footnote_id": "p0034_fn_007",
+            "char_offset": 53
+          }
+        ]
+      },
+      {
+        "page_id": "p0034",
+        "region": "body",
+        "line_id": "p0034_body_l0032",
+        "text_gold": "morte delatoribus militum ejusdem) radios suos primum",
+        "text_ocr_original": "morte delatoribus militum ejusdem) radios suos primum",
+        "marker_id": "",
+        "reviewer": "",
+        "review_status": "draft",
+        "notes": "",
+        "ocr_confidence": 1.0,
+        "ocr_illegible": false,
+        "ocr_marginalia_anchor_index": null,
+        "markers": [
+          {
+            "number": 8,
+            "footnote_id": "p0034_fn_008",
+            "char_offset": 17
+          }
+        ]
+      },
+      {
+        "page_id": "p0034",
+        "region": "body",
+        "line_id": "p0034_body_l0033",
+        "text_gold": "indulget, id est, sua præcepta Christus. Quæ licet ab",
+        "text_ocr_original": "indulget, id est, sua præcepta Christus. Quæ licet ab",
+        "marker_id": "",
+        "reviewer": "",
+        "review_status": "draft",
+        "notes": "",
+        "ocr_confidence": 1.0,
+        "ocr_illegible": false,
+        "ocr_marginalia_anchor_index": null,
+        "markers": []
+      }
+    ],
+    "marginalia": [
+      {
+        "page_id": "p0034",
+        "region": "marginalia",
+        "line_id": "p0034_marginalia_l0001",
+        "text_gold": "Esai. cap. 49. ver. 6. Act. cap. 13. ver. 47.",
+        "text_ocr_original": "Esai. cap. 49. ver. 6. Act. cap. 13. ver. 47.",
+        "marker_id": "l",
+        "reviewer": "",
+        "review_status": "draft",
+        "notes": "",
+        "ocr_confidence": 0.95,
+        "ocr_illegible": false,
+        "ocr_marginalia_anchor_index": null
+      },
+      {
+        "page_id": "p0034",
+        "region": "marginalia",
+        "line_id": "p0034_marginalia_l0002",
+        "text_gold": "Marc. cap. 16. ver. 15, 20. cum Coloss. cap. 1. ver. 23.",
+        "text_ocr_original": "Marc. cap. 16. ver. 15, 20. cum Coloss. cap. 1. ver. 23.",
+        "marker_id": "m",
+        "reviewer": "",
+        "review_status": "draft",
+        "notes": "",
+        "ocr_confidence": 0.95,
+        "ocr_illegible": false,
+        "ocr_marginalia_anchor_index": null
+      },
+      {
+        "page_id": "p0034",
+        "region": "marginalia",
+        "line_id": "p0034_marginalia_l0003",
+        "text_gold": "Orat. in Petrum et Paulum, edit. Ingolstad. 1620.",
+        "text_ocr_original": "Orat. in Petrum et Paulum, edit. Ingolstad. 1620.",
+        "marker_id": "n",
+        "reviewer": "",
+        "review_status": "draft",
+        "notes": "",
+        "ocr_confidence": 1.0,
+        "ocr_illegible": false,
+        "ocr_marginalia_anchor_index": null
+      },
+      {
+        "page_id": "p0034",
+        "region": "marginalia",
+        "line_id": "p0034_marginalia_l0004",
+        "text_gold": "Esai. cap. 66. ver. 19. Vid. Lyran. in Psal. 97. ver. 1. multitudo insularum,",
+        "text_ocr_original": "Esai. cap. 66. ver. 19. Vid. Lyran. in Psal. 97. ver. 1. multitudo insularum,",
+        "marker_id": "o",
+        "reviewer": "",
+        "review_status": "draft",
+        "notes": "",
+        "ocr_confidence": 0.95,
+        "ocr_illegible": false,
+        "ocr_marginalia_anchor_index": null
+      },
+      {
+        "page_id": "p0034",
+        "region": "marginalia",
+        "line_id": "p0034_marginalia_l0005",
+        "text_gold": "de Anglia et Hibernia.",
+        "text_ocr_original": "de Anglia et Hibernia.",
+        "marker_id": "",
+        "reviewer": "",
+        "review_status": "draft",
+        "notes": "",
+        "ocr_confidence": 1.0,
+        "ocr_illegible": false,
+        "ocr_marginalia_anchor_index": null
+      },
+      {
+        "page_id": "p0034",
+        "region": "marginalia",
+        "line_id": "p0034_marginalia_l0006",
+        "text_gold": "in expositione Psal. 96. op. tom. 4. pag. 1043.",
+        "text_ocr_original": "in expositione Psal. 96. op. tom. 4. pag. 1043.",
+        "marker_id": "p",
+        "reviewer": "",
+        "review_status": "draft",
+        "notes": "",
+        "ocr_confidence": 0.9,
+        "ocr_illegible": false,
+        "ocr_marginalia_anchor_index": null
+      },
+      {
+        "page_id": "p0034",
+        "region": "marginalia",
+        "line_id": "p0034_marginalia_l0007",
+        "text_gold": "al. Sol.",
+        "text_ocr_original": "al. Sol.",
+        "marker_id": "q",
+        "reviewer": "",
+        "review_status": "draft",
+        "notes": "",
+        "ocr_confidence": 0.9,
+        "ocr_illegible": false,
+        "ocr_marginalia_anchor_index": null
+      },
+      {
+        "page_id": "p0034",
+        "region": "marginalia",
+        "line_id": "p0034_marginalia_l0008",
+        "text_gold": "Tiberio scil.",
+        "text_ocr_original": "Tiberio scil.",
+        "marker_id": "r",
+        "reviewer": "",
+        "review_status": "draft",
+        "notes": "",
+        "ocr_confidence": 0.9,
+        "ocr_illegible": false,
+        "ocr_marginalia_anchor_index": null
+      },
+      {
+        "page_id": "p0034",
+        "region": "marginalia",
+        "line_id": "p0034_marginalia_l0009",
+        "text_gold": "i. e. accusatoribus Christianorum.",
+        "text_ocr_original": "i. e. accusatoribus Christianorum.",
+        "marker_id": "s",
+        "reviewer": "",
+        "review_status": "draft",
+        "notes": "",
+        "ocr_confidence": 0.9,
+        "ocr_illegible": false,
+        "ocr_marginalia_anchor_index": null
+      }
+    ],
+    "catchword": []
+  },
+  "footnotes": [
+    {
+      "footnote_id": "p0034_fn_001",
+      "page_id": "p0034",
+      "marker_number": 1,
+      "marker_id": "l",
+      "body_line_id": "p0034_body_l0004",
+      "text_gold": "Esai. cap. 49. ver. 6. Act. cap. 13. ver. 47.",
+      "text_ocr_original": "Esai. cap. 49. ver. 6. Act. cap. 13. ver. 47.",
+      "kind": "citation",
+      "source_region": "marginalia",
+      "source_marginalia_line_ids": [
+        "p0034_marginalia_l0001"
+      ],
+      "review_status": "draft",
+      "notes": ""
+    },
+    {
+      "footnote_id": "p0034_fn_002",
+      "page_id": "p0034",
+      "marker_number": 2,
+      "marker_id": "m",
+      "body_line_id": "p0034_body_l0006",
+      "text_gold": "Marc. cap. 16. ver. 15, 20. cum Coloss. cap. 1. ver. 23.",
+      "text_ocr_original": "Marc. cap. 16. ver. 15, 20. cum Coloss. cap. 1. ver. 23.",
+      "kind": "citation",
+      "source_region": "marginalia",
+      "source_marginalia_line_ids": [
+        "p0034_marginalia_l0002"
+      ],
+      "review_status": "draft",
+      "notes": ""
+    },
+    {
+      "footnote_id": "p0034_fn_003",
+      "page_id": "p0034",
+      "marker_number": 3,
+      "marker_id": "n",
+      "body_line_id": "p0034_body_l0012",
+      "text_gold": "Orat. in Petrum et Paulum, edit. Ingolstad. 1620.",
+      "text_ocr_original": "Orat. in Petrum et Paulum, edit. Ingolstad. 1620.",
+      "kind": "citation",
+      "source_region": "marginalia",
+      "source_marginalia_line_ids": [
+        "p0034_marginalia_l0003"
+      ],
+      "review_status": "draft",
+      "notes": ""
+    },
+    {
+      "footnote_id": "p0034_fn_004",
+      "page_id": "p0034",
+      "marker_number": 4,
+      "marker_id": "o",
+      "body_line_id": "p0034_body_l0014",
+      "text_gold": "Esai. cap. 66. ver. 19. Vid. Lyran. in Psal. 97. ver. 1. multitudo insularum,",
+      "text_ocr_original": "Esai. cap. 66. ver. 19. Vid. Lyran. in Psal. 97. ver. 1. multitudo insularum,",
+      "kind": "citation",
+      "source_region": "marginalia",
+      "source_marginalia_line_ids": [
+        "p0034_marginalia_l0004"
+      ],
+      "review_status": "draft",
+      "notes": ""
+    },
+    {
+      "footnote_id": "p0034_fn_005",
+      "page_id": "p0034",
+      "marker_number": 5,
+      "marker_id": "p",
+      "body_line_id": "p0034_body_l0018",
+      "text_gold": "in expositione Psal. 96. op. tom. 4. pag. 1043.",
+      "text_ocr_original": "in expositione Psal. 96. op. tom. 4. pag. 1043.",
+      "kind": "citation",
+      "source_region": "marginalia",
+      "source_marginalia_line_ids": [
+        "p0034_marginalia_l0006"
+      ],
+      "review_status": "draft",
+      "notes": ""
+    },
+    {
+      "footnote_id": "p0034_fn_006",
+      "page_id": "p0034",
+      "marker_number": 6,
+      "marker_id": "q",
+      "body_line_id": "p0034_body_l0027",
+      "text_gold": "al. Sol.",
+      "text_ocr_original": "al. Sol.",
+      "kind": "citation",
+      "source_region": "marginalia",
+      "source_marginalia_line_ids": [
+        "p0034_marginalia_l0007"
+      ],
+      "review_status": "draft",
+      "notes": ""
+    },
+    {
+      "footnote_id": "p0034_fn_007",
+      "page_id": "p0034",
+      "marker_number": 7,
+      "marker_id": "r",
+      "body_line_id": "p0034_body_l0031",
+      "text_gold": "Tiberio scil.",
+      "text_ocr_original": "Tiberio scil.",
+      "kind": "citation",
+      "source_region": "marginalia",
+      "source_marginalia_line_ids": [
+        "p0034_marginalia_l0008"
+      ],
+      "review_status": "draft",
+      "notes": ""
+    },
+    {
+      "footnote_id": "p0034_fn_008",
+      "page_id": "p0034",
+      "marker_number": 8,
+      "marker_id": "s",
+      "body_line_id": "p0034_body_l0032",
+      "text_gold": "i. e. accusatoribus Christianorum.",
+      "text_ocr_original": "i. e. accusatoribus Christianorum.",
+      "kind": "citation",
+      "source_region": "marginalia",
+      "source_marginalia_line_ids": [
+        "p0034_marginalia_l0009"
+      ],
+      "review_status": "draft",
+      "notes": ""
+    },
+    {
+      "footnote_id": "p0034_fn_009",
+      "page_id": "p0034",
+      "marker_number": 9,
+      "marker_id": "",
+      "body_line_id": "",
+      "text_gold": "de Anglia et Hibernia.",
+      "text_ocr_original": "de Anglia et Hibernia.",
+      "kind": "citation",
+      "source_region": "marginalia",
+      "source_marginalia_line_ids": [
+        "p0034_marginalia_l0005"
+      ],
+      "review_status": "draft",
+      "notes": ""
+    }
+  ],
+  "meta": {
+    "reviewer": "",
+    "annotation_status": "ocr_seeded",
+    "review_status": "draft",
+    "notes": "",
+    "ocr_engine": "gemini",
+    "ocr_provider_model": "gemini-3.1-pro-preview",
+    "ocr_lang": [
+      "lat",
+      "grc"
+    ],
+    "ocr_confidence_avg": 98.49,
+    "ocr_confidence_min": 90.0,
+    "ocr_page_summary": "Page with a header, body block including Latin and Greek script, and a footnote section. No marginalia or catchword."
+  }
+}
