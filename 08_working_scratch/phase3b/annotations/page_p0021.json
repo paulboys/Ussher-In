@@ -151,7 +151,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0021",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "Caput XII.",
         "text_ocr_original": "Caput XII."
@@ -166,7 +166,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0021",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "Semipelagiani a Prospero scriptis refutati: Pelagiani a Xysto III.",
         "text_ocr_original": "Semipelagiani a Prospero scriptis refutati: Pelagiani a Xysto III."
@@ -181,7 +181,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0021",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "et Leone I. repressi. Britanni, a Scotis et Pictis conculcati, ab",
         "text_ocr_original": "et Leone I. repressi. Britanni, a Scotis et Pictis conculcati, ab"
@@ -196,7 +196,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0021",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "Aetio Romanæ militiæ magistro auxilium frustra implorant.",
         "text_ocr_original": "Aetio Romanæ militiæ magistro auxilium frustra implorant."
@@ -211,7 +211,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0021",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "Iidem fame confecti, recuperatis postea viribus hostes repellunt.",
         "text_ocr_original": "Iidem fame confecti, recuperatis postea viribus hostes repellunt."
@@ -226,7 +226,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0021",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "De regibus eorum Constantino, et filio Constante Wintoniensi",
         "text_ocr_original": "De regibus eorum Constantino, et filio Constante Wintoniensi"
@@ -241,7 +241,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0021",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "monacho, quid Britannica historia: de pace et rerum abundantia",
         "text_ocr_original": "monacho, quid Britannica historia: de pace et rerum abundantia"
@@ -256,7 +256,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0021",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "illis restituta, novaque vitiorum segete simul accrescente, quid",
         "text_ocr_original": "illis restituta, novaque vitiorum segete simul accrescente, quid"
@@ -271,7 +271,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0021",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "Gildas tradat. Pelagiana hæresis emergens in Istria a Leone",
         "text_ocr_original": "Gildas tradat. Pelagiana hæresis emergens in Istria a Leone"
@@ -286,7 +286,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0021",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "Magno, in urbe Romana a B. Prospero, in Britannia a S. Ger-",
         "text_ocr_original": "Magno, in urbe Romana a B. Prospero, in Britannia a S. Ger-"
@@ -301,7 +301,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0021",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "mano et Severo prosternitur. De S. Germani et Vortigerni",
         "text_ocr_original": "mano et Severo prosternitur. De S. Germani et Vortigerni"
@@ -316,7 +316,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0021",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "Britannorum regis congressu fabulæ: Anglo-Saxones a Britan-",
         "text_ocr_original": "Britannorum regis congressu fabulæ: Anglo-Saxones a Britan-"
@@ -331,7 +331,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0021",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "nis invitati, Hengisto et Horsa ducibus, in insulam adveniunt.",
         "text_ocr_original": "nis invitati, Hengisto et Horsa ducibus, in insulam adveniunt."
@@ -346,7 +346,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0021",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "Ex quibus Germaniæ provinciis novi coloni ducti fuerint, et in",
         "text_ocr_original": "Ex quibus Germaniæ provinciis novi coloni ducti fuerint, et in"
@@ -361,7 +361,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0021",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "quibus Britanniæ locis consederint. Tempus eorum adventus",
         "text_ocr_original": "quibus Britanniæ locis consederint. Tempus eorum adventus"
@@ -376,7 +376,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0021",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "explicatum, et cum vicinorum Francorum in Gallias migratione",
         "text_ocr_original": "explicatum, et cum vicinorum Francorum in Gallias migratione"
@@ -391,7 +391,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0021",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "comparatum. Quomodo, auctis viribus, ex amicis hostes effecti,",
         "text_ocr_original": "comparatum. Quomodo, auctis viribus, ex amicis hostes effecti,"
@@ -406,7 +406,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0021",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "Britannicam rempublicam et Ecclesiam oppresserint. De mi-",
         "text_ocr_original": "Britannicam rempublicam et Ecclesiam oppresserint. De mi-"
@@ -421,7 +421,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0021",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "serorum Britannorum reliquiis solum vertere coactis: eaque",
         "text_ocr_original": "serorum Britannorum reliquiis solum vertere coactis: eaque"
@@ -436,7 +436,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0021",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "occasione, de eorum in Batavia, et Britannia Armorica colloca-",
         "text_ocr_original": "occasione, de eorum in Batavia, et Britannia Armorica colloca-"
@@ -451,7 +451,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0021",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "tis sedibus . . . . . . . . . . . 418",
         "text_ocr_original": "tis sedibus . . . . . . . . . . . 418"
@@ -466,7 +466,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0021",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "Caput XIII.",
         "text_ocr_original": "Caput XIII."
@@ -481,7 +481,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0021",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "De Fausto Britanno Semipelagianorum coryphæo, et conciliis",
         "text_ocr_original": "De Fausto Britanno Semipelagianorum coryphæo, et conciliis"
@@ -496,7 +496,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0021",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "Arelatensi atque Lugdunensi, quibus ille interfuit: de Gennadii",
         "text_ocr_original": "Arelatensi atque Lugdunensi, quibus ille interfuit: de Gennadii"
@@ -511,7 +511,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0021",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "quoque ecclesiasticorum dogmatum libello, et Lucidi Palinodia.",
         "text_ocr_original": "quoque ecclesiasticorum dogmatum libello, et Lucidi Palinodia."
@@ -526,7 +526,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0021",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "De Gilda Albanio, Davide Menevensi, et Dubricio archiepiscopo.",
         "text_ocr_original": "De Gilda Albanio, Davide Menevensi, et Dubricio archiepiscopo."
@@ -541,7 +541,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0021",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "De Ambrosii Aureliani regno, et rebus gestis. De Gelasii Ro-",
         "text_ocr_original": "De Ambrosii Aureliani regno, et rebus gestis. De Gelasii Ro-"
@@ -556,7 +556,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0021",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "mani et Johannis Alexandrini scriptis contra Pelagianos editis:",
         "text_ocr_original": "mani et Johannis Alexandrini scriptis contra Pelagianos editis:"
@@ -571,7 +571,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0021",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "et Romanæ septuaginta episcoporum synodi decreto. De Go-",
         "text_ocr_original": "et Romanæ septuaginta episcoporum synodi decreto. De Go-"
@@ -586,7 +586,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0021",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "delberto presbytero, Paulino, Gundleo, Cadoco et Winwaloco.",
         "text_ocr_original": "delberto presbytero, Paulino, Gundleo, Cadoco et Winwaloco."
@@ -601,7 +601,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0021",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "De Nazaleodo et Arthuro Britannorum regibus; persecutione",
         "text_ocr_original": "De Nazaleodo et Arthuro Britannorum regibus; persecutione"
@@ -616,7 +616,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0021",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "Saxonica, Gildæ Albanii et Cadoci Lancarvanensis exitu. De",
         "text_ocr_original": "Saxonica, Gildæ Albanii et Cadoci Lancarvanensis exitu. De"
@@ -631,7 +631,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0021",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "Iltuto, et ejus discipulis. De synodis Breviensi et Victoriana",
         "text_ocr_original": "Iltuto, et ejus discipulis. De synodis Breviensi et Victoriana"
@@ -646,7 +646,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0021",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "in Britannia habitis. De Badonico prælio, et nativitate Gildæ",
         "text_ocr_original": "in Britannia habitis. De Badonico prælio, et nativitate Gildæ"
@@ -661,7 +661,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0021",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "Badonici . . . . . . . . . . . 488",
         "text_ocr_original": "Badonici . . . . . . . . . . . 488"
