@@ -1,0 +1,264 @@
+{
+  "edition": "1847_elrington_todd",
+  "footnotes": [
+    {
+      "body_line_id": "p0045_body_l0002",
+      "footnote_id": "p0045_fn_001",
+      "kind": "citation",
+      "marker_id": "r",
+      "marker_number": 1,
+      "notes": "",
+      "page_id": "p0045",
+      "review_status": "draft",
+      "source_marginalia_line_ids": [
+        "p0045_marginalia_l0001"
+      ],
+      "source_region": "marginalia",
+      "text_gold": "Martial. lib. 7. Epigram. 63.",
+      "text_ocr_original": "Martial. lib. 7. Epigram. 63.",
+      "reviewer": "Paul Boys"
+    }
+  ],
+  "meta": {
+    "annotation_status": "ocr_seeded",
+    "notes": "",
+    "ocr_confidence_avg": 97.29,
+    "ocr_confidence_min": 95,
+    "ocr_engine": "gemini",
+    "ocr_lang": [
+      "lat",
+      "grc"
+    ],
+    "ocr_page_summary": "Page with a header, body text including an indented poem, and a single footnote. The 'r' superscript sits on 'Martialis'.",
+    "ocr_provider_model": "gemini-3.1-pro-preview",
+    "review_status": "draft",
+    "reviewer": "Paul Boys"
+  },
+  "page_id": "p0045",
+  "page_num": 45,
+  "part": "part1",
+  "regions": {
+    "body": [
+      {
+        "line_id": "p0045_body_l0001",
+        "marker_id": "",
+        "markers": [],
+        "notes": "",
+        "ocr_confidence": 0.98,
+        "ocr_illegible": false,
+        "ocr_marginalia_anchor_index": null,
+        "page_id": "p0045",
+        "region": "body",
+        "review_status": "draft",
+        "reviewer": "Paul Boys",
+        "text_gold": "Punici scriptore: quo consulatum gerente, Neronem in-",
+        "text_ocr_original": "Punici scriptore: quo consulatum gerente, Neronem in-"
+      },
+      {
+        "line_id": "p0045_body_l0002",
+        "marker_id": "",
+        "markers": [
+          {
+            "number": 1,
+            "footnote_id": "p0045_fn_001",
+            "char_offset": 56
+          }
+        ],
+        "notes": "",
+        "ocr_confidence": 0.98,
+        "ocr_illegible": false,
+        "ocr_marginalia_anchor_index": null,
+        "page_id": "p0045",
+        "region": "body",
+        "review_status": "draft",
+        "reviewer": "Paul Boys",
+        "text_gold": "teriisse, et alii authores confirmant, et ipse Martialis signi-",
+        "text_ocr_original": "teriisse, et alii authores confirmant, et ipse Martialis signi-"
+      },
+      {
+        "line_id": "p0045_body_l0003",
+        "marker_id": "",
+        "markers": [],
+        "notes": "",
+        "ocr_confidence": 0.99,
+        "ocr_illegible": false,
+        "ocr_marginalia_anchor_index": null,
+        "page_id": "p0045",
+        "region": "body",
+        "review_status": "draft",
+        "reviewer": "Paul Boys",
+        "text_gold": "ficat illis de Silio versiculis :",
+        "text_ocr_original": "ficat illis de Silio versiculis :"
+      },
+      {
+        "line_id": "p0045_body_l0004",
+        "marker_id": "",
+        "markers": [],
+        "notes": "",
+        "ocr_confidence": 0.95,
+        "ocr_illegible": false,
+        "ocr_marginalia_anchor_index": null,
+        "page_id": "p0045",
+        "region": "body",
+        "review_status": "draft",
+        "reviewer": "Paul Boys",
+        "text_gold": "Postquam bis senis ingentem fascibus annum",
+        "text_ocr_original": "Postquam bis senis ingentem fascibus annum"
+      },
+      {
+        "line_id": "p0045_body_l0005",
+        "marker_id": "",
+        "markers": [],
+        "notes": "",
+        "ocr_confidence": 0.95,
+        "ocr_illegible": false,
+        "ocr_marginalia_anchor_index": null,
+        "page_id": "p0045",
+        "region": "body",
+        "review_status": "draft",
+        "reviewer": "Paul Boys",
+        "text_gold": "Rexerat, asserto qui sacer orbe fuit :",
+        "text_ocr_original": "Rexerat, asserto qui sacer orbe fuit :"
+      },
+      {
+        "line_id": "p0045_body_l0006",
+        "marker_id": "",
+        "markers": [],
+        "notes": "",
+        "ocr_confidence": 0.98,
+        "ocr_illegible": false,
+        "ocr_marginalia_anchor_index": null,
+        "page_id": "p0045",
+        "region": "body",
+        "review_status": "draft",
+        "reviewer": "Paul Boys",
+        "text_gold": "Emeritos Musis et Phœbo tradidit annos,",
+        "text_ocr_original": "Emeritos Musis et Phœbo tradidit annos,"
+      },
+      {
+        "line_id": "p0045_body_l0007",
+        "marker_id": "",
+        "markers": [],
+        "notes": "",
+        "ocr_confidence": 0.95,
+        "ocr_illegible": false,
+        "ocr_marginalia_anchor_index": null,
+        "page_id": "p0045",
+        "region": "body",
+        "review_status": "draft",
+        "reviewer": "Paul Boys",
+        "text_gold": "Proque suo celebrat nunc Helicona foro.",
+        "text_ocr_original": "Proque suo celebrat nunc Helicona foro."
+      },
+      {
+        "line_id": "p0045_body_l0008",
+        "marker_id": "",
+        "markers": [],
+        "notes": "",
+        "ocr_confidence": 0.98,
+        "ocr_illegible": false,
+        "ocr_marginalia_anchor_index": null,
+        "page_id": "p0045",
+        "region": "body",
+        "review_status": "draft",
+        "reviewer": "Paul Boys",
+        "text_gold": "Nerone vero summam rerum obtinente (et quidem, ut",
+        "text_ocr_original": "Nerone vero summam rerum obtinente (et quidem, ut"
+      },
+      {
+        "line_id": "p0045_body_l0009",
+        "marker_id": "",
+        "markers": [],
+        "notes": "",
+        "ocr_confidence": 0.98,
+        "ocr_illegible": false,
+        "ocr_marginalia_anchor_index": null,
+        "page_id": "p0045",
+        "region": "body",
+        "review_status": "draft",
+        "reviewer": "Paul Boys",
+        "text_gold": "pluribus placet, sub finem imperii illius) a Paulo illa scripta",
+        "text_ocr_original": "pluribus placet, sub finem imperii illius) a Paulo illa scripta"
+      },
+      {
+        "line_id": "p0045_body_l0010",
+        "marker_id": "",
+        "markers": [],
+        "notes": "",
+        "ocr_confidence": 0.98,
+        "ocr_illegible": false,
+        "ocr_marginalia_anchor_index": null,
+        "page_id": "p0045",
+        "region": "body",
+        "review_status": "draft",
+        "reviewer": "Paul Boys",
+        "text_gold": "est epistola, in qua Timotheum salutant Pudens et Linus",
+        "text_ocr_original": "est epistola, in qua Timotheum salutant Pudens et Linus"
+      },
+      {
+        "line_id": "p0045_body_l0011",
+        "marker_id": "",
+        "markers": [],
+        "notes": "",
+        "ocr_confidence": 0.98,
+        "ocr_illegible": false,
+        "ocr_marginalia_anchor_index": null,
+        "page_id": "p0045",
+        "region": "body",
+        "review_status": "draft",
+        "reviewer": "Paul Boys",
+        "text_gold": "et Claudia. Sed de his in capite tertio iterum etiam erit",
+        "text_ocr_original": "et Claudia. Sed de his in capite tertio iterum etiam erit"
+      },
+      {
+        "line_id": "p0045_body_l0012",
+        "marker_id": "",
+        "markers": [],
+        "notes": "",
+        "ocr_confidence": 0.99,
+        "ocr_illegible": false,
+        "ocr_marginalia_anchor_index": null,
+        "page_id": "p0045",
+        "region": "body",
+        "review_status": "draft",
+        "reviewer": "Paul Boys",
+        "text_gold": "dicendi locus.",
+        "text_ocr_original": "dicendi locus."
+      }
+    ],
+    "catchword": [],
+    "header": [
+      {
+        "line_id": "p0045_header_l0001",
+        "marker_id": "",
+        "notes": "",
+        "ocr_confidence": 0.95,
+        "ocr_illegible": false,
+        "ocr_marginalia_anchor_index": null,
+        "page_id": "p0045",
+        "region": "header",
+        "review_status": "draft",
+        "reviewer": "Paul Boys",
+        "text_gold": "24 BRITANNICARUM ECCLESIARUM CAP. 1.",
+        "text_ocr_original": "24 BRITANNICARUM ECCLESIARUM CAP. 1."
+      }
+    ],
+    "marginalia": [
+      {
+        "line_id": "p0045_marginalia_l0001",
+        "marker_id": "r",
+        "notes": "",
+        "ocr_confidence": 0.98,
+        "ocr_illegible": false,
+        "ocr_marginalia_anchor_index": null,
+        "page_id": "p0045",
+        "region": "marginalia",
+        "review_status": "draft",
+        "reviewer": "Paul Boys",
+        "text_gold": "Martial. lib. 7. Epigram. 63.",
+        "text_ocr_original": "Martial. lib. 7. Epigram. 63."
+      }
+    ]
+  },
+  "source_pdf": "00_source_pdf/JamesUssher_Britannicarum ecclesiarum antiquitates_Part1.pdf"
+}
