@@ -10,13 +10,13 @@
       "notes": "",
       "page_id": "p0036",
       "review_status": "locked",
+      "reviewer": "Paul Boys",
       "source_marginalia_line_ids": [
         "p0036_marginalia_l0001"
       ],
       "source_region": "marginalia",
       "text_gold": "in Psalm. 147.",
-      "text_ocr_original": "in Psalm. 147.",
-      "reviewer": "Paul Boys"
+      "text_ocr_original": "in Psalm. 147."
     }
   ],
   "meta": {
@@ -31,7 +31,7 @@
     ],
     "ocr_page_summary": "Single column of text with header, polytonic Greek citations, and one footnote at the bottom.",
     "ocr_provider_model": "gemini-3.1-pro-preview",
-    "review_status": "draft",
+    "review_status": "locked",
     "reviewer": "Paul Boys"
   },
   "page_id": "p0036",
