@@ -65,7 +65,7 @@ A small annotated gold set (Phase 3b, pages around p0030–p0060) is retained fo
 | Provider config + Gemini OCR adapter | ✅ Complete |
 | Phase 3b annotation UI + gold set | ✅ Complete (ongoing review) |
 | Go Claw verification module (catchword + marginalia + side-by-side server) | ✅ Complete |
-| Paleography prompt evaluation against gold set | 🟡 In progress |
+| Paleography prompt evaluation against gold set | ✅ Complete |
 | English reference benchmark ingestion/alignment | ⬜ Pending |
 | Full OCR run (~800 pages) via Gemini | ⬜ Pending |
 | Translation (Claude Opus 4.6 + post-editing) | ⬜ Pending |
