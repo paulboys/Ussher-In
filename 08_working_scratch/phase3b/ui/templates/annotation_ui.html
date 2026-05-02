@@ -175,6 +175,8 @@
   <script>
     window.__PAGES__ = {{ pages|tojson }};
   </script>
+  <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.2/Sortable.min.js"
+          crossorigin="anonymous"></script>
   <script src="{{ url_for('static', filename='annotation_ui.js') }}"></script>
 </body>
 </html>
