@@ -1756,3 +1756,93 @@ if (ocrPageInput) {
     }, 120);
   });
 }
+
+// ---------------------------------------------------------------------------
+// Pane resizer: drag to adjust editor / PDF split. Persists to localStorage.
+// ---------------------------------------------------------------------------
+(function initPaneResizer() {
+  const resizer = document.getElementById("paneResizer");
+  const layout = document.querySelector(".layout");
+  if (!resizer || !layout) return;
+
+  const STORAGE_KEY = "ussherInPaneSplit";
+  const HANDLE_W = 6;
+  const MIN_EDITOR = 320;
+  const MIN_PDF = 280;
+
+  function clampEditorWidth(px, totalWidth) {
+    const max = Math.max(MIN_EDITOR, totalWidth - MIN_PDF - HANDLE_W);
+    return Math.min(Math.max(px, MIN_EDITOR), max);
+  }
+
+  function applyWidth(px) {
+    layout.style.setProperty("--editor-w", `${px}px`);
+  }
+
+  // Restore saved width on load (clamped to current viewport).
+  try {
+    const saved = parseFloat(localStorage.getItem(STORAGE_KEY) || "");
+    if (Number.isFinite(saved) && saved > 0) {
+      const w = clampEditorWidth(saved, layout.clientWidth);
+      applyWidth(w);
+    }
+  } catch (e) { /* ignore */ }
+
+  function startDrag(clientX) {
+    const layoutRect = layout.getBoundingClientRect();
+    document.body.classList.add("is-resizing");
+
+    function onMove(ev) {
+      const x = ev.touches ? ev.touches[0].clientX : ev.clientX;
+      const px = clampEditorWidth(x - layoutRect.left, layoutRect.width);
+      applyWidth(px);
+    }
+    function onUp() {
+      document.body.classList.remove("is-resizing");
+      window.removeEventListener("mousemove", onMove);
+      window.removeEventListener("mouseup", onUp);
+      window.removeEventListener("touchmove", onMove);
+      window.removeEventListener("touchend", onUp);
+      try {
+        const cur = layout.style.getPropertyValue("--editor-w");
+        const px = parseFloat(cur);
+        if (Number.isFinite(px) && px > 0) localStorage.setItem(STORAGE_KEY, String(px));
+      } catch (e) { /* ignore */ }
+    }
+    window.addEventListener("mousemove", onMove);
+    window.addEventListener("mouseup", onUp);
+    window.addEventListener("touchmove", onMove, { passive: false });
+    window.addEventListener("touchend", onUp);
+  }
+
+  resizer.addEventListener("mousedown", (e) => { e.preventDefault(); startDrag(e.clientX); });
+  resizer.addEventListener("touchstart", (e) => {
+    if (!e.touches[0]) return;
+    e.preventDefault();
+    startDrag(e.touches[0].clientX);
+  }, { passive: false });
+
+  resizer.addEventListener("keydown", (e) => {
+    const layoutW = layout.clientWidth;
+    const cur = parseFloat(layout.style.getPropertyValue("--editor-w")) || layoutW * 0.6;
+    let next = cur;
+    if (e.key === "ArrowLeft") next = cur - 24;
+    else if (e.key === "ArrowRight") next = cur + 24;
+    else if (e.key === "Home") next = MIN_EDITOR;
+    else if (e.key === "End") next = layoutW - MIN_PDF - HANDLE_W;
+    else if (e.key === "Enter") next = layoutW * 0.6;
+    else return;
+    e.preventDefault();
+    next = clampEditorWidth(next, layoutW);
+    applyWidth(next);
+    try { localStorage.setItem(STORAGE_KEY, String(next)); } catch (err) { /* ignore */ }
+  });
+
+  // Re-clamp on viewport resize so the saved width never traps a pane below its min.
+  window.addEventListener("resize", () => {
+    const cur = parseFloat(layout.style.getPropertyValue("--editor-w"));
+    if (!Number.isFinite(cur) || cur <= 0) return;
+    const w = clampEditorWidth(cur, layout.clientWidth);
+    if (w !== cur) applyWidth(w);
+  });
+})();

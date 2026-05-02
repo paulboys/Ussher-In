@@ -13,7 +13,7 @@
     ],
     "ocr_page_summary": "Standard layout. No footnotes or marginalia.",
     "ocr_provider_model": "gemini-3.1-pro-preview",
-    "review_status": "draft",
+    "review_status": "locked",
     "reviewer": "Paul Boys"
   },
   "page_id": "p0027",
@@ -31,7 +31,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0027",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "Et in Britannia quidem ipsis apostolorum temporibus",
         "text_ocr_original": "Et in Britannia quidem ipsis apostolorum temporibus"
@@ -46,7 +46,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0027",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "annunciatum fuisse Christi evangelium, authores habemus",
         "text_ocr_original": "annunciatum fuisse Christi evangelium, authores habemus"
@@ -61,7 +61,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0027",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "locupletissimos, Eusebium, Theodoretum, Arnobium ju-",
         "text_ocr_original": "locupletissimos, Eusebium, Theodoretum, Arnobium ju-"
@@ -76,7 +76,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0027",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "niorem et Gildam Britannum : a Josepho vero Arima-",
         "text_ocr_original": "niorem et Gildam Britannum : a Josepho vero Arima-"
@@ -91,7 +91,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0027",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "thæensi id fuisse præstitum, Glastoniensium monacho-",
         "text_ocr_original": "thæensi id fuisse præstitum, Glastoniensium monacho-"
@@ -106,7 +106,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0027",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "rum traditio est; nec ita tamen antiqua, ut ante Norman-",
         "text_ocr_original": "rum traditio est; nec ita tamen antiqua, ut ante Norman-"
@@ -121,7 +121,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0027",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "nica tempora certum aliquod in probatæ fidei scriptore",
         "text_ocr_original": "nica tempora certum aliquod in probatæ fidei scriptore"
@@ -136,7 +136,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0027",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "quoquam deprehendi possit illius vestigium. De primo",
         "text_ocr_original": "quoquam deprehendi possit illius vestigium. De primo"
@@ -151,7 +151,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0027",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "similiter Christiano Britannorum rege, in Beda et libro",
         "text_ocr_original": "similiter Christiano Britannorum rege, in Beda et libro"
@@ -166,7 +166,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0027",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "pontificali, B. Hieronymo et Damaso perperam attributo,",
         "text_ocr_original": "pontificali, B. Hieronymo et Damaso perperam attributo,"
@@ -181,7 +181,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0027",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "primum legimus : Lucium regem Britannicum, missa",
         "text_ocr_original": "primum legimus : Lucium regem Britannicum, missa"
@@ -196,7 +196,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0027",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "ad Eleutherum Romanum episcopum epistola, illius opera",
         "text_ocr_original": "ad Eleutherum Romanum episcopum epistola, illius opera"
@@ -211,7 +211,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0027",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "Christianum effectum fuisse. Britannicæ consarcinator",
         "text_ocr_original": "Christianum effectum fuisse. Britannicæ consarcinator"
@@ -226,7 +226,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0027",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "historiæ, id satis esse non existimans, regulo hoc in",
         "text_ocr_original": "historiæ, id satis esse non existimans, regulo hoc in"
@@ -241,7 +241,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0027",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "Romanæ insulæ monarcham transformato, in urbibus",
         "text_ocr_original": "Romanæ insulæ monarcham transformato, in urbibus"
@@ -256,7 +256,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0027",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "illius XXVIII. totidem ab eo constitutos episcopos som-",
         "text_ocr_original": "illius XXVIII. totidem ab eo constitutos episcopos som-"
@@ -271,7 +271,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0027",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "niavit: cui et suum de Flaminibus et Archiflaminibus",
         "text_ocr_original": "niavit: cui et suum de Flaminibus et Archiflaminibus"
@@ -286,7 +286,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0027",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "centonem Galfridus Monemuthensis deinde assuit. Neque",
         "text_ocr_original": "centonem Galfridus Monemuthensis deinde assuit. Neque"
@@ -301,7 +301,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0027",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "quisquam fere locus repertus est illustrior, qui non a",
         "text_ocr_original": "quisquam fere locus repertus est illustrior, qui non a"
@@ -316,7 +316,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0027",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "Lucio institutorum suorum vel originem vel amplificatio-",
         "text_ocr_original": "Lucio institutorum suorum vel originem vel amplificatio-"
@@ -331,7 +331,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0027",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "nem deinceps arcesseret.",
         "text_ocr_original": "nem deinceps arcesseret."
@@ -346,7 +346,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0027",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "Harum vero antiquitatum, sive verarum sive falsarum,",
         "text_ocr_original": "Harum vero antiquitatum, sive verarum sive falsarum,"
@@ -361,7 +361,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0027",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "reliquias ut undique dispersas sub uno aspectu ponerem ;",
         "text_ocr_original": "reliquias ut undique dispersas sub uno aspectu ponerem ;"
@@ -376,7 +376,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0027",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "omnibus unum in locum coactis scriptoribus, ex ingenti",
         "text_ocr_original": "omnibus unum in locum coactis scriptoribus, ex ingenti"
@@ -391,7 +391,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0027",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "immensoque isto campo quæ ad rem nostram spectare",
         "text_ocr_original": "immensoque isto campo quæ ad rem nostram spectare"
@@ -406,7 +406,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0027",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "videbantur studiose excerpsi: usu continuo ad laborem",
         "text_ocr_original": "videbantur studiose excerpsi: usu continuo ad laborem"
@@ -421,7 +421,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0027",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "istum obdurescente et percallescente nostra patientia. Ac",
         "text_ocr_original": "istum obdurescente et percallescente nostra patientia. Ac"
@@ -436,7 +436,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0027",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "primum, ne quid hic me fugeret, editorum nostrorum",
         "text_ocr_original": "primum, ne quid hic me fugeret, editorum nostrorum"
@@ -451,7 +451,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0027",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "historicorum antiquiores quidem, Gildam, Adamnanum,",
         "text_ocr_original": "historicorum antiquiores quidem, Gildam, Adamnanum,"
@@ -466,7 +466,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0027",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "Bedam, Asserium Menevensem, integros, posteriores vero",
         "text_ocr_original": "Bedam, Asserium Menevensem, integros, posteriores vero"
@@ -481,7 +481,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0027",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "ubi videbatur opus, cum manuscriptis codicibus diligenter,",
         "text_ocr_original": "ubi videbatur opus, cum manuscriptis codicibus diligenter,"
@@ -496,7 +496,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0027",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "nec sine fructu, contuli. In scriptorum deinde nondum luci",
         "text_ocr_original": "nec sine fructu, contuli. In scriptorum deinde nondum luci"
@@ -511,7 +511,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0027",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "redditorum sylvam me abstrusi densam atque asperam :",
         "text_ocr_original": "redditorum sylvam me abstrusi densam atque asperam :"
@@ -526,7 +526,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0027",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "quorum, præ aliis, maximam mihi suppeditavit copiam",
         "text_ocr_original": "quorum, præ aliis, maximam mihi suppeditavit copiam"
@@ -541,7 +541,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0027",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "bibliotheca illa Cottoniana nobilis; quæ una ad Britan-",
         "text_ocr_original": "bibliotheca illa Cottoniana nobilis; quæ una ad Britan-"
@@ -556,7 +556,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0027",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "nicæ gentis historiam perficiendam plura confert admini-",
         "text_ocr_original": "nicæ gentis historiam perficiendam plura confert admini-"
@@ -573,7 +573,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0027",
         "region": "header",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "6 PRÆFATIO.",
         "text_ocr_original": "6 PRÆFATIO."

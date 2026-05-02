@@ -1,0 +1,203 @@
+{
+  "page_id": "p0030",
+  "part": "part1",
+  "edition": "1847_elrington_todd",
+  "source_pdf": "00_source_pdf/JamesUssher_Britannicarum ecclesiarum antiquitates_Part1.pdf",
+  "page_num": 30,
+  "regions": {
+    "header": [
+      {
+        "page_id": "p0030",
+        "region": "header",
+        "line_id": "p0030_header_l0001",
+        "text_gold": "PRÆFATIO. 9",
+        "text_ocr_original": "PRÆFATIO. 9",
+        "marker_id": "",
+        "reviewer": "",
+        "review_status": "draft",
+        "notes": "",
+        "ocr_confidence": 1.0,
+        "ocr_illegible": false,
+        "ocr_marginalia_anchor_index": null
+      }
+    ],
+    "body": [
+      {
+        "page_id": "p0030",
+        "region": "body",
+        "line_id": "p0030_body_l0001",
+        "text_gold": "tanto periculosius) propagare,\" et Thomas Bradwardi-",
+        "text_ocr_original": "tanto periculosius) propagare,\" et Thomas Bradwardi-",
+        "marker_id": "",
+        "reviewer": "",
+        "review_status": "draft",
+        "notes": "",
+        "ocr_confidence": 1.0,
+        "ocr_illegible": false,
+        "ocr_marginalia_anchor_index": null,
+        "markers": []
+      },
+      {
+        "page_id": "p0030",
+        "region": "body",
+        "line_id": "p0030_body_l0002",
+        "text_gold": "nus conquestus est olim, et nos hodie non sine causa con-",
+        "text_ocr_original": "nus conquestus est olim, et nos hodie non sine causa con-",
+        "marker_id": "",
+        "reviewer": "",
+        "review_status": "draft",
+        "notes": "",
+        "ocr_confidence": 1.0,
+        "ocr_illegible": false,
+        "ocr_marginalia_anchor_index": null,
+        "markers": [
+          {
+            "number": 1,
+            "footnote_id": "p0030_fn_001",
+            "char_offset": 3
+          }
+        ]
+      },
+      {
+        "page_id": "p0030",
+        "region": "body",
+        "line_id": "p0030_body_l0003",
+        "text_gold": "querimur. Sicubi vero, vel in hoc, vel in argumento illo",
+        "text_ocr_original": "querimur. Sicubi vero, vel in hoc, vel in argumento illo",
+        "marker_id": "",
+        "reviewer": "",
+        "review_status": "draft",
+        "notes": "",
+        "ocr_confidence": 1.0,
+        "ocr_illegible": false,
+        "ocr_marginalia_anchor_index": null,
+        "markers": []
+      },
+      {
+        "page_id": "p0030",
+        "region": "body",
+        "line_id": "p0030_body_l0004",
+        "text_gold": "altero, aliorum expectationi minus satisfecerim: occu-",
+        "text_ocr_original": "altero, aliorum expectationi minus satisfecerim: occu-",
+        "marker_id": "",
+        "reviewer": "",
+        "review_status": "draft",
+        "notes": "",
+        "ocr_confidence": 1.0,
+        "ocr_illegible": false,
+        "ocr_marginalia_anchor_index": null,
+        "markers": []
+      },
+      {
+        "page_id": "p0030",
+        "region": "body",
+        "line_id": "p0030_body_l0005",
+        "text_gold": "pationes quibus indies distineor maximæ, aliquid excu-",
+        "text_ocr_original": "pationes quibus indies distineor maximæ, aliquid excu-",
+        "marker_id": "",
+        "reviewer": "",
+        "review_status": "draft",
+        "notes": "",
+        "ocr_confidence": 1.0,
+        "ocr_illegible": false,
+        "ocr_marginalia_anchor_index": null,
+        "markers": []
+      },
+      {
+        "page_id": "p0030",
+        "region": "body",
+        "line_id": "p0030_body_l0006",
+        "text_gold": "sationis ab æquis, ut spero, rerum æstimatoribus im-",
+        "text_ocr_original": "sationis ab æquis, ut spero, rerum æstimatoribus im-",
+        "marker_id": "",
+        "reviewer": "",
+        "review_status": "draft",
+        "notes": "",
+        "ocr_confidence": 1.0,
+        "ocr_illegible": false,
+        "ocr_marginalia_anchor_index": null,
+        "markers": []
+      },
+      {
+        "page_id": "p0030",
+        "region": "body",
+        "line_id": "p0030_body_l0007",
+        "text_gold": "petrabunt. Dublinii, anno CIƆ IƆC XXXIX. IV. Non.",
+        "text_ocr_original": "petrabunt. Dublinii, anno CIƆ IƆC XXXIX. IV. Non.",
+        "marker_id": "",
+        "reviewer": "",
+        "review_status": "draft",
+        "notes": "",
+        "ocr_confidence": 1.0,
+        "ocr_illegible": false,
+        "ocr_marginalia_anchor_index": null,
+        "markers": []
+      },
+      {
+        "page_id": "p0030",
+        "region": "body",
+        "line_id": "p0030_body_l0008",
+        "text_gold": "August.",
+        "text_ocr_original": "August.",
+        "marker_id": "",
+        "reviewer": "",
+        "review_status": "draft",
+        "notes": "",
+        "ocr_confidence": 1.0,
+        "ocr_illegible": false,
+        "ocr_marginalia_anchor_index": null,
+        "markers": []
+      }
+    ],
+    "marginalia": [
+      {
+        "page_id": "p0030",
+        "region": "marginalia",
+        "line_id": "p0030_marginalia_l0001",
+        "text_gold": "Bradwardin. Præfat. in libros de causa Dei contra Pelag.",
+        "text_ocr_original": "Bradwardin. Præfat. in libros de causa Dei contra Pelag.",
+        "marker_id": "d",
+        "reviewer": "",
+        "review_status": "draft",
+        "notes": "",
+        "ocr_confidence": 1.0,
+        "ocr_illegible": false,
+        "ocr_marginalia_anchor_index": null
+      }
+    ],
+    "catchword": []
+  },
+  "footnotes": [
+    {
+      "footnote_id": "p0030_fn_001",
+      "page_id": "p0030",
+      "marker_number": 1,
+      "marker_id": "d",
+      "body_line_id": "p0030_body_l0002",
+      "text_gold": "Bradwardin. Præfat. in libros de causa Dei contra Pelag.",
+      "text_ocr_original": "Bradwardin. Præfat. in libros de causa Dei contra Pelag.",
+      "kind": "citation",
+      "source_region": "marginalia",
+      "source_marginalia_line_ids": [
+        "p0030_marginalia_l0001"
+      ],
+      "review_status": "draft",
+      "notes": ""
+    }
+  ],
+  "meta": {
+    "reviewer": "",
+    "annotation_status": "ocr_seeded",
+    "review_status": "draft",
+    "notes": "",
+    "ocr_engine": "gemini",
+    "ocr_provider_model": "gemini-3.1-pro-preview",
+    "ocr_lang": [
+      "lat",
+      "grc"
+    ],
+    "ocr_confidence_avg": 100.0,
+    "ocr_confidence_min": 100.0,
+    "ocr_page_summary": "Page ends abruptly mid-way. One footnote."
+  }
+}
