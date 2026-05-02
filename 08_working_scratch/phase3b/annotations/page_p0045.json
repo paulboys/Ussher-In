@@ -16,7 +16,8 @@
       "source_region": "marginalia",
       "text_gold": "Martial. lib. 7. Epigram. 63.",
       "text_ocr_original": "Martial. lib. 7. Epigram. 63.",
-      "reviewer": "Paul Boys"
+      "reviewer": "Paul Boys",
+      "seq": 1
     }
   ],
   "meta": {
@@ -52,7 +53,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "Punici scriptore: quo consulatum gerente, Neronem in-",
-        "text_ocr_original": "Punici scriptore: quo consulatum gerente, Neronem in-"
+        "text_ocr_original": "Punici scriptore: quo consulatum gerente, Neronem in-",
+        "seq": 1
       },
       {
         "line_id": "p0045_body_l0002",
@@ -73,7 +75,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "teriisse, et alii authores confirmant, et ipse Martialis signi-",
-        "text_ocr_original": "teriisse, et alii authores confirmant, et ipse Martialis signi-"
+        "text_ocr_original": "teriisse, et alii authores confirmant, et ipse Martialis signi-",
+        "seq": 2
       },
       {
         "line_id": "p0045_body_l0003",
@@ -88,7 +91,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "ficat illis de Silio versiculis :",
-        "text_ocr_original": "ficat illis de Silio versiculis :"
+        "text_ocr_original": "ficat illis de Silio versiculis :",
+        "seq": 3
       },
       {
         "line_id": "p0045_body_l0004",
@@ -103,7 +107,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "Postquam bis senis ingentem fascibus annum",
-        "text_ocr_original": "Postquam bis senis ingentem fascibus annum"
+        "text_ocr_original": "Postquam bis senis ingentem fascibus annum",
+        "seq": 4
       },
       {
         "line_id": "p0045_body_l0005",
@@ -118,7 +123,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "Rexerat, asserto qui sacer orbe fuit :",
-        "text_ocr_original": "Rexerat, asserto qui sacer orbe fuit :"
+        "text_ocr_original": "Rexerat, asserto qui sacer orbe fuit :",
+        "seq": 5
       },
       {
         "line_id": "p0045_body_l0006",
@@ -133,7 +139,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "Emeritos Musis et Phœbo tradidit annos,",
-        "text_ocr_original": "Emeritos Musis et Phœbo tradidit annos,"
+        "text_ocr_original": "Emeritos Musis et Phœbo tradidit annos,",
+        "seq": 6
       },
       {
         "line_id": "p0045_body_l0007",
@@ -148,7 +155,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "Proque suo celebrat nunc Helicona foro.",
-        "text_ocr_original": "Proque suo celebrat nunc Helicona foro."
+        "text_ocr_original": "Proque suo celebrat nunc Helicona foro.",
+        "seq": 7
       },
       {
         "line_id": "p0045_body_l0008",
@@ -163,7 +171,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "Nerone vero summam rerum obtinente (et quidem, ut",
-        "text_ocr_original": "Nerone vero summam rerum obtinente (et quidem, ut"
+        "text_ocr_original": "Nerone vero summam rerum obtinente (et quidem, ut",
+        "seq": 8
       },
       {
         "line_id": "p0045_body_l0009",
@@ -178,7 +187,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "pluribus placet, sub finem imperii illius) a Paulo illa scripta",
-        "text_ocr_original": "pluribus placet, sub finem imperii illius) a Paulo illa scripta"
+        "text_ocr_original": "pluribus placet, sub finem imperii illius) a Paulo illa scripta",
+        "seq": 9
       },
       {
         "line_id": "p0045_body_l0010",
@@ -193,7 +203,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "est epistola, in qua Timotheum salutant Pudens et Linus",
-        "text_ocr_original": "est epistola, in qua Timotheum salutant Pudens et Linus"
+        "text_ocr_original": "est epistola, in qua Timotheum salutant Pudens et Linus",
+        "seq": 10
       },
       {
         "line_id": "p0045_body_l0011",
@@ -208,7 +219,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "et Claudia. Sed de his in capite tertio iterum etiam erit",
-        "text_ocr_original": "et Claudia. Sed de his in capite tertio iterum etiam erit"
+        "text_ocr_original": "et Claudia. Sed de his in capite tertio iterum etiam erit",
+        "seq": 11
       },
       {
         "line_id": "p0045_body_l0012",
@@ -223,7 +235,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "dicendi locus.",
-        "text_ocr_original": "dicendi locus."
+        "text_ocr_original": "dicendi locus.",
+        "seq": 12
       }
     ],
     "catchword": [],
@@ -240,7 +253,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "24 BRITANNICARUM ECCLESIARUM CAP. 1.",
-        "text_ocr_original": "24 BRITANNICARUM ECCLESIARUM CAP. 1."
+        "text_ocr_original": "24 BRITANNICARUM ECCLESIARUM CAP. 1.",
+        "seq": 1
       }
     ],
     "marginalia": [
@@ -256,7 +270,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "Martial. lib. 7. Epigram. 63.",
-        "text_ocr_original": "Martial. lib. 7. Epigram. 63."
+        "text_ocr_original": "Martial. lib. 7. Epigram. 63.",
+        "seq": 1
       }
     ]
   },

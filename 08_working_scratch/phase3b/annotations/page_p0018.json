@@ -34,7 +34,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "CONTENTS",
-        "text_ocr_original": "CONTENTS"
+        "text_ocr_original": "CONTENTS",
+        "seq": 1
       },
       {
         "line_id": "p0018_body_l0002",
@@ -49,7 +50,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "OF",
-        "text_ocr_original": "OF"
+        "text_ocr_original": "OF",
+        "seq": 2
       },
       {
         "line_id": "p0018_body_l0003",
@@ -64,7 +66,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "THE FIFTH VOLUME.",
-        "text_ocr_original": "THE FIFTH VOLUME."
+        "text_ocr_original": "THE FIFTH VOLUME.",
+        "seq": 3
       },
       {
         "line_id": "p0018_body_l0004",
@@ -79,7 +82,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "Caput I.",
-        "text_ocr_original": "Caput I."
+        "text_ocr_original": "Caput I.",
+        "seq": 4
       },
       {
         "line_id": "p0018_body_l0005",
@@ -94,7 +98,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "PAG.",
-        "text_ocr_original": "PAG."
+        "text_ocr_original": "PAG.",
+        "seq": 5
       },
       {
         "line_id": "p0018_body_l0006",
@@ -109,7 +114,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "Britanni ante acceptam ﬁdem Christianam idololatræ. De apos-",
-        "text_ocr_original": "Britanni ante acceptam ﬁdem Christianam idololatræ. De apos-"
+        "text_ocr_original": "Britanni ante acceptam ﬁdem Christianam idololatræ. De apos-",
+        "seq": 6
       },
       {
         "line_id": "p0018_body_l0007",
@@ -124,7 +130,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "tolis, qui in Britannicis insulis evangelium primi prædicasse di-",
-        "text_ocr_original": "tolis, qui in Britannicis insulis evangelium primi prædicasse di-"
+        "text_ocr_original": "tolis, qui in Britannicis insulis evangelium primi prædicasse di-",
+        "seq": 7
       },
       {
         "line_id": "p0018_body_l0008",
@@ -139,7 +146,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "cuntur: Jacobo Zebedæi, Simone Zelota, Simone Petro, et B.",
-        "text_ocr_original": "cuntur: Jacobo Zebedæi, Simone Zelota, Simone Petro, et B."
+        "text_ocr_original": "cuntur: Jacobo Zebedæi, Simone Zelota, Simone Petro, et B.",
+        "seq": 8
       },
       {
         "line_id": "p0018_body_l0009",
@@ -154,7 +162,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "Paulo. De Aristobulo item, et Claudia Britanna . . . . 11",
-        "text_ocr_original": "Paulo. De Aristobulo item, et Claudia Britanna . . . . 11"
+        "text_ocr_original": "Paulo. De Aristobulo item, et Claudia Britanna . . . . 11",
+        "seq": 9
       },
       {
         "line_id": "p0018_body_l0010",
@@ -169,7 +178,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "Caput II.",
-        "text_ocr_original": "Caput II."
+        "text_ocr_original": "Caput II.",
+        "seq": 10
       },
       {
         "line_id": "p0018_body_l0011",
@@ -184,7 +194,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "De duodecim Philippi discipulis, et Josepho Arimathæensi, Glas-",
-        "text_ocr_original": "De duodecim Philippi discipulis, et Josepho Arimathæensi, Glas-"
+        "text_ocr_original": "De duodecim Philippi discipulis, et Josepho Arimathæensi, Glas-",
+        "seq": 11
       },
       {
         "line_id": "p0018_body_l0012",
@@ -199,7 +210,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "toniensium monachorum traditiones; veterum nominibus fucatæ,",
-        "text_ocr_original": "toniensium monachorum traditiones; veterum nominibus fucatæ,"
+        "text_ocr_original": "toniensium monachorum traditiones; veterum nominibus fucatæ,",
+        "seq": 12
       },
       {
         "line_id": "p0018_body_l0013",
@@ -214,7 +226,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "et in Europæorum generalibus conciliis venditatæ . . . . . 25",
-        "text_ocr_original": "et in Europæorum generalibus conciliis venditatæ . . . . . 25"
+        "text_ocr_original": "et in Europæorum generalibus conciliis venditatæ . . . . . 25",
+        "seq": 13
       },
       {
         "line_id": "p0018_body_l0014",
@@ -229,7 +242,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "Caput III.",
-        "text_ocr_original": "Caput III."
+        "text_ocr_original": "Caput III.",
+        "seq": 14
       },
       {
         "line_id": "p0018_body_l0015",
@@ -244,7 +258,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "De Taurino, Eutropio, Timotheo, Novato, Praxede, Pudentiana,",
-        "text_ocr_original": "De Taurino, Eutropio, Timotheo, Novato, Praxede, Pudentiana,"
+        "text_ocr_original": "De Taurino, Eutropio, Timotheo, Novato, Praxede, Pudentiana,",
+        "seq": 15
       },
       {
         "line_id": "p0018_body_l0016",
@@ -259,7 +274,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "Marcello, et Lucio primo Bavarorum ac Rhætorum doctore.",
-        "text_ocr_original": "Marcello, et Lucio primo Bavarorum ac Rhætorum doctore."
+        "text_ocr_original": "Marcello, et Lucio primo Bavarorum ac Rhætorum doctore.",
+        "seq": 16
       },
       {
         "line_id": "p0018_body_l0017",
@@ -274,7 +290,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "De tempore, quo Lucius in Britannia regnavisse dicitur, varian-",
-        "text_ocr_original": "De tempore, quo Lucius in Britannia regnavisse dicitur, varian-"
+        "text_ocr_original": "De tempore, quo Lucius in Britannia regnavisse dicitur, varian-",
+        "seq": 17
       },
       {
         "line_id": "p0018_body_l0018",
@@ -289,7 +306,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "tes authorum sententiæ, et in qua insulæ parte imperium ille",
-        "text_ocr_original": "tes authorum sententiæ, et in qua insulæ parte imperium ille"
+        "text_ocr_original": "tes authorum sententiæ, et in qua insulæ parte imperium ille",
+        "seq": 18
       },
       {
         "line_id": "p0018_body_l0019",
@@ -304,7 +322,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "obtinuerit . . . . . . . . . . . . . . . . 48",
-        "text_ocr_original": "obtinuerit . . . . . . . . . . . . . . . . 48"
+        "text_ocr_original": "obtinuerit . . . . . . . . . . . . . . . . 48",
+        "seq": 19
       },
       {
         "line_id": "p0018_body_l0020",
@@ -319,7 +338,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "Caput IV.",
-        "text_ocr_original": "Caput IV."
+        "text_ocr_original": "Caput IV.",
+        "seq": 20
       },
       {
         "line_id": "p0018_body_l0021",
@@ -334,7 +354,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "De literis, quæ a rege Lucio, per legatos Eluanum et Medwinum,",
-        "text_ocr_original": "De literis, quæ a rege Lucio, per legatos Eluanum et Medwinum,"
+        "text_ocr_original": "De literis, quæ a rege Lucio, per legatos Eluanum et Medwinum,",
+        "seq": 21
       },
       {
         "line_id": "p0018_body_l0022",
@@ -349,7 +370,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "ad Eleutherum Romanum episcopum missæ fuisse dicuntur.",
-        "text_ocr_original": "ad Eleutherum Romanum episcopum missæ fuisse dicuntur."
+        "text_ocr_original": "ad Eleutherum Romanum episcopum missæ fuisse dicuntur.",
+        "seq": 22
       },
       {
         "line_id": "p0018_body_l0023",
@@ -364,7 +386,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "De doctoribus Cantabrigiensibus, nec non Timotheo, Fagano,",
-        "text_ocr_original": "De doctoribus Cantabrigiensibus, nec non Timotheo, Fagano,"
+        "text_ocr_original": "De doctoribus Cantabrigiensibus, nec non Timotheo, Fagano,",
+        "seq": 23
       },
       {
         "line_id": "p0018_body_l0024",
@@ -379,7 +402,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "Derwiano et Aarone, qui ﬁdem tum Britannis feruntur præ-",
-        "text_ocr_original": "Derwiano et Aarone, qui ﬁdem tum Britannis feruntur præ-"
+        "text_ocr_original": "Derwiano et Aarone, qui ﬁdem tum Britannis feruntur præ-",
+        "seq": 24
       },
       {
         "line_id": "p0018_body_l0025",
@@ -394,7 +418,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "dicavisse . . . . . . . . . . . . . . . . . 64",
-        "text_ocr_original": "dicavisse . . . . . . . . . . . . . . . . . 64"
+        "text_ocr_original": "dicavisse . . . . . . . . . . . . . . . . . 64",
+        "seq": 25
       }
     ],
     "catchword": [],

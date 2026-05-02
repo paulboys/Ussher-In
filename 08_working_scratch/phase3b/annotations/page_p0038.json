@@ -16,7 +16,8 @@
       "source_region": "marginalia",
       "text_gold": "MS. in bibliotheca Collegii Benedicti Cantabrig. et Coll. Baliol. Oxon. et",
       "text_ocr_original": "MS. in bibliotheca Collegii Benedicti Cantabrig. et Coll. Baliol. Oxon. et",
-      "reviewer": "Paul Boys"
+      "reviewer": "Paul Boys",
+      "seq": 1
     },
     {
       "body_line_id": "p0038_body_l0013",
@@ -33,7 +34,8 @@
       "source_region": "marginalia",
       "text_gold": "al. Ctesiphon.",
       "text_ocr_original": "al. Ctesiphon.",
-      "reviewer": "Paul Boys"
+      "reviewer": "Paul Boys",
+      "seq": 2
     },
     {
       "body_line_id": "p0038_body_l0014",
@@ -50,7 +52,8 @@
       "source_region": "marginalia",
       "text_gold": "al. Hesychius.",
       "text_ocr_original": "al. Hesychius.",
-      "reviewer": "Paul Boys"
+      "reviewer": "Paul Boys",
+      "seq": 3
     },
     {
       "body_line_id": "p0038_body_l0016",
@@ -67,7 +70,8 @@
       "source_region": "marginalia",
       "text_gold": "Baron. de Martyrolog. Rom. cap. 9.",
       "text_ocr_original": "Baron. de Martyrolog. Rom. cap. 9.",
-      "reviewer": "Paul Boys"
+      "reviewer": "Paul Boys",
+      "seq": 4
     },
     {
       "body_line_id": "p0038_body_l0017",
@@ -84,7 +88,8 @@
       "source_region": "marginalia",
       "text_gold": "Ibid. cap. 5, 6, 7.",
       "text_ocr_original": "Ibid. cap. 5, 6, 7.",
-      "reviewer": "Paul Boys"
+      "reviewer": "Paul Boys",
+      "seq": 5
     },
     {
       "body_line_id": "p0038_body_l0027",
@@ -101,7 +106,8 @@
       "source_region": "marginalia",
       "text_gold": "Petro, sc. et Paulo, ut habet Gregorius VII. lib. 1. Registr. epist. 64.",
       "text_ocr_original": "Petro, sc. et Paulo, ut habet Gregorius VII. lib. 1. Registr. epist. 64.",
-      "reviewer": "Paul Boys"
+      "reviewer": "Paul Boys",
+      "seq": 6
     },
     {
       "body_line_id": "p0038_body_l0027",
@@ -118,7 +124,8 @@
       "source_region": "marginalia",
       "text_gold": "Habetur MS. in bibliotheca D. Guil. Bedelli Kilmorensis apud nos epis-",
       "text_ocr_original": "Habetur MS. in bibliotheca D. Guil. Bedelli Kilmorensis apud nos epis-",
-      "reviewer": "Paul Boys"
+      "reviewer": "Paul Boys",
+      "seq": 7
     },
     {
       "body_line_id": "",
@@ -135,7 +142,8 @@
       "source_region": "marginalia",
       "text_gold": "D. Roberti Cotton.",
       "text_ocr_original": "D. Roberti Cotton.",
-      "reviewer": "Paul Boys"
+      "reviewer": "Paul Boys",
+      "seq": 8
     },
     {
       "body_line_id": "",
@@ -152,7 +160,8 @@
       "source_region": "marginalia",
       "text_gold": "copi.",
       "text_ocr_original": "copi.",
-      "reviewer": "Paul Boys"
+      "reviewer": "Paul Boys",
+      "seq": 9
     }
   ],
   "meta": {
@@ -188,7 +197,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "in Galæcia ista facta referunt. “ Novem discipulos in",
-        "text_ocr_original": "in Galæcia ista facta referunt. “ Novem discipulos in"
+        "text_ocr_original": "in Galæcia ista facta referunt. “ Novem discipulos in",
+        "seq": 1
       },
       {
         "line_id": "p0038_body_l0002",
@@ -209,7 +219,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "Galæcia,” ait in præfatione sua Calixtus, “ dum adhuc vi-",
-        "text_ocr_original": "Galæcia,” ait in præfatione sua Calixtus, “ dum adhuc vi-"
+        "text_ocr_original": "Galæcia,” ait in præfatione sua Calixtus, “ dum adhuc vi-",
+        "seq": 2
       },
       {
         "line_id": "p0038_body_l0003",
@@ -224,7 +235,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "veret, apostolus elegisse dicitur: quorum septem, aliis",
-        "text_ocr_original": "veret, apostolus elegisse dicitur: quorum septem, aliis"
+        "text_ocr_original": "veret, apostolus elegisse dicitur: quorum septem, aliis",
+        "seq": 3
       },
       {
         "line_id": "p0038_body_l0004",
@@ -239,7 +251,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "duobus in Galæcia prædicandi causa remanentibus, cum",
-        "text_ocr_original": "duobus in Galæcia prædicandi causa remanentibus, cum"
+        "text_ocr_original": "duobus in Galæcia prædicandi causa remanentibus, cum",
+        "seq": 4
       },
       {
         "line_id": "p0038_body_l0005",
@@ -254,7 +267,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "eo Hierosolymis perrexerunt, ejusque corpus post passi-",
-        "text_ocr_original": "eo Hierosolymis perrexerunt, ejusque corpus post passi-"
+        "text_ocr_original": "eo Hierosolymis perrexerunt, ejusque corpus post passi-",
+        "seq": 5
       },
       {
         "line_id": "p0038_body_l0006",
@@ -269,7 +283,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "onem per mare ad Galæciam deportaverunt. De quibus",
-        "text_ocr_original": "onem per mare ad Galæciam deportaverunt. De quibus"
+        "text_ocr_original": "onem per mare ad Galæciam deportaverunt. De quibus",
+        "seq": 6
       },
       {
         "line_id": "p0038_body_l0007",
@@ -284,7 +299,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "beatus Hieronymus in suo martyrologio sic dixit, ac beato",
-        "text_ocr_original": "beatus Hieronymus in suo martyrologio sic dixit, ac beato"
+        "text_ocr_original": "beatus Hieronymus in suo martyrologio sic dixit, ac beato",
+        "seq": 7
       },
       {
         "line_id": "p0038_body_l0008",
@@ -299,7 +315,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "Chromatio scripsit : quod sepulto in Galæcia beati Jacobi",
-        "text_ocr_original": "Chromatio scripsit : quod sepulto in Galæcia beati Jacobi"
+        "text_ocr_original": "Chromatio scripsit : quod sepulto in Galæcia beati Jacobi",
+        "seq": 8
       },
       {
         "line_id": "p0038_body_l0009",
@@ -314,7 +331,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "corpore, ab apostolis Petro et Paulo infulis episcopalibus",
-        "text_ocr_original": "corpore, ab apostolis Petro et Paulo infulis episcopalibus"
+        "text_ocr_original": "corpore, ab apostolis Petro et Paulo infulis episcopalibus",
+        "seq": 9
       },
       {
         "line_id": "p0038_body_l0010",
@@ -329,7 +347,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "apud Romam ordinantur, et ad prædicandum Dei verbum",
-        "text_ocr_original": "apud Romam ordinantur, et ad prædicandum Dei verbum"
+        "text_ocr_original": "apud Romam ordinantur, et ad prædicandum Dei verbum",
+        "seq": 10
       },
       {
         "line_id": "p0038_body_l0011",
@@ -344,7 +363,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "ad Hispanias, adhuc gentili errore implicatas, diriguntur.",
-        "text_ocr_original": "ad Hispanias, adhuc gentili errore implicatas, diriguntur."
+        "text_ocr_original": "ad Hispanias, adhuc gentili errore implicatas, diriguntur.",
+        "seq": 11
       },
       {
         "line_id": "p0038_body_l0012",
@@ -359,7 +379,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "Tandem vero prædicatione sua innumeris gentibus illus-",
-        "text_ocr_original": "Tandem vero prædicatione sua innumeris gentibus illus-"
+        "text_ocr_original": "Tandem vero prædicatione sua innumeris gentibus illus-",
+        "seq": 12
       },
       {
         "line_id": "p0038_body_l0013",
@@ -380,7 +401,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "tratis, Torquatus Acci, Tisephon Vergi, Secundus Abu-",
-        "text_ocr_original": "tratis, Torquatus Acci, Tisephon Vergi, Secundus Abu-"
+        "text_ocr_original": "tratis, Torquatus Acci, Tisephon Vergi, Secundus Abu-",
+        "seq": 13
       },
       {
         "line_id": "p0038_body_l0014",
@@ -401,7 +423,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "læ, Indalecius Ursi, Cæcilius Eliberri, Esicius Carsecæ,",
-        "text_ocr_original": "læ, Indalecius Ursi, Cæcilius Eliberri, Esicius Carsecæ,"
+        "text_ocr_original": "læ, Indalecius Ursi, Cæcilius Eliberri, Esicius Carsecæ,",
+        "seq": 14
       },
       {
         "line_id": "p0038_body_l0015",
@@ -416,7 +439,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "Eufrasius Eliturgi, scilicet Idibus Maii quieverunt.”",
-        "text_ocr_original": "Eufrasius Eliturgi, scilicet Idibus Maii quieverunt.”"
+        "text_ocr_original": "Eufrasius Eliturgi, scilicet Idibus Maii quieverunt.”",
+        "seq": 15
       },
       {
         "line_id": "p0038_body_l0016",
@@ -437,7 +461,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "Et ita sane in martyrologio Romano (quod Hieronymi",
-        "text_ocr_original": "Et ita sane in martyrologio Romano (quod Hieronymi"
+        "text_ocr_original": "Et ita sane in martyrologio Romano (quod Hieronymi",
+        "seq": 16
       },
       {
         "line_id": "p0038_body_l0017",
@@ -458,7 +483,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "nomine olim editum, supposita quoque ejusdem ad Chro-",
-        "text_ocr_original": "nomine olim editum, supposita quoque ejusdem ad Chro-"
+        "text_ocr_original": "nomine olim editum, supposita quoque ejusdem ad Chro-",
+        "seq": 17
       },
       {
         "line_id": "p0038_body_l0018",
@@ -473,7 +499,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "matium et Heliodorum epistola, confirmat Baronius) ut et",
-        "text_ocr_original": "matium et Heliodorum epistola, confirmat Baronius) ut et"
+        "text_ocr_original": "matium et Heliodorum epistola, confirmat Baronius) ut et",
+        "seq": 18
       },
       {
         "line_id": "p0038_body_l0019",
@@ -488,7 +515,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "in Bedæ, Usuardi, Notkeri et Adonis martyrologiis, ad",
-        "text_ocr_original": "in Bedæ, Usuardi, Notkeri et Adonis martyrologiis, ad"
+        "text_ocr_original": "in Bedæ, Usuardi, Notkeri et Adonis martyrologiis, ad",
+        "seq": 19
       },
       {
         "line_id": "p0038_body_l0020",
@@ -503,7 +531,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "Idus Maii, legimus; “ Romæ hos a sanctis apostolis epis-",
-        "text_ocr_original": "Idus Maii, legimus; “ Romæ hos a sanctis apostolis epis-"
+        "text_ocr_original": "Idus Maii, legimus; “ Romæ hos a sanctis apostolis epis-",
+        "seq": 20
       },
       {
         "line_id": "p0038_body_l0021",
@@ -518,7 +547,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "copos ordinatos, et ad prædicandum verbum Dei in His-",
-        "text_ocr_original": "copos ordinatos, et ad prædicandum verbum Dei in His-"
+        "text_ocr_original": "copos ordinatos, et ad prædicandum verbum Dei in His-",
+        "seq": 21
       },
       {
         "line_id": "p0038_body_l0022",
@@ -533,7 +563,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "panias directos esse: cumque diversis urbibus evangeli-",
-        "text_ocr_original": "panias directos esse: cumque diversis urbibus evangeli-"
+        "text_ocr_original": "panias directos esse: cumque diversis urbibus evangeli-",
+        "seq": 22
       },
       {
         "line_id": "p0038_body_l0023",
@@ -548,7 +579,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "zassent, et innumeras multitudines Christi fidei subjugas-",
-        "text_ocr_original": "zassent, et innumeras multitudines Christi fidei subjugas-"
+        "text_ocr_original": "zassent, et innumeras multitudines Christi fidei subjugas-",
+        "seq": 23
       },
       {
         "line_id": "p0038_body_l0024",
@@ -563,7 +595,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "sent ;” tandem in dictis Hispaniæ locis quievisse. In ve-",
-        "text_ocr_original": "sent ;” tandem in dictis Hispaniæ locis quievisse. In ve-"
+        "text_ocr_original": "sent ;” tandem in dictis Hispaniæ locis quievisse. In ve-",
+        "seq": 24
       },
       {
         "line_id": "p0038_body_l0025",
@@ -578,7 +611,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "tere Romanæ Ecclesiæ martyrologio, quod suo præfixit",
-        "text_ocr_original": "tere Romanæ Ecclesiæ martyrologio, quod suo præfixit"
+        "text_ocr_original": "tere Romanæ Ecclesiæ martyrologio, quod suo præfixit",
+        "seq": 25
       },
       {
         "line_id": "p0038_body_l0026",
@@ -593,7 +627,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "Ado, non aliud de illis dicitur, quam quod “ Romæ ab",
-        "text_ocr_original": "Ado, non aliud de illis dicitur, quam quod “ Romæ ab"
+        "text_ocr_original": "Ado, non aliud de illis dicitur, quam quod “ Romæ ab",
+        "seq": 26
       },
       {
         "line_id": "p0038_body_l0027",
@@ -619,7 +654,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "apostolis ordinati sunt.” In Britannico vero, quod de-",
-        "text_ocr_original": "apostolis ordinati sunt.” In Britannico vero, quod de-"
+        "text_ocr_original": "apostolis ordinati sunt.” In Britannico vero, quod de-",
+        "seq": 27
       },
       {
         "line_id": "p0038_body_l0028",
@@ -634,7 +670,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "scribendum curavit Ricemarchus Sulgeni Menevensis",
-        "text_ocr_original": "scribendum curavit Ricemarchus Sulgeni Menevensis"
+        "text_ocr_original": "scribendum curavit Ricemarchus Sulgeni Menevensis",
+        "seq": 28
       },
       {
         "line_id": "p0038_body_l0029",
@@ -649,7 +686,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "episcopi filius, ne nominantur quidem. In apostolorum",
-        "text_ocr_original": "episcopi filius, ne nominantur quidem. In apostolorum"
+        "text_ocr_original": "episcopi filius, ne nominantur quidem. In apostolorum",
+        "seq": 29
       },
       {
         "line_id": "p0038_body_l0030",
@@ -664,7 +702,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "tamen catalogo, qui epistolæ ad Chromatium et Heliodo-",
-        "text_ocr_original": "tamen catalogo, qui epistolæ ad Chromatium et Heliodo-"
+        "text_ocr_original": "tamen catalogo, qui epistolæ ad Chromatium et Heliodo-",
+        "seq": 30
       }
     ],
     "catchword": [
@@ -680,7 +719,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "VOL. V. C",
-        "text_ocr_original": "VOL. V. C"
+        "text_ocr_original": "VOL. V. C",
+        "seq": 1
       }
     ],
     "header": [
@@ -696,7 +736,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "CAP. I. ANTIQUITATES. 17",
-        "text_ocr_original": "CAP. I. ANTIQUITATES. 17"
+        "text_ocr_original": "CAP. I. ANTIQUITATES. 17",
+        "seq": 1
       }
     ],
     "marginalia": [
@@ -712,7 +753,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "MS. in bibliotheca Collegii Benedicti Cantabrig. et Coll. Baliol. Oxon. et",
-        "text_ocr_original": "MS. in bibliotheca Collegii Benedicti Cantabrig. et Coll. Baliol. Oxon. et"
+        "text_ocr_original": "MS. in bibliotheca Collegii Benedicti Cantabrig. et Coll. Baliol. Oxon. et",
+        "seq": 1
       },
       {
         "line_id": "p0038_marginalia_l0002",
@@ -726,7 +768,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "D. Roberti Cotton.",
-        "text_ocr_original": "D. Roberti Cotton."
+        "text_ocr_original": "D. Roberti Cotton.",
+        "seq": 2
       },
       {
         "line_id": "p0038_marginalia_l0003",
@@ -740,7 +783,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "al. Ctesiphon.",
-        "text_ocr_original": "al. Ctesiphon."
+        "text_ocr_original": "al. Ctesiphon.",
+        "seq": 3
       },
       {
         "line_id": "p0038_marginalia_l0004",
@@ -754,7 +798,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "al. Hesychius.",
-        "text_ocr_original": "al. Hesychius."
+        "text_ocr_original": "al. Hesychius.",
+        "seq": 4
       },
       {
         "line_id": "p0038_marginalia_l0005",
@@ -768,7 +813,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "Baron. de Martyrolog. Rom. cap. 9.",
-        "text_ocr_original": "Baron. de Martyrolog. Rom. cap. 9."
+        "text_ocr_original": "Baron. de Martyrolog. Rom. cap. 9.",
+        "seq": 5
       },
       {
         "line_id": "p0038_marginalia_l0006",
@@ -782,7 +828,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "Ibid. cap. 5, 6, 7.",
-        "text_ocr_original": "Ibid. cap. 5, 6, 7."
+        "text_ocr_original": "Ibid. cap. 5, 6, 7.",
+        "seq": 6
       },
       {
         "line_id": "p0038_marginalia_l0007",
@@ -796,7 +843,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "Petro, sc. et Paulo, ut habet Gregorius VII. lib. 1. Registr. epist. 64.",
-        "text_ocr_original": "Petro, sc. et Paulo, ut habet Gregorius VII. lib. 1. Registr. epist. 64."
+        "text_ocr_original": "Petro, sc. et Paulo, ut habet Gregorius VII. lib. 1. Registr. epist. 64.",
+        "seq": 7
       },
       {
         "line_id": "p0038_marginalia_l0008",
@@ -810,7 +858,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "Habetur MS. in bibliotheca D. Guil. Bedelli Kilmorensis apud nos epis-",
-        "text_ocr_original": "Habetur MS. in bibliotheca D. Guil. Bedelli Kilmorensis apud nos epis-"
+        "text_ocr_original": "Habetur MS. in bibliotheca D. Guil. Bedelli Kilmorensis apud nos epis-",
+        "seq": 8
       },
       {
         "line_id": "p0038_marginalia_l0009",
@@ -824,7 +873,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "copi.",
-        "text_ocr_original": "copi."
+        "text_ocr_original": "copi.",
+        "seq": 9
       }
     ]
   },

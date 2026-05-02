@@ -16,7 +16,8 @@
       "source_region": "marginalia",
       "text_gold": "Tertul. apol. cap. 5. op. pag. 6.",
       "text_ocr_original": "Tertul. apol. cap. 5. op. pag. 6.",
-      "reviewer": "Paul Boys"
+      "reviewer": "Paul Boys",
+      "seq": 1
     },
     {
       "body_line_id": "p0035_body_l0026",
@@ -33,7 +34,8 @@
       "source_region": "marginalia",
       "text_gold": "Psal. 94. ver. 4. Rom. cap. 10. ver. 19.",
       "text_ocr_original": "Psal. 94. ver. 4. Rom. cap. 10. ver. 19.",
-      "reviewer": "Paul Boys"
+      "reviewer": "Paul Boys",
+      "seq": 2
     },
     {
       "body_line_id": "p0035_body_l0031",
@@ -50,7 +52,8 @@
       "source_region": "marginalia",
       "text_gold": "Hegesippus vel Ambrosius potius, lib. 2. de Excid. Hierosol. cap. 12.",
       "text_ocr_original": "Hegesippus vel Ambrosius potius, lib. 2. de Excid. Hierosol. cap. 12.",
-      "reviewer": "Paul Boys"
+      "reviewer": "Paul Boys",
+      "seq": 3
     },
     {
       "body_line_id": "p0035_body_l0033",
@@ -67,7 +70,8 @@
       "source_region": "marginalia",
       "text_gold": "Interpolator epistolæ Ignatii ad Philadelph. ed. Coteler. tom. 2. pag. 77.",
       "text_ocr_original": "Interpolator epistolæ Ignatii ad Philadelph. ed. Coteler. tom. 2. pag. 77.",
-      "reviewer": "Paul Boys"
+      "reviewer": "Paul Boys",
+      "seq": 4
     }
   ],
   "meta": {
@@ -103,7 +107,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "incolis tepide suscepta sunt; apud quosdam tamen integre,",
-        "text_ocr_original": "incolis tepide suscepta sunt; apud quosdam tamen integre,"
+        "text_ocr_original": "incolis tepide suscepta sunt; apud quosdam tamen integre,",
+        "seq": 1
       },
       {
         "line_id": "p0035_body_l0002",
@@ -118,7 +123,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "et alios minus, usque ad persecutionem Diocletiani per-",
-        "text_ocr_original": "et alios minus, usque ad persecutionem Diocletiani per-"
+        "text_ocr_original": "et alios minus, usque ad persecutionem Diocletiani per-",
+        "seq": 2
       },
       {
         "line_id": "p0035_body_l0003",
@@ -133,7 +139,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "mansere.\" Hæc Gildas; ubi quod de tempore summo",
-        "text_ocr_original": "mansere.\" Hæc Gildas; ubi quod de tempore summo"
+        "text_ocr_original": "mansere.\" Hæc Gildas; ubi quod de tempore summo",
+        "seq": 3
       },
       {
         "line_id": "p0035_body_l0004",
@@ -148,7 +155,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "Tiberii dicit, ex Eusebii chronico exponendum est: in",
-        "text_ocr_original": "Tiberii dicit, ex Eusebii chronico exponendum est: in"
+        "text_ocr_original": "Tiberii dicit, ex Eusebii chronico exponendum est: in",
+        "seq": 4
       },
       {
         "line_id": "p0035_body_l0005",
@@ -163,7 +171,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "quo ad annum vel ultimum, vel penultimum Tiberii anno-",
-        "text_ocr_original": "quo ad annum vel ultimum, vel penultimum Tiberii anno-"
+        "text_ocr_original": "quo ad annum vel ultimum, vel penultimum Tiberii anno-",
+        "seq": 5
       },
       {
         "line_id": "p0035_body_l0006",
@@ -178,7 +187,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "tatum est, \"Pilato de Christianorum dogmate ad Tibe-",
-        "text_ocr_original": "tatum est, \"Pilato de Christianorum dogmate ad Tibe-"
+        "text_ocr_original": "tatum est, \"Pilato de Christianorum dogmate ad Tibe-",
+        "seq": 6
       },
       {
         "line_id": "p0035_body_l0007",
@@ -193,7 +203,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "rium referente, Tiberius retulit ad senatum, ut inter cæ-",
-        "text_ocr_original": "rium referente, Tiberius retulit ad senatum, ut inter cæ-"
+        "text_ocr_original": "rium referente, Tiberius retulit ad senatum, ut inter cæ-",
+        "seq": 7
       },
       {
         "line_id": "p0035_body_l0008",
@@ -208,7 +219,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "tera sacra reciperetur. Verum quum ex consulto patrum,",
-        "text_ocr_original": "tera sacra reciperetur. Verum quum ex consulto patrum,"
+        "text_ocr_original": "tera sacra reciperetur. Verum quum ex consulto patrum,",
+        "seq": 8
       },
       {
         "line_id": "p0035_body_l0009",
@@ -223,7 +235,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "Christianos eliminari urbe placuisset; Tiberius per edic-",
-        "text_ocr_original": "Christianos eliminari urbe placuisset; Tiberius per edic-"
+        "text_ocr_original": "Christianos eliminari urbe placuisset; Tiberius per edic-",
+        "seq": 9
       },
       {
         "line_id": "p0035_body_l0010",
@@ -238,7 +251,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "tum accusatoribus Christianorum comminatus est mortem.",
-        "text_ocr_original": "tum accusatoribus Christianorum comminatus est mortem."
+        "text_ocr_original": "tum accusatoribus Christianorum comminatus est mortem.",
+        "seq": 10
       },
       {
         "line_id": "p0035_body_l0011",
@@ -253,7 +267,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "Scribit Tertullianus in apologetico.\"",
-        "text_ocr_original": "Scribit Tertullianus in apologetico.\""
+        "text_ocr_original": "Scribit Tertullianus in apologetico.\"",
+        "seq": 11
       },
       {
         "line_id": "p0035_body_l0012",
@@ -274,7 +289,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "Verba Tertulliani hæc sunt; \"Tiberius, cujus tempore",
-        "text_ocr_original": "Verba Tertulliani hæc sunt; \"Tiberius, cujus tempore"
+        "text_ocr_original": "Verba Tertulliani hæc sunt; \"Tiberius, cujus tempore",
+        "seq": 12
       },
       {
         "line_id": "p0035_body_l0013",
@@ -289,7 +305,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "nomen Christianum in sæculum introivit, annunciatum sibi",
-        "text_ocr_original": "nomen Christianum in sæculum introivit, annunciatum sibi"
+        "text_ocr_original": "nomen Christianum in sæculum introivit, annunciatum sibi",
+        "seq": 13
       },
       {
         "line_id": "p0035_body_l0014",
@@ -304,7 +321,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "ex Syria Palæstina, quod illic veritatem illius divinitatis",
-        "text_ocr_original": "ex Syria Palæstina, quod illic veritatem illius divinitatis"
+        "text_ocr_original": "ex Syria Palæstina, quod illic veritatem illius divinitatis",
+        "seq": 14
       },
       {
         "line_id": "p0035_body_l0015",
@@ -319,7 +337,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "revelaverat, detulit ad senatum cum prærogativa suf-",
-        "text_ocr_original": "revelaverat, detulit ad senatum cum prærogativa suf-"
+        "text_ocr_original": "revelaverat, detulit ad senatum cum prærogativa suf-",
+        "seq": 15
       },
       {
         "line_id": "p0035_body_l0016",
@@ -334,7 +353,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "fragii sui. Senatus, quia non in se probaverat, respuit.",
-        "text_ocr_original": "fragii sui. Senatus, quia non in se probaverat, respuit."
+        "text_ocr_original": "fragii sui. Senatus, quia non in se probaverat, respuit.",
+        "seq": 16
       },
       {
         "line_id": "p0035_body_l0017",
@@ -349,7 +369,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "Cæsar in sententia mansit, comminatus periculum accusa-",
-        "text_ocr_original": "Cæsar in sententia mansit, comminatus periculum accusa-"
+        "text_ocr_original": "Cæsar in sententia mansit, comminatus periculum accusa-",
+        "seq": 17
       },
       {
         "line_id": "p0035_body_l0018",
@@ -364,7 +385,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "toribus Christianorum.\" Subdit Eusebius libro secundo",
-        "text_ocr_original": "toribus Christianorum.\" Subdit Eusebius libro secundo"
+        "text_ocr_original": "toribus Christianorum.\" Subdit Eusebius libro secundo",
+        "seq": 18
       },
       {
         "line_id": "p0035_body_l0019",
@@ -379,7 +401,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "historiæ ecclesiasticæ, capite tertio, Ruffino interprete.",
-        "text_ocr_original": "historiæ ecclesiasticæ, capite tertio, Ruffino interprete."
+        "text_ocr_original": "historiæ ecclesiasticæ, capite tertio, Ruffino interprete.",
+        "seq": 19
       },
       {
         "line_id": "p0035_body_l0020",
@@ -394,7 +417,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "\"Quod profecto divina providentia ita tunc Cæsaris sen-",
-        "text_ocr_original": "\"Quod profecto divina providentia ita tunc Cæsaris sen-"
+        "text_ocr_original": "\"Quod profecto divina providentia ita tunc Cæsaris sen-",
+        "seq": 20
       },
       {
         "line_id": "p0035_body_l0021",
@@ -409,7 +433,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "sibus ingessit, ut absque ullo obstaculo, in ipsis duntaxat",
-        "text_ocr_original": "sibus ingessit, ut absque ullo obstaculo, in ipsis duntaxat"
+        "text_ocr_original": "sibus ingessit, ut absque ullo obstaculo, in ipsis duntaxat",
+        "seq": 21
       },
       {
         "line_id": "p0035_body_l0022",
@@ -424,7 +449,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "initiis Evangelii sermo usquequaque percurreret. Unde et",
-        "text_ocr_original": "initiis Evangelii sermo usquequaque percurreret. Unde et"
+        "text_ocr_original": "initiis Evangelii sermo usquequaque percurreret. Unde et",
+        "seq": 22
       },
       {
         "line_id": "p0035_body_l0023",
@@ -439,7 +465,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "factum est, ut repente quasi cœlitus lumen ostensum, aut",
-        "text_ocr_original": "factum est, ut repente quasi cœlitus lumen ostensum, aut"
+        "text_ocr_original": "factum est, ut repente quasi cœlitus lumen ostensum, aut",
+        "seq": 23
       },
       {
         "line_id": "p0035_body_l0024",
@@ -454,7 +481,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "radius quidam solis erumpens, totum orbem claritate su-",
-        "text_ocr_original": "radius quidam solis erumpens, totum orbem claritate su-"
+        "text_ocr_original": "radius quidam solis erumpens, totum orbem claritate su-",
+        "seq": 24
       },
       {
         "line_id": "p0035_body_l0025",
@@ -469,7 +497,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "perni luminis illustraret: ut compleretur illa prophetia",
-        "text_ocr_original": "perni luminis illustraret: ut compleretur illa prophetia"
+        "text_ocr_original": "perni luminis illustraret: ut compleretur illa prophetia",
+        "seq": 25
       },
       {
         "line_id": "p0035_body_l0026",
@@ -490,7 +519,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "quæ dixerat, In omnem terram exivit sonus eorum, evange-",
-        "text_ocr_original": "quæ dixerat, In omnem terram exivit sonus eorum, evange-"
+        "text_ocr_original": "quæ dixerat, In omnem terram exivit sonus eorum, evange-",
+        "seq": 26
       },
       {
         "line_id": "p0035_body_l0027",
@@ -505,7 +535,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "listarum scilicet et apostolorum, et in fines orbis terræ",
-        "text_ocr_original": "listarum scilicet et apostolorum, et in fines orbis terræ"
+        "text_ocr_original": "listarum scilicet et apostolorum, et in fines orbis terræ",
+        "seq": 27
       },
       {
         "line_id": "p0035_body_l0028",
@@ -520,7 +551,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "verba eorum. Ex quo et per omnes civitates ac vicos,",
-        "text_ocr_original": "verba eorum. Ex quo et per omnes civitates ac vicos,"
+        "text_ocr_original": "verba eorum. Ex quo et per omnes civitates ac vicos,",
+        "seq": 28
       },
       {
         "line_id": "p0035_body_l0029",
@@ -535,7 +567,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "immensæ multitudines, velut messium tempore frumenta",
-        "text_ocr_original": "immensæ multitudines, velut messium tempore frumenta"
+        "text_ocr_original": "immensæ multitudines, velut messium tempore frumenta",
+        "seq": 29
       },
       {
         "line_id": "p0035_body_l0030",
@@ -550,7 +583,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "ad areas, ita ad Ecclesias populi congregabantur.\" \"Con-",
-        "text_ocr_original": "ad areas, ita ad Ecclesias populi congregabantur.\" \"Con-"
+        "text_ocr_original": "ad areas, ita ad Ecclesias populi congregabantur.\" \"Con-",
+        "seq": 30
       },
       {
         "line_id": "p0035_body_l0031",
@@ -571,7 +605,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "gregatio Christianorum in omne hominum penetravit ge-",
-        "text_ocr_original": "gregatio Christianorum in omne hominum penetravit ge-"
+        "text_ocr_original": "gregatio Christianorum in omne hominum penetravit ge-",
+        "seq": 31
       },
       {
         "line_id": "p0035_body_l0032",
@@ -586,7 +621,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "nus; nec ulla natio Romani orbis remansit, quæ cultus",
-        "text_ocr_original": "nus; nec ulla natio Romani orbis remansit, quæ cultus"
+        "text_ocr_original": "nus; nec ulla natio Romani orbis remansit, quæ cultus",
+        "seq": 32
       },
       {
         "line_id": "p0035_body_l0033",
@@ -607,7 +643,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "ejus expers relinqueretur.\" Μία ἡ ἐκκλησία, ἣν ἱδρύσαντο",
-        "text_ocr_original": "ejus expers relinqueretur.\" Μία ἡ ἐκκλησία, ἣν ἱδρύσαντο"
+        "text_ocr_original": "ejus expers relinqueretur.\" Μία ἡ ἐκκλησία, ἣν ἱδρύσαντο",
+        "seq": 33
       },
       {
         "line_id": "p0035_body_l0034",
@@ -622,7 +659,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "οἱ ἅγιοι ἀπόστολοι ἀπὸ περάτων ἕως περάτων ἐν τῷ αἵματι",
-        "text_ocr_original": "οἱ ἅγιοι ἀπόστολοι ἀπὸ περάτων ἕως περάτων ἐν τῷ αἵματι"
+        "text_ocr_original": "οἱ ἅγιοι ἀπόστολοι ἀπὸ περάτων ἕως περάτων ἐν τῷ αἵματι",
+        "seq": 34
       },
       {
         "line_id": "p0035_body_l0035",
@@ -637,7 +675,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "τοῦ Χριστοῦ, οἰκείοις ἱδρῶσι καὶ πόνοις.",
-        "text_ocr_original": "τοῦ Χριστοῦ, οἰκείοις ἱδρῶσι καὶ πόνοις."
+        "text_ocr_original": "τοῦ Χριστοῦ, οἰκείοις ἱδρῶσι καὶ πόνοις.",
+        "seq": 35
       }
     ],
     "catchword": [],
@@ -654,7 +693,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "14 BRITANNICARUM ECCLESIARUM CAP. I.",
-        "text_ocr_original": "14 BRITANNICARUM ECCLESIARUM CAP. I."
+        "text_ocr_original": "14 BRITANNICARUM ECCLESIARUM CAP. I.",
+        "seq": 1
       }
     ],
     "marginalia": [
@@ -670,7 +710,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "Tertul. apol. cap. 5. op. pag. 6.",
-        "text_ocr_original": "Tertul. apol. cap. 5. op. pag. 6."
+        "text_ocr_original": "Tertul. apol. cap. 5. op. pag. 6.",
+        "seq": 1
       },
       {
         "line_id": "p0035_marginalia_l0002",
@@ -684,7 +725,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "Psal. 94. ver. 4. Rom. cap. 10. ver. 19.",
-        "text_ocr_original": "Psal. 94. ver. 4. Rom. cap. 10. ver. 19."
+        "text_ocr_original": "Psal. 94. ver. 4. Rom. cap. 10. ver. 19.",
+        "seq": 2
       },
       {
         "line_id": "p0035_marginalia_l0003",
@@ -698,7 +740,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "Hegesippus vel Ambrosius potius, lib. 2. de Excid. Hierosol. cap. 12.",
-        "text_ocr_original": "Hegesippus vel Ambrosius potius, lib. 2. de Excid. Hierosol. cap. 12."
+        "text_ocr_original": "Hegesippus vel Ambrosius potius, lib. 2. de Excid. Hierosol. cap. 12.",
+        "seq": 3
       },
       {
         "line_id": "p0035_marginalia_l0004",
@@ -712,7 +755,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "Interpolator epistolæ Ignatii ad Philadelph. ed. Coteler. tom. 2. pag. 77.",
-        "text_ocr_original": "Interpolator epistolæ Ignatii ad Philadelph. ed. Coteler. tom. 2. pag. 77."
+        "text_ocr_original": "Interpolator epistolæ Ignatii ad Philadelph. ed. Coteler. tom. 2. pag. 77.",
+        "seq": 4
       }
     ]
   },

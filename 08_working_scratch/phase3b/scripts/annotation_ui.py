@@ -82,6 +82,32 @@ def _footnotes(payload: dict) -> list[dict]:
     return [fn for fn in values if isinstance(fn, dict)]
 
 
+def _stamp_seq(payload: dict) -> None:
+    """Stamp ``seq`` (1-based, dense) on every line/footnote based on the
+    current array order. ``seq`` is the ordering authority for
+    translation and rendering; ``line_id`` / ``footnote_id`` remain
+    immutable identity. Server-side stamping is defense-in-depth: even
+    if a client forgets to send ``seq`` (or sends inconsistent values),
+    the persisted file always carries a valid order key.
+    """
+    if not isinstance(payload, dict):
+        return
+    regions = payload.get("regions", {})
+    if isinstance(regions, dict):
+        for region in SCHEMA_REGIONS:
+            arr = regions.get(region)
+            if not isinstance(arr, list):
+                continue
+            for idx, line in enumerate(arr):
+                if isinstance(line, dict):
+                    line["seq"] = idx + 1
+    footnotes = payload.get("footnotes")
+    if isinstance(footnotes, list):
+        for idx, fn in enumerate(footnotes):
+            if isinstance(fn, dict):
+                fn["seq"] = idx + 1
+
+
 def _validate_payload(payload: dict) -> list[str]:
     """Slim validator for the post-redesign schema.
 
@@ -340,6 +366,12 @@ def api_save_page(page_id: str):
     errors = _validate_payload(incoming)
     if errors:
         return jsonify({"ok": False, "errors": errors}), 400
+
+    # Stamp `seq` (ordering authority) from current array order before
+    # writing. The client also stamps, but we re-stamp here so the file
+    # on disk always reflects exactly what was persisted, regardless of
+    # what the client sent.
+    _stamp_seq(incoming)
 
     # Compute edit log entries against the on-disk payload before overwriting.
     try:

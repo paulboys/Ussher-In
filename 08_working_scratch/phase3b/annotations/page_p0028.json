@@ -16,7 +16,8 @@
       ],
       "source_region": "marginalia",
       "text_gold": "Ut rei familiaris, sic et amicitiæ paternæ liberis capienda est hæreditas. Isocrat. ad Demonic.",
-      "text_ocr_original": "Ut rei familiaris, sic et amicitiæ paternæ liberis capienda est hæreditas."
+      "text_ocr_original": "Ut rei familiaris, sic et amicitiæ paternæ liberis capienda est hæreditas.",
+      "seq": 1
     }
   ],
   "meta": {
@@ -52,7 +53,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "cula, quam omnes omnium aliæ junctæ simul. Ea vero",
-        "text_ocr_original": "cula, quam omnes omnium aliæ junctæ simul. Ea vero"
+        "text_ocr_original": "cula, quam omnes omnium aliæ junctæ simul. Ea vero",
+        "seq": 1
       },
       {
         "line_id": "p0028_body_l0002",
@@ -67,7 +69,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "amicissimi D. Roberti Cottoni (quem ut antiquitatum",
-        "text_ocr_original": "amicissimi D. Roberti Cottoni (quem ut antiquitatum"
+        "text_ocr_original": "amicissimi D. Roberti Cottoni (quem ut antiquitatum",
+        "seq": 2
       },
       {
         "line_id": "p0028_body_l0003",
@@ -82,7 +85,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "suarum promum condum semper celebrabit Britannia)",
-        "text_ocr_original": "suarum promum condum semper celebrabit Britannia)"
+        "text_ocr_original": "suarum promum condum semper celebrabit Britannia)",
+        "seq": 3
       },
       {
         "line_id": "p0028_body_l0004",
@@ -97,7 +101,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "summa humanitate, non minus quam mea ipsius et olim",
-        "text_ocr_original": "summa humanitate, non minus quam mea ipsius et olim"
+        "text_ocr_original": "summa humanitate, non minus quam mea ipsius et olim",
+        "seq": 4
       },
       {
         "line_id": "p0028_body_l0005",
@@ -112,7 +117,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "patuit, et continuata D. Thomæ filii ipsius tum in equestri",
-        "text_ocr_original": "patuit, et continuata D. Thomæ filii ipsius tum in equestri"
+        "text_ocr_original": "patuit, et continuata D. Thomæ filii ipsius tum in equestri",
+        "seq": 5
       },
       {
         "line_id": "p0028_body_l0006",
@@ -127,7 +133,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "ordine atque baronetti dignitate, tum in bibliothecæ con-",
-        "text_ocr_original": "ordine atque baronetti dignitate, tum in bibliothecæ con-"
+        "text_ocr_original": "ordine atque baronetti dignitate, tum in bibliothecæ con-",
+        "seq": 6
       },
       {
         "line_id": "p0028_body_l0007",
@@ -142,7 +149,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "servandæ et augendæ cura, successoris unici benevo-",
-        "text_ocr_original": "servandæ et augendæ cura, successoris unici benevo-"
+        "text_ocr_original": "servandæ et augendæ cura, successoris unici benevo-",
+        "seq": 7
       },
       {
         "line_id": "p0028_body_l0008",
@@ -157,7 +165,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "lentia adhuc patet; Isocraticæ illius monitionis hic certe",
-        "text_ocr_original": "lentia adhuc patet; Isocraticæ illius monitionis hic certe"
+        "text_ocr_original": "lentia adhuc patet; Isocraticæ illius monitionis hic certe",
+        "seq": 8
       },
       {
         "line_id": "p0028_body_l0009",
@@ -178,7 +187,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "non immemoris. Πρέπει τοὺς παῖδας, ὥσπερ τῆς οὐσίας,",
-        "text_ocr_original": "non immemoris. Πρέπει τοὺς παῖδας, ὥσπερ τῆς οὐσίας,"
+        "text_ocr_original": "non immemoris. Πρέπει τοὺς παῖδας, ὥσπερ τῆς οὐσίας,",
+        "seq": 9
       },
       {
         "line_id": "p0028_body_l0010",
@@ -193,7 +203,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "οὕτω καὶ τῆς φιλίας πατρικῆς κληρονομεῖν.",
-        "text_ocr_original": "οὕτω καὶ τῆς φιλίας πατρικῆς κληρονομεῖν."
+        "text_ocr_original": "οὕτω καὶ τῆς φιλίας πατρικῆς κληρονομεῖν.",
+        "seq": 10
       },
       {
         "line_id": "p0028_body_l0011",
@@ -208,7 +219,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "In nostra autem hac ex omni scriptorum genere pro-",
-        "text_ocr_original": "In nostra autem hac ex omni scriptorum genere pro-"
+        "text_ocr_original": "In nostra autem hac ex omni scriptorum genere pro-",
+        "seq": 11
       },
       {
         "line_id": "p0028_body_l0012",
@@ -223,7 +235,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "miscue congesta farragine, si quis obscuriorum aut minus",
-        "text_ocr_original": "miscue congesta farragine, si quis obscuriorum aut minus"
+        "text_ocr_original": "miscue congesta farragine, si quis obscuriorum aut minus",
+        "seq": 12
       },
       {
         "line_id": "p0028_body_l0013",
@@ -238,7 +251,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "spectatæ fidei authorum subinde hic citata mirabitur tes-",
-        "text_ocr_original": "spectatæ fidei authorum subinde hic citata mirabitur tes-"
+        "text_ocr_original": "spectatæ fidei authorum subinde hic citata mirabitur tes-",
+        "seq": 13
       },
       {
         "line_id": "p0028_body_l0014",
@@ -253,7 +267,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "timonia: cogitare illum velim, aliud esse historiam scri-",
-        "text_ocr_original": "timonia: cogitare illum velim, aliud esse historiam scri-"
+        "text_ocr_original": "timonia: cogitare illum velim, aliud esse historiam scri-",
+        "seq": 14
       },
       {
         "line_id": "p0028_body_l0015",
@@ -268,7 +283,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "bere, aliud materiam hinc inde convehere, unde delectu",
-        "text_ocr_original": "bere, aliud materiam hinc inde convehere, unde delectu"
+        "text_ocr_original": "bere, aliud materiam hinc inde convehere, unde delectu",
+        "seq": 15
       },
       {
         "line_id": "p0028_body_l0016",
@@ -283,7 +299,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "adhibito sylvam dicendi historicus possit ducere; et ut de",
-        "text_ocr_original": "adhibito sylvam dicendi historicus possit ducere; et ut de"
+        "text_ocr_original": "adhibito sylvam dicendi historicus possit ducere; et ut de",
+        "seq": 16
       },
       {
         "line_id": "p0028_body_l0017",
@@ -298,7 +315,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "fide narrationis rectius judicare quis possit, interesse sæ-",
-        "text_ocr_original": "fide narrationis rectius judicare quis possit, interesse sæ-"
+        "text_ocr_original": "fide narrationis rectius judicare quis possit, interesse sæ-",
+        "seq": 17
       },
       {
         "line_id": "p0028_body_l0018",
@@ -313,7 +331,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "penumero, ut quam obscuris et novitiis illa nitatur au-",
-        "text_ocr_original": "penumero, ut quam obscuris et novitiis illa nitatur au-"
+        "text_ocr_original": "penumero, ut quam obscuris et novitiis illa nitatur au-",
+        "seq": 18
       },
       {
         "line_id": "p0028_body_l0019",
@@ -328,7 +347,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "thoribus, clare intelligat. Alioqui non ita nos judicii",
-        "text_ocr_original": "thoribus, clare intelligat. Alioqui non ita nos judicii"
+        "text_ocr_original": "thoribus, clare intelligat. Alioqui non ita nos judicii",
+        "seq": 19
       },
       {
         "line_id": "p0028_body_l0020",
@@ -343,7 +363,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "inopes existimare quis debet, ut Galfridum Monemuthen-",
-        "text_ocr_original": "inopes existimare quis debet, ut Galfridum Monemuthen-"
+        "text_ocr_original": "inopes existimare quis debet, ut Galfridum Monemuthen-",
+        "seq": 20
       },
       {
         "line_id": "p0028_body_l0021",
@@ -358,7 +379,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "sem, aut Hectorem Boethium, aut ex infimis subselliis",
-        "text_ocr_original": "sem, aut Hectorem Boethium, aut ex infimis subselliis"
+        "text_ocr_original": "sem, aut Hectorem Boethium, aut ex infimis subselliis",
+        "seq": 21
       },
       {
         "line_id": "p0028_body_l0022",
@@ -373,7 +395,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "testem aliquem alium advocaremus; si in antiquiore aut",
-        "text_ocr_original": "testem aliquem alium advocaremus; si in antiquiore aut"
+        "text_ocr_original": "testem aliquem alium advocaremus; si in antiquiore aut",
+        "seq": 22
       },
       {
         "line_id": "p0028_body_l0023",
@@ -388,7 +411,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "melioris notæ aliquo quod ab ipsis traditum est reperiri",
-        "text_ocr_original": "melioris notæ aliquo quod ab ipsis traditum est reperiri"
+        "text_ocr_original": "melioris notæ aliquo quod ab ipsis traditum est reperiri",
+        "seq": 23
       },
       {
         "line_id": "p0028_body_l0024",
@@ -403,7 +427,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "potuisset chronographo.",
-        "text_ocr_original": "potuisset chronographo."
+        "text_ocr_original": "potuisset chronographo.",
+        "seq": 24
       },
       {
         "line_id": "p0028_body_l0025",
@@ -418,7 +443,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "Quod si frivola etiam nonnulla, dubia multa, et falsa",
-        "text_ocr_original": "Quod si frivola etiam nonnulla, dubia multa, et falsa"
+        "text_ocr_original": "Quod si frivola etiam nonnulla, dubia multa, et falsa",
+        "seq": 25
       },
       {
         "line_id": "p0028_body_l0026",
@@ -433,7 +459,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "quoque non pauca, commemorata hic objectet alius: de",
-        "text_ocr_original": "quoque non pauca, commemorata hic objectet alius: de"
+        "text_ocr_original": "quoque non pauca, commemorata hic objectet alius: de",
+        "seq": 26
       },
       {
         "line_id": "p0028_body_l0027",
@@ -448,7 +475,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "frivolis responsum hoc a Flavio Vopisco accipiat, in Aure-",
-        "text_ocr_original": "frivolis responsum hoc a Flavio Vopisco accipiat, in Aure-"
+        "text_ocr_original": "frivolis responsum hoc a Flavio Vopisco accipiat, in Aure-",
+        "seq": 27
       },
       {
         "line_id": "p0028_body_l0028",
@@ -463,7 +491,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "liano suo. “ Frivola hæc fortasse cuipiam et nimis levia",
-        "text_ocr_original": "liano suo. “ Frivola hæc fortasse cuipiam et nimis levia"
+        "text_ocr_original": "liano suo. “ Frivola hæc fortasse cuipiam et nimis levia",
+        "seq": 28
       },
       {
         "line_id": "p0028_body_l0029",
@@ -478,7 +507,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "esse videantur: sed curiositas nihil recusat.” De dubiis,",
-        "text_ocr_original": "esse videantur: sed curiositas nihil recusat.” De dubiis,"
+        "text_ocr_original": "esse videantur: sed curiositas nihil recusat.” De dubiis,",
+        "seq": 29
       },
       {
         "line_id": "p0028_body_l0030",
@@ -493,7 +523,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "ex clarissimi Junii Manilianis, hoc habeat alterum: “ me",
-        "text_ocr_original": "ex clarissimi Junii Manilianis, hoc habeat alterum: “ me"
+        "text_ocr_original": "ex clarissimi Junii Manilianis, hoc habeat alterum: “ me",
+        "seq": 30
       },
       {
         "line_id": "p0028_body_l0031",
@@ -508,7 +539,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "nec multis rebus ejusmodi credere, nec credendas ob-",
-        "text_ocr_original": "nec multis rebus ejusmodi credere, nec credendas ob-"
+        "text_ocr_original": "nec multis rebus ejusmodi credere, nec credendas ob-",
+        "seq": 31
       },
       {
         "line_id": "p0028_body_l0032",
@@ -523,7 +555,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "trudere cuiquam, sed legendas probandasque judicio",
-        "text_ocr_original": "trudere cuiquam, sed legendas probandasque judicio"
+        "text_ocr_original": "trudere cuiquam, sed legendas probandasque judicio",
+        "seq": 32
       }
     ],
     "catchword": [],
@@ -540,7 +573,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "PRÆFATIO. 7",
-        "text_ocr_original": "PRÆFATIO. 7"
+        "text_ocr_original": "PRÆFATIO. 7",
+        "seq": 1
       }
     ],
     "marginalia": [
@@ -556,7 +590,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "Ut rei familiaris, sic et amicitiæ paternæ liberis capienda est hæreditas.",
-        "text_ocr_original": "Ut rei familiaris, sic et amicitiæ paternæ liberis capienda est hæreditas."
+        "text_ocr_original": "Ut rei familiaris, sic et amicitiæ paternæ liberis capienda est hæreditas.",
+        "seq": 1
       },
       {
         "line_id": "p0028_marginalia_l0002",
@@ -570,7 +605,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "Isocrat. ad Demonic.",
-        "text_ocr_original": "Isocrat. ad Demonic."
+        "text_ocr_original": "Isocrat. ad Demonic.",
+        "seq": 2
       }
     ]
   },

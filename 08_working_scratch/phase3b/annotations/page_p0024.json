@@ -16,7 +16,8 @@
       "source_region": "marginalia",
       "text_gold": "Matth. cap. 13. ver. 47, 48.",
       "text_ocr_original": "Matth. cap. 13. ver. 47, 48.",
-      "reviewer": "Paul Boys"
+      "reviewer": "Paul Boys",
+      "seq": 1
     },
     {
       "body_line_id": "p0024_body_l0016",
@@ -33,7 +34,8 @@
       "source_region": "marginalia",
       "text_gold": "Guil. Malmesbur. de gest. Reg. Anglor. lib. 5.",
       "text_ocr_original": "Guil. Malmesbur. de gest. Reg. Anglor. lib. 5.",
-      "reviewer": "Paul Boys"
+      "reviewer": "Paul Boys",
+      "seq": 2
     }
   ],
   "meta": {
@@ -69,7 +71,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "At quum in fæcibus etiam istis aliquampiam de-",
-        "text_ocr_original": "At quum in fæcibus etiam istis aliquampiam de-"
+        "text_ocr_original": "At quum in fæcibus etiam istis aliquampiam de-",
+        "seq": 1
       },
       {
         "line_id": "p0024_body_l0002",
@@ -84,7 +87,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "mersam animadverterem veritatem, et in ipso ster-",
-        "text_ocr_original": "mersam animadverterem veritatem, et in ipso ster-"
+        "text_ocr_original": "mersam animadverterem veritatem, et in ipso ster-",
+        "seq": 2
       },
       {
         "line_id": "p0024_body_l0003",
@@ -99,7 +103,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "quilinio gemmam offendi potuisse non desperarem :",
-        "text_ocr_original": "quilinio gemmam offendi potuisse non desperarem :"
+        "text_ocr_original": "quilinio gemmam offendi potuisse non desperarem :",
+        "seq": 3
       },
       {
         "line_id": "p0024_body_l0004",
@@ -114,7 +119,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "purioris antiquitatis monumentis cum sequioris",
-        "text_ocr_original": "purioris antiquitatis monumentis cum sequioris"
+        "text_ocr_original": "purioris antiquitatis monumentis cum sequioris",
+        "seq": 4
       },
       {
         "line_id": "p0024_body_l0005",
@@ -129,7 +135,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "ævi illis alteris diligenter comparatis, e fodina ista",
-        "text_ocr_original": "ævi illis alteris diligenter comparatis, e fodina ista"
+        "text_ocr_original": "ævi illis alteris diligenter comparatis, e fodina ista",
+        "seq": 5
       },
       {
         "line_id": "p0024_body_l0006",
@@ -144,7 +151,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "præstantioris metalli ramenta aut stricturas aliquas",
-        "text_ocr_original": "præstantioris metalli ramenta aut stricturas aliquas"
+        "text_ocr_original": "præstantioris metalli ramenta aut stricturas aliquas",
+        "seq": 6
       },
       {
         "line_id": "p0024_body_l0007",
@@ -159,7 +167,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "eruere conatus sum. Sic tamen, ut sagenæ evan-",
-        "text_ocr_original": "eruere conatus sum. Sic tamen, ut sagenæ evan-"
+        "text_ocr_original": "eruere conatus sum. Sic tamen, ut sagenæ evan-",
+        "seq": 7
       },
       {
         "line_id": "p0024_body_l0008",
@@ -174,7 +183,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "gelicæ operam istam certo quodam consilio non",
-        "text_ocr_original": "gelicæ operam istam certo quodam consilio non"
+        "text_ocr_original": "gelicæ operam istam certo quodam consilio non",
+        "seq": 8
       },
       {
         "line_id": "p0024_body_l0009",
@@ -195,7 +205,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "absimilem esse voluerim, quæ “ jacta in mare res",
-        "text_ocr_original": "absimilem esse voluerim, quæ “ jacta in mare res"
+        "text_ocr_original": "absimilem esse voluerim, quæ “ jacta in mare res",
+        "seq": 9
       },
       {
         "line_id": "p0024_body_l0010",
@@ -210,7 +221,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "cujusvis generis coegit: impletam vero subduxe-",
-        "text_ocr_original": "cujusvis generis coegit: impletam vero subduxe-"
+        "text_ocr_original": "cujusvis generis coegit: impletam vero subduxe-",
+        "seq": 10
       },
       {
         "line_id": "p0024_body_l0011",
@@ -225,7 +237,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "runt in litus, et sedentes quæ bona erant in va-",
-        "text_ocr_original": "runt in litus, et sedentes quæ bona erant in va-"
+        "text_ocr_original": "runt in litus, et sedentes quæ bona erant in va-",
+        "seq": 11
       },
       {
         "line_id": "p0024_body_l0012",
@@ -240,7 +253,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "sa collegerunt, quæ autem putria foras projece-",
-        "text_ocr_original": "sa collegerunt, quæ autem putria foras projece-"
+        "text_ocr_original": "sa collegerunt, quæ autem putria foras projece-",
+        "seq": 12
       },
       {
         "line_id": "p0024_body_l0013",
@@ -255,7 +269,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "runt ;” ab æquo lectore nihil hic expectans aliud,",
-        "text_ocr_original": "runt ;” ab æquo lectore nihil hic expectans aliud,"
+        "text_ocr_original": "runt ;” ab æquo lectore nihil hic expectans aliud,",
+        "seq": 13
       },
       {
         "line_id": "p0024_body_l0014",
@@ -270,7 +285,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "quam quod suo jure sibi deposcebat nostrorum",
-        "text_ocr_original": "quam quod suo jure sibi deposcebat nostrorum"
+        "text_ocr_original": "quam quod suo jure sibi deposcebat nostrorum",
+        "seq": 14
       },
       {
         "line_id": "p0024_body_l0015",
@@ -285,7 +301,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "historicorum post Bedam præcipuus, Guilielmus",
-        "text_ocr_original": "historicorum post Bedam præcipuus, Guilielmus"
+        "text_ocr_original": "historicorum post Bedam præcipuus, Guilielmus",
+        "seq": 15
       },
       {
         "line_id": "p0024_body_l0016",
@@ -306,7 +323,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "Malmesburiensis bibliothecarius. “ Si quis post",
-        "text_ocr_original": "Malmesburiensis bibliothecarius. “ Si quis post"
+        "text_ocr_original": "Malmesburiensis bibliothecarius. “ Si quis post",
+        "seq": 16
       },
       {
         "line_id": "p0024_body_l0017",
@@ -321,7 +339,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "me scribendi de talibus munus attentaverit; mihi",
-        "text_ocr_original": "me scribendi de talibus munus attentaverit; mihi"
+        "text_ocr_original": "me scribendi de talibus munus attentaverit; mihi",
+        "seq": 17
       },
       {
         "line_id": "p0024_body_l0018",
@@ -336,7 +355,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "debeat collectionis gratiam, sibi habeat electionis",
-        "text_ocr_original": "debeat collectionis gratiam, sibi habeat electionis"
+        "text_ocr_original": "debeat collectionis gratiam, sibi habeat electionis",
+        "seq": 18
       },
       {
         "line_id": "p0024_body_l0019",
@@ -351,7 +371,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "materiam.”",
-        "text_ocr_original": "materiam.”"
+        "text_ocr_original": "materiam.”",
+        "seq": 19
       },
       {
         "line_id": "p0024_body_l0020",
@@ -366,7 +387,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "Hoc autem, crasso licet filo contextum, opus",
-        "text_ocr_original": "Hoc autem, crasso licet filo contextum, opus"
+        "text_ocr_original": "Hoc autem, crasso licet filo contextum, opus",
+        "seq": 20
       },
       {
         "line_id": "p0024_body_l0021",
@@ -381,7 +403,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "tantæ majestatis patrocinio ut dicare auderem,",
-        "text_ocr_original": "tantæ majestatis patrocinio ut dicare auderem,"
+        "text_ocr_original": "tantæ majestatis patrocinio ut dicare auderem,",
+        "seq": 21
       },
       {
         "line_id": "p0024_body_l0022",
@@ -396,7 +419,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "incitamenta habui neque pauca neque levia.",
-        "text_ocr_original": "incitamenta habui neque pauca neque levia."
+        "text_ocr_original": "incitamenta habui neque pauca neque levia.",
+        "seq": 22
       },
       {
         "line_id": "p0024_body_l0023",
@@ -411,7 +435,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "Primum, argumenti genus ipsum, in Ecclesiarum",
-        "text_ocr_original": "Primum, argumenti genus ipsum, in Ecclesiarum"
+        "text_ocr_original": "Primum, argumenti genus ipsum, in Ecclesiarum",
+        "seq": 23
       },
       {
         "line_id": "p0024_body_l0024",
@@ -426,7 +451,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "magnæ Britanniæ et Hiberniæ rebus explicandis",
-        "text_ocr_original": "magnæ Britanniæ et Hiberniæ rebus explicandis"
+        "text_ocr_original": "magnæ Britanniæ et Hiberniæ rebus explicandis",
+        "seq": 24
       },
       {
         "line_id": "p0024_body_l0025",
@@ -441,7 +467,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "occupatum, cujus clientelæ committendum potius",
-        "text_ocr_original": "occupatum, cujus clientelæ committendum potius"
+        "text_ocr_original": "occupatum, cujus clientelæ committendum potius",
+        "seq": 25
       }
     ],
     "catchword": [
@@ -457,7 +484,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "B 2",
-        "text_ocr_original": "B 2"
+        "text_ocr_original": "B 2",
+        "seq": 1
       }
     ],
     "header": [
@@ -473,7 +501,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "DEDICATORIA.   3",
-        "text_ocr_original": "DEDICATORIA."
+        "text_ocr_original": "DEDICATORIA.",
+        "seq": 1
       }
     ],
     "marginalia": [
@@ -489,7 +518,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "Matth. cap. 13. ver. 47, 48.",
-        "text_ocr_original": "Matth. cap. 13. ver. 47, 48."
+        "text_ocr_original": "Matth. cap. 13. ver. 47, 48.",
+        "seq": 1
       },
       {
         "line_id": "p0024_marginalia_l0002",
@@ -503,7 +533,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "Guil. Malmesbur. de gest. Reg. Anglor. lib. 5.",
-        "text_ocr_original": "Guil. Malmesbur. de gest. Reg. Anglor. lib. 5."
+        "text_ocr_original": "Guil. Malmesbur. de gest. Reg. Anglor. lib. 5.",
+        "seq": 2
       }
     ]
   },
