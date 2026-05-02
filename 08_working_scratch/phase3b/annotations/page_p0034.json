@@ -10,14 +10,14 @@
       "notes": "",
       "page_id": "p0034",
       "review_status": "locked",
+      "reviewer": "Paul Boys",
+      "seq": 1,
       "source_marginalia_line_ids": [
         "p0034_marginalia_l0001"
       ],
       "source_region": "marginalia",
       "text_gold": "Esai. cap. 49. ver. 6. Act. cap. 13. ver. 47.",
-      "text_ocr_original": "Esai. cap. 49. ver. 6. Act. cap. 13. ver. 47.",
-      "reviewer": "Paul Boys",
-      "seq": 1
+      "text_ocr_original": "Esai. cap. 49. ver. 6. Act. cap. 13. ver. 47."
     },
     {
       "body_line_id": "p0034_body_l0006",
@@ -28,14 +28,14 @@
       "notes": "",
       "page_id": "p0034",
       "review_status": "locked",
+      "reviewer": "Paul Boys",
+      "seq": 2,
       "source_marginalia_line_ids": [
         "p0034_marginalia_l0002"
       ],
       "source_region": "marginalia",
       "text_gold": "Marc. cap. 16. ver. 15, 20. cum Coloss. cap. 1. ver. 23.",
-      "text_ocr_original": "Marc. cap. 16. ver. 15, 20. cum Coloss. cap. 1. ver. 23.",
-      "reviewer": "Paul Boys",
-      "seq": 2
+      "text_ocr_original": "Marc. cap. 16. ver. 15, 20. cum Coloss. cap. 1. ver. 23."
     },
     {
       "body_line_id": "p0034_body_l0012",
@@ -46,14 +46,14 @@
       "notes": "",
       "page_id": "p0034",
       "review_status": "locked",
+      "reviewer": "Paul Boys",
+      "seq": 3,
       "source_marginalia_line_ids": [
         "p0034_marginalia_l0003"
       ],
       "source_region": "marginalia",
       "text_gold": "Orat. in Petrum et Paulum, edit. Ingolstad. 1620.",
-      "text_ocr_original": "Orat. in Petrum et Paulum, edit. Ingolstad. 1620.",
-      "reviewer": "Paul Boys",
-      "seq": 3
+      "text_ocr_original": "Orat. in Petrum et Paulum, edit. Ingolstad. 1620."
     },
     {
       "body_line_id": "p0034_body_l0014",
@@ -64,14 +64,14 @@
       "notes": "",
       "page_id": "p0034",
       "review_status": "locked",
+      "reviewer": "Paul Boys",
+      "seq": 4,
       "source_marginalia_line_ids": [
         "p0034_marginalia_l0004"
       ],
       "source_region": "marginalia",
       "text_gold": "Esai. cap. 66. ver. 19. Vid. Lyran. in Psal. 97. ver. 1. multitudo insularum, de Anglia et Hibernia.",
-      "text_ocr_original": "Esai. cap. 66. ver. 19. Vid. Lyran. in Psal. 97. ver. 1. multitudo insularum,",
-      "reviewer": "Paul Boys",
-      "seq": 4
+      "text_ocr_original": "Esai. cap. 66. ver. 19. Vid. Lyran. in Psal. 97. ver. 1. multitudo insularum,"
     },
     {
       "body_line_id": "p0034_body_l0018",
@@ -82,14 +82,14 @@
       "notes": "",
       "page_id": "p0034",
       "review_status": "locked",
+      "reviewer": "Paul Boys",
+      "seq": 5,
       "source_marginalia_line_ids": [
         "p0034_marginalia_l0006"
       ],
       "source_region": "marginalia",
       "text_gold": "in expositione Psal. 96. op. tom. 4. pag. 1043.",
-      "text_ocr_original": "in expositione Psal. 96. op. tom. 4. pag. 1043.",
-      "reviewer": "Paul Boys",
-      "seq": 5
+      "text_ocr_original": "in expositione Psal. 96. op. tom. 4. pag. 1043."
     },
     {
       "body_line_id": "p0034_body_l0027",
@@ -100,14 +100,14 @@
       "notes": "",
       "page_id": "p0034",
       "review_status": "locked",
+      "reviewer": "Paul Boys",
+      "seq": 6,
       "source_marginalia_line_ids": [
         "p0034_marginalia_l0007"
       ],
       "source_region": "marginalia",
       "text_gold": "al. Sol.",
-      "text_ocr_original": "al. Sol.",
-      "reviewer": "Paul Boys",
-      "seq": 6
+      "text_ocr_original": "al. Sol."
     },
     {
       "body_line_id": "p0034_body_l0031",
@@ -118,14 +118,14 @@
       "notes": "this is a textual variant?",
       "page_id": "p0034",
       "review_status": "locked",
+      "reviewer": "Paul Boys",
+      "seq": 7,
       "source_marginalia_line_ids": [
         "p0034_marginalia_l0008"
       ],
       "source_region": "marginalia",
       "text_gold": "Tiberio scil.",
-      "text_ocr_original": "Tiberio scil.",
-      "reviewer": "Paul Boys",
-      "seq": 7
+      "text_ocr_original": "Tiberio scil."
     },
     {
       "body_line_id": "p0034_body_l0032",
@@ -136,14 +136,14 @@
       "notes": "",
       "page_id": "p0034",
       "review_status": "locked",
+      "reviewer": "Paul Boys",
+      "seq": 8,
       "source_marginalia_line_ids": [
         "p0034_marginalia_l0009"
       ],
       "source_region": "marginalia",
       "text_gold": "i. e. accusatoribus Christianorum.",
-      "text_ocr_original": "i. e. accusatoribus Christianorum.",
-      "reviewer": "Paul Boys",
-      "seq": 8
+      "text_ocr_original": "i. e. accusatoribus Christianorum."
     }
   ],
   "meta": {
@@ -178,9 +178,9 @@
         "region": "body",
         "review_status": "locked",
         "reviewer": "Paul Boys",
+        "seq": 1,
         "text_gold": "æterni Dei ad obedientiam fidei omnibus gentibus decla-",
-        "text_ocr_original": "æterni Dei ad obedientiam fidei omnibus gentibus decla-",
-        "seq": 1
+        "text_ocr_original": "æterni Dei ad obedientiam fidei omnibus gentibus decla-"
       },
       {
         "line_id": "p0034_body_l0002",
@@ -194,9 +194,9 @@
         "region": "body",
         "review_status": "locked",
         "reviewer": "Paul Boys",
+        "seq": 2,
         "text_gold": "ratum.” Indeque iis qui in tenebris et umbra mortis erant",
-        "text_ocr_original": "ratum.” Indeque iis qui in tenebris et umbra mortis erant",
-        "seq": 2
+        "text_ocr_original": "ratum.” Indeque iis qui in tenebris et umbra mortis erant"
       },
       {
         "line_id": "p0034_body_l0003",
@@ -210,9 +210,9 @@
         "region": "body",
         "review_status": "locked",
         "reviewer": "Paul Boys",
+        "seq": 3,
         "text_gold": "positi, lumen illud gentibus patefaciendum aﬀulsit: de",
-        "text_ocr_original": "positi, lumen illud gentibus patefaciendum aﬀulsit: de",
-        "seq": 3
+        "text_ocr_original": "positi, lumen illud gentibus patefaciendum aﬀulsit: de"
       },
       {
         "line_id": "p0034_body_l0004",
@@ -232,9 +232,9 @@
         "region": "body",
         "review_status": "locked",
         "reviewer": "Paul Boys",
+        "seq": 4,
         "text_gold": "quo apud prophetam Deus; “Constitui te ut sis lux",
-        "text_ocr_original": "quo apud prophetam Deus; “Constitui te ut sis lux",
-        "seq": 4
+        "text_ocr_original": "quo apud prophetam Deus; “Constitui te ut sis lux"
       },
       {
         "line_id": "p0034_body_l0005",
@@ -248,9 +248,9 @@
         "region": "body",
         "review_status": "locked",
         "reviewer": "Paul Boys",
+        "seq": 5,
         "text_gold": "gentium, ut sis saluti usque ad ﬁnes terræ.” Christo enim",
-        "text_ocr_original": "gentium, ut sis saluti usque ad ﬁnes terræ.” Christo enim",
-        "seq": 5
+        "text_ocr_original": "gentium, ut sis saluti usque ad ﬁnes terræ.” Christo enim"
       },
       {
         "line_id": "p0034_body_l0006",
@@ -270,9 +270,9 @@
         "region": "body",
         "review_status": "locked",
         "reviewer": "Paul Boys",
+        "seq": 6,
         "text_gold": "apostolis suis imperante, ut profecti in mundum univer-",
-        "text_ocr_original": "apostolis suis imperante, ut profecti in mundum univer-",
-        "seq": 6
+        "text_ocr_original": "apostolis suis imperante, ut profecti in mundum univer-"
       },
       {
         "line_id": "p0034_body_l0007",
@@ -286,9 +286,9 @@
         "region": "body",
         "review_status": "locked",
         "reviewer": "Paul Boys",
+        "seq": 7,
         "text_gold": "sum, prædicarent evangelium omni creaturæ; egressi illi",
-        "text_ocr_original": "sum, prædicarent evangelium omni creaturæ; egressi illi",
-        "seq": 7
+        "text_ocr_original": "sum, prædicarent evangelium omni creaturæ; egressi illi"
       },
       {
         "line_id": "p0034_body_l0008",
@@ -302,9 +302,9 @@
         "region": "body",
         "review_status": "locked",
         "reviewer": "Paul Boys",
+        "seq": 8,
         "text_gold": "prædicarunt ubique, ita ut nullum locum cœlesti doctrinæ",
-        "text_ocr_original": "prædicarunt ubique, ita ut nullum locum cœlesti doctrinæ",
-        "seq": 8
+        "text_ocr_original": "prædicarunt ubique, ita ut nullum locum cœlesti doctrinæ"
       },
       {
         "line_id": "p0034_body_l0009",
@@ -318,9 +318,9 @@
         "region": "body",
         "review_status": "locked",
         "reviewer": "Paul Boys",
+        "seq": 9,
         "text_gold": "occultum esse sinerent; “μὴ νήσους, μὴ ἤπειρον, μηδ' εἴτινα",
-        "text_ocr_original": "occultum esse sinerent; “μὴ νήσους, μὴ ἤπειρον, μηδ' εἴτινα",
-        "seq": 9
+        "text_ocr_original": "occultum esse sinerent; “μὴ νήσους, μὴ ἤπειρον, μηδ' εἴτινα"
       },
       {
         "line_id": "p0034_body_l0010",
@@ -334,9 +334,9 @@
         "region": "body",
         "review_status": "locked",
         "reviewer": "Paul Boys",
+        "seq": 10,
         "text_gold": "τρίτην ἀνθρώποις κατοικίαν ἡ φύσις ἐδίδου, non insulas,",
-        "text_ocr_original": "τρίτην ἀνθρώποις κατοικίαν ἡ φύσις ἐδίδου, non insulas,",
-        "seq": 10
+        "text_ocr_original": "τρίτην ἀνθρώποις κατοικίαν ἡ φύσις ἐδίδου, non insulas,"
       },
       {
         "line_id": "p0034_body_l0011",
@@ -350,9 +350,9 @@
         "region": "body",
         "review_status": "locked",
         "reviewer": "Paul Boys",
+        "seq": 11,
         "text_gold": "non continentem, non si quam tertiam habitationem homi-",
-        "text_ocr_original": "non continentem, non si quam tertiam habitationem homi-",
-        "seq": 11
+        "text_ocr_original": "non continentem, non si quam tertiam habitationem homi-"
       },
       {
         "line_id": "p0034_body_l0012",
@@ -372,9 +372,9 @@
         "region": "body",
         "review_status": "locked",
         "reviewer": "Paul Boys",
+        "seq": 12,
         "text_gold": "nibus natura concessit:” quemadmodum Gregorius Nys-",
-        "text_ocr_original": "nibus natura concessit:” quemadmodum Gregorius Nys-",
-        "seq": 12
+        "text_ocr_original": "nibus natura concessit:” quemadmodum Gregorius Nys-"
       },
       {
         "line_id": "p0034_body_l0013",
@@ -388,9 +388,9 @@
         "region": "body",
         "review_status": "locked",
         "reviewer": "Paul Boys",
+        "seq": 13,
         "text_gold": "senus loquitur. Atque ita completum est quod per Esaiam",
-        "text_ocr_original": "senus loquitur. Atque ita completum est quod per Esaiam",
-        "seq": 13
+        "text_ocr_original": "senus loquitur. Atque ita completum est quod per Esaiam"
       },
       {
         "line_id": "p0034_body_l0014",
@@ -410,9 +410,9 @@
         "region": "body",
         "review_status": "locked",
         "reviewer": "Paul Boys",
+        "seq": 14,
         "text_gold": "olim Deus prædixerat: “Mittam ex eis ad gentes in",
-        "text_ocr_original": "olim Deus prædixerat: “Mittam ex eis ad gentes in",
-        "seq": 14
+        "text_ocr_original": "olim Deus prædixerat: “Mittam ex eis ad gentes in"
       },
       {
         "line_id": "p0034_body_l0015",
@@ -426,9 +426,9 @@
         "region": "body",
         "review_status": "locked",
         "reviewer": "Paul Boys",
+        "seq": 15,
         "text_gold": "oceano, insulasque remotissimas, quæ non audiverant fa-",
-        "text_ocr_original": "oceano, insulasque remotissimas, quæ non audiverant fa-",
-        "seq": 15
+        "text_ocr_original": "oceano, insulasque remotissimas, quæ non audiverant fa-"
       },
       {
         "line_id": "p0034_body_l0016",
@@ -442,9 +442,9 @@
         "region": "body",
         "review_status": "locked",
         "reviewer": "Paul Boys",
+        "seq": 16,
         "text_gold": "mam meam, neque viderant gloriam meam, ut indicent",
-        "text_ocr_original": "mam meam, neque viderant gloriam meam, ut indicent",
-        "seq": 16
+        "text_ocr_original": "mam meam, neque viderant gloriam meam, ut indicent"
       },
       {
         "line_id": "p0034_body_l0017",
@@ -458,9 +458,9 @@
         "region": "body",
         "review_status": "locked",
         "reviewer": "Paul Boys",
+        "seq": 17,
         "text_gold": "gloriam meam in gentibus.” Nam “verbum Dei,” Augus-",
-        "text_ocr_original": "gloriam meam in gentibus.” Nam “verbum Dei,” Augus-",
-        "seq": 17
+        "text_ocr_original": "gloriam meam in gentibus.” Nam “verbum Dei,” Augus-"
       },
       {
         "line_id": "p0034_body_l0018",
@@ -480,9 +480,9 @@
         "region": "body",
         "review_status": "locked",
         "reviewer": "Paul Boys",
+        "seq": 18,
         "text_gold": "tini verba hæc sunt, “non in sola continenti terra præ-",
-        "text_ocr_original": "tini verba hæc sunt, “non in sola continenti terra præ-",
-        "seq": 18
+        "text_ocr_original": "tini verba hæc sunt, “non in sola continenti terra præ-"
       },
       {
         "line_id": "p0034_body_l0019",
@@ -496,9 +496,9 @@
         "region": "body",
         "review_status": "locked",
         "reviewer": "Paul Boys",
+        "seq": 19,
         "text_gold": "dicatum est; sed etiam in insulis, quæ constitutæ sunt",
-        "text_ocr_original": "dicatum est; sed etiam in insulis, quæ constitutæ sunt",
-        "seq": 19
+        "text_ocr_original": "dicatum est; sed etiam in insulis, quæ constitutæ sunt"
       },
       {
         "line_id": "p0034_body_l0020",
@@ -512,9 +512,9 @@
         "region": "body",
         "review_status": "locked",
         "reviewer": "Paul Boys",
+        "seq": 20,
         "text_gold": "in medio mari: et ipsæ plenæ Christianis, plenæ sunt ser-",
-        "text_ocr_original": "in medio mari: et ipsæ plenæ Christianis, plenæ sunt ser-",
-        "seq": 20
+        "text_ocr_original": "in medio mari: et ipsæ plenæ Christianis, plenæ sunt ser-"
       },
       {
         "line_id": "p0034_body_l0021",
@@ -528,9 +528,9 @@
         "region": "body",
         "review_status": "locked",
         "reviewer": "Paul Boys",
+        "seq": 21,
         "text_gold": "vis Dei. Non enim separat mare eum, qui fecerat mare.",
-        "text_ocr_original": "vis Dei. Non enim separat mare eum, qui fecerat mare.",
-        "seq": 21
+        "text_ocr_original": "vis Dei. Non enim separat mare eum, qui fecerat mare."
       },
       {
         "line_id": "p0034_body_l0022",
@@ -544,9 +544,9 @@
         "region": "body",
         "review_status": "locked",
         "reviewer": "Paul Boys",
+        "seq": 22,
         "text_gold": "Quo naves possunt accedere, verba Dei non possunt?”",
-        "text_ocr_original": "Quo naves possunt accedere, verba Dei non possunt?”",
-        "seq": 22
+        "text_ocr_original": "Quo naves possunt accedere, verba Dei non possunt?”"
       },
       {
         "line_id": "p0034_body_l0023",
@@ -560,9 +560,9 @@
         "region": "body",
         "review_status": "locked",
         "reviewer": "Paul Boys",
+        "seq": 23,
         "text_gold": "Et quidem a primo exortu Evangelii suscepisse Britan-",
-        "text_ocr_original": "Et quidem a primo exortu Evangelii suscepisse Britan-",
-        "seq": 23
+        "text_ocr_original": "Et quidem a primo exortu Evangelii suscepisse Britan-"
       },
       {
         "line_id": "p0034_body_l0024",
@@ -576,9 +576,9 @@
         "region": "body",
         "review_status": "draft",
         "reviewer": "Paul Boys",
+        "seq": 24,
         "text_gold": "nos Christi ﬁdem, illa Gildæ satis indicant; “Interea",
-        "text_ocr_original": "nos Christi ﬁdem, illa Gildæ satis indicant; “Interea",
-        "seq": 24
+        "text_ocr_original": "nos Christi ﬁdem, illa Gildæ satis indicant; “Interea"
       },
       {
         "line_id": "p0034_body_l0025",
@@ -592,9 +592,9 @@
         "region": "body",
         "review_status": "locked",
         "reviewer": "Paul Boys",
+        "seq": 25,
         "text_gold": "glaciali frigore rigenti insulæ, et velut longiore terrarum",
-        "text_ocr_original": "glaciali frigore rigenti insulæ, et velut longiore terrarum",
-        "seq": 25
+        "text_ocr_original": "glaciali frigore rigenti insulæ, et velut longiore terrarum"
       },
       {
         "line_id": "p0034_body_l0026",
@@ -608,9 +608,9 @@
         "region": "body",
         "review_status": "locked",
         "reviewer": "Paul Boys",
+        "seq": 26,
         "text_gold": "secessu soli visibili non proximæ verus ille non de ﬁrma-",
-        "text_ocr_original": "secessu soli visibili non proximæ verus ille non de ﬁrma-",
-        "seq": 26
+        "text_ocr_original": "secessu soli visibili non proximæ verus ille non de ﬁrma-"
       },
       {
         "line_id": "p0034_body_l0027",
@@ -630,9 +630,9 @@
         "region": "body",
         "review_status": "locked",
         "reviewer": "Paul Boys",
+        "seq": 27,
         "text_gold": "mento solum temporali, sed de summa etiam cœlorum",
-        "text_ocr_original": "mento solum temporali, sed de summa etiam cœlorum",
-        "seq": 27
+        "text_ocr_original": "mento solum temporali, sed de summa etiam cœlorum"
       },
       {
         "line_id": "p0034_body_l0028",
@@ -646,9 +646,9 @@
         "region": "body",
         "review_status": "locked",
         "reviewer": "Paul Boys",
+        "seq": 28,
         "text_gold": "arce tempora cuncta excedente, universo orbi præfulgi-",
-        "text_ocr_original": "arce tempora cuncta excedente, universo orbi præfulgi-",
-        "seq": 28
+        "text_ocr_original": "arce tempora cuncta excedente, universo orbi præfulgi-"
       },
       {
         "line_id": "p0034_body_l0029",
@@ -662,9 +662,9 @@
         "region": "body",
         "review_status": "locked",
         "reviewer": "Paul Boys",
+        "seq": 29,
         "text_gold": "dum sui coruscum ostendens tempore, ut scimus, summo",
-        "text_ocr_original": "dum sui coruscum ostendens tempore, ut scimus, summo",
-        "seq": 29
+        "text_ocr_original": "dum sui coruscum ostendens tempore, ut scimus, summo"
       },
       {
         "line_id": "p0034_body_l0030",
@@ -678,9 +678,9 @@
         "region": "body",
         "review_status": "locked",
         "reviewer": "Paul Boys",
+        "seq": 30,
         "text_gold": "Tiberii Cæsaris (quo absque ullo impedimento ejus propa-",
-        "text_ocr_original": "Tiberii Cæsaris (quo absque ullo impedimento ejus propa-",
-        "seq": 30
+        "text_ocr_original": "Tiberii Cæsaris (quo absque ullo impedimento ejus propa-"
       },
       {
         "line_id": "p0034_body_l0031",
@@ -700,9 +700,9 @@
         "region": "body",
         "review_status": "locked",
         "reviewer": "Paul Boys",
+        "seq": 31,
         "text_gold": "gabatur religio comminata, senatu nolente, a principe",
-        "text_ocr_original": "gabatur religio comminata, senatu nolente, a principe",
-        "seq": 31
+        "text_ocr_original": "gabatur religio comminata, senatu nolente, a principe"
       },
       {
         "line_id": "p0034_body_l0032",
@@ -722,9 +722,9 @@
         "region": "body",
         "review_status": "locked",
         "reviewer": "Paul Boys",
+        "seq": 32,
         "text_gold": "morte delatoribus militum ejusdem) radios suos primum",
-        "text_ocr_original": "morte delatoribus militum ejusdem) radios suos primum",
-        "seq": 32
+        "text_ocr_original": "morte delatoribus militum ejusdem) radios suos primum"
       },
       {
         "line_id": "p0034_body_l0033",
@@ -738,9 +738,9 @@
         "region": "body",
         "review_status": "locked",
         "reviewer": "Paul Boys",
+        "seq": 33,
         "text_gold": "indulget, id est, sua præcepta Christus. Quæ licet ab",
-        "text_ocr_original": "indulget, id est, sua præcepta Christus. Quæ licet ab",
-        "seq": 33
+        "text_ocr_original": "indulget, id est, sua præcepta Christus. Quæ licet ab"
       }
     ],
     "catchword": [],
@@ -756,9 +756,9 @@
         "region": "header",
         "review_status": "locked",
         "reviewer": "Paul Boys",
+        "seq": 1,
         "text_gold": "CAP. I. ANTIQUITATES. 13",
-        "text_ocr_original": "CAP. I. ANTIQUITATES. 13",
-        "seq": 1
+        "text_ocr_original": "CAP. I. ANTIQUITATES. 13"
       }
     ],
     "marginalia": [
@@ -773,9 +773,9 @@
         "region": "marginalia",
         "review_status": "draft",
         "reviewer": "Paul Boys",
+        "seq": 1,
         "text_gold": "Esai. cap. 49. ver. 6. Act. cap. 13. ver. 47.",
-        "text_ocr_original": "Esai. cap. 49. ver. 6. Act. cap. 13. ver. 47.",
-        "seq": 1
+        "text_ocr_original": "Esai. cap. 49. ver. 6. Act. cap. 13. ver. 47."
       },
       {
         "line_id": "p0034_marginalia_l0002",
@@ -788,9 +788,9 @@
         "region": "marginalia",
         "review_status": "draft",
         "reviewer": "Paul Boys",
+        "seq": 2,
         "text_gold": "Marc. cap. 16. ver. 15, 20. cum Coloss. cap. 1. ver. 23.",
-        "text_ocr_original": "Marc. cap. 16. ver. 15, 20. cum Coloss. cap. 1. ver. 23.",
-        "seq": 2
+        "text_ocr_original": "Marc. cap. 16. ver. 15, 20. cum Coloss. cap. 1. ver. 23."
       },
       {
         "line_id": "p0034_marginalia_l0003",
@@ -803,9 +803,9 @@
         "region": "marginalia",
         "review_status": "draft",
         "reviewer": "Paul Boys",
+        "seq": 3,
         "text_gold": "Orat. in Petrum et Paulum, edit. Ingolstad. 1620.",
-        "text_ocr_original": "Orat. in Petrum et Paulum, edit. Ingolstad. 1620.",
-        "seq": 3
+        "text_ocr_original": "Orat. in Petrum et Paulum, edit. Ingolstad. 1620."
       },
       {
         "line_id": "p0034_marginalia_l0004",
@@ -818,9 +818,9 @@
         "region": "marginalia",
         "review_status": "draft",
         "reviewer": "Paul Boys",
+        "seq": 4,
         "text_gold": "Esai. cap. 66. ver. 19. Vid. Lyran. in Psal. 97. ver. 1. multitudo insularum,",
-        "text_ocr_original": "Esai. cap. 66. ver. 19. Vid. Lyran. in Psal. 97. ver. 1. multitudo insularum,",
-        "seq": 4
+        "text_ocr_original": "Esai. cap. 66. ver. 19. Vid. Lyran. in Psal. 97. ver. 1. multitudo insularum,"
       },
       {
         "line_id": "p0034_marginalia_l0005",
@@ -833,9 +833,9 @@
         "region": "marginalia",
         "review_status": "draft",
         "reviewer": "Paul Boys",
+        "seq": 5,
         "text_gold": "de Anglia et Hibernia.",
-        "text_ocr_original": "de Anglia et Hibernia.",
-        "seq": 5
+        "text_ocr_original": "de Anglia et Hibernia."
       },
       {
         "line_id": "p0034_marginalia_l0006",
@@ -848,9 +848,9 @@
         "region": "marginalia",
         "review_status": "draft",
         "reviewer": "Paul Boys",
+        "seq": 6,
         "text_gold": "in expositione Psal. 96. op. tom. 4. pag. 1043.",
-        "text_ocr_original": "in expositione Psal. 96. op. tom. 4. pag. 1043.",
-        "seq": 6
+        "text_ocr_original": "in expositione Psal. 96. op. tom. 4. pag. 1043."
       },
       {
         "line_id": "p0034_marginalia_l0007",
@@ -863,9 +863,9 @@
         "region": "marginalia",
         "review_status": "draft",
         "reviewer": "Paul Boys",
+        "seq": 7,
         "text_gold": "al. Sol.",
-        "text_ocr_original": "al. Sol.",
-        "seq": 7
+        "text_ocr_original": "al. Sol."
       },
       {
         "line_id": "p0034_marginalia_l0008",
@@ -878,9 +878,9 @@
         "region": "marginalia",
         "review_status": "draft",
         "reviewer": "Paul Boys",
+        "seq": 8,
         "text_gold": "Tiberio scil.",
-        "text_ocr_original": "Tiberio scil.",
-        "seq": 8
+        "text_ocr_original": "Tiberio scil."
       },
       {
         "line_id": "p0034_marginalia_l0009",
@@ -893,9 +893,9 @@
         "region": "marginalia",
         "review_status": "draft",
         "reviewer": "Paul Boys",
+        "seq": 9,
         "text_gold": "i. e. accusatoribus Christianorum.",
-        "text_ocr_original": "i. e. accusatoribus Christianorum.",
-        "seq": 9
+        "text_ocr_original": "i. e. accusatoribus Christianorum."
       }
     ]
   },
