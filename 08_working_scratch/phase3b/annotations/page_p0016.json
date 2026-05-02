@@ -34,7 +34,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "BRITANNICARUM ECCLESIARUM",
-        "text_ocr_original": "BRITANNICARUM ECCLESIARUM"
+        "text_ocr_original": "BRITANNICARUM ECCLESIARUM",
+        "seq": 1
       },
       {
         "line_id": "p0016_body_l0002",
@@ -49,7 +50,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "ANTIQUITATES,",
-        "text_ocr_original": "ANTIQUITATES,"
+        "text_ocr_original": "ANTIQUITATES,",
+        "seq": 2
       },
       {
         "line_id": "p0016_body_l0003",
@@ -64,7 +66,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "QUIBUS INSERTA EST PESTIFERÆ ADVERSUS DEI GRATIAM A PELAGIO",
-        "text_ocr_original": "QUIBUS INSERTA EST PESTIFERÆ ADVERSUS DEI GRATIAM A PELAGIO"
+        "text_ocr_original": "QUIBUS INSERTA EST PESTIFERÆ ADVERSUS DEI GRATIAM A PELAGIO",
+        "seq": 3
       },
       {
         "line_id": "p0016_body_l0004",
@@ -79,7 +82,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "BRITANNO IN ECCLESIAM INDUCTÆ HÆRESEOS",
-        "text_ocr_original": "BRITANNO IN ECCLESIAM INDUCTÆ HÆRESEOS"
+        "text_ocr_original": "BRITANNO IN ECCLESIAM INDUCTÆ HÆRESEOS",
+        "seq": 4
       },
       {
         "line_id": "p0016_body_l0005",
@@ -94,7 +98,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "HISTORIA.",
-        "text_ocr_original": "HISTORIA."
+        "text_ocr_original": "HISTORIA.",
+        "seq": 5
       },
       {
         "line_id": "p0016_body_l0006",
@@ -109,7 +114,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "COLLECTORE",
-        "text_ocr_original": "COLLECTORE"
+        "text_ocr_original": "COLLECTORE",
+        "seq": 6
       },
       {
         "line_id": "p0016_body_l0007",
@@ -124,7 +130,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "JACOBO USSERIO,",
-        "text_ocr_original": "JACOBO USSERIO,"
+        "text_ocr_original": "JACOBO USSERIO,",
+        "seq": 7
       },
       {
         "line_id": "p0016_body_l0008",
@@ -139,7 +146,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "ARCHIEPISCOPO ARMACHANO TOTIUS HIBERNIÆ PRIMATE.",
-        "text_ocr_original": "ARCHIEPISCOPO ARMACHANO TOTIUS HIBERNIÆ PRIMATE."
+        "text_ocr_original": "ARCHIEPISCOPO ARMACHANO TOTIUS HIBERNIÆ PRIMATE.",
+        "seq": 8
       },
       {
         "line_id": "p0016_body_l0009",
@@ -154,7 +162,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "DUBLINII.",
-        "text_ocr_original": "DUBLINII."
+        "text_ocr_original": "DUBLINII.",
+        "seq": 9
       },
       {
         "line_id": "p0016_body_l0010",
@@ -169,7 +178,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "1639.",
-        "text_ocr_original": "1639."
+        "text_ocr_original": "1639.",
+        "seq": 10
       }
     ],
     "catchword": [],

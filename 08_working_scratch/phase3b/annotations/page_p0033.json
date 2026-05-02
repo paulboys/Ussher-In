@@ -16,7 +16,8 @@
       "source_region": "marginalia",
       "text_gold": "Camden. Hibern. pag. 726.",
       "text_ocr_original": "Camden. Hibern. pag. 726.",
-      "reviewer": "Paul Boys"
+      "reviewer": "Paul Boys",
+      "seq": 1
     },
     {
       "body_line_id": "p0033_body_l0002",
@@ -33,7 +34,8 @@
       "source_region": "marginalia",
       "text_gold": "Orig. in Ezechiel. homil. 4.",
       "text_ocr_original": "Orig. in Ezechiel. homil. 4.",
-      "reviewer": "Paul Boys"
+      "reviewer": "Paul Boys",
+      "seq": 2
     },
     {
       "body_line_id": "p0033_body_l0005",
@@ -50,7 +52,8 @@
       "source_region": "marginalia",
       "text_gold": "Xiphilin. epitom. in Neron. Vid. Cambden. in Somersetshire, pag. 170. et in Yorkshire, pag. 563. et Jo. Selden. ad marmora Arundelliana, pag. 176. Vid. Laurent. Pignor. Symbol. epistolic. cap. 23. pag. 77, 78.",
       "text_ocr_original": "Xiphilin. epitom. in Neron. Vid. Cambden. in Somersetshire, pag. 170. et",
-      "reviewer": "Paul Boys"
+      "reviewer": "Paul Boys",
+      "seq": 3
     },
     {
       "body_line_id": "p0033_body_l0021",
@@ -67,7 +70,8 @@
       "source_region": "marginalia",
       "text_gold": "Hieron. ad Heliodor. epist. 3.",
       "text_ocr_original": "Hieron. ad Heliodor. epist. 3.",
-      "reviewer": "Paul Boys"
+      "reviewer": "Paul Boys",
+      "seq": 4
     },
     {
       "body_line_id": "p0033_body_l0026",
@@ -84,7 +88,8 @@
       "source_region": "marginalia",
       "text_gold": "Æneid. lib. 8. ver. 723.",
       "text_ocr_original": "Æneid. lib. 8. ver. 723.",
-      "reviewer": "Paul Boys"
+      "reviewer": "Paul Boys",
+      "seq": 5
     },
     {
       "body_line_id": "p0033_body_l0032",
@@ -101,7 +106,8 @@
       "source_region": "marginalia",
       "text_gold": "Rom. cap. 16. ver. 25, 26.",
       "text_ocr_original": "Rom. cap. 16. ver. 25, 26.",
-      "reviewer": "Paul Boys"
+      "reviewer": "Paul Boys",
+      "seq": 6
     }
   ],
   "meta": {
@@ -143,7 +149,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "bræis Hibernorum originem conatus est arcessere. Nam",
-        "text_ocr_original": "bræis Hibernorum originem conatus est arcessere. Nam"
+        "text_ocr_original": "bræis Hibernorum originem conatus est arcessere. Nam",
+        "seq": 1
       },
       {
         "line_id": "p0033_body_l0002",
@@ -164,7 +171,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "et Origenes, quem illi authorem citant, plane contrarium",
-        "text_ocr_original": "et Origenes, quem illi authorem citant, plane contrarium"
+        "text_ocr_original": "et Origenes, quem illi authorem citant, plane contrarium",
+        "seq": 2
       },
       {
         "line_id": "p0033_body_l0003",
@@ -179,7 +187,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "indicat, “terram Britanniæ ante adventum Christi in",
-        "text_ocr_original": "indicat, “terram Britanniæ ante adventum Christi in"
+        "text_ocr_original": "indicat, “terram Britanniæ ante adventum Christi in",
+        "seq": 3
       },
       {
         "line_id": "p0033_body_l0004",
@@ -194,7 +203,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "unius dei religionem” minime consensisse: nominatim vero",
-        "text_ocr_original": "unius dei religionem” minime consensisse: nominatim vero"
+        "text_ocr_original": "unius dei religionem” minime consensisse: nominatim vero",
+        "seq": 4
       },
       {
         "line_id": "p0033_body_l0005",
@@ -215,7 +225,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "Andrasten sive Andaten, Victoriæ deam, Dio Cassius,",
-        "text_ocr_original": "Andrasten sive Andaten, Victoriæ deam, Dio Cassius,"
+        "text_ocr_original": "Andrasten sive Andaten, Victoriæ deam, Dio Cassius,",
+        "seq": 5
       },
       {
         "line_id": "p0033_body_l0006",
@@ -230,7 +241,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "Apollinem et Dianam alii a Britannis coli consuevisse",
-        "text_ocr_original": "Apollinem et Dianam alii a Britannis coli consuevisse"
+        "text_ocr_original": "Apollinem et Dianam alii a Britannis coli consuevisse",
+        "seq": 6
       },
       {
         "line_id": "p0033_body_l0007",
@@ -245,7 +257,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "prodiderunt: et de eorum idolomania gentilis ipsorum",
-        "text_ocr_original": "prodiderunt: et de eorum idolomania gentilis ipsorum"
+        "text_ocr_original": "prodiderunt: et de eorum idolomania gentilis ipsorum",
+        "seq": 7
       },
       {
         "line_id": "p0033_body_l0008",
@@ -260,7 +273,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "Gildas tam clarum perhibet testimonium, ut res in quæs-",
-        "text_ocr_original": "Gildas tam clarum perhibet testimonium, ut res in quæs-"
+        "text_ocr_original": "Gildas tam clarum perhibet testimonium, ut res in quæs-",
+        "seq": 8
       },
       {
         "line_id": "p0033_body_l0009",
@@ -275,7 +289,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "tionem vocari non debeat. Sic enim ille: “Igitur omit-",
-        "text_ocr_original": "tionem vocari non debeat. Sic enim ille: “Igitur omit-"
+        "text_ocr_original": "tionem vocari non debeat. Sic enim ille: “Igitur omit-",
+        "seq": 9
       },
       {
         "line_id": "p0033_body_l0010",
@@ -290,7 +305,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "tens priscos illos communesquc cum omnibus gentibus",
-        "text_ocr_original": "tens priscos illos communesquc cum omnibus gentibus"
+        "text_ocr_original": "tens priscos illos communesquc cum omnibus gentibus",
+        "seq": 10
       },
       {
         "line_id": "p0033_body_l0011",
@@ -305,7 +321,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "errores, quibus ante adventum Christi in carne omne hu-",
-        "text_ocr_original": "errores, quibus ante adventum Christi in carne omne hu-"
+        "text_ocr_original": "errores, quibus ante adventum Christi in carne omne hu-",
+        "seq": 11
       },
       {
         "line_id": "p0033_body_l0012",
@@ -320,7 +337,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "manum genus obligabatur adstrictum; nec enumerans",
-        "text_ocr_original": "manum genus obligabatur adstrictum; nec enumerans"
+        "text_ocr_original": "manum genus obligabatur adstrictum; nec enumerans",
+        "seq": 12
       },
       {
         "line_id": "p0033_body_l0013",
@@ -335,7 +353,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "patriæ portenta ipsa diabolica, pene numero Egyptiaca",
-        "text_ocr_original": "patriæ portenta ipsa diabolica, pene numero Ægyptiaca"
+        "text_ocr_original": "patriæ portenta ipsa diabolica, pene numero Ægyptiaca",
+        "seq": 13
       },
       {
         "line_id": "p0033_body_l0014",
@@ -350,7 +369,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "vincentia, quorum nonnulla lineamentis adhuc deformibus",
-        "text_ocr_original": "vincentia, quorum nonnulla lineamentis adhuc deformibus"
+        "text_ocr_original": "vincentia, quorum nonnulla lineamentis adhuc deformibus",
+        "seq": 14
       },
       {
         "line_id": "p0033_body_l0015",
@@ -365,7 +385,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "intra vel extra deserta mœnia, solito more rigentia torvis",
-        "text_ocr_original": "intra vel extra deserta mœnia, solito more rigentia torvis"
+        "text_ocr_original": "intra vel extra deserta mœnia, solito more rigentia torvis",
+        "seq": 15
       },
       {
         "line_id": "p0033_body_l0016",
@@ -380,7 +401,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "vultibus intuemur: neque nominatim inclamitans montes",
-        "text_ocr_original": "vultibus intuemur: neque nominatim inclamitans montes"
+        "text_ocr_original": "vultibus intuemur: neque nominatim inclamitans montes",
+        "seq": 16
       },
       {
         "line_id": "p0033_body_l0017",
@@ -395,7 +417,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "ipsos, aut colles, vel fluvios, olim exitiales, nunc vero hu-",
-        "text_ocr_original": "ipsos, aut colles, vel fluvios, olim exitiales, nunc vero hu-"
+        "text_ocr_original": "ipsos, aut colles, vel fluvios, olim exitiales, nunc vero hu-",
+        "seq": 17
       },
       {
         "line_id": "p0033_body_l0018",
@@ -410,7 +433,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "manis usibus utiles, quibus divinus honor a cæco tunc po-",
-        "text_ocr_original": "manis usibus utiles, quibus divinus honor a cæco tunc po-"
+        "text_ocr_original": "manis usibus utiles, quibus divinus honor a cæco tunc po-",
+        "seq": 18
       },
       {
         "line_id": "p0033_body_l0019",
@@ -425,7 +449,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "pulo cumulabatur, &c.” Ut de illorum temporum miserrima,",
-        "text_ocr_original": "pulo cumulabatur, &c.” Ut de illorum temporum miserrima,"
+        "text_ocr_original": "pulo cumulabatur, &c.” Ut de illorum temporum miserrima,",
+        "seq": 19
       },
       {
         "line_id": "p0033_body_l0020",
@@ -440,7 +465,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "et subsequentium felicissima conditione, in epitaphio Nepo-",
-        "text_ocr_original": "et subsequentium felicissima conditione, in epitaphio Nepo-"
+        "text_ocr_original": "et subsequentium felicissima conditione, in epitaphio Nepo-",
+        "seq": 20
       },
       {
         "line_id": "p0033_body_l0021",
@@ -461,7 +487,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "tiani B. Hieronymus pronuntiare non dubitaverit. “Ubi",
-        "text_ocr_original": "tiani B. Hieronymus pronuntiare non dubitaverit. “Ubi"
+        "text_ocr_original": "tiani B. Hieronymus pronuntiare non dubitaverit. “Ubi",
+        "seq": 21
       },
       {
         "line_id": "p0033_body_l0022",
@@ -476,7 +503,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "tunc totius orbis homines, ab India usque ad Britanniam,",
-        "text_ocr_original": "tunc totius orbis homines, ab India usque ad Britanniam,"
+        "text_ocr_original": "tunc totius orbis homines, ab India usque ad Britanniam,",
+        "seq": 22
       },
       {
         "line_id": "p0033_body_l0023",
@@ -491,7 +519,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "a rigida septentrionis plaga usque ad fervores Atlantici",
-        "text_ocr_original": "a rigida septentrionis plaga usque ad fervores Atlantici"
+        "text_ocr_original": "a rigida septentrionis plaga usque ad fervores Atlantici",
+        "seq": 23
       },
       {
         "line_id": "p0033_body_l0024",
@@ -506,7 +535,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "oceani tam innumerabiles populi, et tantarum gentium",
-        "text_ocr_original": "oceani tam innumerabiles populi, et tantarum gentium"
+        "text_ocr_original": "oceani tam innumerabiles populi, et tantarum gentium",
+        "seq": 24
       },
       {
         "line_id": "p0033_body_l0025",
@@ -521,7 +551,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "multitudines;",
-        "text_ocr_original": "multitudines;"
+        "text_ocr_original": "multitudines;",
+        "seq": 25
       },
       {
         "line_id": "p0033_body_l0026",
@@ -542,7 +573,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "Quam variæ linguis, habitu tam vestis et armis?",
-        "text_ocr_original": "Quam variæ linguis, habitu tam vestis et armis?"
+        "text_ocr_original": "Quam variæ linguis, habitu tam vestis et armis?",
+        "seq": 26
       },
       {
         "line_id": "p0033_body_l0027",
@@ -557,7 +589,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "Piscium ritu ac locustarum, et velut muscæ et culices con-",
-        "text_ocr_original": "Piscium ritu ac locustarum, et velut muscæ et culices con-"
+        "text_ocr_original": "Piscium ritu ac locustarum, et velut muscæ et culices con-",
+        "seq": 27
       },
       {
         "line_id": "p0033_body_l0028",
@@ -572,7 +605,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "terebantur; absque notitia enim sui Creatoris, omnis homo",
-        "text_ocr_original": "terebantur; absque notitia enim sui Creatoris, omnis homo"
+        "text_ocr_original": "terebantur; absque notitia enim sui Creatoris, omnis homo",
+        "seq": 28
       },
       {
         "line_id": "p0033_body_l0029",
@@ -587,7 +621,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "pecus est. Nunc vero passionem Christi, et resurrectio-",
-        "text_ocr_original": "pecus est. Nunc vero passionem Christi, et resurrectio-"
+        "text_ocr_original": "pecus est. Nunc vero passionem Christi, et resurrectio-",
+        "seq": 29
       },
       {
         "line_id": "p0033_body_l0030",
@@ -602,7 +637,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "nem ejus, cunctarum gentium et voces et literæ sonant.”",
-        "text_ocr_original": "nem ejus, cunctarum gentium et voces et literæ sonant.”"
+        "text_ocr_original": "nem ejus, cunctarum gentium et voces et literæ sonant.”",
+        "seq": 30
       },
       {
         "line_id": "p0033_body_l0031",
@@ -617,7 +653,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "Nam quum temporum plenitudo advenisset, “myste-",
-        "text_ocr_original": "Nam quum temporum plenitudo advenisset, “myste-"
+        "text_ocr_original": "Nam quum temporum plenitudo advenisset, “myste-",
+        "seq": 31
       },
       {
         "line_id": "p0033_body_l0032",
@@ -638,7 +675,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "rium quod a temporibus seculorum tacitum fuit, factum",
-        "text_ocr_original": "rium quod a temporibus seculorum tacitum fuit, factum"
+        "text_ocr_original": "rium quod a temporibus seculorum tacitum fuit, factum",
+        "seq": 32
       },
       {
         "line_id": "p0033_body_l0033",
@@ -653,7 +691,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "est manifestum, et per Scripturas propheticas ex imperio",
-        "text_ocr_original": "est manifestum, et per Scripturas propheticas ex imperio"
+        "text_ocr_original": "est manifestum, et per Scripturas propheticas ex imperio",
+        "seq": 33
       }
     ],
     "catchword": [],
@@ -670,7 +709,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "12 BRITANNICARUM ECCLESIARUM CAP. I.",
-        "text_ocr_original": "12 BRITANNICARUM ECCLESIARUM CAP. I."
+        "text_ocr_original": "12 BRITANNICARUM ECCLESIARUM CAP. I.",
+        "seq": 1
       }
     ],
     "marginalia": [
@@ -686,7 +726,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "Camden. Hibern. pag. 726.",
-        "text_ocr_original": "Camden. Hibern. pag. 726."
+        "text_ocr_original": "Camden. Hibern. pag. 726.",
+        "seq": 1
       },
       {
         "line_id": "p0033_marginalia_l0002",
@@ -700,7 +741,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "Orig. in Ezechiel. homil. 4.",
-        "text_ocr_original": "Orig. in Ezechiel. homil. 4."
+        "text_ocr_original": "Orig. in Ezechiel. homil. 4.",
+        "seq": 2
       },
       {
         "line_id": "p0033_marginalia_l0003",
@@ -714,7 +756,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "Xiphilin. epitom. in Neron. Vid. Cambden. in Somersetshire, pag. 170. et",
-        "text_ocr_original": "Xiphilin. epitom. in Neron. Vid. Cambden. in Somersetshire, pag. 170. et"
+        "text_ocr_original": "Xiphilin. epitom. in Neron. Vid. Cambden. in Somersetshire, pag. 170. et",
+        "seq": 3
       },
       {
         "line_id": "p0033_marginalia_l0004",
@@ -728,7 +771,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "in Yorkshire, pag. 563. et Jo. Selden. ad marmora Arundelliana, pag. 176.",
-        "text_ocr_original": "in Yorkshire, pag. 563. et Jo. Selden. ad marmora Arundelliana, pag. 176."
+        "text_ocr_original": "in Yorkshire, pag. 563. et Jo. Selden. ad marmora Arundelliana, pag. 176.",
+        "seq": 4
       },
       {
         "line_id": "p0033_marginalia_l0005",
@@ -742,7 +786,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "Vid. Laurent. Pignor. Symbol. epistolic. cap. 23. pag. 77, 78.",
-        "text_ocr_original": "Vid. Laurent. Pignor. Symbol. epistolic. cap. 23. pag. 77, 78."
+        "text_ocr_original": "Vid. Laurent. Pignor. Symbol. epistolic. cap. 23. pag. 77, 78.",
+        "seq": 5
       },
       {
         "line_id": "p0033_marginalia_l0006",
@@ -756,7 +801,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "Hieron. ad Heliodor. epist. 3.",
-        "text_ocr_original": "Hieron. ad Heliodor. epist. 3."
+        "text_ocr_original": "Hieron. ad Heliodor. epist. 3.",
+        "seq": 6
       },
       {
         "line_id": "p0033_marginalia_l0007",
@@ -770,7 +816,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "Æneid. lib. 8. ver. 723.",
-        "text_ocr_original": "Æneid. lib. 8. ver. 723."
+        "text_ocr_original": "Æneid. lib. 8. ver. 723.",
+        "seq": 7
       },
       {
         "line_id": "p0033_marginalia_l0008",
@@ -784,7 +831,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "Rom. cap. 16. ver. 25, 26.",
-        "text_ocr_original": "Rom. cap. 16. ver. 25, 26."
+        "text_ocr_original": "Rom. cap. 16. ver. 25, 26.",
+        "seq": 8
       }
     ]
   },

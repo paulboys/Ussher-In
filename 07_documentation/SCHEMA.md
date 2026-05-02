@@ -25,6 +25,7 @@ This document defines the minimum structured records for OCR and translation.
       "region": "body",
       "line_index": 0,
       "line_id": "p0001_body_l0001",
+      "seq": 1,
       "text_raw_ocr": "Eccleſiarum",
       "normalized_form": "Ecclesiarum",
       "text_gold": "Ecclesiarum",
@@ -63,6 +64,16 @@ research consumers can audit OCR fidelity:
 - `confidence` — model self-assessed accuracy in `[0.0, 1.0]`.
 - `marginalia_anchor_index` — body line index a marginalia entry anchors
   to (`null` for non-marginalia lines).
+- `seq` — 1-based dense integer giving the **reading order within the
+  region** (`header`, `body`, `footnotes`, `marginalia`, `catchwords`).
+  This is the **ordering authority** for translation and rendering.
+  `line_id` remains an immutable identifier and is not parsed for
+  order. When a user drags a line in the annotation UI, `seq` is
+  re-stamped to match the new array order; `line_id` is unchanged.
+  Footnote `seq` follows the renumbering performed by
+  `renumberFootnotes()` (anchor-sorted), so footnote `seq` and
+  `marker_number` will typically be equal but are conceptually
+  distinct (one is pipeline order, one is the printed numeral).
 
 ## Segment Record (Translation Unit)
 
@@ -71,6 +82,7 @@ research consumers can audit OCR fidelity:
   "segment_id": "p0001_s0001",
   "page_id": "p0001",
   "segment_type": "body_text",
+  "seq": 1,
   "latin_text": "...",
   "ocr_flags": [],
   "translation_history": [
@@ -117,6 +129,10 @@ Segment Record shape above with these conventions:
 
 - `segment_id` — `seg_<line_id>` for body lines, `seg_<footnote_id>` for footnotes.
 - `segment_type` — `body` or `footnote`.
+- `seq` — 1-based dense integer carried through from the source line's
+  `seq` (body) or footnote's `seq` (footnote). This is the ordering
+  key consumed by `polish_translations.py` and `render_interlinear.py`.
+  `segment_id` is identity only and is not parsed for order.
 - `latin_text` — `text_gold` from the Phase 3b annotation (falls back to `text_ocr_original`).
   Body lines additionally have `^<marker_id>` caret sentinels spliced in
   at each marker's `char_offset` so the artifact is self-describing

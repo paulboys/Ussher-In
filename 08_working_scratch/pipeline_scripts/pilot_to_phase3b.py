@@ -114,6 +114,7 @@ def _convert_line(
         "page_id": page_id,
         "region": region,
         "line_id": _line_id(page_id, region, ordinal),
+        "seq": ordinal,
         "text_gold": text_gold,
         "text_ocr_original": text_gold,  # Frozen baseline for diff/edit log.
         "marker_id": marker_id,
@@ -299,6 +300,7 @@ def _build_footnotes(
                 "footnote_id": fn_id,
                 "page_id": page_id,
                 "marker_number": ordinal,
+                "seq": ordinal,
                 "marker_id": group.get("marker_symbol", ""),
                 "body_line_id": body_line_id,
                 "text_gold": text_gold,

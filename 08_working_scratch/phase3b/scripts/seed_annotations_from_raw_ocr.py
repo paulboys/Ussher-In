@@ -42,6 +42,7 @@ def make_line(
         "page_id": page_id,
         "region": region,
         "line_id": line_id,
+        "seq": index,
         "text_gold": text_gold,
         "text_raw_ocr": text_raw_ocr if text_raw_ocr is not None else text_gold,
         "normalized_form": normalized_form if normalized_form is not None else text_gold,

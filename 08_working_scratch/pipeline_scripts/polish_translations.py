@@ -95,26 +95,35 @@ _BODY_LINE_RE = re.compile(r"_l(\d+)$")
 _FN_RE = re.compile(r"_fn_(\d+)$")
 
 
-def _body_sort_key(seg: dict) -> tuple:
+def _seq_key(seg: dict) -> tuple:
+    """Order segments by ``seq`` (the explicit ordering field). Fall back
+    to a regex on ``segment_id`` for legacy records that pre-date ``seq``,
+    so the sort stays stable across the migration window. ``segment_id``
+    is always included as a final tie-breaker for determinism."""
     seg_id = seg.get("segment_id", "")
-    match = _BODY_LINE_RE.search(seg_id)
+    seq = seg.get("seq")
+    if isinstance(seq, int):
+        return (0, seq, seg_id)
+    match = _BODY_LINE_RE.search(seg_id) or _FN_RE.search(seg_id)
     if match:
-        return (0, int(match.group(1)), seg_id)
-    return (1, 0, seg_id)
+        return (1, int(match.group(1)), seg_id)
+    return (2, 0, seg_id)
+
+
+# Retained for backwards compatibility with any external callers.
+def _body_sort_key(seg: dict) -> tuple:
+    return _seq_key(seg)
 
 
 def _fn_sort_key(seg: dict) -> tuple:
-    seg_id = seg.get("segment_id", "")
-    match = _FN_RE.search(seg_id)
-    if match:
-        return (0, int(match.group(1)), seg_id)
-    return (1, 0, seg_id)
+    return _seq_key(seg)
 
 
 def group_by_page(segments: Iterable[dict]) -> dict[str, dict]:
     """Group segments by ``page_id`` into ``{page_id: {body, footnotes}}``.
 
-    Body and footnote lists are sorted by their numeric suffix.
+    Body and footnote lists are sorted by ``seq`` (with regex fallback
+    for legacy records lacking ``seq``).
     """
     pages: dict[str, dict] = {}
     for seg in segments:
@@ -127,8 +136,8 @@ def group_by_page(segments: Iterable[dict]) -> dict[str, dict]:
         else:
             bucket["body"].append(seg)
     for bucket in pages.values():
-        bucket["body"].sort(key=_body_sort_key)
-        bucket["footnotes"].sort(key=_fn_sort_key)
+        bucket["body"].sort(key=_seq_key)
+        bucket["footnotes"].sort(key=_seq_key)
     return pages
 
 

@@ -16,7 +16,8 @@
       "source_region": "marginalia",
       "text_gold": "Johan. Mariana, de adventu Jacobi in Hispaniam, cap. 7.",
       "text_ocr_original": "Johan. Mariana, de adventu Jacobi in Hispaniam, cap. 7.",
-      "reviewer": "Paul Boys"
+      "reviewer": "Paul Boys",
+      "seq": 1
     },
     {
       "body_line_id": "p0037_body_l0005",
@@ -33,7 +34,8 @@
       "source_region": "marginalia",
       "text_gold": "cap. 72.",
       "text_ocr_original": "cap. 72.",
-      "reviewer": "Paul Boys"
+      "reviewer": "Paul Boys",
+      "seq": 2
     },
     {
       "body_line_id": "p0037_body_l0005",
@@ -50,7 +52,8 @@
       "source_region": "marginalia",
       "text_gold": "Chronicorum tom. 2. lib. 2. cap. 4.",
       "text_ocr_original": "Chronicorum tom. 2. lib. 2. cap. 4.",
-      "reviewer": "Paul Boys"
+      "reviewer": "Paul Boys",
+      "seq": 3
     },
     {
       "body_line_id": "p0037_body_l0006",
@@ -67,7 +70,8 @@
       "source_region": "marginalia",
       "text_gold": "Maxim. chronic. ad annum Christi 583.",
       "text_ocr_original": "Maxim. chronic. ad annum Christi 583.",
-      "reviewer": "Paul Boys"
+      "reviewer": "Paul Boys",
+      "seq": 4
     },
     {
       "body_line_id": "p0037_body_l0012",
@@ -84,7 +88,8 @@
       "source_region": "marginalia",
       "text_gold": "Vannes in Britannia Armorica. Vid. infra cap. 16.",
       "text_ocr_original": "Vannes in Britannia Armorica. Vid. infra cap. 16.",
-      "reviewer": "Paul Boys"
+      "reviewer": "Paul Boys",
+      "seq": 5
     },
     {
       "body_line_id": "p0037_body_l0015",
@@ -101,7 +106,8 @@
       "source_region": "marginalia",
       "text_gold": "lib. 8. cap. 7.",
       "text_ocr_original": "lib. 8. cap. 7.",
-      "reviewer": "Paul Boys"
+      "reviewer": "Paul Boys",
+      "seq": 6
     },
     {
       "body_line_id": "p0037_body_l0028",
@@ -118,7 +124,8 @@
       "source_region": "marginalia",
       "text_gold": "Turpin. de gestis Caroli magni cap. 1.",
       "text_ocr_original": "Turpin. de gestis Caroli magni cap. 1.",
-      "reviewer": "Paul Boys"
+      "reviewer": "Paul Boys",
+      "seq": 7
     },
     {
       "body_line_id": "p0037_body_l0028",
@@ -135,7 +142,8 @@
       "source_region": "marginalia",
       "text_gold": "Vid. Baronium, annal. tom. 1. ann. 44. sec. 1. cap. 14.",
       "text_ocr_original": "Vid. Baronium, annal. tom. 1. ann. 44. sec. 1. cap. 14.",
-      "reviewer": "Paul Boys"
+      "reviewer": "Paul Boys",
+      "seq": 8
     }
   ],
   "meta": {
@@ -177,7 +185,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "tyrum, Arabice scripto, quidam referunt. Eundem “His-",
-        "text_ocr_original": "tyrum, Arabice scripto, quidam referunt. Eundem “His-"
+        "text_ocr_original": "tyrum, Arabice scripto, quidam referunt. Eundem “His-",
+        "seq": 1
       },
       {
         "line_id": "p0037_body_l0002",
@@ -192,7 +201,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "paniæ et occidentalium locorum populis evangelium præ-",
-        "text_ocr_original": "paniæ et occidentalium locorum populis evangelium præ-"
+        "text_ocr_original": "paniæ et occidentalium locorum populis evangelium præ-",
+        "seq": 2
       },
       {
         "line_id": "p0037_body_l0003",
@@ -207,7 +217,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "dicavisse, et in occasum mundi lucem prædicationis in-",
-        "text_ocr_original": "dicavisse, et in occasum mundi lucem prædicationis in-"
+        "text_ocr_original": "dicavisse, et in occasum mundi lucem prædicationis in-",
+        "seq": 3
       },
       {
         "line_id": "p0037_body_l0004",
@@ -222,7 +233,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "fudisse” tradit etiam Isidorus in libro de patribus utrius-",
-        "text_ocr_original": "fudisse” tradit etiam Isidorus in libro de patribus utrius-"
+        "text_ocr_original": "fudisse” tradit etiam Isidorus in libro de patribus utrius-",
+        "seq": 4
       },
       {
         "line_id": "p0037_body_l0005",
@@ -248,7 +260,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "que Testamenti et eum secutus Freculphus Lexoviensis,",
-        "text_ocr_original": "que Testamenti et eum secutus Freculphus Lexoviensis,"
+        "text_ocr_original": "que Testamenti et eum secutus Freculphus Lexoviensis,",
+        "seq": 5
       },
       {
         "line_id": "p0037_body_l0006",
@@ -269,7 +282,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "“Primum omnium apostolorum prædicavisse in oris occi-",
-        "text_ocr_original": "“Primum omnium apostolorum prædicavisse in oris occi-"
+        "text_ocr_original": "“Primum omnium apostolorum prædicavisse in oris occi-",
+        "seq": 6
       },
       {
         "line_id": "p0037_body_l0007",
@@ -284,7 +298,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "dentalibus” asserit quoque author chronici, quod Maximi",
-        "text_ocr_original": "dentalibus” asserit quoque author chronici, quod Maximi"
+        "text_ocr_original": "dentalibus” asserit quoque author chronici, quod Maximi",
+        "seq": 7
       },
       {
         "line_id": "p0037_body_l0008",
@@ -299,7 +314,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "Cæsaraugustani episcopi circumfertur nomine. Britannis,",
-        "text_ocr_original": "Cæsaraugustani episcopi circumfertur nomine. Britannis,"
+        "text_ocr_original": "Cæsaraugustani episcopi circumfertur nomine. Britannis,",
+        "seq": 8
       },
       {
         "line_id": "p0037_body_l0009",
@@ -314,7 +330,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "ille qui Flavii Lucii Dextri larvam induit, Hibernis Vin-",
-        "text_ocr_original": "ille qui Flavii Lucii Dextri larvam induit, Hibernis Vin-"
+        "text_ocr_original": "ille qui Flavii Lucii Dextri larvam induit, Hibernis Vin-",
+        "seq": 9
       },
       {
         "line_id": "p0037_body_l0010",
@@ -329,7 +346,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "centius Bellovacensis prædicavisse illum affirmat. Sic",
-        "text_ocr_original": "centius Bellovacensis prædicavisse illum affirmat. Sic"
+        "text_ocr_original": "centius Bellovacensis prædicavisse illum affirmat. Sic",
+        "seq": 10
       },
       {
         "line_id": "p0037_body_l0011",
@@ -344,7 +362,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "enim prior in chronico, ad annum Christi XLI. “Rediens",
-        "text_ocr_original": "enim prior in chronico, ad annum Christi XLI. “Rediens"
+        "text_ocr_original": "enim prior in chronico, ad annum Christi XLI. “Rediens",
+        "seq": 11
       },
       {
         "line_id": "p0037_body_l0012",
@@ -365,7 +384,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "Jacobus Gallias invisit, ac Britannias, ac Venetiarum",
-        "text_ocr_original": "Jacobus Gallias invisit, ac Britannias, ac Venetiarum"
+        "text_ocr_original": "Jacobus Gallias invisit, ac Britannias, ac Venetiarum",
+        "seq": 12
       },
       {
         "line_id": "p0037_body_l0013",
@@ -380,7 +400,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "oppida, ubi prædicat; ac Hierosolymam revertitur, de",
-        "text_ocr_original": "oppida, ubi prædicat; ac Hierosolymam revertitur, de"
+        "text_ocr_original": "oppida, ubi prædicat; ac Hierosolymam revertitur, de",
+        "seq": 13
       },
       {
         "line_id": "p0037_body_l0014",
@@ -395,7 +416,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "rebus gravissimis consulturus beatam Virginem et Pe-",
-        "text_ocr_original": "rebus gravissimis consulturus beatam Virginem et Pe-"
+        "text_ocr_original": "rebus gravissimis consulturus beatam Virginem et Pe-",
+        "seq": 14
       },
       {
         "line_id": "p0037_body_l0015",
@@ -416,7 +438,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "trum.” Posterior, in speculo historiali, (in Basileensi",
-        "text_ocr_original": "trum.” Posterior, in speculo historiali, (in Basileensi"
+        "text_ocr_original": "trum.” Posterior, in speculo historiali, (in Basileensi",
+        "seq": 15
       },
       {
         "line_id": "p0037_body_l0016",
@@ -431,7 +454,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "etiam concilio, ab Alphonso Garsia de sancta Maria, Cas-",
-        "text_ocr_original": "etiam concilio, ab Alphonso Garsia de sancta Maria, Cas-"
+        "text_ocr_original": "etiam concilio, ab Alphonso Garsia de sancta Maria, Cas-",
+        "seq": 16
       },
       {
         "line_id": "p0037_body_l0017",
@@ -446,7 +470,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "tellani regis oratore, productus) ita: “Apostolis diversa",
-        "text_ocr_original": "tellani regis oratore, productus) ita: “Apostolis diversa"
+        "text_ocr_original": "tellani regis oratore, productus) ita: “Apostolis diversa",
+        "seq": 17
       },
       {
         "line_id": "p0037_body_l0018",
@@ -461,7 +486,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "cosmi climata adeuntibus, nutu Dei Jacobus Hiberniæ",
-        "text_ocr_original": "cosmi climata adeuntibus, nutu Dei Jacobus Hiberniæ"
+        "text_ocr_original": "cosmi climata adeuntibus, nutu Dei Jacobus Hiberniæ",
+        "seq": 18
       },
       {
         "line_id": "p0037_body_l0019",
@@ -476,7 +502,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "oris appulsus, verbum Dei prædicavit intrepidus, ubi sep-",
-        "text_ocr_original": "oris appulsus, verbum Dei prædicavit intrepidus, ubi sep-"
+        "text_ocr_original": "oris appulsus, verbum Dei prædicavit intrepidus, ubi sep-",
+        "seq": 19
       },
       {
         "line_id": "p0037_body_l0020",
@@ -491,7 +518,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "tem discipulos elegisse fertur: scilicet Torquatum, Secun-",
-        "text_ocr_original": "tem discipulos elegisse fertur: scilicet Torquatum, Secun-"
+        "text_ocr_original": "tem discipulos elegisse fertur: scilicet Torquatum, Secun-",
+        "seq": 20
       },
       {
         "line_id": "p0037_body_l0021",
@@ -506,7 +534,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "dum, Indalecium, Tisephontem, Eufrasium, Cecilium,",
-        "text_ocr_original": "dum, Indalecium, Tisephontem, Eufrasium, Cecilium,"
+        "text_ocr_original": "dum, Indalecium, Tisephontem, Eufrasium, Cecilium,",
+        "seq": 21
       },
       {
         "line_id": "p0037_body_l0022",
@@ -521,7 +550,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "Isichium, quorum collogio lolium extirparet, ac telluri",
-        "text_ocr_original": "Isichium, quorum collogio lolium extirparet, ac telluri"
+        "text_ocr_original": "Isichium, quorum collogio lolium extirparet, ac telluri",
+        "seq": 22
       },
       {
         "line_id": "p0037_body_l0023",
@@ -536,7 +566,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "aridæ et diu sterili semina verbi Dei committeret. Cumque",
-        "text_ocr_original": "aridæ et diu sterili semina verbi Dei committeret. Cumque"
+        "text_ocr_original": "aridæ et diu sterili semina verbi Dei committeret. Cumque",
+        "seq": 23
       },
       {
         "line_id": "p0037_body_l0024",
@@ -551,7 +582,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "dies immineret supremus, Hierosolymam cum eis perrexit,",
-        "text_ocr_original": "dies immineret supremus, Hierosolymam cum eis perrexit,"
+        "text_ocr_original": "dies immineret supremus, Hierosolymam cum eis perrexit,",
+        "seq": 24
       },
       {
         "line_id": "p0037_body_l0025",
@@ -566,7 +598,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "ibique martyrium subiit.”",
-        "text_ocr_original": "ibique martyrium subiit.”"
+        "text_ocr_original": "ibique martyrium subiit.”",
+        "seq": 25
       },
       {
         "line_id": "p0037_body_l0026",
@@ -581,7 +614,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "Verum Jacobum ab Herode occisum, priusquam apos-",
-        "text_ocr_original": "Verum Jacobum ab Herode occisum, priusquam apos-"
+        "text_ocr_original": "Verum Jacobum ab Herode occisum, priusquam apos-",
+        "seq": 26
       },
       {
         "line_id": "p0037_body_l0027",
@@ -596,7 +630,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "toli divisi essent in “diversa cosmi climata” (ut cum",
-        "text_ocr_original": "toli divisi essent in “diversa cosmi climata” (ut cum"
+        "text_ocr_original": "toli divisi essent in “diversa cosmi climata” (ut cum",
+        "seq": 27
       },
       {
         "line_id": "p0037_body_l0028",
@@ -622,7 +657,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "Turpino loquitur Vincentius) ostendunt alii: et quos",
-        "text_ocr_original": "Turpino loquitur Vincentius) ostendunt alii: et quos"
+        "text_ocr_original": "Turpino loquitur Vincentius) ostendunt alii: et quos",
+        "seq": 28
       },
       {
         "line_id": "p0037_body_l0029",
@@ -637,7 +673,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "ipse Vincentius secutus est authores. Turpinus in vita",
-        "text_ocr_original": "ipse Vincentius secutus est authores. Turpinus in vita"
+        "text_ocr_original": "ipse Vincentius secutus est authores. Turpinus in vita",
+        "seq": 29
       },
       {
         "line_id": "p0037_body_l0030",
@@ -652,7 +689,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "Caroli Magni, et Calixtus II. in libro de miraculis S.",
-        "text_ocr_original": "Caroli Magni, et Calixtus II. in libro de miraculis S."
+        "text_ocr_original": "Caroli Magni, et Calixtus II. in libro de miraculis S.",
+        "seq": 30
       },
       {
         "line_id": "p0037_body_l0031",
@@ -667,7 +705,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "Jacobi apostoli, et translatione corporis ejus (si tamen idem",
-        "text_ocr_original": "Jacobi apostoli, et translatione corporis ejus (si tamen idem"
+        "text_ocr_original": "Jacobi apostoli, et translatione corporis ejus (si tamen idem",
+        "seq": 31
       },
       {
         "line_id": "p0037_body_l0032",
@@ -682,7 +721,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "utriusque operis author non fuerit) non in Hibernia, sed",
-        "text_ocr_original": "utriusque operis author non fuerit) non in Hibernia, sed"
+        "text_ocr_original": "utriusque operis author non fuerit) non in Hibernia, sed",
+        "seq": 32
       }
     ],
     "catchword": [],
@@ -699,7 +739,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "16 BRITANNICARUM ECCLESIARUM CAP. I.",
-        "text_ocr_original": "16 BRITANNICARUM ECCLESIARUM CAP. I."
+        "text_ocr_original": "16 BRITANNICARUM ECCLESIARUM CAP. I.",
+        "seq": 1
       }
     ],
     "marginalia": [
@@ -715,7 +756,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "Johan. Mariana, de adventu Jacobi in Hispaniam, cap. 7.",
-        "text_ocr_original": "Johan. Mariana, de adventu Jacobi in Hispaniam, cap. 7."
+        "text_ocr_original": "Johan. Mariana, de adventu Jacobi in Hispaniam, cap. 7.",
+        "seq": 1
       },
       {
         "line_id": "p0037_marginalia_l0002",
@@ -729,7 +771,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "cap. 72.",
-        "text_ocr_original": "cap. 72."
+        "text_ocr_original": "cap. 72.",
+        "seq": 2
       },
       {
         "line_id": "p0037_marginalia_l0003",
@@ -743,7 +786,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "Chronicorum tom. 2. lib. 2. cap. 4.",
-        "text_ocr_original": "Chronicorum tom. 2. lib. 2. cap. 4."
+        "text_ocr_original": "Chronicorum tom. 2. lib. 2. cap. 4.",
+        "seq": 3
       },
       {
         "line_id": "p0037_marginalia_l0004",
@@ -757,7 +801,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "Maxim. chronic. ad annum Christi 583.",
-        "text_ocr_original": "Maxim. chronic. ad annum Christi 583."
+        "text_ocr_original": "Maxim. chronic. ad annum Christi 583.",
+        "seq": 4
       },
       {
         "line_id": "p0037_marginalia_l0005",
@@ -771,7 +816,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "Vannes in Britannia Armorica. Vid. infra cap. 16.",
-        "text_ocr_original": "Vannes in Britannia Armorica. Vid. infra cap. 16."
+        "text_ocr_original": "Vannes in Britannia Armorica. Vid. infra cap. 16.",
+        "seq": 5
       },
       {
         "line_id": "p0037_marginalia_l0006",
@@ -785,7 +831,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "lib. 8. cap. 7.",
-        "text_ocr_original": "lib. 8. cap. 7."
+        "text_ocr_original": "lib. 8. cap. 7.",
+        "seq": 6
       },
       {
         "line_id": "p0037_marginalia_l0007",
@@ -799,7 +846,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "Turpin. de gestis Caroli magni cap. 1.",
-        "text_ocr_original": "Turpin. de gestis Caroli magni cap. 1."
+        "text_ocr_original": "Turpin. de gestis Caroli magni cap. 1.",
+        "seq": 7
       },
       {
         "line_id": "p0037_marginalia_l0008",
@@ -813,7 +861,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "Vid. Baronium, annal. tom. 1. ann. 44. sec. 1. cap. 14.",
-        "text_ocr_original": "Vid. Baronium, annal. tom. 1. ann. 44. sec. 1. cap. 14."
+        "text_ocr_original": "Vid. Baronium, annal. tom. 1. ann. 44. sec. 1. cap. 14.",
+        "seq": 8
       }
     ]
   },
