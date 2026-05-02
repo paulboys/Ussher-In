@@ -156,6 +156,25 @@ input[type="text"], select, textarea {
   color: #555;
   margin-bottom: 0.25rem;
 }
+.line-pos {
+  display: inline-block;
+  min-width: 1.6em;
+  padding: 0 0.4em;
+  margin-right: 0.4em;
+  border-radius: 3px;
+  background: var(--accent, #b48a30);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-align: center;
+  line-height: 1.4;
+}
+.line-id {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.72rem;
+  color: #888;
+  font-weight: 400;
+}
 
 .section-head {
   display: flex;
@@ -239,17 +258,45 @@ input[type="text"], select, textarea {
 }
 
 .body-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  align-items: stretch;
+}
+.body-row {
   display: grid;
   grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
   gap: 0.4rem;
   align-items: start;
 }
-.body-row {
-  display: contents;
-}
 .body-cell, .marg-cell {
   min-width: 0;
 }
+
+/* Drag handle for reorderable line cards. */
+.drag-handle {
+  cursor: grab;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  padding: 0 0.3rem;
+  margin-right: 0.3rem;
+  font-size: 1.05rem;
+  line-height: 1;
+  color: #8a7a4a;
+  user-select: none;
+  align-self: center;
+}
+.drag-handle:hover {
+  background: rgba(0, 0, 0, 0.04);
+  border-color: var(--line);
+  color: #5a4a20;
+}
+.drag-handle:active { cursor: grabbing; }
+.sortable-ghost { opacity: 0.4; }
+.sortable-chosen .line-card,
+.sortable-chosen.line-card,
+.sortable-chosen.footnote-card { box-shadow: 0 0 0 2px var(--accent, #b48a30); }
 
 .line-card-body { background: #fcfaf3; }
 .line-card-marginalia {

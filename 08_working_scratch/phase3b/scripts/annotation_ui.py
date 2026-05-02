@@ -319,6 +319,24 @@ def api_save_page(page_id: str):
             400,
         )
 
+    # Defense-in-depth: refuse to write a payload whose page_id doesn't match
+    # the URL. This guards against client-side split-state bugs that could
+    # otherwise overwrite a different page's file with the wrong content.
+    incoming_page_id = str(incoming.get("page_id", ""))
+    if incoming_page_id and incoming_page_id != page_id:
+        return (
+            jsonify(
+                {
+                    "ok": False,
+                    "errors": [
+                        f"page_id mismatch: URL says '{page_id}' but body says "
+                        f"'{incoming_page_id}'. Refusing to overwrite."
+                    ],
+                }
+            ),
+            409,
+        )
+
     errors = _validate_payload(incoming)
     if errors:
         return jsonify({"ok": False, "errors": errors}), 400
