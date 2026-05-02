@@ -7,7 +7,16 @@
 let currentPayload = null;
 let activeInput = null;
 let currentPdfSource = "";
+let isDirty = false;
 const DEFAULT_REVIEWER = "Paul Boys";
+
+function markDirty() {
+  isDirty = true;
+}
+
+function clearDirty() {
+  isDirty = false;
+}
 
 // ---------------------------------------------------------------------------
 // Top bar / status / page selector
@@ -144,6 +153,7 @@ function pushUndo(label, undoFn) {
   undoStack.push({ label, undo: undoFn });
   if (undoStack.length > UNDO_LIMIT) undoStack.shift();
   refreshUndoButton();
+  markDirty();
 }
 
 function clearUndoStack() {
@@ -179,6 +189,43 @@ function refreshUndoButton() {
 }
 
 function pad4(n) { return String(n).padStart(4, "0"); }
+
+// ---------------------------------------------------------------------------
+// Drag-to-reorder: SortableJS wrapper. Reorders an array in place, pushes
+// a single undo entry, and re-renders. Marginalia/footnote anchors travel
+// with the line because they reference stable line_id values.
+// ---------------------------------------------------------------------------
+function attachSortable(container, arrayRef, regionLabel, options = {}) {
+  if (!container || typeof Sortable === "undefined") return;
+  if (container._sortable) {
+    try { container._sortable.destroy(); } catch (e) { /* ignore */ }
+    container._sortable = null;
+  }
+  container._sortable = new Sortable(container, {
+    handle: ".drag-handle",
+    draggable: options.draggable || ".sort-item",
+    animation: 150,
+    ghostClass: "sortable-ghost",
+    chosenClass: "sortable-chosen",
+    onEnd: (evt) => {
+      if (evt.oldIndex === evt.newIndex) return;
+      if (evt.oldIndex == null || evt.newIndex == null) return;
+      if (evt.oldIndex < 0 || evt.oldIndex >= arrayRef.length) return;
+      const snapshot = arrayRef.slice();
+      const [moved] = arrayRef.splice(evt.oldIndex, 1);
+      arrayRef.splice(evt.newIndex, 0, moved);
+      if (options.onReorder) options.onReorder();
+      pushUndo(`Reorder ${regionLabel}`, () => {
+        arrayRef.length = 0;
+        arrayRef.push(...snapshot);
+        if (options.onReorder) options.onReorder();
+        renderAll();
+      });
+      renderAll();
+      setStatus(`Reordered ${regionLabel}`);
+    },
+  });
+}
 
 function makeLineId(pageId, region, ordinal) {
   return `${pageId}_${region}_l${pad4(ordinal)}`;
@@ -414,7 +461,9 @@ function buildLineCardSimple(line, regionName, options = {}) {
 
   card.innerHTML = `
     <div class="line-head">
-      <span class="line-id">${safeId}</span>
+      <button type="button" class="drag-handle" tabindex="-1" title="Drag to reorder" aria-label="Drag to reorder">⋮⋮</button>
+      <span class="line-pos" title="Reading-order position">${options.position ?? ""}</span>
+      <span class="line-id" title="Stable identifier (does not change on reorder)">${safeId}</span>
       <div class="line-head-right">
         <select class="review-status-chip" data-field="review_status">${reviewOpts}</select>
         ${options.showRemove ? '<button type="button" class="line-remove-btn">Remove</button>' : ""}
@@ -447,7 +496,9 @@ function buildBodyLineCard(line, idx, options = {}) {
 
   card.innerHTML = `
     <div class="line-head">
-      <span class="line-id">${safeId}</span>
+      <button type="button" class="drag-handle" tabindex="-1" title="Drag to reorder" aria-label="Drag to reorder">⋮⋮</button>
+      <span class="line-pos" title="Reading-order position">${idx + 1}</span>
+      <span class="line-id" title="Stable identifier (does not change on reorder)">${safeId}</span>
       <div class="line-head-right">
         <button type="button" class="add-marker-btn" title="Insert footnote marker at the cursor position in this line (or end of line)">+ Footnote here</button>
         <button type="button" class="make-sup-btn" title="Select exactly one character in the text below, then click here to convert it into a superscript footnote marker">⁺ Make superscript</button>
@@ -512,6 +563,7 @@ function bindLineFieldEvents(card, line) {
     const handler = () => {
       const field = el.dataset.field;
       line[field] = el.type === "checkbox" ? el.checked : el.value;
+      markDirty();
     };
     el.addEventListener("input", handler);
     el.addEventListener("change", handler);
@@ -760,6 +812,7 @@ function buildFootnoteCard(fn) {
 
   card.innerHTML = `
     <div class="footnote-head">
+      <button type="button" class="drag-handle" tabindex="-1" title="Drag to reorder" aria-label="Drag to reorder">⋮⋮</button>
       <sup class="footnote-marker-badge">${escapeHtml(String(fn.marker_id || fn.marker_number || "?"))}</sup>
       <span class="footnote-id">${safeId}</span>
       <span class="footnote-anchor">→ ${safeAnchor}</span>
@@ -861,6 +914,7 @@ function addFootnoteAnchored(bodyLineId, charOffset = null) {
     const marker = (bodyLine?.markers || []).find((m) => String(m.footnote_id) === String(newId));
     if (marker) marker.char_offset = charOffset;
   }
+  markDirty();
   renderAll();
 }
 
@@ -998,22 +1052,24 @@ function renderHeader() {
   headerContainer.innerHTML = "";
   const lines = currentPayload?.regions?.header || [];
   lines.forEach((line, idx) => {
-    headerContainer.appendChild(
-      buildLineCardSimple(line, "header", {
-        showRemove: true,
-        onRemove: () => {
-          const removed = lines[idx];
-          const removedClone = clone(removed);
-          lines.splice(idx, 1);
-          pushUndo(`Remove header line ${removedClone.line_id || idx + 1}`, () => {
-            (currentPayload.regions.header || []).splice(idx, 0, removedClone);
-            renderHeader();
-          });
+    const card = buildLineCardSimple(line, "header", {
+      showRemove: true,
+      position: idx + 1,
+      onRemove: () => {
+        const removed = lines[idx];
+        const removedClone = clone(removed);
+        lines.splice(idx, 1);
+        pushUndo(`Remove header line ${removedClone.line_id || idx + 1}`, () => {
+          (currentPayload.regions.header || []).splice(idx, 0, removedClone);
           renderHeader();
-        },
-      })
-    );
+        });
+        renderHeader();
+      },
+    });
+    card.classList.add("sort-item");
+    headerContainer.appendChild(card);
   });
+  attachSortable(headerContainer, lines, "header lines");
 }
 
 function renderBodyWithMarginalia() {
@@ -1052,7 +1108,8 @@ function renderBodyWithMarginalia() {
   // Body rows: each row = body line + its marginalia block.
   bodyLines.forEach((line, idx) => {
     const row = document.createElement("div");
-    row.className = "body-row";
+    row.className = "body-row sort-item";
+    row.dataset.lineId = line.line_id || "";
 
     const bodyCell = document.createElement("div");
     bodyCell.className = "body-cell";
@@ -1086,6 +1143,9 @@ function renderBodyWithMarginalia() {
     row.appendChild(margCell);
     bodyContainer.appendChild(row);
   });
+  attachSortable(bodyContainer, bodyLines, "body lines", {
+    onReorder: () => renumberFootnotes(),
+  });
 }
 
 function renderFootnotes() {
@@ -1103,28 +1163,37 @@ function renderFootnotes() {
     target.appendChild(empty);
     return;
   }
-  fns.forEach((fn) => target.appendChild(buildFootnoteCard(fn)));
+  fns.forEach((fn) => {
+    const card = buildFootnoteCard(fn);
+    card.classList.add("sort-item");
+    target.appendChild(card);
+  });
+  attachSortable(target, fns, "footnotes", {
+    onReorder: () => renumberFootnotes(),
+  });
 }
 
 function renderCatchword() {
   catchwordContainer.innerHTML = "";
   const lines = currentPayload?.regions?.catchword || [];
   lines.forEach((line, idx) => {
-    catchwordContainer.appendChild(
-      buildLineCardSimple(line, "catchword", {
-        showRemove: true,
-        onRemove: () => {
-          const removedClone = clone(lines[idx]);
-          lines.splice(idx, 1);
-          pushUndo(`Remove catchword ${removedClone.line_id || idx + 1}`, () => {
-            (currentPayload.regions.catchword || []).splice(idx, 0, removedClone);
-            renderCatchword();
-          });
+    const card = buildLineCardSimple(line, "catchword", {
+      showRemove: true,
+      position: idx + 1,
+      onRemove: () => {
+        const removedClone = clone(lines[idx]);
+        lines.splice(idx, 1);
+        pushUndo(`Remove catchword ${removedClone.line_id || idx + 1}`, () => {
+          (currentPayload.regions.catchword || []).splice(idx, 0, removedClone);
           renderCatchword();
-        },
-      })
-    );
+        });
+        renderCatchword();
+      },
+    });
+    card.classList.add("sort-item");
+    catchwordContainer.appendChild(card);
   });
+  attachSortable(catchwordContainer, lines, "catchword lines");
 }
 
 function renderAll() {
@@ -1176,12 +1245,13 @@ function bindMeta(payload) {
   metaPageNum.oninput = () => {
     const v = parseInt(metaPageNum.value, 10);
     payload.page_num = Number.isFinite(v) ? v : payload.page_num;
+    markDirty();
   };
-  metaSourcePdf.oninput = () => { payload.source_pdf = metaSourcePdf.value; };
-  metaAnnotationStatus.oninput = () => { meta.annotation_status = metaAnnotationStatus.value; };
-  metaReviewStatus.onchange = () => { meta.review_status = metaReviewStatus.value; };
-  metaNotes.oninput = () => { meta.notes = metaNotes.value; };
-  metaOcrPageSummary.oninput = () => { meta.ocr_page_summary = metaOcrPageSummary.value; };
+  metaSourcePdf.oninput = () => { payload.source_pdf = metaSourcePdf.value; markDirty(); };
+  metaAnnotationStatus.oninput = () => { meta.annotation_status = metaAnnotationStatus.value; markDirty(); };
+  metaReviewStatus.onchange = () => { meta.review_status = metaReviewStatus.value; markDirty(); };
+  metaNotes.oninput = () => { meta.notes = metaNotes.value; markDirty(); };
+  metaOcrPageSummary.oninput = () => { meta.ocr_page_summary = metaOcrPageSummary.value; markDirty(); };
 }
 
 // ---------------------------------------------------------------------------
@@ -1199,6 +1269,7 @@ async function applyPayload(pageId, payload) {
   bindMeta(currentPayload);
   renderAll();
   clearUndoStack();
+  clearDirty();
 
   const parsed = Number(currentPayload.page_num);
   const fallback = Number(String(pageId || "").replace(/^p/, ""));
@@ -1232,6 +1303,15 @@ async function savePage() {
   if (!currentPayload) return;
   try {
     const pageId = pageSelect.value;
+    // Save guard: refuse to write if the editor's page_id doesn't match the
+    // selector. This prevents a split state (caused by a partial sync) from
+    // overwriting a different page's file with the wrong content.
+    const editorPageId = String(currentPayload.page_id || "");
+    if (editorPageId && editorPageId !== pageId) {
+      throw new Error(
+        `Refusing to save: editor shows ${editorPageId} but page selector is ${pageId}. Reload the correct page before saving.`
+      );
+    }
     setStatus("Saving...");
     applyDefaultReviewer(currentPayload);
     const res = await fetch(`/api/page/${pageId}`, {
@@ -1249,6 +1329,8 @@ async function savePage() {
     }
     const editsCount = data.edits_recorded ?? 0;
     setStatus(`Saved ${pageId} (${editsCount} edits logged)`);
+    clearDirty();
+    clearUndoStack();
   } catch (err) {
     setStatus(String(err), true);
   }
@@ -1264,6 +1346,7 @@ addHeaderBtn.addEventListener("click", () => {
   currentPayload.regions.header.push(
     createEmptyLine(currentPayload.page_id || pageSelect.value, "header", ord)
   );
+  markDirty();
   renderHeader();
 });
 
@@ -1273,6 +1356,7 @@ addBodyBtn.addEventListener("click", () => {
   currentPayload.regions.body.push(
     createEmptyLine(currentPayload.page_id || pageSelect.value, "body", ord)
   );
+  markDirty();
   renderBodyWithMarginalia();
 });
 
@@ -1284,6 +1368,7 @@ addCatchwordBtn.addEventListener("click", () => {
   currentPayload.regions.catchword.push(
     createEmptyLine(currentPayload.page_id || pageSelect.value, "catchword", ord)
   );
+  markDirty();
   renderCatchword();
 });
 
@@ -1403,6 +1488,7 @@ if (metaEditionChangeBtn) {
     });
     if (!picked || picked === currentEdition()) return;
     currentPayload.edition = picked;
+    markDirty();
     renderAll();
     setStatus(`Edition changed to ${editionConfig(picked).label} (unsaved)`);
   });
@@ -1584,6 +1670,8 @@ function buildStubPayload(pageId, pageNum) {
   };
 }
 
+let _syncSeq = 0;
+
 async function syncJsonToOcrSelection() {
   const pageId = pageIdFromOcrInputs();
   if (!pageId) return;
@@ -1594,8 +1682,8 @@ async function syncJsonToOcrSelection() {
     return;
   }
 
-  // Dirty-buffer guard: the undo stack is the closest proxy for unsaved edits.
-  if (typeof undoStack !== "undefined" && undoStack.length > 0) {
+  // Dirty-buffer guard: prompt the user before discarding unsaved edits.
+  if (isDirty) {
     const ok = window.confirm(
       `You have unsaved edits. Discard them and load ${pageId}?`
     );
@@ -1608,25 +1696,48 @@ async function syncJsonToOcrSelection() {
     }
   }
 
+  const mySeq = ++_syncSeq;
   const pageNum = parseInt(ocrPageInput?.value || "0", 10);
+  let payload = null;
+  let isStub = false;
   try {
     const res = await fetch(`/api/page/${pageId}`);
+    if (mySeq !== _syncSeq) return; // stale: a newer sync started
     if (res.ok) {
-      const payload = await res.json();
-      ensurePageSelectOption(pageId);
-      await applyPayload(pageId, payload);
-      setStatus(`Loaded ${pageId}`);
+      payload = await res.json();
+      if (mySeq !== _syncSeq) return;
     } else if (res.status === 404) {
-      ensurePageSelectOption(pageId);
-      await applyPayload(pageId, buildStubPayload(pageId, pageNum));
-      setStatus(`New page ${pageId} (no annotation yet)`);
+      payload = buildStubPayload(pageId, pageNum);
+      isStub = true;
     } else {
       throw new Error(`Load failed: ${res.status}`);
     }
   } catch (err) {
+    if (mySeq !== _syncSeq) return;
     setStatus(String(err), true);
     return;
   }
+
+  // Apply payload first; only mutate the page selector and commit
+  // "last known good" inputs if the render succeeds. Prevents split state
+  // (selector pointing at p0021 while editor still holds p0020) which would
+  // cause Save to overwrite the wrong file.
+  try {
+    await applyPayload(pageId, payload);
+  } catch (err) {
+    if (mySeq !== _syncSeq) return;
+    console.error("applyPayload failed for", pageId, err);
+    setStatus(`Render failed for ${pageId}: ${err.message || err}`, true);
+    // Revert OCR-bar inputs so the user isn't left with a misleading state.
+    if (ocrPdfSelect) ocrPdfSelect.value = _lastOcrPdf;
+    if (ocrPageInput) ocrPageInput.value = _lastOcrPage;
+    previewOcrSelection();
+    return;
+  }
+  if (mySeq !== _syncSeq) return;
+
+  ensurePageSelectOption(pageId);
+  setStatus(isStub ? `New page ${pageId} (no annotation yet)` : `Loaded ${pageId}`);
 
   _lastOcrPdf = String(ocrPdfSelect?.value || "");
   _lastOcrPage = String(ocrPageInput?.value || "");
@@ -1639,6 +1750,9 @@ if (ocrPageInput) {
   ocrPageInput.addEventListener("change", syncJsonToOcrSelection);
   ocrPageInput.addEventListener("input", () => {
     clearTimeout(ocrPageInput._previewTimer);
-    ocrPageInput._previewTimer = setTimeout(previewOcrSelection, 300);
+    ocrPageInput._previewTimer = setTimeout(() => {
+      previewOcrSelection();
+      syncJsonToOcrSelection();
+    }, 120);
   });
 }
