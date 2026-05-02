@@ -16,7 +16,8 @@
       "source_region": "marginalia",
       "text_gold": "Prudenti incredulitate nihil est mortalibus utilius. Euripid. in Helena, ver. 1637.",
       "text_ocr_original": "Prudenti incredulitate nihil est mortalibus utilius. Euripid. in Helena,",
-      "reviewer": "Paul Boys"
+      "reviewer": "Paul Boys",
+      "seq": 1
     },
     {
       "body_line_id": "p0029_body_l0019",
@@ -33,7 +34,8 @@
       "source_region": "marginalia",
       "text_gold": "L. Apulei. Metamorphos. lib. 1.",
       "text_ocr_original": "L. Apulei. Metamorphos. lib. 1.",
-      "reviewer": "Paul Boys"
+      "reviewer": "Paul Boys",
+      "seq": 2
     }
   ],
   "meta": {
@@ -69,7 +71,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "certo.\" Valdeque mihi placere sciat Euripidis illam sen-",
-        "text_ocr_original": "certo.\" Valdeque mihi placere sciat Euripidis illam sen-"
+        "text_ocr_original": "certo.\" Valdeque mihi placere sciat Euripidis illam sen-",
+        "seq": 1
       },
       {
         "line_id": "p0029_body_l0002",
@@ -84,7 +87,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "tentiam:",
-        "text_ocr_original": "tentiam:"
+        "text_ocr_original": "tentiam:",
+        "seq": 2
       },
       {
         "line_id": "p0029_body_l0003",
@@ -105,7 +109,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "Σώφρονος δ' ἀπιστίας",
-        "text_ocr_original": "Σώφρονος δ' ἀπιστίας"
+        "text_ocr_original": "Σώφρονος δ' ἀπιστίας",
+        "seq": 3
       },
       {
         "line_id": "p0029_body_l0004",
@@ -120,7 +125,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "Οὐκ ἔστιν οὐδὲν χρησιμώτερον βροτοῖς.",
-        "text_ocr_original": "Οὐκ ἔστιν οὐδὲν χρησιμώτερον βροτοῖς."
+        "text_ocr_original": "Οὐκ ἔστιν οὐδὲν χρησιμώτερον βροτοῖς.",
+        "seq": 4
       },
       {
         "line_id": "p0029_body_l0005",
@@ -135,7 +141,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "Nam ad aperte falsa quod attinet: non parum etiam lec-",
-        "text_ocr_original": "Nam ad aperte falsa quod attinet: non parum etiam lec-"
+        "text_ocr_original": "Nam ad aperte falsa quod attinet: non parum etiam lec-",
+        "seq": 5
       },
       {
         "line_id": "p0029_body_l0006",
@@ -150,7 +157,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "toris interesse putabam, ex isto ut cognosceret specimine,",
-        "text_ocr_original": "toris interesse putabam, ex isto ut cognosceret specimine,"
+        "text_ocr_original": "toris interesse putabam, ex isto ut cognosceret specimine,",
+        "seq": 6
       },
       {
         "line_id": "p0029_body_l0007",
@@ -165,7 +173,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "quam fœdis ineptiis sanctorum vitas totamque Ecclesiæ",
-        "text_ocr_original": "quam fœdis ineptiis sanctorum vitas totamque Ecclesiæ"
+        "text_ocr_original": "quam fœdis ineptiis sanctorum vitas totamque Ecclesiæ",
+        "seq": 7
       },
       {
         "line_id": "p0029_body_l0008",
@@ -180,7 +189,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "historiam ætas superior contaminaverit; atque novorum",
-        "text_ocr_original": "historiam ætas superior contaminaverit; atque novorum"
+        "text_ocr_original": "historiam ætas superior contaminaverit; atque novorum",
+        "seq": 8
       },
       {
         "line_id": "p0029_body_l0009",
@@ -195,7 +205,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "miraculorum et visionum obtentu, hominum simplicitati",
-        "text_ocr_original": "miraculorum et visionum obtentu, hominum simplicitati"
+        "text_ocr_original": "miraculorum et visionum obtentu, hominum simplicitati",
+        "seq": 9
       },
       {
         "line_id": "p0029_body_l0010",
@@ -210,7 +221,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "illuserit. Ita, de S. Albani corpore inter Verolamienses",
-        "text_ocr_original": "illuserit. Ita, de S. Albani corpore inter Verolamienses"
+        "text_ocr_original": "illuserit. Ita, de S. Albani corpore inter Verolamienses",
+        "seq": 10
       },
       {
         "line_id": "p0029_body_l0011",
@@ -225,7 +237,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "et Colonienses cœnobitas lite orta, miracula miraculis",
-        "text_ocr_original": "et Colonienses cœnobitas lite orta, miracula miraculis"
+        "text_ocr_original": "et Colonienses cœnobitas lite orta, miracula miraculis",
+        "seq": 11
       },
       {
         "line_id": "p0029_body_l0012",
@@ -240,7 +253,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "opposita; et in consimili de B. Patricii reliquiis inter",
-        "text_ocr_original": "opposita; et in consimili de B. Patricii reliquiis inter"
+        "text_ocr_original": "opposita; et in consimili de B. Patricii reliquiis inter",
+        "seq": 12
       },
       {
         "line_id": "p0029_body_l0013",
@@ -255,7 +269,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "Glastonienses et Dunenses monachos controversia, ab",
-        "text_ocr_original": "Glastonienses et Dunenses monachos controversia, ab"
+        "text_ocr_original": "Glastonienses et Dunenses monachos controversia, ab",
+        "seq": 13
       },
       {
         "line_id": "p0029_body_l0014",
@@ -270,7 +285,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "utraque parte visiones productas hic videbit visionibus",
-        "text_ocr_original": "utraque parte visiones productas hic videbit visionibus"
+        "text_ocr_original": "utraque parte visiones productas hic videbit visionibus",
+        "seq": 14
       },
       {
         "line_id": "p0029_body_l0015",
@@ -285,7 +301,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "contrarias. In iis enim percensendis quæ ex Elizabethæ",
-        "text_ocr_original": "contrarias. In iis enim percensendis quæ ex Elizabethæ"
+        "text_ocr_original": "contrarias. In iis enim percensendis quæ ex Elizabethæ",
+        "seq": 15
       },
       {
         "line_id": "p0029_body_l0016",
@@ -300,7 +317,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "Schonaugiensis et Richardi Præmonstratensis revelationi-",
-        "text_ocr_original": "Schonaugiensis et Richardi Præmonstratensis revelationi-"
+        "text_ocr_original": "Schonaugiensis et Richardi Præmonstratensis revelationi-",
+        "seq": 16
       },
       {
         "line_id": "p0029_body_l0017",
@@ -315,7 +333,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "bus de Ursulanis virginibus retulimus, quis tam patientis",
-        "text_ocr_original": "bus de Ursulanis virginibus retulimus, quis tam patientis"
+        "text_ocr_original": "bus de Ursulanis virginibus retulimus, quis tam patientis",
+        "seq": 17
       },
       {
         "line_id": "p0029_body_l0018",
@@ -330,7 +349,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "fuerit stomachi, ut Apuleianum illud sæpius usurpare non",
-        "text_ocr_original": "fuerit stomachi, ut Apuleianum illud sæpius usurpare non"
+        "text_ocr_original": "fuerit stomachi, ut Apuleianum illud sæpius usurpare non",
+        "seq": 18
       },
       {
         "line_id": "p0029_body_l0019",
@@ -351,7 +371,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "cogatur? “Nihil hac fabula fabulosius, nihil isto men-",
-        "text_ocr_original": "cogatur? “Nihil hac fabula fabulosius, nihil isto men-"
+        "text_ocr_original": "cogatur? “Nihil hac fabula fabulosius, nihil isto men-",
+        "seq": 19
       },
       {
         "line_id": "p0029_body_l0020",
@@ -366,7 +387,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "dacio absurdius.”",
-        "text_ocr_original": "dacio absurdius.”"
+        "text_ocr_original": "dacio absurdius.”",
+        "seq": 20
       },
       {
         "line_id": "p0029_body_l0021",
@@ -381,7 +403,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "Et tamen, ne nullam solidioris materiæ partem compa-",
-        "text_ocr_original": "Et tamen, ne nullam solidioris materiæ partem compa-"
+        "text_ocr_original": "Et tamen, ne nullam solidioris materiæ partem compa-",
+        "seq": 21
       },
       {
         "line_id": "p0029_body_l0022",
@@ -396,7 +419,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "rere hic uspiam morosulus quispiam criminaretur: hære-",
-        "text_ocr_original": "rere hic uspiam morosulus quispiam criminaretur: hære-"
+        "text_ocr_original": "rere hic uspiam morosulus quispiam criminaretur: hære-",
+        "seq": 22
       },
       {
         "line_id": "p0029_body_l0023",
@@ -411,7 +435,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "seos Dei gratiam impugnantis, a Pelagio Britanno ab",
-        "text_ocr_original": "seos Dei gratiam impugnantis, a Pelagio Britanno ab"
+        "text_ocr_original": "seos Dei gratiam impugnantis, a Pelagio Britanno ab",
+        "seq": 23
       },
       {
         "line_id": "p0029_body_l0024",
@@ -426,7 +451,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "inferis primum excitatæ et Fausti Britanni novo mangonio",
-        "text_ocr_original": "inferis primum excitatæ et Fausti Britanni novo mangonio"
+        "text_ocr_original": "inferis primum excitatæ et Fausti Britanni novo mangonio",
+        "seq": 24
       },
       {
         "line_id": "p0029_body_l0025",
@@ -441,7 +467,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "denuo Christiano orbi venditatæ, historiam secundum or-",
-        "text_ocr_original": "denuo Christiano orbi venditatæ, historiam secundum or-"
+        "text_ocr_original": "denuo Christiano orbi venditatæ, historiam secundum or-",
+        "seq": 25
       },
       {
         "line_id": "p0029_body_l0026",
@@ -456,7 +483,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "dinem temporum digestam placuit interjicere. Nam “li-",
-        "text_ocr_original": "dinem temporum digestam placuit interjicere. Nam “li-"
+        "text_ocr_original": "dinem temporum digestam placuit interjicere. Nam “li-",
+        "seq": 26
       },
       {
         "line_id": "p0029_body_l0027",
@@ -471,7 +499,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "cet hæc ficus fatua toties sit præcisa, toties eradicata,",
-        "text_ocr_original": "cet hæc ficus fatua toties sit præcisa, toties eradicata,"
+        "text_ocr_original": "cet hæc ficus fatua toties sit præcisa, toties eradicata,",
+        "seq": 27
       },
       {
         "line_id": "p0029_body_l0028",
@@ -486,7 +515,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "toties combusta, incinerata et usque ad nihilum concul-",
-        "text_ocr_original": "toties combusta, incinerata et usque ad nihilum concul-"
+        "text_ocr_original": "toties combusta, incinerata et usque ad nihilum concul-",
+        "seq": 28
       },
       {
         "line_id": "p0029_body_l0029",
@@ -501,7 +531,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "cata; quam late tamen et dense adlıuc non desinit ger-",
-        "text_ocr_original": "cata; quam late tamen et dense adlıuc non desinit ger-"
+        "text_ocr_original": "cata; quam late tamen et dense adlıuc non desinit ger-",
+        "seq": 29
       },
       {
         "line_id": "p0029_body_l0030",
@@ -516,7 +547,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "minare, et sua vitulamina vitiosa (quanto subtilius solito,",
-        "text_ocr_original": "minare, et sua vitulamina vitiosa (quanto subtilius solito,"
+        "text_ocr_original": "minare, et sua vitulamina vitiosa (quanto subtilius solito,",
+        "seq": 30
       }
     ],
     "catchword": [],
@@ -533,7 +565,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "8 PRÆFATIO.",
-        "text_ocr_original": "8"
+        "text_ocr_original": "8",
+        "seq": 1
       }
     ],
     "marginalia": [
@@ -549,7 +582,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "Prudenti incredulitate nihil est mortalibus utilius. Euripid. in Helena,",
-        "text_ocr_original": "Prudenti incredulitate nihil est mortalibus utilius. Euripid. in Helena,"
+        "text_ocr_original": "Prudenti incredulitate nihil est mortalibus utilius. Euripid. in Helena,",
+        "seq": 1
       },
       {
         "line_id": "p0029_marginalia_l0002",
@@ -563,7 +597,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "ver. 1637.",
-        "text_ocr_original": "ver. 1637."
+        "text_ocr_original": "ver. 1637.",
+        "seq": 2
       },
       {
         "line_id": "p0029_marginalia_l0003",
@@ -577,7 +612,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "L. Apulei. Metamorphos. lib. 1.",
-        "text_ocr_original": "L. Apulei. Metamorphos. lib. 1."
+        "text_ocr_original": "L. Apulei. Metamorphos. lib. 1.",
+        "seq": 3
       }
     ]
   },

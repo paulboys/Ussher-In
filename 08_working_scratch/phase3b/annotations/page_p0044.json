@@ -16,7 +16,8 @@
       "source_region": "marginalia",
       "text_gold": "Martial. lib. 6. Epigram. 58.",
       "text_ocr_original": "Martial. lib. 6. Epigram. 58.",
-      "reviewer": "Paul Boys"
+      "reviewer": "Paul Boys",
+      "seq": 1
     },
     {
       "body_line_id": "p0044_body_l0014",
@@ -33,7 +34,8 @@
       "source_region": "marginalia",
       "text_gold": "Rob. Person. de convers. Ang. part. 1. cap. 1. sec. 18. Vid. Is. Pontani",
       "text_ocr_original": "Rob. Person. de convers. Ang. part. 1. cap. 1. sec. 18. Vid. Is. Pontani",
-      "reviewer": "Paul Boys"
+      "reviewer": "Paul Boys",
+      "seq": 2
     },
     {
       "body_line_id": "p0044_body_l0025",
@@ -50,7 +52,8 @@
       "source_region": "marginalia",
       "text_gold": "Martial. lib. 11. epigram. 4.",
       "text_ocr_original": "Martial. lib. 11. epigram. 4.",
-      "reviewer": "Paul Boys"
+      "reviewer": "Paul Boys",
+      "seq": 3
     },
     {
       "body_line_id": "",
@@ -67,7 +70,8 @@
       "source_region": "marginalia",
       "text_gold": "hist. Gelricæ lib. 1. pag. 72.",
       "text_ocr_original": "hist. Gelricæ lib. 1. pag. 72.",
-      "reviewer": "Paul Boys"
+      "reviewer": "Paul Boys",
+      "seq": 4
     },
     {
       "body_line_id": "",
@@ -84,7 +88,8 @@
       "source_region": "marginalia",
       "text_gold": "Et qui purpureis jam tertia nomina fastis,",
       "text_ocr_original": "Et qui purpureis jam tertia nomina fastis,",
-      "reviewer": "Paul Boys"
+      "reviewer": "Paul Boys",
+      "seq": 5
     },
     {
       "body_line_id": "",
@@ -101,7 +106,8 @@
       "source_region": "marginalia",
       "text_gold": "Iane, refers Nervæ.",
       "text_ocr_original": "Iane, refers Nervæ.",
-      "reviewer": "Paul Boys"
+      "reviewer": "Paul Boys",
+      "seq": 6
     },
     {
       "body_line_id": "",
@@ -118,7 +124,8 @@
       "source_region": "marginalia",
       "text_gold": "Trajanus vero post adoptionem, Nerva etiam dictus est: ut apud Ælianum, in",
       "text_ocr_original": "Trajanus vero post adoptionem, Nerva etiam dictus est: ut apud Ælianum, in",
-      "reviewer": "Paul Boys"
+      "reviewer": "Paul Boys",
+      "seq": 7
     },
     {
       "body_line_id": "",
@@ -135,7 +142,8 @@
       "source_region": "marginalia",
       "text_gold": "Tacticorum proœmio ad Hadrian. Imp. Ἐπεὶ δὲ τῷ Θεῷ πατρί σου Νέρουᾳ",
       "text_ocr_original": "Tacticorum proœmio ad Hadrian. Imp. Ἐπεὶ δὲ τῷ Θεῷ πατρί σου Νέρουᾳ",
-      "reviewer": "Paul Boys"
+      "reviewer": "Paul Boys",
+      "seq": 8
     },
     {
       "body_line_id": "",
@@ -152,7 +160,8 @@
       "source_region": "marginalia",
       "text_gold": "συμβαλὼν, &c.",
       "text_ocr_original": "συμβαλὼν, &c.",
-      "reviewer": "Paul Boys"
+      "reviewer": "Paul Boys",
+      "seq": 9
     }
   ],
   "meta": {
@@ -188,7 +197,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "faciat. Et quo Pudentem maritum, centurionem aut pri-",
-        "text_ocr_original": "faciat. Et quo Pudentem maritum, centurionem aut pri-"
+        "text_ocr_original": "faciat. Et quo Pudentem maritum, centurionem aut pri-",
+        "seq": 1
       },
       {
         "line_id": "p0044_body_l0002",
@@ -203,7 +213,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "mipilarem in Britannia vel Germania militantem, exulem",
-        "text_ocr_original": "mipilarem in Britannia vel Germania militantem, exulem"
+        "text_ocr_original": "mipilarem in Britannia vel Germania militantem, exulem",
+        "seq": 2
       },
       {
         "line_id": "p0044_body_l0003",
@@ -218,7 +229,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "in Scotiam, ob Christianæ pietatis professionem, extra Ro-",
-        "text_ocr_original": "in Scotiam, ob Christianæ pietatis professionem, extra Ro-"
+        "text_ocr_original": "in Scotiam, ob Christianæ pietatis professionem, extra Ro-",
+        "seq": 3
       },
       {
         "line_id": "p0044_body_l0004",
@@ -233,7 +245,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "mani imperii fines, relegatum fuisse colligit, ex illo Marti-",
-        "text_ocr_original": "mani imperii fines, relegatum fuisse colligit, ex illo Marti-"
+        "text_ocr_original": "mani imperii fines, relegatum fuisse colligit, ex illo Marti-",
+        "seq": 4
       },
       {
         "line_id": "p0044_body_l0005",
@@ -248,7 +261,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "alis carmine :",
-        "text_ocr_original": "alis carmine :"
+        "text_ocr_original": "alis carmine :",
+        "seq": 5
       },
       {
         "line_id": "p0044_body_l0006",
@@ -269,7 +283,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "Cernere Parrhasios dum te juvat, Aule, triones",
-        "text_ocr_original": "Cernere Parrhasios dum te juvat, Aule, triones"
+        "text_ocr_original": "Cernere Parrhasios dum te juvat, Aule, triones",
+        "seq": 6
       },
       {
         "line_id": "p0044_body_l0007",
@@ -284,7 +299,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "Cominus et Scythici sidera ferre poli.",
-        "text_ocr_original": "Cominus et Scythici sidera ferre poli."
+        "text_ocr_original": "Cominus et Scythici sidera ferre poli.",
+        "seq": 7
       },
       {
         "line_id": "p0044_body_l0008",
@@ -299,7 +315,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "Ubi argutissimus criticus Scotici vocabulum, pro Scythici,",
-        "text_ocr_original": "Ubi argutissimus criticus Scotici vocabulum, pro Scythici,"
+        "text_ocr_original": "Ubi argutissimus criticus Scotici vocabulum, pro Scythici,",
+        "seq": 8
       },
       {
         "line_id": "p0044_body_l0009",
@@ -314,7 +331,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "reponendum esse conjicit: oblitus, apud Claudianum,",
-        "text_ocr_original": "reponendum esse conjicit: oblitus, apud Claudianum,"
+        "text_ocr_original": "reponendum esse conjicit: oblitus, apud Claudianum,",
+        "seq": 9
       },
       {
         "line_id": "p0044_body_l0010",
@@ -329,7 +347,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "Apollinarem Sidonium ac veteres illos, primam Scotici",
-        "text_ocr_original": "Apollinarem Sidonium ac veteres illos, primam Scotici"
+        "text_ocr_original": "Apollinarem Sidonium ac veteres illos, primam Scotici",
+        "seq": 10
       },
       {
         "line_id": "p0044_body_l0011",
@@ -344,7 +363,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "nominis syllabam semper productam legi; et in antiquis",
-        "text_ocr_original": "nominis syllabam semper productam legi; et in antiquis"
+        "text_ocr_original": "nominis syllabam semper productam legi; et in antiquis",
+        "seq": 11
       },
       {
         "line_id": "p0044_body_l0012",
@@ -359,7 +379,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "manuscriptis Scottos geminata litera passim exarari con-",
-        "text_ocr_original": "manuscriptis Scottos geminata litera passim exarari con-"
+        "text_ocr_original": "manuscriptis Scottos geminata litera passim exarari con-",
+        "seq": 12
       },
       {
         "line_id": "p0044_body_l0013",
@@ -374,7 +395,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "suevisse. Neque sui dissimilis est, quum addit, Perso-",
-        "text_ocr_original": "suevisse. Neque sui dissimilis est, quum addit, Perso-"
+        "text_ocr_original": "suevisse. Neque sui dissimilis est, quum addit, Perso-",
+        "seq": 13
       },
       {
         "line_id": "p0044_body_l0014",
@@ -395,7 +417,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "nium “probare in conversione Anglicana Claudiam non",
-        "text_ocr_original": "nium “probare in conversione Anglicana Claudiam non"
+        "text_ocr_original": "nium “probare in conversione Anglicana Claudiam non",
+        "seq": 14
       },
       {
         "line_id": "p0044_body_l0015",
@@ -410,7 +433,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "potuisse esse Anglam,” quasi quisquam eam Dempsteri",
-        "text_ocr_original": "potuisse esse Anglam,” quasi quisquam eam Dempsteri"
+        "text_ocr_original": "potuisse esse Anglam,” quasi quisquam eam Dempsteri",
+        "seq": 15
       },
       {
         "line_id": "p0044_body_l0016",
@@ -425,7 +449,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "insaniret insaniam, ut Claudiæ temporibus Angliam quæ-",
-        "text_ocr_original": "insaniret insaniam, ut Claudiæ temporibus Angliam quæ-"
+        "text_ocr_original": "insaniret insaniam, ut Claudiæ temporibus Angliam quæ-",
+        "seq": 16
       },
       {
         "line_id": "p0044_body_l0017",
@@ -440,7 +465,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "reret in Britannia: aut id argumentatione sua conficere non",
-        "text_ocr_original": "reret in Britannia: aut id argumentatione sua conficere non"
+        "text_ocr_original": "reret in Britannia: aut id argumentatione sua conficere non",
+        "seq": 17
       },
       {
         "line_id": "p0044_body_l0018",
@@ -455,7 +481,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "conaretur Personius, B. Claudiam cujus Paulus meminit,",
-        "text_ocr_original": "conaretur Personius, B. Claudiam cujus Paulus meminit,"
+        "text_ocr_original": "conaretur Personius, B. Claudiam cujus Paulus meminit,",
+        "seq": 18
       },
       {
         "line_id": "p0044_body_l0019",
@@ -470,7 +497,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "non fuisse Britannam illam, cujus formæ decus Trajano",
-        "text_ocr_original": "non fuisse Britannam illam, cujus formæ decus Trajano"
+        "text_ocr_original": "non fuisse Britannam illam, cujus formæ decus Trajano",
+        "seq": 19
       },
       {
         "line_id": "p0044_body_l0020",
@@ -485,7 +513,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "imperante Martialis laudaverit; et consequenter, absque",
-        "text_ocr_original": "imperante Martialis laudaverit; et consequenter, absque"
+        "text_ocr_original": "imperante Martialis laudaverit; et consequenter, absque",
+        "seq": 20
       },
       {
         "line_id": "p0044_body_l0021",
@@ -500,7 +529,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "ullo fundamento vel Scotam constitui vel Anglam. Quan-",
-        "text_ocr_original": "ullo fundamento vel Scotam constitui vel Anglam. Quan-"
+        "text_ocr_original": "ullo fundamento vel Scotam constitui vel Anglam. Quan-",
+        "seq": 21
       },
       {
         "line_id": "p0044_body_l0022",
@@ -515,7 +545,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "quam argumentum illud, quo potissimum ille nititur, a",
-        "text_ocr_original": "quam argumentum illud, quo potissimum ille nititur, a"
+        "text_ocr_original": "quam argumentum illud, quo potissimum ille nititur, a",
+        "seq": 22
       },
       {
         "line_id": "p0044_body_l0023",
@@ -530,7 +561,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "temporis ratione deductum, non multum urgeat. Neque",
-        "text_ocr_original": "temporis ratione deductum, non multum urgeat. Neque"
+        "text_ocr_original": "temporis ratione deductum, non multum urgeat. Neque",
+        "seq": 23
       },
       {
         "line_id": "p0044_body_l0024",
@@ -545,7 +577,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "enim si in undecimo quem citavimus epigrammatum libello",
-        "text_ocr_original": "enim si in undecimo quem citavimus epigrammatum libello"
+        "text_ocr_original": "enim si in undecimo quem citavimus epigrammatum libello",
+        "seq": 24
       },
       {
         "line_id": "p0044_body_l0025",
@@ -566,7 +599,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "occurrrunt aliqua sub tertio vel Nervæ vel Trajani consu-",
-        "text_ocr_original": "occurrrunt aliqua sub tertio vel Nervæ vel Trajani consu-"
+        "text_ocr_original": "occurrrunt aliqua sub tertio vel Nervæ vel Trajani consu-",
+        "seq": 25
       },
       {
         "line_id": "p0044_body_l0026",
@@ -581,7 +615,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "latu conscripta carmina; sequetur, et reliqua omnia eodem",
-        "text_ocr_original": "latu conscripta carmina; sequetur, et reliqua omnia eodem"
+        "text_ocr_original": "latu conscripta carmina; sequetur, et reliqua omnia eodem",
+        "seq": 26
       },
       {
         "line_id": "p0044_body_l0027",
@@ -596,7 +631,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "tempore fuisse composita. Et licet sub Trajano mortem",
-        "text_ocr_original": "tempore fuisse composita. Et licet sub Trajano mortem"
+        "text_ocr_original": "tempore fuisse composita. Et licet sub Trajano mortem",
+        "seq": 27
       },
       {
         "line_id": "p0044_body_l0028",
@@ -611,7 +647,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "poeta obierit: senem tamen decessisse cogitandum est, et",
-        "text_ocr_original": "poeta obierit: senem tamen decessisse cogitandum est, et"
+        "text_ocr_original": "poeta obierit: senem tamen decessisse cogitandum est, et",
+        "seq": 28
       },
       {
         "line_id": "p0044_body_l0029",
@@ -626,7 +663,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "prius familiariter usum esse Silio Italico, secundi belli",
-        "text_ocr_original": "prius familiariter usum esse Silio Italico, secundi belli"
+        "text_ocr_original": "prius familiariter usum esse Silio Italico, secundi belli",
+        "seq": 29
       }
     ],
     "catchword": [],
@@ -643,7 +681,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "CAP. I. ANTIQUITATES. 23",
-        "text_ocr_original": "CAP. I. ANTIQUITATES. 23"
+        "text_ocr_original": "CAP. I. ANTIQUITATES. 23",
+        "seq": 1
       }
     ],
     "marginalia": [
@@ -659,7 +698,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "Martial. lib. 6. Epigram. 58.",
-        "text_ocr_original": "Martial. lib. 6. Epigram. 58."
+        "text_ocr_original": "Martial. lib. 6. Epigram. 58.",
+        "seq": 1
       },
       {
         "line_id": "p0044_marginalia_l0002",
@@ -673,7 +713,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "Rob. Person. de convers. Ang. part. 1. cap. 1. sec. 18. Vid. Is. Pontani",
-        "text_ocr_original": "Rob. Person. de convers. Ang. part. 1. cap. 1. sec. 18. Vid. Is. Pontani"
+        "text_ocr_original": "Rob. Person. de convers. Ang. part. 1. cap. 1. sec. 18. Vid. Is. Pontani",
+        "seq": 2
       },
       {
         "line_id": "p0044_marginalia_l0003",
@@ -687,7 +728,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "hist. Gelricæ lib. 1. pag. 72.",
-        "text_ocr_original": "hist. Gelricæ lib. 1. pag. 72."
+        "text_ocr_original": "hist. Gelricæ lib. 1. pag. 72.",
+        "seq": 3
       },
       {
         "line_id": "p0044_marginalia_l0004",
@@ -701,7 +743,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "Martial. lib. 11. epigram. 4.",
-        "text_ocr_original": "Martial. lib. 11. epigram. 4."
+        "text_ocr_original": "Martial. lib. 11. epigram. 4.",
+        "seq": 4
       },
       {
         "line_id": "p0044_marginalia_l0005",
@@ -715,7 +758,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "Et qui purpureis jam tertia nomina fastis,",
-        "text_ocr_original": "Et qui purpureis jam tertia nomina fastis,"
+        "text_ocr_original": "Et qui purpureis jam tertia nomina fastis,",
+        "seq": 5
       },
       {
         "line_id": "p0044_marginalia_l0006",
@@ -729,7 +773,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "Iane, refers Nervæ.",
-        "text_ocr_original": "Iane, refers Nervæ."
+        "text_ocr_original": "Iane, refers Nervæ.",
+        "seq": 6
       },
       {
         "line_id": "p0044_marginalia_l0007",
@@ -743,7 +788,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "Trajanus vero post adoptionem, Nerva etiam dictus est: ut apud Ælianum, in",
-        "text_ocr_original": "Trajanus vero post adoptionem, Nerva etiam dictus est: ut apud Ælianum, in"
+        "text_ocr_original": "Trajanus vero post adoptionem, Nerva etiam dictus est: ut apud Ælianum, in",
+        "seq": 7
       },
       {
         "line_id": "p0044_marginalia_l0008",
@@ -757,7 +803,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "Tacticorum proœmio ad Hadrian. Imp. Ἐπεὶ δὲ τῷ Θεῷ πατρί σου Νέρουᾳ",
-        "text_ocr_original": "Tacticorum proœmio ad Hadrian. Imp. Ἐπεὶ δὲ τῷ Θεῷ πατρί σου Νέρουᾳ"
+        "text_ocr_original": "Tacticorum proœmio ad Hadrian. Imp. Ἐπεὶ δὲ τῷ Θεῷ πατρί σου Νέρουᾳ",
+        "seq": 8
       },
       {
         "line_id": "p0044_marginalia_l0009",
@@ -771,7 +818,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "συμβαλὼν, &c.",
-        "text_ocr_original": "συμβαλὼν, &c."
+        "text_ocr_original": "συμβαλὼν, &c.",
+        "seq": 9
       }
     ]
   },

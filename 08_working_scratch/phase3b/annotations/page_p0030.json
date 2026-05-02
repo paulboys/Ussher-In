@@ -16,7 +16,8 @@
       "source_region": "marginalia",
       "text_gold": "Bradwardin. Præfat. in libros de causa Dei contra Pelag.",
       "text_ocr_original": "Bradwardin. Præfat. in libros de causa Dei contra Pelag.",
-      "reviewer": "Paul Boys"
+      "reviewer": "Paul Boys",
+      "seq": 1
     }
   ],
   "meta": {
@@ -52,7 +53,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "tanto periculosius) propagare,\" et Thomas Bradwardi-",
-        "text_ocr_original": "tanto periculosius) propagare,\" et Thomas Bradwardi-"
+        "text_ocr_original": "tanto periculosius) propagare,\" et Thomas Bradwardi-",
+        "seq": 1
       },
       {
         "line_id": "p0030_body_l0002",
@@ -73,7 +75,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "nus conquestus est olim, et nos hodie non sine causa con-",
-        "text_ocr_original": "nus conquestus est olim, et nos hodie non sine causa con-"
+        "text_ocr_original": "nus conquestus est olim, et nos hodie non sine causa con-",
+        "seq": 2
       },
       {
         "line_id": "p0030_body_l0003",
@@ -88,7 +91,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "querimur. Sicubi vero, vel in hoc, vel in argumento illo",
-        "text_ocr_original": "querimur. Sicubi vero, vel in hoc, vel in argumento illo"
+        "text_ocr_original": "querimur. Sicubi vero, vel in hoc, vel in argumento illo",
+        "seq": 3
       },
       {
         "line_id": "p0030_body_l0004",
@@ -103,7 +107,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "altero, aliorum expectationi minus satisfecerim: occu-",
-        "text_ocr_original": "altero, aliorum expectationi minus satisfecerim: occu-"
+        "text_ocr_original": "altero, aliorum expectationi minus satisfecerim: occu-",
+        "seq": 4
       },
       {
         "line_id": "p0030_body_l0005",
@@ -118,7 +123,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "pationes quibus indies distineor maximæ, aliquid excu-",
-        "text_ocr_original": "pationes quibus indies distineor maximæ, aliquid excu-"
+        "text_ocr_original": "pationes quibus indies distineor maximæ, aliquid excu-",
+        "seq": 5
       },
       {
         "line_id": "p0030_body_l0006",
@@ -133,7 +139,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "sationis ab æquis, ut spero, rerum æstimatoribus im-",
-        "text_ocr_original": "sationis ab æquis, ut spero, rerum æstimatoribus im-"
+        "text_ocr_original": "sationis ab æquis, ut spero, rerum æstimatoribus im-",
+        "seq": 6
       },
       {
         "line_id": "p0030_body_l0007",
@@ -148,7 +155,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "petrabunt. Dublinii, anno CIƆ IƆC XXXIX. IV. Non.",
-        "text_ocr_original": "petrabunt. Dublinii, anno CIƆ IƆC XXXIX. IV. Non."
+        "text_ocr_original": "petrabunt. Dublinii, anno CIƆ IƆC XXXIX. IV. Non.",
+        "seq": 7
       },
       {
         "line_id": "p0030_body_l0008",
@@ -163,7 +171,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "August.",
-        "text_ocr_original": "August."
+        "text_ocr_original": "August.",
+        "seq": 8
       }
     ],
     "catchword": [],
@@ -180,7 +189,8 @@
         "review_status": "locked",
         "reviewer": "Paul Boys",
         "text_gold": "PRÆFATIO. 9",
-        "text_ocr_original": "PRÆFATIO. 9"
+        "text_ocr_original": "PRÆFATIO. 9",
+        "seq": 1
       }
     ],
     "marginalia": [
@@ -196,7 +206,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "Bradwardin. Præfat. in libros de causa Dei contra Pelag.",
-        "text_ocr_original": "Bradwardin. Præfat. in libros de causa Dei contra Pelag."
+        "text_ocr_original": "Bradwardin. Præfat. in libros de causa Dei contra Pelag.",
+        "seq": 1
       }
     ]
   },

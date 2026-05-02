@@ -16,7 +16,8 @@
       "source_region": "marginalia",
       "text_gold": "Terræ habitabilis stadia percurrentem, et cursu pro fide suscepto mundi an",
       "text_ocr_original": "Terræ habitabilis stadia percurrentem, et cursu pro fide suscepto mundi an",
-      "reviewer": "Paul Boys"
+      "reviewer": "Paul Boys",
+      "seq": 1
     },
     {
       "body_line_id": "p0040_body_l0007",
@@ -33,7 +34,8 @@
       "source_region": "marginalia",
       "text_gold": "Hieron. com. in Amos, cap. 5.",
       "text_ocr_original": "Hieron. com. in Amos, cap. 5.",
-      "reviewer": "Paul Boys"
+      "reviewer": "Paul Boys",
+      "seq": 2
     },
     {
       "body_line_id": "p0040_body_l0008",
@@ -50,7 +52,8 @@
       "source_region": "marginalia",
       "text_gold": "Psal. 19. ver. 6.",
       "text_ocr_original": "Psal. 19. ver. 6.",
-      "reviewer": "Paul Boys"
+      "reviewer": "Paul Boys",
+      "seq": 3
     },
     {
       "body_line_id": "p0040_body_l0012",
@@ -67,7 +70,8 @@
       "source_region": "marginalia",
       "text_gold": "Hier. in catal. Script. eccl. in Paulo, et Hilduinus in Areopag. et Ado in",
       "text_ocr_original": "Hier. in catal. Script. eccl. in Paulo, et Hilduinus in Areopag. et Ado in",
-      "reviewer": "Paul Boys"
+      "reviewer": "Paul Boys",
+      "seq": 4
     },
     {
       "body_line_id": "p0040_body_l0013",
@@ -84,7 +88,8 @@
       "source_region": "marginalia",
       "text_gold": "2 Tim. cap. 4. ver. 16, 17.",
       "text_ocr_original": "2 Tim. cap. 4. ver. 16, 17.",
-      "reviewer": "Paul Boys"
+      "reviewer": "Paul Boys",
+      "seq": 5
     },
     {
       "body_line_id": "p0040_body_l0021",
@@ -101,7 +106,8 @@
       "source_region": "marginalia",
       "text_gold": "Theodoret. in Psal. 116.",
       "text_ocr_original": "Theodoret. in Psal. 116.",
-      "reviewer": "Paul Boys"
+      "reviewer": "Paul Boys",
+      "seq": 6
     },
     {
       "body_line_id": "p0040_body_l0023",
@@ -118,7 +124,8 @@
       "source_region": "marginalia",
       "text_gold": "libro 3. de vita Martini.",
       "text_ocr_original": "libro 3. de vita Martini.",
-      "reviewer": "Paul Boys"
+      "reviewer": "Paul Boys",
+      "seq": 7
     },
     {
       "body_line_id": "p0040_body_l0028",
@@ -135,7 +142,8 @@
       "source_region": "marginalia",
       "text_gold": "Madgeburgens. Centur. 1. lib. 2. cap. 2. Rob. Person. de 3. convers. Angliæ,",
       "text_ocr_original": "Madgeburgens. Centur. 1. lib. 2. cap. 2. Rob. Person. de 3. convers. Angliæ,",
-      "reviewer": "Paul Boys"
+      "reviewer": "Paul Boys",
+      "seq": 8
     },
     {
       "body_line_id": "",
@@ -152,7 +160,8 @@
       "source_region": "marginalia",
       "text_gold": "gustias demonstrantem. Basil. Seleuc. orat. 2. (sive de Adamo I.)",
       "text_ocr_original": "gustias demonstrantem. Basil. Seleuc. orat. 2. (sive de Adamo I.)",
-      "reviewer": "Paul Boys"
+      "reviewer": "Paul Boys",
+      "seq": 9
     },
     {
       "body_line_id": "",
@@ -169,7 +178,8 @@
       "source_region": "marginalia",
       "text_gold": "libello de festiv. apost.",
       "text_ocr_original": "libello de festiv. apost.",
-      "reviewer": "Paul Boys"
+      "reviewer": "Paul Boys",
+      "seq": 10
     },
     {
       "body_line_id": "",
@@ -186,7 +196,8 @@
       "source_region": "marginalia",
       "text_gold": "part. 1. cap. 1. sec. 22. Jo. Pits. tom. 1. relat. Anglic. pag. 11.",
       "text_ocr_original": "part. 1. cap. 1. sec. 22. Jo. Pits. tom. 1. relat. Anglic. pag. 11.",
-      "reviewer": "Paul Boys"
+      "reviewer": "Paul Boys",
+      "seq": 11
     }
   ],
   "meta": {
@@ -222,7 +233,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "byteros et diaconos ordinasset, XII. anno Cæsaris Neronis",
-        "text_ocr_original": "byteros et diaconos ordinasset, XII. anno Cæsaris Neronis"
+        "text_ocr_original": "byteros et diaconos ordinasset, XII. anno Cæsaris Neronis",
+        "seq": 1
       },
       {
         "line_id": "p0040_body_l0002",
@@ -237,7 +249,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "rursus Romam reversam esse.”",
-        "text_ocr_original": "rursus Romam reversam esse.”"
+        "text_ocr_original": "rursus Romam reversam esse.”",
+        "seq": 2
       },
       {
         "line_id": "p0040_body_l0003",
@@ -258,7 +271,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "S. PAULUM doctorem Gentium τὸν τὴν οἰκουμένην στα-",
-        "text_ocr_original": "S. PAULUM doctorem Gentium τὸν τὴν οἰκουμένην στα-"
+        "text_ocr_original": "S. PAULUM doctorem Gentium τὸν τὴν οἰκουμένην στα-",
+        "seq": 3
       },
       {
         "line_id": "p0040_body_l0004",
@@ -273,7 +287,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "δεύσαντα, καὶ τῷ περὶ πίστεως δρόμῳ τὸν κόσμον μικρὸν",
-        "text_ocr_original": "δεύσαντα, καὶ τῷ περὶ πίστεως δρόμῳ τὸν κόσμον μικρὸν"
+        "text_ocr_original": "δεύσαντα, καὶ τῷ περὶ πίστεως δρόμῳ τὸν κόσμον μικρὸν",
+        "seq": 4
       },
       {
         "line_id": "p0040_body_l0005",
@@ -288,7 +303,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "ἀποφήναντα, (ut de eo loquitur Basilius Seleuciensis)",
-        "text_ocr_original": "ἀποφήναντα, (ut de eo loquitur Basilius Seleuciensis)"
+        "text_ocr_original": "ἀποφήναντα, (ut de eo loquitur Basilius Seleuciensis)",
+        "seq": 5
       },
       {
         "line_id": "p0040_body_l0006",
@@ -303,7 +319,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "“ ab oceano usque ad oceanum cucurrisse,” affirmat Hie-",
-        "text_ocr_original": "“ ab oceano usque ad oceanum cucurrisse,” affirmat Hie-"
+        "text_ocr_original": "“ ab oceano usque ad oceanum cucurrisse,” affirmat Hie-",
+        "seq": 6
       },
       {
         "line_id": "p0040_body_l0007",
@@ -324,7 +341,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "ronymus: “ imitantem Dominum suum et solem justitiæ,",
-        "text_ocr_original": "ronymus: “ imitantem Dominum suum et solem justitiæ,"
+        "text_ocr_original": "ronymus: “ imitantem Dominum suum et solem justitiæ,",
+        "seq": 7
       },
       {
         "line_id": "p0040_body_l0008",
@@ -345,7 +363,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "de quo legimus; A summo cælo egressio ejus, et occursus",
-        "text_ocr_original": "de quo legimus; A summo cælo egressio ejus, et occursus"
+        "text_ocr_original": "de quo legimus; A summo cælo egressio ejus, et occursus",
+        "seq": 8
       },
       {
         "line_id": "p0040_body_l0009",
@@ -360,7 +379,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "ejus, usque ad summum ejus, ut ante eum terra deficeret",
-        "text_ocr_original": "ejus, usque ad summum ejus, ut ante eum terra deficeret"
+        "text_ocr_original": "ejus, usque ad summum ejus, ut ante eum terra deficeret",
+        "seq": 9
       },
       {
         "line_id": "p0040_body_l0010",
@@ -375,7 +395,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "quam studium prædicandi:” et post primam apologiam,",
-        "text_ocr_original": "quam studium prædicandi:” et post primam apologiam,"
+        "text_ocr_original": "quam studium prædicandi:” et post primam apologiam,",
+        "seq": 10
       },
       {
         "line_id": "p0040_body_l0011",
@@ -390,7 +411,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "cujus ipse in posteriore ad Timotheum epistola meminit,",
-        "text_ocr_original": "cujus ipse in posteriore ad Timotheum epistola meminit,"
+        "text_ocr_original": "cujus ipse in posteriore ad Timotheum epistola meminit,",
+        "seq": 11
       },
       {
         "line_id": "p0040_body_l0012",
@@ -411,7 +433,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "a Nerone dimissum, evangelium Christi in occidentis",
-        "text_ocr_original": "a Nerone dimissum, evangelium Christi in occidentis"
+        "text_ocr_original": "a Nerone dimissum, evangelium Christi in occidentis",
+        "seq": 12
       },
       {
         "line_id": "p0040_body_l0013",
@@ -432,7 +455,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "quoque partibus prædicavisse. Verba apostoli sunt : “ In",
-        "text_ocr_original": "quoque partibus prædicavisse. Verba apostoli sunt : “ In"
+        "text_ocr_original": "quoque partibus prædicavisse. Verba apostoli sunt : “ In",
+        "seq": 13
       },
       {
         "line_id": "p0040_body_l0014",
@@ -447,7 +471,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "prima mea defensione nemo mihi adfuit; sed omnes me de-",
-        "text_ocr_original": "prima mea defensione nemo mihi adfuit; sed omnes me de-"
+        "text_ocr_original": "prima mea defensione nemo mihi adfuit; sed omnes me de-",
+        "seq": 14
       },
       {
         "line_id": "p0040_body_l0015",
@@ -462,7 +487,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "reliqueruut. Non illis imputetur. Dominus autem mihi",
-        "text_ocr_original": "reliqueruut. Non illis imputetur. Dominus autem mihi"
+        "text_ocr_original": "reliqueruut. Non illis imputetur. Dominus autem mihi",
+        "seq": 15
       },
       {
         "line_id": "p0040_body_l0016",
@@ -477,7 +503,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "adstitit, et confortavit; ut per me prædicatio impleatur,",
-        "text_ocr_original": "adstitit, et confortavit; ut per me prædicatio impleatur,"
+        "text_ocr_original": "adstitit, et confortavit; ut per me prædicatio impleatur,",
+        "seq": 16
       },
       {
         "line_id": "p0040_body_l0017",
@@ -492,7 +519,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "et audiant omnes gentes.” In quem locum Theodoretus:",
-        "text_ocr_original": "et audiant omnes gentes.” In quem locum Theodoretus:"
+        "text_ocr_original": "et audiant omnes gentes.” In quem locum Theodoretus:",
+        "seq": 17
       },
       {
         "line_id": "p0040_body_l0018",
@@ -507,7 +535,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "“ Quando,” inquit, “ appellatione usus, Romam a Festo",
-        "text_ocr_original": "“ Quando,” inquit, “ appellatione usus, Romam a Festo"
+        "text_ocr_original": "“ Quando,” inquit, “ appellatione usus, Romam a Festo",
+        "seq": 18
       },
       {
         "line_id": "p0040_body_l0019",
@@ -522,7 +551,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "missus est, defensione audita fuit absolutus, et in Hispa-",
-        "text_ocr_original": "missus est, defensione audita fuit absolutus, et in Hispa-"
+        "text_ocr_original": "missus est, defensione audita fuit absolutus, et in Hispa-",
+        "seq": 19
       },
       {
         "line_id": "p0040_body_l0020",
@@ -537,7 +567,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "niam profectus est, et ad alias gentes excurrens, eis doc-",
-        "text_ocr_original": "niam profectus est, et ad alias gentes excurrens, eis doc-"
+        "text_ocr_original": "niam profectus est, et ad alias gentes excurrens, eis doc-",
+        "seq": 20
       },
       {
         "line_id": "p0040_body_l0021",
@@ -558,7 +589,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "trinæ lucem attulit;” atque, ut alibi addit idem, “ Insulis",
-        "text_ocr_original": "trinæ lucem attulit;” atque, ut alibi addit idem, “ Insulis"
+        "text_ocr_original": "trinæ lucem attulit;” atque, ut alibi addit idem, “ Insulis",
+        "seq": 21
       },
       {
         "line_id": "p0040_body_l0022",
@@ -573,7 +605,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "quæ in mari jacent, utilitatem attulit.” Unde de eo Ve-",
-        "text_ocr_original": "quæ in mari jacent, utilitatem attulit.” Unde de eo Ve-"
+        "text_ocr_original": "quæ in mari jacent, utilitatem attulit.” Unde de eo Ve-",
+        "seq": 22
       },
       {
         "line_id": "p0040_body_l0023",
@@ -594,7 +627,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "nantius Fortunatus :",
-        "text_ocr_original": "nantius Fortunatus :"
+        "text_ocr_original": "nantius Fortunatus :",
+        "seq": 23
       },
       {
         "line_id": "p0040_body_l0024",
@@ -609,7 +643,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "Transiit Oceanum, vel qua facit insula portum,",
-        "text_ocr_original": "Transiit Oceanum, vel qua facit insula portum,"
+        "text_ocr_original": "Transiit Oceanum, vel qua facit insula portum,",
+        "seq": 24
       },
       {
         "line_id": "p0040_body_l0025",
@@ -624,7 +659,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "Quasque Britannus habet terras, quasque ultima Thule.",
-        "text_ocr_original": "Quasque Britannus habet terras, quasque ultima Thule."
+        "text_ocr_original": "Quasque Britannus habet terras, quasque ultima Thule.",
+        "seq": 25
       },
       {
         "line_id": "p0040_body_l0026",
@@ -639,7 +675,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "Et Sophronius patriarcha Hierosolymitanus, in sermone",
-        "text_ocr_original": "Et Sophronius patriarcha Hierosolymitanus, in sermone"
+        "text_ocr_original": "Et Sophronius patriarcha Hierosolymitanus, in sermone",
+        "seq": 26
       },
       {
         "line_id": "p0040_body_l0027",
@@ -654,7 +691,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "de natali apostolorum, Paulum Hispanis et Britannis",
-        "text_ocr_original": "de natali apostolorum, Paulum Hispanis et Britannis"
+        "text_ocr_original": "de natali apostolorum, Paulum Hispanis et Britannis",
+        "seq": 27
       },
       {
         "line_id": "p0040_body_l0028",
@@ -675,7 +713,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "evangelium prædicasse significat: quod tamen ex aliorum",
-        "text_ocr_original": "evangelium prædicasse significat: quod tamen ex aliorum"
+        "text_ocr_original": "evangelium prædicasse significat: quod tamen ex aliorum",
+        "seq": 28
       }
     ],
     "catchword": [
@@ -691,7 +730,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "C 2",
-        "text_ocr_original": "C 2"
+        "text_ocr_original": "C 2",
+        "seq": 1
       }
     ],
     "header": [
@@ -707,7 +747,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "CAP. I.",
-        "text_ocr_original": "CAP. I."
+        "text_ocr_original": "CAP. I.",
+        "seq": 1
       },
       {
         "line_id": "p0040_header_l0002",
@@ -721,7 +762,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "ANTIQUITATES.",
-        "text_ocr_original": "ANTIQUITATES."
+        "text_ocr_original": "ANTIQUITATES.",
+        "seq": 2
       },
       {
         "line_id": "p0040_header_l0003",
@@ -735,7 +777,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "19",
-        "text_ocr_original": "19"
+        "text_ocr_original": "19",
+        "seq": 3
       }
     ],
     "marginalia": [
@@ -751,7 +794,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "Terræ habitabilis stadia percurrentem, et cursu pro fide suscepto mundi an",
-        "text_ocr_original": "Terræ habitabilis stadia percurrentem, et cursu pro fide suscepto mundi an"
+        "text_ocr_original": "Terræ habitabilis stadia percurrentem, et cursu pro fide suscepto mundi an",
+        "seq": 1
       },
       {
         "line_id": "p0040_marginalia_l0002",
@@ -765,7 +809,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "gustias demonstrantem. Basil. Seleuc. orat. 2. (sive de Adamo I.)",
-        "text_ocr_original": "gustias demonstrantem. Basil. Seleuc. orat. 2. (sive de Adamo I.)"
+        "text_ocr_original": "gustias demonstrantem. Basil. Seleuc. orat. 2. (sive de Adamo I.)",
+        "seq": 2
       },
       {
         "line_id": "p0040_marginalia_l0003",
@@ -779,7 +824,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "Hieron. com. in Amos, cap. 5.",
-        "text_ocr_original": "Hieron. com. in Amos, cap. 5."
+        "text_ocr_original": "Hieron. com. in Amos, cap. 5.",
+        "seq": 3
       },
       {
         "line_id": "p0040_marginalia_l0004",
@@ -793,7 +839,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "Psal. 19. ver. 6.",
-        "text_ocr_original": "Psal. 19. ver. 6."
+        "text_ocr_original": "Psal. 19. ver. 6.",
+        "seq": 4
       },
       {
         "line_id": "p0040_marginalia_l0005",
@@ -807,7 +854,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "Hier. in catal. Script. eccl. in Paulo, et Hilduinus in Areopag. et Ado in",
-        "text_ocr_original": "Hier. in catal. Script. eccl. in Paulo, et Hilduinus in Areopag. et Ado in"
+        "text_ocr_original": "Hier. in catal. Script. eccl. in Paulo, et Hilduinus in Areopag. et Ado in",
+        "seq": 5
       },
       {
         "line_id": "p0040_marginalia_l0006",
@@ -821,7 +869,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "libello de festiv. apost.",
-        "text_ocr_original": "libello de festiv. apost."
+        "text_ocr_original": "libello de festiv. apost.",
+        "seq": 6
       },
       {
         "line_id": "p0040_marginalia_l0007",
@@ -835,7 +884,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "2 Tim. cap. 4. ver. 16, 17.",
-        "text_ocr_original": "2 Tim. cap. 4. ver. 16, 17."
+        "text_ocr_original": "2 Tim. cap. 4. ver. 16, 17.",
+        "seq": 7
       },
       {
         "line_id": "p0040_marginalia_l0008",
@@ -849,7 +899,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "Theodoret. in Psal. 116.",
-        "text_ocr_original": "Theodoret. in Psal. 116."
+        "text_ocr_original": "Theodoret. in Psal. 116.",
+        "seq": 8
       },
       {
         "line_id": "p0040_marginalia_l0009",
@@ -863,7 +914,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "libro 3. de vita Martini.",
-        "text_ocr_original": "libro 3. de vita Martini."
+        "text_ocr_original": "libro 3. de vita Martini.",
+        "seq": 9
       },
       {
         "line_id": "p0040_marginalia_l0010",
@@ -877,7 +929,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "Madgeburgens. Centur. 1. lib. 2. cap. 2. Rob. Person. de 3. convers. Angliæ,",
-        "text_ocr_original": "Madgeburgens. Centur. 1. lib. 2. cap. 2. Rob. Person. de 3. convers. Angliæ,"
+        "text_ocr_original": "Madgeburgens. Centur. 1. lib. 2. cap. 2. Rob. Person. de 3. convers. Angliæ,",
+        "seq": 10
       },
       {
         "line_id": "p0040_marginalia_l0011",
@@ -891,7 +944,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "part. 1. cap. 1. sec. 22. Jo. Pits. tom. 1. relat. Anglic. pag. 11.",
-        "text_ocr_original": "part. 1. cap. 1. sec. 22. Jo. Pits. tom. 1. relat. Anglic. pag. 11."
+        "text_ocr_original": "part. 1. cap. 1. sec. 22. Jo. Pits. tom. 1. relat. Anglic. pag. 11.",
+        "seq": 11
       }
     ]
   },

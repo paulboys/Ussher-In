@@ -16,7 +16,8 @@
       "source_region": "marginalia",
       "text_gold": "Martial. lib. 11. epigram. 53.           ^k Id. lib. 4. epigram. 13.",
       "text_ocr_original": "Martial. lib. 11. epigram. 53.           ^k Id. lib. 4. epigram. 13.",
-      "reviewer": "Paul Boys"
+      "reviewer": "Paul Boys",
+      "seq": 1
     },
     {
       "body_line_id": "p0043_body_l0024",
@@ -33,7 +34,8 @@
       "source_region": "marginalia",
       "text_gold": "Dempster. Historiæ ecclesiasticæ (quam vocat) lib. 3. num. 102.",
       "text_ocr_original": "Dempster. Historiæ ecclesiasticæ (quam vocat) lib. 3. num. 102.",
-      "reviewer": "Paul Boys"
+      "reviewer": "Paul Boys",
+      "seq": 2
     },
     {
       "body_line_id": "p0043_body_l0030",
@@ -50,7 +52,8 @@
       "source_region": "marginalia",
       "text_gold": "lib. de conjug. præcept. ad ﬁnem.",
       "text_ocr_original": "lib. de conjug. præcept. ad ﬁnem.",
-      "reviewer": "Paul Boys"
+      "reviewer": "Paul Boys",
+      "seq": 3
     },
     {
       "body_line_id": "p0043_body_l0032",
@@ -67,7 +70,8 @@
       "source_region": "marginalia",
       "text_gold": "Sidon. Apollinar. in Propemptico ad libellum. Carm. 24.",
       "text_ocr_original": "Sidon. Apollinar. in Propemptico ad libellum. Carm. 24.",
-      "reviewer": "Paul Boys"
+      "reviewer": "Paul Boys",
+      "seq": 4
     }
   ],
   "meta": {
@@ -103,7 +107,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "tificalis asserit. Nostri Claudiam natione Britannam, et",
-        "text_ocr_original": "tificalis asserit. Nostri Claudiam natione Britannam, et"
+        "text_ocr_original": "tificalis asserit. Nostri Claudiam natione Britannam, et",
+        "seq": 1
       },
       {
         "line_id": "p0043_body_l0002",
@@ -124,7 +129,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "Pudentis uxorem fuisse, ex Martiale poeta colligunt: qui",
-        "text_ocr_original": "Pudentis uxorem fuisse, ex Martiale poeta colligunt: qui"
+        "text_ocr_original": "Pudentis uxorem fuisse, ex Martiale poeta colligunt: qui",
+        "seq": 2
       },
       {
         "line_id": "p0043_body_l0003",
@@ -139,7 +145,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "de Claudia ita cecinit:",
-        "text_ocr_original": "de Claudia ita cecinit:"
+        "text_ocr_original": "de Claudia ita cecinit:",
+        "seq": 3
       },
       {
         "line_id": "p0043_body_l0004",
@@ -154,7 +161,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "Claudia cœruleis cum sit Ruﬃna Britannis",
-        "text_ocr_original": "Claudia cœruleis cum sit Ruﬃna Britannis"
+        "text_ocr_original": "Claudia cœruleis cum sit Ruﬃna Britannis",
+        "seq": 4
       },
       {
         "line_id": "p0043_body_l0005",
@@ -169,7 +177,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "Edita, cur Latiæ pectora plebis habet?",
-        "text_ocr_original": "Edita, cur Latiæ pectora plebis habet?"
+        "text_ocr_original": "Edita, cur Latiæ pectora plebis habet?",
+        "seq": 5
       },
       {
         "line_id": "p0043_body_l0006",
@@ -184,7 +193,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "Quale decus formæ? Romanam credere matres",
-        "text_ocr_original": "Quale decus formæ? Romanam credere matres"
+        "text_ocr_original": "Quale decus formæ? Romanam credere matres",
+        "seq": 6
       },
       {
         "line_id": "p0043_body_l0007",
@@ -199,7 +209,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "Italides possunt, Atthides esse suam.",
-        "text_ocr_original": "Italides possunt, Atthides esse suam."
+        "text_ocr_original": "Italides possunt, Atthides esse suam.",
+        "seq": 7
       },
       {
         "line_id": "p0043_body_l0008",
@@ -214,7 +225,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "Dii bene, quod sancto peperit fœcunda marito",
-        "text_ocr_original": "Dii bene, quod sancto peperit fœcunda marito"
+        "text_ocr_original": "Dii bene, quod sancto peperit fœcunda marito",
+        "seq": 8
       },
       {
         "line_id": "p0043_body_l0009",
@@ -229,7 +241,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "Quot sperat generos, quotque puella nurus.",
-        "text_ocr_original": "Quot sperat generos, quotque puella nurus."
+        "text_ocr_original": "Quot sperat generos, quotque puella nurus.",
+        "seq": 9
       },
       {
         "line_id": "p0043_body_l0010",
@@ -244,7 +257,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "Sic placeat superis, ut conjuge gaudeat uno,",
-        "text_ocr_original": "Sic placeat superis, ut conjuge gaudeat uno,"
+        "text_ocr_original": "Sic placeat superis, ut conjuge gaudeat uno,",
+        "seq": 10
       },
       {
         "line_id": "p0043_body_l0011",
@@ -259,7 +273,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "Et semper natis gaudeat illa tribus.",
-        "text_ocr_original": "Et semper natis gaudeat illa tribus."
+        "text_ocr_original": "Et semper natis gaudeat illa tribus.",
+        "seq": 11
       },
       {
         "line_id": "p0043_body_l0012",
@@ -274,7 +289,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "Atque iterum de nuptiis Pudentis et Claudiæ:",
-        "text_ocr_original": "Atque iterum de nuptiis Pudentis et Claudiæ:"
+        "text_ocr_original": "Atque iterum de nuptiis Pudentis et Claudiæ:",
+        "seq": 12
       },
       {
         "line_id": "p0043_body_l0013",
@@ -289,7 +305,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "Claudia, Rufe, meo nubit peregrina Pudenti;",
-        "text_ocr_original": "Claudia, Rufe, meo nubit peregrina Pudenti;"
+        "text_ocr_original": "Claudia, Rufe, meo nubit peregrina Pudenti;",
+        "seq": 13
       },
       {
         "line_id": "p0043_body_l0014",
@@ -304,7 +321,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "Macte esto tædis, o Hymenæe, tuis.",
-        "text_ocr_original": "Macte esto tædis, o Hymenæe, tuis."
+        "text_ocr_original": "Macte esto tædis, o Hymenæe, tuis.",
+        "seq": 14
       },
       {
         "line_id": "p0043_body_l0015",
@@ -319,7 +337,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "Tam bene rara suo miscentur cinnama nardo,",
-        "text_ocr_original": "Tam bene rara suo miscentur cinnama nardo,"
+        "text_ocr_original": "Tam bene rara suo miscentur cinnama nardo,",
+        "seq": 15
       },
       {
         "line_id": "p0043_body_l0016",
@@ -334,7 +353,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "Massica Theseis tam bene vina favis.",
-        "text_ocr_original": "Massica Theseis tam bene vina favis."
+        "text_ocr_original": "Massica Theseis tam bene vina favis.",
+        "seq": 16
       },
       {
         "line_id": "p0043_body_l0017",
@@ -349,7 +369,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "Nec melius teneris junguntur vitibus ulmi,",
-        "text_ocr_original": "Nec melius teneris junguntur vitibus ulmi,"
+        "text_ocr_original": "Nec melius teneris junguntur vitibus ulmi,",
+        "seq": 17
       },
       {
         "line_id": "p0043_body_l0018",
@@ -364,7 +385,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "Nec plus lotos aquas, littora myrtus amat.",
-        "text_ocr_original": "Nec plus lotos aquas, littora myrtus amat."
+        "text_ocr_original": "Nec plus lotos aquas, littora myrtus amat.",
+        "seq": 18
       },
       {
         "line_id": "p0043_body_l0019",
@@ -379,7 +401,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "Candida perpetuo reside Concordia lecto,",
-        "text_ocr_original": "Candida perpetuo reside Concordia lecto,"
+        "text_ocr_original": "Candida perpetuo reside Concordia lecto,",
+        "seq": 19
       },
       {
         "line_id": "p0043_body_l0020",
@@ -394,7 +417,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "Tamque pari semper sit Venus æqua jugo.",
-        "text_ocr_original": "Tamque pari semper sit Venus æqua jugo."
+        "text_ocr_original": "Tamque pari semper sit Venus æqua jugo.",
+        "seq": 20
       },
       {
         "line_id": "p0043_body_l0021",
@@ -409,7 +433,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "Diligat ipsa senem quondam: sed et illa marito",
-        "text_ocr_original": "Diligat ipsa senem quondam: sed et illa marito"
+        "text_ocr_original": "Diligat ipsa senem quondam: sed et illa marito",
+        "seq": 21
       },
       {
         "line_id": "p0043_body_l0022",
@@ -424,7 +449,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "Tunc quoque cum fuerit, non videatur anus.",
-        "text_ocr_original": "Tunc quoque cum fuerit, non videatur anus."
+        "text_ocr_original": "Tunc quoque cum fuerit, non videatur anus.",
+        "seq": 22
       },
       {
         "line_id": "p0043_body_l0023",
@@ -439,7 +465,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "Quod epigramma cum ad Rufum de Pudente scriptum",
-        "text_ocr_original": "Quod epigramma cum ad Rufum de Pudente scriptum"
+        "text_ocr_original": "Quod epigramma cum ad Rufum de Pudente scriptum",
+        "seq": 23
       },
       {
         "line_id": "p0043_body_l0024",
@@ -460,7 +487,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "fuerit: Thomas Dempsterus, homo multæ lectionis, sed",
-        "text_ocr_original": "fuerit: Thomas Dempsterus, homo multæ lectionis, sed"
+        "text_ocr_original": "fuerit: Thomas Dempsterus, homo multæ lectionis, sed",
+        "seq": 24
       },
       {
         "line_id": "p0043_body_l0025",
@@ -475,7 +503,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "nullius plane judicii, ipsi Pudenti nomen etiam Rufi appo-",
-        "text_ocr_original": "nullius plane judicii, ipsi Pudenti nomen etiam Rufi appo-"
+        "text_ocr_original": "nullius plane judicii, ipsi Pudenti nomen etiam Rufi appo-",
+        "seq": 25
       },
       {
         "line_id": "p0043_body_l0026",
@@ -490,7 +519,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "suit, ut inde fortasse disceremus, quare uxor illius “Clau-",
-        "text_ocr_original": "suit, ut inde fortasse disceremus, quare uxor illius “Clau-"
+        "text_ocr_original": "suit, ut inde fortasse disceremus, quare uxor illius “Clau-",
+        "seq": 26
       },
       {
         "line_id": "p0043_body_l0027",
@@ -505,7 +535,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "dia Romano cognomento assumpto Ruﬁna dicta” fuerit:",
-        "text_ocr_original": "dia Romano cognomento assumpto Ruﬁna dicta” fuerit:"
+        "text_ocr_original": "dia Romano cognomento assumpto Ruﬁna dicta” fuerit:",
+        "seq": 27
       },
       {
         "line_id": "p0043_body_l0028",
@@ -520,7 +551,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "pari nempe acumine, quo eandem Claudiam “inter ma-",
-        "text_ocr_original": "pari nempe acumine, quo eandem Claudiam “inter ma-"
+        "text_ocr_original": "pari nempe acumine, quo eandem Claudiam “inter ma-",
+        "seq": 28
       },
       {
         "line_id": "p0043_body_l0029",
@@ -535,7 +567,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "tronas laude continentiæ clarissimas numerare Plutar-",
-        "text_ocr_original": "tronas laude continentiæ clarissimas numerare Plutar-"
+        "text_ocr_original": "tronas laude continentiæ clarissimas numerare Plutar-",
+        "seq": 29
       },
       {
         "line_id": "p0043_body_l0030",
@@ -556,7 +589,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "chum” idem asserit: cum is Κλαυδίας τῆς παλαιᾶς Clau-",
-        "text_ocr_original": "chum” idem asserit: cum is Κλαυδίας τῆς παλαιᾶς Clau-"
+        "text_ocr_original": "chum” idem asserit: cum is Κλαυδίας τῆς παλαιᾶς Clau-",
+        "seq": 30
       },
       {
         "line_id": "p0043_body_l0031",
@@ -571,7 +605,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "diæ illius priscæ, Vestalis utique illius nominatissimæ,",
-        "text_ocr_original": "diæ illius priscæ, Vestalis utique illius nominatissimæ,"
+        "text_ocr_original": "diæ illius priscæ, Vestalis utique illius nominatissimæ,",
+        "seq": 31
       },
       {
         "line_id": "p0043_body_l0032",
@@ -592,7 +627,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "Quæ contra satis Albulam tumentem",
-        "text_ocr_original": "Quæ contra satis Albulam tumentem"
+        "text_ocr_original": "Quæ contra satis Albulam tumentem",
+        "seq": 32
       },
       {
         "line_id": "p0043_body_l0033",
@@ -607,7 +643,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "Duxit virgineo ratem capillo:",
-        "text_ocr_original": "Duxit virgineo ratem capillo:"
+        "text_ocr_original": "Duxit virgineo ratem capillo:",
+        "seq": 33
       },
       {
         "line_id": "p0043_body_l0034",
@@ -622,7 +659,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "Non hujus, quæ eodem cum illo vixit seculo, mentionem",
-        "text_ocr_original": "Non hujus, quæ eodem cum illo vixit seculo, mentionem"
+        "text_ocr_original": "Non hujus, quæ eodem cum illo vixit seculo, mentionem",
+        "seq": 34
       }
     ],
     "catchword": [],
@@ -639,7 +677,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "22 BRITANNICARUM ECCLESIARUM CAP. I.",
-        "text_ocr_original": "22 BRITANNICARUM ECCLESIARUM CAP. I."
+        "text_ocr_original": "22 BRITANNICARUM ECCLESIARUM CAP. I.",
+        "seq": 1
       }
     ],
     "marginalia": [
@@ -655,7 +694,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "Martial. lib. 11. epigram. 53.           ^k Id. lib. 4. epigram. 13.",
-        "text_ocr_original": "Martial. lib. 11. epigram. 53.           ^k Id. lib. 4. epigram. 13."
+        "text_ocr_original": "Martial. lib. 11. epigram. 53.           ^k Id. lib. 4. epigram. 13.",
+        "seq": 1
       },
       {
         "line_id": "p0043_marginalia_l0002",
@@ -669,7 +709,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "Dempster. Historiæ ecclesiasticæ (quam vocat) lib. 3. num. 102.",
-        "text_ocr_original": "Dempster. Historiæ ecclesiasticæ (quam vocat) lib. 3. num. 102."
+        "text_ocr_original": "Dempster. Historiæ ecclesiasticæ (quam vocat) lib. 3. num. 102.",
+        "seq": 2
       },
       {
         "line_id": "p0043_marginalia_l0003",
@@ -683,7 +724,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "lib. de conjug. præcept. ad ﬁnem.",
-        "text_ocr_original": "lib. de conjug. præcept. ad ﬁnem."
+        "text_ocr_original": "lib. de conjug. præcept. ad ﬁnem.",
+        "seq": 3
       },
       {
         "line_id": "p0043_marginalia_l0004",
@@ -697,7 +739,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "text_gold": "Sidon. Apollinar. in Propemptico ad libellum. Carm. 24.",
-        "text_ocr_original": "Sidon. Apollinar. in Propemptico ad libellum. Carm. 24."
+        "text_ocr_original": "Sidon. Apollinar. in Propemptico ad libellum. Carm. 24.",
+        "seq": 4
       }
     ]
   },
