@@ -44,7 +44,19 @@ Latin lexical priorities (17th-century ecclesiastical/humanist usage):
   to choose the correct sense.
 - Preserve early-modern orthography and ligatures (æ, œ, long-s) when
   echoing source tokens; render them in modernized form only in the
-  English translation."""
+  English translation.
+- Voice: render Latin active verbs in English active voice; do not
+  silently passivize (e.g., 'lateat' = 'lies hidden', not 'is hidden').
+  Switch to passive only when English idiom genuinely requires it.
+- Polysemous nouns: for high-polysemy words (res, gens, lex, sermo,
+  ratio, manus, ius, virtus, etc.), pick the sense the surrounding
+  clause requires rather than the most literal or most common gloss.
+  Examples: 'res' in a military context renders as 'campaign' or
+  'operation', not 'thing' or 'action'; 'gentes' in an ecclesiastical
+  context renders as 'peoples', not 'nations'.
+- Modern English target: avoid archaisms (vouchsafed, thee, thou,
+  verily, whereunto, whilst, betwixt). Prefer plain modern equivalents
+  (granted, you, truly, to which, while, between)."""
 
 LEXICON_GREEK_HINTS = """\
 Greek lexical priorities (Patristic-era quotations are dominant):
@@ -59,7 +71,12 @@ Greek lexical priorities (Patristic-era quotations are dominant):
 - Preserve polytonic accents, breathings, and iota subscript exactly
   as printed when echoing the source; transliterate only inside notes
   if needed.
-- Do NOT quote or paraphrase lexicon entries verbatim."""
+- Do NOT quote or paraphrase lexicon entries verbatim.
+- Patristic theological vocabulary: in evangelical/ecclesiastical
+  contexts, νόμος and ἐντολή typically mean 'teaching' or 'precept',
+  not 'statute' or 'law' in the legal sense (e.g., νόμος εὐαγγελικός
+  = 'the teaching of the Gospel', not 'the evangelical law'). Prefer
+  the theological sense unless a legal/Mosaic sense is explicit."""
 
 # Detect Greek script presence so we can omit Greek hints when irrelevant.
 _GREEK_RANGE = re.compile(r"[\u0370-\u03ff\u1f00-\u1fff]")
@@ -92,8 +109,10 @@ Rules:
 - Include exactly one entry per requested unit (body line_id and
   footnote_id provided in the input). Do not invent IDs.
 - 'english' MUST be a modern English translation (not a paraphrase
-  back into Latin/Greek). Preserve proper nouns; transliterate Greek
-  proper nouns conventionally.
+  back into Latin/Greek). For proper nouns, follow the proper-noun
+  normalization rule given above (conventional modern English form
+  for well-known names; source spelling for obscure ones).
+  Transliterate Greek proper nouns conventionally.
 - If a unit cannot be translated confidently, return your best
   attempt, set uncertain=true, and explain the issue in 'notes'.
 - Do not collapse footnote markers into body text; the body line's
@@ -288,6 +307,35 @@ def build_translation_prompt(
         "this sentinel and never appears as ordinary punctuation."
     )
     sections.append(
+        "Proper-noun normalization: render well-known historical and "
+        "ethnographic proper nouns in their conventional modern English "
+        "form, not the source spelling. Examples: 'Boadicia' -> "
+        "'Boudica'; 'Cæsariis' -> 'Caesar'; 'Antiocheni' -> 'of "
+        "Antioch'; 'Theodoretus' -> 'Theodoret'; 'Æthiopas' -> "
+        "'Ethiopians'. Less-familiar names (obscure persons, minor "
+        "places) may keep the source spelling; when uncertain, keep "
+        "the source spelling and flag the choice in 'notes'."
+    )
+    sections.append(
+        "Book and treatise titles: when the source names a Latin or "
+        "Greek work — typically signposted by 'libro [N]', 'liber X', "
+        "'in [topic] book', or a Greek genitive title (e.g. "
+        "'Ἑλλήνων παθημάτων θεραπευτικῆς', 'de passionibus martyrum') "
+        "— render the English title in italics-style quotation marks "
+        "and capitalize it as a title (e.g. '\"On the Cure of the "
+        "Greek Maladies\"', '\"On the Sufferings of the Martyrs\"'). "
+        "Do not dissolve a cited title into ordinary prose."
+    )
+    sections.append(
+        "Subject continuity across lines: when a body line carries a "
+        "third-person verb whose subject was established in an earlier "
+        "line of the same batch, keep that subject reference clear. If "
+        "ambiguity is high (the antecedent is several lines earlier, "
+        "or multiple candidates intervene), insert a short clarifying "
+        "parenthetical naming the antecedent on first occurrence in "
+        "the line (e.g. 'he (Gildas) indicates that...')."
+    )
+    sections.append(
         "Body lines (each must be translated as a single unit, keyed "
         "by line_id):\n" + body_block
     )
@@ -385,8 +433,22 @@ Output rules:
   marks. Do not add translator's notes.
 - The literal line-by-line English provided below is the source of
   meaning: rewrite for fluency, do not re-translate from the Latin.
-  If the literal English is plainly wrong on a small point, prefer
-  the literal reading over speculation.
+  Do NOT change the meaning of the literal English — the polishing
+  pass is for style, not re-interpretation. If the literal English
+  is plainly wrong on a point of meaning, prefer the literal reading
+  over speculation.
+- You MAY make the following classes of stylistic correction even
+  when the literal English already reads correctly:
+    1. Replace archaisms with modern equivalents
+       (e.g., 'vouchsafed' -> 'granted', 'whilst' -> 'while').
+    2. Normalize well-known historical and ethnographic proper nouns
+       to conventional modern English forms
+       (e.g., 'Boadicia' -> 'Boudica', 'Cæsariis' -> 'Caesar').
+    3. Substitute idiomatic English for awkward literalisms
+       (e.g., 'leather-worker' -> 'shoemaker',
+       'evangelical laws' -> 'teachings of the Gospel').
+    4. Resolve ambiguous pronouns by naming the antecedent on first
+       occurrence per paragraph (e.g., 'he (Gildas) indicates...').
 - Do not quote lexicon entries verbatim under any circumstances."""
 
 
