@@ -49,6 +49,16 @@ from translation_prompts import (  # noqa: E402
     build_marker_placement_prompt,
     build_translation_prompt,
 )
+import translation_prompts as _prompt_v1  # noqa: E402
+import translation_prompts_v0 as _prompt_v0  # noqa: E402
+
+# Mapping for --prompt-version dispatch. Both modules expose
+# ``build_translation_prompt`` with the same signature; the drift-guard
+# in ``tests/test_prompt_versions.py`` keeps that contract honest.
+_PROMPT_VERSIONS = {
+    "v0": _prompt_v0,
+    "v1": _prompt_v1,
+}
 
 # ---------------------------------------------------------------------------
 # Workspace layout
@@ -737,6 +747,28 @@ def _build_argument_parser() -> argparse.ArgumentParser:
             "the built-in default."
         ),
     )
+    parser.add_argument(
+        "--prompt-version",
+        choices=sorted(_PROMPT_VERSIONS),
+        default="v1",
+        help=(
+            "Which translation prompt module to use. 'v1' (default) is "
+            "the live ``translation_prompts.py``; 'v0' is the frozen "
+            "pre-refinement snapshot in ``translation_prompts_v0.py`` "
+            "used only for A/B comparison."
+        ),
+    )
+    parser.add_argument(
+        "--run-tag",
+        default=None,
+        help=(
+            "When set, redirect artifacts to "
+            "``04_translation_work/ab/<page-key>/<prompt-version>/<run-tag>/`` "
+            "instead of the production ``03_segmented_text/<part>/`` "
+            "path, and write a ``meta.json`` describing the run. "
+            "Used by the A/B test harness."
+        ),
+    )
     return parser
 
 
@@ -754,6 +786,39 @@ def _load_claw_context(path: Path | None) -> str | None:
 
 def main(argv: Sequence[str] | None = None) -> int:
     args = _build_argument_parser().parse_args(argv)
+
+    # ---- Prompt-version dispatch (A/B harness) ------------------------
+    # Rebind the module-level ``build_translation_prompt`` symbol so
+    # ``translate_page`` uses the selected version without further
+    # plumbing. This is intentionally a small, local monkey-patch; the
+    # drift-guard test guarantees the two versions share a signature.
+    global build_translation_prompt
+    build_translation_prompt = _PROMPT_VERSIONS[args.prompt_version].build_translation_prompt
+
+    # ---- A/B output redirection --------------------------------------
+    # When --run-tag is set, redirect ARTIFACTS_DIR to a per-run path
+    # under 04_translation_work/ab/ and remember it so we can also drop
+    # a meta.json next to the artifact. We achieve this by repointing
+    # ARTIFACTS_DIR (the module global used by every path helper) at
+    # the A/B parent and rewriting args.part to the version/tag suffix
+    # so existing helpers naturally produce the desired layout:
+    #   04_translation_work/ab/<page-key>/<version>/<run-tag>/
+    #     segments_with_translations.jsonl
+    #     .logs/
+    #     meta.json
+    ab_run_dir: Path | None = None
+    if args.run_tag:
+        if args.start_page == args.end_page:
+            page_key = f"p{args.start_page:04d}"
+        else:
+            page_key = f"p{args.start_page:04d}_p{args.end_page:04d}"
+        ab_parent = WORKSPACE_ROOT / "04_translation_work" / "ab" / page_key
+        ab_synthetic_part = f"{args.prompt_version}/{args.run_tag}"
+        ab_run_dir = ab_parent / ab_synthetic_part
+        ab_run_dir.mkdir(parents=True, exist_ok=True)
+        global ARTIFACTS_DIR
+        ARTIFACTS_DIR = ab_parent
+        args.part = ab_synthetic_part
 
     config = default_config()
     provider = config.translation_provider()
@@ -778,6 +843,8 @@ def main(argv: Sequence[str] | None = None) -> int:
         "force": args.force,
         "metadata_only": args.metadata_only,
         "model": provider.model,
+        "prompt_version": args.prompt_version,
+        "run_tag": args.run_tag,
         "pages": [],
     }
 
@@ -804,6 +871,26 @@ def main(argv: Sequence[str] | None = None) -> int:
     logs_dir.mkdir(parents=True, exist_ok=True)
     log_path = logs_dir / f"translation_run_{timestamp.replace(':', '').replace('-', '')}.json"
     log_path.write_text(json.dumps(run_log, ensure_ascii=False, indent=2), encoding="utf-8")
+
+    # A/B harness: drop a sibling meta.json describing the run so the
+    # downstream scoring tools can match artifacts to prompt versions
+    # without parsing the .logs/ filenames.
+    if ab_run_dir is not None:
+        meta = {
+            "prompt_version": args.prompt_version,
+            "run_tag": args.run_tag,
+            "started_at": timestamp,
+            "model": provider.model,
+            "lexicon_profile": args.lexicon_profile,
+            "start_page": args.start_page,
+            "end_page": args.end_page,
+            "page_ids": [p.get("page_id") for p in run_log["pages"]],
+            "force": args.force,
+            "dry_run": args.dry_run,
+        }
+        (ab_run_dir / "meta.json").write_text(
+            json.dumps(meta, ensure_ascii=False, indent=2), encoding="utf-8"
+        )
 
     if args.dry_run:
         # Surface prompt sizes to stdout so users can sanity-check before live run.
