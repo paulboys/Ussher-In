@@ -748,6 +748,17 @@ def _build_argument_parser() -> argparse.ArgumentParser:
         ),
     )
     parser.add_argument(
+        "--model",
+        default=None,
+        help=(
+            "Override the Claude Code CLI --model id for this run. "
+            "Defaults to providers.json (anthropic.model). "
+            "Recommended pins: 'claude-opus-4-7' for translation, "
+            "'claude-sonnet-4-6' for the A/B judge. Each model already "
+            "includes its 1M context window; no extra flag is needed."
+        ),
+    )
+    parser.add_argument(
         "--prompt-version",
         choices=sorted(_PROMPT_VERSIONS),
         default="v1",
@@ -824,6 +835,8 @@ def main(argv: Sequence[str] | None = None) -> int:
     provider = config.translation_provider()
     if args.timeout_seconds is not None:
         provider = replace(provider, timeout_seconds=float(args.timeout_seconds))
+    if args.model is not None:
+        provider = replace(provider, model=args.model)
 
     adapter: AnthropicTranslationAdapter | None = None
     if not args.dry_run and not args.metadata_only:
