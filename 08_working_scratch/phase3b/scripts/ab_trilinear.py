@@ -35,6 +35,7 @@ class Segment:
     seq: int
     latin: str
     english: str
+    segment_type: str = "body"
 
 
 def _english_of(rec: dict) -> str:
@@ -64,6 +65,7 @@ def load_segments(path: Path) -> dict[str, Segment]:
                 seq=int(rec.get("seq") or 0),
                 latin=(rec.get("latin_text") or "").strip(),
                 english=_english_of(rec),
+                segment_type=str(rec.get("segment_type") or "body"),
             )
     return out
 
@@ -80,26 +82,47 @@ def render_markdown(
 
     Segments present in only one side are still rendered, with a
     placeholder on the missing side, so absences are visible.
+
+    Layout: body segments first (in seq order), then a Footnotes
+    section with all footnote segments (in seq order).
     """
-    all_ids = sorted(set(a) | set(b), key=lambda sid: (
-        # Sort by seq from whichever side has the segment, then segment_id.
-        (a.get(sid) or b.get(sid)).seq, sid
-    ))
+    def _seg_for(sid: str) -> Segment:
+        return a.get(sid) or b[sid]
+
+    body_ids = sorted(
+        (sid for sid in set(a) | set(b) if _seg_for(sid).segment_type == "body"),
+        key=lambda sid: (_seg_for(sid).seq, sid),
+    )
+    fn_ids = sorted(
+        (sid for sid in set(a) | set(b) if _seg_for(sid).segment_type != "body"),
+        key=lambda sid: (_seg_for(sid).seq, sid),
+    )
 
     lines: list[str] = []
     lines.append(f"# Trilinear — {page}  (`{a_label}` vs `{b_label}`)")
     lines.append("")
     lines.append(
-        f"For each segment: Latin source, then `{a_label}` rendering, "
-        f"then `{b_label}` rendering. Segments are listed in source "
-        f"order. Counts: {a_label}={len(a)}, {b_label}={len(b)}, "
-        f"shared={len(set(a) & set(b))}."
+        f"Body segments first (in seq order), then footnotes. "
+        f"Each block shows Latin source, then `{a_label}` rendering, "
+        f"then `{b_label}` rendering. "
+        f"Counts: {a_label}={len(a)}, {b_label}={len(b)}, "
+        f"shared={len(set(a) & set(b))}, body={len(body_ids)}, "
+        f"footnotes={len(fn_ids)}."
     )
     lines.append("")
     lines.append("---")
     lines.append("")
+    lines.append("## Body")
+    lines.append("")
 
-    for sid in all_ids:
+    section_emitted_footnotes = False
+    for sid in body_ids + fn_ids:
+        if sid in fn_ids and not section_emitted_footnotes:
+            lines.append("---")
+            lines.append("")
+            lines.append("## Footnotes")
+            lines.append("")
+            section_emitted_footnotes = True
         a_seg = a.get(sid)
         b_seg = b.get(sid)
         # Use whichever side has the latin (should agree if both

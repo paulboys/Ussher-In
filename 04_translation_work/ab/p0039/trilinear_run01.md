@@ -1,8 +1,10 @@
 # Trilinear — p0039  (`v0` vs `v2`)
 
-For each segment: Latin source, then `v0` rendering, then `v2` rendering. Segments are listed in source order. Counts: v0=36, v2=36, shared=36.
+Body segments first (in seq order), then footnotes. Each block shows Latin source, then `v0` rendering, then `v2` rendering. Counts: v0=36, v2=36, shared=36, body=33, footnotes=3.
 
 ---
+
+## Body
 
 ### `seg_p0039_body_l0001`
 
@@ -10,35 +12,17 @@ For each segment: Latin source, then `v0` rendering, then `v2` rendering. Segmen
 - **v0:** ...is subjoined there, concerning James one reads: "He, to Spain and
 - **v2:** [...]rum is subjoined there. Concerning James we read: 'This man preached in Spain, and
 
-### `seg_p0039_fn_001`
-
-- **Latin:** Niceph. hist. ecclesiast. lib. 2. cap. 40.
-- **v0:** Nicephorus, Ecclesiastical History, book 2, chapter 40.
-- **v2:** Nicephorus, "Ecclesiastical History," book 2, chapter 40.
-
 ### `seg_p0039_body_l0002`
 
 - **Latin:** in occidentalia loca prædicavit: et sub Herode gladio
 - **v0:** to the western regions, preached: and under Herod by the sword
 - **v2:** in the western regions: and under Herod, by the sword
 
-### `seg_p0039_fn_002`
-
-- **Latin:** Menolog. tom. 2. Antiqu. lect. Henr. Canisii. Antholog. Græc. edit. Rom. ann. 1598. pag. 406. et Menæis edit. Venet. ann. 1588.
-- **v0:** Menologium, vol. 2 of the Antiquae Lectiones of Henricus Canisius. Greek Anthology, Roman edition of the year 1598, p. 406. And in the Menaia, Venice edition of the year 1588.
-- **v2:** Menology, vol. 2 of the "Antiquae Lectiones" of Henricus Canisius. "Greek Anthology," Roman edition of the year 1598, page 406; and in the Menaia, Venice edition of the year 1588.
-
 ### `seg_p0039_body_l0003`
 
 - **Latin:** cæsus occubuit.” Addit Ordericus Vitalis Uticensis mo-
 - **v0:** having been struck, he fell." Orderic Vitalis, monk of Saint-Évroul (Uticensis), adds,
 - **v2:** he was struck down and died.' Orderic Vitalis, the monk of Saint-Évroul, adds,
-
-### `seg_p0039_fn_003`
-
-- **Latin:** Metaphrast. commentar. de Petro et Paulo, ad diem 29. Junii, de quo vid. Baron. annal. tom. 1. an. 61. sec. 4.
-- **v0:** Metaphrastes, Commentary on Peter and Paul, on the 29th day of June; on which see Baronius, Annals, vol. 1, year 61, section 4.
-- **v2:** Metaphrastes, "Commentary on Peter and Paul," on the 29th day of June, concerning which see Baronius, "Annals," vol. 1, year 61, section 4.
 
 ### `seg_p0039_body_l0004`
 
@@ -219,3 +203,25 @@ For each segment: Latin source, then `v0` rendering, then `v2` rendering. Segmen
 - **Latin:** illuminasset, et ecclesias constituisset, episcopos et pres-
 - **v0:** and had established churches, [he ordained] bishops and pres-
 - **v2:** and had established churches, bishops and pres-
+
+---
+
+## Footnotes
+
+### `seg_p0039_fn_001`
+
+- **Latin:** Niceph. hist. ecclesiast. lib. 2. cap. 40.
+- **v0:** Nicephorus, Ecclesiastical History, book 2, chapter 40.
+- **v2:** Nicephorus, "Ecclesiastical History," book 2, chapter 40.
+
+### `seg_p0039_fn_002`
+
+- **Latin:** Menolog. tom. 2. Antiqu. lect. Henr. Canisii. Antholog. Græc. edit. Rom. ann. 1598. pag. 406. et Menæis edit. Venet. ann. 1588.
+- **v0:** Menologium, vol. 2 of the Antiquae Lectiones of Henricus Canisius. Greek Anthology, Roman edition of the year 1598, p. 406. And in the Menaia, Venice edition of the year 1588.
+- **v2:** Menology, vol. 2 of the "Antiquae Lectiones" of Henricus Canisius. "Greek Anthology," Roman edition of the year 1598, page 406; and in the Menaia, Venice edition of the year 1588.
+
+### `seg_p0039_fn_003`
+
+- **Latin:** Metaphrast. commentar. de Petro et Paulo, ad diem 29. Junii, de quo vid. Baron. annal. tom. 1. an. 61. sec. 4.
+- **v0:** Metaphrastes, Commentary on Peter and Paul, on the 29th day of June; on which see Baronius, Annals, vol. 1, year 61, section 4.
+- **v2:** Metaphrastes, "Commentary on Peter and Paul," on the 29th day of June, concerning which see Baronius, "Annals," vol. 1, year 61, section 4.
