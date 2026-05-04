@@ -1,0 +1,15 @@
+{
+  "n": 36,
+  "overall": {
+    "v0": 0,
+    "v1": 0,
+    "tie": 0,
+    "invalid": 0,
+    "error": 36
+  },
+  "rubric": {},
+  "judge_model": "claude-sonnet-4-6",
+  "seed": 0,
+  "v0_path": "04_translation_work\\ab\\p0039\\v0\\run01\\segments_with_translations.jsonl",
+  "v1_path": "04_translation_work\\ab\\p0039\\v1\\run01\\segments_with_translations.jsonl"
+}
