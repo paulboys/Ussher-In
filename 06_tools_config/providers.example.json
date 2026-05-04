@@ -14,7 +14,7 @@
       "supports_vision": true
     },
     "anthropic": {
-      "model": "claude-opus-4-6",
+      "model": "claude-opus-4-7",
       "api_key": "",
       "base_url": "https://api.anthropic.com",
       "timeout_seconds": 120,
