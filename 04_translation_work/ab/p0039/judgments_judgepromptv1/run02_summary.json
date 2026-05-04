@@ -1,0 +1,46 @@
+{
+  "n": 36,
+  "overall": {
+    "v0": 12,
+    "v1": 16,
+    "tie": 8,
+    "invalid": 0,
+    "error": 0
+  },
+  "rubric": {
+    "fluency": {
+      "v0": 10,
+      "v1": 13,
+      "equal": 13,
+      "invalid": 0
+    },
+    "accuracy": {
+      "v0": 7,
+      "v1": 9,
+      "equal": 20,
+      "invalid": 0
+    },
+    "proper_nouns": {
+      "v0": 1,
+      "v1": 1,
+      "equal": 34,
+      "invalid": 0
+    },
+    "titles": {
+      "v0": 0,
+      "v1": 0,
+      "equal": 36,
+      "invalid": 0
+    },
+    "register": {
+      "v0": 10,
+      "v1": 11,
+      "equal": 15,
+      "invalid": 0
+    }
+  },
+  "judge_model": "claude-sonnet-4-6",
+  "seed": 0,
+  "v0_path": "04_translation_work\\ab\\p0039\\v0\\run02\\segments_with_translations.jsonl",
+  "v1_path": "04_translation_work\\ab\\p0039\\v1\\run02\\segments_with_translations.jsonl"
+}

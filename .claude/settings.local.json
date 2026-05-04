@@ -16,7 +16,10 @@
       "Bash(C:/Users/User/miniforge3/python.exe -m pytest:*)",
       "Bash(C:/Users/User/miniforge3/python.exe -m mypy:*)",
       "Read(//c/Users/User/Documents/UssherIn/**)",
-      "Write(//c/Users/User/Documents/UssherIn/**)"
+      "Write(//c/Users/User/Documents/UssherIn/**)",
+      "Bash(python -m pytest tests/test_translation_prompts.py -q)",
+      "Bash(python -m pytest tests/test_polish_translations.py tests/test_translate_segments.py -q)",
+      "WebSearch"
     ]
   }
 }
