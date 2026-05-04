@@ -1,0 +1,167 @@
+{
+  "base_dir": "04_translation_work\\ab\\p0039",
+  "runs": [
+    {
+      "version": "v0",
+      "run_tag": "run01",
+      "path": "04_translation_work\\ab\\p0039\\v0\\run01\\segments_with_translations.jsonl",
+      "segments": 36,
+      "by_rule": {
+        "caret_in_english": 3
+      }
+    },
+    {
+      "version": "v0",
+      "run_tag": "run02",
+      "path": "04_translation_work\\ab\\p0039\\v0\\run02\\segments_with_translations.jsonl",
+      "segments": 36,
+      "by_rule": {
+        "caret_in_english": 3
+      }
+    },
+    {
+      "version": "v0",
+      "run_tag": "run03",
+      "path": "04_translation_work\\ab\\p0039\\v0\\run03\\segments_with_translations.jsonl",
+      "segments": 36,
+      "by_rule": {
+        "caret_in_english": 3
+      }
+    },
+    {
+      "version": "v1",
+      "run_tag": "run01",
+      "path": "04_translation_work\\ab\\p0039\\v1\\run01\\segments_with_translations.jsonl",
+      "segments": 36,
+      "by_rule": {
+        "caret_in_english": 3
+      }
+    },
+    {
+      "version": "v1",
+      "run_tag": "run02",
+      "path": "04_translation_work\\ab\\p0039\\v1\\run02\\segments_with_translations.jsonl",
+      "segments": 36,
+      "by_rule": {
+        "caret_in_english": 3
+      }
+    },
+    {
+      "version": "v1",
+      "run_tag": "run03",
+      "path": "04_translation_work\\ab\\p0039\\v1\\run03\\segments_with_translations.jsonl",
+      "segments": 36,
+      "by_rule": {
+        "caret_in_english": 3
+      }
+    }
+  ],
+  "mechanical": {
+    "v0_pooled": {
+      "caret_in_english": 9
+    },
+    "v1_pooled": {
+      "caret_in_english": 9
+    },
+    "v0_per_segment": {
+      "caret_in_english": 0.08333333333333333
+    },
+    "v1_per_segment": {
+      "caret_in_english": 0.08333333333333333
+    },
+    "delta_per_segment_v1_minus_v0": {
+      "caret_in_english": 0.0
+    }
+  },
+  "judgments": {
+    "batches": [
+      {
+        "path": "04_translation_work\\ab\\p0039\\judgments\\run01.jsonl",
+        "n": 36,
+        "a_picked": 14,
+        "b_picked": 13,
+        "tie": 8,
+        "invalid": 0,
+        "error": 1
+      },
+      {
+        "path": "04_translation_work\\ab\\p0039\\judgments\\run02.jsonl",
+        "n": 36,
+        "a_picked": 8,
+        "b_picked": 20,
+        "tie": 8,
+        "invalid": 0,
+        "error": 0
+      },
+      {
+        "path": "04_translation_work\\ab\\p0039\\judgments\\run03.jsonl",
+        "n": 36,
+        "a_picked": 10,
+        "b_picked": 18,
+        "tie": 8,
+        "invalid": 0,
+        "error": 0
+      }
+    ],
+    "pooled": {
+      "n": 108,
+      "overall": {
+        "v0": 35,
+        "v1": 48,
+        "tie": 24,
+        "invalid": 0,
+        "error": 1
+      },
+      "rubric": {
+        "fluency": {
+          "v0": 22,
+          "v1": 48,
+          "equal": 37,
+          "invalid": 0
+        },
+        "accuracy": {
+          "v0": 28,
+          "v1": 22,
+          "equal": 57,
+          "invalid": 0
+        },
+        "proper_nouns": {
+          "v0": 3,
+          "v1": 7,
+          "equal": 97,
+          "invalid": 0
+        },
+        "titles": {
+          "v0": 1,
+          "v1": 0,
+          "equal": 106,
+          "invalid": 0
+        },
+        "register": {
+          "v0": 26,
+          "v1": 44,
+          "equal": 37,
+          "invalid": 0
+        }
+      },
+      "a_picked": 32,
+      "b_picked": 51
+    }
+  },
+  "thresholds": {
+    "win_rate": 0.55,
+    "tie_rate_max": 0.3,
+    "rubric_wins_min": 5,
+    "position_bias_max": 0.1,
+    "invalid_rate_max": 0.1
+  },
+  "verdict": {
+    "label": "FAIL",
+    "reasons": [
+      "v1 win-rate 45% < 55% (gate 2).",
+      "v1 won only 3 of 5 rubrics (need ≥5, gate 3).",
+      "v1 lost on rubric(s): accuracy, titles (gate 3).",
+      "position bias |P(A) - 0.5| = 11% ≥ 10% (gate 4)."
+    ]
+  }
+}

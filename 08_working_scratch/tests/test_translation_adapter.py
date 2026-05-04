@@ -138,6 +138,12 @@ def test_translate_units_returns_structured_result():
         assert argv[0] == "claude"
         assert "-p" in argv
         assert "--dangerously-skip-permissions" in argv
+        # Provider config carries a non-empty, non-"local" model id, so
+        # --model must be forwarded to the CLI; otherwise run logs would
+        # lie about which model produced the output.
+        assert "--model" in argv
+        model_idx = argv.index("--model")
+        assert argv[model_idx + 1].strip()
         return CommandResult(stdout=canned)
 
     adapter = AnthropicTranslationAdapter(
@@ -147,6 +153,40 @@ def test_translate_units_returns_structured_result():
     assert result.translations["l1"].english == "Hello"
     assert result.errors == []
     assert result.prompt == "PROMPT"
+
+
+def test_translate_units_omits_model_flag_when_provider_model_blank():
+    """If the provider config has no model id, the adapter must not
+    pass --model (the CLI will then use its session default). This
+    keeps the adapter usable for ad-hoc testing without forcing a
+    model pin."""
+    canned = _good_response({
+        "l1": {"english": "Hello", "notes": "", "uncertain": False}
+    })
+
+    saw: dict = {}
+
+    def fake_runner(argv, stdin, timeout):
+        saw["argv"] = list(argv)
+        return CommandResult(stdout=canned)
+
+    base = _anthropic_provider()
+    blank_model = base.__class__(
+        name=base.name,
+        model="",
+        api_key=base.api_key,
+        base_url=base.base_url,
+        timeout_seconds=base.timeout_seconds,
+        max_retries=base.max_retries,
+        supports_ocr=base.supports_ocr,
+        supports_translation=base.supports_translation,
+        supports_vision=base.supports_vision,
+    )
+    adapter = AnthropicTranslationAdapter(
+        blank_model, command_runner=fake_runner
+    )
+    adapter.translate_units("PROMPT", expected_unit_ids=["l1"])
+    assert "--model" not in saw["argv"]
 
 
 def test_translate_units_retries_on_malformed_then_succeeds():

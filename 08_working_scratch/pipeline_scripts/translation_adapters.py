@@ -317,6 +317,16 @@ class AnthropicTranslationAdapter:
         argv = [self._cli_path, "-p", prompt]
         if self._permission_mode == "dangerously-skip-permissions":
             argv.append("--dangerously-skip-permissions")
+        # Pin the model on every Claude Code CLI invocation when the
+        # provider config names one. Without this flag the CLI inherits
+        # whatever model the user's session defaults to, which makes
+        # run logs lie about which model produced the output. The 1M
+        # context window is built into each model id, so no separate
+        # flag is needed for it. Skip the local-only sentinels ("local",
+        # "") used by adapters whose CLI doesn't take a --model arg.
+        model = (self.provider.model or "").strip()
+        if model and model != "local":
+            argv.extend(["--model", model])
         return argv
 
     def translate_units(

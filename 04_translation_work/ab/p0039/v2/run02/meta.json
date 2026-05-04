@@ -1,0 +1,14 @@
+{
+  "prompt_version": "v2",
+  "run_tag": "run02",
+  "started_at": "2026-05-03T23:06:32Z",
+  "model": "claude-opus-4-7",
+  "lexicon_profile": "auto",
+  "start_page": 39,
+  "end_page": 39,
+  "page_ids": [
+    "p0039"
+  ],
+  "force": false,
+  "dry_run": false
+}
