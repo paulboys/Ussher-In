@@ -141,3 +141,46 @@ def test_infer_page_walks_parents(tmp_path: Path):
     fake.parent.mkdir(parents=True, exist_ok=True)
     fake.write_text("", encoding="utf-8")
     assert tr._infer_page(fake) == "p0039"
+
+
+def test_body_segments_precede_footnotes_regardless_of_seq(tmp_path: Path):
+    a_path = tmp_path / "a.jsonl"
+    b_path = tmp_path / "b.jsonl"
+
+    def _fn(seg_id: str, seq: int, latin: str, english: str) -> dict:
+        rec = _seg_record(seg_id, seq, latin, english)
+        rec["segment_type"] = "footnote"
+        return rec
+
+    # Footnote seq numbers are interleaved with body seq numbers on the
+    # printed page, but the trilinear must group body first then footnotes.
+    records_a = [
+        _seg_record("seg_p9999_body_l0001", 1, "Body line one.", "Body one A"),
+        _fn("seg_p9999_fn_001", 2, "Footnote one.", "Footnote one A"),
+        _seg_record("seg_p9999_body_l0002", 3, "Body line two.", "Body two A"),
+        _fn("seg_p9999_fn_002", 4, "Footnote two.", "Footnote two A"),
+    ]
+    records_b = [
+        _seg_record("seg_p9999_body_l0001", 1, "Body line one.", "Body one B"),
+        _fn("seg_p9999_fn_001", 2, "Footnote one.", "Footnote one B"),
+        _seg_record("seg_p9999_body_l0002", 3, "Body line two.", "Body two B"),
+        _fn("seg_p9999_fn_002", 4, "Footnote two.", "Footnote two B"),
+    ]
+    _write(a_path, records_a)
+    _write(b_path, records_b)
+
+    md = tr.render_markdown(
+        tr.load_segments(a_path),
+        tr.load_segments(b_path),
+        page="p9999", a_label="v0", b_label="v2",
+    )
+
+    body1 = md.find("seg_p9999_body_l0001")
+    body2 = md.find("seg_p9999_body_l0002")
+    fn1 = md.find("seg_p9999_fn_001")
+    fn2 = md.find("seg_p9999_fn_002")
+    fn_section = md.find("## Footnotes")
+
+    # Body block ordered, footnote block ordered, body all before footnotes.
+    assert 0 <= body1 < body2 < fn_section < fn1 < fn2
+    assert "## Body" in md
