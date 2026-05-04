@@ -18,6 +18,7 @@ from __future__ import annotations
 
 import translation_prompts as v1
 import translation_prompts_v0 as v0
+import translation_prompts_v2 as v2
 
 
 # Substrings introduced by the v1 prompt refinement.
@@ -104,7 +105,7 @@ def test_polish_contract_diverges():
 
 
 def test_public_surface_matches():
-    """Both modules must export the same callable and the same key
+    """All prompt modules must export the same callable and the same key
     constants the A/B runner depends on, so the runner can swap modules
     without code changes."""
     required = ("build_translation_prompt", "LEXICON_LATIN_HINTS",
@@ -112,6 +113,7 @@ def test_public_surface_matches():
     for name in required:
         assert hasattr(v0, name), f"v0 missing {name}"
         assert hasattr(v1, name), f"v1 missing {name}"
+        assert hasattr(v2, name), f"v2 missing {name}"
 
 
 # ---------------------------------------------------------------------------
@@ -143,3 +145,94 @@ def _minimal_prompt(module) -> str:
         lexicon_profile="auto",
         extra_context=None,
     )
+
+
+# ---------------------------------------------------------------------------
+# v2 — structural-rewrite tests
+# ---------------------------------------------------------------------------
+
+
+def test_v2_exposes_hard_rules_constant():
+    """v2's rewrite is structurally distinct: it has a top-level
+    HARD_RULES section that v0 and v1 do not."""
+    assert hasattr(v2, "HARD_RULES")
+    assert hasattr(v2, "TRANSLATOR_BRIEF")
+    # v0/v1 do not surface a hard-rules constant; their directives
+    # are interleaved into the assembled prompt.
+    assert not hasattr(v0, "HARD_RULES")
+    assert not hasattr(v1, "HARD_RULES")
+
+
+def test_v2_hard_rules_includes_greek_paraphrase_directive():
+    """Greek-paraphrase rule is the headline new directive in v2 — it
+    addresses the accuracy regression observed in v1's first A/B run
+    where neither v0 nor v1 told the model what to do with embedded
+    Greek that Ussher had already paraphrased into Latin."""
+    rules = v2.HARD_RULES
+    assert "EMBEDDED GREEK" in rules
+    # Phrase may be split across a wrapped line in the source — check
+    # the words individually rather than the joined phrase.
+    assert "LEAVE THE GREEK" in rules and "UNTRANSLATED" in rules
+    # The carve-out for stand-alone Greek must also be present.
+    assert "stand" in rules.lower() and "alone" in rules.lower()
+
+
+def test_v2_hard_rules_includes_register_and_proper_noun_rules():
+    """The v1 directives that previously lived inside the Latin lexicon
+    block (style/register) and were buried mid-prompt (proper-nouns,
+    titles, subject-continuity) are promoted to numbered hard rules
+    in v2 so they are read before the bulky lexicon block."""
+    rules = v2.HARD_RULES
+    for needle in ("MODERN ENGLISH REGISTER", "PROPER-NOUN NORMALIZATION",
+                   "BOOK AND TREATISE TITLES", "SUBJECT CONTINUITY",
+                   "FOOTNOTE-MARKER SENTINELS"):
+        assert needle in rules, f"v2 hard rules missing {needle!r}"
+
+
+def test_v2_lexicon_block_is_lexicographic_only():
+    """v2 moves style/register out of the Latin lexicon block. v1's
+    archaism rule lived there as 'Modern English target:'; v2's lexicon
+    block must NOT contain it (it lives in HARD_RULES instead)."""
+    assert "Modern English target" not in v2.LEXICON_LATIN_HINTS
+    assert "vouchsafed" not in v2.LEXICON_LATIN_HINTS
+    # But sense-disambiguation content (voice, polysemy, lexica) stays.
+    assert "Polysemous nouns" in v2.LEXICON_LATIN_HINTS
+    assert "Voice:" in v2.LEXICON_LATIN_HINTS
+    assert "Forcellini" in v2.LEXICON_LATIN_HINTS
+
+
+def test_v2_hard_rules_appear_before_lexicon_in_built_prompt():
+    """Structural property: the hard-rules block must precede the
+    lexicon block in the assembled prompt, not follow it."""
+    prompt = _minimal_prompt(v2)
+    rules_pos = prompt.find("Hard rules")
+    lex_pos = prompt.find("Lexicon hints")
+    assert rules_pos != -1, "v2 prompt missing 'Hard rules' header"
+    assert lex_pos != -1, "v2 prompt missing 'Lexicon hints' header"
+    assert rules_pos < lex_pos, (
+        f"v2 hard rules at {rules_pos} should precede lexicon at {lex_pos}"
+    )
+
+
+def test_v2_built_prompt_contains_translator_brief_first():
+    """Translator brief is the opening section."""
+    prompt = _minimal_prompt(v2)
+    brief_pos = prompt.find(v2.TRANSLATOR_BRIEF)
+    assert brief_pos == 0, (
+        f"v2 prompt should open with TRANSLATOR_BRIEF, found at {brief_pos}"
+    )
+
+
+def test_v2_built_prompt_has_no_archaisms_in_directives():
+    """Sanity: v2's own prompt body should not contain forbidden
+    archaisms that it tells the model to avoid."""
+    prompt = _minimal_prompt(v2)
+    # Strip the rule text itself, which legitimately quotes archaisms
+    # as examples of what to avoid.
+    rules_block = v2.HARD_RULES
+    # Words that should not appear OUTSIDE the rules block.
+    leaked = []
+    for archaism in ("vouchsafed", "verily", "whereunto"):
+        if archaism in prompt and archaism not in rules_block:
+            leaked.append(archaism)
+    assert not leaked, f"v2 prompt body leaks archaisms: {leaked}"

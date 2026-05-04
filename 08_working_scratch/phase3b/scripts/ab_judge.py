@@ -86,6 +86,36 @@ each scored as A_better / B_better / equal:
 
 Then return a single overall winner: A / B / tie.
 
+Domain rule for embedded Greek (CRITICAL — read carefully):
+Ussher routinely quotes a Greek source and then immediately
+paraphrases or translates it into Latin in the surrounding clause(s).
+When that pattern is present, the **correct editorial behavior is to
+leave the Greek untranslated** and render only the Latin into
+English: the Latin paraphrase already serves as Ussher's own gloss,
+and double-translating produces redundant English. Treat the
+following as signals that Ussher's Latin is paraphrasing the Greek:
+quotation punctuation around or just after the Greek, a Latin
+sentence in the same or adjacent segment whose meaning visibly
+echoes the Greek, or connectives like 'id est', 'hoc est', 'sive',
+'inquit' near the Greek.
+
+Apply this rule as follows:
+- If the Latin source contains Greek and the Latin appears to be
+  Ussher's own paraphrase of that Greek, a candidate that LEAVES THE
+  GREEK UNTRANSLATED (carrying the Greek through verbatim) is
+  CORRECT, not an accuracy failure. Do not penalize the candidate's
+  accuracy or fluency for omitting an English gloss of the Greek.
+  A candidate that translates the Greek anyway is acceptable but
+  not preferred — score 'equal' on accuracy unless one rendering
+  is materially wrong on the Latin.
+- If the Greek STANDS ALONE with no Latin paraphrase nearby (the
+  Greek itself is the substantive citation, e.g. it carries new
+  information not restated in Latin), then the Greek SHOULD be
+  rendered into English (or English-glossed in brackets) and a
+  candidate that leaves it untranslated IS an accuracy failure.
+- When in doubt about whether Latin paraphrase is present in this
+  segment, score the rubric 'equal' rather than guessing.
+
 You MUST NOT reveal which translation comes from which source — you
 do not know, and they were assigned randomly. Judge the text only.
 """
@@ -243,7 +273,7 @@ class Judgment:
     error: str = ""
 
     def to_dict(self) -> dict:
-        return {
+        out = {
             "segment_id": self.segment_id,
             "swapped": self.swapped,
             "latin": self.latin,
@@ -256,6 +286,12 @@ class Judgment:
             "decoded_rubric": self.decoded_rubric,
             "error": self.error,
         }
+        # Persist raw model output when parsing failed so post-mortems
+        # don't require re-running the judge. Truncated to keep files
+        # small. Skip on success because raw is redundant with decoded.
+        if self.error and self.raw_response:
+            out["raw_response"] = self.raw_response[:1500]
+        return out
 
 
 # ---------------------------------------------------------------------------
@@ -293,11 +329,38 @@ def _make_default_judge(
 
 _JSON_OBJ_RE = __import__("re").compile(r"\{.*\}", __import__("re").DOTALL)
 
+# Substrings that indicate the Claude Code CLI refused the request rather
+# than returning a model response (quota, auth, model-not-available, etc.).
+# Detected before parsing so the judge can abort the whole loop instead of
+# burning through 36+ pairings producing identical "parse failed" rows.
+_QUOTA_MARKERS = (
+    "out of extra usage",
+    "usage limit reached",
+    "rate limit",
+    "please try again",
+    "resets ",
+)
+
+
+class JudgeQuotaError(RuntimeError):
+    """Raised when the judge CLI returns a quota/refusal sentinel."""
+
+
+def _looks_like_quota_refusal(raw: str) -> bool:
+    if not raw:
+        return False
+    head = raw.strip().lower()
+    if len(head) > 400:  # real model responses are longer than refusals
+        return False
+    return any(marker in head for marker in _QUOTA_MARKERS)
+
 
 def parse_judge_response(raw: str) -> dict:
     """Pull the first JSON object out of *raw* and validate keys."""
     if not raw:
         raise ValueError("empty judge response")
+    if _looks_like_quota_refusal(raw):
+        raise JudgeQuotaError(raw.strip())
     text = raw.strip()
     if text.startswith("```"):
         text = text.strip("`")
@@ -348,6 +411,11 @@ def judge_pair(
         j.error = f"judge call failed: {exc}"
         return j
     j.raw_response = raw
+    # Detect CLI-level refusals (quota, auth) before trying to parse
+    # JSON; otherwise every segment in the loop produces an identical
+    # "parse failed" row that masks the real cause.
+    if _looks_like_quota_refusal(raw):
+        raise JudgeQuotaError(raw.strip())
     try:
         parsed = parse_judge_response(raw)
     except Exception as exc:
@@ -520,12 +588,19 @@ def main(argv: Sequence[str] | None = None) -> int:
         cli_path=args.cli_path,
         timeout_seconds=args.timeout_seconds,
     )
-    judgments = judge_run(
-        v0_path=args.v0_jsonl,
-        v1_path=args.v1_jsonl,
-        call_judge=call_judge,
-        seed=args.seed,
-    )
+    try:
+        judgments = judge_run(
+            v0_path=args.v0_jsonl,
+            v1_path=args.v1_jsonl,
+            call_judge=call_judge,
+            seed=args.seed,
+        )
+    except JudgeQuotaError as exc:
+        print(
+            f"ab_judge: aborting — judge CLI refused with: {exc}",
+            file=sys.stderr,
+        )
+        return 3
 
     args.output.parent.mkdir(parents=True, exist_ok=True)
     with args.output.open("w", encoding="utf-8") as handle:
@@ -562,6 +637,7 @@ if __name__ == "__main__":  # pragma: no cover
 __all__ = [
     "JUDGE_SYSTEM",
     "JUDGE_OUTPUT_CONTRACT",
+    "JudgeQuotaError",
     "Judgment",
     "aggregate_judgments",
     "assign_swap",

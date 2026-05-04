@@ -117,6 +117,17 @@ def test_build_judge_prompt_contains_both_candidates_and_latin():
     assert '"winner"' in prompt
 
 
+def test_judge_system_encodes_greek_paraphrase_rule():
+    """Regression: judge must know that Greek with adjacent Latin
+    paraphrase should be left untranslated, not penalized."""
+    sys = ab_judge.JUDGE_SYSTEM
+    assert "Greek" in sys
+    # Key directive present
+    assert "leave the Greek untranslated" in sys.lower() or "untranslated" in sys
+    # The "stand-alone Greek -> translate" carve-out is also present
+    assert "stand" in sys.lower() and "alone" in sys.lower()
+
+
 def test_parse_judge_response_accepts_clean_json():
     raw = json.dumps({
         "rubric": {"fluency": "A", "accuracy": "A", "proper_nouns": "equal",
@@ -143,6 +154,44 @@ def test_parse_judge_response_rejects_non_object():
         ab_judge.parse_judge_response("[1,2,3]")
     with pytest.raises(ValueError):
         ab_judge.parse_judge_response('{"winner": "A"}')  # missing rubric
+
+
+def test_parse_judge_response_raises_quota_on_cli_refusal():
+    """Real Claude Code refusal seen in production: short, not JSON."""
+    raw = "You're out of extra usage \u00b7 resets 7pm (America/New_York)\n"
+    with pytest.raises(ab_judge.JudgeQuotaError):
+        ab_judge.parse_judge_response(raw)
+
+
+def test_judge_pair_propagates_quota_error_for_loop_abort():
+    """A quota refusal in judge_pair must raise so the runner aborts
+    instead of writing 36 identical 'parse failed' rows."""
+    def quota_call(_p: str) -> str:
+        return "Usage limit reached. Please try again later."
+    with pytest.raises(ab_judge.JudgeQuotaError):
+        ab_judge.judge_pair(
+            segment_id="seg_x",
+            latin="Hinc Arnobius dixit.",
+            v0_text="A", v1_text="B",
+            seed=0, call_judge=quota_call,
+        )
+
+
+def test_to_dict_persists_raw_response_only_on_error():
+    """raw_response is preserved on parse failure for post-mortems,
+    omitted on success to keep files small."""
+    j_err = ab_judge.Judgment(
+        segment_id="x", swapped=False, a_text="a", b_text="b", latin="L",
+        raw_response="garbage from model",
+        error="parse failed: x",
+    )
+    assert j_err.to_dict()["raw_response"] == "garbage from model"
+    j_ok = ab_judge.Judgment(
+        segment_id="x", swapped=False, a_text="a", b_text="b", latin="L",
+        raw_response="should not be persisted",
+        decoded_winner="v1",
+    )
+    assert "raw_response" not in j_ok.to_dict()
 
 
 # ---------------------------------------------------------------------------
