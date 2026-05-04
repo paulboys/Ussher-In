@@ -51,13 +51,15 @@ from translation_prompts import (  # noqa: E402
 )
 import translation_prompts as _prompt_v1  # noqa: E402
 import translation_prompts_v0 as _prompt_v0  # noqa: E402
+import translation_prompts_v2 as _prompt_v2  # noqa: E402
 
-# Mapping for --prompt-version dispatch. Both modules expose
+# Mapping for --prompt-version dispatch. All modules expose
 # ``build_translation_prompt`` with the same signature; the drift-guard
 # in ``tests/test_prompt_versions.py`` keeps that contract honest.
 _PROMPT_VERSIONS = {
     "v0": _prompt_v0,
     "v1": _prompt_v1,
+    "v2": _prompt_v2,
 }
 
 # ---------------------------------------------------------------------------
@@ -766,7 +768,9 @@ def _build_argument_parser() -> argparse.ArgumentParser:
             "Which translation prompt module to use. 'v1' (default) is "
             "the live ``translation_prompts.py``; 'v0' is the frozen "
             "pre-refinement snapshot in ``translation_prompts_v0.py`` "
-            "used only for A/B comparison."
+            "used only for A/B comparison; 'v2' is the structural "
+            "rewrite that promotes hard rules above the lexicon block "
+            "and adds the Greek-paraphrase directive."
         ),
     )
     parser.add_argument(
