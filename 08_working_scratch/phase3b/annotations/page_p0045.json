@@ -9,15 +9,15 @@
       "marker_number": 1,
       "notes": "",
       "page_id": "p0045",
-      "review_status": "draft",
+      "review_status": "locked",
+      "reviewer": "Paul Boys",
+      "seq": 1,
       "source_marginalia_line_ids": [
         "p0045_marginalia_l0001"
       ],
       "source_region": "marginalia",
       "text_gold": "Martial. lib. 7. Epigram. 63.",
-      "text_ocr_original": "Martial. lib. 7. Epigram. 63.",
-      "reviewer": "Paul Boys",
-      "seq": 1
+      "text_ocr_original": "Martial. lib. 7. Epigram. 63."
     }
   ],
   "meta": {
@@ -32,7 +32,7 @@
     ],
     "ocr_page_summary": "Page with a header, body text including an indented poem, and a single footnote. The 'r' superscript sits on 'Martialis'.",
     "ocr_provider_model": "gemini-3.1-pro-preview",
-    "review_status": "draft",
+    "review_status": "locked",
     "reviewer": "Paul Boys"
   },
   "page_id": "p0045",
@@ -50,11 +50,11 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0045",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
+        "seq": 1,
         "text_gold": "Punici scriptore: quo consulatum gerente, Neronem in-",
-        "text_ocr_original": "Punici scriptore: quo consulatum gerente, Neronem in-",
-        "seq": 1
+        "text_ocr_original": "Punici scriptore: quo consulatum gerente, Neronem in-"
       },
       {
         "line_id": "p0045_body_l0002",
@@ -72,11 +72,11 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0045",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
+        "seq": 2,
         "text_gold": "teriisse, et alii authores confirmant, et ipse Martialis signi-",
-        "text_ocr_original": "teriisse, et alii authores confirmant, et ipse Martialis signi-",
-        "seq": 2
+        "text_ocr_original": "teriisse, et alii authores confirmant, et ipse Martialis signi-"
       },
       {
         "line_id": "p0045_body_l0003",
@@ -88,11 +88,11 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0045",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
+        "seq": 3,
         "text_gold": "ficat illis de Silio versiculis :",
-        "text_ocr_original": "ficat illis de Silio versiculis :",
-        "seq": 3
+        "text_ocr_original": "ficat illis de Silio versiculis :"
       },
       {
         "line_id": "p0045_body_l0004",
@@ -104,11 +104,11 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0045",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
+        "seq": 4,
         "text_gold": "Postquam bis senis ingentem fascibus annum",
-        "text_ocr_original": "Postquam bis senis ingentem fascibus annum",
-        "seq": 4
+        "text_ocr_original": "Postquam bis senis ingentem fascibus annum"
       },
       {
         "line_id": "p0045_body_l0005",
@@ -120,11 +120,11 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0045",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
+        "seq": 5,
         "text_gold": "Rexerat, asserto qui sacer orbe fuit :",
-        "text_ocr_original": "Rexerat, asserto qui sacer orbe fuit :",
-        "seq": 5
+        "text_ocr_original": "Rexerat, asserto qui sacer orbe fuit :"
       },
       {
         "line_id": "p0045_body_l0006",
@@ -136,11 +136,11 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0045",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
+        "seq": 6,
         "text_gold": "Emeritos Musis et Phœbo tradidit annos,",
-        "text_ocr_original": "Emeritos Musis et Phœbo tradidit annos,",
-        "seq": 6
+        "text_ocr_original": "Emeritos Musis et Phœbo tradidit annos,"
       },
       {
         "line_id": "p0045_body_l0007",
@@ -152,11 +152,11 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0045",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
+        "seq": 7,
         "text_gold": "Proque suo celebrat nunc Helicona foro.",
-        "text_ocr_original": "Proque suo celebrat nunc Helicona foro.",
-        "seq": 7
+        "text_ocr_original": "Proque suo celebrat nunc Helicona foro."
       },
       {
         "line_id": "p0045_body_l0008",
@@ -168,11 +168,11 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0045",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
+        "seq": 8,
         "text_gold": "Nerone vero summam rerum obtinente (et quidem, ut",
-        "text_ocr_original": "Nerone vero summam rerum obtinente (et quidem, ut",
-        "seq": 8
+        "text_ocr_original": "Nerone vero summam rerum obtinente (et quidem, ut"
       },
       {
         "line_id": "p0045_body_l0009",
@@ -184,11 +184,11 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0045",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
+        "seq": 9,
         "text_gold": "pluribus placet, sub finem imperii illius) a Paulo illa scripta",
-        "text_ocr_original": "pluribus placet, sub finem imperii illius) a Paulo illa scripta",
-        "seq": 9
+        "text_ocr_original": "pluribus placet, sub finem imperii illius) a Paulo illa scripta"
       },
       {
         "line_id": "p0045_body_l0010",
@@ -200,11 +200,11 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0045",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
+        "seq": 10,
         "text_gold": "est epistola, in qua Timotheum salutant Pudens et Linus",
-        "text_ocr_original": "est epistola, in qua Timotheum salutant Pudens et Linus",
-        "seq": 10
+        "text_ocr_original": "est epistola, in qua Timotheum salutant Pudens et Linus"
       },
       {
         "line_id": "p0045_body_l0011",
@@ -216,11 +216,11 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0045",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
+        "seq": 11,
         "text_gold": "et Claudia. Sed de his in capite tertio iterum etiam erit",
-        "text_ocr_original": "et Claudia. Sed de his in capite tertio iterum etiam erit",
-        "seq": 11
+        "text_ocr_original": "et Claudia. Sed de his in capite tertio iterum etiam erit"
       },
       {
         "line_id": "p0045_body_l0012",
@@ -232,11 +232,11 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0045",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
+        "seq": 12,
         "text_gold": "dicendi locus.",
-        "text_ocr_original": "dicendi locus.",
-        "seq": 12
+        "text_ocr_original": "dicendi locus."
       }
     ],
     "catchword": [],
@@ -252,9 +252,9 @@
         "region": "header",
         "review_status": "draft",
         "reviewer": "Paul Boys",
+        "seq": 1,
         "text_gold": "24 BRITANNICARUM ECCLESIARUM CAP. 1.",
-        "text_ocr_original": "24 BRITANNICARUM ECCLESIARUM CAP. 1.",
-        "seq": 1
+        "text_ocr_original": "24 BRITANNICARUM ECCLESIARUM CAP. 1."
       }
     ],
     "marginalia": [
@@ -269,9 +269,9 @@
         "region": "marginalia",
         "review_status": "draft",
         "reviewer": "Paul Boys",
+        "seq": 1,
         "text_gold": "Martial. lib. 7. Epigram. 63.",
-        "text_ocr_original": "Martial. lib. 7. Epigram. 63.",
-        "seq": 1
+        "text_ocr_original": "Martial. lib. 7. Epigram. 63."
       }
     ]
   },
