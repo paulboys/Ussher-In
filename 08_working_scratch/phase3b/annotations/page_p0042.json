@@ -9,15 +9,15 @@
       "marker_number": 1,
       "notes": "",
       "page_id": "p0042",
-      "review_status": "draft",
+      "review_status": "locked",
+      "reviewer": "Paul Boys",
+      "seq": 1,
       "source_marginalia_line_ids": [
         "p0042_marginalia_l0001"
       ],
       "source_region": "marginalia",
       "text_gold": "2 Tim. cap. 4. ver. 21.",
-      "text_ocr_original": "2 Tim. cap. 4. ver. 21.",
-      "reviewer": "Paul Boys",
-      "seq": 1
+      "text_ocr_original": "2 Tim. cap. 4. ver. 21."
     },
     {
       "body_line_id": "p0042_body_l0035",
@@ -27,15 +27,15 @@
       "marker_number": 2,
       "notes": "",
       "page_id": "p0042",
-      "review_status": "draft",
+      "review_status": "locked",
+      "reviewer": "Paul Boys",
+      "seq": 2,
       "source_marginalia_line_ids": [
         "p0042_marginalia_l0002"
       ],
       "source_region": "marginalia",
       "text_gold": "lib. 7. Constitutionum apostolicarum, cap. 47.",
-      "text_ocr_original": "lib. 7. Constitutionum apostolicarum, cap. 47.",
-      "reviewer": "Paul Boys",
-      "seq": 2
+      "text_ocr_original": "lib. 7. Constitutionum apostolicarum, cap. 47."
     }
   ],
   "meta": {
@@ -50,7 +50,7 @@
     ],
     "ocr_page_summary": "Clean modern-style early-modern reprint page; no long-s present; clearly separated footnotes with lowercase letter markers.",
     "ocr_provider_model": "gemini-3.1-pro-preview",
-    "review_status": "draft",
+    "review_status": "locked",
     "reviewer": "Paul Boys"
   },
   "page_id": "p0042",
@@ -68,11 +68,11 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0042",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
+        "seq": 1,
         "text_gold": "et sævissimorum hominum. A quibus aliquando quidem",
-        "text_ocr_original": "et sævissimorum hominum. A quibus aliquando quidem",
-        "seq": 1
+        "text_ocr_original": "et sævissimorum hominum. A quibus aliquando quidem"
       },
       {
         "line_id": "p0042_body_l0002",
@@ -84,11 +84,11 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0042",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
+        "seq": 2,
         "text_gold": "verberibus affectus, aliquando etiam per forum tractus,",
-        "text_ocr_original": "verberibus affectus, aliquando etiam per forum tractus,",
-        "seq": 2
+        "text_ocr_original": "verberibus affectus, aliquando etiam per forum tractus,"
       },
       {
         "line_id": "p0042_body_l0003",
@@ -100,11 +100,11 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0042",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
+        "seq": 3,
         "text_gold": "multis persuasit ut Christo se adjungerent. Unde et ec-",
-        "text_ocr_original": "multis persuasit ut Christo se adjungerent. Unde et ec-",
-        "seq": 3
+        "text_ocr_original": "multis persuasit ut Christo se adjungerent. Unde et ec-"
       },
       {
         "line_id": "p0042_body_l0004",
@@ -116,11 +116,11 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0042",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
+        "seq": 4,
         "text_gold": "clesiis constitutis, et presbyteris et diaconis in ea ordinatis,",
-        "text_ocr_original": "clesiis constitutis, et presbyteris et diaconis in ea ordinatis,",
-        "seq": 4
+        "text_ocr_original": "clesiis constitutis, et presbyteris et diaconis in ea ordinatis,"
       },
       {
         "line_id": "p0042_body_l0005",
@@ -132,11 +132,11 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0042",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
+        "seq": 5,
         "text_gold": "vitam consummavit.\"",
-        "text_ocr_original": "vitam consummavit.\"",
-        "seq": 5
+        "text_ocr_original": "vitam consummavit.\""
       },
       {
         "line_id": "p0042_body_l0006",
@@ -148,11 +148,11 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0042",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
+        "seq": 6,
         "text_gold": "Similiter et apud Dorotheum in synopsi, Aristobulum",
-        "text_ocr_original": "Similiter et apud Dorotheum in synopsi, Aristobulum",
-        "seq": 6
+        "text_ocr_original": "Similiter et apud Dorotheum in synopsi, Aristobulum"
       },
       {
         "line_id": "p0042_body_l0007",
@@ -164,11 +164,11 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0042",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
+        "seq": 7,
         "text_gold": "episcopum Britanniæ factum fuisse legimus : et in frag-",
-        "text_ocr_original": "episcopum Britanniæ factum fuisse legimus : et in frag-",
-        "seq": 7
+        "text_ocr_original": "episcopum Britanniæ factum fuisse legimus : et in frag-"
       },
       {
         "line_id": "p0042_body_l0008",
@@ -180,11 +180,11 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0042",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
+        "seq": 8,
         "text_gold": "mento, quod Helecæ Cæsaraugustani episcopi nomine ha-",
-        "text_ocr_original": "mento, quod Helecæ Cæsaraugustani episcopi nomine ha-",
-        "seq": 8
+        "text_ocr_original": "mento, quod Helecæ Cæsaraugustani episcopi nomine ha-"
       },
       {
         "line_id": "p0042_body_l0009",
@@ -196,11 +196,11 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0042",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
+        "seq": 9,
         "text_gold": "betur editum : \" Britannis celebris est memoria multorum",
-        "text_ocr_original": "betur editum : \" Britannis celebris est memoria multorum",
-        "seq": 9
+        "text_ocr_original": "betur editum : \" Britannis celebris est memoria multorum"
       },
       {
         "line_id": "p0042_body_l0010",
@@ -212,11 +212,11 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0042",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
+        "seq": 10,
         "text_gold": "martyrum, præcipue S. Aristobuli unius de LXXII. disci-",
-        "text_ocr_original": "martyrum, præcipue S. Aristobuli unius de LXXII. disci-",
-        "seq": 10
+        "text_ocr_original": "martyrum, præcipue S. Aristobuli unius de LXXII. disci-"
       },
       {
         "line_id": "p0042_body_l0011",
@@ -228,11 +228,11 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0042",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
+        "seq": 11,
         "text_gold": "pulis, qui dictus est etiam Zebedæus (Pater Jacobi, et",
-        "text_ocr_original": "pulis, qui dictus est etiam Zebedæus (Pater Jacobi, et",
-        "seq": 11
+        "text_ocr_original": "pulis, qui dictus est etiam Zebedæus (Pater Jacobi, et"
       },
       {
         "line_id": "p0042_body_l0012",
@@ -244,11 +244,11 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0042",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
+        "seq": 12,
         "text_gold": "Joannis martyris, Mariæ Salome) qui cum Petro Romam",
-        "text_ocr_original": "Joannis martyris, Mariæ Salome) qui cum Petro Romam",
-        "seq": 12
+        "text_ocr_original": "Joannis martyris, Mariæ Salome) qui cum Petro Romam"
       },
       {
         "line_id": "p0042_body_l0013",
@@ -260,11 +260,11 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0042",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
+        "seq": 13,
         "text_gold": "petivit. Inde relictis domesticis suis, missus in Angliam",
-        "text_ocr_original": "petivit. Inde relictis domesticis suis, missus in Angliam",
-        "seq": 13
+        "text_ocr_original": "petivit. Inde relictis domesticis suis, missus in Angliam"
       },
       {
         "line_id": "p0042_body_l0014",
@@ -276,11 +276,11 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0042",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
+        "seq": 14,
         "text_gold": "episcopus, occubuit martyr in secundo anno imperatoris",
-        "text_ocr_original": "episcopus, occubuit martyr in secundo anno imperatoris",
-        "seq": 14
+        "text_ocr_original": "episcopus, occubuit martyr in secundo anno imperatoris"
       },
       {
         "line_id": "p0042_body_l0015",
@@ -292,11 +292,11 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0042",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
+        "seq": 15,
         "text_gold": "Neronis sævissimi.\" Ita enim pagina 108. editionis Cæ-",
-        "text_ocr_original": "Neronis sævissimi.\" Ita enim pagina 108. editionis Cæ-",
-        "seq": 15
+        "text_ocr_original": "Neronis sævissimi.\" Ita enim pagina 108. editionis Cæ-"
       },
       {
         "line_id": "p0042_body_l0016",
@@ -308,11 +308,11 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0042",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
+        "seq": 16,
         "text_gold": "saraugustanæ habetur. Verum quæ parenthesi inclusi-",
-        "text_ocr_original": "saraugustanæ habetur. Verum quæ parenthesi inclusi-",
-        "seq": 16
+        "text_ocr_original": "saraugustanæ habetur. Verum quæ parenthesi inclusi-"
       },
       {
         "line_id": "p0042_body_l0017",
@@ -324,11 +324,11 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0042",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
+        "seq": 17,
         "text_gold": "mus, sic sunt corrigenda : \" Pater Jacobi et Joannis, ma-",
-        "text_ocr_original": "mus, sic sunt corrigenda : \" Pater Jacobi et Joannis, ma-",
-        "seq": 17
+        "text_ocr_original": "mus, sic sunt corrigenda : \" Pater Jacobi et Joannis, ma-"
       },
       {
         "line_id": "p0042_body_l0018",
@@ -340,11 +340,11 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0042",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
+        "seq": 18,
         "text_gold": "ritus Mariæ Salomes.\" In sequente enim pagina, Concor-",
-        "text_ocr_original": "ritus Mariæ Salomes.\" In sequente enim pagina, Concor-",
-        "seq": 18
+        "text_ocr_original": "ritus Mariæ Salomes.\" In sequente enim pagina, Concor-"
       },
       {
         "line_id": "p0042_body_l0019",
@@ -356,11 +356,11 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0042",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
+        "seq": 19,
         "text_gold": "dia Petri apostoli uxor, Aristobuli et Salomes filia fuisse",
-        "text_ocr_original": "dia Petri apostoli uxor, Aristobuli et Salomes filia fuisse",
-        "seq": 19
+        "text_ocr_original": "dia Petri apostoli uxor, Aristobuli et Salomes filia fuisse"
       },
       {
         "line_id": "p0042_body_l0020",
@@ -372,11 +372,11 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0042",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
+        "seq": 20,
         "text_gold": "perhibetur. \" S. Petrus,\" inquit author, \" in honore habe-",
-        "text_ocr_original": "perhibetur. \" S. Petrus,\" inquit author, \" in honore habe-",
-        "seq": 20
+        "text_ocr_original": "perhibetur. \" S. Petrus,\" inquit author, \" in honore habe-"
       },
       {
         "line_id": "p0042_body_l0021",
@@ -388,11 +388,11 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0042",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
+        "seq": 21,
         "text_gold": "tur in Hispaniis, et ejus uxor Concordia passa Romæ sub",
-        "text_ocr_original": "tur in Hispaniis, et ejus uxor Concordia passa Romæ sub",
-        "seq": 21
+        "text_ocr_original": "tur in Hispaniis, et ejus uxor Concordia passa Romæ sub"
       },
       {
         "line_id": "p0042_body_l0022",
@@ -404,11 +404,11 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0042",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
+        "seq": 22,
         "text_gold": "Nerone, non multo prius quam ipse pateretur. Fuit hæc,",
-        "text_ocr_original": "Nerone, non multo prius quam ipse pateretur. Fuit hæc,",
-        "seq": 22
+        "text_ocr_original": "Nerone, non multo prius quam ipse pateretur. Fuit hæc,"
       },
       {
         "line_id": "p0042_body_l0023",
@@ -420,11 +420,11 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0042",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
+        "seq": 23,
         "text_gold": "ut docet M. Maximus in commentariis ad epistolam S.",
-        "text_ocr_original": "ut docet M. Maximus in commentariis ad epistolam S.",
-        "seq": 23
+        "text_ocr_original": "ut docet M. Maximus in commentariis ad epistolam S."
       },
       {
         "line_id": "p0042_body_l0024",
@@ -436,11 +436,11 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0042",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
+        "seq": 24,
         "text_gold": "Petri, filia Aristobuli vel Zebedæi, et Salomes; socrus",
-        "text_ocr_original": "Petri, filia Aristobuli vel Zebedæi, et Salomes; socrus",
-        "seq": 24
+        "text_ocr_original": "Petri, filia Aristobuli vel Zebedæi, et Salomes; socrus"
       },
       {
         "line_id": "p0042_body_l0025",
@@ -452,11 +452,11 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0042",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
+        "seq": 25,
         "text_gold": "etiam Andreæ, qui duxit alteram sororem Concordiæ, et",
-        "text_ocr_original": "etiam Andreæ, qui duxit alteram sororem Concordiæ, et",
-        "seq": 25
+        "text_ocr_original": "etiam Andreæ, qui duxit alteram sororem Concordiæ, et"
       },
       {
         "line_id": "p0042_body_l0026",
@@ -468,11 +468,11 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0042",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
+        "seq": 26,
         "text_gold": "Jacobi et Joannis. Fuit autem Aristobulus cognomento",
-        "text_ocr_original": "Jacobi et Joannis. Fuit autem Aristobulus cognomento",
-        "seq": 26
+        "text_ocr_original": "Jacobi et Joannis. Fuit autem Aristobulus cognomento"
       },
       {
         "line_id": "p0042_body_l0027",
@@ -484,11 +484,11 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0042",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
+        "seq": 27,
         "text_gold": "Zebedæus, frater Barnabæ apostoli Domini.\" Hæc ille :",
-        "text_ocr_original": "Zebedæus, frater Barnabæ apostoli Domini.\" Hæc ille :",
-        "seq": 27
+        "text_ocr_original": "Zebedæus, frater Barnabæ apostoli Domini.\" Hæc ille :"
       },
       {
         "line_id": "p0042_body_l0028",
@@ -500,11 +500,11 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0042",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
+        "seq": 28,
         "text_gold": "cui de Petro, ducente in uxorem filiam Aristobuli, fratris",
-        "text_ocr_original": "cui de Petro, ducente in uxorem filiam Aristobuli, fratris",
-        "seq": 28
+        "text_ocr_original": "cui de Petro, ducente in uxorem filiam Aristobuli, fratris"
       },
       {
         "line_id": "p0042_body_l0029",
@@ -516,11 +516,11 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0042",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
+        "seq": 29,
         "text_gold": "Barnabæ apostoli, astipulantur etiam Græci apud Meta-",
-        "text_ocr_original": "Barnabæ apostoli, astipulantur etiam Græci apud Meta-",
-        "seq": 29
+        "text_ocr_original": "Barnabæ apostoli, astipulantur etiam Græci apud Meta-"
       },
       {
         "line_id": "p0042_body_l0030",
@@ -532,11 +532,11 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0042",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
+        "seq": 30,
         "text_gold": "phrastam in commentario de Petro et Paulo, et in Menæis,",
-        "text_ocr_original": "phrastam in commentario de Petro et Paulo, et in Menæis,",
-        "seq": 30
+        "text_ocr_original": "phrastam in commentario de Petro et Paulo, et in Menæis,"
       },
       {
         "line_id": "p0042_body_l0031",
@@ -548,11 +548,11 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0042",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
+        "seq": 31,
         "text_gold": "ad XXIX. Junii diem.",
-        "text_ocr_original": "ad XXIX. Junii diem.",
-        "seq": 31
+        "text_ocr_original": "ad XXIX. Junii diem."
       },
       {
         "line_id": "p0042_body_l0032",
@@ -570,11 +570,11 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0042",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
+        "seq": 32,
         "text_gold": "In fine posterioris ad Timotheum epistolæ, commemo-",
-        "text_ocr_original": "In fine posterioris ad Timotheum epistolæ, commemo-",
-        "seq": 32
+        "text_ocr_original": "In fine posterioris ad Timotheum epistolæ, commemo-"
       },
       {
         "line_id": "p0042_body_l0033",
@@ -586,11 +586,11 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0042",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
+        "seq": 33,
         "text_gold": "rantur simul ab apostolo Pudens, et Linus, et Claudia.",
-        "text_ocr_original": "rantur simul ab apostolo Pudens, et Linus, et Claudia.",
-        "seq": 33
+        "text_ocr_original": "rantur simul ab apostolo Pudens, et Linus, et Claudia."
       },
       {
         "line_id": "p0042_body_l0034",
@@ -602,11 +602,11 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0042",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
+        "seq": 34,
         "text_gold": "Linum, primum Ecclesiæ Romanæ episcopum a Paulo or-",
-        "text_ocr_original": "Linum, primum Ecclesiæ Romanæ episcopum a Paulo or-",
-        "seq": 34
+        "text_ocr_original": "Linum, primum Ecclesiæ Romanæ episcopum a Paulo or-"
       },
       {
         "line_id": "p0042_body_l0035",
@@ -624,11 +624,11 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0042",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
+        "seq": 35,
         "text_gold": "dinatum, Claudiæ filium fuisse innuit Pseudo-Clemens.",
-        "text_ocr_original": "dinatum, Claudiæ filium fuisse innuit Pseudo-Clemens.",
-        "seq": 35
+        "text_ocr_original": "dinatum, Claudiæ filium fuisse innuit Pseudo-Clemens."
       },
       {
         "line_id": "p0042_body_l0036",
@@ -640,11 +640,11 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0042",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
+        "seq": 36,
         "text_gold": "Patrem vero Lini Herculanum quendam fuisse liber pon-",
-        "text_ocr_original": "Patrem vero Lini Herculanum quendam fuisse liber pon-",
-        "seq": 36
+        "text_ocr_original": "Patrem vero Lini Herculanum quendam fuisse liber pon-"
       }
     ],
     "catchword": [],
@@ -658,11 +658,11 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0042",
         "region": "header",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
+        "seq": 1,
         "text_gold": "CAP. I. ANTIQUITATES. 21.",
-        "text_ocr_original": "CAP. I. ANTIQUITATES. 21.",
-        "seq": 1
+        "text_ocr_original": "CAP. I. ANTIQUITATES. 21."
       }
     ],
     "marginalia": [
@@ -677,9 +677,9 @@
         "region": "marginalia",
         "review_status": "draft",
         "reviewer": "Paul Boys",
+        "seq": 1,
         "text_gold": "2 Tim. cap. 4. ver. 21.",
-        "text_ocr_original": "2 Tim. cap. 4. ver. 21.",
-        "seq": 1
+        "text_ocr_original": "2 Tim. cap. 4. ver. 21."
       },
       {
         "line_id": "p0042_marginalia_l0002",
@@ -692,9 +692,9 @@
         "region": "marginalia",
         "review_status": "draft",
         "reviewer": "Paul Boys",
+        "seq": 2,
         "text_gold": "lib. 7. Constitutionum apostolicarum, cap. 47.",
-        "text_ocr_original": "lib. 7. Constitutionum apostolicarum, cap. 47.",
-        "seq": 2
+        "text_ocr_original": "lib. 7. Constitutionum apostolicarum, cap. 47."
       }
     ]
   },
