@@ -52,6 +52,7 @@ from translation_prompts import (  # noqa: E402
 import translation_prompts as _prompt_v1  # noqa: E402
 import translation_prompts_v0 as _prompt_v0  # noqa: E402
 import translation_prompts_v2 as _prompt_v2  # noqa: E402
+import translation_prompts_v3 as _prompt_v3  # noqa: E402
 
 # Mapping for --prompt-version dispatch. All modules expose
 # ``build_translation_prompt`` with the same signature; the drift-guard
@@ -60,6 +61,7 @@ _PROMPT_VERSIONS = {
     "v0": _prompt_v0,
     "v1": _prompt_v1,
     "v2": _prompt_v2,
+    "v3": _prompt_v3,
 }
 
 # ---------------------------------------------------------------------------
@@ -698,6 +700,78 @@ def _iter_page_files(part: str, start: int, end: int) -> Iterable[Path]:
             yield path
 
 
+def _page_file_for(page_num: int) -> Path | None:
+    """Return the on-disk page-payload path for *page_num*, or None if
+    the page is out of range or the file is not present.
+
+    Used by ``_load_cross_page_context`` to look up the immediate
+    neighbors of the current page. Path naming mirrors
+    ``_iter_page_files`` so both share one source of truth.
+    """
+    if page_num < 1:
+        return None
+    path = ANNOTATIONS_DIR / f"page_p{page_num:04d}.json"
+    return path if path.exists() else None
+
+
+def _payload_body_concatenated(payload: dict) -> str:
+    """Concatenate body-line text from *payload* in printed order,
+    preferring ``text_gold`` and falling back to ``text_ocr_original``.
+
+    Returns plain Latin text WITHOUT any '^X' caret sentinels. Cross-
+    page context is purely for stitching broken tokens and clarifying
+    antecedents; it does not participate in marker placement, so
+    leaving carets out keeps the prompt clean and prevents the model
+    from emitting a marker that belongs to a neighbor's translation
+    pass.
+    """
+    body_lines, _ = extract_units(payload)
+    return " ".join(
+        (line.get("text_gold") or line.get("text_ocr_original") or "").strip()
+        for line in body_lines
+        if (line.get("text_gold") or line.get("text_ocr_original"))
+    ).strip()
+
+
+def _load_cross_page_context(
+    *,
+    page_num: int,
+    tail_chars: int = 240,
+    head_chars: int = 240,
+) -> str | None:
+    """Build a 'Previous page tail / Next page head' context block for
+    Hard Rule 9 ("CROSS-PAGE CONTEXT") in the v3 prompt.
+
+    Each neighbor is truncated to roughly one printed line of context
+    (~240 chars) — enough to stitch a hyphen-broken word or recover
+    a stranded subject without inflating the prompt budget.
+
+    Returns None when neither neighbor exists (e.g. the very first or
+    last page of the corpus). Older prompt versions ignore this
+    extra-context block silently, so it is safe to populate
+    unconditionally.
+    """
+    blocks: list[str] = []
+
+    prev_path = _page_file_for(page_num - 1)
+    if prev_path is not None:
+        prev_text = _payload_body_concatenated(load_phase3b_page(prev_path))
+        if prev_text:
+            blocks.append(
+                "Previous page tail: …" + prev_text[-tail_chars:].lstrip()
+            )
+
+    next_path = _page_file_for(page_num + 1)
+    if next_path is not None:
+        next_text = _payload_body_concatenated(load_phase3b_page(next_path))
+        if next_text:
+            blocks.append(
+                "Next page head: " + next_text[:head_chars].rstrip() + "…"
+            )
+
+    return "\n\n".join(blocks) if blocks else None
+
+
 def _now_iso() -> str:
     return time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
 
@@ -770,7 +844,9 @@ def _build_argument_parser() -> argparse.ArgumentParser:
             "pre-refinement snapshot in ``translation_prompts_v0.py`` "
             "used only for A/B comparison; 'v2' is the structural "
             "rewrite that promotes hard rules above the lexicon block "
-            "and adds the Greek-paraphrase directive."
+            "and adds the Greek-paraphrase directive; 'v3' refines v2 "
+            "with three-slot Greek output (⟦English⟧/⟪Latin⟫), strict "
+            "preserve-source-form rules, and cross-page context."
         ),
     )
     parser.add_argument(
@@ -867,12 +943,29 @@ def main(argv: Sequence[str] | None = None) -> int:
 
     for page_path in _iter_page_files(args.part, args.start_page, args.end_page):
         payload = load_phase3b_page(page_path)
+
+        # Cross-page context (v3 Hard Rule 9). Always populated when
+        # neighbors exist; older prompt versions ignore it, so this is
+        # version-agnostic.
+        try:
+            page_num = int(str(payload["page_id"]).lstrip("p"))
+        except (KeyError, ValueError):
+            page_num = -1
+        cross_page_ctx = (
+            _load_cross_page_context(page_num=page_num)
+            if page_num >= 1
+            else None
+        )
+        per_page_extra = "\n\n".join(
+            block for block in (cross_page_ctx, extra_context) if block
+        ) or None
+
         page_log = translate_page(
             payload,
             adapter=adapter,
             existing_segments=existing_segments,
             lexicon_profile=args.lexicon_profile,
-            extra_context=extra_context,
+            extra_context=per_page_extra,
             force=args.force,
             dry_run=args.dry_run,
             timestamp=timestamp,

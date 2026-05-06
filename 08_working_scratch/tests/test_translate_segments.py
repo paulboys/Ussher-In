@@ -479,3 +479,19 @@ def test_place_markers_runs_per_marker_sequentially():
     assert "English (no sentinel): alpha beta^a" in seen_prompts[1]
     assert placed == "alpha beta^a^b"
     assert warnings == []
+
+
+# ---------------------------------------------------------------------------
+# Cross-page context resolution (v3 Hard Rule 9)
+# ---------------------------------------------------------------------------
+
+
+def test_page_file_for_resolves_present_and_absent_pages(tmp_path, monkeypatch):
+    """Sanity check for ``_page_file_for``: it must return the path
+    when the file exists, None when it doesn't, and None for
+    non-positive page numbers."""
+    monkeypatch.setattr(ts, "ANNOTATIONS_DIR", tmp_path)
+    (tmp_path / "page_p0042.json").write_text("{}", encoding="utf-8")
+    assert ts._page_file_for(42) == tmp_path / "page_p0042.json"
+    assert ts._page_file_for(43) is None  # file absent
+    assert ts._page_file_for(0) is None   # out of range
