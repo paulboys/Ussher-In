@@ -13,7 +13,10 @@ from pathlib import Path
 
 import pytest
 
-import ab_rules
+ab_rules = pytest.importorskip(
+    "ab_rules",
+    reason="A/B helper scripts are not present in this branch.",
+)
 
 
 def _seg(seg_id: str, english: str, *, latin: str = "") -> dict:

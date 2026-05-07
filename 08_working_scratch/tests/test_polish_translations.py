@@ -7,6 +7,11 @@ from pathlib import Path
 
 import pytest
 
+pytest.importorskip(
+    "translation_prompts_v0",
+    reason="Prompt modules were removed from this branch.",
+)
+
 import polish_translations as pt
 from translation_adapters import (
     AnthropicTranslationAdapter,

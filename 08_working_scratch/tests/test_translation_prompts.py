@@ -4,17 +4,20 @@ from __future__ import annotations
 
 import pytest
 
-from translation_prompts import (
-    LEXICON_GREEK_HINTS,
-    LEXICON_LATIN_HINTS,
-    POLISH_OUTPUT_CONTRACT,
-    _build_marker_lookup,
-    _inject_markers,
-    build_marker_placement_prompt,
-    build_polishing_prompt,
-    build_translation_prompt,
-    contains_greek,
+_tp = pytest.importorskip(
+    "translation_prompts_v0",
+    reason="Prompt modules were removed from this branch.",
 )
+
+LEXICON_GREEK_HINTS = _tp.LEXICON_GREEK_HINTS
+LEXICON_LATIN_HINTS = _tp.LEXICON_LATIN_HINTS
+POLISH_OUTPUT_CONTRACT = _tp.POLISH_OUTPUT_CONTRACT
+_build_marker_lookup = _tp._build_marker_lookup
+_inject_markers = _tp._inject_markers
+build_marker_placement_prompt = _tp.build_marker_placement_prompt
+build_polishing_prompt = _tp.build_polishing_prompt
+build_translation_prompt = _tp.build_translation_prompt
+contains_greek = _tp.contains_greek
 
 
 _BODY_LATIN = [

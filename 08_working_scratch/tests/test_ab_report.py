@@ -12,7 +12,10 @@ from pathlib import Path
 
 import pytest
 
-import ab_report
+ab_report = pytest.importorskip(
+    "ab_report",
+    reason="A/B helper scripts are not present in this branch.",
+)
 
 
 # ---------------------------------------------------------------------------

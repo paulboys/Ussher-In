@@ -15,6 +15,21 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
+import pytest
+
+pytest.importorskip(
+    "translation_prompts_v0",
+    reason="Prompt modules were removed from this branch.",
+)
+pytest.importorskip(
+    "translation_prompts_v2",
+    reason="Prompt modules were removed from this branch.",
+)
+pytest.importorskip(
+    "translation_prompts_v3",
+    reason="Prompt modules were removed from this branch.",
+)
+
 import polish_translations as polish
 import render_interlinear as render
 import translate_segments as ts

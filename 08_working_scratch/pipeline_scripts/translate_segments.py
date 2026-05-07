@@ -42,14 +42,10 @@ from translation_adapters import (  # noqa: E402
     TranslationResult,
     TranslationUnit,
 )
-from translation_prompts import (  # noqa: E402
+from translation_prompts_v0 import (  # noqa: E402
     LEXICON_PROFILES,
-    _build_marker_lookup,
-    _inject_markers,
-    build_marker_placement_prompt,
     build_translation_prompt,
 )
-import translation_prompts as _prompt_v1  # noqa: E402
 import translation_prompts_v0 as _prompt_v0  # noqa: E402
 import translation_prompts_v2 as _prompt_v2  # noqa: E402
 import translation_prompts_v3 as _prompt_v3  # noqa: E402
@@ -59,7 +55,6 @@ import translation_prompts_v3 as _prompt_v3  # noqa: E402
 # in ``tests/test_prompt_versions.py`` keeps that contract honest.
 _PROMPT_VERSIONS = {
     "v0": _prompt_v0,
-    "v1": _prompt_v1,
     "v2": _prompt_v2,
     "v3": _prompt_v3,
 }

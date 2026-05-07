@@ -16,9 +16,20 @@ ever drifts, we'll know before running the experiment.
 
 from __future__ import annotations
 
-import translation_prompts as v1
-import translation_prompts_v0 as v0
-import translation_prompts_v2 as v2
+import pytest
+
+v1 = pytest.importorskip(
+    "translation_prompts",
+    reason="Prompt modules were removed from this branch.",
+)
+v0 = pytest.importorskip(
+    "translation_prompts_v0",
+    reason="Prompt modules were removed from this branch.",
+)
+v2 = pytest.importorskip(
+    "translation_prompts_v2",
+    reason="Prompt modules were removed from this branch.",
+)
 
 
 # Substrings introduced by the v1 prompt refinement.

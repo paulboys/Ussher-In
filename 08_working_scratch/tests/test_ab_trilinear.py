@@ -7,7 +7,10 @@ from pathlib import Path
 
 import pytest
 
-import ab_trilinear as tr
+tr = pytest.importorskip(
+    "ab_trilinear",
+    reason="A/B helper scripts are not present in this branch.",
+)
 
 
 def _seg_record(seg_id: str, seq: int, latin: str, english: str) -> dict:

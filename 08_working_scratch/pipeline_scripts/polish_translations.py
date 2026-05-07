@@ -34,7 +34,7 @@ from translation_adapters import (  # noqa: E402
     AnthropicTranslationAdapter,
     TranslationError,
 )
-from translation_prompts import (  # noqa: E402
+from translation_prompts_v0 import (  # noqa: E402
     LEXICON_PROFILES,
     build_polishing_prompt,
 )

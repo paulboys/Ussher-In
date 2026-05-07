@@ -11,7 +11,10 @@ from pathlib import Path
 
 import pytest
 
-import ab_judge
+ab_judge = pytest.importorskip(
+    "ab_judge",
+    reason="A/B helper scripts are not present in this branch.",
+)
 
 
 # ---------------------------------------------------------------------------

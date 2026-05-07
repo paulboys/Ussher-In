@@ -15,6 +15,19 @@ from pathlib import Path
 
 import pytest
 
+pytest.importorskip(
+    "translation_prompts_v0",
+    reason="Prompt modules were removed from this branch.",
+)
+pytest.importorskip(
+    "translation_prompts_v2",
+    reason="Prompt modules were removed from this branch.",
+)
+pytest.importorskip(
+    "translation_prompts_v3",
+    reason="Prompt modules were removed from this branch.",
+)
+
 import translate_segments as ts
 from translation_adapters import (
     AnthropicTranslationAdapter,

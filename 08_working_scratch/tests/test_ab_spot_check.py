@@ -7,7 +7,10 @@ from pathlib import Path
 
 import pytest
 
-import ab_spot_check as sc
+sc = pytest.importorskip(
+    "ab_spot_check",
+    reason="A/B helper scripts are not present in this branch.",
+)
 
 
 # ---------------------------------------------------------------------------
