@@ -9,6 +9,8 @@ import time
 import uuid
 from pathlib import Path
 
+import logging
+
 from flask import Flask, abort, jsonify, render_template, request, send_file, url_for
 
 ROOT = Path(__file__).resolve().parents[3]
@@ -27,6 +29,16 @@ SCHEMA_REGIONS = ("header", "body", "marginalia", "catchword")
 
 app = Flask(__name__, template_folder=str(TEMPLATE_DIR), static_folder=str(STATIC_DIR))
 
+# Configure logging for the Flask app
+logger = logging.getLogger("flask_app")
+logger.setLevel(logging.INFO)
+
+# Add a file handler for persistent logs (optional)
+file_handler = logging.FileHandler("annotation_ui.log")
+file_handler.setLevel(logging.INFO)
+formatter = logging.Formatter("%(asctime)s - %(levelname)s - %(message)s")
+file_handler.setFormatter(formatter)
+logger.addHandler(file_handler)
 
 def _annotation_paths() -> list[Path]:
     return sorted(ANNOTATIONS_DIR.glob("page_p*.json"))
@@ -316,47 +328,58 @@ def api_pages():
 
 @app.get("/api/page/<page_id>")
 def api_page(page_id: str):
+    logger.info(f"Received GET request for page_id: {page_id}")
     try:
         path = _annotation_path(page_id)
-    except ValueError:
+    except ValueError as e:
+        logger.error(f"Invalid page_id: {page_id}. Error: {e}")
         abort(400)
 
     if not path.exists():
+        logger.warning(f"Page not found: {page_id}")
         abort(404)
 
-    payload = _read_payload(path)
-    return jsonify(payload)
+    try:
+        payload = _read_payload(path)
+        logger.info(f"Successfully read payload for page_id: {page_id}")
+        return jsonify(payload)
+    except Exception as e:
+        logger.error(f"Error reading payload for page_id: {page_id}. Error: {e}")
+        abort(500)
 
 
 @app.post("/api/page/<page_id>")
 def api_save_page(page_id: str):
+    logger.info(f"Received POST request to save page_id: {page_id}")
     try:
         path = _annotation_path(page_id)
-    except ValueError:
+    except ValueError as e:
+        logger.error(f"Invalid page_id: {page_id}. Error: {e}")
         abort(400)
 
     if not path.exists():
+        logger.warning(f"Page not found for saving: {page_id}")
         abort(404)
 
     incoming = request.get_json(silent=True)
     if not isinstance(incoming, dict):
+        logger.error(f"Invalid request body for page_id: {page_id}. Must be JSON object.")
         return (
             jsonify({"ok": False, "errors": ["Request body must be JSON object"]}),
             400,
         )
 
-    # Defense-in-depth: refuse to write a payload whose page_id doesn't match
-    # the URL. This guards against client-side split-state bugs that could
-    # otherwise overwrite a different page's file with the wrong content.
     incoming_page_id = str(incoming.get("page_id", ""))
     if incoming_page_id and incoming_page_id != page_id:
+        logger.error(
+            f"Page ID mismatch: URL says '{page_id}' but body says '{incoming_page_id}'."
+        )
         return (
             jsonify(
                 {
                     "ok": False,
                     "errors": [
-                        f"page_id mismatch: URL says '{page_id}' but body says "
-                        f"'{incoming_page_id}'. Refusing to overwrite."
+                        f"page_id mismatch: URL says '{page_id}' but body says '{incoming_page_id}'. Refusing to overwrite."
                     ],
                 }
             ),
@@ -365,23 +388,23 @@ def api_save_page(page_id: str):
 
     errors = _validate_payload(incoming)
     if errors:
+        logger.error(f"Validation errors for page_id: {page_id}. Errors: {errors}")
         return jsonify({"ok": False, "errors": errors}), 400
 
-    # Stamp `seq` (ordering authority) from current array order before
-    # writing. The client also stamps, but we re-stamp here so the file
-    # on disk always reflects exactly what was persisted, regardless of
-    # what the client sent.
     _stamp_seq(incoming)
 
-    # Compute edit log entries against the on-disk payload before overwriting.
     try:
         existing = _read_payload(path)
-    except Exception:
+    except Exception as e:
+        logger.warning(f"Error reading existing payload for page_id: {page_id}. Error: {e}")
         existing = {}
+
     edits = _diff_payloads(existing, incoming)
     _append_edit_log(page_id, edits)
+    logger.info(f"Recorded {len(edits)} edits for page_id: {page_id}")
 
     _write_payload_atomic(path, incoming)
+    logger.info(f"Successfully saved payload for page_id: {page_id}")
     return jsonify(
         {"ok": True, "meta": incoming.get("meta", {}), "edits_recorded": len(edits)}
     )
@@ -521,6 +544,7 @@ def _run_ocr_job(
 
     try:
         _job_set(job_id, state="running", message="Rendering and calling Gemini...")
+        logger.info(f"Starting OCR job for page {page_id} using Gemini.")
         pilot_dir.mkdir(parents=True, exist_ok=True)
 
         cmd = [
@@ -537,6 +561,7 @@ def _run_ocr_job(
             "--ocr-engine",
             "gemini",
         ]
+        logger.info(f"Executing command: {' '.join(cmd)}")
         proc = subprocess.run(
             cmd,
             cwd=str(ROOT),
@@ -544,7 +569,9 @@ def _run_ocr_job(
             text=True,
             check=False,
         )
+        logger.info(f"Subprocess stdout: {proc.stdout}")
         if proc.returncode != 0:
+            logger.error(f"Subprocess stderr: {proc.stderr}")
             _job_set(
                 job_id,
                 state="error",
@@ -554,10 +581,12 @@ def _run_ocr_job(
             return
 
         if not pilot_json.exists():
+            logger.error(f"Pilot JSON not produced: {pilot_json}")
             _job_set(job_id, state="error", message=f"Pilot JSON not produced: {pilot_json}")
             return
 
         records = json.loads(pilot_json.read_text(encoding="utf-8"))
+        logger.info(f"OCR job completed successfully for page {page_id}.")
         if not isinstance(records, list) or not records:
             _job_set(job_id, state="error", message="Pilot JSON empty (page out of range?)")
             return
@@ -599,8 +628,9 @@ def _run_ocr_job(
             page_id=page_id,
             stdout_tail=proc.stdout[-300:],
         )
-    except Exception as exc:  # pragma: no cover - defensive
-        _job_set(job_id, state="error", message=f"{type(exc).__name__}: {exc}")
+    except Exception as e:
+        logger.exception(f"Unexpected error during OCR job: {e}")
+        _job_set(job_id, state="error", message=f"Unexpected error: {e}")
 
 
 @app.get("/api/source-pdfs")

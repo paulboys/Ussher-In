@@ -94,9 +94,6 @@ A small annotated gold set (Phase 3b, pages around p0030–p0060) is retained fo
 | `08_working_scratch/` | Pipeline scripts, annotation tooling, Go Claw verification module |
 
 ## Collaboration
+Private experimental collaboration project between Justin Alamaras and Paul D. Boys.
 
-This project is intended to be collaborative. Anyone interested in contributing—whether with Latin, historical context, or technical expertise—is welcome. Please open an issue on GitHub or reach out to paul.d.boys@gmail.com.
-
-## License
-
-See [LICENSE](LICENSE).
+This repository is shared for research and development purposes.

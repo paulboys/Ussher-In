@@ -206,7 +206,10 @@ def _good_pool(*, n: int = 100, v1: int = 60, v0: int = 20, tie: int = 20,
         "b_picked": b_picks,
         "rubric": {
             rk: {"v0": 1, "v1": 5, "equal": 1, "invalid": 0}
-            for rk in ("fluency", "accuracy", "proper_nouns", "titles", "register")
+            for rk in (
+                "fluency", "accuracy", "source_preservation",
+                "titles", "register", "format_compliance",
+            )
         },
     }
 
@@ -300,8 +303,9 @@ def test_build_summary_end_to_end_pass(tmp_path: Path):
             raw_winner=("A" if i % 2 == 0 else "B"),
             decoded_winner="v1",
             decoded_rubric={
-                "fluency": "v1", "accuracy": "v1", "proper_nouns": "v1",
-                "titles": "v1", "register": "v1",
+                "fluency": "v1", "accuracy": "v1",
+                "source_preservation": "v1", "titles": "v1",
+                "register": "v1", "format_compliance": "v1",
             },
         ))
     for i in range(60, 80):
@@ -310,16 +314,16 @@ def test_build_summary_end_to_end_pass(tmp_path: Path):
             raw_winner=("B" if i % 2 == 0 else "A"),
             decoded_winner="v0",
             decoded_rubric={"fluency": "v0", "accuracy": "v0",
-                            "proper_nouns": "v0", "titles": "v0",
-                            "register": "v0"},
+                            "source_preservation": "v0", "titles": "v0",
+                            "register": "v0", "format_compliance": "v0"},
         ))
     for i in range(80, 100):
         judgments.append(_judgment(
             f"s{i:03d}", swapped=False, raw_winner="tie",
             decoded_winner="tie",
             decoded_rubric={"fluency": "equal", "accuracy": "equal",
-                            "proper_nouns": "equal", "titles": "equal",
-                            "register": "equal"},
+                            "source_preservation": "equal", "titles": "equal",
+                            "register": "equal", "format_compliance": "equal"},
         ))
     _write_judgments(tmp_path, "run01.jsonl", judgments)
 

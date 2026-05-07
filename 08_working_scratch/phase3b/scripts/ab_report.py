@@ -22,7 +22,7 @@ v1 PASSES when ALL of:
 1. **mechanical regressions == 0**: pooled net change in rule hits
    (v1 − v0) for every rule class is ≤ 0.
 2. **judge overall win-rate ≥ 55 %** with **tie rate < 30 %**.
-3. **per-rubric**: v1 wins on **≥ 5 of the 5** rubric classes with
+3. **per-rubric**: v1 wins on **≥ 5 of the 6** rubric classes with
    no losses (a "loss" is v0_wins > v1_wins on that class).
 4. **position bias < 10 pp**: |P(A_picked) − 0.5| < 0.10.
 5. **judge invalid+error rate < 10 %**: at least 90 % of pairs
@@ -67,7 +67,7 @@ import ab_judge  # noqa: E402
 
 THRESHOLD_WIN_RATE = 0.55          # gate (2)
 THRESHOLD_TIE_RATE_MAX = 0.30      # gate (2)
-THRESHOLD_RUBRIC_WINS_MIN = 5      # gate (3): out of 5 rubrics
+THRESHOLD_RUBRIC_WINS_MIN = 5      # gate (3): out of 6 rubrics
 THRESHOLD_POSITION_BIAS_MAX = 0.10 # gate (4): |P(A_picked) - 0.5|
 THRESHOLD_INVALID_RATE_MAX = 0.10  # gate (5)
 
@@ -320,7 +320,7 @@ def evaluate_verdict(
             rubric_losses.append(rk)
     if rubric_wins < THRESHOLD_RUBRIC_WINS_MIN:
         reasons.append(
-            f"v1 won only {rubric_wins} of 5 rubrics (need "
+            f"v1 won only {rubric_wins} of 6 rubrics (need "
             f"≥{THRESHOLD_RUBRIC_WINS_MIN}, gate 3)."
         )
     if rubric_losses:
@@ -513,7 +513,7 @@ def render_markdown(summary: dict, *, page: str) -> str:
     out.append(f"- gate 1: mechanical regressions = 0")
     out.append(f"- gate 2: v1 win-rate ≥ {th['win_rate']:.0%}, "
                f"tie-rate < {th['tie_rate_max']:.0%}")
-    out.append(f"- gate 3: v1 wins ≥ {th['rubric_wins_min']}/5 rubrics, "
+    out.append(f"- gate 3: v1 wins ≥ {th['rubric_wins_min']}/6 rubrics, "
                "no losses")
     out.append(f"- gate 4: |P(A) − 0.5| < {th['position_bias_max']:.0%}")
     out.append(f"- gate 5: invalid+error rate < {th['invalid_rate_max']:.0%}")

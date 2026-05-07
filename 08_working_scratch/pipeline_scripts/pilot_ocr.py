@@ -5,6 +5,8 @@ import shutil
 from pathlib import Path
 
 import pytesseract
+import logging
+
 from core_interfaces import TextTransform
 from pdf2image import convert_from_path
 from ocr_adapters import GeminiOcrEngine, TesseractOcrEngine
@@ -15,6 +17,11 @@ from text_normalization import (
     HistoricalNumeralNormalizer,
     LigatureNormalizer,
 )
+
+
+# Configure logging
+logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
+logger = logging.getLogger(__name__)
 
 
 def ensure_dir(path: Path) -> None:
@@ -223,16 +230,12 @@ def run_gemini_pilot(
     provider_config_path: Path | None,
     lang: str,
 ) -> Path:
-    """Run the Gemini OCR pipeline for a page range and write structured records.
-
-    Output JSON includes per-line records with text_raw_ocr, normalized_form,
-    and alignment_index fields so downstream annotation/QA can preserve raw
-    model output alongside post-normalization text.
-    """
+    logger.info("Starting Gemini OCR pipeline")
     config = load_config(provider_config_path)
     provider = config.get("gemini")
     missing = provider.missing_fields()
     if missing:
+        logger.error(f"Gemini provider is not configured. Missing fields: {', '.join(missing)}")
         raise RuntimeError(
             "Gemini provider is not configured. Missing fields: "
             f"{', '.join(missing)}. Set USSHERIN_PROVIDERS_GEMINI_API_KEY or "
@@ -257,7 +260,13 @@ def run_gemini_pilot(
     records: list[dict] = []
     for index, image in enumerate(images, start=start_page):
         page_id = f"p{index:04d}"
-        detailed = engine.extract_detailed(image, lang=lang, page_id=page_id)
+        try:
+            logger.info(f"Processing page {page_id} with Gemini OCR")
+            detailed = engine.extract_detailed(image, lang=lang, page_id=page_id)
+            logger.debug(f"Gemini API response for page {page_id}: {detailed}")
+        except Exception as e:
+            logger.error(f"Error during Gemini OCR for page {page_id}: {e}")
+            raise
 
         line_records: list[dict] = []
         for alignment_index, line in enumerate(detailed.lines):
@@ -276,13 +285,13 @@ def run_gemini_pilot(
                 }
             )
 
-        # Aggregate plain-text dump of body region for backward compatibility.
         body_text = "\n".join(
             line.text for line in detailed.lines if line.region == "body"
         )
         body_text = text_normalizer.apply(body_text)
         txt_path = part_dir / f"page_{index:04d}_raw.txt"
         txt_path.write_text(body_text, encoding="utf-8")
+        logger.info(f"Written raw text for page {page_id} to {txt_path}")
 
         records.append(
             {
@@ -303,6 +312,7 @@ def run_gemini_pilot(
 
     output_json = part_dir / f"{part}_pilot_ocr.json"
     output_json.write_text(json.dumps(records, ensure_ascii=False, indent=2), encoding="utf-8")
+    logger.info(f"Gemini OCR results written to {output_json}")
     return output_json
 
 

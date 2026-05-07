@@ -44,31 +44,39 @@ from pathlib import Path
 from typing import Iterable
 
 
-RUBRICS = ("fluency", "accuracy", "proper_nouns", "titles", "register")
+RUBRICS = (
+    "fluency",
+    "accuracy",
+    "source_preservation",
+    "titles",
+    "register",
+    "format_compliance",
+)
 
 
 GREEK_RULE_PREAMBLE = """\
 **Reviewer rule — embedded Greek (read before scoring):**
 
-Ussher routinely quotes a Greek source and then paraphrases it into
-Latin in the same or adjacent clause. When that pattern is present,
-the *correct* editorial behavior is to **leave the Greek
-untranslated** and render only the Latin into English — the Latin
-paraphrase already serves as Ussher's gloss, and double-translating
-produces redundant English.
+The candidates may use a three-slot format for embedded Greek:
+the Greek is preserved verbatim, immediately followed by an English
+rendering inside ⟦…⟧ brackets, optionally followed by Ussher's own
+Latin paraphrase inside ⟪…⟫ brackets when one is present in the
+source. Treat the brackets as scaffolding, not as prose.
 
-Score with this rule in mind:
+Score with this in mind:
 
-- Greek + adjacent Latin paraphrase → leaving the Greek verbatim is
-  CORRECT. Do not mark a candidate down for omitting an English
-  gloss of such Greek.
-- Greek standing alone (no Latin paraphrase nearby; the Greek
-  carries new substantive content) → it SHOULD be rendered into
-  English (or English-glossed in brackets).
-- Signals that Ussher is paraphrasing the Greek: quotation marks
-  around or just after the Greek; a Latin clause that visibly
-  echoes the Greek; connectives like *id est*, *hoc est*, *sive*,
-  *inquit* near the Greek.
+- Greek preserved verbatim is CORRECT (not a missing translation).
+- ⟦English⟧ should faithfully render the Greek's meaning.
+- ⟪Latin⟫ should reproduce Ussher's actual Latin paraphrase from
+  the source — invented Latin is wrong.
+- Signals that Ussher is paraphrasing the Greek (and so a ⟪Latin⟫
+  slot should be present): quotation marks around or just after
+  the Greek; a Latin clause that visibly echoes the Greek;
+  connectives like *id est*, *hoc est*, *sive*, *inquit* near
+  the Greek.
+- A candidate that omits the brackets, uses wrong bracket
+  characters (`[]`, `«»`, `<<>>`), or puts the slots in the wrong
+  order is non-compliant on `format_compliance`.
 
 Note: the LLM judge that produced the per-pairing winners shown
 below was given this rule, but its application is imperfect.

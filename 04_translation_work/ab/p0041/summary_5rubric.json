@@ -1,0 +1,142 @@
+{
+  "base_dir": "04_translation_work\\ab\\p0041",
+  "runs": [
+    {
+      "version": "v0",
+      "run_tag": "run01",
+      "path": "04_translation_work\\ab\\p0041\\v0\\run01\\segments_with_translations.jsonl",
+      "segments": 27,
+      "by_rule": {
+        "caret_in_english": 4,
+        "empty_english": 1
+      }
+    },
+    {
+      "version": "v0",
+      "run_tag": "run02",
+      "path": "04_translation_work\\ab\\p0041\\v0\\run02\\segments_with_translations.jsonl",
+      "segments": 27,
+      "by_rule": {
+        "caret_in_english": 4,
+        "empty_english": 1
+      }
+    },
+    {
+      "version": "v0",
+      "run_tag": "run03",
+      "path": "04_translation_work\\ab\\p0041\\v0\\run03\\segments_with_translations.jsonl",
+      "segments": 27,
+      "by_rule": {
+        "caret_in_english": 4,
+        "empty_english": 1
+      }
+    }
+  ],
+  "mechanical": {
+    "v0_pooled": {
+      "caret_in_english": 12,
+      "empty_english": 3
+    },
+    "v1_pooled": {},
+    "v0_per_segment": {
+      "caret_in_english": 0.14814814814814814,
+      "empty_english": 0.037037037037037035
+    },
+    "v1_per_segment": {},
+    "delta_per_segment_v1_minus_v0": {
+      "caret_in_english": -0.14814814814814814,
+      "empty_english": -0.037037037037037035
+    }
+  },
+  "judgments": {
+    "batches": [
+      {
+        "path": "04_translation_work\\ab\\p0041\\judgments\\run01.jsonl",
+        "n": 27,
+        "a_picked": 8,
+        "b_picked": 14,
+        "tie": 4,
+        "invalid": 0,
+        "error": 1
+      },
+      {
+        "path": "04_translation_work\\ab\\p0041\\judgments\\run02.jsonl",
+        "n": 27,
+        "a_picked": 9,
+        "b_picked": 14,
+        "tie": 3,
+        "invalid": 0,
+        "error": 1
+      },
+      {
+        "path": "04_translation_work\\ab\\p0041\\judgments\\run03.jsonl",
+        "n": 27,
+        "a_picked": 8,
+        "b_picked": 15,
+        "tie": 3,
+        "invalid": 0,
+        "error": 1
+      }
+    ],
+    "pooled": {
+      "n": 81,
+      "overall": {
+        "v0": 45,
+        "v1": 23,
+        "tie": 10,
+        "invalid": 0,
+        "error": 3
+      },
+      "rubric": {
+        "fluency": {
+          "v0": 42,
+          "v1": 14,
+          "equal": 22,
+          "invalid": 0
+        },
+        "accuracy": {
+          "v0": 28,
+          "v1": 15,
+          "equal": 35,
+          "invalid": 0
+        },
+        "proper_nouns": {
+          "v0": 7,
+          "v1": 3,
+          "equal": 68,
+          "invalid": 0
+        },
+        "titles": {
+          "v0": 1,
+          "v1": 8,
+          "equal": 69,
+          "invalid": 0
+        },
+        "register": {
+          "v0": 41,
+          "v1": 19,
+          "equal": 18,
+          "invalid": 0
+        }
+      },
+      "a_picked": 25,
+      "b_picked": 43
+    }
+  },
+  "thresholds": {
+    "win_rate": 0.55,
+    "tie_rate_max": 0.3,
+    "rubric_wins_min": 5,
+    "position_bias_max": 0.1,
+    "invalid_rate_max": 0.1
+  },
+  "verdict": {
+    "label": "FAIL",
+    "reasons": [
+      "v1 win-rate 29% < 55% (gate 2).",
+      "v1 won only 1 of 5 rubrics (need ≥5, gate 3).",
+      "v1 lost on rubric(s): fluency, accuracy, proper_nouns, register (gate 3).",
+      "position bias |P(A) - 0.5| = 13% ≥ 10% (gate 4)."
+    ]
+  }
+}

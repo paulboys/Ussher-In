@@ -117,21 +117,29 @@ def test_build_judge_prompt_contains_both_candidates_and_latin():
     assert '"winner"' in prompt
 
 
-def test_judge_system_encodes_greek_paraphrase_rule():
-    """Regression: judge must know that Greek with adjacent Latin
-    paraphrase should be left untranslated, not penalized."""
+def test_judge_system_encodes_three_slot_greek_format():
+    """Regression: judge must know the v2/v3 three-slot Greek format
+    (Greek verbatim + ⟦English⟧ + optional ⟪Latin⟫) and treat the
+    bracket scaffolding as semantically meaningful."""
     sys = ab_judge.JUDGE_SYSTEM
     assert "Greek" in sys
-    # Key directive present
-    assert "leave the Greek untranslated" in sys.lower() or "untranslated" in sys
-    # The "stand-alone Greek -> translate" carve-out is also present
-    assert "stand" in sys.lower() and "alone" in sys.lower()
+    # Three-slot format described
+    assert "three-slot" in sys.lower()
+    # The bracket characters themselves appear in the brief
+    assert "⟦" in sys and "⟧" in sys
+    assert "⟪" in sys and "⟫" in sys
+    # The two new rubrics are introduced
+    assert "source_preservation" in sys
+    assert "format_compliance" in sys
+    # Filiation-genitive directive is present
+    assert "filiation" in sys.lower() or "Pamphili" in sys
 
 
 def test_parse_judge_response_accepts_clean_json():
     raw = json.dumps({
-        "rubric": {"fluency": "A", "accuracy": "A", "proper_nouns": "equal",
-                   "titles": "equal", "register": "A"},
+        "rubric": {"fluency": "A", "accuracy": "A",
+                   "source_preservation": "equal", "titles": "equal",
+                   "register": "A", "format_compliance": "equal"},
         "winner": "A",
         "reason": "A is more idiomatic.",
     })
@@ -220,8 +228,9 @@ def test_judge_pair_decodes_v1_when_judge_picks_v1_unswapped():
     assert ab_judge.assign_swap(seg_id, seed=0) is False
 
     call = _judge_callable_returning({
-        "rubric": {"fluency": "B", "accuracy": "B", "proper_nouns": "B",
-                   "titles": "equal", "register": "B"},
+        "rubric": {"fluency": "B", "accuracy": "B",
+                   "source_preservation": "B", "titles": "equal",
+                   "register": "B", "format_compliance": "equal"},
         "winner": "B",
         "reason": "B is more modern.",
     })
@@ -251,8 +260,9 @@ def test_judge_pair_decodes_v1_when_judge_picks_a_swapped():
     assert ab_judge.assign_swap(seg_id, seed=0) is True
 
     call = _judge_callable_returning({
-        "rubric": {"fluency": "A", "accuracy": "A", "proper_nouns": "equal",
-                   "titles": "equal", "register": "A"},
+        "rubric": {"fluency": "A", "accuracy": "A",
+                   "source_preservation": "equal", "titles": "equal",
+                   "register": "A", "format_compliance": "equal"},
         "winner": "A",
         "reason": "A is more modern.",
     })
@@ -308,8 +318,8 @@ def test_judge_run_pairs_only_shared_segments(tmp_path: Path):
     # Always-tie judge so we just verify pairing + counts.
     call = _judge_callable_returning({
         "rubric": {"fluency": "equal", "accuracy": "equal",
-                   "proper_nouns": "equal", "titles": "equal",
-                   "register": "equal"},
+                   "source_preservation": "equal", "titles": "equal",
+                   "register": "equal", "format_compliance": "equal"},
         "winner": "tie",
         "reason": "no difference.",
     })
@@ -328,8 +338,8 @@ def test_judge_run_marks_missing_english(tmp_path: Path):
 
     call = _judge_callable_returning({
         "rubric": {"fluency": "equal", "accuracy": "equal",
-                   "proper_nouns": "equal", "titles": "equal",
-                   "register": "equal"},
+                   "source_preservation": "equal", "titles": "equal",
+                   "register": "equal", "format_compliance": "equal"},
         "winner": "tie",
         "reason": "x",
     })

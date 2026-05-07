@@ -66,7 +66,7 @@ def ab_tree(tmp_path: Path) -> Path:
     rubric_v1 = {r: "v1" for r in sc.RUBRICS}
     rubric_v0 = {r: "v0" for r in sc.RUBRICS}
     rubric_eq = {r: "equal" for r in sc.RUBRICS}
-    rubric_mix = {"fluency": "v1", "accuracy": "v0", "proper_nouns": "equal", "titles": "equal", "register": "v1"}
+    rubric_mix = {"fluency": "v1", "accuracy": "v0", "source_preservation": "equal", "titles": "equal", "register": "v1", "format_compliance": "equal"}
 
     pairings = {
         "run01": [
@@ -140,10 +140,10 @@ def test_pool_aggregates_three_pairings(ab_tree: Path):
 
 def test_rubric_swing_signs(ab_tree: Path):
     pools = sc.pool_by_segment(sc.load_judgment_rows(ab_tree / "judgments"))
-    # 3 pairings * 5 rubrics, all v1 -> +15
-    assert pools["seg_swing_v1"].rubric_swing() == 15
-    assert pools["seg_swing_v0"].rubric_swing() == -15
-    # mixed rubric: per pairing v1=2, v0=1, equal=2 -> +1; x3 -> +3
+    # 3 pairings * 6 rubrics, all v1 -> +18
+    assert pools["seg_swing_v1"].rubric_swing() == 18
+    assert pools["seg_swing_v0"].rubric_swing() == -18
+    # mixed rubric: per pairing v1=2, v0=1, equal=3 -> +1; x3 -> +3
     assert pools["seg_mixed"].rubric_swing() == 3
 
 

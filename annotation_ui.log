@@ -1,0 +1,828 @@
+2026-05-06 09:06:44,361 - INFO - Starting OCR job for page p0046 using Gemini.
+2026-05-06 09:06:44,363 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\JamesUssher_Britannicarum ecclesiarum antiquitates_Part1.pdf --part part1 --start-page 46 --end-page 46 --ocr-engine gemini
+2026-05-06 09:06:58,986 - INFO - Subprocess stdout: 
+2026-05-06 09:06:58,986 - ERROR - Subprocess stderr: 2026-05-06 09:06:47,722 - INFO - Starting Gemini OCR pipeline
+2026-05-06 09:06:49,207 - INFO - Processing page p0046 with Gemini OCR
+2026-05-06 09:06:58,710 - ERROR - Error during Gemini OCR for page p0046: HTTP Error 503: Service Unavailable
+Traceback (most recent call last):
+  File "C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py", line 495, in <module>
+    main()
+  File "C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py", line 398, in main
+    output_path = run_gemini_pilot(
+                  ^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py", line 265, in run_gemini_pilot
+    detailed = engine.extract_detailed(image, lang=lang, page_id=page_id)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\ocr_adapters.py", line 349, in extract_detailed
+    raw = self._request_fn(self.provider.model, prompt, png_bytes, self.provider)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\ocr_adapters.py", line 297, in _default_gemini_request
+    with urllib.request.urlopen(request, timeout=provider.timeout_seconds) as response:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\miniforge3\envs\ussher\Lib\urllib\request.py", line 216, in urlopen
+    return opener.open(url, data, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\miniforge3\envs\ussher\Lib\urllib\request.py", line 525, in open
+    response = meth(req, response)
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\miniforge3\envs\ussher\Lib\urllib\request.py", line 634, in http_response
+    response = self.parent.error(
+               ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\miniforge3\envs\ussher\Lib\urllib\request.py", line 563, in error
+    return self._call_chain(*args)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\miniforge3\envs\ussher\Lib\urllib\request.py", line 496, in _call_chain
+    result = func(*args)
+             ^^^^^^^^^^^
+  File "C:\Users\User\miniforge3\envs\ussher\Lib\urllib\request.py", line 643, in http_error_default
+    raise HTTPError(req.full_url, code, msg, hdrs, fp)
+urllib.error.HTTPError: HTTP Error 503: Service Unavailable
+
+2026-05-06 09:36:03,498 - INFO - Flask app started. Logging to annotation_ui.log
+2026-05-06 09:36:49,156 - INFO - Starting OCR job for page p0046 using Gemini.
+2026-05-06 09:36:49,157 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\JamesUssher_Britannicarum ecclesiarum antiquitates_Part1.pdf --part part1 --start-page 46 --end-page 46 --ocr-engine gemini
+2026-05-06 09:36:54,528 - INFO - Subprocess stdout: 
+2026-05-06 09:36:54,528 - ERROR - Subprocess stderr: 2026-05-06 09:36:51,076 - INFO - Starting Gemini OCR pipeline
+2026-05-06 09:36:51,701 - INFO - Processing page p0046 with Gemini OCR
+2026-05-06 09:36:54,259 - ERROR - Error during Gemini OCR for page p0046: HTTP Error 503: Service Unavailable
+Traceback (most recent call last):
+  File "C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py", line 495, in <module>
+    main()
+  File "C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py", line 398, in main
+    output_path = run_gemini_pilot(
+                  ^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py", line 265, in run_gemini_pilot
+    detailed = engine.extract_detailed(image, lang=lang, page_id=page_id)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\ocr_adapters.py", line 349, in extract_detailed
+    raw = self._request_fn(self.provider.model, prompt, png_bytes, self.provider)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\ocr_adapters.py", line 297, in _default_gemini_request
+    with urllib.request.urlopen(request, timeout=provider.timeout_seconds) as response:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\miniforge3\envs\ussher\Lib\urllib\request.py", line 216, in urlopen
+    return opener.open(url, data, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\miniforge3\envs\ussher\Lib\urllib\request.py", line 525, in open
+    response = meth(req, response)
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\miniforge3\envs\ussher\Lib\urllib\request.py", line 634, in http_response
+    response = self.parent.error(
+               ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\miniforge3\envs\ussher\Lib\urllib\request.py", line 563, in error
+    return self._call_chain(*args)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\miniforge3\envs\ussher\Lib\urllib\request.py", line 496, in _call_chain
+    result = func(*args)
+             ^^^^^^^^^^^
+  File "C:\Users\User\miniforge3\envs\ussher\Lib\urllib\request.py", line 643, in http_error_default
+    raise HTTPError(req.full_url, code, msg, hdrs, fp)
+urllib.error.HTTPError: HTTP Error 503: Service Unavailable
+
+2026-05-06 09:37:07,332 - INFO - Starting OCR job for page p0046 using Gemini.
+2026-05-06 09:37:07,334 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\JamesUssher_Britannicarum ecclesiarum antiquitates_Part1.pdf --part part1 --start-page 46 --end-page 46 --ocr-engine gemini
+2026-05-06 09:37:11,609 - INFO - Subprocess stdout: 
+2026-05-06 09:37:11,609 - ERROR - Subprocess stderr: 2026-05-06 09:37:08,476 - INFO - Starting Gemini OCR pipeline
+2026-05-06 09:37:09,049 - INFO - Processing page p0046 with Gemini OCR
+2026-05-06 09:37:11,487 - ERROR - Error during Gemini OCR for page p0046: HTTP Error 503: Service Unavailable
+Traceback (most recent call last):
+  File "C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py", line 495, in <module>
+    main()
+  File "C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py", line 398, in main
+    output_path = run_gemini_pilot(
+                  ^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py", line 265, in run_gemini_pilot
+    detailed = engine.extract_detailed(image, lang=lang, page_id=page_id)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\ocr_adapters.py", line 349, in extract_detailed
+    raw = self._request_fn(self.provider.model, prompt, png_bytes, self.provider)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\ocr_adapters.py", line 297, in _default_gemini_request
+    with urllib.request.urlopen(request, timeout=provider.timeout_seconds) as response:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\miniforge3\envs\ussher\Lib\urllib\request.py", line 216, in urlopen
+    return opener.open(url, data, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\miniforge3\envs\ussher\Lib\urllib\request.py", line 525, in open
+    response = meth(req, response)
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\miniforge3\envs\ussher\Lib\urllib\request.py", line 634, in http_response
+    response = self.parent.error(
+               ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\miniforge3\envs\ussher\Lib\urllib\request.py", line 563, in error
+    return self._call_chain(*args)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\miniforge3\envs\ussher\Lib\urllib\request.py", line 496, in _call_chain
+    result = func(*args)
+             ^^^^^^^^^^^
+  File "C:\Users\User\miniforge3\envs\ussher\Lib\urllib\request.py", line 643, in http_error_default
+    raise HTTPError(req.full_url, code, msg, hdrs, fp)
+urllib.error.HTTPError: HTTP Error 503: Service Unavailable
+
+2026-05-06 10:17:06,464 - INFO - Starting OCR job for page p0046 using Gemini.
+2026-05-06 10:17:06,471 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\JamesUssher_Britannicarum ecclesiarum antiquitates_Part1.pdf --part part1 --start-page 46 --end-page 46 --ocr-engine gemini
+2026-05-06 10:17:12,469 - INFO - Subprocess stdout: 
+2026-05-06 10:17:12,469 - ERROR - Subprocess stderr: 2026-05-06 10:17:08,246 - INFO - Starting Gemini OCR pipeline
+2026-05-06 10:17:08,859 - INFO - Processing page p0046 with Gemini OCR
+2026-05-06 10:17:12,352 - ERROR - Error during Gemini OCR for page p0046: HTTP Error 503: Service Unavailable
+Traceback (most recent call last):
+  File "C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py", line 495, in <module>
+    main()
+  File "C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py", line 398, in main
+    output_path = run_gemini_pilot(
+                  ^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py", line 265, in run_gemini_pilot
+    detailed = engine.extract_detailed(image, lang=lang, page_id=page_id)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\ocr_adapters.py", line 349, in extract_detailed
+    raw = self._request_fn(self.provider.model, prompt, png_bytes, self.provider)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\ocr_adapters.py", line 297, in _default_gemini_request
+    with urllib.request.urlopen(request, timeout=provider.timeout_seconds) as response:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\miniforge3\envs\ussher\Lib\urllib\request.py", line 216, in urlopen
+    return opener.open(url, data, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\miniforge3\envs\ussher\Lib\urllib\request.py", line 525, in open
+    response = meth(req, response)
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\miniforge3\envs\ussher\Lib\urllib\request.py", line 634, in http_response
+    response = self.parent.error(
+               ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\miniforge3\envs\ussher\Lib\urllib\request.py", line 563, in error
+    return self._call_chain(*args)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\miniforge3\envs\ussher\Lib\urllib\request.py", line 496, in _call_chain
+    result = func(*args)
+             ^^^^^^^^^^^
+  File "C:\Users\User\miniforge3\envs\ussher\Lib\urllib\request.py", line 643, in http_error_default
+    raise HTTPError(req.full_url, code, msg, hdrs, fp)
+urllib.error.HTTPError: HTTP Error 503: Service Unavailable
+
+2026-05-06 11:07:12,303 - INFO - Starting OCR job for page p0046 using Gemini.
+2026-05-06 11:07:12,303 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\JamesUssher_Britannicarum ecclesiarum antiquitates_Part1.pdf --part part1 --start-page 46 --end-page 46 --ocr-engine gemini
+2026-05-06 11:07:18,288 - INFO - Subprocess stdout: 
+2026-05-06 11:07:18,288 - ERROR - Subprocess stderr: 2026-05-06 11:07:13,805 - INFO - Starting Gemini OCR pipeline
+2026-05-06 11:07:14,654 - INFO - Processing page p0046 with Gemini OCR
+2026-05-06 11:07:18,116 - ERROR - Error during Gemini OCR for page p0046: HTTP Error 503: Service Unavailable
+Traceback (most recent call last):
+  File "C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py", line 495, in <module>
+    main()
+  File "C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py", line 398, in main
+    output_path = run_gemini_pilot(
+                  ^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py", line 265, in run_gemini_pilot
+    detailed = engine.extract_detailed(image, lang=lang, page_id=page_id)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\ocr_adapters.py", line 349, in extract_detailed
+    raw = self._request_fn(self.provider.model, prompt, png_bytes, self.provider)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\ocr_adapters.py", line 297, in _default_gemini_request
+    with urllib.request.urlopen(request, timeout=provider.timeout_seconds) as response:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\miniforge3\envs\ussher\Lib\urllib\request.py", line 216, in urlopen
+    return opener.open(url, data, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\miniforge3\envs\ussher\Lib\urllib\request.py", line 525, in open
+    response = meth(req, response)
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\miniforge3\envs\ussher\Lib\urllib\request.py", line 634, in http_response
+    response = self.parent.error(
+               ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\miniforge3\envs\ussher\Lib\urllib\request.py", line 563, in error
+    return self._call_chain(*args)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\miniforge3\envs\ussher\Lib\urllib\request.py", line 496, in _call_chain
+    result = func(*args)
+             ^^^^^^^^^^^
+  File "C:\Users\User\miniforge3\envs\ussher\Lib\urllib\request.py", line 643, in http_error_default
+    raise HTTPError(req.full_url, code, msg, hdrs, fp)
+urllib.error.HTTPError: HTTP Error 503: Service Unavailable
+
+2026-05-06 11:21:34,560 - INFO - Starting OCR job for page p0046 using Gemini.
+2026-05-06 11:21:34,560 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\JamesUssher_Britannicarum ecclesiarum antiquitates_Part1.pdf --part part1 --start-page 46 --end-page 46 --ocr-engine gemini
+2026-05-06 11:22:36,175 - INFO - Subprocess stdout: 
+2026-05-06 11:22:36,175 - ERROR - Subprocess stderr: 2026-05-06 11:21:35,946 - INFO - Starting Gemini OCR pipeline
+2026-05-06 11:21:36,772 - INFO - Processing page p0046 with Gemini OCR
+2026-05-06 11:22:36,074 - ERROR - Error during Gemini OCR for page p0046: HTTP Error 503: Service Unavailable
+Traceback (most recent call last):
+  File "C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py", line 495, in <module>
+    main()
+  File "C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py", line 398, in main
+    output_path = run_gemini_pilot(
+                  ^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py", line 265, in run_gemini_pilot
+    detailed = engine.extract_detailed(image, lang=lang, page_id=page_id)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\ocr_adapters.py", line 349, in extract_detailed
+    raw = self._request_fn(self.provider.model, prompt, png_bytes, self.provider)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\ocr_adapters.py", line 297, in _default_gemini_request
+    with urllib.request.urlopen(request, timeout=provider.timeout_seconds) as response:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\miniforge3\envs\ussher\Lib\urllib\request.py", line 216, in urlopen
+    return opener.open(url, data, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\miniforge3\envs\ussher\Lib\urllib\request.py", line 525, in open
+    response = meth(req, response)
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\miniforge3\envs\ussher\Lib\urllib\request.py", line 634, in http_response
+    response = self.parent.error(
+               ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\miniforge3\envs\ussher\Lib\urllib\request.py", line 563, in error
+    return self._call_chain(*args)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\miniforge3\envs\ussher\Lib\urllib\request.py", line 496, in _call_chain
+    result = func(*args)
+             ^^^^^^^^^^^
+  File "C:\Users\User\miniforge3\envs\ussher\Lib\urllib\request.py", line 643, in http_error_default
+    raise HTTPError(req.full_url, code, msg, hdrs, fp)
+urllib.error.HTTPError: HTTP Error 503: Service Unavailable
+
+2026-05-06 12:03:53,278 - INFO - Received GET request for page_id: p0045
+2026-05-06 12:03:53,298 - INFO - Successfully read payload for page_id: p0045
+2026-05-06 12:03:53,361 - INFO - Received GET request for page_id: p0045
+2026-05-06 12:03:53,364 - INFO - Successfully read payload for page_id: p0045
+2026-05-06 12:11:50,034 - INFO - Received GET request for page_id: p0046
+2026-05-06 12:11:50,035 - WARNING - Page not found: p0046
+2026-05-06 12:11:50,165 - INFO - Received GET request for page_id: p0046
+2026-05-06 12:11:50,165 - WARNING - Page not found: p0046
+2026-05-06 12:11:52,188 - INFO - Received GET request for page_id: p0047
+2026-05-06 12:11:52,190 - WARNING - Page not found: p0047
+2026-05-06 12:11:52,220 - INFO - Received GET request for page_id: p0047
+2026-05-06 12:11:52,220 - WARNING - Page not found: p0047
+2026-05-06 12:11:53,400 - INFO - Received GET request for page_id: p0048
+2026-05-06 12:11:53,400 - WARNING - Page not found: p0048
+2026-05-06 12:11:53,484 - INFO - Received GET request for page_id: p0048
+2026-05-06 12:11:53,486 - WARNING - Page not found: p0048
+2026-05-06 12:11:55,560 - INFO - Received GET request for page_id: p0047
+2026-05-06 12:11:55,570 - WARNING - Page not found: p0047
+2026-05-06 12:11:56,334 - INFO - Received GET request for page_id: p0046
+2026-05-06 12:11:56,334 - WARNING - Page not found: p0046
+2026-05-06 12:11:56,456 - INFO - Received GET request for page_id: p0046
+2026-05-06 12:11:56,456 - WARNING - Page not found: p0046
+2026-05-06 12:11:58,446 - INFO - Received GET request for page_id: p0045
+2026-05-06 12:11:58,448 - INFO - Successfully read payload for page_id: p0045
+2026-05-06 12:12:02,641 - INFO - Received GET request for page_id: p0046
+2026-05-06 12:12:02,641 - WARNING - Page not found: p0046
+2026-05-06 12:12:06,417 - INFO - Received GET request for page_id: p0047
+2026-05-06 12:12:06,417 - WARNING - Page not found: p0047
+2026-05-06 12:12:11,674 - INFO - Starting OCR job for page p0047 using Gemini.
+2026-05-06 12:12:11,676 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\JamesUssher_Britannicarum ecclesiarum antiquitates_Part1.pdf --part part1 --start-page 47 --end-page 47 --ocr-engine gemini
+2026-05-06 12:12:17,739 - INFO - Subprocess stdout: 
+2026-05-06 12:12:17,739 - ERROR - Subprocess stderr: 2026-05-06 12:12:13,848 - INFO - Starting Gemini OCR pipeline
+2026-05-06 12:12:14,487 - INFO - Processing page p0047 with Gemini OCR
+2026-05-06 12:12:17,589 - ERROR - Error during Gemini OCR for page p0047: HTTP Error 503: Service Unavailable
+Traceback (most recent call last):
+  File "C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py", line 495, in <module>
+    main()
+  File "C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py", line 398, in main
+    output_path = run_gemini_pilot(
+                  ^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py", line 265, in run_gemini_pilot
+    detailed = engine.extract_detailed(image, lang=lang, page_id=page_id)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\ocr_adapters.py", line 349, in extract_detailed
+    raw = self._request_fn(self.provider.model, prompt, png_bytes, self.provider)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\ocr_adapters.py", line 297, in _default_gemini_request
+    with urllib.request.urlopen(request, timeout=provider.timeout_seconds) as response:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\miniforge3\envs\ussher\Lib\urllib\request.py", line 216, in urlopen
+    return opener.open(url, data, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\miniforge3\envs\ussher\Lib\urllib\request.py", line 525, in open
+    response = meth(req, response)
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\miniforge3\envs\ussher\Lib\urllib\request.py", line 634, in http_response
+    response = self.parent.error(
+               ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\miniforge3\envs\ussher\Lib\urllib\request.py", line 563, in error
+    return self._call_chain(*args)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\miniforge3\envs\ussher\Lib\urllib\request.py", line 496, in _call_chain
+    result = func(*args)
+             ^^^^^^^^^^^
+  File "C:\Users\User\miniforge3\envs\ussher\Lib\urllib\request.py", line 643, in http_error_default
+    raise HTTPError(req.full_url, code, msg, hdrs, fp)
+urllib.error.HTTPError: HTTP Error 503: Service Unavailable
+
+2026-05-06 12:18:08,310 - INFO - Received POST request to save page_id: p0033
+2026-05-06 12:18:08,354 - INFO - Recorded 1 edits for page_id: p0033
+2026-05-06 12:18:08,360 - INFO - Successfully saved payload for page_id: p0033
+2026-05-06 12:18:08,378 - INFO - Received GET request for page_id: p0033
+2026-05-06 12:18:08,378 - INFO - Successfully read payload for page_id: p0033
+2026-05-06 12:18:08,396 - INFO - Received POST request to save page_id: p0099
+2026-05-06 12:18:08,412 - INFO - Recorded 1 edits for page_id: p0099
+2026-05-06 12:18:08,412 - INFO - Successfully saved payload for page_id: p0099
+2026-05-06 12:18:08,445 - INFO - Received POST request to save page_id: p0099
+2026-05-06 12:18:08,449 - INFO - Recorded 2 edits for page_id: p0099
+2026-05-06 12:18:08,452 - INFO - Successfully saved payload for page_id: p0099
+2026-05-06 12:18:08,471 - INFO - Received POST request to save page_id: p0099
+2026-05-06 12:18:08,474 - INFO - Recorded 2 edits for page_id: p0099
+2026-05-06 12:18:08,479 - INFO - Successfully saved payload for page_id: p0099
+2026-05-06 12:18:08,494 - INFO - Received POST request to save page_id: p0099
+2026-05-06 12:18:08,494 - INFO - Recorded 1 edits for page_id: p0099
+2026-05-06 12:18:08,494 - INFO - Successfully saved payload for page_id: p0099
+2026-05-06 12:18:08,494 - INFO - Received POST request to save page_id: p0099
+2026-05-06 12:18:08,517 - INFO - Recorded 1 edits for page_id: p0099
+2026-05-06 12:18:08,520 - INFO - Successfully saved payload for page_id: p0099
+2026-05-06 12:18:08,537 - INFO - Received POST request to save page_id: p0099
+2026-05-06 12:18:08,544 - INFO - Recorded 0 edits for page_id: p0099
+2026-05-06 12:18:08,544 - INFO - Successfully saved payload for page_id: p0099
+2026-05-06 12:18:09,262 - INFO - Received POST request to save page_id: p0050
+2026-05-06 12:18:09,262 - INFO - Recorded 0 edits for page_id: p0050
+2026-05-06 12:18:09,262 - INFO - Successfully saved payload for page_id: p0050
+2026-05-06 12:18:09,296 - INFO - Received POST request to save page_id: p0050
+2026-05-06 12:18:09,298 - INFO - Recorded 0 edits for page_id: p0050
+2026-05-06 12:18:09,302 - INFO - Successfully saved payload for page_id: p0050
+2026-05-06 12:42:10,303 - INFO - Starting OCR job for page p0047 using Gemini.
+2026-05-06 12:42:10,322 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\JamesUssher_Britannicarum ecclesiarum antiquitates_Part1.pdf --part part1 --start-page 47 --end-page 47 --ocr-engine gemini
+2026-05-06 12:43:35,608 - INFO - Subprocess stdout: 
+2026-05-06 12:43:35,608 - ERROR - Subprocess stderr: 2026-05-06 12:42:12,905 - INFO - Starting Gemini OCR pipeline
+2026-05-06 12:42:14,170 - INFO - Processing page p0047 with Gemini OCR
+2026-05-06 12:43:35,340 - ERROR - Error during Gemini OCR for page p0047: HTTP Error 503: Service Unavailable
+Traceback (most recent call last):
+  File "C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py", line 495, in <module>
+    main()
+  File "C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py", line 398, in main
+    output_path = run_gemini_pilot(
+                  ^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py", line 265, in run_gemini_pilot
+    detailed = engine.extract_detailed(image, lang=lang, page_id=page_id)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\ocr_adapters.py", line 349, in extract_detailed
+    raw = self._request_fn(self.provider.model, prompt, png_bytes, self.provider)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\ocr_adapters.py", line 297, in _default_gemini_request
+    with urllib.request.urlopen(request, timeout=provider.timeout_seconds) as response:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\miniforge3\envs\ussher\Lib\urllib\request.py", line 216, in urlopen
+    return opener.open(url, data, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\miniforge3\envs\ussher\Lib\urllib\request.py", line 525, in open
+    response = meth(req, response)
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\miniforge3\envs\ussher\Lib\urllib\request.py", line 634, in http_response
+    response = self.parent.error(
+               ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\miniforge3\envs\ussher\Lib\urllib\request.py", line 563, in error
+    return self._call_chain(*args)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\miniforge3\envs\ussher\Lib\urllib\request.py", line 496, in _call_chain
+    result = func(*args)
+             ^^^^^^^^^^^
+  File "C:\Users\User\miniforge3\envs\ussher\Lib\urllib\request.py", line 643, in http_error_default
+    raise HTTPError(req.full_url, code, msg, hdrs, fp)
+urllib.error.HTTPError: HTTP Error 503: Service Unavailable
+
+2026-05-06 12:43:49,072 - INFO - Received GET request for page_id: p0046
+2026-05-06 12:43:49,073 - WARNING - Page not found: p0046
+2026-05-06 12:43:49,114 - INFO - Received GET request for page_id: p0046
+2026-05-06 12:43:49,115 - WARNING - Page not found: p0046
+2026-05-06 12:43:50,977 - INFO - Received GET request for page_id: p0045
+2026-05-06 12:43:50,996 - INFO - Successfully read payload for page_id: p0045
+2026-05-06 12:43:51,029 - INFO - Received GET request for page_id: p0045
+2026-05-06 12:43:51,031 - INFO - Successfully read payload for page_id: p0045
+2026-05-06 12:43:53,949 - INFO - Received GET request for page_id: p0046
+2026-05-06 12:43:53,951 - WARNING - Page not found: p0046
+2026-05-06 12:43:54,057 - INFO - Received GET request for page_id: p0046
+2026-05-06 12:43:54,058 - WARNING - Page not found: p0046
+2026-05-06 12:43:55,159 - INFO - Received GET request for page_id: p0047
+2026-05-06 12:43:55,159 - WARNING - Page not found: p0047
+2026-05-06 12:43:58,559 - INFO - Received GET request for page_id: p0046
+2026-05-06 12:43:58,559 - WARNING - Page not found: p0046
+2026-05-06 12:44:07,022 - INFO - Starting OCR job for page p0046 using Gemini.
+2026-05-06 12:44:07,024 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\JamesUssher_Britannicarum ecclesiarum antiquitates_Part1.pdf --part part1 --start-page 46 --end-page 46 --ocr-engine gemini
+2026-05-06 12:44:17,216 - INFO - Subprocess stdout: 
+2026-05-06 12:44:17,216 - ERROR - Subprocess stderr: 2026-05-06 12:44:09,037 - INFO - Starting Gemini OCR pipeline
+2026-05-06 12:44:09,959 - INFO - Processing page p0046 with Gemini OCR
+2026-05-06 12:44:16,968 - ERROR - Error during Gemini OCR for page p0046: HTTP Error 503: Service Unavailable
+Traceback (most recent call last):
+  File "C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py", line 495, in <module>
+    main()
+  File "C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py", line 398, in main
+    output_path = run_gemini_pilot(
+                  ^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py", line 265, in run_gemini_pilot
+    detailed = engine.extract_detailed(image, lang=lang, page_id=page_id)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\ocr_adapters.py", line 349, in extract_detailed
+    raw = self._request_fn(self.provider.model, prompt, png_bytes, self.provider)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\ocr_adapters.py", line 297, in _default_gemini_request
+    with urllib.request.urlopen(request, timeout=provider.timeout_seconds) as response:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\miniforge3\envs\ussher\Lib\urllib\request.py", line 216, in urlopen
+    return opener.open(url, data, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\miniforge3\envs\ussher\Lib\urllib\request.py", line 525, in open
+    response = meth(req, response)
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\miniforge3\envs\ussher\Lib\urllib\request.py", line 634, in http_response
+    response = self.parent.error(
+               ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\miniforge3\envs\ussher\Lib\urllib\request.py", line 563, in error
+    return self._call_chain(*args)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\miniforge3\envs\ussher\Lib\urllib\request.py", line 496, in _call_chain
+    result = func(*args)
+             ^^^^^^^^^^^
+  File "C:\Users\User\miniforge3\envs\ussher\Lib\urllib\request.py", line 643, in http_error_default
+    raise HTTPError(req.full_url, code, msg, hdrs, fp)
+urllib.error.HTTPError: HTTP Error 503: Service Unavailable
+
+2026-05-06 14:56:58,385 - INFO - Starting OCR job for page p0046 using Gemini.
+2026-05-06 14:56:58,415 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\JamesUssher_Britannicarum ecclesiarum antiquitates_Part1.pdf --part part1 --start-page 46 --end-page 46 --ocr-engine gemini
+2026-05-06 14:58:50,898 - INFO - Subprocess stdout: Gemini OCR written to 01_raw_ocr_output\part1\part1_pilot_ocr.json
+
+2026-05-06 14:58:50,920 - INFO - OCR job completed successfully for page p0046.
+2026-05-06 14:58:54,497 - INFO - Received GET request for page_id: p0046
+2026-05-06 14:58:54,512 - INFO - Successfully read payload for page_id: p0046
+2026-05-06 15:13:54,598 - INFO - Received GET request for page_id: p0045
+2026-05-06 15:13:54,732 - INFO - Successfully read payload for page_id: p0045
+2026-05-06 15:13:54,752 - INFO - Received GET request for page_id: p0045
+2026-05-06 15:13:54,755 - INFO - Successfully read payload for page_id: p0045
+2026-05-06 15:14:04,243 - INFO - Received GET request for page_id: p0046
+2026-05-06 15:14:04,246 - INFO - Successfully read payload for page_id: p0046
+2026-05-06 15:14:10,132 - INFO - Received GET request for page_id: p0047
+2026-05-06 15:14:10,132 - WARNING - Page not found: p0047
+2026-05-06 15:14:14,029 - INFO - Starting OCR job for page p0047 using Gemini.
+2026-05-06 15:14:14,030 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\JamesUssher_Britannicarum ecclesiarum antiquitates_Part1.pdf --part part1 --start-page 47 --end-page 47 --ocr-engine gemini
+2026-05-06 15:15:42,157 - INFO - Subprocess stdout: Gemini OCR written to 01_raw_ocr_output\part1\part1_pilot_ocr.json
+
+2026-05-06 15:15:42,173 - INFO - OCR job completed successfully for page p0047.
+2026-05-06 15:15:42,552 - INFO - Received GET request for page_id: p0047
+2026-05-06 15:15:42,610 - INFO - Successfully read payload for page_id: p0047
+2026-05-06 15:19:31,213 - INFO - Received GET request for page_id: p0048
+2026-05-06 15:19:31,214 - WARNING - Page not found: p0048
+2026-05-06 15:19:31,252 - INFO - Received GET request for page_id: p0048
+2026-05-06 15:19:31,252 - WARNING - Page not found: p0048
+2026-05-06 15:19:34,997 - INFO - Received GET request for page_id: p0047
+2026-05-06 15:19:35,001 - INFO - Successfully read payload for page_id: p0047
+2026-05-06 15:19:38,142 - INFO - Received GET request for page_id: p0048
+2026-05-06 15:19:38,143 - WARNING - Page not found: p0048
+2026-05-06 15:19:41,167 - INFO - Starting OCR job for page p0048 using Gemini.
+2026-05-06 15:19:41,173 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\JamesUssher_Britannicarum ecclesiarum antiquitates_Part1.pdf --part part1 --start-page 48 --end-page 48 --ocr-engine gemini
+2026-05-06 15:20:08,794 - INFO - Subprocess stdout: Gemini OCR written to 01_raw_ocr_output\part1\part1_pilot_ocr.json
+
+2026-05-06 15:20:08,810 - INFO - OCR job completed successfully for page p0048.
+2026-05-06 15:20:09,343 - INFO - Received GET request for page_id: p0048
+2026-05-06 15:20:09,362 - INFO - Successfully read payload for page_id: p0048
+2026-05-06 15:20:12,342 - INFO - Received GET request for page_id: p0049
+2026-05-06 15:20:12,345 - WARNING - Page not found: p0049
+2026-05-06 15:20:12,376 - INFO - Received GET request for page_id: p0049
+2026-05-06 15:20:12,377 - WARNING - Page not found: p0049
+2026-05-06 15:20:15,953 - INFO - Received GET request for page_id: p0048
+2026-05-06 15:20:15,958 - INFO - Successfully read payload for page_id: p0048
+2026-05-06 15:20:19,789 - INFO - Received GET request for page_id: p0049
+2026-05-06 15:20:19,793 - WARNING - Page not found: p0049
+2026-05-06 15:20:22,216 - INFO - Starting OCR job for page p0049 using Gemini.
+2026-05-06 15:20:22,216 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\JamesUssher_Britannicarum ecclesiarum antiquitates_Part1.pdf --part part1 --start-page 49 --end-page 49 --ocr-engine gemini
+2026-05-06 15:20:50,205 - INFO - Subprocess stdout: Gemini OCR written to 01_raw_ocr_output\part1\part1_pilot_ocr.json
+
+2026-05-06 15:20:50,221 - INFO - OCR job completed successfully for page p0049.
+2026-05-06 15:20:50,399 - INFO - Received GET request for page_id: p0049
+2026-05-06 15:20:50,418 - INFO - Successfully read payload for page_id: p0049
+2026-05-06 15:20:54,189 - INFO - Received GET request for page_id: p0050
+2026-05-06 15:20:54,189 - WARNING - Page not found: p0050
+2026-05-06 15:21:08,713 - INFO - Received GET request for page_id: p0051
+2026-05-06 15:21:08,714 - WARNING - Page not found: p0051
+2026-05-06 15:21:19,339 - INFO - Starting OCR job for page p0051 using Gemini.
+2026-05-06 15:21:19,339 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\JamesUssher_Britannicarum ecclesiarum antiquitates_Part1.pdf --part part1 --start-page 51 --end-page 51 --ocr-engine gemini
+2026-05-06 15:22:22,979 - INFO - Subprocess stdout: Gemini OCR written to 01_raw_ocr_output\part1\part1_pilot_ocr.json
+
+2026-05-06 15:22:22,995 - INFO - OCR job completed successfully for page p0051.
+2026-05-06 15:22:23,777 - INFO - Received GET request for page_id: p0051
+2026-05-06 15:22:23,795 - INFO - Successfully read payload for page_id: p0051
+2026-05-06 15:23:13,146 - INFO - Received GET request for page_id: p0052
+2026-05-06 15:23:13,147 - WARNING - Page not found: p0052
+2026-05-06 15:23:17,476 - INFO - Starting OCR job for page p0052 using Gemini.
+2026-05-06 15:23:17,476 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\JamesUssher_Britannicarum ecclesiarum antiquitates_Part1.pdf --part part1 --start-page 52 --end-page 52 --ocr-engine gemini
+2026-05-06 15:24:34,050 - INFO - Received GET request for page_id: p0053
+2026-05-06 15:24:34,050 - WARNING - Page not found: p0053
+2026-05-06 15:24:43,510 - INFO - Received GET request for page_id: p0052
+2026-05-06 15:24:43,510 - WARNING - Page not found: p0052
+2026-05-06 15:29:09,890 - INFO - Subprocess stdout: Gemini OCR written to 01_raw_ocr_output\part1\part1_pilot_ocr.json
+
+2026-05-06 15:29:09,905 - INFO - OCR job completed successfully for page p0052.
+2026-05-06 15:29:11,466 - INFO - Received GET request for page_id: p0052
+2026-05-06 15:29:11,489 - INFO - Successfully read payload for page_id: p0052
+2026-05-06 15:34:53,558 - INFO - Received GET request for page_id: p0053
+2026-05-06 15:34:53,560 - WARNING - Page not found: p0053
+2026-05-06 15:34:56,517 - INFO - Starting OCR job for page p0053 using Gemini.
+2026-05-06 15:34:56,518 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\JamesUssher_Britannicarum ecclesiarum antiquitates_Part1.pdf --part part1 --start-page 53 --end-page 53 --ocr-engine gemini
+2026-05-06 15:35:34,706 - INFO - Subprocess stdout: Gemini OCR written to 01_raw_ocr_output\part1\part1_pilot_ocr.json
+
+2026-05-06 15:35:34,769 - INFO - OCR job completed successfully for page p0053.
+2026-05-06 15:35:36,459 - INFO - Received GET request for page_id: p0053
+2026-05-06 15:35:36,479 - INFO - Successfully read payload for page_id: p0053
+2026-05-06 16:41:38,350 - INFO - Received GET request for page_id: p0054
+2026-05-06 16:41:38,354 - WARNING - Page not found: p0054
+2026-05-06 16:41:38,387 - INFO - Received GET request for page_id: p0054
+2026-05-06 16:41:38,387 - WARNING - Page not found: p0054
+2026-05-06 16:41:40,826 - INFO - Received GET request for page_id: p0053
+2026-05-06 16:41:40,845 - INFO - Successfully read payload for page_id: p0053
+2026-05-06 16:41:40,920 - INFO - Received GET request for page_id: p0053
+2026-05-06 16:41:40,921 - INFO - Successfully read payload for page_id: p0053
+2026-05-06 16:41:43,932 - INFO - Received GET request for page_id: p0054
+2026-05-06 16:41:43,932 - WARNING - Page not found: p0054
+2026-05-06 16:41:47,202 - INFO - Starting OCR job for page p0054 using Gemini.
+2026-05-06 16:41:47,205 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\JamesUssher_Britannicarum ecclesiarum antiquitates_Part1.pdf --part part1 --start-page 54 --end-page 54 --ocr-engine gemini
+2026-05-06 16:42:15,292 - INFO - Subprocess stdout: Gemini OCR written to 01_raw_ocr_output\part1\part1_pilot_ocr.json
+
+2026-05-06 16:42:15,338 - INFO - OCR job completed successfully for page p0054.
+2026-05-06 16:42:18,586 - INFO - Received GET request for page_id: p0054
+2026-05-06 16:42:18,620 - INFO - Successfully read payload for page_id: p0054
+2026-05-06 16:42:26,790 - INFO - Received GET request for page_id: p0055
+2026-05-06 16:42:26,794 - WARNING - Page not found: p0055
+2026-05-06 16:42:29,802 - INFO - Starting OCR job for page p0055 using Gemini.
+2026-05-06 16:42:29,802 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\JamesUssher_Britannicarum ecclesiarum antiquitates_Part1.pdf --part part1 --start-page 55 --end-page 55 --ocr-engine gemini
+2026-05-06 16:43:00,076 - INFO - Subprocess stdout: Gemini OCR written to 01_raw_ocr_output\part1\part1_pilot_ocr.json
+
+2026-05-06 16:43:00,092 - INFO - OCR job completed successfully for page p0055.
+2026-05-06 16:43:02,001 - INFO - Received GET request for page_id: p0055
+2026-05-06 16:43:02,024 - INFO - Successfully read payload for page_id: p0055
+2026-05-06 16:43:20,559 - INFO - Received GET request for page_id: p0056
+2026-05-06 16:43:20,559 - WARNING - Page not found: p0056
+2026-05-06 16:43:24,023 - INFO - Starting OCR job for page p0056 using Gemini.
+2026-05-06 16:43:24,024 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\JamesUssher_Britannicarum ecclesiarum antiquitates_Part1.pdf --part part1 --start-page 56 --end-page 56 --ocr-engine gemini
+2026-05-06 16:43:50,371 - INFO - Subprocess stdout: Gemini OCR written to 01_raw_ocr_output\part1\part1_pilot_ocr.json
+
+2026-05-06 16:43:50,424 - INFO - OCR job completed successfully for page p0056.
+2026-05-06 16:43:52,190 - INFO - Received GET request for page_id: p0056
+2026-05-06 16:43:52,214 - INFO - Successfully read payload for page_id: p0056
+2026-05-06 16:43:59,799 - INFO - Received GET request for page_id: p0057
+2026-05-06 16:43:59,800 - WARNING - Page not found: p0057
+2026-05-06 16:43:59,966 - INFO - Received GET request for page_id: p0057
+2026-05-06 16:43:59,966 - WARNING - Page not found: p0057
+2026-05-06 16:44:03,823 - INFO - Received GET request for page_id: p0056
+2026-05-06 16:44:03,826 - INFO - Successfully read payload for page_id: p0056
+2026-05-06 16:44:06,686 - INFO - Received GET request for page_id: p0057
+2026-05-06 16:44:06,687 - WARNING - Page not found: p0057
+2026-05-06 16:44:10,092 - INFO - Starting OCR job for page p0057 using Gemini.
+2026-05-06 16:44:10,095 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\JamesUssher_Britannicarum ecclesiarum antiquitates_Part1.pdf --part part1 --start-page 57 --end-page 57 --ocr-engine gemini
+2026-05-06 16:44:37,678 - INFO - Subprocess stdout: Gemini OCR written to 01_raw_ocr_output\part1\part1_pilot_ocr.json
+
+2026-05-06 16:44:37,704 - INFO - OCR job completed successfully for page p0057.
+2026-05-06 16:44:38,271 - INFO - Received GET request for page_id: p0057
+2026-05-06 16:44:38,310 - INFO - Successfully read payload for page_id: p0057
+2026-05-06 16:44:42,564 - INFO - Received GET request for page_id: p0058
+2026-05-06 16:44:42,564 - WARNING - Page not found: p0058
+2026-05-06 16:44:42,656 - INFO - Received GET request for page_id: p0058
+2026-05-06 16:44:42,659 - WARNING - Page not found: p0058
+2026-05-06 16:44:44,817 - INFO - Received GET request for page_id: p0057
+2026-05-06 16:44:44,820 - INFO - Successfully read payload for page_id: p0057
+2026-05-06 16:44:48,304 - INFO - Received GET request for page_id: p0058
+2026-05-06 16:44:48,305 - WARNING - Page not found: p0058
+2026-05-06 16:44:51,387 - INFO - Starting OCR job for page p0058 using Gemini.
+2026-05-06 16:44:51,392 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\JamesUssher_Britannicarum ecclesiarum antiquitates_Part1.pdf --part part1 --start-page 58 --end-page 58 --ocr-engine gemini
+2026-05-06 16:45:20,111 - INFO - Subprocess stdout: Gemini OCR written to 01_raw_ocr_output\part1\part1_pilot_ocr.json
+
+2026-05-06 16:45:20,123 - INFO - OCR job completed successfully for page p0058.
+2026-05-06 16:45:23,675 - INFO - Received GET request for page_id: p0058
+2026-05-06 16:45:23,695 - INFO - Successfully read payload for page_id: p0058
+2026-05-06 16:46:10,341 - INFO - Received GET request for page_id: p0059
+2026-05-06 16:46:10,343 - WARNING - Page not found: p0059
+2026-05-06 16:46:14,722 - INFO - Starting OCR job for page p0059 using Gemini.
+2026-05-06 16:46:14,723 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\JamesUssher_Britannicarum ecclesiarum antiquitates_Part1.pdf --part part1 --start-page 59 --end-page 59 --ocr-engine gemini
+2026-05-06 16:46:41,396 - INFO - Subprocess stdout: Gemini OCR written to 01_raw_ocr_output\part1\part1_pilot_ocr.json
+
+2026-05-06 16:46:41,410 - INFO - OCR job completed successfully for page p0059.
+2026-05-06 16:46:42,880 - INFO - Received GET request for page_id: p0059
+2026-05-06 16:46:42,901 - INFO - Successfully read payload for page_id: p0059
+2026-05-06 16:46:48,509 - INFO - Received POST request to save page_id: p0059
+2026-05-06 16:46:48,519 - INFO - Recorded 0 edits for page_id: p0059
+2026-05-06 16:46:48,531 - INFO - Successfully saved payload for page_id: p0059
+2026-05-06 16:46:52,138 - INFO - Received GET request for page_id: p0060
+2026-05-06 16:46:52,139 - WARNING - Page not found: p0060
+2026-05-06 16:46:55,874 - INFO - Starting OCR job for page p0060 using Gemini.
+2026-05-06 16:46:55,877 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\JamesUssher_Britannicarum ecclesiarum antiquitates_Part1.pdf --part part1 --start-page 60 --end-page 60 --ocr-engine gemini
+2026-05-06 16:47:22,797 - INFO - Subprocess stdout: Gemini OCR written to 01_raw_ocr_output\part1\part1_pilot_ocr.json
+
+2026-05-06 16:47:22,815 - INFO - OCR job completed successfully for page p0060.
+2026-05-06 16:47:24,061 - INFO - Received GET request for page_id: p0060
+2026-05-06 16:47:24,085 - INFO - Successfully read payload for page_id: p0060
+2026-05-06 16:47:26,827 - INFO - Received POST request to save page_id: p0060
+2026-05-06 16:47:26,831 - INFO - Recorded 0 edits for page_id: p0060
+2026-05-06 16:47:26,846 - INFO - Successfully saved payload for page_id: p0060
+2026-05-06 16:47:29,997 - INFO - Received GET request for page_id: p0061
+2026-05-06 16:47:30,000 - WARNING - Page not found: p0061
+2026-05-06 16:47:34,308 - INFO - Starting OCR job for page p0061 using Gemini.
+2026-05-06 16:47:34,310 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\JamesUssher_Britannicarum ecclesiarum antiquitates_Part1.pdf --part part1 --start-page 61 --end-page 61 --ocr-engine gemini
+2026-05-06 16:48:00,211 - INFO - Subprocess stdout: Gemini OCR written to 01_raw_ocr_output\part1\part1_pilot_ocr.json
+
+2026-05-06 16:48:00,225 - INFO - OCR job completed successfully for page p0061.
+2026-05-06 16:48:02,644 - INFO - Received GET request for page_id: p0061
+2026-05-06 16:48:02,661 - INFO - Successfully read payload for page_id: p0061
+2026-05-06 16:48:11,854 - INFO - Received POST request to save page_id: p0061
+2026-05-06 16:48:11,858 - INFO - Recorded 0 edits for page_id: p0061
+2026-05-06 16:48:11,869 - INFO - Successfully saved payload for page_id: p0061
+2026-05-06 16:48:15,518 - INFO - Received GET request for page_id: p0062
+2026-05-06 16:48:15,519 - WARNING - Page not found: p0062
+2026-05-06 16:48:17,947 - INFO - Starting OCR job for page p0062 using Gemini.
+2026-05-06 16:48:17,948 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\JamesUssher_Britannicarum ecclesiarum antiquitates_Part1.pdf --part part1 --start-page 62 --end-page 62 --ocr-engine gemini
+2026-05-06 16:48:46,861 - INFO - Subprocess stdout: Gemini OCR written to 01_raw_ocr_output\part1\part1_pilot_ocr.json
+
+2026-05-06 16:48:46,881 - INFO - OCR job completed successfully for page p0062.
+2026-05-06 16:48:50,114 - INFO - Received GET request for page_id: p0062
+2026-05-06 16:48:50,135 - INFO - Successfully read payload for page_id: p0062
+2026-05-06 16:48:57,465 - INFO - Received POST request to save page_id: p0062
+2026-05-06 16:48:57,469 - INFO - Recorded 0 edits for page_id: p0062
+2026-05-06 16:48:57,479 - INFO - Successfully saved payload for page_id: p0062
+2026-05-06 16:49:01,297 - INFO - Received GET request for page_id: p0063
+2026-05-06 16:49:01,299 - WARNING - Page not found: p0063
+2026-05-06 16:49:05,946 - INFO - Starting OCR job for page p0063 using Gemini.
+2026-05-06 16:49:05,948 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\JamesUssher_Britannicarum ecclesiarum antiquitates_Part1.pdf --part part1 --start-page 63 --end-page 63 --ocr-engine gemini
+2026-05-06 16:49:35,538 - INFO - Subprocess stdout: Gemini OCR written to 01_raw_ocr_output\part1\part1_pilot_ocr.json
+
+2026-05-06 16:49:35,550 - INFO - OCR job completed successfully for page p0063.
+2026-05-06 16:49:38,080 - INFO - Received GET request for page_id: p0063
+2026-05-06 16:49:38,099 - INFO - Successfully read payload for page_id: p0063
+2026-05-06 16:49:41,114 - INFO - Received POST request to save page_id: p0063
+2026-05-06 16:49:41,117 - INFO - Recorded 0 edits for page_id: p0063
+2026-05-06 16:49:41,123 - INFO - Successfully saved payload for page_id: p0063
+2026-05-06 16:49:43,278 - INFO - Received GET request for page_id: p0064
+2026-05-06 16:49:43,279 - WARNING - Page not found: p0064
+2026-05-06 16:49:45,863 - INFO - Starting OCR job for page p0064 using Gemini.
+2026-05-06 16:49:45,866 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\JamesUssher_Britannicarum ecclesiarum antiquitates_Part1.pdf --part part1 --start-page 64 --end-page 64 --ocr-engine gemini
+2026-05-06 16:50:11,692 - INFO - Subprocess stdout: Gemini OCR written to 01_raw_ocr_output\part1\part1_pilot_ocr.json
+
+2026-05-06 16:50:11,705 - INFO - OCR job completed successfully for page p0064.
+2026-05-06 16:50:13,998 - INFO - Received GET request for page_id: p0064
+2026-05-06 16:50:14,015 - INFO - Successfully read payload for page_id: p0064
+2026-05-06 16:50:16,846 - INFO - Received POST request to save page_id: p0064
+2026-05-06 16:50:16,848 - INFO - Recorded 0 edits for page_id: p0064
+2026-05-06 16:50:16,859 - INFO - Successfully saved payload for page_id: p0064
+2026-05-06 16:50:19,983 - INFO - Received GET request for page_id: p0065
+2026-05-06 16:50:19,984 - WARNING - Page not found: p0065
+2026-05-06 16:50:22,277 - INFO - Starting OCR job for page p0065 using Gemini.
+2026-05-06 16:50:22,282 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\JamesUssher_Britannicarum ecclesiarum antiquitates_Part1.pdf --part part1 --start-page 65 --end-page 65 --ocr-engine gemini
+2026-05-06 16:50:48,644 - INFO - Subprocess stdout: Gemini OCR written to 01_raw_ocr_output\part1\part1_pilot_ocr.json
+
+2026-05-06 16:50:48,659 - INFO - OCR job completed successfully for page p0065.
+2026-05-06 16:50:50,440 - INFO - Received GET request for page_id: p0065
+2026-05-06 16:50:50,518 - INFO - Successfully read payload for page_id: p0065
+2026-05-06 16:50:52,926 - INFO - Received POST request to save page_id: p0065
+2026-05-06 16:50:52,930 - INFO - Recorded 0 edits for page_id: p0065
+2026-05-06 16:50:52,940 - INFO - Successfully saved payload for page_id: p0065
+2026-05-06 16:50:56,014 - INFO - Received GET request for page_id: p0066
+2026-05-06 16:50:56,041 - WARNING - Page not found: p0066
+2026-05-06 16:50:58,461 - INFO - Starting OCR job for page p0066 using Gemini.
+2026-05-06 16:50:58,463 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\JamesUssher_Britannicarum ecclesiarum antiquitates_Part1.pdf --part part1 --start-page 66 --end-page 66 --ocr-engine gemini
+2026-05-06 16:51:26,964 - INFO - Subprocess stdout: Gemini OCR written to 01_raw_ocr_output\part1\part1_pilot_ocr.json
+
+2026-05-06 16:51:26,987 - INFO - OCR job completed successfully for page p0066.
+2026-05-06 16:51:30,593 - INFO - Received GET request for page_id: p0066
+2026-05-06 16:51:30,612 - INFO - Successfully read payload for page_id: p0066
+2026-05-06 16:51:33,092 - INFO - Received POST request to save page_id: p0066
+2026-05-06 16:51:33,096 - INFO - Recorded 0 edits for page_id: p0066
+2026-05-06 16:51:33,115 - INFO - Successfully saved payload for page_id: p0066
+2026-05-06 16:51:36,504 - INFO - Received GET request for page_id: p0067
+2026-05-06 16:51:36,505 - WARNING - Page not found: p0067
+2026-05-06 16:51:38,939 - INFO - Starting OCR job for page p0067 using Gemini.
+2026-05-06 16:51:38,943 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\JamesUssher_Britannicarum ecclesiarum antiquitates_Part1.pdf --part part1 --start-page 67 --end-page 67 --ocr-engine gemini
+2026-05-06 16:52:05,049 - INFO - Subprocess stdout: Gemini OCR written to 01_raw_ocr_output\part1\part1_pilot_ocr.json
+
+2026-05-06 16:52:05,104 - INFO - OCR job completed successfully for page p0067.
+2026-05-06 16:52:07,121 - INFO - Received GET request for page_id: p0067
+2026-05-06 16:52:07,148 - INFO - Successfully read payload for page_id: p0067
+2026-05-06 16:52:14,634 - INFO - Received POST request to save page_id: p0067
+2026-05-06 16:52:14,637 - INFO - Recorded 0 edits for page_id: p0067
+2026-05-06 16:52:14,649 - INFO - Successfully saved payload for page_id: p0067
+2026-05-06 16:52:17,358 - INFO - Received GET request for page_id: p0068
+2026-05-06 16:52:17,359 - WARNING - Page not found: p0068
+2026-05-06 16:52:22,772 - INFO - Received POST request to save page_id: p0068
+2026-05-06 16:52:22,772 - WARNING - Page not found for saving: p0068
+2026-05-06 16:52:30,160 - INFO - Starting OCR job for page p0068 using Gemini.
+2026-05-06 16:52:30,162 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\JamesUssher_Britannicarum ecclesiarum antiquitates_Part1.pdf --part part1 --start-page 68 --end-page 68 --ocr-engine gemini
+2026-05-06 16:52:40,077 - INFO - Subprocess stdout: Gemini OCR written to 01_raw_ocr_output\part1\part1_pilot_ocr.json
+
+2026-05-06 16:52:40,097 - INFO - OCR job completed successfully for page p0068.
+2026-05-06 16:52:42,247 - INFO - Received GET request for page_id: p0068
+2026-05-06 16:52:42,272 - INFO - Successfully read payload for page_id: p0068
+2026-05-06 16:52:46,023 - INFO - Received POST request to save page_id: p0068
+2026-05-06 16:52:46,030 - INFO - Recorded 0 edits for page_id: p0068
+2026-05-06 16:52:46,046 - INFO - Successfully saved payload for page_id: p0068
+2026-05-06 16:52:49,216 - INFO - Received GET request for page_id: p0069
+2026-05-06 16:52:49,217 - WARNING - Page not found: p0069
+2026-05-06 16:52:58,226 - INFO - Starting OCR job for page p0069 using Gemini.
+2026-05-06 16:52:58,228 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\JamesUssher_Britannicarum ecclesiarum antiquitates_Part1.pdf --part part1 --start-page 69 --end-page 69 --ocr-engine gemini
+2026-05-06 16:53:21,773 - INFO - Subprocess stdout: Gemini OCR written to 01_raw_ocr_output\part1\part1_pilot_ocr.json
+
+2026-05-06 16:53:21,784 - INFO - OCR job completed successfully for page p0069.
+2026-05-06 16:53:22,334 - INFO - Received GET request for page_id: p0069
+2026-05-06 16:53:22,353 - INFO - Successfully read payload for page_id: p0069
+2026-05-06 16:53:24,865 - INFO - Received POST request to save page_id: p0069
+2026-05-06 16:53:24,868 - INFO - Recorded 0 edits for page_id: p0069
+2026-05-06 16:53:24,880 - INFO - Successfully saved payload for page_id: p0069
+2026-05-06 16:53:36,197 - INFO - Received GET request for page_id: p0070
+2026-05-06 16:53:36,198 - WARNING - Page not found: p0070
+2026-05-06 16:53:38,597 - INFO - Starting OCR job for page p0070 using Gemini.
+2026-05-06 16:53:38,598 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\JamesUssher_Britannicarum ecclesiarum antiquitates_Part1.pdf --part part1 --start-page 70 --end-page 70 --ocr-engine gemini
+2026-05-06 16:54:11,246 - INFO - Subprocess stdout: Gemini OCR written to 01_raw_ocr_output\part1\part1_pilot_ocr.json
+
+2026-05-06 16:54:11,256 - INFO - OCR job completed successfully for page p0070.
+2026-05-06 16:54:14,771 - INFO - Received GET request for page_id: p0070
+2026-05-06 16:54:14,791 - INFO - Successfully read payload for page_id: p0070
+2026-05-06 16:57:19,289 - INFO - Received GET request for page_id: p0070
+2026-05-06 16:57:19,291 - INFO - Successfully read payload for page_id: p0070
+2026-05-06 16:57:23,843 - INFO - Received GET request for page_id: p0071
+2026-05-06 16:57:23,843 - WARNING - Page not found: p0071
+2026-05-06 16:57:26,392 - INFO - Starting OCR job for page p0071 using Gemini.
+2026-05-06 16:57:26,397 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\JamesUssher_Britannicarum ecclesiarum antiquitates_Part1.pdf --part part1 --start-page 71 --end-page 71 --ocr-engine gemini
+2026-05-06 16:57:55,969 - INFO - Subprocess stdout: Gemini OCR written to 01_raw_ocr_output\part1\part1_pilot_ocr.json
+
+2026-05-06 16:57:55,985 - INFO - OCR job completed successfully for page p0071.
+2026-05-06 16:57:56,451 - INFO - Received GET request for page_id: p0071
+2026-05-06 16:57:56,463 - INFO - Successfully read payload for page_id: p0071
+2026-05-06 19:20:31,639 - INFO - Received POST request to save page_id: p0071
+2026-05-06 19:20:31,836 - INFO - Recorded 0 edits for page_id: p0071
+2026-05-06 19:20:31,876 - INFO - Successfully saved payload for page_id: p0071
+2026-05-06 19:20:35,404 - INFO - Received GET request for page_id: p0072
+2026-05-06 19:20:35,417 - WARNING - Page not found: p0072
+2026-05-06 19:20:35,561 - INFO - Received GET request for page_id: p0072
+2026-05-06 19:20:35,563 - WARNING - Page not found: p0072
+2026-05-06 19:20:38,768 - INFO - Received GET request for page_id: p0071
+2026-05-06 19:20:38,817 - INFO - Successfully read payload for page_id: p0071
+2026-05-06 19:20:38,886 - INFO - Received GET request for page_id: p0071
+2026-05-06 19:20:38,889 - INFO - Successfully read payload for page_id: p0071
+2026-05-06 19:20:53,995 - INFO - Received GET request for page_id: p0072
+2026-05-06 19:20:53,997 - WARNING - Page not found: p0072
+2026-05-06 19:21:00,266 - INFO - Received POST request to save page_id: p0072
+2026-05-06 19:21:00,266 - WARNING - Page not found for saving: p0072
+2026-05-06 19:21:05,029 - INFO - Starting OCR job for page p0072 using Gemini.
+2026-05-06 19:21:05,030 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\JamesUssher_Britannicarum ecclesiarum antiquitates_Part1.pdf --part part1 --start-page 72 --end-page 72 --ocr-engine gemini
+2026-05-06 19:21:33,347 - INFO - Subprocess stdout: Gemini OCR written to 01_raw_ocr_output\part1\part1_pilot_ocr.json
+
+2026-05-06 19:21:33,362 - INFO - OCR job completed successfully for page p0072.
+2026-05-06 19:21:37,240 - INFO - Received GET request for page_id: p0072
+2026-05-06 19:21:37,255 - INFO - Successfully read payload for page_id: p0072
+2026-05-06 19:22:32,013 - INFO - Received POST request to save page_id: p0072
+2026-05-06 19:22:32,016 - INFO - Recorded 0 edits for page_id: p0072
+2026-05-06 19:22:32,028 - INFO - Successfully saved payload for page_id: p0072
+2026-05-06 19:22:35,306 - INFO - Received GET request for page_id: p0073
+2026-05-06 19:22:35,309 - WARNING - Page not found: p0073
+2026-05-06 19:22:38,539 - INFO - Starting OCR job for page p0073 using Gemini.
+2026-05-06 19:22:38,545 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\JamesUssher_Britannicarum ecclesiarum antiquitates_Part1.pdf --part part1 --start-page 73 --end-page 73 --ocr-engine gemini
+2026-05-06 19:23:09,391 - INFO - Subprocess stdout: Gemini OCR written to 01_raw_ocr_output\part1\part1_pilot_ocr.json
+
+2026-05-06 19:23:09,413 - INFO - OCR job completed successfully for page p0073.
+2026-05-06 19:23:11,041 - INFO - Received GET request for page_id: p0073
+2026-05-06 19:23:11,131 - INFO - Successfully read payload for page_id: p0073
+2026-05-06 19:59:29,237 - INFO - Received POST request to save page_id: p0073
+2026-05-06 19:59:29,268 - INFO - Recorded 0 edits for page_id: p0073
+2026-05-06 19:59:29,284 - INFO - Successfully saved payload for page_id: p0073
+2026-05-06 19:59:31,938 - INFO - Received GET request for page_id: p0074
+2026-05-06 19:59:31,939 - WARNING - Page not found: p0074
+2026-05-06 19:59:31,987 - INFO - Received GET request for page_id: p0074
+2026-05-06 19:59:31,988 - WARNING - Page not found: p0074
+2026-05-06 19:59:34,632 - INFO - Received GET request for page_id: p0073
+2026-05-06 19:59:34,683 - INFO - Successfully read payload for page_id: p0073
+2026-05-06 19:59:34,729 - INFO - Received GET request for page_id: p0073
+2026-05-06 19:59:34,729 - INFO - Successfully read payload for page_id: p0073
+2026-05-06 19:59:37,357 - INFO - Received GET request for page_id: p0074
+2026-05-06 19:59:37,358 - WARNING - Page not found: p0074
+2026-05-06 19:59:39,817 - INFO - Starting OCR job for page p0074 using Gemini.
+2026-05-06 19:59:39,818 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\JamesUssher_Britannicarum ecclesiarum antiquitates_Part1.pdf --part part1 --start-page 74 --end-page 74 --ocr-engine gemini
+2026-05-06 20:00:08,311 - INFO - Subprocess stdout: Gemini OCR written to 01_raw_ocr_output\part1\part1_pilot_ocr.json
+
+2026-05-06 20:00:08,328 - INFO - OCR job completed successfully for page p0074.
+2026-05-06 20:00:11,837 - INFO - Received GET request for page_id: p0074
+2026-05-06 20:00:11,893 - INFO - Successfully read payload for page_id: p0074
+2026-05-06 20:00:56,986 - INFO - Received POST request to save page_id: p0074
+2026-05-06 20:00:56,989 - INFO - Recorded 0 edits for page_id: p0074
+2026-05-06 20:00:57,001 - INFO - Successfully saved payload for page_id: p0074
+2026-05-06 20:01:00,549 - INFO - Received GET request for page_id: p0075
+2026-05-06 20:01:00,550 - WARNING - Page not found: p0075
+2026-05-06 20:01:02,689 - INFO - Starting OCR job for page p0075 using Gemini.
+2026-05-06 20:01:02,692 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\JamesUssher_Britannicarum ecclesiarum antiquitates_Part1.pdf --part part1 --start-page 75 --end-page 75 --ocr-engine gemini
+2026-05-06 20:01:31,877 - INFO - Subprocess stdout: Gemini OCR written to 01_raw_ocr_output\part1\part1_pilot_ocr.json
+
+2026-05-06 20:01:31,890 - INFO - OCR job completed successfully for page p0075.
+2026-05-06 20:01:34,933 - INFO - Received GET request for page_id: p0075
+2026-05-06 20:01:34,954 - INFO - Successfully read payload for page_id: p0075
+2026-05-06 20:04:04,600 - INFO - Received POST request to save page_id: p0075
+2026-05-06 20:04:04,600 - INFO - Recorded 0 edits for page_id: p0075
+2026-05-06 20:04:04,616 - INFO - Successfully saved payload for page_id: p0075
+2026-05-06 20:04:06,971 - INFO - Received GET request for page_id: p0076
+2026-05-06 20:04:06,972 - WARNING - Page not found: p0076
+2026-05-06 20:04:18,251 - INFO - Starting OCR job for page p0076 using Gemini.
+2026-05-06 20:04:18,251 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\JamesUssher_Britannicarum ecclesiarum antiquitates_Part1.pdf --part part1 --start-page 76 --end-page 76 --ocr-engine gemini
+2026-05-06 20:04:53,739 - INFO - Subprocess stdout: Gemini OCR written to 01_raw_ocr_output\part1\part1_pilot_ocr.json
+
+2026-05-06 20:04:53,762 - INFO - OCR job completed successfully for page p0076.
+2026-05-06 20:04:56,478 - INFO - Received GET request for page_id: p0076
+2026-05-06 20:04:56,546 - INFO - Successfully read payload for page_id: p0076
+2026-05-06 20:11:59,308 - INFO - Received POST request to save page_id: p0076
+2026-05-06 20:11:59,308 - INFO - Recorded 0 edits for page_id: p0076
+2026-05-06 20:11:59,325 - INFO - Successfully saved payload for page_id: p0076
+2026-05-06 20:12:02,150 - INFO - Received GET request for page_id: p0077
+2026-05-06 20:12:02,152 - WARNING - Page not found: p0077
+2026-05-06 20:12:04,806 - INFO - Starting OCR job for page p0077 using Gemini.
+2026-05-06 20:12:04,808 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\JamesUssher_Britannicarum ecclesiarum antiquitates_Part1.pdf --part part1 --start-page 77 --end-page 77 --ocr-engine gemini
+2026-05-06 20:12:39,201 - INFO - Subprocess stdout: Gemini OCR written to 01_raw_ocr_output\part1\part1_pilot_ocr.json
+
+2026-05-06 20:12:39,219 - INFO - OCR job completed successfully for page p0077.
+2026-05-06 20:12:42,540 - INFO - Received GET request for page_id: p0077
+2026-05-06 20:12:42,676 - INFO - Successfully read payload for page_id: p0077

@@ -19,7 +19,10 @@
       "Write(//c/Users/User/Documents/UssherIn/**)",
       "Bash(python -m pytest tests/test_translation_prompts.py -q)",
       "Bash(python -m pytest tests/test_polish_translations.py tests/test_translate_segments.py -q)",
-      "WebSearch"
+      "WebSearch",
+      "Bash(python -m pytest 08_working_scratch/tests/test_ab_judge.py 08_working_scratch/tests/test_ab_report.py 08_working_scratch/tests/test_ab_spot_check.py -v)",
+      "Bash(python -m pytest 08_working_scratch/tests/test_ab_judge.py 08_working_scratch/tests/test_ab_report.py 08_working_scratch/tests/test_ab_spot_check.py)",
+      "Bash(python -m pytest 08_working_scratch/tests/)"
     ]
   }
 }

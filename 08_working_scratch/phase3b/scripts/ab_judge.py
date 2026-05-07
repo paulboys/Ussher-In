@@ -68,53 +68,82 @@ candidate English translations of the same Latin sentence from a
 Antiquitates, 1847 Elrington reissue). Latin sources are early-modern
 ecclesiastical/humanist Latin with embedded Patristic Greek citations.
 
-Your task is to pick the better English rendering on five rubrics,
+The candidates may use a three-slot format for embedded Greek:
+the Greek is preserved verbatim, immediately followed by an English
+rendering inside ⟦…⟧ brackets (U+27E6/U+27E7), optionally followed
+by Ussher's own Latin paraphrase inside ⟪…⟫ brackets (U+27EA/U+27EB)
+when one is present in the source. Treat these brackets as
+scaffolding, not as prose — they are semantically meaningful tags,
+not noise.
+
+Your task is to pick the better English rendering on six rubrics,
 each scored as A_better / B_better / equal:
 
 * fluency: reads as natural modern scholarly English (prefer plain
   prose; penalize archaisms like 'vouchsafed', 'verily', 'thee',
-  'hath', 'doth', 'whilst').
+  'hath', 'doth', 'whilst'). Evaluate the English text inside ⟦…⟧
+  plus the surrounding running prose; the bracket characters
+  themselves are scaffolding and do NOT count as a fluency hit.
 * accuracy: faithful to the Latin's meaning; no dropped clauses,
   invented content, or shifted referents.
-* proper_nouns: prefers Anglicized forms ('Boudica' over 'Boadicia',
-  'Caesar' over 'Caesariis', 'Ethiopians' over 'Aethiopas',
-  'Antiochenes' over 'Antiocheni', 'Theodoret' over 'Theodoretus').
-* titles: treatise / book titles are italicized (or in quotes) rather
-  than left bare in running text.
+  - When ⟦English⟧ follows Greek, the bracketed text must
+    faithfully render the meaning of that Greek.
+  - When ⟪Latin⟫ follows ⟦English⟧, the Latin must reproduce
+    Ussher's actual Latin paraphrase from the source — invented
+    Latin is an accuracy failure.
+  - Filiation genitives (e.g. 'Eusebius Pamphili', 'Iacobus Alphaei')
+    must render with 'of' ('Eusebius of Pamphilus', 'James of
+    Alphaeus') — treating the second name as a separate person is
+    an accuracy failure.
+* source_preservation: prefers PRESERVING the source-language form
+  of names and technical terms with a parenthetical English gloss,
+  rather than substituting a modern equivalent. Reward
+  'preserve+gloss' patterns like 'Uticensis (of Utica)',
+  'menologia (calendars of saints)'. Penalize:
+  - outright substitution (e.g. 'Uticensis' → 'Saint-Évroul',
+    'Symeon Metaphrastes' → 'Simeon the Translator')
+  - dropping the original form entirely so the scholarly identifier
+    is lost
+  - invented modern equivalents with no basis in the Latin
+  Standard orthographic normalization for very common names is
+  ALLOWED and not penalized: 'Aethiopas' → 'Ethiopians',
+  'Theodoretus' → 'Theodoret', 'Antiocheni' → 'Antiochenes',
+  'Caesar' for 'Caesar(em/is)'. The line is between *normalized
+  spelling of a stable English form* (allowed) and *substitution
+  of one identifier for another* (penalized).
+* titles: treatise / book titles handled with a hybrid policy.
+  Best: original-language title preserved in italics or quotes,
+  followed by an optional descriptive English gloss in parentheses
+  — '*Vita Constantini* (Life of Constantine)'. Acceptable: pure
+  preserved Latin in italics. Worst: bare title in running text,
+  or pure-English translation that erases the Latin identifier.
 * register: scholarly, modern, neutral. Penalize KJV cadence,
   pseudo-archaic word order, and unnecessary Latinisms.
+* format_compliance: mechanical use of the three-slot Greek format.
+  - Greek must be preserved verbatim (not transliterated, not
+    omitted, not silently translated away).
+  - When Greek appears as substantive content, an ⟦English⟧ slot
+    should follow.
+  - When Ussher's Latin paraphrase is present near the Greek in
+    the source (signals: 'id est', 'hoc est', 'sive', 'inquit',
+    quotation punctuation, an adjacent Latin clause that visibly
+    echoes the Greek), a ⟪Latin⟫ slot reproducing that Latin
+    should follow the ⟦English⟧.
+  - Bracket characters must be the correct ones: ⟦…⟧
+    (U+27E6/U+27E7) for the English slot and ⟪…⟫
+    (U+27EA/U+27EB) for the Latin slot. Plain '[]', '«»', or
+    '<<>>' are non-compliant.
+  - Slot order must be Greek → ⟦English⟧ → ⟪Latin⟫.
+  Penalize any of: missing English slot after standalone Greek;
+  missing Latin slot when Ussher provides a paraphrase; wrong
+  bracket characters; out-of-order slots; invented Greek where
+  the source has none.
+  If the Latin source contains NO Greek at all in this segment,
+  score this rubric 'equal' (the rubric is not applicable).
 
-Then return a single overall winner: A / B / tie.
-
-Domain rule for embedded Greek (CRITICAL — read carefully):
-Ussher routinely quotes a Greek source and then immediately
-paraphrases or translates it into Latin in the surrounding clause(s).
-When that pattern is present, the **correct editorial behavior is to
-leave the Greek untranslated** and render only the Latin into
-English: the Latin paraphrase already serves as Ussher's own gloss,
-and double-translating produces redundant English. Treat the
-following as signals that Ussher's Latin is paraphrasing the Greek:
-quotation punctuation around or just after the Greek, a Latin
-sentence in the same or adjacent segment whose meaning visibly
-echoes the Greek, or connectives like 'id est', 'hoc est', 'sive',
-'inquit' near the Greek.
-
-Apply this rule as follows:
-- If the Latin source contains Greek and the Latin appears to be
-  Ussher's own paraphrase of that Greek, a candidate that LEAVES THE
-  GREEK UNTRANSLATED (carrying the Greek through verbatim) is
-  CORRECT, not an accuracy failure. Do not penalize the candidate's
-  accuracy or fluency for omitting an English gloss of the Greek.
-  A candidate that translates the Greek anyway is acceptable but
-  not preferred — score 'equal' on accuracy unless one rendering
-  is materially wrong on the Latin.
-- If the Greek STANDS ALONE with no Latin paraphrase nearby (the
-  Greek itself is the substantive citation, e.g. it carries new
-  information not restated in Latin), then the Greek SHOULD be
-  rendered into English (or English-glossed in brackets) and a
-  candidate that leaves it untranslated IS an accuracy failure.
-- When in doubt about whether Latin paraphrase is present in this
-  segment, score the rubric 'equal' rather than guessing.
+Then return a single overall winner: A / B / tie. All six rubrics
+are equal-weight in the overall call; do not weight any rubric more
+heavily than the others.
 
 You MUST NOT reveal which translation comes from which source — you
 do not know, and they were assigned randomly. Judge the text only.
@@ -126,11 +155,12 @@ Return ONLY a JSON object (no prose, no code fence) shaped as:
 
 {
   "rubric": {
-    "fluency":      "A" | "B" | "equal",
-    "accuracy":     "A" | "B" | "equal",
-    "proper_nouns": "A" | "B" | "equal",
-    "titles":       "A" | "B" | "equal",
-    "register":     "A" | "B" | "equal"
+    "fluency":             "A" | "B" | "equal",
+    "accuracy":            "A" | "B" | "equal",
+    "source_preservation": "A" | "B" | "equal",
+    "titles":              "A" | "B" | "equal",
+    "register":            "A" | "B" | "equal",
+    "format_compliance":   "A" | "B" | "equal"
   },
   "winner": "A" | "B" | "tie",
   "reason": "<one or two sentences explaining the call>"

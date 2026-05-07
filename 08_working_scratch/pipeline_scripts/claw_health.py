@@ -26,6 +26,10 @@ if str(SCRIPTS_DIR) not in sys.path:
 
 from ocr_adapters import GeminiOcrEngine, GeminiOcrError  # noqa: E402
 from provider_config import default_config, health_check, load_config  # noqa: E402
+import logging
+
+# Configure logging
+logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 
 
 def _make_blank_png() -> bytes:
@@ -80,28 +84,26 @@ def main() -> int:
     if not args.ping_gemini:
         return 0
 
-    print()
-    print("Pinging Gemini (tiny 1x1 image, expect a non-OCR response or parse error)...")
+    logging.info("Pinging Gemini with a tiny 1x1 image to verify API key authentication.")
     gemini = config.get("gemini")
     if not gemini.is_configured():
-        print("  Gemini is not configured; cannot ping.")
+        logging.warning("Gemini is not configured; cannot ping.")
         return 1
 
     engine = GeminiOcrEngine(gemini)
     image_bytes = _make_blank_png()
     try:
+        logging.info("Sending image to Gemini API...")
         result = engine.extract(image_bytes, lang="lat", config="")
+        logging.info(f"Gemini API response: Text preview: {result.text[:80]}, Avg confidence: {result.avg_confidence}")
     except GeminiOcrError as exc:
-        # JSON parse failure on a blank image is expected and still proves
-        # the auth + endpoint round-trip worked.
-        print(f"  Round-trip OK (response not JSON-parsable, which is fine): {exc}")
+        logging.warning(f"Gemini API round-trip OK but response not JSON-parsable: {exc}")
         return 0
-    except Exception as exc:  # pragma: no cover - surface real auth/network errors
-        print(f"  FAILED: {type(exc).__name__}: {exc}")
+    except Exception as exc:
+        logging.error(f"Gemini API call failed: {type(exc).__name__}: {exc}")
         return 1
 
-    print("  Round-trip OK")
-    print("  Result:", json.dumps({"text": result.text[:80], "avg": result.avg_confidence}))
+    logging.info("Gemini API round-trip successful.")
     return 0
 
 

@@ -1,0 +1,51 @@
+{
+  "started_at": "2026-05-06T04:02:29Z",
+  "part": "v0/run03",
+  "start_page": 41,
+  "end_page": 41,
+  "lexicon_profile": "auto",
+  "dry_run": false,
+  "force": false,
+  "metadata_only": false,
+  "model": "claude-opus-4-7",
+  "prompt_version": "v0",
+  "run_tag": "run03",
+  "pages": [
+    {
+      "page_id": "p0041",
+      "status": "ok",
+      "skipped": [],
+      "translated": [
+        "seg_p0041_body_l0001",
+        "seg_p0041_body_l0002",
+        "seg_p0041_body_l0003",
+        "seg_p0041_body_l0004",
+        "seg_p0041_body_l0005",
+        "seg_p0041_body_l0006",
+        "seg_p0041_body_l0007",
+        "seg_p0041_body_l0008",
+        "seg_p0041_body_l0009",
+        "seg_p0041_body_l0010",
+        "seg_p0041_body_l0011",
+        "seg_p0041_body_l0012",
+        "seg_p0041_body_l0013",
+        "seg_p0041_body_l0014",
+        "seg_p0041_body_l0015",
+        "seg_p0041_body_l0016",
+        "seg_p0041_body_l0017",
+        "seg_p0041_body_l0018",
+        "seg_p0041_body_l0019",
+        "seg_p0041_body_l0020",
+        "seg_p0041_body_l0021",
+        "seg_p0041_body_l0022",
+        "seg_p0041_body_l0023",
+        "seg_p0041_fn_001",
+        "seg_p0041_fn_002",
+        "seg_p0041_fn_003",
+        "seg_p0041_fn_004"
+      ],
+      "warnings": [],
+      "usage_tokens": null
+    }
+  ]
+}

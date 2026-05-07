@@ -1,0 +1,200 @@
+{
+  "edition": "1847_elrington_todd",
+  "footnotes": [
+    {
+      "body_line_id": "p0068_body_l0001",
+      "footnote_id": "p0068_fn_001",
+      "kind": "citation",
+      "marker_id": "i",
+      "marker_number": 1,
+      "notes": "",
+      "page_id": "p0068",
+      "review_status": "draft",
+      "seq": 1,
+      "source_marginalia_line_ids": [
+        "p0068_marginalia_l0001"
+      ],
+      "source_region": "marginalia",
+      "text_gold": "Guil. Malmesbur. de antiquitat. Glaſton. et eum ſecutus Johannes de Tin-",
+      "text_ocr_original": "Guil. Malmesbur. de antiquitat. Glaſton. et eum ſecutus Johannes de Tin-",
+      "reviewer": "Paul Boys"
+    },
+    {
+      "body_line_id": "",
+      "footnote_id": "p0068_fn_002",
+      "kind": "citation",
+      "marker_id": "",
+      "marker_number": 2,
+      "notes": "",
+      "page_id": "p0068",
+      "review_status": "draft",
+      "seq": 2,
+      "source_marginalia_line_ids": [
+        "p0068_marginalia_l0002"
+      ],
+      "source_region": "marginalia",
+      "text_gold": "mouth, et Capgravius in vita Patricii.",
+      "text_ocr_original": "mouth, et Capgravius in vita Patricii.",
+      "reviewer": "Paul Boys"
+    }
+  ],
+  "meta": {
+    "annotation_status": "ocr_seeded",
+    "notes": "",
+    "ocr_confidence_avg": 99.38,
+    "ocr_confidence_min": 95,
+    "ocr_engine": "gemini",
+    "ocr_lang": [
+      "lat",
+      "grc"
+    ],
+    "ocr_page_summary": "Page with a header, a short body text paragraph, and a footnote.",
+    "ocr_provider_model": "gemini-3.1-pro-preview",
+    "review_status": "draft",
+    "reviewer": "Paul Boys"
+  },
+  "page_id": "p0068",
+  "page_num": 68,
+  "part": "part1",
+  "regions": {
+    "body": [
+      {
+        "line_id": "p0068_body_l0001",
+        "marker_id": "",
+        "markers": [
+          {
+            "number": 1,
+            "footnote_id": "p0068_fn_001",
+            "char_offset": 36
+          }
+        ],
+        "notes": "",
+        "ocr_confidence": 1,
+        "ocr_illegible": false,
+        "ocr_marginalia_anchor_index": null,
+        "page_id": "p0068",
+        "region": "body",
+        "review_status": "draft",
+        "reviewer": "Paul Boys",
+        "seq": 1,
+        "text_gold": "burienſis his verbis edocet. “Sancti igitur memorati in",
+        "text_ocr_original": "burienſis his verbis edocet. “Sancti igitur memorati in"
+      },
+      {
+        "line_id": "p0068_body_l0002",
+        "marker_id": "",
+        "markers": [],
+        "notes": "",
+        "ocr_confidence": 1,
+        "ocr_illegible": false,
+        "ocr_marginalia_anchor_index": null,
+        "page_id": "p0068",
+        "region": "body",
+        "review_status": "draft",
+        "reviewer": "Paul Boys",
+        "seq": 2,
+        "text_gold": "eadem eremo ſic degentes, eﬄuentibus multis annorum",
+        "text_ocr_original": "eadem eremo ſic degentes, eﬄuentibus multis annorum"
+      },
+      {
+        "line_id": "p0068_body_l0003",
+        "marker_id": "",
+        "markers": [],
+        "notes": "",
+        "ocr_confidence": 1,
+        "ocr_illegible": false,
+        "ocr_marginalia_anchor_index": null,
+        "page_id": "p0068",
+        "region": "body",
+        "review_status": "draft",
+        "reviewer": "Paul Boys",
+        "seq": 3,
+        "text_gold": "curriculis carnis ergaſtulo ſunt educti: idemque locus",
+        "text_ocr_original": "curriculis carnis ergaſtulo ſunt educti: idemque locus"
+      },
+      {
+        "line_id": "p0068_body_l0004",
+        "marker_id": "",
+        "markers": [],
+        "notes": "",
+        "ocr_confidence": 1,
+        "ocr_illegible": false,
+        "ocr_marginalia_anchor_index": null,
+        "page_id": "p0068",
+        "region": "body",
+        "review_status": "draft",
+        "reviewer": "Paul Boys",
+        "seq": 4,
+        "text_gold": "cœpit eſſe ferarum latibulum, qui prius fuerat habitatio",
+        "text_ocr_original": "cœpit eſſe ferarum latibulum, qui prius fuerat habitatio"
+      },
+      {
+        "line_id": "p0068_body_l0005",
+        "marker_id": "",
+        "markers": [],
+        "notes": "",
+        "ocr_confidence": 1,
+        "ocr_illegible": false,
+        "ocr_marginalia_anchor_index": null,
+        "page_id": "p0068",
+        "region": "body",
+        "review_status": "draft",
+        "reviewer": "Paul Boys",
+        "seq": 5,
+        "text_gold": "ſanctorum.”",
+        "text_ocr_original": "ſanctorum.”"
+      }
+    ],
+    "catchword": [],
+    "header": [
+      {
+        "line_id": "p0068_header_l0001",
+        "marker_id": "",
+        "notes": "",
+        "ocr_confidence": 1,
+        "ocr_illegible": false,
+        "ocr_marginalia_anchor_index": null,
+        "page_id": "p0068",
+        "region": "header",
+        "review_status": "draft",
+        "reviewer": "Paul Boys",
+        "seq": 1,
+        "text_gold": "CAP. II. ANTIQUITATES. 47",
+        "text_ocr_original": "CAP. II. ANTIQUITATES. 47"
+      }
+    ],
+    "marginalia": [
+      {
+        "line_id": "p0068_marginalia_l0001",
+        "marker_id": "i",
+        "notes": "",
+        "ocr_confidence": 0.95,
+        "ocr_illegible": false,
+        "ocr_marginalia_anchor_index": null,
+        "page_id": "p0068",
+        "region": "marginalia",
+        "review_status": "draft",
+        "reviewer": "Paul Boys",
+        "seq": 1,
+        "text_gold": "Guil. Malmesbur. de antiquitat. Glaſton. et eum ſecutus Johannes de Tin-",
+        "text_ocr_original": "Guil. Malmesbur. de antiquitat. Glaſton. et eum ſecutus Johannes de Tin-"
+      },
+      {
+        "line_id": "p0068_marginalia_l0002",
+        "marker_id": "",
+        "notes": "",
+        "ocr_confidence": 1,
+        "ocr_illegible": false,
+        "ocr_marginalia_anchor_index": null,
+        "page_id": "p0068",
+        "region": "marginalia",
+        "review_status": "draft",
+        "reviewer": "Paul Boys",
+        "seq": 2,
+        "text_gold": "mouth, et Capgravius in vita Patricii.",
+        "text_ocr_original": "mouth, et Capgravius in vita Patricii."
+      }
+    ]
+  },
+  "source_pdf": "00_source_pdf/JamesUssher_Britannicarum ecclesiarum antiquitates_Part1.pdf"
+}
