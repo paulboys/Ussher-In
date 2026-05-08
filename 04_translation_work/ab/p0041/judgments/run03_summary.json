@@ -1,0 +1,52 @@
+{
+  "n": 27,
+  "overall": {
+    "v0": 10,
+    "v1": 7,
+    "tie": 9,
+    "invalid": 0,
+    "error": 1
+  },
+  "rubric": {
+    "fluency": {
+      "v0": 16,
+      "v1": 6,
+      "equal": 4,
+      "invalid": 0
+    },
+    "accuracy": {
+      "v0": 12,
+      "v1": 6,
+      "equal": 8,
+      "invalid": 0
+    },
+    "source_preservation": {
+      "v0": 1,
+      "v1": 7,
+      "equal": 18,
+      "invalid": 0
+    },
+    "titles": {
+      "v0": 0,
+      "v1": 2,
+      "equal": 24,
+      "invalid": 0
+    },
+    "register": {
+      "v0": 13,
+      "v1": 4,
+      "equal": 9,
+      "invalid": 0
+    },
+    "format_compliance": {
+      "v0": 4,
+      "v1": 7,
+      "equal": 15,
+      "invalid": 0
+    }
+  },
+  "judge_model": "claude-sonnet-4-6",
+  "seed": 0,
+  "v0_path": "04_translation_work\\ab\\p0041\\v0\\run03\\segments_with_translations.jsonl",
+  "v1_path": "04_translation_work\\ab\\p0041\\v2\\run03\\segments_with_translations.jsonl"
+}

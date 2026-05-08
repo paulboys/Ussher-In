@@ -826,3 +826,113 @@ urllib.error.HTTPError: HTTP Error 503: Service Unavailable
 2026-05-06 20:12:39,219 - INFO - OCR job completed successfully for page p0077.
 2026-05-06 20:12:42,540 - INFO - Received GET request for page_id: p0077
 2026-05-06 20:12:42,676 - INFO - Successfully read payload for page_id: p0077
+2026-05-07 06:58:51,692 - INFO - Received GET request for page_id: p0073
+2026-05-07 06:58:51,714 - INFO - Successfully read payload for page_id: p0073
+2026-05-07 06:58:51,719 - INFO - Received GET request for page_id: p0073
+2026-05-07 06:58:51,732 - INFO - Successfully read payload for page_id: p0073
+2026-05-07 06:58:52,124 - INFO - Received GET request for page_id: p0074
+2026-05-07 06:58:52,193 - INFO - Successfully read payload for page_id: p0074
+2026-05-07 06:58:52,291 - INFO - Received GET request for page_id: p0074
+2026-05-07 06:58:52,293 - INFO - Successfully read payload for page_id: p0074
+2026-05-07 06:58:57,433 - INFO - Received GET request for page_id: p0075
+2026-05-07 06:58:57,476 - INFO - Successfully read payload for page_id: p0075
+2026-05-07 06:58:57,548 - INFO - Received GET request for page_id: p0075
+2026-05-07 06:58:57,553 - INFO - Successfully read payload for page_id: p0075
+2026-05-07 06:59:00,883 - INFO - Received GET request for page_id: p0076
+2026-05-07 06:59:00,996 - INFO - Successfully read payload for page_id: p0076
+2026-05-07 06:59:01,015 - INFO - Received GET request for page_id: p0076
+2026-05-07 06:59:01,016 - INFO - Successfully read payload for page_id: p0076
+2026-05-07 06:59:03,469 - INFO - Received GET request for page_id: p0077
+2026-05-07 06:59:03,547 - INFO - Successfully read payload for page_id: p0077
+2026-05-07 06:59:03,601 - INFO - Received GET request for page_id: p0077
+2026-05-07 06:59:03,605 - INFO - Successfully read payload for page_id: p0077
+2026-05-07 06:59:06,850 - INFO - Received GET request for page_id: p0078
+2026-05-07 06:59:06,850 - WARNING - Page not found: p0078
+2026-05-07 06:59:13,082 - INFO - Starting OCR job for page p0078 using Gemini.
+2026-05-07 06:59:13,086 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\JamesUssher_Britannicarum ecclesiarum antiquitates_Part1.pdf --part part1 --start-page 78 --end-page 78 --ocr-engine gemini
+2026-05-07 06:59:18,452 - INFO - Subprocess stdout: 
+2026-05-07 06:59:18,452 - ERROR - Subprocess stderr: 2026-05-07 06:59:14,936 - INFO - Starting Gemini OCR pipeline
+2026-05-07 06:59:16,122 - INFO - Processing page p0078 with Gemini OCR
+2026-05-07 06:59:18,193 - ERROR - Error during Gemini OCR for page p0078: HTTP Error 503: Service Unavailable
+Traceback (most recent call last):
+  File "C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py", line 495, in <module>
+    main()
+  File "C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py", line 398, in main
+    output_path = run_gemini_pilot(
+                  ^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py", line 265, in run_gemini_pilot
+    detailed = engine.extract_detailed(image, lang=lang, page_id=page_id)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\ocr_adapters.py", line 349, in extract_detailed
+    raw = self._request_fn(self.provider.model, prompt, png_bytes, self.provider)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\ocr_adapters.py", line 297, in _default_gemini_request
+    with urllib.request.urlopen(request, timeout=provider.timeout_seconds) as response:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\miniforge3\envs\ussher\Lib\urllib\request.py", line 216, in urlopen
+    return opener.open(url, data, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\miniforge3\envs\ussher\Lib\urllib\request.py", line 525, in open
+    response = meth(req, response)
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\miniforge3\envs\ussher\Lib\urllib\request.py", line 634, in http_response
+    response = self.parent.error(
+               ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\miniforge3\envs\ussher\Lib\urllib\request.py", line 563, in error
+    return self._call_chain(*args)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\miniforge3\envs\ussher\Lib\urllib\request.py", line 496, in _call_chain
+    result = func(*args)
+             ^^^^^^^^^^^
+  File "C:\Users\User\miniforge3\envs\ussher\Lib\urllib\request.py", line 643, in http_error_default
+    raise HTTPError(req.full_url, code, msg, hdrs, fp)
+urllib.error.HTTPError: HTTP Error 503: Service Unavailable
+
+2026-05-07 06:59:39,923 - INFO - Starting OCR job for page p0078 using Gemini.
+2026-05-07 06:59:39,926 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\JamesUssher_Britannicarum ecclesiarum antiquitates_Part1.pdf --part part1 --start-page 78 --end-page 78 --ocr-engine gemini
+2026-05-07 06:59:45,153 - INFO - Subprocess stdout: 
+2026-05-07 06:59:45,153 - ERROR - Subprocess stderr: 2026-05-07 06:59:41,063 - INFO - Starting Gemini OCR pipeline
+2026-05-07 06:59:41,631 - INFO - Processing page p0078 with Gemini OCR
+2026-05-07 06:59:44,996 - ERROR - Error during Gemini OCR for page p0078: HTTP Error 503: Service Unavailable
+Traceback (most recent call last):
+  File "C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py", line 495, in <module>
+    main()
+  File "C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py", line 398, in main
+    output_path = run_gemini_pilot(
+                  ^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py", line 265, in run_gemini_pilot
+    detailed = engine.extract_detailed(image, lang=lang, page_id=page_id)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\ocr_adapters.py", line 349, in extract_detailed
+    raw = self._request_fn(self.provider.model, prompt, png_bytes, self.provider)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\ocr_adapters.py", line 297, in _default_gemini_request
+    with urllib.request.urlopen(request, timeout=provider.timeout_seconds) as response:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\miniforge3\envs\ussher\Lib\urllib\request.py", line 216, in urlopen
+    return opener.open(url, data, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\miniforge3\envs\ussher\Lib\urllib\request.py", line 525, in open
+    response = meth(req, response)
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\miniforge3\envs\ussher\Lib\urllib\request.py", line 634, in http_response
+    response = self.parent.error(
+               ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\miniforge3\envs\ussher\Lib\urllib\request.py", line 563, in error
+    return self._call_chain(*args)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\miniforge3\envs\ussher\Lib\urllib\request.py", line 496, in _call_chain
+    result = func(*args)
+             ^^^^^^^^^^^
+  File "C:\Users\User\miniforge3\envs\ussher\Lib\urllib\request.py", line 643, in http_error_default
+    raise HTTPError(req.full_url, code, msg, hdrs, fp)
+urllib.error.HTTPError: HTTP Error 503: Service Unavailable
+
+2026-05-07 06:59:53,030 - INFO - Received GET request for page_id: p0077
+2026-05-07 06:59:53,031 - INFO - Successfully read payload for page_id: p0077
+2026-05-07 07:00:02,875 - INFO - Received GET request for page_id: p0007
+2026-05-07 07:00:02,876 - WARNING - Page not found: p0007
+2026-05-07 07:00:04,010 - INFO - Received GET request for page_id: p0046
+2026-05-07 07:00:04,060 - INFO - Successfully read payload for page_id: p0046
+2026-05-07 07:00:04,071 - INFO - Received GET request for page_id: p0046
+2026-05-07 07:00:04,073 - INFO - Successfully read payload for page_id: p0046
