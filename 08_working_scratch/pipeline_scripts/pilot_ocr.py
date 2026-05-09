@@ -319,7 +319,12 @@ def run_gemini_pilot(
 def main() -> None:
     parser = argparse.ArgumentParser(description="Run pilot OCR on a page range from a PDF.")
     parser.add_argument("--pdf", required=True, help="Path to source PDF")
-    parser.add_argument("--part", required=True, choices=["part1", "part2"], help="Part label")
+    parser.add_argument(
+        "--part",
+        required=True,
+        choices=["part1", "part2", "whitaker_english", "whitaker_latin"],
+        help="Part / corpus label (Ussher uses part1/part2; Whitaker uses whitaker_english/whitaker_latin)",
+    )
     parser.add_argument("--start-page", type=int, required=True)
     parser.add_argument("--end-page", type=int, required=True)
     parser.add_argument(

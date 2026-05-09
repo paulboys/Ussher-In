@@ -24,7 +24,9 @@ PIPELINE_SCRIPTS_DIR = ROOT / "08_working_scratch" / "pipeline_scripts"
 
 ALLOWED_REVIEW_STATUS = {"draft", "reviewed", "locked"}
 ALLOWED_FOOTNOTE_KIND = {"citation", "gloss", "cross_ref", "not_a_note", "other"}
-ALLOWED_EDITIONS = {"1687_second", "1847_elrington_todd"}
+USSHER_EDITIONS = {"1687_second", "1847_elrington_todd"}
+WHITAKER_EDITIONS = {"whitaker_english", "whitaker_latin"}
+ALLOWED_EDITIONS = USSHER_EDITIONS | WHITAKER_EDITIONS
 SCHEMA_REGIONS = ("header", "body", "marginalia", "catchword")
 
 app = Flask(__name__, template_folder=str(TEMPLATE_DIR), static_folder=str(STATIC_DIR))
@@ -40,14 +42,49 @@ formatter = logging.Formatter("%(asctime)s - %(levelname)s - %(message)s")
 file_handler.setFormatter(formatter)
 logger.addHandler(file_handler)
 
-def _annotation_paths() -> list[Path]:
-    return sorted(ANNOTATIONS_DIR.glob("page_p*.json"))
+def _corpus_subdir(edition: str | None) -> str:
+    """Return the annotations subdirectory name for a given edition.
+
+    Ussher editions live in the flat top-level ``annotations/`` dir for
+    backward compatibility. Whitaker editions are namespaced one level
+    deeper so their JSONs are completely separate from Ussher's:
+    ``annotations/whitaker_english/`` and
+    ``annotations/whitaker_latin/``.
+    """
+    if edition in WHITAKER_EDITIONS:
+        return edition
+    return ""
 
 
-def _annotation_path(page_id: str) -> Path:
+def _annotations_dir(edition: str | None = None) -> Path:
+    subdir = _corpus_subdir(edition)
+    return ANNOTATIONS_DIR / subdir if subdir else ANNOTATIONS_DIR
+
+
+def _annotation_paths(edition: str | None = None) -> list[Path]:
+    base = _annotations_dir(edition)
+    if not base.exists():
+        return []
+    return sorted(base.glob("page_p*.json"))
+
+
+def _annotation_path(page_id: str, edition: str | None = None) -> Path:
     if not re.fullmatch(r"p\d{4}", page_id):
         raise ValueError("Invalid page id")
-    return ANNOTATIONS_DIR / f"page_{page_id}.json"
+    return _annotations_dir(edition) / f"page_{page_id}.json"
+
+
+def _edition_from_request() -> str | None:
+    """Extract a validated edition value from the request query string.
+
+    Returns ``None`` when no edition query param is present or when it
+    falls outside ``ALLOWED_EDITIONS`` (treat invalid values as Ussher
+    so existing flat-path URLs keep working).
+    """
+    value = request.args.get("edition", default="", type=str).strip()
+    if value and value in ALLOWED_EDITIONS:
+        return value
+    return None
 
 
 def _read_payload(path: Path) -> dict:
@@ -299,14 +336,16 @@ def _diff_payloads(old: dict, new: dict) -> list[dict]:
     return entries
 
 
-def _edits_path(page_id: str) -> Path:
-    return ANNOTATIONS_DIR / f"page_{page_id}.edits.jsonl"
+def _edits_path(page_id: str, edition: str | None = None) -> Path:
+    return _annotations_dir(edition) / f"page_{page_id}.edits.jsonl"
 
 
-def _append_edit_log(page_id: str, entries: list[dict]) -> None:
+def _append_edit_log(
+    page_id: str, entries: list[dict], edition: str | None = None
+) -> None:
     if not entries:
         return
-    path = _edits_path(page_id)
+    path = _edits_path(page_id, edition)
     path.parent.mkdir(parents=True, exist_ok=True)
     with path.open("a", encoding="utf-8") as handle:
         for entry in entries:
@@ -315,22 +354,25 @@ def _append_edit_log(page_id: str, entries: list[dict]) -> None:
 
 @app.get("/")
 def index() -> str:
-    pages = [path.stem.replace("page_", "") for path in _annotation_paths()]
+    edition = _edition_from_request()
+    pages = [path.stem.replace("page_", "") for path in _annotation_paths(edition)]
     # Even with zero pages we render the UI so the user can run OCR from it.
     return render_template("annotation_ui.html", pages=pages)
 
 
 @app.get("/api/pages")
 def api_pages():
-    pages = [path.stem.replace("page_", "") for path in _annotation_paths()]
+    edition = _edition_from_request()
+    pages = [path.stem.replace("page_", "") for path in _annotation_paths(edition)]
     return jsonify({"pages": pages})
 
 
 @app.get("/api/page/<page_id>")
 def api_page(page_id: str):
-    logger.info(f"Received GET request for page_id: {page_id}")
+    edition = _edition_from_request()
+    logger.info(f"Received GET request for page_id: {page_id} edition: {edition}")
     try:
-        path = _annotation_path(page_id)
+        path = _annotation_path(page_id, edition)
     except ValueError as e:
         logger.error(f"Invalid page_id: {page_id}. Error: {e}")
         abort(400)
@@ -350,9 +392,12 @@ def api_page(page_id: str):
 
 @app.post("/api/page/<page_id>")
 def api_save_page(page_id: str):
-    logger.info(f"Received POST request to save page_id: {page_id}")
+    edition = _edition_from_request()
+    logger.info(
+        f"Received POST request to save page_id: {page_id} edition: {edition}"
+    )
     try:
-        path = _annotation_path(page_id)
+        path = _annotation_path(page_id, edition)
     except ValueError as e:
         logger.error(f"Invalid page_id: {page_id}. Error: {e}")
         abort(400)
@@ -400,7 +445,7 @@ def api_save_page(page_id: str):
         existing = {}
 
     edits = _diff_payloads(existing, incoming)
-    _append_edit_log(page_id, edits)
+    _append_edit_log(page_id, edits, edition)
     logger.info(f"Recorded {len(edits)} edits for page_id: {page_id}")
 
     _write_payload_atomic(path, incoming)
@@ -412,8 +457,9 @@ def api_save_page(page_id: str):
 
 @app.get("/pdf/<page_id>")
 def page_pdf(page_id: str):
+    edition = _edition_from_request()
     try:
-        path = _annotation_path(page_id)
+        path = _annotation_path(page_id, edition)
     except ValueError:
         abort(400)
 
@@ -473,8 +519,9 @@ def pdfjs_source_viewer():
 
 @app.get("/pdfjs/<page_id>")
 def pdfjs_viewer(page_id: str):
+    edition = _edition_from_request()
     try:
-        path = _annotation_path(page_id)
+        path = _annotation_path(page_id, edition)
     except ValueError:
         abort(400)
 
@@ -496,7 +543,7 @@ def pdfjs_viewer(page_id: str):
 
     return render_template(
         "pdf_viewer.html",
-        pdf_url=url_for("page_pdf", page_id=page_id),
+        pdf_url=url_for("source_pdf_file", pdf_name=source_pdf.name),
         initial_page=initial_page,
     )
 
@@ -540,7 +587,7 @@ def _run_ocr_job(
 ) -> None:
     pilot_dir = PILOT_OCR_DIR / part
     pilot_json = pilot_dir / f"{part}_pilot_ocr.json"
-    target_annotation = ANNOTATIONS_DIR / f"page_{page_id}.json"
+    target_annotation = _annotation_path(page_id, edition)
 
     try:
         _job_set(job_id, state="running", message="Rendering and calling Gemini...")
@@ -654,8 +701,6 @@ def api_ocr_start():
         return jsonify({"ok": False, "error": "pdf is required"}), 400
     if page_num < 1:
         return jsonify({"ok": False, "error": "page must be >= 1"}), 400
-    if part not in {"part1", "part2"}:
-        return jsonify({"ok": False, "error": "part must be 'part1' or 'part2'"}), 400
     if edition not in ALLOWED_EDITIONS:
         return (
             jsonify(
@@ -667,12 +712,21 @@ def api_ocr_start():
             400,
         )
 
+    # For Whitaker editions, the corpus is single-volume: we force the
+    # part name to match the edition so OCR output lands in its own
+    # 01_raw_ocr_output/whitaker_{english,latin}/ directory and stays
+    # completely separate from Ussher's part1/part2 outputs.
+    if edition in WHITAKER_EDITIONS:
+        part = edition
+    elif part not in {"part1", "part2"}:
+        return jsonify({"ok": False, "error": "part must be 'part1' or 'part2'"}), 400
+
     pdf_path = SOURCE_PDF_DIR / pdf_name
     if not pdf_path.exists() or pdf_path.suffix.lower() != ".pdf":
         return jsonify({"ok": False, "error": f"PDF not found: {pdf_name}"}), 404
 
     page_id = f"p{page_num:04d}"
-    target = ANNOTATIONS_DIR / f"page_{page_id}.json"
+    target = _annotation_path(page_id, edition)
     if target.exists() and not overwrite:
         return (
             jsonify(

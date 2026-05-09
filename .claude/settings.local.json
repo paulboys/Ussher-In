@@ -22,7 +22,15 @@
       "WebSearch",
       "Bash(python -m pytest 08_working_scratch/tests/test_ab_judge.py 08_working_scratch/tests/test_ab_report.py 08_working_scratch/tests/test_ab_spot_check.py -v)",
       "Bash(python -m pytest 08_working_scratch/tests/test_ab_judge.py 08_working_scratch/tests/test_ab_report.py 08_working_scratch/tests/test_ab_spot_check.py)",
-      "Bash(python -m pytest 08_working_scratch/tests/)"
+      "Bash(python -m pytest 08_working_scratch/tests/)",
+      "Bash(python -m pytest tests/test_translation_prompts_whitaker.py tests/test_annotation_ui_whitaker.py -v)",
+      "Bash(python -m pytest tests/test_annotation_ui_dual_text.py tests/test_translation_prompts.py -v)",
+      "Bash(python -m pytest tests/test_annotation_ui_dual_text.py tests/test_translation_prompts.py)",
+      "Bash(python -m pytest tests/)",
+      "Bash(node -c phase3b/ui/static/annotation_ui.js)",
+      "Bash(python -c \"import esprima\")",
+      "Bash(python -m pytest tests/test_annotation_ui_dual_text.py tests/test_annotation_ui_whitaker.py tests/test_translation_prompts_whitaker.py)",
+      "Bash(python -m pytest tests/test_annotation_ui_whitaker.py -q)"
     ]
   }
 }

@@ -29,11 +29,8 @@
     <select id="ocrPdfSelect"></select>
     <label for="ocrPageInput">Page</label>
     <input id="ocrPageInput" type="number" min="1" value="1" style="width: 5em">
-    <label for="ocrEditionSelect">Edition</label>
-    <select id="ocrEditionSelect">
-      <option value="1687_second">1687 Second Edition</option>
-      <option value="1847_elrington_todd">Elrington &amp; Todd 1847</option>
-    </select>
+    <span class="meta-prov-label">Edition</span>
+    <span id="ocrEditionBadge" class="edition-badge">&mdash;</span>
     <label><input id="ocrOverwrite" type="checkbox"> Overwrite</label>
     <button id="ocrRunBtn" type="button">Run Gemini OCR</button>
     <span id="ocrStatus" class="status"></span>
@@ -167,6 +164,16 @@
           <input type="radio" name="editionChoice" value="1847_elrington_todd">
           <span class="edition-choice-title">Elrington &amp; Todd 1847</span>
           <span class="edition-choice-desc">Reprint with no marginalia; footnotes typeset at the bottom of the page; 19th-c. Latin/Greek lithography and ligatures.</span>
+        </label>
+        <label class="edition-choice">
+          <input type="radio" name="editionChoice" value="whitaker_english">
+          <span class="edition-choice-title">Whitaker, Disputatio (English)</span>
+          <span class="edition-choice-desc">English translation of Whitaker's Disputatio de Sacra Scriptura; reference text for alignment and benchmarking.</span>
+        </label>
+        <label class="edition-choice">
+          <input type="radio" name="editionChoice" value="whitaker_latin">
+          <span class="edition-choice-title">Whitaker, Disputatio (Latin)</span>
+          <span class="edition-choice-desc">Latin original of Whitaker's Disputatio de Sacra Scriptura (1588); 16th-c. scholastic Latin with embedded Patristic Greek.</span>
         </label>
       </div>
       <div class="modal-actions">

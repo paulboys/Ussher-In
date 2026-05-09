@@ -75,9 +75,23 @@ const EDITIONS = {
     hasMarginalia: false,
     stickyFootnotes: true,
   },
+  "whitaker_english": {
+    label: "Whitaker, Disputatio (English)",
+    blurb: "English translation of Whitaker's Disputatio de Sacra Scriptura; reference text for alignment and benchmarking.",
+    hasMarginalia: false,
+    stickyFootnotes: true,
+    defaultPdf: "Disputatio_de_Sacra_Scriptura_contra_R_B_ENGLISH.pdf",
+  },
+  "whitaker_latin": {
+    label: "Whitaker, Disputatio (Latin)",
+    blurb: "Latin original of Whitaker's Disputatio de Sacra Scriptura (1588); 16th-c. scholastic Latin with embedded Patristic Greek.",
+    hasMarginalia: false,
+    stickyFootnotes: true,
+    defaultPdf: "Disputatio_de_Sacra_Scriptura_contra_R_B_LATIN.pdf",
+  },
 };
 const DEFAULT_EDITION = "1687_second";
-const EDITION_LS_KEY = "ussherInEdition";
+const PDF_LS_KEY = "ussherInPdf";
 
 function editionConfig(key) {
   return EDITIONS[key] || EDITIONS[DEFAULT_EDITION];
@@ -86,6 +100,64 @@ function editionConfig(key) {
 function currentEdition() {
   const v = String(currentPayload?.edition || "");
   return EDITIONS[v] ? v : DEFAULT_EDITION;
+}
+
+// PDF -> (edition, part) mapping. The PDF dropdown is the single source
+// of truth for what document we're working on; edition and part are
+// derived from the chosen filename. The explicit map covers the
+// blessed corpora; unknown PDFs fall through to filename heuristics
+// and finally a sensible default.
+const PDF_METADATA = {
+  "JamesUssher_Britannicarum ecclesiarum antiquitates_Part1.pdf": {
+    edition: "1847_elrington_todd",
+    part: "part1",
+  },
+  "JamesUssher_Britannicarum ecclesiarum antiquitates_Part2.pdf": {
+    edition: "1847_elrington_todd",
+    part: "part2",
+  },
+  "Disputatio_de_Sacra_Scriptura_contra_R_B_ENGLISH.pdf": {
+    edition: "whitaker_english",
+    part: "whitaker_english",
+  },
+  "Disputatio_de_Sacra_Scriptura_contra_R_B_LATIN.pdf": {
+    edition: "whitaker_latin",
+    part: "whitaker_latin",
+  },
+};
+
+function inferPdfMetadata(pdfName) {
+  const name = String(pdfName || "");
+  if (PDF_METADATA[name]) return PDF_METADATA[name];
+  const lower = name.toLowerCase();
+  if (lower.includes("disputatio") && lower.includes("english")) {
+    return { edition: "whitaker_english", part: "whitaker_english" };
+  }
+  if (lower.includes("disputatio") && lower.includes("latin")) {
+    return { edition: "whitaker_latin", part: "whitaker_latin" };
+  }
+  // Default: assume an Ussher 1847 reissue page; part2 if filename
+  // indicates so, else part1.
+  const part = /_part2/i.test(name) ? "part2" : "part1";
+  return { edition: "1847_elrington_todd", part };
+}
+
+// Source of truth for "what edition are we currently working on?"
+// Reads the read-only badge populated by applyInferredEditionFromPdf;
+// falls back to deriving from the current PDF dropdown value, then to
+// DEFAULT_EDITION. Uses getElementById to be safe to call from
+// helpers that may run before later `const` declarations are reached
+// during top-down script execution.
+function currentInferredEdition() {
+  const badge = document.getElementById("ocrEditionBadge");
+  if (badge && badge.dataset && badge.dataset.edition) {
+    return badge.dataset.edition;
+  }
+  const pdfSelect = document.getElementById("ocrPdfSelect");
+  if (pdfSelect && pdfSelect.value) {
+    return inferPdfMetadata(pdfSelect.value).edition;
+  }
+  return DEFAULT_EDITION;
 }
 
 const addHeaderBtn = document.getElementById("addHeaderBtn");
@@ -1290,6 +1362,7 @@ async function applyPayload(pageId, payload) {
   if (!currentPayload.edition) {
     const picked = await chooseEditionInteractive({ title: "Select edition for this page" });
     currentPayload.edition = picked || DEFAULT_EDITION;
+    syncOcrBarToEdition(currentPayload.edition);
   }
   bindMeta(currentPayload);
   renderAll();
@@ -1304,17 +1377,31 @@ async function applyPayload(pageId, payload) {
   const sourcePdfKey = String(currentPayload.source_pdf || "");
   if (!pdfFrame.src || currentPdfSource !== sourcePdfKey) {
     currentPdfSource = sourcePdfKey;
-    pdfFrame.src = `/pdfjs/${pageId}?page=${pdfPageNum}#page=${pdfPageNum}`;
+    const inferred = currentInferredEdition();
+    const editionParam = inferred && inferred !== DEFAULT_EDITION
+      ? `&edition=${encodeURIComponent(inferred)}`
+      : "";
+    pdfFrame.src = `/pdfjs/${pageId}?page=${pdfPageNum}${editionParam}#page=${pdfPageNum}`;
   } else {
     pdfFrame.contentWindow?.postMessage({ type: "setPage", page: pdfPageNum }, window.location.origin);
   }
   updatePdfPaneHeader(sourcePdfKey, pdfPageNum);
 }
 
+// /api/page reads and writes are scoped by edition via the ?edition=
+// query parameter so a Whitaker p0001 doesn't collide with an Ussher
+// p0001 on disk. The edition is derived from the currently selected
+// PDF (see inferPdfMetadata + the OCR-bar wiring below).
+function currentEditionQuery() {
+  const v = currentInferredEdition();
+  if (!v || v === DEFAULT_EDITION) return "";
+  return `?edition=${encodeURIComponent(v)}`;
+}
+
 async function loadPage(pageId) {
   try {
     setStatus("Loading...");
-    const res = await fetch(`/api/page/${pageId}`);
+    const res = await fetch(`/api/page/${pageId}${currentEditionQuery()}`);
     if (!res.ok) throw new Error(`Load failed: ${res.status}`);
     const payload = await res.json();
     await applyPayload(pageId, payload);
@@ -1340,7 +1427,7 @@ async function savePage() {
     setStatus("Saving...");
     applyDefaultReviewer(currentPayload);
     applySeq(currentPayload);
-    const res = await fetch(`/api/page/${pageId}`, {
+    const res = await fetch(`/api/page/${pageId}${currentEditionQuery()}`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(clone(currentPayload)),
@@ -1440,26 +1527,83 @@ if (window.__PAGES__ && window.__PAGES__.length > 0) {
 // ---------------------------------------------------------------------------
 const ocrPdfSelect = document.getElementById("ocrPdfSelect");
 const ocrPageInput = document.getElementById("ocrPageInput");
-const ocrEditionSelect = document.getElementById("ocrEditionSelect");
+const ocrEditionBadge = document.getElementById("ocrEditionBadge");
 const ocrEditionBlurb = document.getElementById("ocrEditionBlurb");
 const ocrOverwrite = document.getElementById("ocrOverwrite");
 const ocrRunBtn = document.getElementById("ocrRunBtn");
 const ocrStatus = document.getElementById("ocrStatus");
 
-// Restore last-picked edition from localStorage and wire the blurb.
-if (ocrEditionSelect) {
-  const saved = (typeof localStorage !== "undefined" && localStorage.getItem(EDITION_LS_KEY)) || "";
-  if (EDITIONS[saved]) ocrEditionSelect.value = saved;
-  const updateBlurb = () => {
-    if (ocrEditionBlurb) {
-      ocrEditionBlurb.textContent = editionConfig(ocrEditionSelect.value).blurb;
+// Update the read-only edition badge + blurb based on the currently
+// selected PDF, and return the inferred (edition, part) so callers
+// don't have to re-derive it.
+function applyInferredEditionFromPdf() {
+  const pdfName = ocrPdfSelect ? ocrPdfSelect.value : "";
+  const meta = inferPdfMetadata(pdfName);
+  const cfg = editionConfig(meta.edition);
+  if (ocrEditionBadge) {
+    ocrEditionBadge.textContent = cfg.label;
+    ocrEditionBadge.dataset.edition = meta.edition;
+  }
+  if (ocrEditionBlurb) {
+    ocrEditionBlurb.textContent = cfg.blurb;
+  }
+  return meta;
+}
+
+// Whitaker pages live in their own annotations subdirectory, so the
+// top-of-page page selector needs to refetch the page list scoped to
+// the current edition. Ussher (no subdir) uses the flat list.
+async function refreshPageSelectForEdition(editionKey) {
+  if (!pageSelect) return;
+  const url = editionKey && editionKey !== DEFAULT_EDITION
+    ? `/api/pages?edition=${encodeURIComponent(editionKey)}`
+    : "/api/pages";
+  try {
+    const res = await fetch(url);
+    if (!res.ok) return;
+    const data = await res.json();
+    const pages = data.pages || [];
+    const previousValue = pageSelect.value;
+    pageSelect.innerHTML = "";
+    for (const p of pages) {
+      const opt = document.createElement("option");
+      opt.value = p; opt.textContent = p;
+      pageSelect.appendChild(opt);
     }
-  };
-  updateBlurb();
-  ocrEditionSelect.addEventListener("change", () => {
-    try { localStorage.setItem(EDITION_LS_KEY, ocrEditionSelect.value); } catch (e) { /* ignore */ }
-    updateBlurb();
-  });
+    if (pages.includes(previousValue)) {
+      pageSelect.value = previousValue;
+    }
+  } catch (err) {
+    /* non-fatal: leave the existing page list in place */
+  }
+}
+
+// Sync the OCR-bar PDF dropdown and edition badge to a given edition key.
+// Called after the edition-chooser modal resolves so the OCR bar stays
+// consistent with the per-page edition the user just picked.
+function syncOcrBarToEdition(editionKey) {
+  if (!editionKey || !EDITIONS[editionKey]) return;
+  const cfg = editionConfig(editionKey);
+  const pdfSel = document.getElementById("ocrPdfSelect");
+  let matched = false;
+  if (pdfSel && pdfSel.options.length > 0) {
+    for (const opt of pdfSel.options) {
+      if (inferPdfMetadata(opt.value).edition === editionKey) {
+        pdfSel.value = opt.value;
+        matched = true;
+        break;
+      }
+    }
+  }
+  if (matched) {
+    applyInferredEditionFromPdf();
+  } else {
+    const badge = document.getElementById("ocrEditionBadge");
+    if (badge) { badge.textContent = cfg.label; badge.dataset.edition = editionKey; }
+    const blurb = document.getElementById("ocrEditionBlurb");
+    if (blurb) blurb.textContent = cfg.blurb;
+  }
+  refreshPageSelectForEdition(editionKey);
 }
 
 // ---------------------------------------------------------------------------
@@ -1516,6 +1660,7 @@ if (metaEditionChangeBtn) {
     currentPayload.edition = picked;
     markDirty();
     renderAll();
+    syncOcrBarToEdition(picked);
     setStatus(`Edition changed to ${editionConfig(picked).label} (unsaved)`);
   });
 }
@@ -1552,6 +1697,17 @@ async function loadSourcePdfList() {
       opt.textContent = name;
       ocrPdfSelect.appendChild(opt);
     }
+    // Restore the last-picked PDF so reload returns the user to the
+    // document they were last working on (which in turn pins the
+    // inferred edition).
+    try {
+      const saved = typeof localStorage !== "undefined"
+        ? localStorage.getItem(PDF_LS_KEY) || ""
+        : "";
+      if (saved && pdfs.includes(saved)) {
+        ocrPdfSelect.value = saved;
+      }
+    } catch (e) { /* ignore */ }
   } catch (err) {
     setOcrStatus(`PDF list failed: ${err}`, true);
   }
@@ -1574,11 +1730,11 @@ async function pollOcrJob(jobId, pageId) {
 async function runOcr(forceOverwrite) {
   const pdf = ocrPdfSelect?.value;
   const page = parseInt(ocrPageInput?.value || "0", 10);
-  // Derive part from the PDF filename (e.g. "..._Part2.pdf" -> part2; default part1).
-  const part = /_part2/i.test(String(pdf || "")) ? "part2" : "part1";
-  const edition = ocrEditionSelect?.value && EDITIONS[ocrEditionSelect.value]
-    ? ocrEditionSelect.value
-    : DEFAULT_EDITION;
+  // Edition and part are derived from the chosen PDF; the user no
+  // longer picks them separately.
+  const meta = inferPdfMetadata(pdf || "");
+  const edition = meta.edition;
+  const part = meta.part;
   if (!pdf) { setOcrStatus("Pick a PDF first.", true); return; }
   if (!Number.isFinite(page) || page < 1) { setOcrStatus("Page must be a positive integer.", true); return; }
 
@@ -1604,7 +1760,10 @@ async function runOcr(forceOverwrite) {
     const finalJob = await pollOcrJob(jobId, pageId);
     setOcrStatus(`Done: ${finalJob.message || pageId}`);
 
-    const pagesRes = await fetch("/api/pages");
+    const pagesUrl = edition && edition !== DEFAULT_EDITION
+      ? `/api/pages?edition=${encodeURIComponent(edition)}`
+      : "/api/pages";
+    const pagesRes = await fetch(pagesUrl);
     const pagesData = await pagesRes.json();
     const pages = pagesData.pages || [];
     pageSelect.innerHTML = "";
@@ -1626,7 +1785,34 @@ async function runOcr(forceOverwrite) {
 
 if (ocrRunBtn) {
   ocrRunBtn.addEventListener("click", () => runOcr(false));
-  loadSourcePdfList().then(previewOcrSelection);
+  loadSourcePdfList().then(() => {
+    // After the PDF list is populated (and the last-picked PDF is
+    // restored from localStorage), apply the inferred edition to the
+    // badge + blurb, refresh the page selector to that edition, and
+    // load the PDF preview pane.
+    const meta = applyInferredEditionFromPdf();
+    if (meta && meta.edition !== DEFAULT_EDITION) {
+      refreshPageSelectForEdition(meta.edition);
+    }
+    previewOcrSelection();
+  });
+}
+
+// PDF change is now the user-facing knob: when it fires, persist the
+// new PDF, refresh the inferred edition badge, and re-scope the page
+// selector to whichever corpus the new PDF belongs to.
+if (ocrPdfSelect) {
+  ocrPdfSelect.addEventListener("change", () => {
+    try {
+      if (typeof localStorage !== "undefined") {
+        localStorage.setItem(PDF_LS_KEY, ocrPdfSelect.value || "");
+      }
+    } catch (e) { /* ignore */ }
+    const meta = applyInferredEditionFromPdf();
+    if (meta) {
+      refreshPageSelectForEdition(meta.edition);
+    }
+  });
 }
 
 function previewOcrSelection() {
@@ -1676,9 +1862,8 @@ function ensurePageSelectOption(pageId) {
 }
 
 function buildStubPayload(pageId, pageNum) {
-  const edition = ocrEditionSelect?.value && EDITIONS[ocrEditionSelect.value]
-    ? ocrEditionSelect.value
-    : "";
+  const inferred = currentInferredEdition();
+  const edition = EDITIONS[inferred] ? inferred : "";
   return {
     page_id: pageId,
     page_num: pageNum,
@@ -1727,7 +1912,7 @@ async function syncJsonToOcrSelection() {
   let payload = null;
   let isStub = false;
   try {
-    const res = await fetch(`/api/page/${pageId}`);
+    const res = await fetch(`/api/page/${pageId}${currentEditionQuery()}`);
     if (mySeq !== _syncSeq) return; // stale: a newer sync started
     if (res.ok) {
       payload = await res.json();
