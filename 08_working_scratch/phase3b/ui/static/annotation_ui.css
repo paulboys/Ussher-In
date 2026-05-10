@@ -351,9 +351,6 @@ input[type="text"], select, textarea {
 }
 
 .unanchored-marginalia {
-  position: sticky;
-  top: 0;
-  z-index: 2;
   background: var(--panel);
   padding: 0.25rem 0;
   margin-bottom: 0.4rem;

@@ -2690,3 +2690,181 @@ urllib.error.HTTPError: HTTP Error 503: Service Unavailable
 2026-05-10 06:21:04,437 - INFO - Received POST request to save page_id: p0017 edition: whitaker_latin
 2026-05-10 06:21:04,442 - INFO - Recorded 25 edits for page_id: p0017
 2026-05-10 06:21:04,449 - INFO - Successfully saved payload for page_id: p0017
+2026-05-10 06:26:51,425 - INFO - Received GET request for page_id: p0016 edition: whitaker_english
+2026-05-10 06:26:51,458 - INFO - Successfully read payload for page_id: p0016
+2026-05-10 06:26:53,550 - INFO - Received GET request for page_id: p0001 edition: whitaker_english
+2026-05-10 06:26:53,553 - WARNING - Page not found: p0001
+2026-05-10 06:27:07,869 - INFO - Received GET request for page_id: p0002 edition: whitaker_english
+2026-05-10 06:27:07,872 - WARNING - Page not found: p0002
+2026-05-10 06:27:37,751 - INFO - Received GET request for page_id: p0003 edition: whitaker_english
+2026-05-10 06:27:37,753 - WARNING - Page not found: p0003
+2026-05-10 06:27:48,557 - INFO - Received GET request for page_id: p0004 edition: whitaker_english
+2026-05-10 06:27:48,567 - WARNING - Page not found: p0004
+2026-05-10 06:27:50,510 - INFO - Received GET request for page_id: p0005 edition: whitaker_english
+2026-05-10 06:27:50,513 - WARNING - Page not found: p0005
+2026-05-10 06:27:53,755 - INFO - Received GET request for page_id: p0006 edition: whitaker_english
+2026-05-10 06:27:53,756 - WARNING - Page not found: p0006
+2026-05-10 06:28:03,353 - INFO - Received GET request for page_id: p0007 edition: whitaker_english
+2026-05-10 06:28:03,382 - INFO - Successfully read payload for page_id: p0007
+2026-05-10 06:28:31,216 - INFO - Received POST request to save page_id: p0007 edition: whitaker_english
+2026-05-10 06:28:31,228 - INFO - Recorded 3 edits for page_id: p0007
+2026-05-10 06:28:31,242 - INFO - Successfully saved payload for page_id: p0007
+2026-05-10 06:28:40,006 - INFO - Received GET request for page_id: p0008 edition: whitaker_english
+2026-05-10 06:28:40,045 - INFO - Successfully read payload for page_id: p0008
+2026-05-10 06:28:43,048 - INFO - Received GET request for page_id: p0007 edition: whitaker_english
+2026-05-10 06:28:43,066 - INFO - Successfully read payload for page_id: p0007
+2026-05-10 06:28:47,327 - INFO - Received GET request for page_id: p0008 edition: whitaker_english
+2026-05-10 06:28:47,328 - INFO - Successfully read payload for page_id: p0008
+2026-05-10 06:29:44,235 - INFO - Received POST request to save page_id: p0008 edition: whitaker_english
+2026-05-10 06:29:44,242 - INFO - Recorded 7 edits for page_id: p0008
+2026-05-10 06:29:44,250 - INFO - Successfully saved payload for page_id: p0008
+2026-05-10 06:29:47,058 - INFO - Received GET request for page_id: p0009 edition: whitaker_english
+2026-05-10 06:29:47,088 - INFO - Successfully read payload for page_id: p0009
+2026-05-10 06:32:33,132 - INFO - Received POST request to save page_id: p0009 edition: whitaker_english
+2026-05-10 06:32:33,143 - INFO - Recorded 22 edits for page_id: p0009
+2026-05-10 06:32:33,153 - INFO - Successfully saved payload for page_id: p0009
+2026-05-10 06:32:47,910 - INFO - Received POST request to save page_id: p0009 edition: whitaker_english
+2026-05-10 06:32:47,925 - INFO - Recorded 0 edits for page_id: p0009
+2026-05-10 06:32:47,936 - INFO - Successfully saved payload for page_id: p0009
+2026-05-10 06:32:53,096 - INFO - Received GET request for page_id: p0010 edition: whitaker_english
+2026-05-10 06:32:53,096 - WARNING - Page not found: p0010
+2026-05-10 06:33:22,499 - INFO - Received POST request to save page_id: p0010 edition: whitaker_english
+2026-05-10 06:33:22,500 - WARNING - Page not found for saving: p0010
+2026-05-10 06:33:29,782 - INFO - Received GET request for page_id: p0011 edition: whitaker_english
+2026-05-10 06:33:29,805 - INFO - Successfully read payload for page_id: p0011
+2026-05-10 06:36:00,279 - INFO - Received POST request to save page_id: p0011 edition: whitaker_english
+2026-05-10 06:36:00,289 - INFO - Recorded 17 edits for page_id: p0011
+2026-05-10 06:36:00,318 - INFO - Successfully saved payload for page_id: p0011
+2026-05-10 06:36:02,702 - INFO - Received GET request for page_id: p0012 edition: whitaker_english
+2026-05-10 06:36:02,703 - WARNING - Page not found: p0012
+2026-05-10 06:36:12,816 - INFO - Received GET request for page_id: p0013 edition: whitaker_english
+2026-05-10 06:36:12,846 - INFO - Successfully read payload for page_id: p0013
+2026-05-10 06:41:12,855 - INFO - Received POST request to save page_id: p0013 edition: whitaker_english
+2026-05-10 06:41:12,861 - INFO - Recorded 30 edits for page_id: p0013
+2026-05-10 06:41:12,871 - INFO - Successfully saved payload for page_id: p0013
+2026-05-10 06:41:15,216 - INFO - Received GET request for page_id: p0014 edition: whitaker_english
+2026-05-10 06:41:15,240 - INFO - Successfully read payload for page_id: p0014
+2026-05-10 06:47:01,597 - INFO - Received POST request to save page_id: p0014 edition: whitaker_english
+2026-05-10 06:47:01,602 - INFO - Recorded 37 edits for page_id: p0014
+2026-05-10 06:47:01,609 - INFO - Successfully saved payload for page_id: p0014
+2026-05-10 06:47:04,313 - INFO - Received GET request for page_id: p0015 edition: whitaker_english
+2026-05-10 06:47:04,332 - INFO - Successfully read payload for page_id: p0015
+2026-05-10 06:51:44,415 - INFO - Received POST request to save page_id: p0015 edition: whitaker_english
+2026-05-10 06:51:44,426 - INFO - Recorded 37 edits for page_id: p0015
+2026-05-10 06:51:44,438 - INFO - Successfully saved payload for page_id: p0015
+2026-05-10 06:51:46,767 - INFO - Received GET request for page_id: p0016 edition: whitaker_english
+2026-05-10 06:51:46,767 - INFO - Successfully read payload for page_id: p0016
+2026-05-10 06:51:46,804 - INFO - Received GET request for page_id: p0016 edition: whitaker_english
+2026-05-10 06:51:46,806 - INFO - Successfully read payload for page_id: p0016
+2026-05-10 07:08:32,682 - INFO - Received POST request to save page_id: p0016 edition: whitaker_english
+2026-05-10 07:08:32,722 - INFO - Recorded 2 edits for page_id: p0016
+2026-05-10 07:08:32,745 - INFO - Successfully saved payload for page_id: p0016
+2026-05-10 07:08:36,039 - INFO - Received GET request for page_id: p0001 edition: None
+2026-05-10 07:08:36,073 - INFO - Successfully read payload for page_id: p0001
+2026-05-10 07:08:43,680 - INFO - Received GET request for page_id: p0016 edition: whitaker_english
+2026-05-10 07:08:43,700 - INFO - Successfully read payload for page_id: p0016
+2026-05-10 07:11:21,965 - INFO - Received POST request to save page_id: p0016 edition: whitaker_english
+2026-05-10 07:11:21,973 - INFO - Recorded 12 edits for page_id: p0016
+2026-05-10 07:11:21,986 - INFO - Successfully saved payload for page_id: p0016
+2026-05-10 07:19:20,031 - INFO - Received POST request to save page_id: p0016 edition: whitaker_english
+2026-05-10 07:19:20,062 - INFO - Recorded 37 edits for page_id: p0016
+2026-05-10 07:19:20,071 - INFO - Successfully saved payload for page_id: p0016
+2026-05-10 07:19:22,957 - INFO - Received GET request for page_id: p0017 edition: whitaker_english
+2026-05-10 07:19:22,978 - INFO - Successfully read payload for page_id: p0017
+2026-05-10 07:24:45,283 - INFO - Received POST request to save page_id: p0017 edition: whitaker_english
+2026-05-10 07:24:45,295 - INFO - Recorded 37 edits for page_id: p0017
+2026-05-10 07:24:45,303 - INFO - Successfully saved payload for page_id: p0017
+2026-05-10 07:24:47,788 - INFO - Received GET request for page_id: p0018 edition: whitaker_english
+2026-05-10 07:24:47,813 - INFO - Successfully read payload for page_id: p0018
+2026-05-10 07:24:47,950 - INFO - Received GET request for page_id: p0018 edition: whitaker_english
+2026-05-10 07:24:47,951 - INFO - Successfully read payload for page_id: p0018
+2026-05-10 07:30:23,708 - INFO - Received POST request to save page_id: p0018 edition: whitaker_english
+2026-05-10 07:30:23,714 - INFO - Recorded 37 edits for page_id: p0018
+2026-05-10 07:30:23,725 - INFO - Successfully saved payload for page_id: p0018
+2026-05-10 07:30:26,802 - INFO - Received GET request for page_id: p0019 edition: whitaker_english
+2026-05-10 07:30:26,825 - INFO - Successfully read payload for page_id: p0019
+2026-05-10 07:30:26,919 - INFO - Received GET request for page_id: p0019 edition: whitaker_english
+2026-05-10 07:30:26,921 - INFO - Successfully read payload for page_id: p0019
+2026-05-10 07:30:42,801 - INFO - Received POST request to save page_id: p0019 edition: whitaker_english
+2026-05-10 07:30:42,806 - INFO - Recorded 1 edits for page_id: p0019
+2026-05-10 07:30:42,816 - INFO - Successfully saved payload for page_id: p0019
+2026-05-10 07:30:45,622 - INFO - Received GET request for page_id: p0020 edition: whitaker_english
+2026-05-10 07:30:45,652 - INFO - Successfully read payload for page_id: p0020
+2026-05-10 07:30:50,989 - INFO - Received GET request for page_id: p0021 edition: whitaker_english
+2026-05-10 07:30:51,013 - INFO - Successfully read payload for page_id: p0021
+2026-05-10 07:30:55,541 - INFO - Received GET request for page_id: p0022 edition: whitaker_english
+2026-05-10 07:30:55,563 - INFO - Successfully read payload for page_id: p0022
+2026-05-10 07:31:00,156 - INFO - Received GET request for page_id: p0023 edition: whitaker_english
+2026-05-10 07:31:00,174 - INFO - Successfully read payload for page_id: p0023
+2026-05-10 07:31:06,888 - INFO - Received GET request for page_id: p0022 edition: whitaker_english
+2026-05-10 07:31:06,890 - INFO - Successfully read payload for page_id: p0022
+2026-05-10 07:31:07,145 - INFO - Received GET request for page_id: p0021 edition: whitaker_english
+2026-05-10 07:31:07,147 - INFO - Successfully read payload for page_id: p0021
+2026-05-10 07:31:07,315 - INFO - Received GET request for page_id: p0020 edition: whitaker_english
+2026-05-10 07:31:07,316 - INFO - Successfully read payload for page_id: p0020
+2026-05-10 07:31:07,366 - INFO - Received GET request for page_id: p0020 edition: whitaker_english
+2026-05-10 07:31:07,367 - INFO - Successfully read payload for page_id: p0020
+2026-05-10 07:31:07,518 - INFO - Received GET request for page_id: p0019 edition: whitaker_english
+2026-05-10 07:31:07,535 - INFO - Successfully read payload for page_id: p0019
+2026-05-10 07:31:07,604 - INFO - Received GET request for page_id: p0019 edition: whitaker_english
+2026-05-10 07:31:07,606 - INFO - Successfully read payload for page_id: p0019
+2026-05-10 07:31:08,798 - INFO - Received GET request for page_id: p0018 edition: whitaker_english
+2026-05-10 07:31:09,070 - INFO - Successfully read payload for page_id: p0018
+2026-05-10 07:31:09,379 - INFO - Received GET request for page_id: p0018 edition: whitaker_english
+2026-05-10 07:31:09,381 - INFO - Successfully read payload for page_id: p0018
+2026-05-10 07:31:11,049 - INFO - Received GET request for page_id: p0019 edition: whitaker_english
+2026-05-10 07:31:11,051 - INFO - Successfully read payload for page_id: p0019
+2026-05-10 07:31:11,188 - INFO - Received GET request for page_id: p0019 edition: whitaker_english
+2026-05-10 07:31:11,189 - INFO - Successfully read payload for page_id: p0019
+2026-05-10 07:36:06,753 - INFO - Received POST request to save page_id: p0019 edition: whitaker_english
+2026-05-10 07:36:06,762 - INFO - Recorded 37 edits for page_id: p0019
+2026-05-10 07:36:06,770 - INFO - Successfully saved payload for page_id: p0019
+2026-05-10 07:36:09,435 - INFO - Received GET request for page_id: p0020 edition: whitaker_english
+2026-05-10 07:36:09,437 - INFO - Successfully read payload for page_id: p0020
+2026-05-10 07:41:10,036 - INFO - Received POST request to save page_id: p0020 edition: whitaker_english
+2026-05-10 07:41:10,053 - INFO - Recorded 37 edits for page_id: p0020
+2026-05-10 07:41:10,063 - INFO - Successfully saved payload for page_id: p0020
+2026-05-10 07:41:13,107 - INFO - Received GET request for page_id: p0021 edition: whitaker_english
+2026-05-10 07:41:13,110 - INFO - Successfully read payload for page_id: p0021
+2026-05-10 07:41:20,718 - INFO - Received GET request for page_id: p0022 edition: whitaker_english
+2026-05-10 07:41:20,720 - INFO - Successfully read payload for page_id: p0022
+2026-05-10 07:41:25,748 - INFO - Received GET request for page_id: p0023 edition: whitaker_english
+2026-05-10 07:41:25,749 - INFO - Successfully read payload for page_id: p0023
+2026-05-10 07:41:32,456 - INFO - Received GET request for page_id: p0022 edition: whitaker_english
+2026-05-10 07:41:32,459 - INFO - Successfully read payload for page_id: p0022
+2026-05-10 07:41:32,857 - INFO - Received GET request for page_id: p0021 edition: whitaker_english
+2026-05-10 07:41:32,858 - INFO - Successfully read payload for page_id: p0021
+2026-05-10 07:41:33,033 - INFO - Received GET request for page_id: p0020 edition: whitaker_english
+2026-05-10 07:41:33,066 - INFO - Successfully read payload for page_id: p0020
+2026-05-10 07:41:33,226 - INFO - Received GET request for page_id: p0019 edition: whitaker_english
+2026-05-10 07:41:33,258 - INFO - Successfully read payload for page_id: p0019
+2026-05-10 07:41:33,286 - INFO - Received GET request for page_id: p0019 edition: whitaker_english
+2026-05-10 07:41:33,287 - INFO - Successfully read payload for page_id: p0019
+2026-05-10 07:41:45,816 - INFO - Received GET request for page_id: p0020 edition: whitaker_english
+2026-05-10 07:41:45,818 - INFO - Successfully read payload for page_id: p0020
+2026-05-10 07:41:45,905 - INFO - Received GET request for page_id: p0020 edition: whitaker_english
+2026-05-10 07:41:45,907 - INFO - Successfully read payload for page_id: p0020
+2026-05-10 07:41:55,430 - INFO - Received GET request for page_id: p0021 edition: whitaker_english
+2026-05-10 07:41:55,433 - INFO - Successfully read payload for page_id: p0021
+2026-05-10 07:47:06,075 - INFO - Received POST request to save page_id: p0021 edition: whitaker_english
+2026-05-10 07:47:06,083 - INFO - Recorded 39 edits for page_id: p0021
+2026-05-10 07:47:06,092 - INFO - Successfully saved payload for page_id: p0021
+2026-05-10 07:47:09,205 - INFO - Received GET request for page_id: p0022 edition: whitaker_english
+2026-05-10 07:47:09,210 - INFO - Successfully read payload for page_id: p0022
+2026-05-10 07:47:09,278 - INFO - Received GET request for page_id: p0022 edition: whitaker_english
+2026-05-10 07:47:09,279 - INFO - Successfully read payload for page_id: p0022
+2026-05-10 07:47:25,608 - INFO - Received POST request to save page_id: p0022 edition: whitaker_english
+2026-05-10 07:47:25,615 - INFO - Recorded 2 edits for page_id: p0022
+2026-05-10 07:47:25,626 - INFO - Successfully saved payload for page_id: p0022
+2026-05-10 07:47:30,443 - INFO - Received GET request for page_id: p0023 edition: whitaker_english
+2026-05-10 07:47:30,446 - INFO - Successfully read payload for page_id: p0023
+2026-05-10 07:47:35,841 - INFO - Received GET request for page_id: p0022 edition: whitaker_english
+2026-05-10 07:47:35,889 - INFO - Successfully read payload for page_id: p0022
+2026-05-10 07:52:07,797 - INFO - Received POST request to save page_id: p0022 edition: whitaker_english
+2026-05-10 07:52:07,805 - INFO - Recorded 36 edits for page_id: p0022
+2026-05-10 07:52:07,810 - INFO - Successfully saved payload for page_id: p0022
+2026-05-10 07:52:09,945 - INFO - Received GET request for page_id: p0023 edition: whitaker_english
+2026-05-10 07:52:09,949 - INFO - Successfully read payload for page_id: p0023
+2026-05-10 07:53:28,603 - INFO - Received POST request to save page_id: p0023 edition: whitaker_english
+2026-05-10 07:53:28,611 - INFO - Recorded 13 edits for page_id: p0023
+2026-05-10 07:53:28,619 - INFO - Successfully saved payload for page_id: p0023
