@@ -1554,3 +1554,1139 @@ urllib.error.HTTPError: HTTP Error 503: Service Unavailable
 2026-05-08 21:31:04,248 - INFO - OCR job completed successfully for page p0029.
 2026-05-08 21:31:08,194 - INFO - Received GET request for page_id: p0029 edition: whitaker_latin
 2026-05-08 21:31:08,209 - INFO - Successfully read payload for page_id: p0029
+2026-05-08 21:38:15,299 - INFO - Received POST request to save page_id: p0029 edition: whitaker_latin
+2026-05-08 21:38:15,332 - INFO - Recorded 0 edits for page_id: p0029
+2026-05-08 21:38:15,361 - INFO - Successfully saved payload for page_id: p0029
+2026-05-08 21:38:18,012 - INFO - Received GET request for page_id: p0030 edition: whitaker_latin
+2026-05-08 21:38:18,013 - WARNING - Page not found: p0030
+2026-05-08 21:38:18,059 - INFO - Received GET request for page_id: p0030 edition: whitaker_latin
+2026-05-08 21:38:18,060 - WARNING - Page not found: p0030
+2026-05-08 21:38:20,700 - INFO - Received GET request for page_id: p0029 edition: whitaker_latin
+2026-05-08 21:38:20,767 - INFO - Successfully read payload for page_id: p0029
+2026-05-08 21:38:20,798 - INFO - Received GET request for page_id: p0029 edition: whitaker_latin
+2026-05-08 21:38:20,802 - INFO - Successfully read payload for page_id: p0029
+2026-05-08 21:38:26,545 - INFO - Received GET request for page_id: p0030 edition: whitaker_latin
+2026-05-08 21:38:26,547 - WARNING - Page not found: p0030
+2026-05-08 21:38:31,401 - INFO - Starting OCR job for page p0030 using Gemini.
+2026-05-08 21:38:31,401 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\Disputatio_de_Sacra_Scriptura_contra_R_B_LATIN.pdf --part whitaker_latin --start-page 30 --end-page 30 --ocr-engine gemini
+2026-05-08 21:38:54,901 - INFO - Subprocess stdout: Gemini OCR written to 01_raw_ocr_output\whitaker_latin\whitaker_latin_pilot_ocr.json
+
+2026-05-08 21:38:54,919 - INFO - OCR job completed successfully for page p0030.
+2026-05-08 21:38:55,568 - INFO - Received GET request for page_id: p0030 edition: whitaker_latin
+2026-05-08 21:38:55,584 - INFO - Successfully read payload for page_id: p0030
+2026-05-08 21:39:02,524 - INFO - Received POST request to save page_id: p0030 edition: whitaker_latin
+2026-05-08 21:39:02,526 - INFO - Recorded 0 edits for page_id: p0030
+2026-05-08 21:39:02,535 - INFO - Successfully saved payload for page_id: p0030
+2026-05-08 21:39:05,370 - INFO - Received GET request for page_id: p0031 edition: whitaker_latin
+2026-05-08 21:39:05,372 - WARNING - Page not found: p0031
+2026-05-08 21:39:17,661 - INFO - Starting OCR job for page p0031 using Gemini.
+2026-05-08 21:39:17,662 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\Disputatio_de_Sacra_Scriptura_contra_R_B_LATIN.pdf --part whitaker_latin --start-page 31 --end-page 31 --ocr-engine gemini
+2026-05-08 21:39:43,186 - INFO - Subprocess stdout: Gemini OCR written to 01_raw_ocr_output\whitaker_latin\whitaker_latin_pilot_ocr.json
+
+2026-05-08 21:39:43,202 - INFO - OCR job completed successfully for page p0031.
+2026-05-08 21:39:45,839 - INFO - Received GET request for page_id: p0031 edition: whitaker_latin
+2026-05-08 21:39:45,858 - INFO - Successfully read payload for page_id: p0031
+2026-05-08 21:42:43,886 - INFO - Received POST request to save page_id: p0031 edition: whitaker_latin
+2026-05-08 21:42:43,890 - INFO - Recorded 0 edits for page_id: p0031
+2026-05-08 21:42:43,898 - INFO - Successfully saved payload for page_id: p0031
+2026-05-08 21:44:06,897 - INFO - Received GET request for page_id: p0032 edition: whitaker_latin
+2026-05-08 21:44:06,899 - WARNING - Page not found: p0032
+2026-05-08 21:44:06,922 - INFO - Received GET request for page_id: p0032 edition: whitaker_latin
+2026-05-08 21:44:06,924 - WARNING - Page not found: p0032
+2026-05-08 21:44:10,828 - INFO - Received GET request for page_id: p0031 edition: whitaker_latin
+2026-05-08 21:44:10,853 - INFO - Successfully read payload for page_id: p0031
+2026-05-08 21:44:14,301 - INFO - Received POST request to save page_id: p0031 edition: whitaker_latin
+2026-05-08 21:44:14,303 - INFO - Recorded 0 edits for page_id: p0031
+2026-05-08 21:44:14,311 - INFO - Successfully saved payload for page_id: p0031
+2026-05-08 21:44:17,802 - INFO - Received GET request for page_id: p0032 edition: whitaker_latin
+2026-05-08 21:44:17,803 - WARNING - Page not found: p0032
+2026-05-08 21:44:27,003 - INFO - Starting OCR job for page p0032 using Gemini.
+2026-05-08 21:44:27,006 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\Disputatio_de_Sacra_Scriptura_contra_R_B_LATIN.pdf --part whitaker_latin --start-page 32 --end-page 32 --ocr-engine gemini
+2026-05-08 21:44:52,953 - INFO - Subprocess stdout: Gemini OCR written to 01_raw_ocr_output\whitaker_latin\whitaker_latin_pilot_ocr.json
+
+2026-05-08 21:44:52,969 - INFO - OCR job completed successfully for page p0032.
+2026-05-08 21:44:55,177 - INFO - Received GET request for page_id: p0032 edition: whitaker_latin
+2026-05-08 21:44:55,199 - INFO - Successfully read payload for page_id: p0032
+2026-05-08 21:45:44,928 - INFO - Received POST request to save page_id: p0032 edition: whitaker_latin
+2026-05-08 21:45:44,932 - INFO - Recorded 0 edits for page_id: p0032
+2026-05-08 21:45:44,943 - INFO - Successfully saved payload for page_id: p0032
+2026-05-08 21:45:49,124 - INFO - Received GET request for page_id: p0033 edition: whitaker_latin
+2026-05-08 21:45:49,126 - WARNING - Page not found: p0033
+2026-05-08 21:45:51,968 - INFO - Starting OCR job for page p0033 using Gemini.
+2026-05-08 21:45:51,971 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\Disputatio_de_Sacra_Scriptura_contra_R_B_LATIN.pdf --part whitaker_latin --start-page 33 --end-page 33 --ocr-engine gemini
+2026-05-08 21:46:20,424 - INFO - Subprocess stdout: Gemini OCR written to 01_raw_ocr_output\whitaker_latin\whitaker_latin_pilot_ocr.json
+
+2026-05-08 21:46:20,441 - INFO - OCR job completed successfully for page p0033.
+2026-05-08 21:46:24,151 - INFO - Received GET request for page_id: p0033 edition: whitaker_latin
+2026-05-08 21:46:24,170 - INFO - Successfully read payload for page_id: p0033
+2026-05-08 21:46:25,826 - INFO - Received POST request to save page_id: p0033 edition: whitaker_latin
+2026-05-08 21:46:25,862 - INFO - Recorded 0 edits for page_id: p0033
+2026-05-08 21:46:25,870 - INFO - Successfully saved payload for page_id: p0033
+2026-05-08 21:46:28,866 - INFO - Received GET request for page_id: p0034 edition: whitaker_latin
+2026-05-08 21:46:28,868 - WARNING - Page not found: p0034
+2026-05-08 21:46:31,283 - INFO - Starting OCR job for page p0034 using Gemini.
+2026-05-08 21:46:31,286 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\Disputatio_de_Sacra_Scriptura_contra_R_B_LATIN.pdf --part whitaker_latin --start-page 34 --end-page 34 --ocr-engine gemini
+2026-05-08 21:46:56,146 - INFO - Subprocess stdout: Gemini OCR written to 01_raw_ocr_output\whitaker_latin\whitaker_latin_pilot_ocr.json
+
+2026-05-08 21:46:56,161 - INFO - OCR job completed successfully for page p0034.
+2026-05-08 21:46:59,422 - INFO - Received GET request for page_id: p0034 edition: whitaker_latin
+2026-05-08 21:46:59,439 - INFO - Successfully read payload for page_id: p0034
+2026-05-08 21:47:01,609 - INFO - Received POST request to save page_id: p0034 edition: whitaker_latin
+2026-05-08 21:47:01,617 - INFO - Recorded 0 edits for page_id: p0034
+2026-05-08 21:47:01,630 - INFO - Successfully saved payload for page_id: p0034
+2026-05-08 21:47:05,872 - INFO - Received GET request for page_id: p0035 edition: whitaker_latin
+2026-05-08 21:47:05,874 - WARNING - Page not found: p0035
+2026-05-08 21:47:09,070 - INFO - Starting OCR job for page p0035 using Gemini.
+2026-05-08 21:47:09,074 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\Disputatio_de_Sacra_Scriptura_contra_R_B_LATIN.pdf --part whitaker_latin --start-page 35 --end-page 35 --ocr-engine gemini
+2026-05-08 21:47:35,016 - INFO - Subprocess stdout: Gemini OCR written to 01_raw_ocr_output\whitaker_latin\whitaker_latin_pilot_ocr.json
+
+2026-05-08 21:47:35,027 - INFO - OCR job completed successfully for page p0035.
+2026-05-08 21:47:37,239 - INFO - Received GET request for page_id: p0035 edition: whitaker_latin
+2026-05-08 21:47:37,260 - INFO - Successfully read payload for page_id: p0035
+2026-05-08 21:47:39,963 - INFO - Received POST request to save page_id: p0035 edition: whitaker_latin
+2026-05-08 21:47:39,970 - INFO - Recorded 0 edits for page_id: p0035
+2026-05-08 21:47:39,984 - INFO - Successfully saved payload for page_id: p0035
+2026-05-08 21:47:43,460 - INFO - Received GET request for page_id: p0036 edition: whitaker_latin
+2026-05-08 21:47:43,462 - WARNING - Page not found: p0036
+2026-05-08 21:47:54,505 - INFO - Received GET request for page_id: p0035 edition: whitaker_latin
+2026-05-08 21:47:54,527 - INFO - Successfully read payload for page_id: p0035
+2026-05-08 21:47:57,154 - INFO - Received POST request to save page_id: p0035 edition: whitaker_latin
+2026-05-08 21:47:57,156 - INFO - Recorded 0 edits for page_id: p0035
+2026-05-08 21:47:57,162 - INFO - Successfully saved payload for page_id: p0035
+2026-05-08 21:47:59,827 - INFO - Received GET request for page_id: p0036 edition: whitaker_latin
+2026-05-08 21:47:59,828 - WARNING - Page not found: p0036
+2026-05-08 21:48:02,523 - INFO - Starting OCR job for page p0036 using Gemini.
+2026-05-08 21:48:02,528 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\Disputatio_de_Sacra_Scriptura_contra_R_B_LATIN.pdf --part whitaker_latin --start-page 36 --end-page 36 --ocr-engine gemini
+2026-05-08 21:48:25,813 - INFO - Subprocess stdout: Gemini OCR written to 01_raw_ocr_output\whitaker_latin\whitaker_latin_pilot_ocr.json
+
+2026-05-08 21:48:25,838 - INFO - OCR job completed successfully for page p0036.
+2026-05-08 21:48:26,657 - INFO - Received GET request for page_id: p0036 edition: whitaker_latin
+2026-05-08 21:48:26,678 - INFO - Successfully read payload for page_id: p0036
+2026-05-08 21:48:30,341 - INFO - Received POST request to save page_id: p0036 edition: whitaker_latin
+2026-05-08 21:48:30,343 - INFO - Recorded 0 edits for page_id: p0036
+2026-05-08 21:48:30,350 - INFO - Successfully saved payload for page_id: p0036
+2026-05-08 21:48:34,172 - INFO - Received GET request for page_id: p0037 edition: whitaker_latin
+2026-05-08 21:48:34,173 - WARNING - Page not found: p0037
+2026-05-08 21:48:37,437 - INFO - Starting OCR job for page p0037 using Gemini.
+2026-05-08 21:48:37,437 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\Disputatio_de_Sacra_Scriptura_contra_R_B_LATIN.pdf --part whitaker_latin --start-page 37 --end-page 37 --ocr-engine gemini
+2026-05-08 21:49:02,546 - INFO - Subprocess stdout: Gemini OCR written to 01_raw_ocr_output\whitaker_latin\whitaker_latin_pilot_ocr.json
+
+2026-05-08 21:49:02,560 - INFO - OCR job completed successfully for page p0037.
+2026-05-08 21:49:05,596 - INFO - Received GET request for page_id: p0037 edition: whitaker_latin
+2026-05-08 21:49:05,612 - INFO - Successfully read payload for page_id: p0037
+2026-05-08 21:49:07,286 - INFO - Received POST request to save page_id: p0037 edition: whitaker_latin
+2026-05-08 21:49:07,296 - INFO - Recorded 0 edits for page_id: p0037
+2026-05-08 21:49:07,306 - INFO - Successfully saved payload for page_id: p0037
+2026-05-08 21:49:11,513 - INFO - Received GET request for page_id: p0038 edition: whitaker_latin
+2026-05-08 21:49:11,513 - WARNING - Page not found: p0038
+2026-05-08 21:49:40,326 - INFO - Starting OCR job for page p0038 using Gemini.
+2026-05-08 21:49:40,328 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\Disputatio_de_Sacra_Scriptura_contra_R_B_LATIN.pdf --part whitaker_latin --start-page 38 --end-page 38 --ocr-engine gemini
+2026-05-08 21:50:06,530 - INFO - Subprocess stdout: Gemini OCR written to 01_raw_ocr_output\whitaker_latin\whitaker_latin_pilot_ocr.json
+
+2026-05-08 21:50:06,543 - INFO - OCR job completed successfully for page p0038.
+2026-05-08 21:50:08,491 - INFO - Received GET request for page_id: p0038 edition: whitaker_latin
+2026-05-08 21:50:08,520 - INFO - Successfully read payload for page_id: p0038
+2026-05-08 21:50:09,694 - INFO - Received POST request to save page_id: p0038 edition: whitaker_latin
+2026-05-08 21:50:09,698 - INFO - Recorded 0 edits for page_id: p0038
+2026-05-08 21:50:09,708 - INFO - Successfully saved payload for page_id: p0038
+2026-05-08 21:50:12,907 - INFO - Received GET request for page_id: p0039 edition: whitaker_latin
+2026-05-08 21:50:12,909 - WARNING - Page not found: p0039
+2026-05-08 21:50:16,428 - INFO - Received GET request for page_id: p0038 edition: whitaker_latin
+2026-05-08 21:50:16,442 - INFO - Successfully read payload for page_id: p0038
+2026-05-08 21:50:20,682 - INFO - Received POST request to save page_id: p0038 edition: whitaker_latin
+2026-05-08 21:50:20,686 - INFO - Recorded 0 edits for page_id: p0038
+2026-05-08 21:50:20,692 - INFO - Successfully saved payload for page_id: p0038
+2026-05-08 21:50:23,293 - INFO - Received GET request for page_id: p0039 edition: whitaker_latin
+2026-05-08 21:50:23,297 - WARNING - Page not found: p0039
+2026-05-08 21:50:26,311 - INFO - Starting OCR job for page p0039 using Gemini.
+2026-05-08 21:50:26,313 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\Disputatio_de_Sacra_Scriptura_contra_R_B_LATIN.pdf --part whitaker_latin --start-page 39 --end-page 39 --ocr-engine gemini
+2026-05-08 21:50:52,156 - INFO - Subprocess stdout: Gemini OCR written to 01_raw_ocr_output\whitaker_latin\whitaker_latin_pilot_ocr.json
+
+2026-05-08 21:50:52,168 - INFO - OCR job completed successfully for page p0039.
+2026-05-08 21:50:54,456 - INFO - Received GET request for page_id: p0039 edition: whitaker_latin
+2026-05-08 21:50:54,472 - INFO - Successfully read payload for page_id: p0039
+2026-05-08 21:50:57,679 - INFO - Received POST request to save page_id: p0039 edition: whitaker_latin
+2026-05-08 21:50:57,682 - INFO - Recorded 0 edits for page_id: p0039
+2026-05-08 21:50:57,694 - INFO - Successfully saved payload for page_id: p0039
+2026-05-08 21:51:00,603 - INFO - Received GET request for page_id: p0040 edition: whitaker_latin
+2026-05-08 21:51:00,603 - WARNING - Page not found: p0040
+2026-05-08 21:51:06,234 - INFO - Starting OCR job for page p0040 using Gemini.
+2026-05-08 21:51:06,234 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\Disputatio_de_Sacra_Scriptura_contra_R_B_LATIN.pdf --part whitaker_latin --start-page 40 --end-page 40 --ocr-engine gemini
+2026-05-08 21:51:39,029 - INFO - Subprocess stdout: Gemini OCR written to 01_raw_ocr_output\whitaker_latin\whitaker_latin_pilot_ocr.json
+
+2026-05-08 21:51:39,041 - INFO - OCR job completed successfully for page p0040.
+2026-05-08 21:51:42,483 - INFO - Received GET request for page_id: p0040 edition: whitaker_latin
+2026-05-08 21:51:42,504 - INFO - Successfully read payload for page_id: p0040
+2026-05-08 21:51:44,920 - INFO - Received POST request to save page_id: p0040 edition: whitaker_latin
+2026-05-08 21:51:44,923 - INFO - Recorded 0 edits for page_id: p0040
+2026-05-08 21:51:44,933 - INFO - Successfully saved payload for page_id: p0040
+2026-05-08 21:51:47,596 - INFO - Received GET request for page_id: p0041 edition: whitaker_latin
+2026-05-08 21:51:47,596 - WARNING - Page not found: p0041
+2026-05-08 21:51:50,142 - INFO - Starting OCR job for page p0041 using Gemini.
+2026-05-08 21:51:50,147 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\Disputatio_de_Sacra_Scriptura_contra_R_B_LATIN.pdf --part whitaker_latin --start-page 41 --end-page 41 --ocr-engine gemini
+2026-05-08 21:52:13,343 - INFO - Subprocess stdout: Gemini OCR written to 01_raw_ocr_output\whitaker_latin\whitaker_latin_pilot_ocr.json
+
+2026-05-08 21:52:13,363 - INFO - OCR job completed successfully for page p0041.
+2026-05-08 21:52:18,257 - INFO - Received GET request for page_id: p0041 edition: whitaker_latin
+2026-05-08 21:52:18,272 - INFO - Successfully read payload for page_id: p0041
+2026-05-08 21:53:08,805 - INFO - Received POST request to save page_id: p0041 edition: whitaker_latin
+2026-05-08 21:53:08,808 - INFO - Recorded 0 edits for page_id: p0041
+2026-05-08 21:53:08,819 - INFO - Successfully saved payload for page_id: p0041
+2026-05-08 21:53:15,049 - INFO - Received GET request for page_id: p0042 edition: whitaker_latin
+2026-05-08 21:53:15,051 - WARNING - Page not found: p0042
+2026-05-08 21:53:15,090 - INFO - Received GET request for page_id: p0042 edition: whitaker_latin
+2026-05-08 21:53:15,091 - WARNING - Page not found: p0042
+2026-05-08 21:53:18,932 - INFO - Received GET request for page_id: p0041 edition: whitaker_latin
+2026-05-08 21:53:18,956 - INFO - Successfully read payload for page_id: p0041
+2026-05-08 21:53:20,909 - INFO - Received POST request to save page_id: p0041 edition: whitaker_latin
+2026-05-08 21:53:20,913 - INFO - Recorded 0 edits for page_id: p0041
+2026-05-08 21:53:20,925 - INFO - Successfully saved payload for page_id: p0041
+2026-05-08 21:53:23,708 - INFO - Received GET request for page_id: p0042 edition: whitaker_latin
+2026-05-08 21:53:23,708 - WARNING - Page not found: p0042
+2026-05-08 21:53:26,547 - INFO - Starting OCR job for page p0042 using Gemini.
+2026-05-08 21:53:26,549 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\Disputatio_de_Sacra_Scriptura_contra_R_B_LATIN.pdf --part whitaker_latin --start-page 42 --end-page 42 --ocr-engine gemini
+2026-05-08 21:53:54,550 - INFO - Subprocess stdout: Gemini OCR written to 01_raw_ocr_output\whitaker_latin\whitaker_latin_pilot_ocr.json
+
+2026-05-08 21:53:54,567 - INFO - OCR job completed successfully for page p0042.
+2026-05-08 21:53:54,763 - INFO - Received GET request for page_id: p0042 edition: whitaker_latin
+2026-05-08 21:53:54,780 - INFO - Successfully read payload for page_id: p0042
+2026-05-08 21:53:57,420 - INFO - Received POST request to save page_id: p0042 edition: whitaker_latin
+2026-05-08 21:53:57,424 - INFO - Recorded 0 edits for page_id: p0042
+2026-05-08 21:53:57,437 - INFO - Successfully saved payload for page_id: p0042
+2026-05-08 21:54:02,133 - INFO - Received GET request for page_id: p0043 edition: whitaker_latin
+2026-05-08 21:54:02,134 - WARNING - Page not found: p0043
+2026-05-08 21:54:05,525 - INFO - Starting OCR job for page p0043 using Gemini.
+2026-05-08 21:54:05,529 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\Disputatio_de_Sacra_Scriptura_contra_R_B_LATIN.pdf --part whitaker_latin --start-page 43 --end-page 43 --ocr-engine gemini
+2026-05-08 21:54:31,815 - INFO - Subprocess stdout: Gemini OCR written to 01_raw_ocr_output\whitaker_latin\whitaker_latin_pilot_ocr.json
+
+2026-05-08 21:54:31,827 - INFO - OCR job completed successfully for page p0043.
+2026-05-08 21:54:33,900 - INFO - Received GET request for page_id: p0043 edition: whitaker_latin
+2026-05-08 21:54:33,927 - INFO - Successfully read payload for page_id: p0043
+2026-05-08 21:54:35,632 - INFO - Received POST request to save page_id: p0043 edition: whitaker_latin
+2026-05-08 21:54:35,634 - INFO - Recorded 0 edits for page_id: p0043
+2026-05-08 21:54:35,645 - INFO - Successfully saved payload for page_id: p0043
+2026-05-08 21:54:43,629 - INFO - Received GET request for page_id: p0044 edition: whitaker_latin
+2026-05-08 21:54:43,631 - WARNING - Page not found: p0044
+2026-05-08 21:54:46,059 - INFO - Starting OCR job for page p0044 using Gemini.
+2026-05-08 21:54:46,067 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\Disputatio_de_Sacra_Scriptura_contra_R_B_LATIN.pdf --part whitaker_latin --start-page 44 --end-page 44 --ocr-engine gemini
+2026-05-08 21:55:11,510 - INFO - Subprocess stdout: Gemini OCR written to 01_raw_ocr_output\whitaker_latin\whitaker_latin_pilot_ocr.json
+
+2026-05-08 21:55:11,526 - INFO - OCR job completed successfully for page p0044.
+2026-05-08 21:55:15,258 - INFO - Received GET request for page_id: p0044 edition: whitaker_latin
+2026-05-08 21:55:15,271 - INFO - Successfully read payload for page_id: p0044
+2026-05-08 21:55:26,287 - INFO - Received POST request to save page_id: p0044 edition: whitaker_latin
+2026-05-08 21:55:26,290 - INFO - Recorded 0 edits for page_id: p0044
+2026-05-08 21:55:26,297 - INFO - Successfully saved payload for page_id: p0044
+2026-05-08 21:55:37,121 - INFO - Received GET request for page_id: p0045 edition: whitaker_latin
+2026-05-08 21:55:37,122 - WARNING - Page not found: p0045
+2026-05-08 21:55:44,273 - INFO - Received GET request for page_id: p0046 edition: whitaker_latin
+2026-05-08 21:55:44,275 - WARNING - Page not found: p0046
+2026-05-08 21:55:53,791 - INFO - Received GET request for page_id: p0047 edition: whitaker_latin
+2026-05-08 21:55:53,792 - WARNING - Page not found: p0047
+2026-05-08 21:56:01,845 - INFO - Received GET request for page_id: p0048 edition: whitaker_latin
+2026-05-08 21:56:01,846 - WARNING - Page not found: p0048
+2026-05-08 21:56:08,906 - INFO - Received GET request for page_id: p0049 edition: whitaker_latin
+2026-05-08 21:56:08,906 - WARNING - Page not found: p0049
+2026-05-08 21:56:18,816 - INFO - Received GET request for page_id: p0050 edition: whitaker_latin
+2026-05-08 21:56:18,816 - WARNING - Page not found: p0050
+2026-05-08 21:56:25,522 - INFO - Received GET request for page_id: p0051 edition: whitaker_latin
+2026-05-08 21:56:25,522 - WARNING - Page not found: p0051
+2026-05-08 21:56:32,646 - INFO - Received GET request for page_id: p0052 edition: whitaker_latin
+2026-05-08 21:56:32,649 - WARNING - Page not found: p0052
+2026-05-08 21:56:39,021 - INFO - Received GET request for page_id: p0053 edition: whitaker_latin
+2026-05-08 21:56:39,025 - WARNING - Page not found: p0053
+2026-05-08 21:56:47,043 - INFO - Received GET request for page_id: p0054 edition: whitaker_latin
+2026-05-08 21:56:47,043 - WARNING - Page not found: p0054
+2026-05-08 21:56:56,970 - INFO - Received GET request for page_id: p0055 edition: whitaker_latin
+2026-05-08 21:56:56,973 - WARNING - Page not found: p0055
+2026-05-08 21:57:05,778 - INFO - Received GET request for page_id: p0056 edition: whitaker_latin
+2026-05-08 21:57:05,780 - WARNING - Page not found: p0056
+2026-05-08 21:57:21,738 - INFO - Received GET request for page_id: p0057 edition: whitaker_latin
+2026-05-08 21:57:21,738 - WARNING - Page not found: p0057
+2026-05-08 21:57:31,333 - INFO - Received GET request for page_id: p0058 edition: whitaker_latin
+2026-05-08 21:57:31,333 - WARNING - Page not found: p0058
+2026-05-08 21:57:39,172 - INFO - Received GET request for page_id: p0059 edition: whitaker_latin
+2026-05-08 21:57:39,173 - WARNING - Page not found: p0059
+2026-05-08 21:57:47,746 - INFO - Received GET request for page_id: p0060 edition: whitaker_latin
+2026-05-08 21:57:47,748 - WARNING - Page not found: p0060
+2026-05-08 21:57:54,227 - INFO - Received GET request for page_id: p0061 edition: whitaker_latin
+2026-05-08 21:57:54,229 - WARNING - Page not found: p0061
+2026-05-08 21:58:09,173 - INFO - Received GET request for page_id: p0006 edition: whitaker_latin
+2026-05-08 21:58:09,176 - INFO - Successfully read payload for page_id: p0006
+2026-05-08 21:58:09,966 - INFO - Received GET request for page_id: p0045 edition: whitaker_latin
+2026-05-08 21:58:09,967 - WARNING - Page not found: p0045
+2026-05-08 21:58:09,992 - INFO - Received GET request for page_id: p0045 edition: whitaker_latin
+2026-05-08 21:58:09,993 - WARNING - Page not found: p0045
+2026-05-08 21:58:12,961 - INFO - Received GET request for page_id: p0044 edition: whitaker_latin
+2026-05-08 21:58:12,987 - INFO - Successfully read payload for page_id: p0044
+2026-05-08 21:58:16,921 - INFO - Received GET request for page_id: p0045 edition: whitaker_latin
+2026-05-08 21:58:16,922 - WARNING - Page not found: p0045
+2026-05-08 21:58:19,433 - INFO - Received GET request for page_id: p0044 edition: whitaker_latin
+2026-05-08 21:58:19,433 - INFO - Successfully read payload for page_id: p0044
+2026-05-08 21:59:19,861 - INFO - Received GET request for page_id: p0004 edition: whitaker_english
+2026-05-08 21:59:19,863 - WARNING - Page not found: p0004
+2026-05-08 21:59:20,873 - INFO - Received GET request for page_id: p0001 edition: whitaker_english
+2026-05-08 21:59:20,875 - WARNING - Page not found: p0001
+2026-05-08 21:59:31,553 - INFO - Received GET request for page_id: p0002 edition: whitaker_english
+2026-05-08 21:59:31,553 - WARNING - Page not found: p0002
+2026-05-08 21:59:45,521 - INFO - Received GET request for page_id: p0003 edition: whitaker_english
+2026-05-08 21:59:45,523 - WARNING - Page not found: p0003
+2026-05-08 21:59:52,994 - INFO - Received GET request for page_id: p0004 edition: whitaker_english
+2026-05-08 21:59:52,995 - WARNING - Page not found: p0004
+2026-05-08 22:00:00,589 - INFO - Received GET request for page_id: p0005 edition: whitaker_english
+2026-05-08 22:00:00,591 - WARNING - Page not found: p0005
+2026-05-08 22:00:10,566 - INFO - Received GET request for page_id: p0006 edition: whitaker_english
+2026-05-08 22:00:10,568 - WARNING - Page not found: p0006
+2026-05-08 22:00:21,211 - INFO - Received GET request for page_id: p0007 edition: whitaker_english
+2026-05-08 22:00:21,220 - WARNING - Page not found: p0007
+2026-05-08 22:00:32,322 - INFO - Starting OCR job for page p0007 using Gemini.
+2026-05-08 22:00:32,331 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\Disputatio_de_Sacra_Scriptura_contra_R_B_ENGLISH.pdf --part whitaker_english --start-page 7 --end-page 7 --ocr-engine gemini
+2026-05-08 22:00:56,461 - INFO - Subprocess stdout: Gemini OCR written to 01_raw_ocr_output\whitaker_english\whitaker_english_pilot_ocr.json
+
+2026-05-08 22:00:56,476 - INFO - OCR job completed successfully for page p0007.
+2026-05-08 22:01:00,482 - INFO - Received GET request for page_id: p0007 edition: whitaker_english
+2026-05-08 22:01:00,498 - INFO - Successfully read payload for page_id: p0007
+2026-05-08 22:01:08,359 - INFO - Received POST request to save page_id: p0007 edition: whitaker_english
+2026-05-08 22:01:08,362 - INFO - Recorded 0 edits for page_id: p0007
+2026-05-08 22:01:08,370 - INFO - Successfully saved payload for page_id: p0007
+2026-05-08 22:01:11,098 - INFO - Received GET request for page_id: p0008 edition: whitaker_english
+2026-05-08 22:01:11,101 - WARNING - Page not found: p0008
+2026-05-08 22:01:19,571 - INFO - Starting OCR job for page p0008 using Gemini.
+2026-05-08 22:01:19,574 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\Disputatio_de_Sacra_Scriptura_contra_R_B_ENGLISH.pdf --part whitaker_english --start-page 8 --end-page 8 --ocr-engine gemini
+2026-05-08 22:01:55,180 - INFO - Subprocess stdout: Gemini OCR written to 01_raw_ocr_output\whitaker_english\whitaker_english_pilot_ocr.json
+
+2026-05-08 22:01:55,191 - INFO - OCR job completed successfully for page p0008.
+2026-05-08 22:01:55,820 - INFO - Received GET request for page_id: p0008 edition: whitaker_english
+2026-05-08 22:01:55,839 - INFO - Successfully read payload for page_id: p0008
+2026-05-08 22:01:59,707 - INFO - Received POST request to save page_id: p0008 edition: whitaker_english
+2026-05-08 22:01:59,708 - INFO - Recorded 0 edits for page_id: p0008
+2026-05-08 22:01:59,714 - INFO - Successfully saved payload for page_id: p0008
+2026-05-08 22:02:03,012 - INFO - Received GET request for page_id: p0009 edition: whitaker_english
+2026-05-08 22:02:03,013 - WARNING - Page not found: p0009
+2026-05-08 22:02:11,979 - INFO - Starting OCR job for page p0009 using Gemini.
+2026-05-08 22:02:11,981 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\Disputatio_de_Sacra_Scriptura_contra_R_B_ENGLISH.pdf --part whitaker_english --start-page 9 --end-page 9 --ocr-engine gemini
+2026-05-08 22:02:43,974 - INFO - Subprocess stdout: Gemini OCR written to 01_raw_ocr_output\whitaker_english\whitaker_english_pilot_ocr.json
+
+2026-05-08 22:02:43,991 - INFO - OCR job completed successfully for page p0009.
+2026-05-08 22:02:44,148 - INFO - Received GET request for page_id: p0009 edition: whitaker_english
+2026-05-08 22:02:44,164 - INFO - Successfully read payload for page_id: p0009
+2026-05-08 22:02:47,613 - INFO - Received POST request to save page_id: p0009 edition: whitaker_english
+2026-05-08 22:02:47,617 - INFO - Recorded 0 edits for page_id: p0009
+2026-05-08 22:02:47,622 - INFO - Successfully saved payload for page_id: p0009
+2026-05-08 22:02:50,201 - INFO - Received GET request for page_id: p0010 edition: whitaker_english
+2026-05-08 22:02:50,202 - WARNING - Page not found: p0010
+2026-05-08 22:02:59,890 - INFO - Received GET request for page_id: p0011 edition: whitaker_english
+2026-05-08 22:02:59,891 - WARNING - Page not found: p0011
+2026-05-08 22:03:06,456 - INFO - Starting OCR job for page p0011 using Gemini.
+2026-05-08 22:03:06,461 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\Disputatio_de_Sacra_Scriptura_contra_R_B_ENGLISH.pdf --part whitaker_english --start-page 11 --end-page 11 --ocr-engine gemini
+2026-05-08 22:03:22,873 - INFO - Subprocess stdout: Gemini OCR written to 01_raw_ocr_output\whitaker_english\whitaker_english_pilot_ocr.json
+
+2026-05-08 22:03:22,886 - INFO - OCR job completed successfully for page p0011.
+2026-05-08 22:03:26,566 - INFO - Received GET request for page_id: p0011 edition: whitaker_english
+2026-05-08 22:03:26,582 - INFO - Successfully read payload for page_id: p0011
+2026-05-08 22:03:31,452 - INFO - Received POST request to save page_id: p0011 edition: whitaker_english
+2026-05-08 22:03:31,456 - INFO - Recorded 0 edits for page_id: p0011
+2026-05-08 22:03:31,464 - INFO - Successfully saved payload for page_id: p0011
+2026-05-08 22:03:47,796 - INFO - Received GET request for page_id: p0012 edition: whitaker_english
+2026-05-08 22:03:47,797 - WARNING - Page not found: p0012
+2026-05-08 22:03:55,436 - INFO - Received GET request for page_id: p0013 edition: whitaker_english
+2026-05-08 22:03:55,439 - WARNING - Page not found: p0013
+2026-05-08 22:04:00,652 - INFO - Starting OCR job for page p0013 using Gemini.
+2026-05-08 22:04:00,654 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\Disputatio_de_Sacra_Scriptura_contra_R_B_ENGLISH.pdf --part whitaker_english --start-page 13 --end-page 13 --ocr-engine gemini
+2026-05-08 22:04:30,651 - INFO - Subprocess stdout: Gemini OCR written to 01_raw_ocr_output\whitaker_english\whitaker_english_pilot_ocr.json
+
+2026-05-08 22:04:30,664 - INFO - OCR job completed successfully for page p0013.
+2026-05-08 22:04:33,438 - INFO - Received GET request for page_id: p0013 edition: whitaker_english
+2026-05-08 22:04:33,454 - INFO - Successfully read payload for page_id: p0013
+2026-05-08 22:04:37,850 - INFO - Received POST request to save page_id: p0013 edition: whitaker_english
+2026-05-08 22:04:37,852 - INFO - Recorded 0 edits for page_id: p0013
+2026-05-08 22:04:37,862 - INFO - Successfully saved payload for page_id: p0013
+2026-05-08 22:04:40,318 - INFO - Received GET request for page_id: p0014 edition: whitaker_english
+2026-05-08 22:04:40,318 - WARNING - Page not found: p0014
+2026-05-08 22:04:44,631 - INFO - Starting OCR job for page p0014 using Gemini.
+2026-05-08 22:04:44,633 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\Disputatio_de_Sacra_Scriptura_contra_R_B_ENGLISH.pdf --part whitaker_english --start-page 14 --end-page 14 --ocr-engine gemini
+2026-05-08 22:05:19,632 - INFO - Subprocess stdout: Gemini OCR written to 01_raw_ocr_output\whitaker_english\whitaker_english_pilot_ocr.json
+
+2026-05-08 22:05:19,643 - INFO - OCR job completed successfully for page p0014.
+2026-05-08 22:05:20,838 - INFO - Received GET request for page_id: p0014 edition: whitaker_english
+2026-05-08 22:05:20,853 - INFO - Successfully read payload for page_id: p0014
+2026-05-08 22:05:31,648 - INFO - Received POST request to save page_id: p0014 edition: whitaker_english
+2026-05-08 22:05:31,653 - INFO - Recorded 0 edits for page_id: p0014
+2026-05-08 22:05:31,661 - INFO - Successfully saved payload for page_id: p0014
+2026-05-08 22:05:47,224 - INFO - Received GET request for page_id: p0015 edition: whitaker_english
+2026-05-08 22:05:47,225 - WARNING - Page not found: p0015
+2026-05-08 22:05:49,260 - INFO - Starting OCR job for page p0015 using Gemini.
+2026-05-08 22:05:49,263 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\Disputatio_de_Sacra_Scriptura_contra_R_B_ENGLISH.pdf --part whitaker_english --start-page 15 --end-page 15 --ocr-engine gemini
+2026-05-08 22:06:31,964 - INFO - Subprocess stdout: Gemini OCR written to 01_raw_ocr_output\whitaker_english\whitaker_english_pilot_ocr.json
+
+2026-05-08 22:06:31,976 - INFO - OCR job completed successfully for page p0015.
+2026-05-08 22:06:33,495 - INFO - Received GET request for page_id: p0015 edition: whitaker_english
+2026-05-08 22:06:33,511 - INFO - Successfully read payload for page_id: p0015
+2026-05-08 22:06:34,840 - INFO - Received POST request to save page_id: p0015 edition: whitaker_english
+2026-05-08 22:06:34,843 - INFO - Recorded 0 edits for page_id: p0015
+2026-05-08 22:06:34,853 - INFO - Successfully saved payload for page_id: p0015
+2026-05-08 22:06:37,751 - INFO - Received GET request for page_id: p0016 edition: whitaker_english
+2026-05-08 22:06:37,753 - WARNING - Page not found: p0016
+2026-05-08 22:06:42,453 - INFO - Starting OCR job for page p0016 using Gemini.
+2026-05-08 22:06:42,455 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\Disputatio_de_Sacra_Scriptura_contra_R_B_ENGLISH.pdf --part whitaker_english --start-page 16 --end-page 16 --ocr-engine gemini
+2026-05-08 22:07:22,615 - INFO - Subprocess stdout: Gemini OCR written to 01_raw_ocr_output\whitaker_english\whitaker_english_pilot_ocr.json
+
+2026-05-08 22:07:22,628 - INFO - OCR job completed successfully for page p0016.
+2026-05-08 22:07:22,662 - INFO - Received GET request for page_id: p0016 edition: whitaker_english
+2026-05-08 22:07:22,689 - INFO - Successfully read payload for page_id: p0016
+2026-05-08 22:07:28,777 - INFO - Received POST request to save page_id: p0016 edition: whitaker_english
+2026-05-08 22:07:28,781 - INFO - Recorded 0 edits for page_id: p0016
+2026-05-08 22:07:28,789 - INFO - Successfully saved payload for page_id: p0016
+2026-05-08 22:08:23,264 - INFO - Received GET request for page_id: p0017 edition: whitaker_english
+2026-05-08 22:08:23,265 - WARNING - Page not found: p0017
+2026-05-08 22:08:28,004 - INFO - Starting OCR job for page p0017 using Gemini.
+2026-05-08 22:08:28,005 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\Disputatio_de_Sacra_Scriptura_contra_R_B_ENGLISH.pdf --part whitaker_english --start-page 17 --end-page 17 --ocr-engine gemini
+2026-05-08 22:09:01,711 - INFO - Subprocess stdout: Gemini OCR written to 01_raw_ocr_output\whitaker_english\whitaker_english_pilot_ocr.json
+
+2026-05-08 22:09:01,725 - INFO - OCR job completed successfully for page p0017.
+2026-05-08 22:09:04,206 - INFO - Received GET request for page_id: p0017 edition: whitaker_english
+2026-05-08 22:09:04,223 - INFO - Successfully read payload for page_id: p0017
+2026-05-08 22:09:06,963 - INFO - Received POST request to save page_id: p0017 edition: whitaker_english
+2026-05-08 22:09:06,966 - INFO - Recorded 0 edits for page_id: p0017
+2026-05-08 22:09:06,975 - INFO - Successfully saved payload for page_id: p0017
+2026-05-08 22:09:15,799 - INFO - Received GET request for page_id: p0018 edition: whitaker_english
+2026-05-08 22:09:15,800 - WARNING - Page not found: p0018
+2026-05-08 22:09:15,860 - INFO - Received GET request for page_id: p0018 edition: whitaker_english
+2026-05-08 22:09:15,861 - WARNING - Page not found: p0018
+2026-05-08 22:09:18,988 - INFO - Received GET request for page_id: p0017 edition: whitaker_english
+2026-05-08 22:09:19,021 - INFO - Successfully read payload for page_id: p0017
+2026-05-08 22:09:23,637 - INFO - Received POST request to save page_id: p0017 edition: whitaker_english
+2026-05-08 22:09:23,639 - INFO - Recorded 0 edits for page_id: p0017
+2026-05-08 22:09:23,647 - INFO - Successfully saved payload for page_id: p0017
+2026-05-08 22:09:27,058 - INFO - Received GET request for page_id: p0018 edition: whitaker_english
+2026-05-08 22:09:27,059 - WARNING - Page not found: p0018
+2026-05-08 22:09:31,893 - INFO - Starting OCR job for page p0018 using Gemini.
+2026-05-08 22:09:31,895 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\Disputatio_de_Sacra_Scriptura_contra_R_B_ENGLISH.pdf --part whitaker_english --start-page 18 --end-page 18 --ocr-engine gemini
+2026-05-08 22:10:03,269 - INFO - Subprocess stdout: Gemini OCR written to 01_raw_ocr_output\whitaker_english\whitaker_english_pilot_ocr.json
+
+2026-05-08 22:10:03,283 - INFO - OCR job completed successfully for page p0018.
+2026-05-08 22:10:04,556 - INFO - Received GET request for page_id: p0018 edition: whitaker_english
+2026-05-08 22:10:04,595 - INFO - Successfully read payload for page_id: p0018
+2026-05-08 22:10:10,062 - INFO - Received POST request to save page_id: p0018 edition: whitaker_english
+2026-05-08 22:10:10,066 - INFO - Recorded 0 edits for page_id: p0018
+2026-05-08 22:10:10,075 - INFO - Successfully saved payload for page_id: p0018
+2026-05-08 22:10:14,445 - INFO - Received GET request for page_id: p0019 edition: whitaker_english
+2026-05-08 22:10:14,446 - WARNING - Page not found: p0019
+2026-05-08 22:10:19,494 - INFO - Starting OCR job for page p0019 using Gemini.
+2026-05-08 22:10:19,495 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\Disputatio_de_Sacra_Scriptura_contra_R_B_ENGLISH.pdf --part whitaker_english --start-page 19 --end-page 19 --ocr-engine gemini
+2026-05-08 22:10:51,269 - INFO - Subprocess stdout: Gemini OCR written to 01_raw_ocr_output\whitaker_english\whitaker_english_pilot_ocr.json
+
+2026-05-08 22:10:51,285 - INFO - OCR job completed successfully for page p0019.
+2026-05-08 22:10:51,681 - INFO - Received GET request for page_id: p0019 edition: whitaker_english
+2026-05-08 22:10:51,700 - INFO - Successfully read payload for page_id: p0019
+2026-05-08 22:11:02,710 - INFO - Received POST request to save page_id: p0019 edition: whitaker_english
+2026-05-08 22:11:02,715 - INFO - Recorded 0 edits for page_id: p0019
+2026-05-08 22:11:02,728 - INFO - Successfully saved payload for page_id: p0019
+2026-05-08 22:11:05,561 - INFO - Received GET request for page_id: p0020 edition: whitaker_english
+2026-05-08 22:11:05,563 - WARNING - Page not found: p0020
+2026-05-08 22:11:11,127 - INFO - Starting OCR job for page p0020 using Gemini.
+2026-05-08 22:11:11,129 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\Disputatio_de_Sacra_Scriptura_contra_R_B_ENGLISH.pdf --part whitaker_english --start-page 20 --end-page 20 --ocr-engine gemini
+2026-05-08 22:11:41,885 - INFO - Subprocess stdout: Gemini OCR written to 01_raw_ocr_output\whitaker_english\whitaker_english_pilot_ocr.json
+
+2026-05-08 22:11:41,897 - INFO - OCR job completed successfully for page p0020.
+2026-05-08 22:11:43,342 - INFO - Received GET request for page_id: p0020 edition: whitaker_english
+2026-05-08 22:11:43,358 - INFO - Successfully read payload for page_id: p0020
+2026-05-08 22:11:45,088 - INFO - Received POST request to save page_id: p0020 edition: whitaker_english
+2026-05-08 22:11:45,090 - INFO - Recorded 0 edits for page_id: p0020
+2026-05-08 22:11:45,099 - INFO - Successfully saved payload for page_id: p0020
+2026-05-08 22:11:49,079 - INFO - Received GET request for page_id: p0021 edition: whitaker_english
+2026-05-08 22:11:49,080 - WARNING - Page not found: p0021
+2026-05-08 22:11:53,994 - INFO - Starting OCR job for page p0021 using Gemini.
+2026-05-08 22:11:53,997 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\Disputatio_de_Sacra_Scriptura_contra_R_B_ENGLISH.pdf --part whitaker_english --start-page 21 --end-page 21 --ocr-engine gemini
+2026-05-08 22:12:40,834 - INFO - Received POST request to save page_id: p0021 edition: whitaker_english
+2026-05-08 22:12:40,836 - WARNING - Page not found for saving: p0021
+2026-05-08 22:12:50,549 - INFO - Subprocess stdout: Gemini OCR written to 01_raw_ocr_output\whitaker_english\whitaker_english_pilot_ocr.json
+
+2026-05-08 22:12:50,566 - INFO - OCR job completed successfully for page p0021.
+2026-05-08 22:12:54,317 - INFO - Received GET request for page_id: p0021 edition: whitaker_english
+2026-05-08 22:12:54,334 - INFO - Successfully read payload for page_id: p0021
+2026-05-08 22:12:55,674 - INFO - Received GET request for page_id: p0021 edition: whitaker_english
+2026-05-08 22:12:55,676 - INFO - Successfully read payload for page_id: p0021
+2026-05-08 22:12:58,371 - INFO - Received POST request to save page_id: p0021 edition: whitaker_english
+2026-05-08 22:12:58,375 - INFO - Recorded 0 edits for page_id: p0021
+2026-05-08 22:12:58,388 - INFO - Successfully saved payload for page_id: p0021
+2026-05-08 22:13:13,869 - INFO - Received GET request for page_id: p0022 edition: whitaker_english
+2026-05-08 22:13:13,870 - WARNING - Page not found: p0022
+2026-05-08 22:13:18,640 - INFO - Starting OCR job for page p0022 using Gemini.
+2026-05-08 22:13:18,645 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\Disputatio_de_Sacra_Scriptura_contra_R_B_ENGLISH.pdf --part whitaker_english --start-page 22 --end-page 22 --ocr-engine gemini
+2026-05-08 22:13:54,972 - INFO - Subprocess stdout: Gemini OCR written to 01_raw_ocr_output\whitaker_english\whitaker_english_pilot_ocr.json
+
+2026-05-08 22:13:54,985 - INFO - OCR job completed successfully for page p0022.
+2026-05-08 22:13:58,800 - INFO - Received GET request for page_id: p0022 edition: whitaker_english
+2026-05-08 22:13:58,821 - INFO - Successfully read payload for page_id: p0022
+2026-05-08 22:14:00,822 - INFO - Received POST request to save page_id: p0022 edition: whitaker_english
+2026-05-08 22:14:00,824 - INFO - Recorded 0 edits for page_id: p0022
+2026-05-08 22:14:00,835 - INFO - Successfully saved payload for page_id: p0022
+2026-05-08 22:14:03,825 - INFO - Received GET request for page_id: p0023 edition: whitaker_english
+2026-05-08 22:14:03,825 - WARNING - Page not found: p0023
+2026-05-08 22:14:09,299 - INFO - Starting OCR job for page p0023 using Gemini.
+2026-05-08 22:14:09,301 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\Disputatio_de_Sacra_Scriptura_contra_R_B_ENGLISH.pdf --part whitaker_english --start-page 23 --end-page 23 --ocr-engine gemini
+2026-05-08 22:14:25,645 - INFO - Subprocess stdout: Gemini OCR written to 01_raw_ocr_output\whitaker_english\whitaker_english_pilot_ocr.json
+
+2026-05-08 22:14:25,660 - INFO - OCR job completed successfully for page p0023.
+2026-05-08 22:14:29,423 - INFO - Received GET request for page_id: p0023 edition: whitaker_english
+2026-05-08 22:14:29,436 - INFO - Successfully read payload for page_id: p0023
+2026-05-08 22:14:33,806 - INFO - Received POST request to save page_id: p0023 edition: whitaker_english
+2026-05-08 22:14:33,808 - INFO - Recorded 0 edits for page_id: p0023
+2026-05-08 22:14:33,813 - INFO - Successfully saved payload for page_id: p0023
+2026-05-08 22:14:37,330 - INFO - Received GET request for page_id: p0024 edition: whitaker_english
+2026-05-08 22:14:37,332 - WARNING - Page not found: p0024
+2026-05-08 22:14:42,751 - INFO - Starting OCR job for page p0024 using Gemini.
+2026-05-08 22:14:42,757 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\Disputatio_de_Sacra_Scriptura_contra_R_B_ENGLISH.pdf --part whitaker_english --start-page 24 --end-page 24 --ocr-engine gemini
+2026-05-08 22:15:14,009 - INFO - Subprocess stdout: Gemini OCR written to 01_raw_ocr_output\whitaker_english\whitaker_english_pilot_ocr.json
+
+2026-05-08 22:15:14,029 - INFO - OCR job completed successfully for page p0024.
+2026-05-08 22:15:14,943 - INFO - Received GET request for page_id: p0024 edition: whitaker_english
+2026-05-08 22:15:14,963 - INFO - Successfully read payload for page_id: p0024
+2026-05-08 22:15:20,416 - INFO - Received POST request to save page_id: p0024 edition: whitaker_english
+2026-05-08 22:15:20,421 - INFO - Recorded 0 edits for page_id: p0024
+2026-05-08 22:15:20,433 - INFO - Successfully saved payload for page_id: p0024
+2026-05-08 22:15:23,950 - INFO - Received GET request for page_id: p0025 edition: whitaker_english
+2026-05-08 22:15:23,952 - WARNING - Page not found: p0025
+2026-05-08 22:15:31,078 - INFO - Starting OCR job for page p0025 using Gemini.
+2026-05-08 22:15:31,080 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\Disputatio_de_Sacra_Scriptura_contra_R_B_ENGLISH.pdf --part whitaker_english --start-page 25 --end-page 25 --ocr-engine gemini
+2026-05-08 22:16:02,211 - INFO - Subprocess stdout: Gemini OCR written to 01_raw_ocr_output\whitaker_english\whitaker_english_pilot_ocr.json
+
+2026-05-08 22:16:02,227 - INFO - OCR job completed successfully for page p0025.
+2026-05-08 22:16:03,267 - INFO - Received GET request for page_id: p0025 edition: whitaker_english
+2026-05-08 22:16:03,289 - INFO - Successfully read payload for page_id: p0025
+2026-05-08 22:16:31,491 - INFO - Received POST request to save page_id: p0025 edition: whitaker_english
+2026-05-08 22:16:31,494 - INFO - Recorded 0 edits for page_id: p0025
+2026-05-08 22:16:31,504 - INFO - Successfully saved payload for page_id: p0025
+2026-05-08 22:16:33,838 - INFO - Received GET request for page_id: p0026 edition: whitaker_english
+2026-05-08 22:16:33,840 - WARNING - Page not found: p0026
+2026-05-08 22:16:36,388 - INFO - Starting OCR job for page p0026 using Gemini.
+2026-05-08 22:16:36,390 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\Disputatio_de_Sacra_Scriptura_contra_R_B_ENGLISH.pdf --part whitaker_english --start-page 26 --end-page 26 --ocr-engine gemini
+2026-05-08 22:17:24,428 - INFO - Subprocess stdout: Gemini OCR written to 01_raw_ocr_output\whitaker_english\whitaker_english_pilot_ocr.json
+
+2026-05-08 22:17:24,428 - INFO - OCR job completed successfully for page p0026.
+2026-05-08 22:17:24,648 - INFO - Received GET request for page_id: p0026 edition: whitaker_english
+2026-05-08 22:17:24,663 - INFO - Successfully read payload for page_id: p0026
+2026-05-08 22:17:29,487 - INFO - Received POST request to save page_id: p0026 edition: whitaker_english
+2026-05-08 22:17:29,487 - INFO - Recorded 0 edits for page_id: p0026
+2026-05-08 22:17:29,498 - INFO - Successfully saved payload for page_id: p0026
+2026-05-08 22:17:32,982 - INFO - Received GET request for page_id: p0027 edition: whitaker_english
+2026-05-08 22:17:32,985 - WARNING - Page not found: p0027
+2026-05-08 22:17:45,813 - INFO - Starting OCR job for page p0027 using Gemini.
+2026-05-08 22:17:45,816 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\Disputatio_de_Sacra_Scriptura_contra_R_B_ENGLISH.pdf --part whitaker_english --start-page 27 --end-page 27 --ocr-engine gemini
+2026-05-08 22:18:16,521 - INFO - Subprocess stdout: Gemini OCR written to 01_raw_ocr_output\whitaker_english\whitaker_english_pilot_ocr.json
+
+2026-05-08 22:18:16,540 - INFO - OCR job completed successfully for page p0027.
+2026-05-08 22:18:17,274 - INFO - Received GET request for page_id: p0027 edition: whitaker_english
+2026-05-08 22:18:17,296 - INFO - Successfully read payload for page_id: p0027
+2026-05-08 22:18:21,914 - INFO - Received POST request to save page_id: p0027 edition: whitaker_english
+2026-05-08 22:18:21,917 - INFO - Recorded 0 edits for page_id: p0027
+2026-05-08 22:18:21,923 - INFO - Successfully saved payload for page_id: p0027
+2026-05-08 22:18:27,868 - INFO - Received GET request for page_id: p0028 edition: whitaker_english
+2026-05-08 22:18:27,868 - WARNING - Page not found: p0028
+2026-05-08 22:18:37,030 - INFO - Starting OCR job for page p0028 using Gemini.
+2026-05-08 22:18:37,031 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\Disputatio_de_Sacra_Scriptura_contra_R_B_ENGLISH.pdf --part whitaker_english --start-page 28 --end-page 28 --ocr-engine gemini
+2026-05-08 22:19:01,267 - INFO - Subprocess stdout: Gemini OCR written to 01_raw_ocr_output\whitaker_english\whitaker_english_pilot_ocr.json
+
+2026-05-08 22:19:01,278 - INFO - OCR job completed successfully for page p0028.
+2026-05-08 22:19:05,171 - INFO - Received GET request for page_id: p0028 edition: whitaker_english
+2026-05-08 22:19:05,191 - INFO - Successfully read payload for page_id: p0028
+2026-05-08 22:19:10,554 - INFO - Received POST request to save page_id: p0028 edition: whitaker_english
+2026-05-08 22:19:10,557 - INFO - Recorded 0 edits for page_id: p0028
+2026-05-08 22:19:10,566 - INFO - Successfully saved payload for page_id: p0028
+2026-05-08 22:19:14,069 - INFO - Received GET request for page_id: p0029 edition: whitaker_english
+2026-05-08 22:19:14,070 - WARNING - Page not found: p0029
+2026-05-08 22:19:19,331 - INFO - Starting OCR job for page p0029 using Gemini.
+2026-05-08 22:19:19,337 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\Disputatio_de_Sacra_Scriptura_contra_R_B_ENGLISH.pdf --part whitaker_english --start-page 29 --end-page 29 --ocr-engine gemini
+2026-05-08 22:19:29,984 - INFO - Subprocess stdout: Gemini OCR written to 01_raw_ocr_output\whitaker_english\whitaker_english_pilot_ocr.json
+
+2026-05-08 22:19:29,996 - INFO - OCR job completed successfully for page p0029.
+2026-05-08 22:19:31,428 - INFO - Received GET request for page_id: p0029 edition: whitaker_english
+2026-05-08 22:19:31,445 - INFO - Successfully read payload for page_id: p0029
+2026-05-08 22:19:33,622 - INFO - Received POST request to save page_id: p0029 edition: whitaker_english
+2026-05-08 22:19:33,623 - INFO - Recorded 0 edits for page_id: p0029
+2026-05-08 22:19:33,628 - INFO - Successfully saved payload for page_id: p0029
+2026-05-08 22:19:35,990 - INFO - Received GET request for page_id: p0030 edition: whitaker_english
+2026-05-08 22:19:35,990 - WARNING - Page not found: p0030
+2026-05-08 22:19:36,065 - INFO - Received GET request for page_id: p0030 edition: whitaker_english
+2026-05-08 22:19:36,066 - WARNING - Page not found: p0030
+2026-05-08 22:19:39,476 - INFO - Received GET request for page_id: p0029 edition: whitaker_english
+2026-05-08 22:19:39,507 - INFO - Successfully read payload for page_id: p0029
+2026-05-08 22:19:41,545 - INFO - Received POST request to save page_id: p0029 edition: whitaker_english
+2026-05-08 22:19:41,547 - INFO - Recorded 0 edits for page_id: p0029
+2026-05-08 22:19:41,552 - INFO - Successfully saved payload for page_id: p0029
+2026-05-08 22:19:44,477 - INFO - Received GET request for page_id: p0030 edition: whitaker_english
+2026-05-08 22:19:44,477 - WARNING - Page not found: p0030
+2026-05-08 22:19:49,056 - INFO - Starting OCR job for page p0030 using Gemini.
+2026-05-08 22:19:49,059 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\Disputatio_de_Sacra_Scriptura_contra_R_B_ENGLISH.pdf --part whitaker_english --start-page 30 --end-page 30 --ocr-engine gemini
+2026-05-08 22:20:02,109 - INFO - Received GET request for page_id: p0031 edition: whitaker_english
+2026-05-08 22:20:02,109 - WARNING - Page not found: p0031
+2026-05-08 22:20:05,878 - INFO - Received GET request for page_id: p0030 edition: whitaker_english
+2026-05-08 22:20:05,879 - WARNING - Page not found: p0030
+2026-05-08 22:20:07,630 - INFO - Subprocess stdout: Gemini OCR written to 01_raw_ocr_output\whitaker_english\whitaker_english_pilot_ocr.json
+
+2026-05-08 22:20:07,645 - INFO - OCR job completed successfully for page p0030.
+2026-05-08 22:20:09,154 - INFO - Received GET request for page_id: p0030 edition: whitaker_english
+2026-05-08 22:20:09,173 - INFO - Successfully read payload for page_id: p0030
+2026-05-08 22:20:14,034 - INFO - Received POST request to save page_id: p0030 edition: whitaker_english
+2026-05-08 22:20:14,039 - INFO - Recorded 0 edits for page_id: p0030
+2026-05-08 22:20:14,052 - INFO - Successfully saved payload for page_id: p0030
+2026-05-08 22:20:16,714 - INFO - Received GET request for page_id: p0031 edition: whitaker_english
+2026-05-08 22:20:16,715 - WARNING - Page not found: p0031
+2026-05-08 22:20:26,576 - INFO - Received GET request for page_id: p0030 edition: whitaker_english
+2026-05-08 22:20:26,592 - INFO - Successfully read payload for page_id: p0030
+2026-05-08 22:20:42,011 - INFO - Received GET request for page_id: p0031 edition: whitaker_english
+2026-05-08 22:20:42,011 - WARNING - Page not found: p0031
+2026-05-08 22:20:56,690 - INFO - Received GET request for page_id: p0032 edition: whitaker_english
+2026-05-08 22:20:56,691 - WARNING - Page not found: p0032
+2026-05-08 22:21:02,669 - INFO - Received GET request for page_id: p0033 edition: whitaker_english
+2026-05-08 22:21:02,671 - WARNING - Page not found: p0033
+2026-05-08 22:21:08,363 - INFO - Received GET request for page_id: p0034 edition: whitaker_english
+2026-05-08 22:21:08,370 - WARNING - Page not found: p0034
+2026-05-08 22:21:14,514 - INFO - Received GET request for page_id: p0035 edition: whitaker_english
+2026-05-08 22:21:14,515 - WARNING - Page not found: p0035
+2026-05-08 22:21:19,462 - INFO - Received GET request for page_id: p0036 edition: whitaker_english
+2026-05-08 22:21:19,463 - WARNING - Page not found: p0036
+2026-05-08 22:21:25,153 - INFO - Received GET request for page_id: p0037 edition: whitaker_english
+2026-05-08 22:21:25,155 - WARNING - Page not found: p0037
+2026-05-08 22:21:38,258 - INFO - Received GET request for page_id: p0003 edition: whitaker_english
+2026-05-08 22:21:38,259 - WARNING - Page not found: p0003
+2026-05-08 22:21:39,058 - INFO - Received GET request for page_id: p0040 edition: whitaker_english
+2026-05-08 22:21:39,058 - WARNING - Page not found: p0040
+2026-05-08 22:21:48,830 - INFO - Received GET request for page_id: p0004 edition: whitaker_english
+2026-05-08 22:21:48,830 - WARNING - Page not found: p0004
+2026-05-08 22:21:50,019 - INFO - Received GET request for page_id: p0020 edition: whitaker_english
+2026-05-08 22:21:50,062 - INFO - Successfully read payload for page_id: p0020
+2026-05-08 22:21:58,532 - INFO - Received GET request for page_id: p0002 edition: whitaker_english
+2026-05-08 22:21:58,532 - WARNING - Page not found: p0002
+2026-05-08 22:22:00,559 - INFO - Received GET request for page_id: p0030 edition: whitaker_english
+2026-05-08 22:22:00,559 - INFO - Successfully read payload for page_id: p0030
+2026-05-08 22:22:18,632 - INFO - Received GET request for page_id: p0029 edition: whitaker_english
+2026-05-08 22:22:18,638 - INFO - Successfully read payload for page_id: p0029
+2026-05-08 22:22:25,486 - INFO - Received GET request for page_id: p0030 edition: whitaker_english
+2026-05-08 22:22:25,488 - INFO - Successfully read payload for page_id: p0030
+2026-05-08 22:22:30,136 - INFO - Received GET request for page_id: p0031 edition: whitaker_english
+2026-05-08 22:22:30,137 - WARNING - Page not found: p0031
+2026-05-08 22:22:36,573 - INFO - Received GET request for page_id: p0030 edition: whitaker_english
+2026-05-08 22:22:36,575 - INFO - Successfully read payload for page_id: p0030
+2026-05-08 22:22:36,802 - INFO - Received GET request for page_id: p0029 edition: whitaker_english
+2026-05-08 22:22:36,803 - INFO - Successfully read payload for page_id: p0029
+2026-05-08 22:22:41,508 - INFO - Received GET request for page_id: p0028 edition: whitaker_english
+2026-05-08 22:22:41,595 - INFO - Successfully read payload for page_id: p0028
+2026-05-08 22:22:41,611 - INFO - Received GET request for page_id: p0028 edition: whitaker_english
+2026-05-08 22:22:41,613 - INFO - Successfully read payload for page_id: p0028
+2026-05-08 22:22:55,374 - INFO - Received GET request for page_id: p0029 edition: whitaker_english
+2026-05-08 22:22:55,375 - INFO - Successfully read payload for page_id: p0029
+2026-05-08 22:22:55,459 - INFO - Received GET request for page_id: p0029 edition: whitaker_english
+2026-05-08 22:22:55,460 - INFO - Successfully read payload for page_id: p0029
+2026-05-08 22:22:55,630 - INFO - Received GET request for page_id: p0030 edition: whitaker_english
+2026-05-08 22:22:55,631 - INFO - Successfully read payload for page_id: p0030
+2026-05-08 22:22:55,750 - INFO - Received GET request for page_id: p0031 edition: whitaker_english
+2026-05-08 22:22:55,751 - WARNING - Page not found: p0031
+2026-05-08 22:23:07,189 - INFO - Received GET request for page_id: p0032 edition: whitaker_english
+2026-05-08 22:23:07,189 - WARNING - Page not found: p0032
+2026-05-08 22:23:08,805 - INFO - Received GET request for page_id: p0033 edition: whitaker_english
+2026-05-08 22:23:08,805 - WARNING - Page not found: p0033
+2026-05-08 22:23:14,704 - INFO - Received GET request for page_id: p0034 edition: whitaker_english
+2026-05-08 22:23:14,709 - WARNING - Page not found: p0034
+2026-05-08 22:23:17,524 - INFO - Received GET request for page_id: p0035 edition: whitaker_english
+2026-05-08 22:23:17,525 - WARNING - Page not found: p0035
+2026-05-08 22:23:22,469 - INFO - Received GET request for page_id: p0036 edition: whitaker_english
+2026-05-08 22:23:22,469 - WARNING - Page not found: p0036
+2026-05-08 22:23:27,390 - INFO - Received GET request for page_id: p0037 edition: whitaker_english
+2026-05-08 22:23:27,390 - WARNING - Page not found: p0037
+2026-05-08 22:23:32,399 - INFO - Received GET request for page_id: p0038 edition: whitaker_english
+2026-05-08 22:23:32,399 - WARNING - Page not found: p0038
+2026-05-08 22:23:37,546 - INFO - Received GET request for page_id: p0039 edition: whitaker_english
+2026-05-08 22:23:37,547 - WARNING - Page not found: p0039
+2026-05-08 22:23:43,445 - INFO - Received GET request for page_id: p0040 edition: whitaker_english
+2026-05-08 22:23:43,445 - WARNING - Page not found: p0040
+2026-05-08 22:23:49,163 - INFO - Received GET request for page_id: p0041 edition: whitaker_english
+2026-05-08 22:23:49,164 - WARNING - Page not found: p0041
+2026-05-08 22:23:59,526 - INFO - Starting OCR job for page p0041 using Gemini.
+2026-05-08 22:23:59,529 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\Disputatio_de_Sacra_Scriptura_contra_R_B_ENGLISH.pdf --part whitaker_english --start-page 41 --end-page 41 --ocr-engine gemini
+2026-05-08 22:24:39,289 - INFO - Subprocess stdout: Gemini OCR written to 01_raw_ocr_output\whitaker_english\whitaker_english_pilot_ocr.json
+
+2026-05-08 22:24:39,312 - INFO - OCR job completed successfully for page p0041.
+2026-05-08 22:24:39,979 - INFO - Received GET request for page_id: p0041 edition: whitaker_english
+2026-05-08 22:24:39,997 - INFO - Successfully read payload for page_id: p0041
+2026-05-08 22:24:44,785 - INFO - Received POST request to save page_id: p0041 edition: whitaker_english
+2026-05-08 22:24:44,790 - INFO - Recorded 0 edits for page_id: p0041
+2026-05-08 22:24:44,803 - INFO - Successfully saved payload for page_id: p0041
+2026-05-08 22:24:47,777 - INFO - Received GET request for page_id: p0042 edition: whitaker_english
+2026-05-08 22:24:47,781 - WARNING - Page not found: p0042
+2026-05-08 22:24:52,015 - INFO - Starting OCR job for page p0042 using Gemini.
+2026-05-08 22:24:52,016 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\Disputatio_de_Sacra_Scriptura_contra_R_B_ENGLISH.pdf --part whitaker_english --start-page 42 --end-page 42 --ocr-engine gemini
+2026-05-08 22:25:35,950 - INFO - Subprocess stdout: Gemini OCR written to 01_raw_ocr_output\whitaker_english\whitaker_english_pilot_ocr.json
+
+2026-05-08 22:25:35,963 - INFO - OCR job completed successfully for page p0042.
+2026-05-08 22:25:36,263 - INFO - Received GET request for page_id: p0042 edition: whitaker_english
+2026-05-08 22:25:36,282 - INFO - Successfully read payload for page_id: p0042
+2026-05-08 22:25:40,939 - INFO - Received POST request to save page_id: p0042 edition: whitaker_english
+2026-05-08 22:25:40,943 - INFO - Recorded 0 edits for page_id: p0042
+2026-05-08 22:25:40,952 - INFO - Successfully saved payload for page_id: p0042
+2026-05-08 22:25:43,329 - INFO - Received GET request for page_id: p0043 edition: whitaker_english
+2026-05-08 22:25:43,330 - WARNING - Page not found: p0043
+2026-05-08 22:25:48,487 - INFO - Starting OCR job for page p0043 using Gemini.
+2026-05-08 22:25:48,489 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\Disputatio_de_Sacra_Scriptura_contra_R_B_ENGLISH.pdf --part whitaker_english --start-page 43 --end-page 43 --ocr-engine gemini
+2026-05-08 22:26:22,061 - INFO - Subprocess stdout: Gemini OCR written to 01_raw_ocr_output\whitaker_english\whitaker_english_pilot_ocr.json
+
+2026-05-08 22:26:22,076 - INFO - OCR job completed successfully for page p0043.
+2026-05-08 22:26:24,679 - INFO - Received GET request for page_id: p0043 edition: whitaker_english
+2026-05-08 22:26:24,697 - INFO - Successfully read payload for page_id: p0043
+2026-05-08 22:26:30,379 - INFO - Received POST request to save page_id: p0043 edition: whitaker_english
+2026-05-08 22:26:30,387 - INFO - Recorded 0 edits for page_id: p0043
+2026-05-08 22:26:30,404 - INFO - Successfully saved payload for page_id: p0043
+2026-05-08 22:26:34,731 - INFO - Received GET request for page_id: p0044 edition: whitaker_english
+2026-05-08 22:26:34,732 - WARNING - Page not found: p0044
+2026-05-08 22:26:39,192 - INFO - Starting OCR job for page p0044 using Gemini.
+2026-05-08 22:26:39,196 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\Disputatio_de_Sacra_Scriptura_contra_R_B_ENGLISH.pdf --part whitaker_english --start-page 44 --end-page 44 --ocr-engine gemini
+2026-05-08 22:27:19,795 - INFO - Subprocess stdout: Gemini OCR written to 01_raw_ocr_output\whitaker_english\whitaker_english_pilot_ocr.json
+
+2026-05-08 22:27:19,832 - INFO - OCR job completed successfully for page p0044.
+2026-05-08 22:27:23,425 - INFO - Received GET request for page_id: p0044 edition: whitaker_english
+2026-05-08 22:27:23,451 - INFO - Successfully read payload for page_id: p0044
+2026-05-08 22:27:28,283 - INFO - Received POST request to save page_id: p0044 edition: whitaker_english
+2026-05-08 22:27:28,291 - INFO - Recorded 0 edits for page_id: p0044
+2026-05-08 22:27:28,310 - INFO - Successfully saved payload for page_id: p0044
+2026-05-08 22:27:31,931 - INFO - Received GET request for page_id: p0045 edition: whitaker_english
+2026-05-08 22:27:31,932 - WARNING - Page not found: p0045
+2026-05-08 22:27:38,587 - INFO - Starting OCR job for page p0045 using Gemini.
+2026-05-08 22:27:38,590 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\Disputatio_de_Sacra_Scriptura_contra_R_B_ENGLISH.pdf --part whitaker_english --start-page 45 --end-page 45 --ocr-engine gemini
+2026-05-08 22:28:13,584 - INFO - Subprocess stdout: Gemini OCR written to 01_raw_ocr_output\whitaker_english\whitaker_english_pilot_ocr.json
+
+2026-05-08 22:28:13,599 - INFO - OCR job completed successfully for page p0045.
+2026-05-08 22:28:14,813 - INFO - Received GET request for page_id: p0045 edition: whitaker_english
+2026-05-08 22:28:14,833 - INFO - Successfully read payload for page_id: p0045
+2026-05-08 22:28:20,216 - INFO - Received POST request to save page_id: p0045 edition: whitaker_english
+2026-05-08 22:28:20,219 - INFO - Recorded 0 edits for page_id: p0045
+2026-05-08 22:28:20,227 - INFO - Successfully saved payload for page_id: p0045
+2026-05-08 22:28:37,357 - INFO - Received GET request for page_id: p0046 edition: whitaker_english
+2026-05-08 22:28:37,359 - WARNING - Page not found: p0046
+2026-05-08 22:28:45,202 - INFO - Starting OCR job for page p0046 using Gemini.
+2026-05-08 22:28:45,204 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\Disputatio_de_Sacra_Scriptura_contra_R_B_ENGLISH.pdf --part whitaker_english --start-page 46 --end-page 46 --ocr-engine gemini
+2026-05-08 22:29:16,292 - INFO - Subprocess stdout: Gemini OCR written to 01_raw_ocr_output\whitaker_english\whitaker_english_pilot_ocr.json
+
+2026-05-08 22:29:16,312 - INFO - OCR job completed successfully for page p0046.
+2026-05-08 22:29:17,380 - INFO - Received GET request for page_id: p0046 edition: whitaker_english
+2026-05-08 22:29:17,399 - INFO - Successfully read payload for page_id: p0046
+2026-05-08 22:29:22,402 - INFO - Received POST request to save page_id: p0046 edition: whitaker_english
+2026-05-08 22:29:22,404 - INFO - Recorded 0 edits for page_id: p0046
+2026-05-08 22:29:22,420 - INFO - Successfully saved payload for page_id: p0046
+2026-05-08 22:29:29,242 - INFO - Received GET request for page_id: p0047 edition: whitaker_english
+2026-05-08 22:29:29,243 - WARNING - Page not found: p0047
+2026-05-08 22:29:35,224 - INFO - Starting OCR job for page p0047 using Gemini.
+2026-05-08 22:29:35,227 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\Disputatio_de_Sacra_Scriptura_contra_R_B_ENGLISH.pdf --part whitaker_english --start-page 47 --end-page 47 --ocr-engine gemini
+2026-05-08 22:30:13,605 - INFO - Subprocess stdout: Gemini OCR written to 01_raw_ocr_output\whitaker_english\whitaker_english_pilot_ocr.json
+
+2026-05-08 22:30:13,615 - INFO - OCR job completed successfully for page p0047.
+2026-05-08 22:30:15,428 - INFO - Received GET request for page_id: p0047 edition: whitaker_english
+2026-05-08 22:30:15,448 - INFO - Successfully read payload for page_id: p0047
+2026-05-08 22:30:55,841 - INFO - Received POST request to save page_id: p0047 edition: whitaker_english
+2026-05-08 22:30:55,844 - INFO - Recorded 0 edits for page_id: p0047
+2026-05-08 22:30:55,859 - INFO - Successfully saved payload for page_id: p0047
+2026-05-08 22:31:02,177 - INFO - Received GET request for page_id: p0048 edition: whitaker_english
+2026-05-08 22:31:02,177 - WARNING - Page not found: p0048
+2026-05-08 22:31:07,342 - INFO - Starting OCR job for page p0048 using Gemini.
+2026-05-08 22:31:07,343 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\Disputatio_de_Sacra_Scriptura_contra_R_B_ENGLISH.pdf --part whitaker_english --start-page 48 --end-page 48 --ocr-engine gemini
+2026-05-08 22:31:44,590 - INFO - Subprocess stdout: Gemini OCR written to 01_raw_ocr_output\whitaker_english\whitaker_english_pilot_ocr.json
+
+2026-05-08 22:31:44,601 - INFO - OCR job completed successfully for page p0048.
+2026-05-08 22:31:47,590 - INFO - Received GET request for page_id: p0048 edition: whitaker_english
+2026-05-08 22:31:47,605 - INFO - Successfully read payload for page_id: p0048
+2026-05-08 22:31:58,393 - INFO - Received POST request to save page_id: p0048 edition: whitaker_english
+2026-05-08 22:31:58,397 - INFO - Recorded 0 edits for page_id: p0048
+2026-05-08 22:31:58,404 - INFO - Successfully saved payload for page_id: p0048
+2026-05-08 22:32:01,209 - INFO - Received GET request for page_id: p0049 edition: whitaker_english
+2026-05-08 22:32:01,210 - WARNING - Page not found: p0049
+2026-05-08 22:32:08,494 - INFO - Starting OCR job for page p0049 using Gemini.
+2026-05-08 22:32:08,495 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\Disputatio_de_Sacra_Scriptura_contra_R_B_ENGLISH.pdf --part whitaker_english --start-page 49 --end-page 49 --ocr-engine gemini
+2026-05-08 22:32:43,132 - INFO - Subprocess stdout: Gemini OCR written to 01_raw_ocr_output\whitaker_english\whitaker_english_pilot_ocr.json
+
+2026-05-08 22:32:43,147 - INFO - OCR job completed successfully for page p0049.
+2026-05-08 22:32:44,728 - INFO - Received GET request for page_id: p0049 edition: whitaker_english
+2026-05-08 22:32:44,749 - INFO - Successfully read payload for page_id: p0049
+2026-05-08 22:32:49,654 - INFO - Received POST request to save page_id: p0049 edition: whitaker_english
+2026-05-08 22:32:49,657 - INFO - Recorded 0 edits for page_id: p0049
+2026-05-08 22:32:49,672 - INFO - Successfully saved payload for page_id: p0049
+2026-05-08 22:32:53,255 - INFO - Received GET request for page_id: p0050 edition: whitaker_english
+2026-05-08 22:32:53,256 - WARNING - Page not found: p0050
+2026-05-08 22:32:58,017 - INFO - Starting OCR job for page p0050 using Gemini.
+2026-05-08 22:32:58,026 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\Disputatio_de_Sacra_Scriptura_contra_R_B_ENGLISH.pdf --part whitaker_english --start-page 50 --end-page 50 --ocr-engine gemini
+2026-05-08 22:33:51,501 - INFO - Subprocess stdout: Gemini OCR written to 01_raw_ocr_output\whitaker_english\whitaker_english_pilot_ocr.json
+
+2026-05-08 22:33:51,511 - INFO - OCR job completed successfully for page p0050.
+2026-05-08 22:33:54,313 - INFO - Received GET request for page_id: p0050 edition: whitaker_english
+2026-05-08 22:33:54,330 - INFO - Successfully read payload for page_id: p0050
+2026-05-08 22:33:59,142 - INFO - Received POST request to save page_id: p0050 edition: whitaker_english
+2026-05-08 22:33:59,148 - INFO - Recorded 0 edits for page_id: p0050
+2026-05-08 22:33:59,162 - INFO - Successfully saved payload for page_id: p0050
+2026-05-08 22:34:02,415 - INFO - Received GET request for page_id: p0051 edition: whitaker_english
+2026-05-08 22:34:02,416 - WARNING - Page not found: p0051
+2026-05-08 22:34:09,809 - INFO - Starting OCR job for page p0051 using Gemini.
+2026-05-08 22:34:09,811 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\Disputatio_de_Sacra_Scriptura_contra_R_B_ENGLISH.pdf --part whitaker_english --start-page 51 --end-page 51 --ocr-engine gemini
+2026-05-08 22:34:50,800 - INFO - Subprocess stdout: Gemini OCR written to 01_raw_ocr_output\whitaker_english\whitaker_english_pilot_ocr.json
+
+2026-05-08 22:34:50,813 - INFO - OCR job completed successfully for page p0051.
+2026-05-08 22:34:53,333 - INFO - Received GET request for page_id: p0051 edition: whitaker_english
+2026-05-08 22:34:53,358 - INFO - Successfully read payload for page_id: p0051
+2026-05-08 22:34:54,993 - INFO - Received POST request to save page_id: p0051 edition: whitaker_english
+2026-05-08 22:34:54,998 - INFO - Recorded 0 edits for page_id: p0051
+2026-05-08 22:34:55,011 - INFO - Successfully saved payload for page_id: p0051
+2026-05-08 22:34:59,472 - INFO - Received GET request for page_id: p0052 edition: whitaker_english
+2026-05-08 22:34:59,473 - WARNING - Page not found: p0052
+2026-05-08 22:35:05,012 - INFO - Starting OCR job for page p0052 using Gemini.
+2026-05-08 22:35:05,020 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\Disputatio_de_Sacra_Scriptura_contra_R_B_ENGLISH.pdf --part whitaker_english --start-page 52 --end-page 52 --ocr-engine gemini
+2026-05-08 22:35:46,588 - INFO - Subprocess stdout: Gemini OCR written to 01_raw_ocr_output\whitaker_english\whitaker_english_pilot_ocr.json
+
+2026-05-08 22:35:46,697 - INFO - OCR job completed successfully for page p0052.
+2026-05-08 22:35:50,271 - INFO - Received GET request for page_id: p0052 edition: whitaker_english
+2026-05-08 22:35:50,291 - INFO - Successfully read payload for page_id: p0052
+2026-05-08 22:37:07,314 - INFO - Received POST request to save page_id: p0052 edition: whitaker_english
+2026-05-08 22:37:07,316 - INFO - Recorded 0 edits for page_id: p0052
+2026-05-08 22:37:07,324 - INFO - Successfully saved payload for page_id: p0052
+2026-05-08 22:37:10,085 - INFO - Received GET request for page_id: p0053 edition: whitaker_english
+2026-05-08 22:37:10,085 - WARNING - Page not found: p0053
+2026-05-08 22:37:14,682 - INFO - Starting OCR job for page p0053 using Gemini.
+2026-05-08 22:37:14,685 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\Disputatio_de_Sacra_Scriptura_contra_R_B_ENGLISH.pdf --part whitaker_english --start-page 53 --end-page 53 --ocr-engine gemini
+2026-05-08 22:37:52,178 - INFO - Subprocess stdout: Gemini OCR written to 01_raw_ocr_output\whitaker_english\whitaker_english_pilot_ocr.json
+
+2026-05-08 22:37:52,190 - INFO - OCR job completed successfully for page p0053.
+2026-05-08 22:37:53,248 - INFO - Received GET request for page_id: p0053 edition: whitaker_english
+2026-05-08 22:37:53,260 - INFO - Successfully read payload for page_id: p0053
+2026-05-08 22:38:50,986 - INFO - Received POST request to save page_id: p0053 edition: whitaker_english
+2026-05-08 22:38:50,989 - INFO - Recorded 0 edits for page_id: p0053
+2026-05-08 22:38:50,997 - INFO - Successfully saved payload for page_id: p0053
+2026-05-08 22:38:54,659 - INFO - Received GET request for page_id: p0054 edition: whitaker_english
+2026-05-08 22:38:54,663 - WARNING - Page not found: p0054
+2026-05-08 22:39:01,371 - INFO - Starting OCR job for page p0054 using Gemini.
+2026-05-08 22:39:01,372 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\Disputatio_de_Sacra_Scriptura_contra_R_B_ENGLISH.pdf --part whitaker_english --start-page 54 --end-page 54 --ocr-engine gemini
+2026-05-08 22:39:47,993 - INFO - Subprocess stdout: Gemini OCR written to 01_raw_ocr_output\whitaker_english\whitaker_english_pilot_ocr.json
+
+2026-05-08 22:39:48,008 - INFO - OCR job completed successfully for page p0054.
+2026-05-08 22:39:51,269 - INFO - Received GET request for page_id: p0054 edition: whitaker_english
+2026-05-08 22:39:51,282 - INFO - Successfully read payload for page_id: p0054
+2026-05-08 22:40:17,651 - INFO - Received POST request to save page_id: p0054 edition: whitaker_english
+2026-05-08 22:40:17,655 - INFO - Recorded 0 edits for page_id: p0054
+2026-05-08 22:40:17,666 - INFO - Successfully saved payload for page_id: p0054
+2026-05-08 22:40:19,761 - INFO - Received GET request for page_id: p0055 edition: whitaker_english
+2026-05-08 22:40:19,763 - WARNING - Page not found: p0055
+2026-05-09 15:52:21,989 - INFO - Received GET request for page_id: p0005 edition: whitaker_english
+2026-05-09 15:52:21,992 - WARNING - Page not found: p0005
+2026-05-09 15:52:36,675 - INFO - Received GET request for page_id: p0001 edition: whitaker_latin
+2026-05-09 15:52:36,675 - WARNING - Page not found: p0001
+2026-05-09 15:52:41,582 - INFO - Received GET request for page_id: p0002 edition: whitaker_latin
+2026-05-09 15:52:41,582 - WARNING - Page not found: p0002
+2026-05-09 15:52:44,435 - INFO - Received GET request for page_id: p0003 edition: whitaker_latin
+2026-05-09 15:52:44,435 - WARNING - Page not found: p0003
+2026-05-09 15:52:47,869 - INFO - Received GET request for page_id: p0004 edition: whitaker_latin
+2026-05-09 15:52:47,906 - INFO - Successfully read payload for page_id: p0004
+2026-05-09 16:00:40,208 - INFO - Received POST request to save page_id: p0004 edition: whitaker_latin
+2026-05-09 16:00:40,227 - INFO - Recorded 11 edits for page_id: p0004
+2026-05-09 16:00:40,240 - INFO - Successfully saved payload for page_id: p0004
+2026-05-09 16:09:34,466 - INFO - Received POST request to save page_id: p0004 edition: whitaker_latin
+2026-05-09 16:09:34,504 - INFO - Recorded 10 edits for page_id: p0004
+2026-05-09 16:09:34,511 - INFO - Successfully saved payload for page_id: p0004
+2026-05-09 16:19:20,484 - INFO - Received POST request to save page_id: p0004 edition: whitaker_latin
+2026-05-09 16:19:20,509 - INFO - Recorded 3 edits for page_id: p0004
+2026-05-09 16:19:20,517 - INFO - Successfully saved payload for page_id: p0004
+2026-05-09 16:20:56,447 - INFO - Received POST request to save page_id: p0004 edition: whitaker_latin
+2026-05-09 16:20:56,469 - INFO - Recorded 5 edits for page_id: p0004
+2026-05-09 16:20:56,478 - INFO - Successfully saved payload for page_id: p0004
+2026-05-09 16:20:59,155 - INFO - Received GET request for page_id: p0005 edition: whitaker_latin
+2026-05-09 16:20:59,192 - INFO - Successfully read payload for page_id: p0005
+2026-05-09 16:20:59,215 - INFO - Received GET request for page_id: p0005 edition: whitaker_latin
+2026-05-09 16:20:59,216 - INFO - Successfully read payload for page_id: p0005
+2026-05-09 16:29:06,135 - INFO - Received POST request to save page_id: p0005 edition: whitaker_latin
+2026-05-09 16:29:06,139 - INFO - Recorded 11 edits for page_id: p0005
+2026-05-09 16:29:06,147 - INFO - Successfully saved payload for page_id: p0005
+2026-05-09 16:29:12,637 - INFO - Received GET request for page_id: p0006 edition: whitaker_latin
+2026-05-09 16:29:12,732 - INFO - Successfully read payload for page_id: p0006
+2026-05-09 16:29:12,751 - INFO - Received GET request for page_id: p0006 edition: whitaker_latin
+2026-05-09 16:29:12,754 - INFO - Successfully read payload for page_id: p0006
+2026-05-09 16:29:27,730 - INFO - Received GET request for page_id: p0015 edition: whitaker_latin
+2026-05-09 16:29:27,772 - INFO - Successfully read payload for page_id: p0015
+2026-05-09 16:29:27,865 - INFO - Received GET request for page_id: p0015 edition: whitaker_latin
+2026-05-09 16:29:27,867 - INFO - Successfully read payload for page_id: p0015
+2026-05-09 16:29:33,362 - INFO - Received GET request for page_id: p0016 edition: whitaker_latin
+2026-05-09 16:29:33,396 - INFO - Successfully read payload for page_id: p0016
+2026-05-09 16:29:33,450 - INFO - Received GET request for page_id: p0016 edition: whitaker_latin
+2026-05-09 16:29:33,453 - INFO - Successfully read payload for page_id: p0016
+2026-05-09 16:29:35,633 - INFO - Received GET request for page_id: p0017 edition: whitaker_latin
+2026-05-09 16:29:35,700 - INFO - Successfully read payload for page_id: p0017
+2026-05-09 16:29:35,717 - INFO - Received GET request for page_id: p0017 edition: whitaker_latin
+2026-05-09 16:29:35,718 - INFO - Successfully read payload for page_id: p0017
+2026-05-09 16:29:42,392 - INFO - Received GET request for page_id: p0001 edition: whitaker_latin
+2026-05-09 16:29:42,393 - WARNING - Page not found: p0001
+2026-05-09 16:29:43,879 - INFO - Received GET request for page_id: p0004 edition: whitaker_latin
+2026-05-09 16:29:43,915 - INFO - Successfully read payload for page_id: p0004
+2026-05-09 16:29:46,921 - INFO - Received GET request for page_id: p0005 edition: whitaker_latin
+2026-05-09 16:29:46,941 - INFO - Successfully read payload for page_id: p0005
+2026-05-09 16:29:49,839 - INFO - Received GET request for page_id: p0006 edition: whitaker_latin
+2026-05-09 16:29:49,844 - INFO - Successfully read payload for page_id: p0006
+2026-05-09 16:56:34,640 - INFO - Received POST request to save page_id: p0006 edition: whitaker_latin
+2026-05-09 16:56:34,645 - INFO - Recorded 21 edits for page_id: p0006
+2026-05-09 16:56:34,670 - INFO - Successfully saved payload for page_id: p0006
+2026-05-09 17:05:54,615 - INFO - Received POST request to save page_id: p0006 edition: whitaker_latin
+2026-05-09 17:05:54,647 - INFO - Recorded 17 edits for page_id: p0006
+2026-05-09 17:05:54,655 - INFO - Successfully saved payload for page_id: p0006
+2026-05-09 17:11:02,528 - INFO - Received GET request for page_id: p0007 edition: whitaker_latin
+2026-05-09 17:11:02,560 - INFO - Successfully read payload for page_id: p0007
+2026-05-09 17:11:02,598 - INFO - Received GET request for page_id: p0007 edition: whitaker_latin
+2026-05-09 17:11:02,600 - INFO - Successfully read payload for page_id: p0007
+2026-05-09 17:26:21,700 - INFO - Received POST request to save page_id: p0007 edition: whitaker_latin
+2026-05-09 17:26:21,712 - INFO - Recorded 21 edits for page_id: p0007
+2026-05-09 17:26:21,723 - INFO - Successfully saved payload for page_id: p0007
+2026-05-09 17:32:29,732 - INFO - Received POST request to save page_id: p0007 edition: whitaker_latin
+2026-05-09 17:32:29,755 - INFO - Recorded 15 edits for page_id: p0007
+2026-05-09 17:32:29,764 - INFO - Successfully saved payload for page_id: p0007
+2026-05-09 17:32:32,553 - INFO - Received GET request for page_id: p0008 edition: whitaker_latin
+2026-05-09 17:32:32,577 - INFO - Successfully read payload for page_id: p0008
+2026-05-09 17:32:32,659 - INFO - Received GET request for page_id: p0008 edition: whitaker_latin
+2026-05-09 17:32:32,659 - INFO - Successfully read payload for page_id: p0008
+2026-05-09 17:43:13,651 - INFO - Received POST request to save page_id: p0008 edition: whitaker_latin
+2026-05-09 17:43:13,664 - INFO - Recorded 24 edits for page_id: p0008
+2026-05-09 17:43:13,675 - INFO - Successfully saved payload for page_id: p0008
+2026-05-09 17:47:04,264 - INFO - Received POST request to save page_id: p0008 edition: whitaker_latin
+2026-05-09 17:47:04,293 - INFO - Recorded 13 edits for page_id: p0008
+2026-05-09 17:47:04,303 - INFO - Successfully saved payload for page_id: p0008
+2026-05-09 17:47:07,823 - INFO - Received GET request for page_id: p0009 edition: whitaker_latin
+2026-05-09 17:47:07,922 - INFO - Successfully read payload for page_id: p0009
+2026-05-09 17:47:07,942 - INFO - Received GET request for page_id: p0009 edition: whitaker_latin
+2026-05-09 17:47:07,944 - INFO - Successfully read payload for page_id: p0009
+2026-05-09 17:47:10,462 - INFO - Received GET request for page_id: p0010 edition: whitaker_latin
+2026-05-09 17:47:10,520 - INFO - Successfully read payload for page_id: p0010
+2026-05-09 17:47:10,534 - INFO - Received GET request for page_id: p0010 edition: whitaker_latin
+2026-05-09 17:47:10,536 - INFO - Successfully read payload for page_id: p0010
+2026-05-09 17:47:13,188 - INFO - Received GET request for page_id: p0011 edition: whitaker_latin
+2026-05-09 17:47:13,229 - INFO - Successfully read payload for page_id: p0011
+2026-05-09 17:47:13,274 - INFO - Received GET request for page_id: p0011 edition: whitaker_latin
+2026-05-09 17:47:13,274 - INFO - Successfully read payload for page_id: p0011
+2026-05-09 17:47:16,125 - INFO - Received GET request for page_id: p0012 edition: whitaker_latin
+2026-05-09 17:47:16,159 - INFO - Successfully read payload for page_id: p0012
+2026-05-09 17:47:16,216 - INFO - Received GET request for page_id: p0012 edition: whitaker_latin
+2026-05-09 17:47:16,217 - INFO - Successfully read payload for page_id: p0012
+2026-05-09 17:47:18,449 - INFO - Received GET request for page_id: p0013 edition: whitaker_latin
+2026-05-09 17:47:18,508 - INFO - Successfully read payload for page_id: p0013
+2026-05-09 17:47:18,521 - INFO - Received GET request for page_id: p0013 edition: whitaker_latin
+2026-05-09 17:47:18,522 - INFO - Successfully read payload for page_id: p0013
+2026-05-09 17:47:20,955 - INFO - Received GET request for page_id: p0014 edition: whitaker_latin
+2026-05-09 17:47:21,006 - INFO - Successfully read payload for page_id: p0014
+2026-05-09 17:47:21,021 - INFO - Received GET request for page_id: p0014 edition: whitaker_latin
+2026-05-09 17:47:21,024 - INFO - Successfully read payload for page_id: p0014
+2026-05-09 17:47:23,552 - INFO - Received GET request for page_id: p0015 edition: whitaker_latin
+2026-05-09 17:47:23,560 - INFO - Successfully read payload for page_id: p0015
+2026-05-09 17:47:23,626 - INFO - Received GET request for page_id: p0015 edition: whitaker_latin
+2026-05-09 17:47:23,628 - INFO - Successfully read payload for page_id: p0015
+2026-05-09 17:47:26,091 - INFO - Received GET request for page_id: p0016 edition: whitaker_latin
+2026-05-09 17:47:26,095 - INFO - Successfully read payload for page_id: p0016
+2026-05-09 17:47:26,180 - INFO - Received GET request for page_id: p0016 edition: whitaker_latin
+2026-05-09 17:47:26,182 - INFO - Successfully read payload for page_id: p0016
+2026-05-09 17:47:28,632 - INFO - Received GET request for page_id: p0017 edition: whitaker_latin
+2026-05-09 17:47:28,636 - INFO - Successfully read payload for page_id: p0017
+2026-05-09 17:47:31,153 - INFO - Received GET request for page_id: p0018 edition: whitaker_latin
+2026-05-09 17:47:31,238 - INFO - Successfully read payload for page_id: p0018
+2026-05-09 17:47:31,247 - INFO - Received GET request for page_id: p0018 edition: whitaker_latin
+2026-05-09 17:47:31,250 - INFO - Successfully read payload for page_id: p0018
+2026-05-09 17:47:35,187 - INFO - Received GET request for page_id: p0017 edition: whitaker_latin
+2026-05-09 17:47:35,192 - INFO - Successfully read payload for page_id: p0017
+2026-05-09 17:47:35,283 - INFO - Received GET request for page_id: p0017 edition: whitaker_latin
+2026-05-09 17:47:35,285 - INFO - Successfully read payload for page_id: p0017
+2026-05-09 17:47:35,547 - INFO - Received GET request for page_id: p0016 edition: whitaker_latin
+2026-05-09 17:47:35,549 - INFO - Successfully read payload for page_id: p0016
+2026-05-09 17:47:35,650 - INFO - Received GET request for page_id: p0016 edition: whitaker_latin
+2026-05-09 17:47:35,651 - INFO - Successfully read payload for page_id: p0016
+2026-05-09 17:47:35,837 - INFO - Received GET request for page_id: p0015 edition: whitaker_latin
+2026-05-09 17:47:35,838 - INFO - Successfully read payload for page_id: p0015
+2026-05-09 17:47:35,851 - INFO - Received GET request for page_id: p0015 edition: whitaker_latin
+2026-05-09 17:47:35,853 - INFO - Successfully read payload for page_id: p0015
+2026-05-09 17:47:36,016 - INFO - Received GET request for page_id: p0014 edition: whitaker_latin
+2026-05-09 17:47:36,017 - INFO - Successfully read payload for page_id: p0014
+2026-05-09 17:47:36,091 - INFO - Received GET request for page_id: p0014 edition: whitaker_latin
+2026-05-09 17:47:36,093 - INFO - Successfully read payload for page_id: p0014
+2026-05-09 17:47:36,364 - INFO - Received GET request for page_id: p0013 edition: whitaker_latin
+2026-05-09 17:47:36,365 - INFO - Successfully read payload for page_id: p0013
+2026-05-09 17:47:36,652 - INFO - Received GET request for page_id: p0012 edition: whitaker_latin
+2026-05-09 17:47:36,653 - INFO - Successfully read payload for page_id: p0012
+2026-05-09 17:47:36,741 - INFO - Received GET request for page_id: p0012 edition: whitaker_latin
+2026-05-09 17:47:36,743 - INFO - Successfully read payload for page_id: p0012
+2026-05-09 17:47:36,994 - INFO - Received GET request for page_id: p0011 edition: whitaker_latin
+2026-05-09 17:47:36,995 - INFO - Successfully read payload for page_id: p0011
+2026-05-09 17:47:37,195 - INFO - Received GET request for page_id: p0011 edition: whitaker_latin
+2026-05-09 17:47:37,198 - INFO - Successfully read payload for page_id: p0011
+2026-05-09 17:47:37,346 - INFO - Received GET request for page_id: p0010 edition: whitaker_latin
+2026-05-09 17:47:37,347 - INFO - Successfully read payload for page_id: p0010
+2026-05-09 17:47:37,479 - INFO - Received GET request for page_id: p0010 edition: whitaker_latin
+2026-05-09 17:47:37,480 - INFO - Successfully read payload for page_id: p0010
+2026-05-09 17:47:37,844 - INFO - Received GET request for page_id: p0009 edition: whitaker_latin
+2026-05-09 17:47:37,845 - INFO - Successfully read payload for page_id: p0009
+2026-05-09 17:47:37,964 - INFO - Received GET request for page_id: p0009 edition: whitaker_latin
+2026-05-09 17:47:37,966 - INFO - Successfully read payload for page_id: p0009
+2026-05-09 17:47:41,414 - INFO - Received GET request for page_id: p0008 edition: whitaker_latin
+2026-05-09 17:47:41,487 - INFO - Successfully read payload for page_id: p0008
+2026-05-09 17:47:41,498 - INFO - Received GET request for page_id: p0008 edition: whitaker_latin
+2026-05-09 17:47:41,501 - INFO - Successfully read payload for page_id: p0008
+2026-05-09 17:47:43,039 - INFO - Received GET request for page_id: p0009 edition: whitaker_latin
+2026-05-09 17:47:43,040 - INFO - Successfully read payload for page_id: p0009
+2026-05-09 17:47:43,197 - INFO - Received GET request for page_id: p0009 edition: whitaker_latin
+2026-05-09 17:47:43,199 - INFO - Successfully read payload for page_id: p0009
+2026-05-09 17:54:05,782 - INFO - Received POST request to save page_id: p0009 edition: whitaker_latin
+2026-05-09 17:54:05,856 - INFO - Recorded 3 edits for page_id: p0009
+2026-05-09 17:54:05,889 - INFO - Successfully saved payload for page_id: p0009
+2026-05-09 17:54:08,500 - INFO - Received GET request for page_id: p0008 edition: whitaker_latin
+2026-05-09 17:54:08,517 - INFO - Successfully read payload for page_id: p0008
+2026-05-09 17:54:08,620 - INFO - Received GET request for page_id: p0008 edition: whitaker_latin
+2026-05-09 17:54:08,622 - INFO - Successfully read payload for page_id: p0008
+2026-05-09 17:54:23,501 - INFO - Received GET request for page_id: p0009 edition: whitaker_latin
+2026-05-09 17:54:23,535 - INFO - Successfully read payload for page_id: p0009
+2026-05-09 17:54:23,589 - INFO - Received GET request for page_id: p0009 edition: whitaker_latin
+2026-05-09 17:54:23,591 - INFO - Successfully read payload for page_id: p0009
+2026-05-09 18:12:14,174 - INFO - Received POST request to save page_id: p0009 edition: whitaker_latin
+2026-05-09 18:12:14,192 - INFO - Recorded 45 edits for page_id: p0009
+2026-05-09 18:12:14,200 - INFO - Successfully saved payload for page_id: p0009
+2026-05-09 18:12:18,913 - INFO - Received GET request for page_id: p0010 edition: whitaker_latin
+2026-05-09 18:12:18,919 - INFO - Successfully read payload for page_id: p0010
+2026-05-09 18:39:00,618 - INFO - Received POST request to save page_id: p0010 edition: whitaker_latin
+2026-05-09 18:39:00,625 - INFO - Recorded 38 edits for page_id: p0010
+2026-05-09 18:39:00,635 - INFO - Successfully saved payload for page_id: p0010
+2026-05-09 18:39:03,973 - INFO - Received GET request for page_id: p0011 edition: whitaker_latin
+2026-05-09 18:39:03,979 - INFO - Successfully read payload for page_id: p0011
+2026-05-09 19:02:03,317 - INFO - Received POST request to save page_id: p0011 edition: whitaker_latin
+2026-05-09 19:02:03,333 - INFO - Recorded 32 edits for page_id: p0011
+2026-05-09 19:02:03,346 - INFO - Successfully saved payload for page_id: p0011
+2026-05-09 19:05:50,893 - INFO - Received POST request to save page_id: p0011 edition: whitaker_latin
+2026-05-09 19:05:50,915 - INFO - Recorded 13 edits for page_id: p0011
+2026-05-09 19:05:50,924 - INFO - Successfully saved payload for page_id: p0011
+2026-05-09 19:05:55,435 - INFO - Received GET request for page_id: p0012 edition: whitaker_latin
+2026-05-09 19:05:55,438 - INFO - Successfully read payload for page_id: p0012
+2026-05-09 19:05:55,472 - INFO - Received GET request for page_id: p0012 edition: whitaker_latin
+2026-05-09 19:05:55,474 - INFO - Successfully read payload for page_id: p0012
+2026-05-09 19:14:17,262 - INFO - Received POST request to save page_id: p0012 edition: whitaker_latin
+2026-05-09 19:14:17,273 - INFO - Recorded 21 edits for page_id: p0012
+2026-05-09 19:14:17,298 - INFO - Successfully saved payload for page_id: p0012
+2026-05-09 19:45:34,264 - INFO - Received POST request to save page_id: p0012 edition: whitaker_latin
+2026-05-09 19:45:34,300 - INFO - Recorded 6 edits for page_id: p0012
+2026-05-09 19:45:34,315 - INFO - Successfully saved payload for page_id: p0012
+2026-05-09 19:49:01,779 - INFO - Received POST request to save page_id: p0012 edition: whitaker_latin
+2026-05-09 19:49:01,804 - INFO - Recorded 10 edits for page_id: p0012
+2026-05-09 19:49:01,815 - INFO - Successfully saved payload for page_id: p0012
+2026-05-09 19:49:05,949 - INFO - Received GET request for page_id: p0013 edition: whitaker_latin
+2026-05-09 19:49:05,959 - INFO - Successfully read payload for page_id: p0013
+2026-05-09 19:49:05,992 - INFO - Received GET request for page_id: p0013 edition: whitaker_latin
+2026-05-09 19:49:05,993 - INFO - Successfully read payload for page_id: p0013
+2026-05-09 19:49:09,647 - INFO - Received GET request for page_id: p0014 edition: whitaker_latin
+2026-05-09 19:49:09,671 - INFO - Successfully read payload for page_id: p0014
+2026-05-09 19:49:09,742 - INFO - Received GET request for page_id: p0014 edition: whitaker_latin
+2026-05-09 19:49:09,743 - INFO - Successfully read payload for page_id: p0014
+2026-05-09 19:49:12,018 - INFO - Received GET request for page_id: p0015 edition: whitaker_latin
+2026-05-09 19:49:12,022 - INFO - Successfully read payload for page_id: p0015
+2026-05-09 19:49:12,102 - INFO - Received GET request for page_id: p0015 edition: whitaker_latin
+2026-05-09 19:49:12,104 - INFO - Successfully read payload for page_id: p0015
+2026-05-09 19:49:14,906 - INFO - Received GET request for page_id: p0016 edition: whitaker_latin
+2026-05-09 19:49:14,910 - INFO - Successfully read payload for page_id: p0016
+2026-05-09 19:49:17,314 - INFO - Received GET request for page_id: p0017 edition: whitaker_latin
+2026-05-09 19:49:17,324 - INFO - Successfully read payload for page_id: p0017
+2026-05-09 19:49:19,881 - INFO - Received GET request for page_id: p0018 edition: whitaker_latin
+2026-05-09 19:49:19,883 - INFO - Successfully read payload for page_id: p0018
+2026-05-09 19:49:23,771 - INFO - Received GET request for page_id: p0017 edition: whitaker_latin
+2026-05-09 19:49:23,773 - INFO - Successfully read payload for page_id: p0017
+2026-05-09 19:49:23,983 - INFO - Received GET request for page_id: p0016 edition: whitaker_latin
+2026-05-09 19:49:23,986 - INFO - Successfully read payload for page_id: p0016
+2026-05-09 19:49:24,262 - INFO - Received GET request for page_id: p0015 edition: whitaker_latin
+2026-05-09 19:49:24,265 - INFO - Successfully read payload for page_id: p0015
+2026-05-09 19:49:24,409 - INFO - Received GET request for page_id: p0014 edition: whitaker_latin
+2026-05-09 19:49:24,411 - INFO - Successfully read payload for page_id: p0014
+2026-05-09 19:49:24,448 - INFO - Received GET request for page_id: p0014 edition: whitaker_latin
+2026-05-09 19:49:24,449 - INFO - Successfully read payload for page_id: p0014
+2026-05-09 19:49:24,684 - INFO - Received GET request for page_id: p0013 edition: whitaker_latin
+2026-05-09 19:49:24,700 - INFO - Successfully read payload for page_id: p0013
+2026-05-09 19:49:24,740 - INFO - Received GET request for page_id: p0013 edition: whitaker_latin
+2026-05-09 19:49:24,742 - INFO - Successfully read payload for page_id: p0013
+2026-05-09 19:49:26,459 - INFO - Received GET request for page_id: p0012 edition: whitaker_latin
+2026-05-09 19:49:26,551 - INFO - Successfully read payload for page_id: p0012
+2026-05-09 19:49:26,577 - INFO - Received GET request for page_id: p0012 edition: whitaker_latin
+2026-05-09 19:49:26,578 - INFO - Successfully read payload for page_id: p0012
+2026-05-09 19:49:34,442 - INFO - Received GET request for page_id: p0013 edition: whitaker_latin
+2026-05-09 19:49:34,444 - INFO - Successfully read payload for page_id: p0013
+2026-05-09 20:30:58,892 - INFO - Received POST request to save page_id: p0013 edition: whitaker_latin
+2026-05-09 20:30:58,916 - INFO - Recorded 37 edits for page_id: p0013
+2026-05-09 20:30:58,924 - INFO - Successfully saved payload for page_id: p0013
+2026-05-09 20:31:02,427 - INFO - Received GET request for page_id: p0014 edition: whitaker_latin
+2026-05-09 20:31:02,452 - INFO - Successfully read payload for page_id: p0014
+2026-05-09 20:41:56,780 - INFO - Received POST request to save page_id: p0014 edition: whitaker_latin
+2026-05-09 20:41:56,786 - INFO - Recorded 37 edits for page_id: p0014
+2026-05-09 20:41:56,794 - INFO - Successfully saved payload for page_id: p0014
+2026-05-09 20:42:19,061 - INFO - Received GET request for page_id: p0015 edition: whitaker_latin
+2026-05-09 20:42:19,087 - INFO - Successfully read payload for page_id: p0015
+2026-05-09 20:42:21,814 - INFO - Received GET request for page_id: p0016 edition: whitaker_latin
+2026-05-09 20:42:21,894 - INFO - Successfully read payload for page_id: p0016
+2026-05-09 20:42:21,964 - INFO - Received GET request for page_id: p0016 edition: whitaker_latin
+2026-05-09 20:42:21,965 - INFO - Successfully read payload for page_id: p0016
+2026-05-09 20:42:25,915 - INFO - Received GET request for page_id: p0017 edition: whitaker_latin
+2026-05-09 20:42:25,974 - INFO - Successfully read payload for page_id: p0017
+2026-05-09 20:42:26,007 - INFO - Received GET request for page_id: p0017 edition: whitaker_latin
+2026-05-09 20:42:26,008 - INFO - Successfully read payload for page_id: p0017
+2026-05-09 20:42:29,521 - INFO - Received GET request for page_id: p0018 edition: whitaker_latin
+2026-05-09 20:42:29,568 - INFO - Successfully read payload for page_id: p0018
+2026-05-09 20:42:33,412 - INFO - Received GET request for page_id: p0017 edition: whitaker_latin
+2026-05-09 20:42:33,413 - INFO - Successfully read payload for page_id: p0017
+2026-05-09 20:42:33,835 - INFO - Received GET request for page_id: p0016 edition: whitaker_latin
+2026-05-09 20:42:33,837 - INFO - Successfully read payload for page_id: p0016
+2026-05-09 20:42:34,229 - INFO - Received GET request for page_id: p0015 edition: whitaker_latin
+2026-05-09 20:42:34,231 - INFO - Successfully read payload for page_id: p0015
+2026-05-09 20:42:38,246 - INFO - Received GET request for page_id: p0014 edition: whitaker_latin
+2026-05-09 20:42:38,273 - INFO - Successfully read payload for page_id: p0014
+2026-05-09 20:42:39,942 - INFO - Received GET request for page_id: p0015 edition: whitaker_latin
+2026-05-09 20:42:39,943 - INFO - Successfully read payload for page_id: p0015
+2026-05-10 05:33:56,588 - INFO - Received POST request to save page_id: p0015 edition: whitaker_latin
+2026-05-10 05:33:56,657 - INFO - Recorded 6 edits for page_id: p0015
+2026-05-10 05:33:56,681 - INFO - Successfully saved payload for page_id: p0015
+2026-05-10 05:34:51,424 - INFO - Received POST request to save page_id: p0015 edition: whitaker_latin
+2026-05-10 05:34:51,450 - INFO - Recorded 2 edits for page_id: p0015
+2026-05-10 05:34:51,461 - INFO - Successfully saved payload for page_id: p0015
+2026-05-10 05:35:34,368 - INFO - Received POST request to save page_id: p0015 edition: whitaker_latin
+2026-05-10 05:35:34,383 - INFO - Recorded 2 edits for page_id: p0015
+2026-05-10 05:35:34,394 - INFO - Successfully saved payload for page_id: p0015
+2026-05-10 05:39:58,675 - INFO - Received POST request to save page_id: p0015 edition: whitaker_latin
+2026-05-10 05:39:58,705 - INFO - Recorded 12 edits for page_id: p0015
+2026-05-10 05:39:58,713 - INFO - Successfully saved payload for page_id: p0015
+2026-05-10 05:48:09,326 - INFO - Received POST request to save page_id: p0015 edition: whitaker_latin
+2026-05-10 05:48:09,348 - INFO - Recorded 21 edits for page_id: p0015
+2026-05-10 05:48:09,358 - INFO - Successfully saved payload for page_id: p0015
+2026-05-10 05:48:12,252 - INFO - Received GET request for page_id: p0016 edition: whitaker_latin
+2026-05-10 05:48:12,283 - INFO - Successfully read payload for page_id: p0016
+2026-05-10 05:48:12,318 - INFO - Received GET request for page_id: p0016 edition: whitaker_latin
+2026-05-10 05:48:12,320 - INFO - Successfully read payload for page_id: p0016
+2026-05-10 05:48:15,774 - INFO - Received GET request for page_id: p0017 edition: whitaker_latin
+2026-05-10 05:48:15,828 - INFO - Successfully read payload for page_id: p0017
+2026-05-10 05:48:15,859 - INFO - Received GET request for page_id: p0017 edition: whitaker_latin
+2026-05-10 05:48:15,862 - INFO - Successfully read payload for page_id: p0017
+2026-05-10 05:48:18,969 - INFO - Received GET request for page_id: p0018 edition: whitaker_latin
+2026-05-10 05:48:19,004 - INFO - Successfully read payload for page_id: p0018
+2026-05-10 05:48:19,053 - INFO - Received GET request for page_id: p0018 edition: whitaker_latin
+2026-05-10 05:48:19,054 - INFO - Successfully read payload for page_id: p0018
+2026-05-10 05:48:24,089 - INFO - Received GET request for page_id: p0017 edition: whitaker_latin
+2026-05-10 05:48:24,090 - INFO - Successfully read payload for page_id: p0017
+2026-05-10 05:48:24,174 - INFO - Received GET request for page_id: p0017 edition: whitaker_latin
+2026-05-10 05:48:24,174 - INFO - Successfully read payload for page_id: p0017
+2026-05-10 05:48:24,993 - INFO - Received GET request for page_id: p0016 edition: whitaker_latin
+2026-05-10 05:48:24,994 - INFO - Successfully read payload for page_id: p0016
+2026-05-10 05:48:25,150 - INFO - Received GET request for page_id: p0016 edition: whitaker_latin
+2026-05-10 05:48:25,153 - INFO - Successfully read payload for page_id: p0016
+2026-05-10 05:48:25,703 - INFO - Received GET request for page_id: p0015 edition: whitaker_latin
+2026-05-10 05:48:25,725 - INFO - Successfully read payload for page_id: p0015
+2026-05-10 05:48:25,780 - INFO - Received GET request for page_id: p0015 edition: whitaker_latin
+2026-05-10 05:48:25,786 - INFO - Successfully read payload for page_id: p0015
+2026-05-10 05:48:27,454 - INFO - Received GET request for page_id: p0016 edition: whitaker_latin
+2026-05-10 05:48:27,458 - INFO - Successfully read payload for page_id: p0016
+2026-05-10 06:07:33,329 - INFO - Received POST request to save page_id: p0016 edition: whitaker_latin
+2026-05-10 06:07:33,338 - INFO - Recorded 23 edits for page_id: p0016
+2026-05-10 06:07:33,349 - INFO - Successfully saved payload for page_id: p0016
+2026-05-10 06:11:49,732 - INFO - Received POST request to save page_id: p0016 edition: whitaker_latin
+2026-05-10 06:11:49,783 - INFO - Recorded 14 edits for page_id: p0016
+2026-05-10 06:11:49,791 - INFO - Successfully saved payload for page_id: p0016
+2026-05-10 06:11:52,557 - INFO - Received GET request for page_id: p0017 edition: whitaker_latin
+2026-05-10 06:11:52,560 - INFO - Successfully read payload for page_id: p0017
+2026-05-10 06:21:04,437 - INFO - Received POST request to save page_id: p0017 edition: whitaker_latin
+2026-05-10 06:21:04,442 - INFO - Recorded 25 edits for page_id: p0017
+2026-05-10 06:21:04,449 - INFO - Successfully saved payload for page_id: p0017

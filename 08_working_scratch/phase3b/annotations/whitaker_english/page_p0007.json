@@ -1,0 +1,62 @@
+{
+  "edition": "1687_second",
+  "footnotes": [],
+  "meta": {
+    "annotation_status": "ocr_seeded",
+    "notes": "",
+    "ocr_confidence_avg": 100,
+    "ocr_confidence_min": 100,
+    "ocr_engine": "gemini",
+    "ocr_lang": [
+      "lat",
+      "grc"
+    ],
+    "ocr_page_summary": "Half-title page with large centered text. Some show-through from the verso page is visible but ignored as per rules.",
+    "ocr_provider_model": "gemini-3.1-pro-preview",
+    "review_status": "draft",
+    "reviewer": "Paul Boys"
+  },
+  "page_id": "p0007",
+  "page_num": 7,
+  "part": "whitaker_english",
+  "regions": {
+    "body": [
+      {
+        "line_id": "p0007_body_l0001",
+        "marker_id": "",
+        "markers": [],
+        "notes": "",
+        "ocr_confidence": 1,
+        "ocr_illegible": false,
+        "ocr_marginalia_anchor_index": null,
+        "page_id": "p0007",
+        "region": "body",
+        "review_status": "draft",
+        "reviewer": "Paul Boys",
+        "seq": 1,
+        "text_gold": "WHITAKER'S",
+        "text_ocr_original": "WHITAKER'S"
+      },
+      {
+        "line_id": "p0007_body_l0002",
+        "marker_id": "",
+        "markers": [],
+        "notes": "",
+        "ocr_confidence": 1,
+        "ocr_illegible": false,
+        "ocr_marginalia_anchor_index": null,
+        "page_id": "p0007",
+        "region": "body",
+        "review_status": "draft",
+        "reviewer": "Paul Boys",
+        "seq": 2,
+        "text_gold": "DISPUTATION ON SCRIPTURE.",
+        "text_ocr_original": "DISPUTATION ON SCRIPTURE."
+      }
+    ],
+    "catchword": [],
+    "header": [],
+    "marginalia": []
+  },
+  "source_pdf": "00_source_pdf/Disputatio_de_Sacra_Scriptura_contra_R_B_ENGLISH.pdf"
+}
