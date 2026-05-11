@@ -2868,3 +2868,89 @@ urllib.error.HTTPError: HTTP Error 503: Service Unavailable
 2026-05-10 07:53:28,603 - INFO - Received POST request to save page_id: p0023 edition: whitaker_english
 2026-05-10 07:53:28,611 - INFO - Recorded 13 edits for page_id: p0023
 2026-05-10 07:53:28,619 - INFO - Successfully saved payload for page_id: p0023
+2026-05-10 14:56:04,365 - INFO - Received GET request for page_id: p0015 edition: whitaker_latin
+2026-05-10 14:56:04,384 - INFO - Successfully read payload for page_id: p0015
+2026-05-10 14:56:10,901 - INFO - Received GET request for page_id: p0016 edition: whitaker_latin
+2026-05-10 14:56:10,923 - INFO - Successfully read payload for page_id: p0016
+2026-05-10 14:56:13,880 - INFO - Received GET request for page_id: p0017 edition: whitaker_latin
+2026-05-10 14:56:13,928 - INFO - Successfully read payload for page_id: p0017
+2026-05-10 14:56:16,837 - INFO - Received GET request for page_id: p0018 edition: whitaker_latin
+2026-05-10 14:56:16,839 - INFO - Successfully read payload for page_id: p0018
+2026-05-10 14:56:25,154 - INFO - Received GET request for page_id: p0019 edition: whitaker_latin
+2026-05-10 14:56:25,173 - INFO - Successfully read payload for page_id: p0019
+2026-05-10 14:56:27,666 - INFO - Received GET request for page_id: p0020 edition: whitaker_latin
+2026-05-10 14:56:27,694 - INFO - Successfully read payload for page_id: p0020
+2026-05-10 14:56:30,339 - INFO - Received GET request for page_id: p0021 edition: whitaker_latin
+2026-05-10 14:56:30,364 - INFO - Successfully read payload for page_id: p0021
+2026-05-10 14:56:32,668 - INFO - Received GET request for page_id: p0022 edition: whitaker_latin
+2026-05-10 14:56:32,695 - INFO - Successfully read payload for page_id: p0022
+2026-05-10 14:56:35,694 - INFO - Received GET request for page_id: p0023 edition: whitaker_latin
+2026-05-10 14:56:35,715 - INFO - Successfully read payload for page_id: p0023
+2026-05-10 14:56:38,251 - INFO - Received GET request for page_id: p0024 edition: whitaker_latin
+2026-05-10 14:56:38,280 - INFO - Successfully read payload for page_id: p0024
+2026-05-10 14:56:40,805 - INFO - Received GET request for page_id: p0025 edition: whitaker_latin
+2026-05-10 14:56:40,868 - INFO - Successfully read payload for page_id: p0025
+2026-05-10 14:56:50,067 - INFO - Received GET request for page_id: p0026 edition: whitaker_latin
+2026-05-10 14:56:50,085 - INFO - Successfully read payload for page_id: p0026
+2026-05-10 20:48:13,335 - INFO - Received GET request for page_id: p0025 edition: whitaker_latin
+2026-05-10 20:48:13,387 - INFO - Successfully read payload for page_id: p0025
+2026-05-10 20:48:13,445 - INFO - Received GET request for page_id: p0025 edition: whitaker_latin
+2026-05-10 20:48:13,445 - INFO - Successfully read payload for page_id: p0025
+2026-05-10 20:48:17,431 - INFO - Received GET request for page_id: p0024 edition: whitaker_latin
+2026-05-10 20:48:17,510 - INFO - Successfully read payload for page_id: p0024
+2026-05-10 20:48:17,740 - INFO - Received GET request for page_id: p0022 edition: whitaker_latin
+2026-05-10 20:48:17,822 - INFO - Received GET request for page_id: p0024 edition: whitaker_latin
+2026-05-10 20:48:17,827 - INFO - Successfully read payload for page_id: p0024
+2026-05-10 20:48:17,861 - INFO - Successfully read payload for page_id: p0022
+2026-05-10 20:48:17,873 - INFO - Received GET request for page_id: p0023 edition: whitaker_latin
+2026-05-10 20:48:17,918 - INFO - Successfully read payload for page_id: p0023
+2026-05-10 20:48:17,923 - INFO - Received GET request for page_id: p0021 edition: whitaker_latin
+2026-05-10 20:48:17,946 - INFO - Successfully read payload for page_id: p0021
+2026-05-10 20:48:17,954 - INFO - Received GET request for page_id: p0022 edition: whitaker_latin
+2026-05-10 20:48:17,957 - INFO - Successfully read payload for page_id: p0022
+2026-05-10 20:48:17,989 - INFO - Received GET request for page_id: p0023 edition: whitaker_latin
+2026-05-10 20:48:17,992 - INFO - Successfully read payload for page_id: p0023
+2026-05-10 20:48:18,013 - INFO - Received GET request for page_id: p0021 edition: whitaker_latin
+2026-05-10 20:48:18,014 - INFO - Successfully read payload for page_id: p0021
+2026-05-10 20:48:20,918 - INFO - Received GET request for page_id: p0020 edition: whitaker_latin
+2026-05-10 20:48:21,004 - INFO - Successfully read payload for page_id: p0020
+2026-05-10 20:48:21,045 - INFO - Received GET request for page_id: p0020 edition: whitaker_latin
+2026-05-10 20:48:21,047 - INFO - Successfully read payload for page_id: p0020
+2026-05-10 20:48:23,679 - INFO - Received GET request for page_id: p0019 edition: whitaker_latin
+2026-05-10 20:48:23,737 - INFO - Successfully read payload for page_id: p0019
+2026-05-10 20:48:23,769 - INFO - Received GET request for page_id: p0019 edition: whitaker_latin
+2026-05-10 20:48:23,770 - INFO - Successfully read payload for page_id: p0019
+2026-05-10 20:48:26,670 - INFO - Received GET request for page_id: p0018 edition: whitaker_latin
+2026-05-10 20:48:26,719 - INFO - Successfully read payload for page_id: p0018
+2026-05-10 20:48:26,758 - INFO - Received GET request for page_id: p0018 edition: whitaker_latin
+2026-05-10 20:48:26,760 - INFO - Successfully read payload for page_id: p0018
+2026-05-10 20:48:30,498 - INFO - Received GET request for page_id: p0017 edition: whitaker_latin
+2026-05-10 20:48:30,530 - INFO - Successfully read payload for page_id: p0017
+2026-05-10 20:48:30,597 - INFO - Received GET request for page_id: p0017 edition: whitaker_latin
+2026-05-10 20:48:30,600 - INFO - Successfully read payload for page_id: p0017
+2026-05-10 20:48:36,414 - INFO - Received GET request for page_id: p0016 edition: whitaker_latin
+2026-05-10 20:48:36,480 - INFO - Successfully read payload for page_id: p0016
+2026-05-10 20:48:36,507 - INFO - Received GET request for page_id: p0016 edition: whitaker_latin
+2026-05-10 20:48:36,511 - INFO - Successfully read payload for page_id: p0016
+2026-05-10 20:48:40,957 - INFO - Received GET request for page_id: p0017 edition: whitaker_latin
+2026-05-10 20:48:40,960 - INFO - Successfully read payload for page_id: p0017
+2026-05-10 20:48:41,028 - INFO - Received GET request for page_id: p0017 edition: whitaker_latin
+2026-05-10 20:48:41,031 - INFO - Successfully read payload for page_id: p0017
+2026-05-10 20:48:43,043 - INFO - Received GET request for page_id: p0018 edition: whitaker_latin
+2026-05-10 20:48:43,045 - INFO - Successfully read payload for page_id: p0018
+2026-05-10 20:50:51,205 - INFO - Received POST request to save page_id: p0018 edition: whitaker_latin
+2026-05-10 20:50:51,225 - INFO - Recorded 7 edits for page_id: p0018
+2026-05-10 20:50:51,237 - INFO - Successfully saved payload for page_id: p0018
+2026-05-10 21:14:30,082 - INFO - Received POST request to save page_id: p0018 edition: whitaker_latin
+2026-05-10 21:14:30,205 - INFO - Recorded 16 edits for page_id: p0018
+2026-05-10 21:14:30,227 - INFO - Successfully saved payload for page_id: p0018
+2026-05-10 21:38:28,758 - INFO - Received POST request to save page_id: p0018 edition: whitaker_latin
+2026-05-10 21:38:28,809 - INFO - Recorded 23 edits for page_id: p0018
+2026-05-10 21:38:28,823 - INFO - Successfully saved payload for page_id: p0018
+2026-05-10 21:43:08,249 - INFO - Received GET request for page_id: p0019 edition: whitaker_latin
+2026-05-10 21:43:08,255 - INFO - Successfully read payload for page_id: p0019
+2026-05-10 21:43:08,405 - INFO - Received GET request for page_id: p0019 edition: whitaker_latin
+2026-05-10 21:43:08,406 - INFO - Successfully read payload for page_id: p0019
+2026-05-10 22:22:36,469 - INFO - Received POST request to save page_id: p0019 edition: whitaker_latin
+2026-05-10 22:22:36,502 - INFO - Recorded 46 edits for page_id: p0019
+2026-05-10 22:22:36,520 - INFO - Successfully saved payload for page_id: p0019
