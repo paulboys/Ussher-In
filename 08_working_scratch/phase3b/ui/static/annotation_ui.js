@@ -32,6 +32,9 @@ const pdfPanePageNum = document.getElementById("pdfPanePageNum");
 
 // Page meta fields.
 const metaPageNum = document.getElementById("metaPageNum");
+const metaPrintedPageNum = document.getElementById("metaPrintedPageNum");
+const metaReadingOrderIndex = document.getElementById("metaReadingOrderIndex");
+const metaSectionId = document.getElementById("metaSectionId");
 const metaSourcePdf = document.getElementById("metaSourcePdf");
 const metaReviewer = document.getElementById("metaReviewer");
 const metaAnnotationStatus = document.getElementById("metaAnnotationStatus");
@@ -1328,6 +1331,11 @@ function applyEditionLayout() {
 function bindMeta(payload) {
   const meta = payload.meta || (payload.meta = {});
   metaPageNum.value = String(payload.page_num || "");
+  metaPrintedPageNum.value = String(payload.printed_page_num || "");
+  metaReadingOrderIndex.value = Number.isFinite(payload.reading_order_index)
+    ? String(payload.reading_order_index)
+    : "";
+  metaSectionId.value = String(payload.section_id || "");
   metaSourcePdf.value = String(payload.source_pdf || "");
   metaReviewer.value = DEFAULT_REVIEWER;
   metaAnnotationStatus.value = meta.annotation_status || "";
@@ -1342,6 +1350,26 @@ function bindMeta(payload) {
   metaPageNum.oninput = () => {
     const v = parseInt(metaPageNum.value, 10);
     payload.page_num = Number.isFinite(v) ? v : payload.page_num;
+    markDirty();
+  };
+  metaPrintedPageNum.oninput = () => {
+    payload.printed_page_num = metaPrintedPageNum.value;
+    markDirty();
+  };
+  metaReadingOrderIndex.oninput = () => {
+    const raw = metaReadingOrderIndex.value;
+    if (raw === "") {
+      delete payload.reading_order_index;
+    } else {
+      const v = parseInt(raw, 10);
+      if (Number.isFinite(v)) payload.reading_order_index = v;
+    }
+    markDirty();
+  };
+  metaSectionId.oninput = () => {
+    const v = metaSectionId.value.trim();
+    if (v === "") delete payload.section_id;
+    else payload.section_id = v;
     markDirty();
   };
   metaSourcePdf.oninput = () => { payload.source_pdf = metaSourcePdf.value; markDirty(); };

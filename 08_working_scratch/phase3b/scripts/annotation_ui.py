@@ -61,11 +61,46 @@ def _annotations_dir(edition: str | None = None) -> Path:
     return ANNOTATIONS_DIR / subdir if subdir else ANNOTATIONS_DIR
 
 
+def _physical_index_from_stem(stem: str) -> int:
+    """Extract the 1-based physical PDF page index from a ``page_pNNNN`` stem."""
+    page_id = stem.replace("page_", "")
+    if page_id.startswith("p") and page_id[1:].isdigit():
+        return int(page_id[1:])
+    return 0
+
+
+def _read_reading_order(path: Path) -> int | None:
+    """Return ``reading_order_index`` from a page payload, or ``None`` if absent/invalid."""
+    try:
+        payload = json.loads(path.read_text(encoding="utf-8"))
+    except Exception:
+        return None
+    value = payload.get("reading_order_index")
+    if isinstance(value, bool):
+        return None
+    if isinstance(value, int):
+        return value
+    if isinstance(value, float) and value.is_integer():
+        return int(value)
+    return None
+
+
 def _annotation_paths(edition: str | None = None) -> list[Path]:
     base = _annotations_dir(edition)
     if not base.exists():
         return []
-    return sorted(base.glob("page_p*.json"))
+    paths = list(base.glob("page_p*.json"))
+
+    def sort_key(path: Path) -> tuple[int, int]:
+        physical = _physical_index_from_stem(path.stem)
+        roi = _read_reading_order(path)
+        # Pages without reading_order_index fall back to physical index so
+        # tagged and untagged pages interleave correctly. Physical index is
+        # the tiebreaker when two pages share a reading_order_index.
+        return (roi if roi is not None else physical, physical)
+
+    paths.sort(key=sort_key)
+    return paths
 
 
 def _annotation_path(page_id: str, edition: str | None = None) -> Path:
@@ -252,7 +287,14 @@ _PAGE_META_DIFF_FIELDS = (
     "notes",
     "ocr_page_summary",
 )
-_PAGE_TOPLEVEL_DIFF_FIELDS = ("page_num", "source_pdf", "edition")
+_PAGE_TOPLEVEL_DIFF_FIELDS = (
+    "page_num",
+    "printed_page_num",
+    "reading_order_index",
+    "section_id",
+    "source_pdf",
+    "edition",
+)
 
 
 def _index_by(items, key: str) -> dict:
