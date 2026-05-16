@@ -84,28 +84,39 @@ Chapter 2 (`c1_ch2`, p0032–p0034).
     "notes": ""}
    ```
 
-**Phase 0.2 — Parameterize the A/B judge**
+**Phase 0.2 — Judging stack: hybrid COMET + LLM (user direction 2026-05-16)**
 
-Existing `ab_judge.py` is Ussher-hardcoded and v3-bracket-aware in its
-rubrics. The bracket framework is being dropped from the whole system
-(see §10.4), so the refactor covers both profiles:
+User raised a strong objection to LLM-as-judge as the primary gating
+oracle: it is non-deterministic, opinionated in unauditable ways, and
+expensive at scale. Replaced by a **hybrid stack**:
 
-- Introduce a `CorpusProfile` abstraction holding `JUDGE_SYSTEM` and
-  rubric definitions.
-- Define two profiles:
-  - `ussher` — Ussher framing, Greek+(optional preserved Latin) pattern
-    expected, no ⟦⟧/⟪⟫ scoring.
-  - `whitaker` — Whitaker framing, Greek+English-in-square-brackets
-    pattern expected, no ⟦⟧/⟪⟫ scoring.
-  Format_compliance is repurposed to score the corpus-appropriate
-  Greek handling pattern in plain prose (no exotic Unicode brackets).
-- Add `--corpus {ussher,whitaker}` CLI flag.
-- Add `--reference <path>` CLI flag accepting the
-  `chapter1_alignment.jsonl` produced in Phase 0.1. When provided, the
-  judge prompt includes the aligned Parker Society English as a
-  register/accuracy reference. When omitted, behaviour is the existing
-  Latin-as-source-only mode.
-- Update tests in `08_working_scratch/tests/test_ab_judge.py`.
+| Sub-phase | Tool | Purpose |
+|---|---|---|
+| Gating (pass/fail per A/B cycle) | COMET (`wmt22-comet-da`) with Parker Society reference | Deterministic, calibrated, locally hosted, principled MT metric |
+| Reference-free score on Ussher | CometKiwi (`wmt22-cometkiwi-da`) | Use when no gold standard exists |
+| Phase 2 diagnostics (rubric breakdown) | LLM-as-judge (`ab_judge.py`, refactored) | Categorized failure analysis to drive rule changes |
+
+**Phase 0.2a — Calibrate COMET on existing p0041 data.** Before
+committing to the hybrid stack, sanity-check that COMET's
+directional verdict agrees with the existing LLM-judge verdict on the
+p0041 v0-vs-v2 test (which the LLM judge ruled v0-wins). Domain
+mismatch is the main risk: COMET was trained on modern WMT data
+(news/Wikipedia), not 16th-century scholastic Latin → Victorian
+scholarly English. If COMET agrees on direction, we have evidence
+the mismatch isn't fatal.
+
+**Phase 0.2b — Build `comet_score.py`.** Reusable module that loads
+two segments JSONL artifacts plus optional alignment file, scores each
+with COMET (reference) or CometKiwi (reference-free), aggregates, and
+emits a report. Both modes share the same CLI shape as `ab_judge.py`.
+
+**Phase 0.2c — Lighter LLM-judge refactor.** Reduced scope:
+- Drop ⟦⟧/⟪⟫ bracket rubrics (already mandated by §10.4).
+- Add corpus profile (`--corpus ussher|whitaker`) so the rubric prose
+  references the right author and gold standard.
+- Add `--reference <path>` so the LLM judge can also see the Parker
+  Society aligned segment when running diagnostic passes.
+- No reframing as the primary gating oracle — COMET handles that.
 
 ### Phase 1 — Baseline (`translation_prompts_whitaker.py`)
 
