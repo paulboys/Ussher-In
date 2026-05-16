@@ -31,7 +31,17 @@
       "Bash(python -c \"import esprima\")",
       "Bash(python -m pytest tests/test_annotation_ui_dual_text.py tests/test_annotation_ui_whitaker.py tests/test_translation_prompts_whitaker.py)",
       "Bash(python -m pytest tests/test_annotation_ui_whitaker.py -q)",
-      "Bash(gh api *)"
+      "Bash(gh api *)",
+      "Bash(python -c ' *)",
+      "Bash(python -c \"import pypdf; print\\(pypdf.__version__\\)\")",
+      "Bash(pip list *)",
+      "Bash(python -m pip install pypdf)",
+      "Bash(python 08_working_scratch/phase3b/scripts/backfill_section_ids.py --dry-run)",
+      "Bash(python -c \"import json; d=json.load\\(open\\('08_working_scratch/phase3b/annotations/whitaker_english/page_p0043.json'\\)\\); print\\('p0043 printed_page:', d.get\\('printed_page'\\)\\)\")",
+      "Bash(python -c \"import json; d=json.load\\(open\\('08_working_scratch/phase3b/annotations/whitaker_english/page_p0024.json'\\)\\); print\\('p0024 printed_page:', d.get\\('printed_page'\\)\\)\")",
+      "Bash(python -c \"import json; d=json.load\\(open\\('08_working_scratch/phase3b/annotations/whitaker_english/page_p0043.json', encoding='utf-8'\\)\\); print\\('p0043 printed_page:', d.get\\('printed_page'\\)\\)\")",
+      "Bash(python -c \"import json; d=json.load\\(open\\('08_working_scratch/phase3b/annotations/whitaker_english/page_p0024.json', encoding='utf-8'\\)\\); print\\('p0024 printed_page:', d.get\\('printed_page'\\)\\)\")",
+      "Bash(python *)"
     ]
   }
 }

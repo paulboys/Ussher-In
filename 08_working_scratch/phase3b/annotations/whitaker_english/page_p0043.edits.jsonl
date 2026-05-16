@@ -1,0 +1,8 @@
+{"ts": "2026-05-16T15:48:58.858349+00:00", "page_id": "p0043", "scope": "page", "target_id": "p0043", "field": "printed_page_num", "before": "1", "after": "27", "reviewer": "Paul Boys"}
+{"ts": "2026-05-16T20:02:30.865583+00:00", "page_id": "p0043", "scope": "page_meta", "target_id": "p0043", "field": "review_status", "before": "draft", "after": "locked", "reviewer": "Paul Boys"}
+{"ts": "2026-05-16T20:02:30.865583+00:00", "page_id": "p0043", "scope": "line", "target_id": "p0043_header_l0001", "field": "review_status", "before": "draft", "after": "locked", "reviewer": "Paul Boys"}
+{"ts": "2026-05-16T20:02:30.865583+00:00", "page_id": "p0043", "scope": "line", "target_id": "p0043_body_l0001", "field": "review_status", "before": "draft", "after": "locked", "reviewer": "Paul Boys"}
+{"ts": "2026-05-16T20:02:30.865583+00:00", "page_id": "p0043", "scope": "line", "target_id": "p0043_body_l0002", "field": "review_status", "before": "draft", "after": "locked", "reviewer": "Paul Boys"}
+{"ts": "2026-05-16T20:02:30.865583+00:00", "page_id": "p0043", "scope": "line", "target_id": "p0043_body_l0003", "field": "review_status", "before": "draft", "after": "locked", "reviewer": "Paul Boys"}
+{"ts": "2026-05-16T20:02:30.865583+00:00", "page_id": "p0043", "scope": "line", "target_id": "p0043_body_l0004", "field": "review_status", "before": "draft", "after": "locked", "reviewer": "Paul Boys"}
+{"ts": "2026-05-16T20:02:30.865583+00:00", "page_id": "p0043", "scope": "line", "target_id": "p0043_body_l0005", "field": "review_status", "before": "draft", "after": "locked", "reviewer": "Paul Boys"}
