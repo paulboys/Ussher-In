@@ -30,7 +30,8 @@
       "Bash(node -c phase3b/ui/static/annotation_ui.js)",
       "Bash(python -c \"import esprima\")",
       "Bash(python -m pytest tests/test_annotation_ui_dual_text.py tests/test_annotation_ui_whitaker.py tests/test_translation_prompts_whitaker.py)",
-      "Bash(python -m pytest tests/test_annotation_ui_whitaker.py -q)"
+      "Bash(python -m pytest tests/test_annotation_ui_whitaker.py -q)",
+      "Bash(gh api *)"
     ]
   }
 }

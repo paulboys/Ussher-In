@@ -13,7 +13,7 @@
     ],
     "ocr_page_summary": "Single column of italic text, largely intact. Header is present, catchword is present.",
     "ocr_provider_model": "gemini-3.1-pro-preview",
-    "review_status": "draft",
+    "review_status": "locked",
     "reviewer": "Paul Boys"
   },
   "page_id": "p0027",
@@ -31,10 +31,10 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0027",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 1,
-        "text_gold": "Secundum Christi munus R E G I V M est, contra quod illæ",
+        "text_gold": "Secundum Chriſti munus REGIVM est, contra quod illæ",
         "text_ocr_original": "Secundum Christi munus R E G I V M est, contra quod illæ"
       },
       {
@@ -47,10 +47,10 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0027",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 2,
-        "text_gold": "omnes hereticæ Papistarum de Ecclesia opiniones militant.",
+        "text_gold": "omnes hereticæ Papiſtarum de Eccleſia opiniones militant.",
         "text_ocr_original": "omnes hereticæ Papistarum de Ecclesia opiniones militant."
       },
       {
@@ -63,10 +63,10 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0027",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 3,
-        "text_gold": "Regnum Christi Ecclesia est, in ea regnat, eiusq́; solus Rex est.",
+        "text_gold": "Regnum Christi Ecclesia est, in ea regnat, eiusq́ solus Rex est.",
         "text_ocr_original": "Regnum Christi Ecclesia est, in ea regnat, eiusq́; solus Rex est."
       },
       {
@@ -79,10 +79,10 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0027",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 4,
-        "text_gold": "Hæc verò Controuersia multiplex est, sed in partes suas dis-",
+        "text_gold": "Hæc verò Controuersia multiplex est, sed in partes ſuas dis-",
         "text_ocr_original": "Hæc verò Controuersia multiplex est, sed in partes suas dis-"
       },
       {
@@ -95,10 +95,10 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0027",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 5,
-        "text_gold": "tribui debet. Ecclesia est vel Militans, vel Triumphans. De",
+        "text_gold": "tribui debet. Eccleſia est vel Militans, vel Triumphans. De",
         "text_ocr_original": "tribui debet. Ecclesia est vel Militans, vel Triumphans. De"
       },
       {
@@ -111,10 +111,10 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0027",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 6,
-        "text_gold": "Militante primùm, pòst de Triumphante disputandum est.",
+        "text_gold": "Militante primùm, pòst de Triumphante diſputandum est.",
         "text_ocr_original": "Militante primùm, pòst de Triumphante disputandum est."
       },
       {
@@ -127,10 +127,10 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0027",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 7,
-        "text_gold": "Sunt Controuersiæ vel de tota Militante Ecclesia, vel de eius-",
+        "text_gold": "Sunt Controuerſiæ vel de tota Militante Eccleſia, vel de eiuſ-",
         "text_ocr_original": "Sunt Controuersiæ vel de tota Militante Ecclesia, vel de eius-"
       },
       {
@@ -143,10 +143,10 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0027",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 8,
-        "text_gold": "dem membris. De tota, Quid sit, Qualis sit, An visibilis, Qui-",
+        "text_gold": "dem membris. De tota, Quid sit, Qualis sit, An viſibilis, Qui-",
         "text_ocr_original": "dem membris. De tota, Quid sit, Qualis sit, An visibilis, Qui-"
       },
       {
@@ -159,10 +159,10 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0027",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 9,
-        "text_gold": "bus notis diiudicetur, Num errare possit, Quam potestatem",
+        "text_gold": "bus notis diiudicetur, Num errare poſsit, Quam poteſtatem",
         "text_ocr_original": "bus notis diiudicetur, Num errare possit, Quam potestatem"
       },
       {
@@ -175,10 +175,10 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0027",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 10,
-        "text_gold": "habeat, Num Romana sit vera Christi visibilis Ecclesia. Dein-",
+        "text_gold": "habeat, Num Romana sit vera Chriſti viſibilis Eccleſia. Dein-",
         "text_ocr_original": "habeat, Num Romana sit vera Christi visibilis Ecclesia. Dein-"
       },
       {
@@ -191,7 +191,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0027",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 11,
         "text_gold": "de dicendum est de membris Ecclesiæ: & hæc membra aut",
@@ -207,10 +207,10 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0027",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 12,
-        "text_gold": "sunt in Concilio congregata ( & hæc est Ecclesia repræsenta-",
+        "text_gold": "ſunt in Concilio congregata (& hæc est Eccleſia repræſenta-",
         "text_ocr_original": "sunt in Concilio congregata ( & hæc est Ecclesia repræsenta-"
       },
       {
@@ -223,10 +223,10 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0027",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 13,
-        "text_gold": "tiua) aut separata. Agendum ergo hîc est de Conciliis: Vtrum",
+        "text_gold": "tiua) aut ſeparata. Agendum ergo hîc est de Conciliis: Vtrum",
         "text_ocr_original": "tiua) aut separata. Agendum ergo hîc est de Conciliis: Vtrum"
       },
       {
@@ -239,10 +239,10 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0027",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 14,
-        "text_gold": "sint necessariò cogenda, A quo sint cogenda, Ex quibus homi-",
+        "text_gold": "ſint necessariò cogenda, A quo ſint cogenda, Ex quibus homi-",
         "text_ocr_original": "sint necessariò cogenda, A quo sint cogenda, Ex quibus homi-"
       },
       {
@@ -255,10 +255,10 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0027",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 15,
-        "text_gold": "nibus constent, Quantam authoritatem habeant, Quis in",
+        "text_gold": "nibus conſtent, Quantam authoritatem habeant, Quis in",
         "text_ocr_original": "nibus constent, Quantam authoritatem habeant, Quis in"
       },
       {
@@ -271,10 +271,10 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0027",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 16,
-        "text_gold": "Concilio summus Præses esse debeat, Vtrùm sint supra Pa-",
+        "text_gold": "Concilio ſummus Præſes eſſe debeat, Vtrùm ſint ſupra Pa-",
         "text_ocr_original": "Concilio summus Præses esse debeat, Vtrùm sint supra Pa-"
       },
       {
@@ -287,10 +287,10 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0027",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 17,
-        "text_gold": "pam, Vtrùm errare poßint. Tum ad membra Ecclesiæ separa-",
+        "text_gold": "pam, Vtrùm errare poſsint. Tum ad membra Eccleſiæ ſepara-",
         "text_ocr_original": "pam, Vtrùm errare poßint. Tum ad membra Ecclesiæ separa-"
       },
       {
@@ -303,10 +303,10 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0027",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 18,
-        "text_gold": "ta veniendum est : ea verò triplicia sunt. Est enim summum",
+        "text_gold": "ta veniendum est : ea verò triplicia ſunt. Est enim ſummum",
         "text_ocr_original": "ta veniendum est : ea verò triplicia sunt. Est enim summum"
       },
       {
@@ -319,10 +319,10 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0027",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 19,
-        "text_gold": "membrum, nempe caput, sunt membra media, sunt infima.",
+        "text_gold": "membrum, nempe caput, ſunt membra media, ſunt infima.",
         "text_ocr_original": "membrum, nempe caput, sunt membra media, sunt infima."
       },
       {
@@ -335,10 +335,10 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0027",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 20,
-        "text_gold": "Ecclesiæ Militantis caput esse Romanum Pontificem assir-",
+        "text_gold": "Eccleſiæ Militantis caput eſſe Romanum Pontificem affir-",
         "text_ocr_original": "Ecclesiæ Militantis caput esse Romanum Pontificem assir-"
       },
       {
@@ -351,10 +351,10 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0027",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 21,
-        "text_gold": "mant, vbi quærendum est de Regimine Ecclesiæ, Sitne Monar-",
+        "text_gold": "mant, vbi quærendum est de Regimine Eccleſiæ, Sitne Monar-",
         "text_ocr_original": "mant, vbi quærendum est de Regimine Ecclesiæ, Sitne Monar-"
       },
       {
@@ -367,10 +367,10 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0027",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 22,
-        "text_gold": "chiũm, an non sit: Sítne Ecclesiæ Monarchia in Petro aliqua",
+        "text_gold": "chiũm, an non ſit: Sítne Eccleſiæ Monarchia in Petro aliqua",
         "text_ocr_original": "chiũm, an non sit: Sítne Ecclesiæ Monarchia in Petro aliqua"
       },
       {
@@ -383,10 +383,10 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0027",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 23,
-        "text_gold": "constituta : Fuerítne Petrus Episcopus Ecclesiæ Romanæ, ibiq́;",
+        "text_gold": "conſtituta : Fuerítne Petrus Epiſcopus Eccleſiæ Romanæ, ibiq́",
         "text_ocr_original": "constituta : Fuerítne Petrus Episcopus Ecclesiæ Romanæ, ibiq́;"
       },
       {
@@ -399,10 +399,10 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0027",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 24,
-        "text_gold": "mortuus : Petróne Papa in primatu successerit : Poßítne errare,",
+        "text_gold": "mortuus : Petróne Papa in primatu ſucceſſerit : Poſsítne errare,",
         "text_ocr_original": "mortuus : Petróne Papa in primatu successerit : Poßítne errare,"
       },
       {
@@ -415,10 +415,10 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0027",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 25,
-        "text_gold": "Poßítne leges Ecclesiasticas condere, Poßítne Sanctos canoni-",
+        "text_gold": "Poſsítne leges Eccleſiaſticas condere, Poſsítne Sanctos canoni-",
         "text_ocr_original": "Poßítne leges Ecclesiasticas condere, Poßítne Sanctos canoni-"
       },
       {
@@ -431,10 +431,10 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0027",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 26,
-        "text_gold": "zare, Habeátne potestatem temporalem, Sítne Antichristus.",
+        "text_gold": "zare, Habeátne potestatem temporalem, Sítne Antichriſtus.",
         "text_ocr_original": "zare, Habeátne potestatem temporalem, Sítne Antichristus."
       },
       {
@@ -447,10 +447,10 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0027",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 27,
-        "text_gold": "Media membra sunt Clerici, quorum duo genera constituun-",
+        "text_gold": "Media membra ſunt Clerici, quorum duo genera conſtituun-",
         "text_ocr_original": "Media membra sunt Clerici, quorum duo genera constituun-"
       },
       {
@@ -463,10 +463,10 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0027",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 28,
-        "text_gold": "tur, vt alii seculares sint, alii regulares. Seculares vocantur,",
+        "text_gold": "tur, vt alii ſeculares ſint, alii regulares. Seculares vocantur,",
         "text_ocr_original": "tur, vt alii seculares sint, alii regulares. Seculares vocantur,"
       },
       {
@@ -479,10 +479,10 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0027",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 29,
-        "text_gold": "qui in Ecclesiastica aliqua functione versantur. Sunt verò",
+        "text_gold": "qui in Eccleſiaſtica aliqua functione verſantur. Sunt verò",
         "text_ocr_original": "qui in Ecclesiastica aliqua functione versantur. Sunt verò"
       },
       {
@@ -495,10 +495,10 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0027",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 30,
-        "text_gold": "Controuersiæ de horum electione & gradu, An ministerio cœ-",
+        "text_gold": "Controuerſiæ de horum electione & gradu, An miniſterio cœ-",
         "text_ocr_original": "Controuersiæ de horum electione & gradu, An ministerio cœ-"
       },
       {
@@ -511,10 +511,10 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0027",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 31,
-        "text_gold": "libatus sit necessariò annexus, An ministri sint exempti à iugo",
+        "text_gold": "libatus ſit neceſſariò annexus, An miniſtri ſint exempti à iugo",
         "text_ocr_original": "libatus sit necessariò annexus, An ministri sint exempti à iugo"
       },
       {
@@ -527,10 +527,10 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0027",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 32,
-        "text_gold": "seculari. Regulares sunt Monachi ac Religiosi. Hîc disseren-",
+        "text_gold": "seculari. Regulares sunt Monachi ac Religioſi. Hîc disseren-",
         "text_ocr_original": "seculari. Regulares sunt Monachi ac Religiosi. Hîc disseren-"
       },
       {
@@ -543,10 +543,10 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0027",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 33,
-        "text_gold": "dum est de consiliis Euangelicis, De votis, De solitudine, De",
+        "text_gold": "dum est de consiliis Euangelicis, De votis, De ſolitudine, De",
         "text_ocr_original": "dum est de consiliis Euangelicis, De votis, De solitudine, De"
       }
     ],
@@ -560,7 +560,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0027",
         "region": "catchword",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 1,
         "text_gold": "habitu,",
@@ -577,7 +577,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0027",
         "region": "header",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 1,
         "text_gold": "PRÆFATIO",
