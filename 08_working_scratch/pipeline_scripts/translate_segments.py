@@ -53,6 +53,8 @@ import translation_prompts as _prompt_v1  # noqa: E402
 import translation_prompts_v0 as _prompt_v0  # noqa: E402
 import translation_prompts_v2 as _prompt_v2  # noqa: E402
 import translation_prompts_v3 as _prompt_v3  # noqa: E402
+import translation_prompts_v4 as _prompt_v4  # noqa: E402
+import translation_prompts_whitaker as _prompt_whitaker  # noqa: E402
 
 # Mapping for --prompt-version dispatch. All modules expose
 # ``build_translation_prompt`` with the same signature; the drift-guard
@@ -62,6 +64,8 @@ _PROMPT_VERSIONS = {
     "v1": _prompt_v1,
     "v2": _prompt_v2,
     "v3": _prompt_v3,
+    "v4": _prompt_v4,
+    "whitaker": _prompt_whitaker,
 }
 
 # ---------------------------------------------------------------------------
@@ -841,12 +845,14 @@ def _build_argument_parser() -> argparse.ArgumentParser:
         help=(
             "Which translation prompt module to use. 'v1' (default) is "
             "the live ``translation_prompts.py``; 'v0' is the frozen "
-            "pre-refinement snapshot in ``translation_prompts_v0.py`` "
-            "used only for A/B comparison; 'v2' is the structural "
-            "rewrite that promotes hard rules above the lexicon block "
-            "and adds the Greek-paraphrase directive; 'v3' refines v2 "
-            "with three-slot Greek output (⟦English⟧/⟪Latin⟫), strict "
-            "preserve-source-form rules, and cross-page context."
+            "pre-refinement snapshot used only for A/B comparison; "
+            "'v2' is the structural rewrite that promotes hard rules "
+            "above the lexicon block and adds the Greek-paraphrase "
+            "directive; 'v3' refines v2 with three-slot Greek output "
+            "(deprecated, failed A/B p0041); 'v4' is v2 + clarified "
+            "Latin-preservation for the Ussher exercise; 'whitaker' "
+            "is the Whitaker-corpus baseline (Greek + English in "
+            "square brackets, no Latin-paraphrase assumption)."
         ),
     )
     parser.add_argument(
