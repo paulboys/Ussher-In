@@ -6,15 +6,28 @@ reorganization comes from v2 (translator brief / hard rules / lexicon
 hints, in that order), because the numbered hard-rules block makes
 cross-cutting directives easier for the model to obey consistently.
 
-The Whitaker corpus differs from Ussher's *Antiquitates* in one way
-that materially affects the prompt: Whitaker quotes Greek without
-routinely paraphrasing it into Latin in the same or adjacent clause.
-v2's Hard Rule #1 (carry the Greek through verbatim and translate
-only the Latin gloss) therefore does not apply here. The replacement
-rule below requires the model to **always** preserve the Greek
-verbatim AND supply an English translation in square brackets — no
-search for an adjacent Latin paraphrase, no skipping the English on
-the assumption that the surrounding Latin is already glossing.
+The Whitaker corpus differs from Ussher's *Antiquitates* in how it
+handles embedded Greek, and the rule below reflects what the 1849
+Parker Society translation actually does with the pattern:
+
+- Whitaker often quotes Greek without any Latin paraphrase; in that
+  case Rule 1 emits Greek verbatim + concise English in square
+  brackets.
+- Whitaker *sometimes* follows a Greek quotation with his own Latin
+  paraphrase of it (e.g. ``Ἐρευνᾶτε τὰς γραφὰς, Scrutamini
+  Scripturas.``). For Ussher, v4's rule preserves the Latin verbatim;
+  for Whitaker, Parker Society collapses the Latin paraphrase and
+  emits Greek + a single English rendering of the meaning. Rule 1
+  encodes the collapse behaviour with explicit positive and negative
+  examples so the model does not double-render the meaning or
+  preserve a stray Latin clause.
+
+The architectural lesson — preserve Greek verbatim; never double-render
+meaning when the author already supplied a translation aid — does
+generalize across corpora. Whether the *Latin* paraphrase gets
+preserved or collapsed is a per-corpus decision that depends on the
+downstream consumer (Whitaker → English-only searchable database;
+Ussher → scholarly bilingual presentation per existing v4 hypothesis).
 
 Public surface mirrors ``translation_prompts`` and
 ``translation_prompts_v2`` so the runner can dispatch by edition
@@ -78,18 +91,44 @@ HARD_RULES = """\
 Hard rules (apply every one to every line; if a rule conflicts with
 the lexicon hints, the rule wins):
 
-1. GREEK PRESERVATION + TRANSLATION.
+1. GREEK PRESERVATION + ENGLISH IN BRACKETS (LATIN PARAPHRASE COLLAPSED).
    Whenever Greek script appears in a body line or footnote, preserve
    the Greek verbatim in your English output (with its polytonic
    accents, breathings, and iota subscript intact), and immediately
    follow it with a concise English translation in square brackets.
    Both the Greek and the English MUST appear in the output.
    Do NOT replace the Greek with English alone.
-   Do NOT search for or rely on adjacent Latin paraphrase: even if
-   the Latin appears to gloss the Greek, still supply your own
-   English translation of the Greek in square brackets.
-   Example shape: 'as Origen says, ὁ λόγος αὐτοῦ τρέχει ταχέως
-   [his word runs swiftly], and...'.
+
+   When Whitaker follows the Greek with his own Latin paraphrase of
+   the same content (signaled by adjacency, an optional introducer
+   like 'id est', 'hoc est', 'inquit', 'sive', or by quoted Latin
+   whose meaning visibly mirrors the Greek), COLLAPSE that Latin into
+   the English-in-brackets slot. Do NOT separately render the Latin
+   paraphrase as English prose; do NOT preserve the Latin paraphrase
+   verbatim either. The Latin is Whitaker's translation aid for his
+   16th-century reader; its meaning is fully captured by your single
+   English-in-brackets rendering of the Greek. The 1849 Parker Society
+   translation (gold standard for this corpus) treats the pattern
+   exactly this way: Greek preserved + single English rendering of
+   the meaning (in caps in print, in square brackets here), Latin
+   paraphrase elided.
+
+   Examples:
+
+   Standalone Greek (no Latin gloss):
+     Source: 'as Origen says, ὁ λόγος αὐτοῦ τρέχει ταχέως, and...'
+     Output: 'as Origen says, ὁ λόγος αὐτοῦ τρέχει ταχέως [his word
+       runs swiftly], and...'
+
+   Greek followed by Whitaker's Latin paraphrase (collapse the Latin):
+     Source: 'Ἐρευνᾶτε τὰς γραφὰς, Scrutamini Scripturas. Fuerat
+       enim Chriſtus...'
+     Correct: 'Ἐρευνᾶτε τὰς γραφὰς [Search the scriptures]. For
+       Christ had been...'
+     Wrong (double-rendered): 'Ἐρευνᾶτε τὰς γραφὰς [Search the
+       scriptures], Search the Scriptures. For Christ had been...'
+     Wrong (preserved Latin): 'Ἐρευνᾶτε τὰς γραφὰς [Search the
+       scriptures], Scrutamini Scripturas. For Christ had been...'
 
 2. MODERN ENGLISH REGISTER. No archaisms. Specifically forbidden:
    vouchsafed, thee, thou, thy, verily, whereunto, whilst, betwixt,

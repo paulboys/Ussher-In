@@ -292,3 +292,20 @@ longer scores ⟦⟧/⟪⟫ usage.
     and the judge). Reason: v3 failed its A/B test, and the exotic
     brackets complicate the downstream searchable database. Captured
     in §10.4.
+  - During Phase 0.1 alignment drafting, observed at Latin
+    `p0030_body_l0007` that Whitaker does sometimes follow Greek
+    with a Latin paraphrase (`Ἐρευνᾶτε τὰς γραφὰς, Scrutamini
+    Scripturas`), contradicting the original `translation_prompts_
+    whitaker.py` docstring claim that the pattern doesn't occur. Parker
+    Society's handling: Greek preserved + single English rendering of
+    the meaning (in caps in print), Latin paraphrase elided. User
+    directed (2026-05-16) that this rule be introduced into Rule 1
+    proactively rather than discovered empirically in Phase 2. Done:
+    `translation_prompts_whitaker.py` Rule 1 now explicitly tells the
+    model to COLLAPSE Whitaker's Latin paraphrase into the English-in-
+    brackets slot, with positive and negative examples.
+  - Whether the same collapse-Latin behaviour generalizes to Ussher is
+    deferred to Phase 5 (Ussher validation). For Ussher, v4 currently
+    hypothesises preserve-Latin-verbatim; the searchable-database
+    requirement may push Ussher toward Whitaker-style collapse too,
+    but that decision is empirical.
