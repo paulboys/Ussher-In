@@ -55,6 +55,8 @@ import translation_prompts_v2 as _prompt_v2  # noqa: E402
 import translation_prompts_v3 as _prompt_v3  # noqa: E402
 import translation_prompts_v4 as _prompt_v4  # noqa: E402
 import translation_prompts_whitaker as _prompt_whitaker  # noqa: E402
+import translation_prompts_whitaker_v2 as _prompt_whitaker_v2  # noqa: E402
+import translation_prompts_whitaker_v3 as _prompt_whitaker_v3  # noqa: E402
 
 # Mapping for --prompt-version dispatch. All modules expose
 # ``build_translation_prompt`` with the same signature; the drift-guard
@@ -66,6 +68,8 @@ _PROMPT_VERSIONS = {
     "v3": _prompt_v3,
     "v4": _prompt_v4,
     "whitaker": _prompt_whitaker,
+    "whitaker_v2": _prompt_whitaker_v2,
+    "whitaker_v3": _prompt_whitaker_v3,
 }
 
 # ---------------------------------------------------------------------------
@@ -696,15 +700,35 @@ def translate_page(
 # ---------------------------------------------------------------------------
 
 
+def _resolve_page_path(part: str | None, page_id: str) -> Path | None:
+    """Locate a page JSON for *page_id*, honoring the corpus *part*.
+
+    Lookup order:
+      1. ``ANNOTATIONS_DIR / part / page_<page_id>.json`` (new layout —
+         where corpora live in named subfolders like ``whitaker_latin``).
+      2. ``ANNOTATIONS_DIR / page_<page_id>.json`` (legacy flat layout,
+         Ussher era).
+
+    Returns the first that exists, or None.
+    """
+    filename = f"page_{page_id}.json"
+    if part:
+        sub = ANNOTATIONS_DIR / part / filename
+        if sub.exists():
+            return sub
+    root = ANNOTATIONS_DIR / filename
+    return root if root.exists() else None
+
+
 def _iter_page_files(part: str, start: int, end: int) -> Iterable[Path]:
     for page_num in range(start, end + 1):
         page_id = f"p{page_num:04d}"
-        path = ANNOTATIONS_DIR / f"page_{page_id}.json"
-        if path.exists():
+        path = _resolve_page_path(part, page_id)
+        if path is not None:
             yield path
 
 
-def _page_file_for(page_num: int) -> Path | None:
+def _page_file_for(page_num: int, part: str | None = None) -> Path | None:
     """Return the on-disk page-payload path for *page_num*, or None if
     the page is out of range or the file is not present.
 
@@ -714,8 +738,7 @@ def _page_file_for(page_num: int) -> Path | None:
     """
     if page_num < 1:
         return None
-    path = ANNOTATIONS_DIR / f"page_p{page_num:04d}.json"
-    return path if path.exists() else None
+    return _resolve_page_path(part, f"p{page_num:04d}")
 
 
 def _payload_body_concatenated(payload: dict) -> str:
@@ -740,6 +763,7 @@ def _payload_body_concatenated(payload: dict) -> str:
 def _load_cross_page_context(
     *,
     page_num: int,
+    part: str | None = None,
     tail_chars: int = 240,
     head_chars: int = 240,
 ) -> str | None:
@@ -757,7 +781,7 @@ def _load_cross_page_context(
     """
     blocks: list[str] = []
 
-    prev_path = _page_file_for(page_num - 1)
+    prev_path = _page_file_for(page_num - 1, part=part)
     if prev_path is not None:
         prev_text = _payload_body_concatenated(load_phase3b_page(prev_path))
         if prev_text:
@@ -765,7 +789,7 @@ def _load_cross_page_context(
                 "Previous page tail: …" + prev_text[-tail_chars:].lstrip()
             )
 
-    next_path = _page_file_for(page_num + 1)
+    next_path = _page_file_for(page_num + 1, part=part)
     if next_path is not None:
         next_text = _payload_body_concatenated(load_phase3b_page(next_path))
         if next_text:
@@ -892,6 +916,13 @@ def main(argv: Sequence[str] | None = None) -> int:
     global build_translation_prompt
     build_translation_prompt = _PROMPT_VERSIONS[args.prompt_version].build_translation_prompt
 
+    # Preserve the user-supplied part (the corpus subfolder under
+    # ``annotations/``, e.g. ``whitaker_latin``) BEFORE the A/B override
+    # below clobbers ``args.part``. Annotation INPUTS are loaded under
+    # ``input_part``; artifact OUTPUTS go under ``args.part`` (which the
+    # A/B block rewrites to ``<prompt_version>/<run_tag>``).
+    input_part = args.part
+
     # ---- A/B output redirection --------------------------------------
     # When --run-tag is set, redirect ARTIFACTS_DIR to a per-run path
     # under 04_translation_work/ab/ and remember it so we can also drop
@@ -947,7 +978,7 @@ def main(argv: Sequence[str] | None = None) -> int:
         "pages": [],
     }
 
-    for page_path in _iter_page_files(args.part, args.start_page, args.end_page):
+    for page_path in _iter_page_files(input_part, args.start_page, args.end_page):
         payload = load_phase3b_page(page_path)
 
         # Cross-page context (v3 Hard Rule 9). Always populated when
@@ -958,7 +989,7 @@ def main(argv: Sequence[str] | None = None) -> int:
         except (KeyError, ValueError):
             page_num = -1
         cross_page_ctx = (
-            _load_cross_page_context(page_num=page_num)
+            _load_cross_page_context(page_num=page_num, part=input_part)
             if page_num >= 1
             else None
         )
