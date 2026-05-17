@@ -1,7 +1,7 @@
 {
-  "prompt_version": "whitaker_v2",
-  "run_tag": "whitaker_v2_run03",
-  "started_at": "2026-05-17T10:35:05Z",
+  "prompt_version": "whitaker_v3",
+  "run_tag": "whitaker_v3_run02",
+  "started_at": "2026-05-17T10:38:45Z",
   "model": "claude-opus-4-7",
   "lexicon_profile": "auto",
   "start_page": 30,
