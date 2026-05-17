@@ -1,69 +1,59 @@
-"""V3 of the Whitaker translation prompt — Phase 3 second iteration.
+"""V4 of the Whitaker translation prompt — Phase 3 third iteration.
 
 Purpose
 -------
-``translation_prompts_whitaker_v2.py`` improved on the baseline by
-+1.58% COMET-DA (0.7494 → 0.7612), winning 26 of 45 unit-runs. Three
-units regressed; investigation
-(``04_translation_work/ab/whitaker_ch1/whitaker_v2_vs_baseline_report.md``)
-identified a single underlying cause: v2's Rule 2 register guidance
-was too permissive. The model interpreted "Victorian register" as
-license to use Tudor/KJV constructions (``doth``, ``in no wise``) and
-over-Latinate vocabulary (``perspicuously``) that Parker Society does
-NOT use.
+v3 regressed against v2 on COMET-DA (mean 0.7557 vs 0.7612, -0.72%)
+despite no defect in any individual rule change. Diagnosis
+(see ``04_translation_work/ab/whitaker_ch1/whitaker_v3_vs_v2_report.md``
+and the side-by-side translation comparison on units
+ch1_u004/u009/u010/u012/u013):
 
-Grep-validated facts (against ``whitaker_english/`` OCR):
-- ``hath``, ``wherein``, ``whilst`` — **44 occurrences** across 14 pages.
-  Parker uses these freely; baseline's strict-modern Rule 2 was wrong
-  to forbid them.
-- ``doth``, ``in no wise``, ``verily`` — **0 occurrences**. Parker
-  does NOT use these. v2's allowed list mistakenly included ``doth``.
+1. Rule 2c (Latinate-vocabulary preservation) grew to ~65 lines —
+   word-count tables, a per-Question (Q I–VI) whitelist, paragraph-
+   long counterpoints with examples. The bulk consumed the model's
+   attention budget.
 
-Headline deltas vs. v2
+2. Segment-boundary leakage appeared in v3: sentence fragments bled
+   across alignment-unit boundaries in run01 of u009/u010/u012/u013
+   (e.g. ``u010 run1`` v3 began ``"mony to Christ. The scriptures,
+   moreover…"`` — the ``mony to Christ`` tail belongs to u009).
+   Almost certainly downstream of the same attention drain.
+
+3. Ironically, v3 sometimes reverted to literal Latin word order in
+   u012 (``"the whole of it on this plan into six questions I judge
+   can be distributed"``), violating its own new Rule 2d.
+
+4. Run-to-run variance widened (u010 swings 0.676–0.775 across v3
+   runs; v2 was stable). Bigger prompts → less determinism.
+
+v4 keeps v3's small targeted clauses (2a register list, 2b forbid
+list, 2d word order, 7c antithesis collapse) but shrinks Rule 2c
+back to its principle plus a compact flat whitelist — moving the
+word-count justification into the diagnostic log where it belongs.
+Rule count remains 7.
+
+Headline deltas vs. v3
 ----------------------
-1. **Rule 2 register list tightened**: ``doth`` removed from allowed
-   constructions; ``doth``, ``in no wise``, ``verily`` added to the
-   explicit-forbid list.
-2. **New Rule 2 sub-clause — plain Anglo-Saxon for ordinary
-   concepts, Latinate for doctrinal technical terms.** The Victorian
-   register uses simple words for common ideas (``satis`` →
-   ``enough``, ``multum`` → ``much``). But ``perspicuus`` /
-   ``perspicuitas`` / ``perspicue`` are technical terms naming the
-   Reformed doctrine of Scripture's clarity (Question IV's focus)
-   and stay Latinate. User-verified word counts in Parker:
-   ``perspicuous`` 13×, ``perspicuity`` 23×, ``perspicuously`` 7×,
-   ``clearly`` 49×, ``clear`` 219× — both forms appear; doctrinal
-   contexts use the Latinate, ordinary contexts use the plain form.
-   The rule preserves the Latinate forms for the technical
-   theological vocabulary and only prescribes plain English for
-   genuinely ordinary words.
-3. **New Rule 2 sub-clause — natural English word order**: don't
-   preserve Latin's frequent fronting of prepositional/adverbial
-   phrases. ``de Scripturis Iudæi… sentiebant`` → "The Jews thought
-   ... of the scriptures" (subject first), NOT "Concerning the
-   scriptures the Jews thought…".
-4. **Rule 7c (litotes) strengthened** with an explicit antithesis
-   example: when the Latin is ``X minime [negative verb]… sed
-   [positive verb]``, prefer to render the negation as the positive
-   ("not in the least … but rather …" → "rather …"), or drop the
-   negation if the antithesis carries it. ``minime reprehendit, sed
-   laudat`` → "rather praises" (not "in no way reproves, but
-   rather praises").
+1. **Rule 2c slimmed from ~65 lines to ~15.** Keep the
+   Latinate-vs-plain principle, keep a single flat doctrinal
+   whitelist, keep the ordinary-words counter-list. Drop the
+   per-Question categorization, the word-count tables, and the
+   paragraph-long ``WHEN UNCERTAIN`` / ``PARKER ALSO USES THE PLAIN
+   FORMS`` prose. Those are diagnostic justifications, not
+   instructions the model needs at inference time.
 
-All other rules are unchanged from v2. Rule count remains 7.
+All other rules unchanged from v3.
 
 Architectural discipline
 ------------------------
-Per the plan: every change tagged shared-core (transfers to Ussher)
-or corpus-skin (Whitaker only). v3's three Rule 2 sub-clauses are all
-**shared core**: they encode general translation principles
-(register-by-reference with specific forbid-list; Anglo-Saxon over
-Latinate; natural word order). Rule 7c's strengthening is also shared
-core. No new corpus-skin content.
+This is a pure shared-core change — a rule audit, not a new
+behaviour. Demoting the verbose Latinate-justification from rule
+text to source-file comments is exactly the "Prefer rule
+consolidation over addition" discipline in plan.md §5 / §9.
 
 Public surface
 --------------
-Identical to v2 and the original Whitaker prompt.
+Identical to v3.
 """
 
 from __future__ import annotations
@@ -85,7 +75,7 @@ from translation_prompts import (
 
 
 # ---------------------------------------------------------------------------
-# Translator brief — unchanged from v2
+# Translator brief — unchanged from v2/v3
 # ---------------------------------------------------------------------------
 
 TRANSLATOR_BRIEF = (
@@ -103,7 +93,7 @@ TRANSLATOR_BRIEF = (
 
 
 # ---------------------------------------------------------------------------
-# Hard rules — v3 refinement of v2
+# Hard rules — v4: Rule 2c slimmed from v3; everything else unchanged
 # ---------------------------------------------------------------------------
 
 HARD_RULES = """\
@@ -182,73 +172,23 @@ the lexicon hints, the rule wins):
      'verily' -> 'truly' (and consider whether the rhetorical
         emphasis is needed at all)
 
-   2c. THEOLOGICAL VOCABULARY STAYS LATINATE; PLAIN ANGLO-SAXON
-   ONLY FOR GENUINELY ORDINARY WORDS.
+   2c. LATINATE FOR DOCTRINAL VOCABULARY; PLAIN ENGLISH FOR
+   ORDINARY WORDS. Default Latinate when in doubt.
 
-   GOVERNING PRINCIPLE: in Parker Society's register, theological
-   and Reformation-polemic vocabulary is preserved Latinate. Plain
-   Anglo-Saxon English is reserved for genuinely ordinary words.
-   When in doubt, default Latinate.
+   Keep Latinate (do not normalize to plain English):
+     canonical, apocryphal, authority, tradition, testimony,
+     inspiration, divinely inspired, perspicuity, perspicuous,
+     perspicuously, obscure, obscurity, interpretation, the literal
+     sense, analogy of faith, sufficiency, perfection, justification,
+     sanctification, predestination, grace, merit(s), purgatory,
+     transubstantiation, real presence, consubstantial, article(s)
+     of faith, controversy, doctrine, version (of scripture),
+     vernacular, papist(s) (lowercase per Rule 3c).
 
-   The Parker Society's word counts (verified against the full
-   English translation) confirm this overwhelmingly:
-
-     - 'tradition' 636× / 'handing down' 0×
-     - 'testimony' 378× / 'witness' 70×
-     - 'version' 189× / 'translation' 79× / 'rendering' 5×
-     - 'interpretation' 150× / 'exposition' 76×
-     - 'obscure' 117× / 'dark' 32× / 'hidden' 22×
-     - 'vernacular' 42× / 'native' 14×
-     - 'perfection' 25× / 'completeness' 1×
-     - 'perspicuity' 23× / 'perspicuous' 13× / 'perspicuously' 7×
-     - 'divinely inspired' 12× / 'God-breathed' 0×
-     - 'literal sense' 26× / 'plain meaning' 0×
-     - 'justification' 10× / 'being made right' 0×
-
-   PRESERVED-LATINATE WHITELIST (do not normalize to plain English):
-
-     Q I (Canon):           'canonical', 'apocryphal', 'genuine'
-     Q II (Versions):       'version' (biblical versions), 'vernacular'
-     Q III (Authority):     'authority', 'tradition', 'testimony',
-                            'inspiration', 'divinely inspired'
-     Q IV (Perspicuity):    'perspicuous', 'perspicuity',
-                            'perspicuously', 'obscure', 'obscurity'
-     Q V (Interpretation):  'interpretation', 'the literal sense',
-                            'analogy of faith', 'judge of controversies'
-     Q VI (Perfection):     'sufficiency', 'perfection', 'scripture
-                            alone', 'rule of faith'
-     Soteriology:           'justification', 'sanctification',
-                            'predestination', 'grace', 'merit(s)'
-     Catholic-polemic:      'purgatory', 'transubstantiation',
-                            'consubstantial', 'real presence',
-                            'papist(s)' (lowercase per Rule 3c)
-     Scholastic discourse:  'article(s) of faith', 'consensus of the
-                            Fathers', 'controversy', 'doctrine'
-
-   PARKER ALSO USES THE PLAIN FORMS, JUST LESS OFTEN. Where both
-   forms appear substantially in Parker (e.g. 'obscure' 117× vs
-   'dark' 32×; 'interpretation' 150× vs 'exposition' 76×), the
-   choice is contextual. Plain forms are acceptable when the sense
-   is ordinary rather than technical, but Latinate remains the
-   default and should be reached for first.
-
-   FOR GENUINELY ORDINARY WORDS, prefer plain Anglo-Saxon:
-
-     'satis' -> 'enough' (not 'sufficiently' in routine usage)
-     'multum' -> 'much' (not 'multitudinously')
-     'omnino' -> 'altogether' / 'wholly'
-     'fortè' -> 'perhaps' (not 'fortuitously')
-     'manifesto' (adv) -> 'plainly' or 'manifestly'; both natural
-     'magnitudo' -> 'greatness' / 'size' (not 'magnitude' unless
-        astronomical)
-
-   WHEN UNCERTAIN: if the word names a Reformation doctrinal
-   category, a Catholic/Protestant polemical concept, a scholastic
-   theological technicality, or any term associated with one of the
-   six Controversy I Questions, keep it Latinate. Otherwise, ask
-   whether a Victorian scholar would use the word naturally; if yes,
-   use it; if it sounds like a literal Latin calque, replace with
-   plain English.
+   For genuinely ordinary (non-doctrinal) words, prefer plain English:
+     'satis' -> 'enough'      'multum' -> 'much'
+     'omnino' -> 'altogether' 'fortè' -> 'perhaps'
+     'magnitudo' -> 'greatness' / 'size' (not 'magnitude')
 
    2d. NATURAL ENGLISH WORD ORDER. Don't preserve Latin's frequent
    fronting of prepositional or adverbial phrases unless the
@@ -382,7 +322,7 @@ the lexicon hints, the rule wins):
 
 
 # ---------------------------------------------------------------------------
-# Prompt builder — unchanged from v2 except for the new HARD_RULES
+# Prompt builder — unchanged from v3 except for the slimmed HARD_RULES
 # ---------------------------------------------------------------------------
 
 
@@ -394,7 +334,7 @@ def build_translation_prompt(
     lexicon_profile: str = "auto",
     extra_context: str | None = None,
 ) -> str:
-    """Assemble the Whitaker v3 translation prompt."""
+    """Assemble the Whitaker v4 translation prompt."""
 
     if lexicon_profile not in LEXICON_PROFILES:
         raise ValueError(

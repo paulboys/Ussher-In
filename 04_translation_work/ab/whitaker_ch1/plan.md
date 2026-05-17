@@ -58,7 +58,7 @@ register, polemical-genre patterns) belongs to the skin.
 | Reference corpus | 1849 Parker Society English, aligned region of `whitaker_english/` |
 | Latin source edition | 1690 Latin edition |
 | Reference edition | 1849 Parker Society (William Fitzgerald, tr.) |
-| Baseline prompt | `translation_prompts_whitaker.py` |
+| Baseline prompt | `translation_prompts_whitaker_v4.py` (locked 2026-05-17; see §12) |
 | Out of scope | The ⟦⟧/⟪⟫ bracket apparatus from v3; permanent few-shot exemplars in the production prompt |
 
 If statistical power is insufficient at 2 pages, scope extends to
@@ -169,7 +169,15 @@ sprawl; we don't repeat it.
    Fitzgerald-specificity. Anything genre-bound (theological-polemic
    patterns, Fitzgerald's specific lexical choices) gets demoted to
    corpus-skin or removed.
-3. Final shared-core prompt is locked.
+3. **Cross-chapter generalization (added 2026-05-17).** Build
+   `chapter2_alignment.jsonl` for `c1_ch2` (Latin p0032–p0034 →
+   Parker p0044–p0047; chapter title `CAPVT SECVNDVM`). Run v4
+   on `c1_ch2` (3 runs), score against Parker. v4 passes the
+   generalization gate iff its `c1_ch2` aggregate mean is within
+   ~0.01 of its `c1_ch1` mean and no leakage pattern recurs. A
+   stark drop would signal that v4's wins were ch1-specific.
+4. Final shared-core prompt is locked only after the c1_ch2 check
+   passes.
 
 ### Phase 5 — Ussher Validation
 
@@ -288,6 +296,20 @@ longer scores ⟦⟧/⟪⟫ usage.
 
 ## 12. Revision Log
 
+- **2026-05-17 (Phase 3 closed; v4 locked as working baseline).**
+  COMET-DA trajectory on `c1_ch1`: baseline 0.7494 → v2 0.7612 →
+  v3 0.7557 (regressed) → v4 **0.7651** (+2.10% over baseline,
+  +0.51% over the prior best v2). v3's regression was diagnosed
+  as Rule 2c bloat (~65-line Latinate-vocabulary lecture)
+  consuming attention budget and causing segment-boundary leakage
+  on `u009/u010/u012/u013` run01. v4 slimmed 2c to ~16 lines;
+  leakage disappeared, run-to-run variance collapsed (v4 range
+  0.003 vs v3 range 0.017). One unit regressed on v4 vs v3 (`u011`,
+  -0.017) — flagged for inspection if a v5 iteration is needed.
+  v4 is now the working baseline for §4 and Phase 4 generalization.
+  Two leftover items below baseline-or-noise after v4: `u002`
+  (0.578, persistent register cap) and `u007` (0.742, lexical
+  drift); both stable across v3→v4.
 - **2026-05-16 (initial)** — plan drafted around `translation_prompts_v4.py`.
 - **2026-05-16 (Phase-0 prerequisite findings)**:
   - Discovered `translation_prompts_whitaker.py` already exists with a
