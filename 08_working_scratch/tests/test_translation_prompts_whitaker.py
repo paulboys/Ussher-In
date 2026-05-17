@@ -71,10 +71,13 @@ def test_hard_rule_one_requires_greek_preservation_with_english():
 def test_hard_rule_one_explicitly_disables_latin_paraphrase_logic():
     # The whole point of switching off v1: the model must NOT skip the
     # English on the assumption that an adjacent Latin clause glosses
-    # the Greek. The rule body must say so explicitly.
+    # the Greek. In the locked Whitaker prompt, this is expressed by
+    # collapsing the Latin paraphrase into the English-in-brackets slot.
     rule_text = HARD_RULES.lower()
     assert "latin paraphrase" in rule_text
-    assert "even if" in rule_text or "regardless" in rule_text
+    assert "collapse that latin into" in rule_text
+    assert "english-in-brackets slot" in rule_text
+    assert "do not separately render the latin" in rule_text
 
 
 def test_hard_rules_do_not_carry_over_v2_skip_english_directive():
