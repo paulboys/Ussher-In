@@ -43,7 +43,13 @@
       "Bash(python -c \"import json; d=json.load\\(open\\('08_working_scratch/phase3b/annotations/whitaker_english/page_p0024.json', encoding='utf-8'\\)\\); print\\('p0024 printed_page:', d.get\\('printed_page'\\)\\)\")",
       "Bash(python *)",
       "Bash(PYTHONIOENCODING=utf-8 python -c ' *)",
-      "Bash(PYTHONIOENCODING=utf-8 python whitaker_v4_vs_v3_score.py)"
+      "Bash(PYTHONIOENCODING=utf-8 python whitaker_v4_vs_v3_score.py)",
+      "Bash(PYTHONIOENCODING=utf-8 python)",
+      "Read(//tmp/**)",
+      "Bash(PYTHONIOENCODING=utf-8 head *)",
+      "Bash(PYTHONIOENCODING=utf-8 grep *)",
+      "Bash(PYTHONIOENCODING=utf-8 python whitaker_v4_ch2_score.py)",
+      "Bash(PYTHONIOENCODING=utf-8 tail *)"
     ]
   }
 }

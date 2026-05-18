@@ -1,0 +1,17 @@
+{
+  "prompt_version": "whitaker_v4",
+  "run_tag": "whitaker_v4_ch2_run01",
+  "started_at": "2026-05-18T09:22:44Z",
+  "model": "claude-opus-4-7",
+  "lexicon_profile": "auto",
+  "start_page": 32,
+  "end_page": 35,
+  "page_ids": [
+    "p0032",
+    "p0033",
+    "p0034",
+    "p0035"
+  ],
+  "force": false,
+  "dry_run": false
+}

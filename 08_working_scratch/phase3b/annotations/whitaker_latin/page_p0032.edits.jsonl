@@ -35,3 +35,4 @@
 {"ts": "2026-05-16T13:38:39.139014+00:00", "page_id": "p0032", "scope": "line", "target_id": "p0032_body_l0031", "field": "notes", "before": "", "after": "πολιτεύεσθαι", "reviewer": "Paul Boys"}
 {"ts": "2026-05-16T13:38:39.139014+00:00", "page_id": "p0032", "scope": "line", "target_id": "p0032_body_l0031", "field": "review_status", "before": "draft", "after": "locked", "reviewer": "Paul Boys"}
 {"ts": "2026-05-16T13:38:39.139014+00:00", "page_id": "p0032", "scope": "line", "target_id": "p0032_body_l0032", "field": "review_status", "before": "draft", "after": "locked", "reviewer": "Paul Boys"}
+{"ts": "2026-05-18T00:26:34.541709+00:00", "page_id": "p0032", "scope": "line", "target_id": "p0032_body_l0001", "field": "review_status", "before": "draft", "after": "locked", "reviewer": "Paul Boys"}

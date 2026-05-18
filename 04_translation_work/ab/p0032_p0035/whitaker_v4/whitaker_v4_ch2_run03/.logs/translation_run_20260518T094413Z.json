@@ -1,0 +1,47 @@
+{
+  "started_at": "2026-05-18T09:44:13Z",
+  "part": "whitaker_v4/whitaker_v4_ch2_run03",
+  "start_page": 32,
+  "end_page": 35,
+  "lexicon_profile": "auto",
+  "dry_run": false,
+  "force": false,
+  "metadata_only": false,
+  "model": "claude-opus-4-7",
+  "prompt_version": "whitaker_v4",
+  "run_tag": "whitaker_v4_ch2_run03",
+  "pages": [
+    {
+      "page_id": "p0032",
+      "status": "error:malformed_json",
+      "skipped": [],
+      "translated": [],
+      "warnings": [],
+      "error_message": "Claude CLI exited with code 1: "
+    },
+    {
+      "page_id": "p0033",
+      "status": "error:malformed_json",
+      "skipped": [],
+      "translated": [],
+      "warnings": [],
+      "error_message": "Claude CLI exited with code 1: "
+    },
+    {
+      "page_id": "p0034",
+      "status": "error:malformed_json",
+      "skipped": [],
+      "translated": [],
+      "warnings": [],
+      "error_message": "Claude CLI exited with code 1: "
+    },
+    {
+      "page_id": "p0035",
+      "status": "error:malformed_json",
+      "skipped": [],
+      "translated": [],
+      "warnings": [],
+      "error_message": "Claude CLI exited with code 1: "
+    }
+  ]
+}

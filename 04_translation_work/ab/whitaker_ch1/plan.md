@@ -170,12 +170,21 @@ sprawl; we don't repeat it.
    patterns, Fitzgerald's specific lexical choices) gets demoted to
    corpus-skin or removed.
 3. **Cross-chapter generalization (added 2026-05-17).** Build
-   `chapter2_alignment.jsonl` for `c1_ch2` (Latin p0032–p0034 →
-   Parker p0044–p0047; chapter title `CAPVT SECVNDVM`). Run v4
-   on `c1_ch2` (3 runs), score against Parker. v4 passes the
-   generalization gate iff its `c1_ch2` aggregate mean is within
-   ~0.01 of its `c1_ch1` mean and no leakage pattern recurs. A
-   stark drop would signal that v4's wins were ch1-specific.
+   `chapter2_alignment.jsonl` for `c1_ch2`. Confirmed boundaries:
+   - Latin: `p0032_body_l0023` (`CAPVT SECVNDVM.`) through
+     `p0035_body_l0022` (`confirmabo.`). ~88 body lines across
+     3.5 pages (10 on p0032 + 33 on p0033 + 33 on p0034 + 22 on
+     p0035). Note: `p0032_body_l0001`–`l0022` are the ch1 tail
+     (questions 4/5/6 enumeration) and `p0035_body_l0023+`
+     (`CAPVT TERTIVM.`) is ch3 — both excluded.
+   - Parker: `p0043_body_l0006` (`CHAPTER II.`) through
+     `p0046_body_l0006`. ~85 body lines (16 on p0043 + 28 on
+     p0044 + 35 on p0045 + 6 on p0046).
+   Run v4 on `c1_ch2` (3 runs), score against Parker. v4 passes
+   the generalization gate iff its `c1_ch2` aggregate mean is
+   within ~0.01 of its `c1_ch1` mean and no leakage pattern
+   recurs. A stark drop would signal that v4's wins were
+   ch1-specific.
 4. Final shared-core prompt is locked only after the c1_ch2 check
    passes.
 

@@ -31,7 +31,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0032",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 1,
         "text_gold": "   Iubemur Scripturas ſcrutari: vnde ſpes nonnulla",
@@ -554,6 +554,6 @@
     ],
     "marginalia": []
   },
-  "source_pdf": "00_source_pdf/Disputatio_de_Sacra_Scriptura_contra_R_B_LATIN.pdf",
-  "section_id": "c1_ch2"
+  "section_id": "c1_ch2",
+  "source_pdf": "00_source_pdf/Disputatio_de_Sacra_Scriptura_contra_R_B_LATIN.pdf"
 }
