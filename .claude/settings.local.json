@@ -49,7 +49,9 @@
       "Bash(PYTHONIOENCODING=utf-8 head *)",
       "Bash(PYTHONIOENCODING=utf-8 grep *)",
       "Bash(PYTHONIOENCODING=utf-8 python whitaker_v4_ch2_score.py)",
-      "Bash(PYTHONIOENCODING=utf-8 tail *)"
+      "Bash(PYTHONIOENCODING=utf-8 tail *)",
+      "Bash(PYTHONIOENCODING=utf-8 python author_fidelity_judge.py --scores-jsonl ../../04_translation_work/ab/whitaker_ch1/whitaker_v4_ch2_unit_scores.jsonl --output ../../04_translation_work/ab/whitaker_ch1/whitaker_v4_ch2_fidelity_run01.jsonl)",
+      "Bash(PYTHONIOENCODING=utf-8 python *)"
     ]
   }
 }

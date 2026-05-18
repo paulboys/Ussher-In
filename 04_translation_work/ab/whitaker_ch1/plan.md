@@ -305,6 +305,31 @@ longer scores ⟦⟧/⟪⟫ usage.
 
 ## 12. Revision Log
 
+- **2026-05-18 (Phase 4 complete; v4 locked; moving to Phase 5).**
+  v4 evaluated on c1_ch2 (33 alignment units × 3 runs) with dual scoring:
+  - **COMET vs Parker (1849):** ch2 mean = 0.7074 vs ch1 mean = 0.7651
+    (-0.058). Phase 4's COMET-only gate (±0.01) FAILS.
+  - **LLM-judge author-fidelity (Sonnet 4.6, run01, 33 units):**
+    content_fidelity 4.48/5, register_fidelity 4.85/5, greek_preservation
+    5.00/5 (when applicable, n=10), paraphrase_handling 4.86/5 (when
+    applicable, n=7).
+  - **Cross-tab finding:** 8 of 33 units flagged "major" Parker
+    divergence (Parker dropped Greek script in patristic citations that
+    Whitaker wrote; v4 correctly preserved). Those 8 units have mean
+    COMET 0.6343 but PERFECT greek_preservation = 5.00. Excluding them,
+    the remaining 25 units mean COMET = 0.7252, ~0.025 below ch1.
+  - **Decision (user direction 2026-05-18):** accept the COMET drop as
+    a measurement artifact of the Parker-anchored metric; v4 remains
+    the locked working baseline. The user's stated criterion is
+    AUTHOR-fidelity (follow Whitaker, not Parker's editorial choices).
+    By that criterion v4 generalizes correctly to ch2.
+  - **Phase 4 outcome:** PASS on author-fidelity criterion. The
+    COMET-only gate is retired in favor of dual scoring (COMET for
+    deterministic context + LLM-judge for author-fidelity verdict).
+  - Artifacts: `whitaker_v4_ch2_unit_scores.jsonl`,
+    `whitaker_v4_ch2_fidelity_run01.jsonl`,
+    `whitaker_v4_ch2_combined_report.md`,
+    `author_fidelity_judge.py` (08_working_scratch/pipeline_scripts).
 - **2026-05-17 (Phase 3 closed; v4 locked as working baseline).**
   COMET-DA trajectory on `c1_ch1`: baseline 0.7494 → v2 0.7612 →
   v3 0.7557 (regressed) → v4 **0.7651** (+2.10% over baseline,

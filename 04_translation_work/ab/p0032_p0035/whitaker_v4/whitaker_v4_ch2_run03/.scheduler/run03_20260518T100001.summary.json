@@ -1,0 +1,11 @@
+﻿{
+    "started_at":  "2026-05-18T10:00:01.1470345-04:00",
+    "finished_at":  "2026-05-18T10:12:57.6043433-04:00",
+    "exit_code":  0,
+    "repo_root":  "C:\\Users\\User\\Documents\\UssherIn",
+    "python":  "C:\\Users\\User\\miniforge3\\envs\\ussher\\python.exe",
+    "command":  "C:\\Users\\User\\miniforge3\\envs\\ussher\\python.exe 08_working_scratch\\pipeline_scripts\\translate_segments.py --part whitaker_latin --start-page 32 --end-page 35 --prompt-version whitaker_v4 --run-tag whitaker_v4_ch2_run03",
+    "stdout":  "C:\\Users\\User\\Documents\\UssherIn\\04_translation_work\\ab\\p0032_p0035\\whitaker_v4\\whitaker_v4_ch2_run03\\.scheduler\\run03_20260518T100001.stdout.log",
+    "stderr":  "C:\\Users\\User\\Documents\\UssherIn\\04_translation_work\\ab\\p0032_p0035\\whitaker_v4\\whitaker_v4_ch2_run03\\.scheduler\\run03_20260518T100001.stderr.log",
+    "error":  null
+}
