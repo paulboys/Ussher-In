@@ -3973,3 +3973,511 @@ urllib.error.HTTPError: HTTP Error 503: Service Unavailable
 2026-05-17 22:20:33,080 - INFO - Received POST request to save page_id: p0035 edition: whitaker_latin
 2026-05-17 22:20:33,103 - INFO - Recorded 3 edits for page_id: p0035
 2026-05-17 22:20:33,110 - INFO - Successfully saved payload for page_id: p0035
+2026-05-18 21:59:18,137 - INFO - Received GET request for page_id: p0001 edition: None
+2026-05-18 21:59:18,145 - INFO - Successfully read payload for page_id: p0001
+2026-05-18 21:59:33,836 - INFO - Received GET request for page_id: p0002 edition: annals_english
+2026-05-18 21:59:33,837 - WARNING - Page not found: p0002
+2026-05-18 21:59:40,035 - INFO - Received GET request for page_id: p0003 edition: annals_english
+2026-05-18 21:59:40,036 - WARNING - Page not found: p0003
+2026-05-18 21:59:49,251 - INFO - Received GET request for page_id: p0004 edition: annals_english
+2026-05-18 21:59:49,252 - WARNING - Page not found: p0004
+2026-05-18 21:59:57,627 - INFO - Received GET request for page_id: p0005 edition: annals_english
+2026-05-18 21:59:57,627 - WARNING - Page not found: p0005
+2026-05-18 22:00:14,214 - INFO - Received GET request for page_id: p0020 edition: annals_english
+2026-05-18 22:00:14,226 - WARNING - Page not found: p0020
+2026-05-18 22:00:30,860 - INFO - Received GET request for page_id: p0021 edition: annals_english
+2026-05-18 22:00:30,874 - WARNING - Page not found: p0021
+2026-05-18 22:00:44,391 - INFO - Received GET request for page_id: p0022 edition: annals_english
+2026-05-18 22:00:44,391 - WARNING - Page not found: p0022
+2026-05-18 22:01:16,947 - INFO - Received GET request for page_id: p0002 edition: annals_latin
+2026-05-18 22:01:16,948 - WARNING - Page not found: p0002
+2026-05-18 22:01:18,062 - INFO - Received GET request for page_id: p0022 edition: annals_latin
+2026-05-18 22:01:18,063 - WARNING - Page not found: p0022
+2026-05-18 22:01:20,797 - INFO - Received GET request for page_id: p0002 edition: annals_latin
+2026-05-18 22:01:20,797 - WARNING - Page not found: p0002
+2026-05-18 22:01:21,687 - INFO - Received GET request for page_id: p0021 edition: annals_latin
+2026-05-18 22:01:21,687 - WARNING - Page not found: p0021
+2026-05-18 22:01:25,504 - INFO - Received GET request for page_id: p0022 edition: annals_latin
+2026-05-18 22:01:25,504 - WARNING - Page not found: p0022
+2026-05-18 22:01:29,622 - INFO - Received GET request for page_id: p0002 edition: annals_latin
+2026-05-18 22:01:29,622 - WARNING - Page not found: p0002
+2026-05-18 22:01:31,136 - INFO - Received GET request for page_id: p0030 edition: annals_latin
+2026-05-18 22:01:31,137 - WARNING - Page not found: p0030
+2026-05-18 22:01:48,659 - INFO - Received GET request for page_id: p0003 edition: annals_latin
+2026-05-18 22:01:48,660 - WARNING - Page not found: p0003
+2026-05-18 22:01:48,772 - INFO - Received GET request for page_id: p0035 edition: annals_latin
+2026-05-18 22:01:48,773 - WARNING - Page not found: p0035
+2026-05-18 22:01:49,537 - INFO - Received GET request for page_id: p0035 edition: annals_latin
+2026-05-18 22:01:49,537 - WARNING - Page not found: p0035
+2026-05-18 22:01:52,826 - INFO - Received GET request for page_id: p0003 edition: annals_latin
+2026-05-18 22:01:52,827 - WARNING - Page not found: p0003
+2026-05-18 22:01:53,344 - INFO - Received GET request for page_id: p0033 edition: annals_latin
+2026-05-18 22:01:53,344 - WARNING - Page not found: p0033
+2026-05-18 22:01:55,060 - INFO - Received GET request for page_id: p0034 edition: annals_latin
+2026-05-18 22:01:55,062 - WARNING - Page not found: p0034
+2026-05-18 22:01:56,310 - INFO - Received GET request for page_id: p0003 edition: annals_latin
+2026-05-18 22:01:56,326 - WARNING - Page not found: p0003
+2026-05-18 22:01:58,003 - INFO - Received GET request for page_id: p0035 edition: annals_latin
+2026-05-18 22:01:58,004 - WARNING - Page not found: p0035
+2026-05-18 22:02:01,421 - INFO - Received GET request for page_id: p0034 edition: annals_latin
+2026-05-18 22:02:01,422 - WARNING - Page not found: p0034
+2026-05-18 22:02:24,136 - INFO - Received GET request for page_id: p0001 edition: None
+2026-05-18 22:02:24,141 - INFO - Successfully read payload for page_id: p0001
+2026-05-18 22:02:37,682 - INFO - Received GET request for page_id: p0001 edition: annals_latin
+2026-05-18 22:02:37,682 - WARNING - Page not found: p0001
+2026-05-18 22:02:40,956 - INFO - Received GET request for page_id: p0035 edition: annals_latin
+2026-05-18 22:02:40,958 - WARNING - Page not found: p0035
+2026-05-18 22:03:17,061 - INFO - Received GET request for page_id: p0003 edition: annals_latin
+2026-05-18 22:03:17,062 - WARNING - Page not found: p0003
+2026-05-18 22:03:18,051 - INFO - Received GET request for page_id: p0080 edition: annals_latin
+2026-05-18 22:03:18,051 - WARNING - Page not found: p0080
+2026-05-18 22:03:21,406 - INFO - Received GET request for page_id: p0079 edition: annals_latin
+2026-05-18 22:03:21,406 - WARNING - Page not found: p0079
+2026-05-18 22:09:11,131 - INFO - Received GET request for page_id: p0007 edition: annals_latin
+2026-05-18 22:09:11,131 - WARNING - Page not found: p0007
+2026-05-18 22:09:12,872 - INFO - Received GET request for page_id: p0008 edition: annals_latin
+2026-05-18 22:09:12,872 - WARNING - Page not found: p0008
+2026-05-18 22:09:13,518 - INFO - Received GET request for page_id: p0085 edition: annals_latin
+2026-05-18 22:09:13,518 - WARNING - Page not found: p0085
+2026-05-18 22:17:14,715 - INFO - Received GET request for page_id: p0008 edition: annals_latin
+2026-05-18 22:17:14,715 - WARNING - Page not found: p0008
+2026-05-18 22:17:16,455 - INFO - Received GET request for page_id: p0003 edition: annals_latin
+2026-05-18 22:17:16,456 - WARNING - Page not found: p0003
+2026-05-18 22:17:17,160 - INFO - Received GET request for page_id: p0376 edition: annals_latin
+2026-05-18 22:17:17,160 - WARNING - Page not found: p0376
+2026-05-18 22:17:17,168 - INFO - Received GET request for page_id: p0376 edition: annals_latin
+2026-05-18 22:17:17,169 - WARNING - Page not found: p0376
+2026-05-18 22:17:21,588 - INFO - Received GET request for page_id: p0375 edition: annals_latin
+2026-05-18 22:17:21,589 - WARNING - Page not found: p0375
+2026-05-18 22:17:26,908 - INFO - Received GET request for page_id: p0376 edition: annals_latin
+2026-05-18 22:17:26,908 - WARNING - Page not found: p0376
+2026-05-18 22:17:40,590 - INFO - Received GET request for page_id: p0377 edition: annals_latin
+2026-05-18 22:17:40,590 - WARNING - Page not found: p0377
+2026-05-18 22:17:41,317 - INFO - Received GET request for page_id: p0378 edition: annals_latin
+2026-05-18 22:17:41,318 - WARNING - Page not found: p0378
+2026-05-18 22:17:41,334 - INFO - Received GET request for page_id: p0379 edition: annals_latin
+2026-05-18 22:17:41,334 - WARNING - Page not found: p0379
+2026-05-18 22:17:41,337 - INFO - Received GET request for page_id: p0380 edition: annals_latin
+2026-05-18 22:17:41,338 - WARNING - Page not found: p0380
+2026-05-18 22:17:41,411 - INFO - Received GET request for page_id: p0381 edition: annals_latin
+2026-05-18 22:17:41,411 - WARNING - Page not found: p0381
+2026-05-18 22:17:45,742 - INFO - Received GET request for page_id: p0382 edition: annals_latin
+2026-05-18 22:17:45,742 - WARNING - Page not found: p0382
+2026-05-18 22:17:46,380 - INFO - Received GET request for page_id: p0383 edition: annals_latin
+2026-05-18 22:17:46,381 - WARNING - Page not found: p0383
+2026-05-18 22:17:51,505 - INFO - Received GET request for page_id: p0384 edition: annals_latin
+2026-05-18 22:17:51,506 - WARNING - Page not found: p0384
+2026-05-18 22:18:00,817 - INFO - Starting OCR job for page p0384 using Gemini.
+2026-05-18 22:18:00,828 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\Annales_Novi_Testamenti_-_Annals_of_the_World_Vol_II.pdf --part annals_latin --start-page 384 --end-page 384 --ocr-engine gemini
+2026-05-18 22:18:06,388 - INFO - Subprocess stdout: 
+2026-05-18 22:18:06,388 - ERROR - Subprocess stderr: usage: pilot_ocr.py [-h] --pdf PDF --part
+                    {part1,part2,whitaker_english,whitaker_latin} --start-page
+                    START_PAGE --end-page END_PAGE [--output-root OUTPUT_ROOT]
+                    [--ocr-engine {gemini,kraken,tesseract}]
+                    [--provider-config PROVIDER_CONFIG]
+                    [--kraken-model KRAKEN_MODEL]
+                    [--tessdata-dir TESSDATA_DIR] [--lang LANG]
+                    [--tesseract-cmd TESSERACT_CMD] [--body-psm BODY_PSM]
+                    [--footnote-psm FOOTNOTE_PSM] [--split-footnotes]
+                    [--footnote-top-ratio FOOTNOTE_TOP_RATIO]
+                    [--normalize-open-c] [--normalize-ae]
+pilot_ocr.py: error: argument --part: invalid choice: 'annals_latin' (choose from 'part1', 'part2', 'whitaker_english', 'whitaker_latin')
+
+2026-05-18 22:23:47,577 - INFO - Received GET request for page_id: p0001 edition: None
+2026-05-18 22:23:47,580 - INFO - Successfully read payload for page_id: p0001
+2026-05-18 22:23:57,291 - INFO - Received GET request for page_id: p0003 edition: annals_latin
+2026-05-18 22:23:57,291 - WARNING - Page not found: p0003
+2026-05-18 22:23:58,598 - INFO - Received GET request for page_id: p0382 edition: annals_latin
+2026-05-18 22:23:58,598 - WARNING - Page not found: p0382
+2026-05-18 22:23:58,598 - INFO - Received GET request for page_id: p0382 edition: annals_latin
+2026-05-18 22:23:58,623 - WARNING - Page not found: p0382
+2026-05-18 22:24:02,175 - INFO - Received GET request for page_id: p0381 edition: annals_latin
+2026-05-18 22:24:02,176 - WARNING - Page not found: p0381
+2026-05-18 22:24:04,985 - INFO - Received GET request for page_id: p0382 edition: annals_latin
+2026-05-18 22:24:04,985 - WARNING - Page not found: p0382
+2026-05-18 22:24:05,011 - INFO - Received GET request for page_id: p0382 edition: annals_latin
+2026-05-18 22:24:05,014 - WARNING - Page not found: p0382
+2026-05-18 22:24:07,854 - INFO - Received GET request for page_id: p0381 edition: annals_latin
+2026-05-18 22:24:07,855 - WARNING - Page not found: p0381
+2026-05-18 22:24:13,698 - INFO - Received GET request for page_id: p0382 edition: annals_latin
+2026-05-18 22:24:13,698 - WARNING - Page not found: p0382
+2026-05-18 22:24:24,962 - INFO - Received GET request for page_id: p0383 edition: annals_latin
+2026-05-18 22:24:24,962 - WARNING - Page not found: p0383
+2026-05-18 22:24:51,201 - INFO - Received GET request for page_id: p0384 edition: annals_latin
+2026-05-18 22:24:51,218 - WARNING - Page not found: p0384
+2026-05-18 22:24:59,799 - INFO - Starting OCR job for page p0384 using Gemini.
+2026-05-18 22:24:59,799 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\Annales_Novi_Testamenti_-_Annals_of_the_World_Vol_II.pdf --part annals_latin --start-page 384 --end-page 384 --ocr-engine gemini
+2026-05-18 22:25:41,865 - INFO - Subprocess stdout: Gemini OCR written to 01_raw_ocr_output\annals_latin\annals_latin_pilot_ocr.json
+
+2026-05-18 22:25:41,878 - INFO - OCR job completed successfully for page p0384.
+2026-05-18 22:25:44,098 - INFO - Received GET request for page_id: p0384 edition: annals_latin
+2026-05-18 22:25:44,100 - INFO - Successfully read payload for page_id: p0384
+2026-05-18 22:25:48,202 - INFO - Received POST request to save page_id: p0384 edition: annals_latin
+2026-05-18 22:25:48,205 - INFO - Recorded 0 edits for page_id: p0384
+2026-05-18 22:25:48,216 - INFO - Successfully saved payload for page_id: p0384
+2026-05-18 22:26:10,740 - INFO - Received GET request for page_id: p0385 edition: annals_latin
+2026-05-18 22:26:10,741 - WARNING - Page not found: p0385
+2026-05-18 22:26:10,773 - INFO - Received GET request for page_id: p0385 edition: annals_latin
+2026-05-18 22:26:10,774 - WARNING - Page not found: p0385
+2026-05-18 22:26:12,751 - INFO - Starting OCR job for page p0385 using Gemini.
+2026-05-18 22:26:12,751 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\Annales_Novi_Testamenti_-_Annals_of_the_World_Vol_II.pdf --part annals_latin --start-page 385 --end-page 385 --ocr-engine gemini
+2026-05-18 22:26:14,745 - INFO - Received GET request for page_id: p0384 edition: annals_latin
+2026-05-18 22:26:14,769 - INFO - Successfully read payload for page_id: p0384
+2026-05-18 22:26:18,628 - INFO - Received GET request for page_id: p0385 edition: annals_latin
+2026-05-18 22:26:18,629 - WARNING - Page not found: p0385
+2026-05-18 22:26:50,972 - INFO - Received POST request to save page_id: p0385 edition: annals_latin
+2026-05-18 22:26:50,973 - WARNING - Page not found for saving: p0385
+2026-05-18 22:26:52,503 - INFO - Subprocess stdout: Gemini OCR written to 01_raw_ocr_output\annals_latin\annals_latin_pilot_ocr.json
+
+2026-05-18 22:26:52,503 - INFO - OCR job completed successfully for page p0385.
+2026-05-18 22:26:53,118 - INFO - Received GET request for page_id: p0385 edition: annals_latin
+2026-05-18 22:26:53,120 - INFO - Successfully read payload for page_id: p0385
+2026-05-18 22:27:01,278 - INFO - Received GET request for page_id: p0386 edition: annals_latin
+2026-05-18 22:27:01,279 - WARNING - Page not found: p0386
+2026-05-18 22:27:04,944 - INFO - Received GET request for page_id: p0385 edition: annals_latin
+2026-05-18 22:27:04,953 - INFO - Successfully read payload for page_id: p0385
+2026-05-18 22:27:11,874 - INFO - Starting OCR job for page p0385 using Gemini.
+2026-05-18 22:27:11,877 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\Annales_Novi_Testamenti_-_Annals_of_the_World_Vol_II.pdf --part annals_latin --start-page 385 --end-page 385 --ocr-engine gemini
+2026-05-18 22:27:49,457 - INFO - Subprocess stdout: Gemini OCR written to 01_raw_ocr_output\annals_latin\annals_latin_pilot_ocr.json
+
+2026-05-18 22:27:49,473 - INFO - OCR job completed successfully for page p0385.
+2026-05-18 22:27:52,129 - INFO - Received GET request for page_id: p0385 edition: annals_latin
+2026-05-18 22:27:52,131 - INFO - Successfully read payload for page_id: p0385
+2026-05-18 22:28:00,803 - INFO - Received GET request for page_id: p0386 edition: annals_latin
+2026-05-18 22:28:00,803 - WARNING - Page not found: p0386
+2026-05-18 22:28:00,834 - INFO - Received GET request for page_id: p0386 edition: annals_latin
+2026-05-18 22:28:00,835 - WARNING - Page not found: p0386
+2026-05-18 22:28:05,519 - INFO - Received GET request for page_id: p0385 edition: annals_latin
+2026-05-18 22:28:05,521 - INFO - Successfully read payload for page_id: p0385
+2026-05-18 22:28:09,303 - INFO - Received GET request for page_id: p0386 edition: annals_latin
+2026-05-18 22:28:09,303 - WARNING - Page not found: p0386
+2026-05-18 22:28:13,119 - INFO - Starting OCR job for page p0386 using Gemini.
+2026-05-18 22:28:13,124 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\Annales_Novi_Testamenti_-_Annals_of_the_World_Vol_II.pdf --part annals_latin --start-page 386 --end-page 386 --ocr-engine gemini
+2026-05-18 22:28:48,474 - INFO - Subprocess stdout: Gemini OCR written to 01_raw_ocr_output\annals_latin\annals_latin_pilot_ocr.json
+
+2026-05-18 22:28:48,489 - INFO - OCR job completed successfully for page p0386.
+2026-05-18 22:28:49,354 - INFO - Received GET request for page_id: p0386 edition: annals_latin
+2026-05-18 22:28:49,355 - INFO - Successfully read payload for page_id: p0386
+2026-05-18 22:55:32,560 - INFO - Received POST request to save page_id: p0386 edition: annals_latin
+2026-05-18 22:55:32,560 - INFO - Recorded 0 edits for page_id: p0386
+2026-05-18 22:55:32,592 - INFO - Successfully saved payload for page_id: p0386
+2026-05-18 22:55:49,564 - INFO - Received GET request for page_id: p0387 edition: annals_latin
+2026-05-18 22:55:49,565 - WARNING - Page not found: p0387
+2026-05-18 22:55:53,464 - INFO - Starting OCR job for page p0387 using Gemini.
+2026-05-18 22:55:53,464 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\Annales_Novi_Testamenti_-_Annals_of_the_World_Vol_II.pdf --part annals_latin --start-page 387 --end-page 387 --ocr-engine gemini
+2026-05-18 22:56:35,426 - INFO - Subprocess stdout: Gemini OCR written to 01_raw_ocr_output\annals_latin\annals_latin_pilot_ocr.json
+
+2026-05-18 22:56:35,433 - INFO - OCR job completed successfully for page p0387.
+2026-05-18 22:56:37,722 - INFO - Received GET request for page_id: p0387 edition: annals_latin
+2026-05-18 22:56:37,724 - INFO - Successfully read payload for page_id: p0387
+2026-05-18 22:56:43,670 - INFO - Received POST request to save page_id: p0387 edition: annals_latin
+2026-05-18 22:56:43,672 - INFO - Recorded 0 edits for page_id: p0387
+2026-05-18 22:56:43,684 - INFO - Successfully saved payload for page_id: p0387
+2026-05-18 22:56:47,198 - INFO - Received GET request for page_id: p0386 edition: annals_latin
+2026-05-18 22:56:47,201 - INFO - Successfully read payload for page_id: p0386
+2026-05-18 22:56:47,272 - INFO - Received GET request for page_id: p0386 edition: annals_latin
+2026-05-18 22:56:47,273 - INFO - Successfully read payload for page_id: p0386
+2026-05-18 22:56:49,305 - INFO - Received GET request for page_id: p0385 edition: annals_latin
+2026-05-18 22:56:49,308 - INFO - Successfully read payload for page_id: p0385
+2026-05-18 22:56:49,392 - INFO - Received GET request for page_id: p0385 edition: annals_latin
+2026-05-18 22:56:49,393 - INFO - Successfully read payload for page_id: p0385
+2026-05-18 22:56:56,155 - INFO - Received GET request for page_id: p0384 edition: annals_latin
+2026-05-18 22:56:56,157 - INFO - Successfully read payload for page_id: p0384
+2026-05-18 22:56:56,232 - INFO - Received GET request for page_id: p0384 edition: annals_latin
+2026-05-18 22:56:56,232 - INFO - Successfully read payload for page_id: p0384
+2026-05-18 22:57:03,915 - INFO - Received GET request for page_id: p0385 edition: annals_latin
+2026-05-18 22:57:03,919 - INFO - Successfully read payload for page_id: p0385
+2026-05-18 22:57:03,977 - INFO - Received GET request for page_id: p0385 edition: annals_latin
+2026-05-18 22:57:03,979 - INFO - Successfully read payload for page_id: p0385
+2026-05-18 22:57:04,154 - INFO - Received GET request for page_id: p0386 edition: annals_latin
+2026-05-18 22:57:04,156 - INFO - Successfully read payload for page_id: p0386
+2026-05-18 22:57:04,367 - INFO - Received GET request for page_id: p0387 edition: annals_latin
+2026-05-18 22:57:04,395 - INFO - Successfully read payload for page_id: p0387
+2026-05-18 22:57:04,459 - INFO - Received GET request for page_id: p0387 edition: annals_latin
+2026-05-18 22:57:04,461 - INFO - Successfully read payload for page_id: p0387
+2026-05-18 22:57:08,418 - INFO - Received GET request for page_id: p0388 edition: annals_latin
+2026-05-18 22:57:08,418 - WARNING - Page not found: p0388
+2026-05-18 22:57:13,620 - INFO - Starting OCR job for page p0388 using Gemini.
+2026-05-18 22:57:13,620 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\Annales_Novi_Testamenti_-_Annals_of_the_World_Vol_II.pdf --part annals_latin --start-page 388 --end-page 388 --ocr-engine gemini
+2026-05-18 22:58:01,059 - INFO - Subprocess stdout: Gemini OCR written to 01_raw_ocr_output\annals_latin\annals_latin_pilot_ocr.json
+
+2026-05-18 22:58:01,066 - INFO - OCR job completed successfully for page p0388.
+2026-05-18 22:58:05,364 - INFO - Received GET request for page_id: p0388 edition: annals_latin
+2026-05-18 22:58:05,366 - INFO - Successfully read payload for page_id: p0388
+2026-05-18 23:06:35,028 - INFO - Received GET request for page_id: p0387 edition: annals_latin
+2026-05-18 23:06:35,030 - INFO - Successfully read payload for page_id: p0387
+2026-05-18 23:06:35,124 - INFO - Received GET request for page_id: p0387 edition: annals_latin
+2026-05-18 23:06:35,126 - INFO - Successfully read payload for page_id: p0387
+2026-05-18 23:06:42,805 - INFO - Received GET request for page_id: p0386 edition: annals_latin
+2026-05-18 23:06:42,807 - INFO - Successfully read payload for page_id: p0386
+2026-05-18 23:06:42,876 - INFO - Received GET request for page_id: p0386 edition: annals_latin
+2026-05-18 23:06:42,877 - INFO - Successfully read payload for page_id: p0386
+2026-05-18 23:06:44,331 - INFO - Received GET request for page_id: p0385 edition: annals_latin
+2026-05-18 23:06:44,335 - INFO - Successfully read payload for page_id: p0385
+2026-05-18 23:06:44,831 - INFO - Received GET request for page_id: p0385 edition: annals_latin
+2026-05-18 23:06:44,832 - INFO - Successfully read payload for page_id: p0385
+2026-05-18 23:06:49,293 - INFO - Received GET request for page_id: p0384 edition: annals_latin
+2026-05-18 23:06:49,295 - INFO - Successfully read payload for page_id: p0384
+2026-05-18 23:06:49,373 - INFO - Received GET request for page_id: p0384 edition: annals_latin
+2026-05-18 23:06:49,375 - INFO - Successfully read payload for page_id: p0384
+2026-05-18 23:11:41,287 - INFO - Received GET request for page_id: p0385 edition: annals_latin
+2026-05-18 23:11:41,289 - INFO - Successfully read payload for page_id: p0385
+2026-05-18 23:11:42,657 - INFO - Received GET request for page_id: p0386 edition: annals_latin
+2026-05-18 23:11:42,659 - INFO - Successfully read payload for page_id: p0386
+2026-05-18 23:11:42,895 - INFO - Received GET request for page_id: p0387 edition: annals_latin
+2026-05-18 23:11:42,897 - INFO - Successfully read payload for page_id: p0387
+2026-05-18 23:11:42,984 - INFO - Received GET request for page_id: p0387 edition: annals_latin
+2026-05-18 23:11:42,986 - INFO - Successfully read payload for page_id: p0387
+2026-05-18 23:11:43,765 - INFO - Received GET request for page_id: p0388 edition: annals_latin
+2026-05-18 23:11:43,767 - INFO - Successfully read payload for page_id: p0388
+2026-05-18 23:11:43,811 - INFO - Received GET request for page_id: p0388 edition: annals_latin
+2026-05-18 23:11:43,812 - INFO - Successfully read payload for page_id: p0388
+2026-05-18 23:11:45,245 - INFO - Received GET request for page_id: p0389 edition: annals_latin
+2026-05-18 23:11:45,246 - WARNING - Page not found: p0389
+2026-05-18 23:11:49,039 - INFO - Received GET request for page_id: p0388 edition: annals_latin
+2026-05-18 23:11:49,039 - INFO - Successfully read payload for page_id: p0388
+2026-05-18 23:11:53,405 - INFO - Received GET request for page_id: p0389 edition: annals_latin
+2026-05-18 23:11:53,406 - WARNING - Page not found: p0389
+2026-05-18 23:11:59,867 - INFO - Received GET request for page_id: p0388 edition: annals_latin
+2026-05-18 23:11:59,868 - INFO - Successfully read payload for page_id: p0388
+2026-05-18 23:13:55,406 - INFO - Received GET request for page_id: p0038 edition: annals_english
+2026-05-18 23:13:55,406 - WARNING - Page not found: p0038
+2026-05-18 23:13:56,934 - INFO - Received GET request for page_id: p0006 edition: annals_english
+2026-05-18 23:13:56,935 - WARNING - Page not found: p0006
+2026-05-18 23:13:57,656 - INFO - Received GET request for page_id: p0068 edition: annals_english
+2026-05-18 23:13:57,657 - WARNING - Page not found: p0068
+2026-05-18 23:13:58,380 - INFO - Received GET request for page_id: p0682 edition: annals_english
+2026-05-18 23:13:58,380 - WARNING - Page not found: p0682
+2026-05-18 23:14:02,086 - INFO - Received GET request for page_id: p0681 edition: annals_english
+2026-05-18 23:14:02,086 - WARNING - Page not found: p0681
+2026-05-18 23:14:08,580 - INFO - Received GET request for page_id: p0068 edition: annals_english
+2026-05-18 23:14:08,580 - WARNING - Page not found: p0068
+2026-05-18 23:14:09,298 - INFO - Received GET request for page_id: p0006 edition: annals_english
+2026-05-18 23:14:09,298 - WARNING - Page not found: p0006
+2026-05-18 23:14:10,183 - INFO - Received GET request for page_id: p0069 edition: annals_english
+2026-05-18 23:14:10,183 - WARNING - Page not found: p0069
+2026-05-18 23:14:10,830 - INFO - Received GET request for page_id: p0695 edition: annals_english
+2026-05-18 23:14:10,830 - WARNING - Page not found: p0695
+2026-05-18 23:14:10,830 - INFO - Received GET request for page_id: p0695 edition: annals_english
+2026-05-18 23:14:10,830 - WARNING - Page not found: p0695
+2026-05-18 23:14:17,658 - INFO - Received GET request for page_id: p0694 edition: annals_english
+2026-05-18 23:14:17,659 - WARNING - Page not found: p0694
+2026-05-18 23:14:22,513 - INFO - Received GET request for page_id: p0695 edition: annals_english
+2026-05-18 23:14:22,514 - WARNING - Page not found: p0695
+2026-05-18 23:14:32,229 - INFO - Starting OCR job for page p0695 using Gemini.
+2026-05-18 23:14:32,234 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\The_Annals_of_the_World_1658_English.pdf --part annals_english --start-page 695 --end-page 695 --ocr-engine gemini
+2026-05-18 23:15:24,837 - INFO - Subprocess stdout: Gemini OCR written to 01_raw_ocr_output\annals_english\annals_english_pilot_ocr.json
+
+2026-05-18 23:15:24,871 - INFO - OCR job completed successfully for page p0695.
+2026-05-18 23:15:28,530 - INFO - Received GET request for page_id: p0695 edition: annals_english
+2026-05-18 23:15:28,532 - INFO - Successfully read payload for page_id: p0695
+2026-05-18 23:15:34,405 - INFO - Received POST request to save page_id: p0695 edition: annals_english
+2026-05-18 23:15:34,407 - INFO - Recorded 0 edits for page_id: p0695
+2026-05-18 23:15:34,417 - INFO - Successfully saved payload for page_id: p0695
+2026-05-18 23:15:36,911 - INFO - Received GET request for page_id: p0696 edition: annals_english
+2026-05-18 23:15:36,912 - WARNING - Page not found: p0696
+2026-05-18 23:15:39,404 - INFO - Starting OCR job for page p0696 using Gemini.
+2026-05-18 23:15:39,405 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\The_Annals_of_the_World_1658_English.pdf --part annals_english --start-page 696 --end-page 696 --ocr-engine gemini
+2026-05-18 23:16:30,301 - INFO - Subprocess stdout: Gemini OCR written to 01_raw_ocr_output\annals_english\annals_english_pilot_ocr.json
+
+2026-05-18 23:16:30,323 - INFO - OCR job completed successfully for page p0696.
+2026-05-18 23:16:33,394 - INFO - Received GET request for page_id: p0696 edition: annals_english
+2026-05-18 23:16:33,396 - INFO - Successfully read payload for page_id: p0696
+2026-05-18 23:16:44,525 - INFO - Received POST request to save page_id: p0696 edition: annals_english
+2026-05-18 23:16:44,532 - INFO - Recorded 0 edits for page_id: p0696
+2026-05-18 23:16:44,553 - INFO - Successfully saved payload for page_id: p0696
+2026-05-18 23:16:47,227 - INFO - Received GET request for page_id: p0697 edition: annals_english
+2026-05-18 23:16:47,228 - WARNING - Page not found: p0697
+2026-05-18 23:16:49,606 - INFO - Starting OCR job for page p0697 using Gemini.
+2026-05-18 23:16:49,606 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\The_Annals_of_the_World_1658_English.pdf --part annals_english --start-page 697 --end-page 697 --ocr-engine gemini
+2026-05-18 23:17:46,545 - INFO - Subprocess stdout: Gemini OCR written to 01_raw_ocr_output\annals_english\annals_english_pilot_ocr.json
+
+2026-05-18 23:17:47,064 - INFO - OCR job completed successfully for page p0697.
+2026-05-18 23:17:48,487 - INFO - Received GET request for page_id: p0697 edition: annals_english
+2026-05-18 23:17:48,489 - INFO - Successfully read payload for page_id: p0697
+2026-05-18 23:18:03,006 - INFO - Received POST request to save page_id: p0697 edition: annals_english
+2026-05-18 23:18:03,011 - INFO - Recorded 0 edits for page_id: p0697
+2026-05-18 23:18:03,037 - INFO - Successfully saved payload for page_id: p0697
+2026-05-18 23:18:08,657 - INFO - Received GET request for page_id: p0698 edition: annals_english
+2026-05-18 23:18:08,658 - WARNING - Page not found: p0698
+2026-05-18 23:18:12,719 - INFO - Received GET request for page_id: p0697 edition: annals_english
+2026-05-18 23:18:12,733 - INFO - Successfully read payload for page_id: p0697
+2026-05-18 23:18:15,191 - INFO - Received GET request for page_id: p0698 edition: annals_english
+2026-05-18 23:18:15,192 - WARNING - Page not found: p0698
+2026-05-18 23:18:18,534 - INFO - Starting OCR job for page p0698 using Gemini.
+2026-05-18 23:18:18,534 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\The_Annals_of_the_World_1658_English.pdf --part annals_english --start-page 698 --end-page 698 --ocr-engine gemini
+2026-05-18 23:19:14,722 - INFO - Subprocess stdout: Gemini OCR written to 01_raw_ocr_output\annals_english\annals_english_pilot_ocr.json
+
+2026-05-18 23:19:14,738 - INFO - OCR job completed successfully for page p0698.
+2026-05-18 23:19:19,370 - INFO - Received GET request for page_id: p0698 edition: annals_english
+2026-05-18 23:19:19,370 - INFO - Successfully read payload for page_id: p0698
+2026-05-18 23:19:47,397 - INFO - Received POST request to save page_id: p0698 edition: annals_english
+2026-05-18 23:19:47,402 - INFO - Recorded 0 edits for page_id: p0698
+2026-05-18 23:19:47,417 - INFO - Successfully saved payload for page_id: p0698
+2026-05-18 23:20:40,964 - INFO - Received GET request for page_id: p0697 edition: annals_english
+2026-05-18 23:20:40,966 - INFO - Successfully read payload for page_id: p0697
+2026-05-18 23:20:41,047 - INFO - Received GET request for page_id: p0697 edition: annals_english
+2026-05-18 23:20:41,049 - INFO - Successfully read payload for page_id: p0697
+2026-05-18 23:20:42,720 - INFO - Received GET request for page_id: p0698 edition: annals_english
+2026-05-18 23:20:42,741 - INFO - Successfully read payload for page_id: p0698
+2026-05-18 23:20:42,791 - INFO - Received GET request for page_id: p0698 edition: annals_english
+2026-05-18 23:20:42,793 - INFO - Successfully read payload for page_id: p0698
+2026-05-18 23:20:46,553 - INFO - Received GET request for page_id: p0699 edition: annals_english
+2026-05-18 23:20:46,555 - WARNING - Page not found: p0699
+2026-05-18 23:20:49,374 - INFO - Starting OCR job for page p0699 using Gemini.
+2026-05-18 23:20:49,381 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\The_Annals_of_the_World_1658_English.pdf --part annals_english --start-page 699 --end-page 699 --ocr-engine gemini
+2026-05-18 23:21:24,016 - INFO - Received POST request to save page_id: p0699 edition: annals_english
+2026-05-18 23:21:24,016 - WARNING - Page not found for saving: p0699
+2026-05-18 23:21:43,448 - INFO - Subprocess stdout: Gemini OCR written to 01_raw_ocr_output\annals_english\annals_english_pilot_ocr.json
+
+2026-05-18 23:21:43,457 - INFO - OCR job completed successfully for page p0699.
+2026-05-18 23:21:43,914 - INFO - Received GET request for page_id: p0699 edition: annals_english
+2026-05-18 23:21:43,916 - INFO - Successfully read payload for page_id: p0699
+2026-05-18 23:21:45,902 - INFO - Received POST request to save page_id: p0699 edition: annals_english
+2026-05-18 23:21:45,906 - INFO - Recorded 0 edits for page_id: p0699
+2026-05-18 23:21:45,923 - INFO - Successfully saved payload for page_id: p0699
+2026-05-19 05:36:31,088 - INFO - Received GET request for page_id: p0698 edition: annals_english
+2026-05-19 05:36:31,099 - INFO - Successfully read payload for page_id: p0698
+2026-05-19 05:36:31,180 - INFO - Received GET request for page_id: p0698 edition: annals_english
+2026-05-19 05:36:31,182 - INFO - Successfully read payload for page_id: p0698
+2026-05-19 05:36:34,303 - INFO - Received GET request for page_id: p0697 edition: annals_english
+2026-05-19 05:36:34,307 - INFO - Successfully read payload for page_id: p0697
+2026-05-19 05:36:35,971 - INFO - Received GET request for page_id: p0696 edition: annals_english
+2026-05-19 05:36:35,974 - INFO - Successfully read payload for page_id: p0696
+2026-05-19 05:36:38,735 - INFO - Received GET request for page_id: p0695 edition: annals_english
+2026-05-19 05:36:38,739 - INFO - Successfully read payload for page_id: p0695
+2026-05-19 05:36:44,585 - INFO - Received GET request for page_id: p0694 edition: annals_english
+2026-05-19 05:36:44,586 - WARNING - Page not found: p0694
+2026-05-19 05:36:48,233 - INFO - Received GET request for page_id: p0695 edition: annals_english
+2026-05-19 05:36:48,236 - INFO - Successfully read payload for page_id: p0695
+2026-05-19 05:39:55,511 - INFO - Received POST request to save page_id: p0695 edition: annals_english
+2026-05-19 05:39:55,528 - INFO - Recorded 5 edits for page_id: p0695
+2026-05-19 05:39:55,537 - INFO - Successfully saved payload for page_id: p0695
+2026-05-19 05:46:17,582 - INFO - Received POST request to save page_id: p0695 edition: annals_english
+2026-05-19 05:46:17,604 - INFO - Recorded 21 edits for page_id: p0695
+2026-05-19 05:46:17,622 - INFO - Successfully saved payload for page_id: p0695
+2026-05-19 05:55:44,000 - INFO - Received POST request to save page_id: p0695 edition: annals_english
+2026-05-19 05:55:44,024 - INFO - Recorded 25 edits for page_id: p0695
+2026-05-19 05:55:44,037 - INFO - Successfully saved payload for page_id: p0695
+2026-05-19 06:00:29,604 - INFO - Received POST request to save page_id: p0695 edition: annals_english
+2026-05-19 06:00:29,627 - INFO - Recorded 4 edits for page_id: p0695
+2026-05-19 06:00:29,642 - INFO - Successfully saved payload for page_id: p0695
+2026-05-19 06:11:42,134 - INFO - Received POST request to save page_id: p0695 edition: annals_english
+2026-05-19 06:11:42,161 - INFO - Recorded 11 edits for page_id: p0695
+2026-05-19 06:11:42,169 - INFO - Successfully saved payload for page_id: p0695
+2026-05-19 06:13:52,094 - INFO - Received POST request to save page_id: p0695 edition: annals_english
+2026-05-19 06:13:52,119 - INFO - Recorded 9 edits for page_id: p0695
+2026-05-19 06:13:52,128 - INFO - Successfully saved payload for page_id: p0695
+2026-05-19 06:16:54,581 - INFO - Received GET request for page_id: p0696 edition: annals_english
+2026-05-19 06:16:54,581 - INFO - Successfully read payload for page_id: p0696
+2026-05-19 06:16:54,597 - INFO - Received GET request for page_id: p0696 edition: annals_english
+2026-05-19 06:16:54,597 - INFO - Successfully read payload for page_id: p0696
+2026-05-19 06:16:55,015 - INFO - Received GET request for page_id: p0697 edition: annals_english
+2026-05-19 06:16:55,023 - INFO - Successfully read payload for page_id: p0697
+2026-05-19 06:16:55,060 - INFO - Received GET request for page_id: p0697 edition: annals_english
+2026-05-19 06:16:55,062 - INFO - Successfully read payload for page_id: p0697
+2026-05-19 06:16:56,105 - INFO - Received GET request for page_id: p0698 edition: annals_english
+2026-05-19 06:16:56,108 - INFO - Successfully read payload for page_id: p0698
+2026-05-19 06:16:56,142 - INFO - Received GET request for page_id: p0698 edition: annals_english
+2026-05-19 06:16:56,144 - INFO - Successfully read payload for page_id: p0698
+2026-05-19 06:17:51,546 - INFO - Received GET request for page_id: p0697 edition: annals_english
+2026-05-19 06:17:51,548 - INFO - Successfully read payload for page_id: p0697
+2026-05-19 06:17:51,717 - INFO - Received GET request for page_id: p0697 edition: annals_english
+2026-05-19 06:17:51,717 - INFO - Successfully read payload for page_id: p0697
+2026-05-19 06:20:49,490 - INFO - Received GET request for page_id: p0696 edition: annals_english
+2026-05-19 06:20:49,500 - INFO - Successfully read payload for page_id: p0696
+2026-05-19 06:20:49,770 - INFO - Received GET request for page_id: p0696 edition: annals_english
+2026-05-19 06:20:49,772 - INFO - Successfully read payload for page_id: p0696
+2026-05-19 06:20:56,385 - INFO - Received GET request for page_id: p0695 edition: annals_english
+2026-05-19 06:20:56,433 - INFO - Successfully read payload for page_id: p0695
+2026-05-19 06:20:56,445 - INFO - Received GET request for page_id: p0695 edition: annals_english
+2026-05-19 06:20:56,449 - INFO - Successfully read payload for page_id: p0695
+2026-05-19 06:25:44,521 - INFO - Received GET request for page_id: p0694 edition: annals_english
+2026-05-19 06:25:44,525 - WARNING - Page not found: p0694
+2026-05-19 06:25:44,714 - INFO - Received GET request for page_id: p0694 edition: annals_english
+2026-05-19 06:25:44,714 - WARNING - Page not found: p0694
+2026-05-19 06:25:45,981 - INFO - Received GET request for page_id: p0695 edition: annals_english
+2026-05-19 06:25:46,015 - INFO - Successfully read payload for page_id: p0695
+2026-05-19 06:25:46,680 - INFO - Received GET request for page_id: p0695 edition: annals_english
+2026-05-19 06:25:46,680 - INFO - Successfully read payload for page_id: p0695
+2026-05-19 06:25:53,013 - INFO - Received GET request for page_id: p0694 edition: annals_english
+2026-05-19 06:25:53,013 - WARNING - Page not found: p0694
+2026-05-19 06:25:57,125 - INFO - Received GET request for page_id: p0695 edition: annals_english
+2026-05-19 06:25:57,127 - INFO - Successfully read payload for page_id: p0695
+2026-05-19 06:25:57,158 - INFO - Received GET request for page_id: p0695 edition: annals_english
+2026-05-19 06:25:57,161 - INFO - Successfully read payload for page_id: p0695
+2026-05-19 06:33:02,781 - INFO - Received POST request to save page_id: p0695 edition: annals_english
+2026-05-19 06:33:02,799 - INFO - Recorded 2 edits for page_id: p0695
+2026-05-19 06:33:02,820 - INFO - Successfully saved payload for page_id: p0695
+2026-05-19 06:33:17,719 - INFO - Received GET request for page_id: p0696 edition: annals_latin
+2026-05-19 06:33:17,721 - WARNING - Page not found: p0696
+2026-05-19 06:33:57,156 - INFO - Received GET request for page_id: p0695 edition: annals_latin
+2026-05-19 06:33:57,156 - WARNING - Page not found: p0695
+2026-05-19 06:34:01,893 - INFO - Received GET request for page_id: p0696 edition: annals_latin
+2026-05-19 06:34:01,893 - WARNING - Page not found: p0696
+2026-05-19 06:34:02,577 - INFO - Received GET request for page_id: p0697 edition: annals_latin
+2026-05-19 06:34:02,579 - WARNING - Page not found: p0697
+2026-05-19 06:34:06,789 - INFO - Received GET request for page_id: p0698 edition: annals_latin
+2026-05-19 06:34:06,789 - WARNING - Page not found: p0698
+2026-05-19 06:34:11,105 - INFO - Received GET request for page_id: p0069 edition: annals_latin
+2026-05-19 06:34:11,107 - WARNING - Page not found: p0069
+2026-05-19 06:34:13,641 - INFO - Received GET request for page_id: p0003 edition: annals_latin
+2026-05-19 06:34:13,643 - WARNING - Page not found: p0003
+2026-05-19 06:34:14,254 - INFO - Received GET request for page_id: p0375 edition: annals_latin
+2026-05-19 06:34:14,257 - WARNING - Page not found: p0375
+2026-05-19 06:34:34,607 - INFO - Received GET request for page_id: p0037 edition: annals_latin
+2026-05-19 06:34:34,607 - WARNING - Page not found: p0037
+2026-05-19 06:34:35,796 - INFO - Received GET request for page_id: p0003 edition: annals_latin
+2026-05-19 06:34:35,796 - WARNING - Page not found: p0003
+2026-05-19 06:34:35,933 - INFO - Received GET request for page_id: p0038 edition: annals_latin
+2026-05-19 06:34:35,938 - WARNING - Page not found: p0038
+2026-05-19 06:34:36,704 - INFO - Received GET request for page_id: p0384 edition: annals_latin
+2026-05-19 06:34:36,706 - INFO - Successfully read payload for page_id: p0384
+2026-05-19 06:34:36,753 - INFO - Received GET request for page_id: p0384 edition: annals_latin
+2026-05-19 06:34:36,756 - INFO - Successfully read payload for page_id: p0384
+2026-05-19 06:34:45,729 - INFO - Received GET request for page_id: p0385 edition: annals_latin
+2026-05-19 06:34:45,732 - INFO - Successfully read payload for page_id: p0385
+2026-05-19 06:34:45,841 - INFO - Received GET request for page_id: p0385 edition: annals_latin
+2026-05-19 06:34:45,842 - INFO - Successfully read payload for page_id: p0385
+2026-05-19 06:34:52,916 - INFO - Received GET request for page_id: p0386 edition: annals_latin
+2026-05-19 06:34:52,928 - INFO - Successfully read payload for page_id: p0386
+2026-05-19 06:34:52,995 - INFO - Received GET request for page_id: p0386 edition: annals_latin
+2026-05-19 06:34:52,996 - INFO - Successfully read payload for page_id: p0386
+2026-05-19 06:34:57,267 - INFO - Received GET request for page_id: p0385 edition: annals_latin
+2026-05-19 06:34:57,272 - INFO - Successfully read payload for page_id: p0385
+2026-05-19 06:34:57,288 - INFO - Received GET request for page_id: p0385 edition: annals_latin
+2026-05-19 06:34:57,293 - INFO - Successfully read payload for page_id: p0385
+2026-05-19 06:34:57,484 - INFO - Received GET request for page_id: p0384 edition: annals_latin
+2026-05-19 06:34:57,486 - INFO - Successfully read payload for page_id: p0384
+2026-05-19 06:34:57,499 - INFO - Received GET request for page_id: p0384 edition: annals_latin
+2026-05-19 06:34:57,502 - INFO - Successfully read payload for page_id: p0384
+2026-05-19 06:37:39,940 - INFO - Received GET request for page_id: p0385 edition: annals_latin
+2026-05-19 06:37:39,942 - INFO - Successfully read payload for page_id: p0385
+2026-05-19 06:37:39,992 - INFO - Received GET request for page_id: p0385 edition: annals_latin
+2026-05-19 06:37:39,995 - INFO - Successfully read payload for page_id: p0385
+2026-05-19 06:37:43,660 - INFO - Received GET request for page_id: p0384 edition: annals_latin
+2026-05-19 06:37:43,665 - INFO - Successfully read payload for page_id: p0384
+2026-05-19 06:37:43,701 - INFO - Received GET request for page_id: p0384 edition: annals_latin
+2026-05-19 06:37:43,703 - INFO - Successfully read payload for page_id: p0384
+2026-05-19 06:37:44,337 - INFO - Received GET request for page_id: p0383 edition: annals_latin
+2026-05-19 06:37:44,339 - WARNING - Page not found: p0383
+2026-05-19 06:37:44,574 - INFO - Received GET request for page_id: p0383 edition: annals_latin
+2026-05-19 06:37:44,574 - WARNING - Page not found: p0383
+2026-05-19 06:37:46,973 - INFO - Starting OCR job for page p0383 using Gemini.
+2026-05-19 06:37:46,989 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\Annales_Novi_Testamenti_-_Annals_of_the_World_Vol_II.pdf --part annals_latin --start-page 383 --end-page 383 --ocr-engine gemini
+2026-05-19 06:38:32,877 - INFO - Subprocess stdout: Gemini OCR written to 01_raw_ocr_output\annals_latin\annals_latin_pilot_ocr.json
+
+2026-05-19 06:38:32,888 - INFO - OCR job completed successfully for page p0383.
+2026-05-19 06:38:33,372 - INFO - Received GET request for page_id: p0383 edition: annals_latin
+2026-05-19 06:38:33,373 - INFO - Successfully read payload for page_id: p0383
+2026-05-19 06:40:23,858 - INFO - Received POST request to save page_id: p0383 edition: annals_latin
+2026-05-19 06:40:23,858 - INFO - Recorded 0 edits for page_id: p0383
+2026-05-19 06:40:23,883 - INFO - Successfully saved payload for page_id: p0383
+2026-05-19 06:40:27,650 - INFO - Received GET request for page_id: p0382 edition: annals_latin
+2026-05-19 06:40:27,673 - WARNING - Page not found: p0382
+2026-05-19 06:40:27,717 - INFO - Received GET request for page_id: p0382 edition: annals_latin
+2026-05-19 06:40:27,718 - WARNING - Page not found: p0382
+2026-05-19 06:40:30,959 - INFO - Received GET request for page_id: p0383 edition: annals_latin
+2026-05-19 06:40:30,992 - INFO - Successfully read payload for page_id: p0383
+2026-05-19 06:40:31,654 - INFO - Received GET request for page_id: p0383 edition: annals_latin
+2026-05-19 06:40:31,656 - INFO - Successfully read payload for page_id: p0383

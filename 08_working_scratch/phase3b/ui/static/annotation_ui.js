@@ -92,6 +92,20 @@ const EDITIONS = {
     stickyFootnotes: true,
     defaultPdf: "Disputatio_de_Sacra_Scriptura_contra_R_B_LATIN.pdf",
   },
+  "annals_latin": {
+    label: "Ussher, Annals (Latin)",
+    blurb: "Latin original of Ussher's Annales Veteris Testamenti (1650); 17th-c. chronological-historical Latin with Hebrew, Greek, and Patristic citations.",
+    hasMarginalia: false,
+    stickyFootnotes: true,
+    defaultPdf: "Annales_Veteris_Testamenti_-_Annals_of_the_World_Vol_I.pdf",
+  },
+  "annals_english": {
+    label: "Ussher, Annals (English, 1658)",
+    blurb: "1658 contemporary English translation of Ussher's Annals; reference for comparison and alignment.",
+    hasMarginalia: false,
+    stickyFootnotes: true,
+    defaultPdf: "The_Annals_of_the_World_1658_English.pdf",
+  },
 };
 const DEFAULT_EDITION = "1687_second";
 const PDF_LS_KEY = "ussherInPdf";
@@ -127,6 +141,18 @@ const PDF_METADATA = {
     edition: "whitaker_latin",
     part: "whitaker_latin",
   },
+  "Annales_Veteris_Testamenti_-_Annals_of_the_World_Vol_I.pdf": {
+    edition: "annals_latin",
+    part: "annals_latin",
+  },
+  "Annales_Novi_Testamenti_-_Annals_of_the_World_Vol_II.pdf": {
+    edition: "annals_latin",
+    part: "annals_latin",
+  },
+  "The_Annals_of_the_World_1658_English.pdf": {
+    edition: "annals_english",
+    part: "annals_english",
+  },
 };
 
 function inferPdfMetadata(pdfName) {
@@ -138,6 +164,12 @@ function inferPdfMetadata(pdfName) {
   }
   if (lower.includes("disputatio") && lower.includes("latin")) {
     return { edition: "whitaker_latin", part: "whitaker_latin" };
+  }
+  if ((lower.includes("annals") || lower.includes("annales")) && lower.includes("english")) {
+    return { edition: "annals_english", part: "annals_english" };
+  }
+  if (lower.includes("annals") || lower.includes("annales")) {
+    return { edition: "annals_latin", part: "annals_latin" };
   }
   // Default: assume an Ussher 1847 reissue page; part2 if filename
   // indicates so, else part1.

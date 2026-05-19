@@ -52,13 +52,13 @@ logger.addHandler(file_handler)
 def _corpus_subdir(edition: str | None) -> str:
     """Return the annotations subdirectory name for a given edition.
 
-    Ussher editions live in the flat top-level ``annotations/`` dir for
-    backward compatibility. Whitaker editions are namespaced one level
-    deeper so their JSONs are completely separate from Ussher's:
-    ``annotations/whitaker_english/`` and
-    ``annotations/whitaker_latin/``.
+    Britannicarum Ussher editions live in the flat top-level
+    ``annotations/`` dir for backward compatibility. Whitaker editions
+    and Annals editions are namespaced one level deeper so their JSONs
+    are completely separate, e.g. ``annotations/whitaker_english/``,
+    ``annotations/annals_latin/``.
     """
-    if edition in WHITAKER_EDITIONS:
+    if edition in SUBFOLDERED_EDITIONS:
         return edition
     return ""
 
@@ -761,11 +761,12 @@ def api_ocr_start():
             400,
         )
 
-    # For Whitaker editions, the corpus is single-volume: we force the
-    # part name to match the edition so OCR output lands in its own
-    # 01_raw_ocr_output/whitaker_{english,latin}/ directory and stays
-    # completely separate from Ussher's part1/part2 outputs.
-    if edition in WHITAKER_EDITIONS:
+    # For subfoldered editions (Whitaker, Annals), the corpus is
+    # single-volume per edition: we force the part name to match the
+    # edition so OCR output lands in its own
+    # 01_raw_ocr_output/<edition>/ directory and stays completely
+    # separate from Britannicarum's part1/part2 outputs.
+    if edition in SUBFOLDERED_EDITIONS:
         part = edition
     elif part not in {"part1", "part2"}:
         return jsonify({"ok": False, "error": "part must be 'part1' or 'part2'"}), 400

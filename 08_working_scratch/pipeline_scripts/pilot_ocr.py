@@ -322,8 +322,21 @@ def main() -> None:
     parser.add_argument(
         "--part",
         required=True,
-        choices=["part1", "part2", "whitaker_english", "whitaker_latin"],
-        help="Part / corpus label (Ussher uses part1/part2; Whitaker uses whitaker_english/whitaker_latin)",
+        choices=[
+            "part1",
+            "part2",
+            "whitaker_english",
+            "whitaker_latin",
+            "annals_latin",
+            "annals_english",
+        ],
+        help=(
+            "Part / corpus label. Ussher Britannicarum uses part1/part2; "
+            "per-edition single-volume corpora use a label that matches "
+            "the edition name (whitaker_english, whitaker_latin, "
+            "annals_latin, annals_english). Keep this list in sync with "
+            "annotation_ui.py's ALLOWED_EDITIONS."
+        ),
     )
     parser.add_argument("--start-page", type=int, required=True)
     parser.add_argument("--end-page", type=int, required=True)
