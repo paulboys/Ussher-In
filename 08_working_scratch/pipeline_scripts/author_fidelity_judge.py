@@ -54,7 +54,7 @@ if str(_AB_JUDGE_DIR) not in sys.path:
 import ab_judge as aj  # noqa: E402
 
 
-JUDGE_SYSTEM = """\
+JUDGE_SYSTEM_WHITAKER = """\
 You are an expert classical philologist scoring an English translation
 of a Latin sentence from William Whitaker's Disputatio de Sacra
 Scriptura (1588; cited from the 1690 Latin edition), a 16th-century
@@ -116,7 +116,63 @@ preserved by a good translation (high greek_preservation = 5), even
 if Parker's English shows no Greek.
 """
 
-JUDGE_OUTPUT_CONTRACT = """\
+
+JUDGE_SYSTEM_USSHER = """\
+You are an expert classical philologist scoring an English translation
+of a Latin sentence from James Ussher's Britannicarum Ecclesiarum
+Antiquitates (1639; cited from the 1847 Elrington-Todd edition), a
+17th-century scholarly history of the early British and Irish
+churches. The source Latin frequently embeds Patristic Greek
+citations and dense patristic-historical references.
+
+Your job is AUTHOR-FIDELITY scoring: does the translation reflect what
+USSHER actually wrote? No gold-standard English translation exists
+for this corpus; score against the Latin source directly.
+
+Rubrics — each scored 1-5 where 5 is best (or 'na' if not applicable):
+
+1. greek_preservation (1-5 or 'na')
+   - 5: All Greek script in the Latin source is preserved verbatim
+     in the translation (polytonic accents, breathings intact).
+   - 3: Greek partially preserved (some preserved, some transliterated
+     or omitted).
+   - 1: Greek silently omitted or replaced by English alone.
+   - 'na': source contains no Greek.
+
+2. paraphrase_handling (1-5 or 'na')
+   - Applies ONLY when Ussher followed a Greek phrase with his own
+     adjacent Latin paraphrase of that same Greek content (his
+     reading-aid for Latin-only readers).
+   - 5: Greek preserved + paraphrase's meaning rendered as English
+     (typically in brackets after the Greek); Latin paraphrase itself
+     not echoed verbatim.
+   - 3: Either Greek preserved without English gloss, OR Latin
+     paraphrase echoed verbatim untranslated.
+   - 1: Both Greek and Latin paraphrase mishandled.
+   - 'na': source has no Greek+Latin-paraphrase pair.
+
+3. content_fidelity (1-5)
+   - 5: Translation contains exactly the content Ussher wrote — no
+     added phrases, no dropped clauses, no shifted referents.
+   - 3: Minor paraphrase liberties but core meaning preserved.
+   - 1: Significant additions, omissions, or content shifts.
+
+4. register_fidelity (1-5)
+   - 5: Modern scholarly English appropriate to academic
+     ecclesiastical history — Latinate doctrinal/scholastic
+     vocabulary preserved (canonical, episcopate, see, schism,
+     orthodox, conciliar). No Tudor/KJV archaisms (doth, verily,
+     thee, thou, hath, whilst).
+   - 3: Mostly appropriate but uneven (occasional modernism or
+     period archaism).
+   - 1: Wholly inappropriate (modernized prose, slang, or
+     pseudo-archaic pastiche).
+"""
+
+# Default for back-compat
+JUDGE_SYSTEM = JUDGE_SYSTEM_WHITAKER
+
+JUDGE_OUTPUT_CONTRACT_WITH_PARKER = """\
 Return ONLY a JSON object (no prose, no code fence) shaped as:
 
 {
@@ -134,25 +190,71 @@ Rules:
 - Each score key must be present.
 - greek_preservation and paraphrase_handling may be 'na'; the other two must be 1-5 integers.
 - parker_divergence: "none" if v4 and Parker agree, "minor" if small editorial differences,
-  "major" if v4 follows Whitaker but Parker editorially diverged (e.g. Parker dropped Greek
-  that Whitaker wrote).
+  "major" if v4 follows the author but Parker editorially diverged (e.g. Parker dropped Greek
+  that the author wrote).
 - 'reason' is <= 400 chars.
 - No other top-level keys.
 """
 
+JUDGE_OUTPUT_CONTRACT_NO_REF = """\
+Return ONLY a JSON object (no prose, no code fence) shaped as:
 
-def build_prompt(*, latin: str, english: str, parker_ref: str) -> str:
-    return (
-        JUDGE_SYSTEM
+{
+  "scores": {
+    "greek_preservation": 1 | 2 | 3 | 4 | 5 | "na",
+    "paraphrase_handling": 1 | 2 | 3 | 4 | 5 | "na",
+    "content_fidelity":   1 | 2 | 3 | 4 | 5,
+    "register_fidelity":  1 | 2 | 3 | 4 | 5
+  },
+  "reason": "<one sentence explaining the scores>"
+}
+
+Rules:
+- Each score key must be present.
+- greek_preservation and paraphrase_handling may be 'na'; the other two must be 1-5 integers.
+- 'reason' is <= 400 chars.
+- No other top-level keys.
+"""
+
+# Default for back-compat
+JUDGE_OUTPUT_CONTRACT = JUDGE_OUTPUT_CONTRACT_WITH_PARKER
+
+
+def build_prompt(*, latin: str, english: str, parker_ref: str = "",
+                 corpus: str = "whitaker") -> str:
+    """Build a judge prompt for one segment.
+
+    corpus="whitaker": Whitaker source + Parker reference (informational).
+    corpus="ussher":   Ussher source, no reference available.
+    """
+    if corpus == "ussher":
+        return (
+            JUDGE_SYSTEM_USSHER
+            + "\n\nLATIN SOURCE (Ussher 1639 / 1847 Elrington-Todd):\n"
+            + latin.strip()
+            + "\n\nCANDIDATE TRANSLATION:\n"
+            + english.strip()
+            + "\n\n"
+            + JUDGE_OUTPUT_CONTRACT_NO_REF
+        )
+    # default: whitaker with Parker reference
+    body = (
+        JUDGE_SYSTEM_WHITAKER
         + "\n\nLATIN SOURCE (Whitaker 1690):\n"
         + latin.strip()
-        + "\n\nCANDIDATE TRANSLATION (v4):\n"
+        + "\n\nCANDIDATE TRANSLATION:\n"
         + english.strip()
-        + "\n\nPARKER REFERENCE (1849; informational only):\n"
-        + parker_ref.strip()
-        + "\n\n"
-        + JUDGE_OUTPUT_CONTRACT
     )
+    if parker_ref.strip():
+        body += (
+            "\n\nPARKER REFERENCE (1849; informational only):\n"
+            + parker_ref.strip()
+            + "\n\n"
+            + JUDGE_OUTPUT_CONTRACT_WITH_PARKER
+        )
+    else:
+        body += "\n\n" + JUDGE_OUTPUT_CONTRACT_NO_REF
+    return body
 
 
 _JSON_OBJ_RE = re.compile(r"\{.*\}", re.DOTALL)
@@ -172,19 +274,21 @@ def parse_response(raw: str) -> dict:
     if not m:
         raise ValueError("no JSON object in response")
     obj = json.loads(m.group(0))
-    if "scores" not in obj or "parker_divergence" not in obj:
-        raise ValueError("response missing required keys")
+    if "scores" not in obj:
+        raise ValueError("response missing 'scores'")
     return obj
 
 
 def main() -> int:
     p = argparse.ArgumentParser()
     p.add_argument("--scores-jsonl", required=True,
-                   help="whitaker_v4_ch2_unit_scores.jsonl produced by the COMET scorer")
-    p.add_argument("--run-filter", default="whitaker_v4_ch2_run01",
-                   help="judge only rows for this run tag (default: run01)")
+                   help="unit_scores.jsonl produced by a COMET scorer (each row has unit_id, run, latin_concat, english_concat, score; reference optional)")
+    p.add_argument("--run-filter", required=True,
+                   help="judge only rows whose 'run' field matches this string exactly")
     p.add_argument("--output", required=True,
                    help="output JSONL with author-fidelity scores per unit")
+    p.add_argument("--corpus", choices=("whitaker", "ussher"), default="whitaker",
+                   help="rubric profile: 'whitaker' (with Parker reference if present) or 'ussher' (no reference)")
     p.add_argument("--judge-model", default="claude-sonnet-4-6")
     p.add_argument("--timeout-seconds", type=float, default=120.0)
     p.add_argument("--dry-run", action="store_true",
@@ -207,9 +311,12 @@ def main() -> int:
         for r in rows[:2]:
             prompt = build_prompt(latin=r["latin_concat"],
                                   english=r["english_concat"],
-                                  parker_ref=r["reference"])
+                                  parker_ref=r.get("reference", ""),
+                                  corpus=args.corpus)
             print("=" * 80)
-            print(f"UNIT {r['unit_id']}  COMET={r['score']:.4f}")
+            comet = r.get("score")
+            label = f"COMET={comet:.4f}" if comet is not None else "no-comet"
+            print(f"UNIT {r['unit_id']}  {label}")
             print(prompt[:2000])
         return 0
 
@@ -223,7 +330,8 @@ def main() -> int:
         for i, r in enumerate(rows, 1):
             prompt = build_prompt(latin=r["latin_concat"],
                                   english=r["english_concat"],
-                                  parker_ref=r["reference"])
+                                  parker_ref=r.get("reference", ""),
+                                  corpus=args.corpus)
             t0 = time.time()
             err: str | None = None
             parsed: dict | None = None
@@ -242,13 +350,14 @@ def main() -> int:
             rec = {
                 "unit_id": r["unit_id"],
                 "run": r["run"],
-                "comet_score": r["score"],
+                "comet_score": r.get("score"),
                 "elapsed_s": round(dt, 2),
                 "error": err,
             }
             if parsed:
                 rec["scores"] = parsed.get("scores", {})
-                rec["parker_divergence"] = parsed.get("parker_divergence", "")
+                if "parker_divergence" in parsed:
+                    rec["parker_divergence"] = parsed["parker_divergence"]
                 rec["reason"] = parsed.get("reason", "")[:400]
             elif err and raw:
                 rec["raw"] = raw[:600]
@@ -256,12 +365,14 @@ def main() -> int:
             h.write(json.dumps(rec, ensure_ascii=False) + "\n")
             h.flush()
             scores = rec.get("scores", {})
-            print(f"[{i:2}/{len(rows)}] {r['unit_id']}  COMET={r['score']:.3f}  "
+            comet_str = f"COMET={r['score']:.3f}" if r.get("score") is not None else "no-comet"
+            div_str = f"  div={rec['parker_divergence']}" if "parker_divergence" in rec else ""
+            print(f"[{i:2}/{len(rows)}] {r['unit_id']}  {comet_str}  "
                   f"gp={scores.get('greek_preservation','?')}  "
                   f"ph={scores.get('paraphrase_handling','?')}  "
                   f"cf={scores.get('content_fidelity','?')}  "
                   f"rf={scores.get('register_fidelity','?')}  "
-                  f"div={rec.get('parker_divergence','?')}  "
+                  f"{div_str}"
                   f"({dt:.1f}s)")
 
     print(f"\nWrote {out_path}")

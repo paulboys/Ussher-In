@@ -26,7 +26,14 @@ ALLOWED_REVIEW_STATUS = {"draft", "reviewed", "locked"}
 ALLOWED_FOOTNOTE_KIND = {"citation", "gloss", "cross_ref", "not_a_note", "other"}
 USSHER_EDITIONS = {"1687_second", "1847_elrington_todd"}
 WHITAKER_EDITIONS = {"whitaker_english", "whitaker_latin"}
-ALLOWED_EDITIONS = USSHER_EDITIONS | WHITAKER_EDITIONS
+ANNALS_EDITIONS = {"annals_latin", "annals_english"}
+ALLOWED_EDITIONS = USSHER_EDITIONS | WHITAKER_EDITIONS | ANNALS_EDITIONS
+
+# Editions whose annotations live in a named subfolder under
+# ``annotations/`` (and whose raw OCR output lives in a matching
+# ``01_raw_ocr_output/<edition>/`` directory) rather than in the flat
+# top-level Ussher namespace.
+SUBFOLDERED_EDITIONS = WHITAKER_EDITIONS | ANNALS_EDITIONS
 SCHEMA_REGIONS = ("header", "body", "marginalia", "catchword")
 
 app = Flask(__name__, template_folder=str(TEMPLATE_DIR), static_folder=str(STATIC_DIR))

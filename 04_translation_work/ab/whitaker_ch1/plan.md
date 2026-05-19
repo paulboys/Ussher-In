@@ -191,13 +191,31 @@ sprawl; we don't repeat it.
 ### Phase 5 — Ussher Validation
 
 1. Build an Ussher-specific `TRANSLATOR_BRIEF` and Rule 2 register
-   clause.
-2. Compose: locked shared core + Ussher corpus skin.
-3. Run on the one Ussher chapter for which an English translation
-   exists (acknowledged dubious quality — used as a *sanity floor*,
-   not a gold standard).
-4. Output: `ussher_validation_report.md`. Investigate, don't
-   auto-reject, points where the model disagrees with that translation.
+   clause. **Done 2026-05-18** —
+   `translation_prompts_ussher_v5.py` composes locked v4-Whitaker
+   shared core (Rule 1 Greek+English-brackets / Latin-paraphrase
+   collapse; Rules 5/6/7) with new Ussher corpus skin (Rule 2
+   modern scholarly English with Latinate doctrinal vocabulary, no
+   Parker anchor; Rule 3 patristic-historical citations, no
+   polemical-noun lowercasing; Rule 4 `CAP. I.` style). The user
+   directive of 2026-05-18 explicitly supersedes the old Ussher
+   `translation_prompts_v4.py` Rule 1 (preserve Latin verbatim) —
+   that rule is stale; v5 uses the Whitaker-learned rule.
+2. Compose: locked shared core + Ussher corpus skin. **Done.** v5
+   registered in `translate_segments.py` dispatch table.
+3. Run on a chapter of Ussher Latin. **No human English translation
+   exists** for this corpus (the planner's 2026-05-16 reference to
+   "the one Ussher chapter for which an English translation exists"
+   could not be confirmed in the repo). Per user direction
+   2026-05-18: **scoring is author-fidelity LLM-judge only** (no
+   COMET, no reference-anchored comparison).
+4. The author-fidelity judge (`author_fidelity_judge.py`) extended
+   2026-05-18 to support `--corpus ussher` (Ussher rubric prompt
+   variant; no Parker reference; drops the `parker_divergence`
+   field from output).
+5. Output: `ussher_validation_report.md`. Inspect the worst-scoring
+   units for systematic issues; iterate v5 corpus skin if a clear
+   pattern emerges.
 
 ---
 
