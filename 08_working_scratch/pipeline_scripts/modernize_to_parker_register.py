@@ -32,6 +32,16 @@ Usage
         --start-page 695 --end-page 699 \\
         --output annals_english_parker_style.jsonl
 
+Resume after interruption without overwriting completed rows:
+
+::
+
+    python modernize_to_parker_register.py \\
+        --edition annals_english \\
+        --start-page 695 --end-page 699 \\
+        --output annals_english_parker_style.jsonl \\
+        --resume
+
 The judge model defaults to claude-sonnet-4-6 (cost-efficient for
 mechanical normalization; not the translator model).
 """
@@ -44,6 +54,11 @@ import re
 import sys
 import time
 from pathlib import Path
+
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+if hasattr(sys.stderr, "reconfigure"):
+    sys.stderr.reconfigure(encoding="utf-8", errors="replace")
 
 # Reuse the judge's CLI plumbing for calling claude -p.
 _HERE = Path(__file__).resolve()
@@ -117,6 +132,16 @@ or whitespace-only, return an empty string.
 """
 
 
+RUNTIME_LIMIT_MARKERS = (
+    "usage credits",
+    "out of tokens",
+    "rate limit",
+    "too many requests",
+    "resets ",
+    "credit balance",
+)
+
+
 def build_prompt(line_text: str) -> str:
     return (
         SYSTEM_PROMPT
@@ -144,6 +169,75 @@ def normalize_one(judge_callable, line_text: str) -> str:
     return text.strip()
 
 
+def looks_like_runtime_limit_message(value: str) -> bool:
+    """Return True when model output is a usage-limit/status message."""
+    folded = value.casefold()
+    return any(marker in folded for marker in RUNTIME_LIMIT_MARKERS)
+
+
+def is_completed_record(record: object) -> bool:
+    """Whether an existing JSONL row is safe to treat as completed."""
+    if not isinstance(record, dict):
+        return False
+    if not record.get("line_id"):
+        return False
+    if record.get("error"):
+        return False
+    modernized = record.get("modernized")
+    if not isinstance(modernized, str) or not modernized.strip():
+        return False
+    return not looks_like_runtime_limit_message(modernized)
+
+
+def load_completed_line_ids(path: Path) -> tuple[set[str], dict[str, int]]:
+    """Read existing sidecar rows and return valid completed line_ids.
+
+    Malformed JSONL rows, explicit error rows, empty modernized outputs,
+    and runtime-limit/status messages are ignored so they can be retried.
+    """
+    stats = {
+        "rows": 0,
+        "completed": 0,
+        "ignored": 0,
+        "malformed": 0,
+        "duplicates": 0,
+    }
+    completed: set[str] = set()
+    if not path.exists():
+        return completed, stats
+
+    with path.open(encoding="utf-8") as h:
+        for raw in h:
+            line = raw.strip()
+            if not line:
+                continue
+            stats["rows"] += 1
+            try:
+                record = json.loads(line)
+            except json.JSONDecodeError:
+                stats["malformed"] += 1
+                continue
+            if is_completed_record(record):
+                line_id = str(record["line_id"])
+                if line_id in completed:
+                    stats["duplicates"] += 1
+                completed.add(line_id)
+                stats["completed"] += 1
+            else:
+                stats["ignored"] += 1
+    return completed, stats
+
+
+def ensure_trailing_newline(path: Path) -> None:
+    """Keep resumed JSONL appends from joining the previous final line."""
+    if not path.exists() or path.stat().st_size == 0:
+        return
+    with path.open("rb+") as h:
+        h.seek(-1, 2)
+        if h.read(1) != b"\n":
+            h.write(b"\n")
+
+
 def main() -> int:
     p = argparse.ArgumentParser(
         description="Rewrite 1658 English annotation lines in Parker 1849 register.",
@@ -153,11 +247,20 @@ def main() -> int:
     p.add_argument("--start-page", type=int, required=True)
     p.add_argument("--end-page", type=int, required=True)
     p.add_argument("--output", required=True,
-                   help="Output JSONL path. Will be overwritten if it exists.")
+                   help=(
+                       "Output JSONL path. Will be overwritten if it exists "
+                       "unless --resume is set."
+                   ))
     p.add_argument("--judge-model", default="claude-sonnet-4-6")
     p.add_argument("--timeout-seconds", type=float, default=60.0)
     p.add_argument("--dry-run", action="store_true",
                    help="Print first two prompts and exit; do not call the model.")
+    p.add_argument("--resume", action="store_true",
+                   help=(
+                       "Append to an existing sidecar and skip line_id values "
+                       "that already have clean, non-error modernized rows. "
+                       "Rows containing usage-limit/status text are retried."
+                   ))
     args = p.parse_args()
 
     edition_dir = ANNOTATIONS_DIR / args.edition
@@ -196,24 +299,55 @@ def main() -> int:
             print(build_prompt(r["source_text"]))
         return 0
 
+    out_path = Path(args.output)
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+
+    rows_to_process = rows
+    completed_in_range = 0
+    if args.resume:
+        completed, stats = load_completed_line_ids(out_path)
+        completed_in_range = sum(
+            1 for r in rows if str(r.get("line_id") or "") in completed
+        )
+        rows_to_process = [
+            r for r in rows if str(r.get("line_id") or "") not in completed
+        ]
+        print(
+            "Resume mode: "
+            f"read {stats['rows']} existing row(s), "
+            f"found {len(completed)} completed line_id(s), "
+            f"ignored {stats['ignored']} retryable row(s), "
+            f"malformed {stats['malformed']}, "
+            f"duplicates {stats['duplicates']}."
+        )
+        print(
+            f"Resume mode: {completed_in_range}/{len(rows)} selected lines "
+            f"already complete; {len(rows_to_process)} remaining."
+        )
+        ensure_trailing_newline(out_path)
+
+    if not rows_to_process:
+        print(f"Nothing to do; all selected lines are complete in {out_path}")
+        return 0
+
     judge = aj._make_default_judge(
         judge_model=args.judge_model,
         timeout_seconds=args.timeout_seconds,
     )
 
-    out_path = Path(args.output)
-    out_path.parent.mkdir(parents=True, exist_ok=True)
     n_ok = 0
     n_err = 0
-    with out_path.open("w", encoding="utf-8") as h:
-        for i, r in enumerate(rows, 1):
+    open_mode = "a" if args.resume else "w"
+    with out_path.open(open_mode, encoding="utf-8") as h:
+        for i, r in enumerate(rows_to_process, 1):
+            display_i = completed_in_range + i if args.resume else i
             t0 = time.time()
             err: str | None = None
             modernized: str = ""
             try:
                 modernized = normalize_one(judge, r["source_text"])
             except aj.JudgeQuotaError as e:
-                print(f"[{i}/{len(rows)}] {r['line_id']} QUOTA — aborting")
+                print(f"[{display_i}/{len(rows)}] {r['line_id']} QUOTA — aborting")
                 err = f"quota: {e}"
                 h.write(json.dumps({
                     **r,
@@ -237,7 +371,7 @@ def main() -> int:
                 n_ok += 1
             h.write(json.dumps(rec, ensure_ascii=False) + "\n")
             h.flush()
-            print(f"[{i:3}/{len(rows)}] {r['line_id']}  ({dt:.1f}s)  "
+            print(f"[{display_i:3}/{len(rows)}] {r['line_id']}  ({dt:.1f}s)  "
                   f"{r['source_text'][:60]!r}\n"
                   f"           -> {modernized[:80]!r}")
 

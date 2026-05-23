@@ -4951,3 +4951,19 @@ pilot_ocr.py: error: argument --part: invalid choice: 'annals_latin' (choose fro
 2026-05-23 05:25:39,353 - INFO - Successfully saved payload for page_id: p0699
 2026-05-23 05:25:42,747 - INFO - Received GET request for page_id: p0700 edition: annals_english
 2026-05-23 05:25:42,749 - WARNING - Page not found: p0700
+2026-05-23 05:57:25,912 - INFO - Received GET request for page_id: p0001 edition: None
+2026-05-23 05:57:25,916 - INFO - Successfully read payload for page_id: p0001
+2026-05-23 05:58:47,679 - INFO - Received GET request for page_id: p0039 edition: annals_english
+2026-05-23 05:58:47,680 - WARNING - Page not found: p0039
+2026-05-23 05:58:47,887 - INFO - Received GET request for page_id: p0393 edition: annals_english
+2026-05-23 05:58:47,888 - WARNING - Page not found: p0393
+2026-05-23 05:58:52,036 - INFO - Received GET request for page_id: p0394 edition: annals_english
+2026-05-23 05:58:52,037 - WARNING - Page not found: p0394
+2026-05-23 05:59:18,259 - INFO - Received GET request for page_id: p0039 edition: annals_english
+2026-05-23 05:59:18,259 - WARNING - Page not found: p0039
+2026-05-23 05:59:20,084 - INFO - Received GET request for page_id: p0069 edition: annals_english
+2026-05-23 05:59:20,084 - WARNING - Page not found: p0069
+2026-05-23 05:59:20,693 - INFO - Received GET request for page_id: p0695 edition: annals_english
+2026-05-23 05:59:20,727 - INFO - Successfully read payload for page_id: p0695
+2026-05-23 05:59:20,763 - INFO - Received GET request for page_id: p0695 edition: annals_english
+2026-05-23 05:59:20,765 - INFO - Successfully read payload for page_id: p0695
