@@ -350,6 +350,72 @@ def test_judge_run_marks_missing_english(tmp_path: Path):
     assert judgments[0].error == "missing english on one side"
 
 
+def test_cli_streams_partial_output_and_resumes_after_quota(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+):
+    v0 = tmp_path / "v0.jsonl"
+    v1 = tmp_path / "v1.jsonl"
+    output = tmp_path / "judgments.jsonl"
+    summary = tmp_path / "summary.json"
+    _write_jsonl(v0, [_seg("a", "He hath spoken."),
+                      _seg("b", "Boadicia rebelled.")])
+    _write_jsonl(v1, [_seg("a", "He spoke."),
+                      _seg("b", "Boudica rebelled.")])
+
+    good = json.dumps({
+        "rubric": {"fluency": "A", "accuracy": "equal",
+                   "source_preservation": "equal", "titles": "equal",
+                   "register": "A", "format_compliance": "equal"},
+        "winner": "A",
+        "reason": "A is cleaner.",
+    })
+    calls = {"n": 0}
+
+    def first_judge(_prompt: str) -> str:
+        calls["n"] += 1
+        if calls["n"] == 1:
+            return good
+        return "Usage limit reached. Please try again later."
+
+    monkeypatch.setattr(
+        ab_judge,
+        "_make_default_judge",
+        lambda **_kwargs: first_judge,
+    )
+
+    rc = ab_judge.main([
+        str(v0), str(v1),
+        "--output", str(output),
+        "--summary", str(summary),
+    ])
+    assert rc == 3
+    rows = [json.loads(line) for line in output.read_text().splitlines()]
+    assert [r["segment_id"] for r in rows] == ["a"]
+    partial = json.loads(summary.read_text())
+    assert partial["complete"] is False
+    assert partial["completed_segments"] == 1
+    assert partial["remaining_segments"] == 1
+
+    monkeypatch.setattr(
+        ab_judge,
+        "_make_default_judge",
+        lambda **_kwargs: (lambda _prompt: good),
+    )
+    rc = ab_judge.main([
+        str(v0), str(v1),
+        "--output", str(output),
+        "--summary", str(summary),
+    ])
+    assert rc == 0
+    rows = [json.loads(line) for line in output.read_text().splitlines()]
+    assert [r["segment_id"] for r in rows] == ["a", "b"]
+    final = json.loads(summary.read_text())
+    assert final["complete"] is True
+    assert final["completed_segments"] == 2
+    assert final["remaining_segments"] == 0
+    assert final["skipped_existing"] == 1
+
+
 def test_aggregate_judgments_counts_correctly():
     j1 = ab_judge.Judgment(segment_id="a", swapped=False, a_text="", b_text="",
                            latin="", decoded_winner="v1",

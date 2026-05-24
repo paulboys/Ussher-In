@@ -28,6 +28,12 @@ CLI
         [--judge-model claude-sonnet-4-6] \\
         [--seed 0] [--dry-run]
 
+By default, live runs are resumable. Each judgment is appended to
+``--output`` as soon as it completes; if a later call hits a usage
+limit, rerun the same command and already-written segment IDs are
+skipped. Use ``--no-resume`` to ignore an existing output file and
+start fresh.
+
 In ``--dry-run`` mode the judge prints the prompts it would send and
 the side-swap map but does not call the CLI. Useful for sanity-
 checking before spending tokens.
@@ -324,6 +330,59 @@ class Judgment:
         return out
 
 
+def judgment_from_dict(data: dict) -> Judgment:
+    """Rehydrate a persisted JSONL row into a ``Judgment``."""
+    return Judgment(
+        segment_id=str(data.get("segment_id") or ""),
+        swapped=bool(data.get("swapped")),
+        a_text=str(data.get("a_text") or ""),
+        b_text=str(data.get("b_text") or ""),
+        latin=str(data.get("latin") or ""),
+        raw_response=str(data.get("raw_response") or ""),
+        raw_winner=str(data.get("raw_winner") or ""),
+        raw_rubric=dict(data.get("raw_rubric") or {}),
+        reason=str(data.get("reason") or ""),
+        decoded_winner=str(data.get("decoded_winner") or ""),
+        decoded_rubric=dict(data.get("decoded_rubric") or {}),
+        error=str(data.get("error") or ""),
+    )
+
+
+def load_existing_judgments(path: Path) -> dict[str, Judgment]:
+    """Load an existing judgment JSONL keyed by ``segment_id``.
+
+    Malformed rows are ignored so a partially interrupted final line does
+    not block resume. If duplicate segment IDs exist, the last complete
+    row wins.
+    """
+    out: dict[str, Judgment] = {}
+    if not path.exists():
+        return out
+    with path.open("r", encoding="utf-8") as handle:
+        for line in handle:
+            line = line.strip()
+            if not line:
+                continue
+            try:
+                rec = json.loads(line)
+            except json.JSONDecodeError:
+                continue
+            seg_id = rec.get("segment_id")
+            if seg_id:
+                out[str(seg_id)] = judgment_from_dict(rec)
+    return out
+
+
+def ensure_trailing_newline(path: Path) -> None:
+    """Make appending safe after an interrupted JSONL write."""
+    if not path.exists() or path.stat().st_size == 0:
+        return
+    with path.open("rb+") as handle:
+        handle.seek(-1, 2)
+        if handle.read(1) != b"\n":
+            handle.write(b"\n")
+
+
 # ---------------------------------------------------------------------------
 # Judge runner
 # ---------------------------------------------------------------------------
@@ -365,6 +424,9 @@ _JSON_OBJ_RE = __import__("re").compile(r"\{.*\}", __import__("re").DOTALL)
 # burning through 36+ pairings producing identical "parse failed" rows.
 _QUOTA_MARKERS = (
     "out of extra usage",
+    "extra usage",
+    "hit your session limit",
+    "session limit",
     "usage limit reached",
     "rate limit",
     "please try again",
@@ -438,6 +500,8 @@ def judge_pair(
     try:
         raw = call_judge(prompt)
     except Exception as exc:  # surface but keep going on remaining segments
+        if _looks_like_quota_refusal(str(exc)):
+            raise JudgeQuotaError(str(exc))
         j.error = f"judge call failed: {exc}"
         return j
     j.raw_response = raw
@@ -529,6 +593,43 @@ def aggregate_judgments(judgments: Sequence[Judgment]) -> dict:
     }
 
 
+def write_summary(
+    *,
+    path: Path | None,
+    judgments: Sequence[Judgment],
+    judge_model: str,
+    seed: int,
+    v0_path: Path,
+    v1_path: Path,
+    output_path: Path,
+    total_shared_segments: int,
+    skipped_existing: int,
+    complete: bool,
+) -> dict:
+    """Write an aggregate summary, including resume/progress metadata."""
+    summary = aggregate_judgments(judgments)
+    completed_ids = {j.segment_id for j in judgments if j.segment_id}
+    summary["judge_model"] = judge_model
+    summary["seed"] = seed
+    summary["v0_path"] = str(v0_path)
+    summary["v1_path"] = str(v1_path)
+    summary["output_path"] = str(output_path)
+    summary["total_shared_segments"] = total_shared_segments
+    summary["completed_segments"] = len(completed_ids)
+    summary["remaining_segments"] = max(
+        0, total_shared_segments - len(completed_ids)
+    )
+    summary["skipped_existing"] = skipped_existing
+    summary["complete"] = complete
+    if path:
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(
+            json.dumps(summary, ensure_ascii=False, indent=2),
+            encoding="utf-8",
+        )
+    return summary
+
+
 # ---------------------------------------------------------------------------
 # CLI
 # ---------------------------------------------------------------------------
@@ -577,6 +678,13 @@ def _build_parser() -> argparse.ArgumentParser:
         ),
     )
     parser.add_argument(
+        "--no-resume", action="store_true",
+        help=(
+            "Ignore any existing --output JSONL and start a fresh run. "
+            "Default behavior is to resume by skipping existing segment IDs."
+        ),
+    )
+    parser.add_argument(
         "--cli-path", default="claude",
         help="Override the Claude CLI executable name (default 'claude').",
     )
@@ -618,36 +726,149 @@ def main(argv: Sequence[str] | None = None) -> int:
         cli_path=args.cli_path,
         timeout_seconds=args.timeout_seconds,
     )
-    try:
-        judgments = judge_run(
-            v0_path=args.v0_jsonl,
-            v1_path=args.v1_jsonl,
-            call_judge=call_judge,
-            seed=args.seed,
-        )
-    except JudgeQuotaError as exc:
-        print(
-            f"ab_judge: aborting — judge CLI refused with: {exc}",
-            file=sys.stderr,
-        )
-        return 3
-
+    v0 = _load_run(args.v0_jsonl)
+    v1 = _load_run(args.v1_jsonl)
+    shared = sorted(set(v0) & set(v1))
     args.output.parent.mkdir(parents=True, exist_ok=True)
-    with args.output.open("w", encoding="utf-8") as handle:
-        for j in judgments:
-            handle.write(json.dumps(j.to_dict(), ensure_ascii=False) + "\n")
 
-    summary = aggregate_judgments(judgments)
-    summary["judge_model"] = args.judge_model
-    summary["seed"] = args.seed
-    summary["v0_path"] = str(args.v0_jsonl)
-    summary["v1_path"] = str(args.v1_jsonl)
+    existing: dict[str, Judgment] = {}
+    if args.no_resume:
+        args.output.write_text("", encoding="utf-8")
+    else:
+        existing = {
+            seg_id: judgment
+            for seg_id, judgment in load_existing_judgments(args.output).items()
+            if seg_id in shared
+        }
+        ensure_trailing_newline(args.output)
+    completed_ids = set(existing)
+    judgments: list[Judgment] = [
+        existing[seg_id] for seg_id in shared if seg_id in existing
+    ]
+    skipped_existing = len(judgments)
+    if skipped_existing:
+        print(
+            f"ab_judge: resuming from {args.output}; "
+            f"skipping {skipped_existing}/{len(shared)} completed segments"
+        )
 
-    if args.summary:
-        args.summary.parent.mkdir(parents=True, exist_ok=True)
-        args.summary.write_text(
-            json.dumps(summary, ensure_ascii=False, indent=2),
-            encoding="utf-8",
+    summary = write_summary(
+        path=args.summary,
+        judgments=judgments,
+        judge_model=args.judge_model,
+        seed=args.seed,
+        v0_path=args.v0_jsonl,
+        v1_path=args.v1_jsonl,
+        output_path=args.output,
+        total_shared_segments=len(shared),
+        skipped_existing=skipped_existing,
+        complete=len(completed_ids) == len(shared),
+    )
+
+    with args.output.open("a", encoding="utf-8") as handle:
+        for idx, seg_id in enumerate(shared, start=1):
+            if seg_id in completed_ids:
+                continue
+            v0_rec, v1_rec = v0[seg_id], v1[seg_id]
+            latin = (
+                v0_rec.get("latin_text")
+                or v1_rec.get("latin_text")
+                or ""
+            )
+            v0_text = _english_for(v0_rec)
+            v1_text = _english_for(v1_rec)
+            swapped = assign_swap(seg_id, seed=args.seed)
+            if not v0_text.strip() or not v1_text.strip():
+                a_text, b_text = (
+                    (v1_text, v0_text) if swapped else (v0_text, v1_text)
+                )
+                judgment = Judgment(
+                    segment_id=seg_id,
+                    swapped=swapped,
+                    a_text=a_text,
+                    b_text=b_text,
+                    latin=latin,
+                    error="missing english on one side",
+                )
+            else:
+                try:
+                    judgment = judge_pair(
+                        segment_id=seg_id,
+                        latin=latin,
+                        v0_text=v0_text,
+                        v1_text=v1_text,
+                        seed=args.seed,
+                        call_judge=call_judge,
+                    )
+                except JudgeQuotaError as exc:
+                    summary = write_summary(
+                        path=args.summary,
+                        judgments=judgments,
+                        judge_model=args.judge_model,
+                        seed=args.seed,
+                        v0_path=args.v0_jsonl,
+                        v1_path=args.v1_jsonl,
+                        output_path=args.output,
+                        total_shared_segments=len(shared),
+                        skipped_existing=skipped_existing,
+                        complete=False,
+                    )
+                    print(
+                        "ab_judge: paused — judge CLI refused with: "
+                        f"{exc}\n"
+                        f"Saved {summary['completed_segments']}/"
+                        f"{summary['total_shared_segments']} judgments. "
+                        "Rerun the same command after reset to resume.",
+                        file=sys.stderr,
+                    )
+                    return 3
+            judgments.append(judgment)
+            completed_ids.add(seg_id)
+            handle.write(
+                json.dumps(judgment.to_dict(), ensure_ascii=False) + "\n"
+            )
+            handle.flush()
+            summary = write_summary(
+                path=args.summary,
+                judgments=judgments,
+                judge_model=args.judge_model,
+                seed=args.seed,
+                v0_path=args.v0_jsonl,
+                v1_path=args.v1_jsonl,
+                output_path=args.output,
+                total_shared_segments=len(shared),
+                skipped_existing=skipped_existing,
+                complete=len(completed_ids) == len(shared),
+            )
+            status = (
+                judgment.decoded_winner
+                if not judgment.error else f"error: {judgment.error}"
+            )
+            print(
+                f"[{idx}/{len(shared)}] {seg_id} -> {status} "
+                f"(saved {summary['completed_segments']}/"
+                f"{summary['total_shared_segments']})"
+            )
+
+    summary = write_summary(
+        path=args.summary,
+        judgments=judgments,
+        judge_model=args.judge_model,
+        seed=args.seed,
+        v0_path=args.v0_jsonl,
+        v1_path=args.v1_jsonl,
+        output_path=args.output,
+        total_shared_segments=len(shared),
+        skipped_existing=skipped_existing,
+        complete=True,
+    )
+
+    if skipped_existing and not shared:
+        print("ab_judge: no shared segments to judge")
+    elif len(completed_ids) == len(shared) and skipped_existing == len(shared):
+        print(
+            f"ab_judge: all {len(shared)} segments already present in "
+            f"{args.output}; summary refreshed"
         )
 
     overall = summary["overall"]
@@ -676,5 +897,8 @@ __all__ = [
     "decode_winner",
     "judge_pair",
     "judge_run",
+    "judgment_from_dict",
+    "load_existing_judgments",
     "parse_judge_response",
+    "write_summary",
 ]
