@@ -1,0 +1,19 @@
+{
+  "prompt_version": "ussher_v5_annals",
+  "run_tag": "run02",
+  "started_at": "2026-05-24T07:57:38Z",
+  "model": "claude-opus-4-7",
+  "lexicon_profile": "auto",
+  "start_page": 383,
+  "end_page": 388,
+  "page_ids": [
+    "p0383",
+    "p0384",
+    "p0385",
+    "p0386",
+    "p0387",
+    "p0388"
+  ],
+  "force": false,
+  "dry_run": false
+}
