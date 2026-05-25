@@ -292,11 +292,29 @@ priority refinement candidates in the Whitaker baseline:
      industry" clause sits in the same unit on both sides — raises u007's
      COMET without touching the prompt. Cosmetic only; deferred.
 
-2. Consider a HARD_RULES addition discouraging implicit English insertions
-   (`[we learn]`, subject-pronoun expansions, enclitic connector translations)
-   unless grammatically unavoidable. This pattern appeared at cf=4 in both
-   Whitaker ch2 and Annals — it is systemic, not chapter-specific, and
-   therefore a shared-core candidate.
+2. **Implicit-insertion pattern — do NOT add a rule now (contingency only).**
+   The cf=4 pattern (`[we learn]`, subject-pronoun expansions, enclitic
+   connector translations) appears in both Whitaker ch2 and Annals, but it
+   is **not currently worth a HARD_RULES addition**:
+   - cf=4 is a good score, not a failure; the judge described the insertions
+     as "judged necessary," and many genuinely are — Latin is pro-drop, uses
+     enclitic `-que`, and omits the copula, so English often *requires* the
+     supplied words. A blanket rule risks trading a cosmetic cf ding for real
+     fluency/grammaticality damage. The model already brackets the truly
+     editorial insertions (`[we learn]`), which is the correct signal.
+   - A "discourage X unless grammatically unavoidable" rule is a *judgment*
+     instruction (high attention cost, inconsistently applied), unlike cheap
+     mechanical rules ("preserve Greek verbatim"). v3's regression is direct
+     evidence that marginal rules degrade *unrelated* behaviors via attention
+     budget (segment-boundary leakage on u009/u010/u012/u013). §2 discipline:
+     prefer consolidation over addition.
+   - **Trigger to revisit:** only if a future chapter shows content_fidelity
+     drop below ~4.0, or the insertions shift from cosmetic to genuine
+     omission/distortion. Until then, accept cf=4 — chasing cf=4→5 is chasing
+     the metric, not the translation (cf. the u002/u007 diagnosis, §7.2 item 1).
+   - **If ever pursued:** consolidate one bracketing clause into an existing
+     rule (Rule 5 subject-continuity or the content-fidelity language), not a
+     new standalone rule, and gate it through the §7.3 ablation test.
 
 **7.3 Cross-Corpus Exemplar Injection**
 
