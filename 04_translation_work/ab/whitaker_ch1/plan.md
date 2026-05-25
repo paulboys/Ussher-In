@@ -249,6 +249,67 @@ denser classical citation patterns than Britannicarum.
 
 **Phase 6 outcome:** PASS. See §12 revision log entry 2026-05-25.
 
+### Phase 7 — Antiquitates Deployment and Cross-Corpus Exemplar Injection
+
+*Added 2026-05-25 following Phase 6 genre-proximity analysis.*
+
+**7.1 Prompt for Antiquitates**
+
+Use `ussher_v5` unchanged. *Antiquitates* is genre-adjacent to Whitaker's
+*Disputatio* (polemical-scholarly argumentation, Patristic Greek citations,
+discursive prose), not to the Annals (biblical-chronological computation).
+The `ussher_v5` TRANSLATOR_BRIEF is already calibrated for ecclesiastical-
+historical Latin; no new corpus skin is needed. The `ussher_v5_annals` fork
+was necessary precisely because the Annals is a different genre — that
+reasoning does not apply here.
+
+**7.2 Further Whitaker Refinement (pre-Antiquitates)**
+
+Before injecting exemplars into the Antiquitates prompt, address the two
+priority refinement candidates in the Whitaker baseline:
+
+1. Diagnose persistent low-COMET units `u002` (0.578) and `u007` (0.742)
+   from ch1 — stable across v3→v4 and not yet explained. Read the Latin
+   and Parker English for those units directly; determine whether the gap
+   is a prompt failure (lexical/rule) or a COMET artefact (Parker
+   divergence). If a rule fix is warranted, update `translation_prompts_
+   whitaker_v4.py` and gate it through the standard Phase 3 A/B process.
+
+2. Consider a HARD_RULES addition discouraging implicit English insertions
+   (`[we learn]`, subject-pronoun expansions, enclitic connector translations)
+   unless grammatically unavoidable. This pattern appeared at cf=4 in both
+   Whitaker ch2 and Annals — it is systemic, not chapter-specific, and
+   therefore a shared-core candidate.
+
+**7.3 Cross-Corpus Exemplar Injection**
+
+Whitaker/Parker pairs are high-quality register exemplars for Antiquitates
+because both works share genre and target register. Methodology:
+
+1. **Identify candidates** from `chapter1_alignment.jsonl` /
+   `chapter2_alignment.jsonl`. Filter for units with COMET ≥ 0.78,
+   content_fidelity = 5, register_fidelity = 5, parker_divergence = "none".
+
+2. **Select 3–5 units** covering:
+   - Greek citation + Latin paraphrase (Rule 1 canonical pattern)
+   - Named Patristic attribution + Latin quotation
+   - Plain continuous prose argument
+
+3. **Extract pairs**: Latin from `annotations/whitaker_latin/`, English
+   from `annotations/whitaker_english/`, using `text_gold` concatenated
+   over the `latin_line_ids` / `english_line_ids` from the alignment file.
+
+4. **Inject as `REGISTER EXEMPLARS`** in the `ussher_v5` TRANSLATOR_BRIEF.
+   Format: `SOURCE: … → TARGET: …` with a one-line pattern annotation.
+
+5. **Validate**: re-run `ussher_v5` on a Britannicarum chapter, score with
+   `author_fidelity_judge.py --corpus ussher`. Accept only if
+   register_fidelity or content_fidelity improves ≥ 0.1; ablate otherwise.
+
+**Discipline:** These are register exemplars (target style), not content
+exemplars (few-shot answers). Monitor that Whitaker's polemical-theological
+phrasing does not bleed into Antiquitates output.
+
 ---
 
 ## 6. Artifacts
@@ -352,6 +413,12 @@ longer scores ⟦⟧/⟪⟫ usage.
 - The v3 ⟦⟧/⟪⟫ mathematical-bracket framework — abandoned permanently
   (see §10.4), not just deferred. Square brackets `[ ]` for editorial
   English glosses remain allowed.
+
+**Moved into scope (Phase 7, 2026-05-25):**
+- Cross-corpus exemplar injection: using Whitaker/Parker aligned pairs
+  as register exemplars in the `ussher_v5` Antiquitates prompt. Previously
+  deferred as "permanent few-shot exemplars" — now scoped as a gated
+  Phase 7 experiment with explicit ablation test before acceptance.
 
 ## 12. Revision Log
 

@@ -81,6 +81,116 @@ The four cf=3 chunks are worth a targeted review pass. Chunks 023 and 034 (doubl
 
 ---
 
+## 7. Corpus Context and Forward Guidance
+
+### 7.1 Genre Proximity: Antiquitates vs. Annals
+
+Ussher's *Britannicarum Ecclesiarum Antiquitates* (1639) is a **much closer
+peer to Whitaker's *Disputatio*** than to the Annals. The key structural
+similarities:
+
+| Feature | Whitaker *Disputatio* | Ussher *Antiquitates* | Ussher *Annals* |
+|---|---|---|---|
+| Genre | Polemical-scholarly argumentation | Ecclesiastical-historical argumentation | Biblical-chronological computation |
+| Citation texture | Dense Patristic Greek (Origen, Eusebius, Chrysostom) + Latin paraphrases | Same | Classical authors (Cicero, Suetonius, Tacitus) + Hebrew/Greek |
+| Date annotations | None | Occasional | Pervasive (Anno Mundi, Julian Period, Olympiads) |
+| Register target | Victorian scholarly, Latinate | Same | Same |
+| Prose structure | Discursive argument | Discursive argument | Tabular/computational |
+
+This explains why the `ussher_v5_annals` fork required a substantially
+rewritten TRANSLATOR_BRIEF (biblical-chronological framing, date-annotation
+handling, classical citation conventions) while the `ussher_v5` brief for
+Antiquitates required only minor adjustments from the Whitaker core.
+
+### 7.2 Prompt Recommendation for Antiquitates
+
+**Use `ussher_v5`**, not `ussher_v5_annals`. The `ussher_v5` brief is already
+calibrated for Antiquitates' ecclesiastical-historical genre and was validated
+on Britannicarum p0036. No new corpus skin is needed. The HARD_RULES shared
+core (Rule 1 Greek+English-brackets / Latin-paraphrase collapse, Rules 2–7)
+transfers unchanged.
+
+### 7.3 Recommendations for Further Whitaker *Disputatio* Prompt Refinement
+
+The current v4 baseline was optimized on ch1 and generalization-tested on ch2.
+Candidates for further refinement, in priority order:
+
+1. **Address the two persistent low-COMET units in ch1.** `u002` (COMET 0.578)
+   and `u007` (0.742) were stable across v3→v4 — both were not fixed by the
+   Rule 2c slim. Targeted diagnostic analysis of those two units should reveal
+   whether a new rule or a lexical-hint addition would close the gap, or whether
+   the issue is a COMET artefact (Parker editorial divergence).
+
+2. **Reduce implicit-insertion artifacts.** The cf=4 pattern — minor English
+   syntax insertions (`[we learn]`, implicit connectors, subject pronouns) — was
+   consistent in both the Whitaker ch2 and Annals runs. A HARD_RULES addition
+   explicitly discouraging implicit subject/connector insertions unless
+   grammatically unavoidable in English would tighten content_fidelity scores
+   across both corpora without risking register harm.
+
+3. **Extend the Rule 2c Latinate vocabulary whitelist.** The 31-term flat list
+   was locked at v4. As ch3, ch4, and Antiquitates are processed, new
+   Patristic/scholastic terms will surface. Extend the list incrementally
+   rather than in bulk; each addition should be motivated by a specific
+   observed normalization error.
+
+4. **Cross-chapter COMET stability test (ch3).** The ch1→ch2 COMET drop
+   (-0.058) had a defensible explanation (Parker Greek-dropping divergence).
+   A ch3 test would confirm whether the prompt is stable across the full
+   Disputation or whether ch1 optimizations are chapter-specific.
+
+### 7.4 Finding Whitaker/Parker Pairs to Inject into the Antiquitates Prompt
+
+Since Whitaker's *Disputatio* and *Antiquitates* share genre, citation style,
+and register target, Parker Society's 1849 Fitzgerald translation serves as a
+ready-made register exemplar source for the Antiquitates prompt. The
+methodology:
+
+**Step 1 — Identify high-quality candidate units.**
+Cross-reference `chapter1_alignment.jsonl` / `chapter2_alignment.jsonl` with
+the existing COMET and fidelity score files:
+- COMET ≥ 0.78 (model and Parker agree closely)
+- `content_fidelity = 5` and `register_fidelity = 5`
+- `parker_divergence = "none"` (no editorial gap between author and Parker)
+
+Units meeting all three criteria are "clean exemplars" — the machine already
+produces near-Parker output, meaning Parker's English accurately reflects what
+Whitaker wrote and the model has internalized the pattern.
+
+**Step 2 — Select for pattern diversity.**
+From the filtered set, choose 3–5 units covering distinct citation patterns:
+- At least one unit with a Greek citation + Latin paraphrase (Rule 1 canonical
+  case, e.g. ch1 `p0030_body_l0007` Ἐρευνᾶτε τὰς γραφάς pattern)
+- At least one unit with a named Patristic attribution ("Origenes scribit…",
+  "Augustinus ait…") followed by Latin quotation
+- At least one unit of plain continuous prose argument (no Greek, no quotation)
+
+**Step 3 — Extract the pairs.**
+For each selected unit:
+- Latin: concatenate `text_gold` from the `latin_line_ids` in
+  `08_working_scratch/phase3b/annotations/whitaker_latin/`
+- English: concatenate `text_gold` from the `english_line_ids` in
+  `08_working_scratch/phase3b/annotations/whitaker_english/`
+
+**Step 4 — Inject and validate.**
+Add the 3–5 pairs as a `REGISTER EXEMPLARS` section in the `ussher_v5`
+TRANSLATOR_BRIEF, formatted as `SOURCE: … → TARGET: …` with a one-line
+annotation on the pattern each exemplifies. Then:
+- Re-run `ussher_v5` on Britannicarum with the exemplars added
+- Score with `author_fidelity_judge.py --corpus ussher`
+- Accept only if register_fidelity or content_fidelity improves by ≥ 0.1;
+  ablate if the gain is negligible (per §2 discipline: exemplars must earn
+  their place, they are not free)
+
+**Discipline note:** These are *register* exemplars (teaching the target
+style), not *content* exemplars (few-shot answers). The risk of content
+memorization is low because Whitaker's subjects (scriptural authority,
+Protestant-Catholic polemic) are largely absent from Antiquitates' topics
+(episcopal succession, early British church history). Monitor for any
+Whitaker-specific theological phrasing bleeding into Antiquitates output.
+
+---
+
 ## 6. Files
 
 | File | Description |
