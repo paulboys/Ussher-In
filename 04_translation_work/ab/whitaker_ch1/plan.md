@@ -268,12 +268,29 @@ reasoning does not apply here.
 Before injecting exemplars into the Antiquitates prompt, address the two
 priority refinement candidates in the Whitaker baseline:
 
-1. Diagnose persistent low-COMET units `u002` (0.578) and `u007` (0.742)
-   from ch1 — stable across v3→v4 and not yet explained. Read the Latin
-   and Parker English for those units directly; determine whether the gap
-   is a prompt failure (lexical/rule) or a COMET artefact (Parker
-   divergence). If a rule fix is warranted, update `translation_prompts_
-   whitaker_v4.py` and gate it through the standard Phase 3 A/B process.
+1. ~~Diagnose persistent low-COMET units `u002` (0.578) and `u007` (0.742)
+   from ch1.~~ **RESOLVED 2026-05-25 — both are COMET/alignment artefacts,
+   no prompt fix warranted.**
+   - **u002 (chapter subtitle):** v4 output is word-for-word identical to
+     Parker; the only difference is casing (Parker prints the subtitle in
+     ALL CAPS, v4 produced normal sentence case). The 0.578 score reflects
+     COMET case-sensitivity plus short-segment deflation on a ~10-word
+     heading. Translation is perfect; normal-case output is arguably more
+     correct than mimicking print-only all-caps.
+   - **u007:** Two non-error factors. (a) **Alignment boundary mismatch** —
+     the Latin unit begins mid-sentence at `industriamque acuit`, so v4
+     correctly renders "and sharpens their industry," but Parker's
+     translator split the sentence elsewhere and that clause sits in the
+     neighboring English unit; the extra clause vs the Parker reference
+     depresses COMET. (b) **Parker paraphrase** — Parker adds "their
+     meaning" (not in the Latin) and renders `diligentissime` as "with
+     anxious toil"; v4 is more literal. By the author-fidelity criterion,
+     v4 is preferable; COMET penalizes it precisely for not copying
+     Parker's editorial flourishes.
+   - **No edit to `translation_prompts_whitaker_v4.py`.** Optional cosmetic
+     cleanup: re-cut `chapter1_alignment.jsonl` so the "sharpens their
+     industry" clause sits in the same unit on both sides — raises u007's
+     COMET without touching the prompt. Cosmetic only; deferred.
 
 2. Consider a HARD_RULES addition discouraging implicit English insertions
    (`[we learn]`, subject-pronoun expansions, enclitic connector translations)
@@ -421,6 +438,15 @@ longer scores ⟦⟧/⟪⟫ usage.
   Phase 7 experiment with explicit ablation test before acceptance.
 
 ## 12. Revision Log
+
+- **2026-05-25 (ch1 u002/u007 diagnostic closed).** The two persistent
+  low-COMET units flagged 2026-05-17 are confirmed COMET/alignment
+  artefacts, not prompt failures. u002 is a word-for-word-correct chapter
+  subtitle deflated by all-caps-vs-normal-case + short-segment behavior;
+  u007 is depressed by an alignment boundary mismatch (Latin unit cut
+  mid-sentence) plus Parker's stylistic paraphrasing that author-fidelity
+  scoring does not want v4 to imitate. No edit to
+  `translation_prompts_whitaker_v4.py`. See §7.2 item 1 for detail.
 
 - **2026-05-25 (Phase 6 complete — Annals generalization test).**
   `ussher_v5_annals` evaluated on *Annales Veteris Testamenti* p0383–p0388
