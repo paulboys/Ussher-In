@@ -1,0 +1,59 @@
+{
+  "model": "Unbabel/wmt22-comet-da",
+  "reference_based": true,
+  "no_score": false,
+  "n_chunks": 34,
+  "n_rows": 102,
+  "run_summaries": {
+    "run01": {
+      "n_scored": 34,
+      "n_errored": 0,
+      "mean": 0.6967426854021409,
+      "median": 0.6980243921279907,
+      "min": 0.5780548453330994,
+      "max": 0.770651638507843
+    },
+    "run02": {
+      "n_scored": 34,
+      "n_errored": 0,
+      "mean": 0.6972780017291799,
+      "median": 0.6962600350379944,
+      "min": 0.5920099020004272,
+      "max": 0.7706667184829712
+    },
+    "run03": {
+      "n_scored": 34,
+      "n_errored": 0,
+      "mean": 0.6977837261031655,
+      "median": 0.6955994963645935,
+      "min": 0.5877925753593445,
+      "max": 0.7759271264076233
+    }
+  },
+  "chunk_winners": {
+    "run03": 11,
+    "run01": 14,
+    "run02": 9
+  },
+  "best_mean_run": "run03",
+  "runs_dir": "C:\\Users\\User\\Documents\\UssherIn\\04_translation_work\\ab\\p0383_p0388\\ussher_v5_annals",
+  "run_tags": [
+    "run01",
+    "run02",
+    "run03"
+  ],
+  "bridge_run": "run01",
+  "reference_jsonl": "C:\\Users\\User\\Documents\\UssherIn\\08_working_scratch\\phase3b\\annotations\\annals_english\\annals_english_parker_style.jsonl",
+  "reference_field": "modernized",
+  "reference_start_line": "p0695_body_l0027",
+  "reference_end_line": "p0699_body_l0037",
+  "chunk_ref_lines": 8,
+  "alignment_path": "C:\\Users\\User\\Documents\\UssherIn\\04_translation_work\\ab\\p0383_p0388\\ussher_v5_annals\\annals_chunked_comet_alignment.jsonl",
+  "scores_path": "C:\\Users\\User\\Documents\\UssherIn\\04_translation_work\\ab\\p0383_p0388\\ussher_v5_annals\\annals_chunked_comet_scores.jsonl",
+  "summary_path": "C:\\Users\\User\\Documents\\UssherIn\\04_translation_work\\ab\\p0383_p0388\\ussher_v5_annals\\annals_chunked_comet_summary.json",
+  "bridge_mapping_vote_counts": {
+    "n_lines": 289,
+    "n_without_votes": 13,
+    "mean_votes": 6.314878892733564
+  }
+}

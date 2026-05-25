@@ -1,31 +1,43 @@
-"""Author-fidelity LLM-judge for whitaker_v4 ch2.
+"""Author-fidelity LLM-judge for Whitaker and Ussher corpora.
 
 Purpose
 -------
-COMET treats Parker Society (1849) as ground truth, which conflates two
-distinct error modes:
+COMET treats a human reference translation as ground truth, which
+conflates two distinct error modes:
 
-1. Genuine translation error: v4 misrenders what Whitaker wrote.
-2. Editor drift: v4 preserved what Whitaker wrote, but Parker
-   editorially diverged.
+1. Genuine translation error: the machine misrenders what the author wrote.
+2. Editor drift: the machine preserved what the author wrote, but the
+   human reference editorially diverged.
 
 The user prioritizes AUTHOR-FIDELITY (mode 1 is bad; mode 2 is not).
 This judge scores each unit on rubrics that target what the AUTHOR
-wrote, with Parker as informational context only.
+wrote, with any human reference as informational context only.
 
 Scoring
 -------
 Per unit, four 1-5 rubrics:
 - greek_preservation: did the translation preserve Greek script that
-  Whitaker wrote? Score 'na' if source has no Greek.
-- paraphrase_handling: when Whitaker wrote Greek + a Latin paraphrase
+  the author wrote? Score 'na' if source has no Greek.
+- paraphrase_handling: when the author wrote Greek + a Latin paraphrase
   of the same content, did the translation render the paraphrase's
   meaning as English (typically in brackets after the Greek)? Score
   'na' if no Greek+Latin-paraphrase pair in the source.
 - content_fidelity: did the translation add or drop content vs the
   Latin source?
-- register_fidelity: scholarly Victorian English appropriate to a
-  16th-century polemical work, neither modernized nor Tudor-archaic.
+- register_fidelity: scholarly English appropriate to the corpus,
+  neither modernized nor Tudor-archaic.
+
+Input field names
+-----------------
+Accepts both the Whitaker COMET format (``unit_id``, ``latin_concat``,
+``english_concat``) and the Annals chunked-COMET format (``chunk_id``,
+``latin``, ``machine``). The ``reference`` field is optional in both.
+
+Resume
+------
+By default, if ``--output`` already exists, completed unit IDs are
+loaded and skipped; new results are appended. Pass ``--no-resume`` to
+ignore any existing output and start fresh.
 
 Reuses ``ab_judge.py``'s ``_make_default_judge`` / quota detection.
 """
@@ -279,10 +291,60 @@ def parse_response(raw: str) -> dict:
     return obj
 
 
+def _normalize_row(r: dict) -> dict:
+    """Normalize field names across Whitaker and Annals COMET formats.
+
+    Whitaker format: unit_id, latin_concat, english_concat, score, reference
+    Annals format:   chunk_id, latin, machine, score, reference
+    """
+    unit_id = r.get("unit_id") or r.get("chunk_id") or ""
+    latin = r.get("latin_concat") or r.get("latin") or ""
+    english = r.get("english_concat") or r.get("machine") or ""
+    return {
+        **r,
+        "unit_id": unit_id,
+        "latin_concat": latin,
+        "english_concat": english,
+    }
+
+
+def _load_completed_ids(path: Path) -> set[str]:
+    """Return unit_ids from a partial run that completed without error."""
+    completed: set[str] = set()
+    if not path.exists():
+        return completed
+    with path.open(encoding="utf-8") as h:
+        for raw in h:
+            raw = raw.strip()
+            if not raw:
+                continue
+            try:
+                rec = json.loads(raw)
+            except json.JSONDecodeError:
+                continue
+            uid = str(rec.get("unit_id") or "")
+            if uid and rec.get("scores") and not rec.get("error"):
+                completed.add(uid)
+    return completed
+
+
+def _ensure_trailing_newline(path: Path) -> None:
+    if not path.exists() or path.stat().st_size == 0:
+        return
+    with path.open("rb+") as h:
+        h.seek(-1, 2)
+        if h.read(1) != b"\n":
+            h.write(b"\n")
+
+
 def main() -> int:
     p = argparse.ArgumentParser()
     p.add_argument("--scores-jsonl", required=True,
-                   help="unit_scores.jsonl produced by a COMET scorer (each row has unit_id, run, latin_concat, english_concat, score; reference optional)")
+                   help=(
+                       "COMET scores JSONL. Accepts both Whitaker format "
+                       "(unit_id, latin_concat, english_concat) and Annals "
+                       "chunked-COMET format (chunk_id, latin, machine)."
+                   ))
     p.add_argument("--run-filter", required=True,
                    help="judge only rows whose 'run' field matches this string exactly")
     p.add_argument("--output", required=True,
@@ -293,6 +355,11 @@ def main() -> int:
     p.add_argument("--timeout-seconds", type=float, default=120.0)
     p.add_argument("--dry-run", action="store_true",
                    help="print prompts; do not call the judge")
+    p.add_argument("--no-resume", action="store_true",
+                   help=(
+                       "Ignore any existing --output JSONL and start fresh. "
+                       "Default: resume by skipping already-completed unit IDs."
+                   ))
     args = p.parse_args()
 
     rows: list[dict] = []
@@ -304,11 +371,26 @@ def main() -> int:
             r = json.loads(line)
             if r.get("run") != args.run_filter:
                 continue
-            rows.append(r)
+            rows.append(_normalize_row(r))
     print(f"Loaded {len(rows)} units from {args.scores_jsonl} (run={args.run_filter})")
 
+    out_path = Path(args.output)
+
+    # Resume logic
+    completed: set[str] = set()
+    if not args.no_resume:
+        completed = _load_completed_ids(out_path)
+        if completed:
+            print(f"Resume: skipping {len(completed)} already-completed unit(s).")
+            _ensure_trailing_newline(out_path)
+    elif out_path.exists():
+        out_path.write_text("", encoding="utf-8")
+
+    rows_to_judge = [r for r in rows if str(r.get("unit_id") or "") not in completed]
+    print(f"Units to judge: {len(rows_to_judge)}/{len(rows)}")
+
     if args.dry_run:
-        for r in rows[:2]:
+        for r in rows_to_judge[:2]:
             prompt = build_prompt(latin=r["latin_concat"],
                                   english=r["english_concat"],
                                   parker_ref=r.get("reference", ""),
@@ -320,14 +402,21 @@ def main() -> int:
             print(prompt[:2000])
         return 0
 
+    if not rows_to_judge:
+        print(f"Nothing to do; all units already complete in {out_path}")
+        return 0
+
     judge = aj._make_default_judge(judge_model=args.judge_model,
                                     timeout_seconds=args.timeout_seconds)
 
     results: list[dict] = []
-    out_path = Path(args.output)
     out_path.parent.mkdir(parents=True, exist_ok=True)
-    with out_path.open("w", encoding="utf-8") as h:
-        for i, r in enumerate(rows, 1):
+    open_mode = "a" if (not args.no_resume and completed) else "w"
+    total = len(rows)
+    done_before = len(completed)
+    with out_path.open(open_mode, encoding="utf-8") as h:
+        for i, r in enumerate(rows_to_judge, 1):
+            display_i = done_before + i
             prompt = build_prompt(latin=r["latin_concat"],
                                   english=r["english_concat"],
                                   parker_ref=r.get("reference", ""),
@@ -340,12 +429,12 @@ def main() -> int:
                 raw = judge(prompt)
                 parsed = parse_response(raw)
             except aj.JudgeQuotaError as e:
-                print(f"[{i}/{len(rows)}] {r['unit_id']} QUOTA REFUSAL — aborting")
+                print(f"[{display_i}/{total}] {r['unit_id']} QUOTA REFUSAL — aborting")
                 err = f"quota: {e}"
                 break
             except Exception as e:
                 err = f"{type(e).__name__}: {e}"
-                print(f"[{i}/{len(rows)}] {r['unit_id']} ERROR: {err}")
+                print(f"[{display_i}/{total}] {r['unit_id']} ERROR: {err}")
             dt = time.time() - t0
             rec = {
                 "unit_id": r["unit_id"],
@@ -367,7 +456,7 @@ def main() -> int:
             scores = rec.get("scores", {})
             comet_str = f"COMET={r['score']:.3f}" if r.get("score") is not None else "no-comet"
             div_str = f"  div={rec['parker_divergence']}" if "parker_divergence" in rec else ""
-            print(f"[{i:2}/{len(rows)}] {r['unit_id']}  {comet_str}  "
+            print(f"[{display_i:2}/{total}] {r['unit_id']}  {comet_str}  "
                   f"gp={scores.get('greek_preservation','?')}  "
                   f"ph={scores.get('paraphrase_handling','?')}  "
                   f"cf={scores.get('content_fidelity','?')}  "
@@ -377,7 +466,7 @@ def main() -> int:
 
     print(f"\nWrote {out_path}")
     n_ok = sum(1 for r in results if r.get("scores"))
-    print(f"Scored: {n_ok}/{len(results)}")
+    print(f"Scored this session: {n_ok}/{len(results)}")
     return 0
 
 

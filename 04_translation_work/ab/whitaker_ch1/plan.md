@@ -188,7 +188,7 @@ sprawl; we don't repeat it.
 4. Final shared-core prompt is locked only after the c1_ch2 check
    passes.
 
-### Phase 5 — Ussher Validation
+### Phase 5 — Ussher Validation (Britannicarum)
 
 1. Build an Ussher-specific `TRANSLATOR_BRIEF` and Rule 2 register
    clause. **Done 2026-05-18** —
@@ -216,6 +216,38 @@ sprawl; we don't repeat it.
 5. Output: `ussher_validation_report.md`. Inspect the worst-scoring
    units for systematic issues; iterate v5 corpus skin if a clear
    pattern emerges.
+6. **Phase 5 outcome (complete 2026-05-18):** author-fidelity scores
+   on Britannicarum p0036 confirmed v5 generalizes correctly.
+   Prompt locked as production-ready for Britannicarum.
+
+### Phase 6 — Annals Generalization Test **[COMPLETE 2026-05-25]**
+
+Tests whether `ussher_v5_annals` (Annals corpus skin forked from v5)
+transfers to Ussher's *Annales Veteris Testamenti* — a different
+genre (biblical-chronological) with pervasive date annotations and
+denser classical citation patterns than Britannicarum.
+
+1. **OCR & annotation.** OCR'd 6 Latin pages (p0383–p0388, Vol I)
+   and 5 English pages (p0695–p0699, 1658 Hamilton translation).
+   Both manually reviewed and locked.
+2. **Register modernization.** 1658 Restoration-era English
+   register-normalized to Parker 1849 scholarly style via
+   `modernize_to_parker_register.py` → sidecar
+   `annals_english_parker_style.jsonl` (327 lines, 0 errors).
+3. **Translation runs.** `ussher_v5_annals` run × 3 over p0383–p0388
+   (289 segments/run). Prompt forked from v5: identical HARD_RULES,
+   new TRANSLATOR_BRIEF for biblical-chronological genre.
+4. **COMET scoring.** Chunked reference-based COMET-DA (34 chunks,
+   8 reference lines/chunk) via `annals_chunked_comet_score.py`.
+   Token-bridge alignment on run01.
+5. **Author-fidelity judging.** `author_fidelity_judge.py` extended
+   2026-05-25 to: (a) accept Annals COMET field names
+   (`chunk_id`/`latin`/`machine`) alongside Whitaker format;
+   (b) add `--resume` / `--no-resume` for quota-safe reruns.
+6. **Report.** `04_translation_work/ab/p0383_p0388/ussher_v5_annals/
+   report.md`.
+
+**Phase 6 outcome:** PASS. See §12 revision log entry 2026-05-25.
 
 ---
 
@@ -322,6 +354,31 @@ longer scores ⟦⟧/⟪⟫ usage.
   English glosses remain allowed.
 
 ## 12. Revision Log
+
+- **2026-05-25 (Phase 6 complete — Annals generalization test).**
+  `ussher_v5_annals` evaluated on *Annales Veteris Testamenti* p0383–p0388
+  (6 Latin pages, 3 runs, 34 COMET chunks) against the 1658 Hamilton
+  English register-normalized to Parker 1849 style.
+  - **COMET (machine vs modernized 1658 English):** run01 0.6967,
+    run02 0.6973, run03 0.6978. Cross-run range mean 0.013 — highly
+    stable (lower variance than any Whitaker run).
+  - **Author-fidelity (run01, 34 chunks):** content_fidelity 4.24/5,
+    register_fidelity 4.88/5, greek_preservation 5.00/5 (n=2; 32 n/a —
+    few Greek citations in these pages), paraphrase_handling 4.00/5 (n=2).
+  - **Flags:** 4 chunks scored cf=3 (two doubled-phrase artifacts in
+    chunks 023/034; one dropped verb in chunk 012; one line-break
+    completion in chunk 005). None are systemic prompt failures.
+  - **Decision:** PASS. No prompt revision needed. `ussher_v5_annals`
+    is production-ready for the Annals corpus. The COMET gap vs the
+    1658 reference is expected — Hamilton's Restoration register
+    inherently differs from the v5 modern-scholarly target.
+  - Artifacts: `04_translation_work/ab/p0383_p0388/ussher_v5_annals/`
+    (run01–03 JSONL, alignment, COMET scores/summary, fidelity scores,
+    `report.md`).
+  - Infrastructure additions: `annals_chunked_comet_score.py`
+    (chunked reference-COMET with token-bridge alignment);
+    `author_fidelity_judge.py` updated with `--resume`/`--no-resume`
+    and dual-format field normalization.
 
 - **2026-05-18 (Phase 4 complete; v4 locked; moving to Phase 5).**
   v4 evaluated on c1_ch2 (33 alignment units × 3 runs) with dual scoring:
