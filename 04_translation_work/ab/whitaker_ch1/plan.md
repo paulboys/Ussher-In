@@ -396,6 +396,26 @@ page and it failed. Pursue register tuning through the BRIEF/HARD_RULES
 exemplars (few-shot answers). Monitor that Whitaker's polemical-theological
 phrasing does not bleed into Antiquitates output.
 
+**7.5 Completeness Safety Net (implemented 2026-05-26)**
+
+Diagnosed during the §7.3 ablation: when a single sentence spans many
+locked lines with mid-word hyphenation (Britannicarum p0036 l0026–l0031,
+an embedded list of nations), the model silently collapses or drops those
+line_ids — they persisted with empty English in *both* ablation runs (38
+segments, only 32 non-empty). `parse_translation_payload` already *flagged*
+the gap as a warning but nothing acted on it.
+
+Fix is **code-only** — no OUTPUT_CONTRACT edit, decided deliberately
+because the §7.3 ablation just demonstrated that additions to the shared
+prompt core regress fidelity (cf −0.125). `_rerun_missing_units` in
+`translate_segments.py` compares `result.translations` against the
+already-computed `expected_ids` after each page; any omitted unit_ids are
+re-translated as their own isolated request (≤ 2 rounds), which removes the
+line-list-collapse pressure that caused the drop. Recoveries merge into
+the result before persistence; residual gaps surface as a `STILL MISSING`
+warning. Verified with a stub-adapter smoke test (recovers droppable units,
+isolates genuinely-unrecoverable ones, fires the residual warning).
+
 ---
 
 ## 6. Artifacts
