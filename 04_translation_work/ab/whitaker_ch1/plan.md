@@ -362,7 +362,35 @@ because both works share genre and target register. Methodology:
    exercised), score both with `author_fidelity_judge.py --corpus ussher`.
    **Accept the exemplars only if register_fidelity or content_fidelity
    improves ≥ 0.1; otherwise delete the fork and keep plain ussher_v5.**
-   Status: prompt built and registered; validation runs pending.
+
+**Result (2026-05-26): REJECTED — fork ablated.** Both runs scored all 32
+shared units. Group means (judge `claude-sonnet-4-6`, `--corpus ussher`):
+
+| Rubric | control (v5_base) | treatment (v5_ex) | delta |
+|---|---|---|---|
+| content_fidelity | 4.281 | 4.156 | **−0.125** |
+| register_fidelity | 4.812 | 4.781 | **−0.031** |
+
+Neither rubric cleared the +0.10 gate; **both went negative.** Per-unit
+data showed churn rather than systematic gain — a few units improved
+(l0008 cf +2, l0017/l0024 cf +1) but units already strong in the control
+were disrupted (l0009 cf 5→3, l0034 cf 4→2 / rf 5→3, l0007 cf/rf −1 each).
+This reproduces the **v3 attention-budget regression**: the ~2 kB
+`REGISTER_EXEMPLARS` block displaced attention from the passage under
+translation, degrading exactly the units the shared core already handled
+well. Conclusion: cross-corpus register exemplars do **not** earn their
+place for this prompt. The fork
+(`translation_prompts_ussher_v5_exemplars.py`) and its `translate_segments`
+dispatch entry were deleted; plain `ussher_v5` remains the production
+prompt. Ablation harness retained at
+`08_working_scratch/pipeline_scripts/ablation_verdict.py`; the
+`segments_to_fidelity_input.py` bridge (general, reusable) is kept.
+
+**Implication for §7.4 (Antiquitates exemplars):** the §7.4 plan to inject
+Whitaker/Parker pairs into the Antiquitates prompt is now **discouraged** —
+this ablation is the direct test of that hypothesis on a genre-adjacent
+page and it failed. Pursue register tuning through the BRIEF/HARD_RULES
+(consolidation, not addition) rather than appended exemplar blocks.
 
 **Discipline:** These are register exemplars (target style), not content
 exemplars (few-shot answers). Monitor that Whitaker's polemical-theological
