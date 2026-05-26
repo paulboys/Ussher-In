@@ -443,6 +443,92 @@ def _place_markers_in_english(
     return current, warnings
 
 
+def _rerun_missing_units(
+    *,
+    page_id: str,
+    units_for_prompt: list[dict],
+    fns_for_prompt: list[dict],
+    result: TranslationResult,
+    expected_ids: list[str],
+    adapter: "AnthropicTranslationAdapter",
+    lexicon_profile: str,
+    extra_context: str | None,
+    max_rounds: int = 2,
+) -> list[str]:
+    """Detect-and-rerun completeness safety net.
+
+    The model occasionally omits requested unit_ids — observed when a
+    single sentence spans many locked lines with mid-word hyphenation
+    (e.g. Britannicarum p0036 l0026-l0031), which the model silently
+    collapses or drops. ``parse_translation_payload`` already flags the
+    gap as a warning, but the dropped lines would otherwise persist with
+    empty English. This re-translates ONLY the missing span, keyed to
+    exactly the dropped unit_ids, which removes the line-list collapse
+    pressure that caused the drop. Recoveries are merged into
+    ``result.translations`` in place.
+
+    Returns warning strings describing recoveries and any residual gap.
+    """
+    line_by_id = {
+        ln.get("line_id"): ln for ln in units_for_prompt if ln.get("line_id")
+    }
+    fn_by_id = {
+        fn.get("footnote_id"): fn for fn in fns_for_prompt if fn.get("footnote_id")
+    }
+
+    warns: list[str] = []
+    for round_no in range(1, max_rounds + 1):
+        missing = [uid for uid in expected_ids if uid not in result.translations]
+        miss_lines = [line_by_id[u] for u in missing if u in line_by_id]
+        miss_fns = [fn_by_id[u] for u in missing if u in fn_by_id]
+        if not miss_lines and not miss_fns:
+            break  # nothing left we can rebuild a prompt from
+
+        sub_prompt = build_translation_prompt(
+            page_id=page_id,
+            body_lines=miss_lines,
+            footnotes=miss_fns,
+            lexicon_profile=lexicon_profile,
+            extra_context=extra_context,
+        )
+        sub_expected = [u for u in missing if u in line_by_id or u in fn_by_id]
+        try:
+            sub = adapter.translate_units(
+                sub_prompt, expected_unit_ids=sub_expected
+            )
+        except TranslationError as exc:
+            warns.append(
+                f"rerun round {round_no}: re-translation of "
+                f"{len(sub_expected)} missing unit(s) failed "
+                f"({exc.category}); leaving them empty"
+            )
+            break
+
+        recovered: list[str] = []
+        for uid, unit in sub.translations.items():
+            if uid not in result.translations:
+                result.translations[uid] = unit
+                recovered.append(uid)
+        if recovered:
+            warns.append(
+                f"rerun round {round_no}: recovered {len(recovered)} "
+                "missing unit(s): " + ", ".join(sorted(recovered))
+            )
+        else:
+            warns.append(
+                f"rerun round {round_no}: re-translation returned no new "
+                "unit(s); stopping"
+            )
+            break
+
+    residual = [uid for uid in expected_ids if uid not in result.translations]
+    if residual:
+        warns.append(
+            "STILL MISSING after rerun: " + ", ".join(sorted(residual))
+        )
+    return warns
+
+
 def translate_page(
     payload: dict,
     *,
@@ -587,6 +673,20 @@ def translate_page(
         }
 
     model = adapter.provider.model
+
+    # Completeness safety net: re-translate any requested unit_ids the
+    # model omitted, before persisting (otherwise they persist empty).
+    rerun_warnings = _rerun_missing_units(
+        page_id=page_id,
+        units_for_prompt=units_for_prompt,
+        fns_for_prompt=fns_for_prompt,
+        result=result,
+        expected_ids=expected_ids,
+        adapter=adapter,
+        lexicon_profile=lexicon_profile,
+        extra_context=extra_context,
+    )
+
     translated_ids: list[str] = []
     placement_warnings: list[str] = []
 
@@ -696,7 +796,7 @@ def translate_page(
         "status": "ok",
         "skipped": skipped,
         "translated": translated_ids,
-        "warnings": list(result.errors) + placement_warnings,
+        "warnings": list(result.errors) + placement_warnings + rerun_warnings,
         "usage_tokens": result.usage_tokens,
     }
 
