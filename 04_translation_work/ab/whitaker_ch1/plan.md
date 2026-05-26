@@ -322,24 +322,47 @@ Whitaker/Parker pairs are high-quality register exemplars for Antiquitates
 because both works share genre and target register. Methodology:
 
 1. **Identify candidates** from `chapter1_alignment.jsonl` /
-   `chapter2_alignment.jsonl`. Filter for units with COMET ≥ 0.78,
-   content_fidelity = 5, register_fidelity = 5, parker_divergence = "none".
+   `chapter2_alignment.jsonl`. **Filter revised 2026-05-25 to
+   fidelity-first:** `content_fidelity = 5 AND register_fidelity = 5`,
+   selecting for pattern diversity. The original `COMET ≥ 0.78` gate was
+   **dropped** — it yielded only 1 candidate (ch2_u001) and excluded the
+   best Greek-preservation units *by design*: every unit where v4
+   correctly preserved Greek that Parker dropped has `div=major` and low
+   COMET (e.g. ch2_u004/u008/u015 at COMET 0.59–0.69 but `gp=5 ph=5`).
+   The high-COMET gate therefore filtered out exactly the behavior the
+   exemplars are meant to teach. Author-fidelity scores (cf/rf) measure
+   "clean exemplar" directly and better. (ch1 has COMET but no fidelity
+   scores, so selection drew from ch2, which has full dual scoring.)
 
-2. **Select 3–5 units** covering:
-   - Greek citation + Latin paraphrase (Rule 1 canonical pattern)
-   - Named Patristic attribution + Latin quotation
-   - Plain continuous prose argument
+2. **Selected 3 units** (2026-05-25), maximally diverse, all `cf=5 rf=5`:
+   - **ch2_u006** — Greek + author's Latin paraphrase collapsed into the
+     bracket, inside a named Patristic citation (Eusebius, bk 7 ch 30).
+     Covers Rule 1 canonical case + citation form. `gp=5 ph=5`.
+   - **ch2_u017** — bare Greek + bracketed English gloss with **no** Latin
+     paraphrase in the source (the contrast case; gloss still supplied).
+     `gp=5`.
+   - **ch2_u029** — plain scholarly prose with crisp antithesis ("They
+     affirm it; we deny it"); register/voice anchor, no Greek.
 
-3. **Extract pairs**: Latin from `annotations/whitaker_latin/`, English
-   from `annotations/whitaker_english/`, using `text_gold` concatenated
-   over the `latin_line_ids` / `english_line_ids` from the alignment file.
+3. **Extracted pairs**: Latin from `annotations/whitaker_latin/`, English
+   from the v4 machine output (author-fidelity-validated `cf=5 rf=5`,
+   de-hyphenated and trimmed to self-contained sentences).
 
-4. **Inject as `REGISTER EXEMPLARS`** in the `ussher_v5` TRANSLATOR_BRIEF.
-   Format: `SOURCE: … → TARGET: …` with a one-line pattern annotation.
+4. **Injected** as a `REGISTER_EXEMPLARS` section (not in the BRIEF but as
+   its own section after HARD_RULES) in a **forked prompt**
+   `translation_prompts_ussher_v5_exemplars.py` (registered as
+   `ussher_v5_exemplars`). Forked rather than edited in place so plain
+   `ussher_v5` remains the untouched control for the ablation test. The
+   fork shares HARD_RULES and TRANSLATOR_BRIEF with v5 by identity; the
+   only delta is the ~2 kB exemplar block.
 
-5. **Validate**: re-run `ussher_v5` on a Britannicarum chapter, score with
-   `author_fidelity_judge.py --corpus ussher`. Accept only if
-   register_fidelity or content_fidelity improves ≥ 0.1; ablate otherwise.
+5. **Validate** (ablation): run both `ussher_v5` (control) and
+   `ussher_v5_exemplars` (treatment) on Britannicarum **p0036** (9 Greek
+   lines, fully locked — the Phase 5 page, so Greek exemplars are actually
+   exercised), score both with `author_fidelity_judge.py --corpus ussher`.
+   **Accept the exemplars only if register_fidelity or content_fidelity
+   improves ≥ 0.1; otherwise delete the fork and keep plain ussher_v5.**
+   Status: prompt built and registered; validation runs pending.
 
 **Discipline:** These are register exemplars (target style), not content
 exemplars (few-shot answers). Monitor that Whitaker's polemical-theological

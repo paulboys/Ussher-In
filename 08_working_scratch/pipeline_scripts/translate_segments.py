@@ -60,6 +60,7 @@ import translation_prompts_whitaker_v3 as _prompt_whitaker_v3  # noqa: E402
 import translation_prompts_whitaker_v4 as _prompt_whitaker_v4  # noqa: E402
 import translation_prompts_ussher_v5 as _prompt_ussher_v5  # noqa: E402
 import translation_prompts_ussher_v5_annals as _prompt_ussher_v5_annals  # noqa: E402
+import translation_prompts_ussher_v5_exemplars as _prompt_ussher_v5_exemplars  # noqa: E402
 
 # Mapping for --prompt-version dispatch. All modules expose
 # ``build_translation_prompt`` with the same signature; the drift-guard
@@ -76,6 +77,7 @@ _PROMPT_VERSIONS = {
     "whitaker_v4": _prompt_whitaker_v4,
     "ussher_v5": _prompt_ussher_v5,
     "ussher_v5_annals": _prompt_ussher_v5_annals,
+    "ussher_v5_exemplars": _prompt_ussher_v5_exemplars,
 }
 
 # ---------------------------------------------------------------------------
