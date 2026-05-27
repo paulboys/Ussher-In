@@ -66,6 +66,16 @@ def _page_num(record: dict) -> int | None:
     return int(m.group(1)) if m else None
 
 
+def _order_key(record: dict) -> int:
+    """Within-page ordering of a segment: prefer the record's seq, else the
+    trailing number of its segment_id (line/footnote index)."""
+    seq = record.get("seq")
+    if isinstance(seq, int):
+        return seq
+    m = re.search(r"(\d+)\D*$", str(record.get("segment_id") or ""))
+    return int(m.group(1)) if m else 0
+
+
 def _eng_pattern(s: str) -> re.Pattern:
     """Case-insensitive, word-boundaried matcher for an English rendering,
     tolerant of a simple plural ('church' -> church/churches)."""
@@ -94,11 +104,19 @@ def _excerpt(text: str, limit: int = 160) -> str:
 
 
 def validate(segments_path: Path, glossary: list[dict], *,
-             start_page: int | None, end_page: int | None) -> list[dict]:
-    flags: list[dict] = []
-    # term -> {approved_variant -> [segment_ids]} for cross-corpus drift
-    usage: dict[str, dict[str, list[str]]] = {e["term"]: {} for e in glossary}
+             start_page: int | None, end_page: int | None,
+             window: int = 1) -> list[dict]:
+    """Scan a translated segments JSONL against the glossary.
 
+    The English rendering of a glossary term often lands on the *adjacent*
+    line when the Latin token sits at a line break (line-keyed segmentation).
+    To suppress those false positives, the approved/banned check looks at the
+    segment's English plus ``window`` neighbours on either side (same page,
+    same kind, ordered by seq/line number). ``--window 0`` restores strict
+    line-exact matching. DRIFT remains corpus-wide.
+    """
+    # ---- load in-range segments ----
+    segs: list[dict] = []
     for raw in segments_path.read_text(encoding="utf-8").splitlines():
         raw = raw.strip()
         if not raw:
@@ -109,51 +127,76 @@ def validate(segments_path: Path, glossary: list[dict], *,
             continue
         if end_page is not None and (pn is None or pn > end_page):
             continue
-
         latin = str(rec.get("latin_text") or "").strip()
-        english = english_for(rec).strip()
         if not latin:
             continue
-        seg_id = rec.get("segment_id", "")
-        pid = rec.get("page_id", "")
+        seg_id = str(rec.get("segment_id") or "")
+        segs.append({
+            "seg_id": seg_id, "page_id": rec.get("page_id", ""), "page_num": pn,
+            "kind": "fn" if "_fn_" in seg_id else "body",
+            "order": _order_key(rec), "latin": latin,
+            "english": english_for(rec).strip(),
+        })
 
+    # ---- per-(page, kind) ordered groups + position map for windowing ----
+    groups: dict[tuple, list[dict]] = {}
+    for s in segs:
+        groups.setdefault((s["page_num"], s["kind"]), []).append(s)
+    for g in groups.values():
+        g.sort(key=lambda s: s["order"])
+    pos: dict[str, tuple] = {
+        s["seg_id"]: (key, i) for key, g in groups.items() for i, s in enumerate(g)
+    }
+
+    def window_english(seg: dict) -> str:
+        key, i = pos[seg["seg_id"]]
+        g = groups[key]
+        lo, hi = max(0, i - window), min(len(g), i + window + 1)
+        return " ".join(g[j]["english"] for j in range(lo, hi))
+
+    # ---- scan ----
+    flags: list[dict] = []
+    usage: dict[str, dict[str, set]] = {e["term"]: {} for e in glossary}
+    for seg in segs:
+        win = window_english(seg)
         for e in glossary:
-            if not e["_latin_re"].search(latin):
+            if not e["_latin_re"].search(seg["latin"]):
                 continue  # term not in this segment's Latin
 
-            banned_hit = next((b for b, rx in e["_banned_re"] if rx.search(english)), None)
+            banned_hit = next((b for b, rx in e["_banned_re"] if rx.search(win)), None)
             if banned_hit:
                 flags.append({
-                    "segment_id": seg_id, "page_id": pid, "term": e["term"],
-                    "flag": "BANNED", "severity": _SEVERITY["BANNED"],
+                    "segment_id": seg["seg_id"], "page_id": seg["page_id"],
+                    "term": e["term"], "flag": "BANNED", "severity": _SEVERITY["BANNED"],
                     "found": banned_hit, "expected": e.get("approved", []),
-                    "latin": _excerpt(latin), "english": _excerpt(english),
+                    "latin": _excerpt(seg["latin"]), "english": _excerpt(win),
                     "note": e.get("note", ""),
                 })
 
-            approved_hits = [a for a, rx in e["_approved_re"] if rx.search(english)]
+            approved_hits = [a for a, rx in e["_approved_re"] if rx.search(win)]
             if approved_hits:
                 for a in approved_hits:
-                    usage[e["term"]].setdefault(a, []).append(seg_id)
+                    usage[e["term"]].setdefault(a, set()).add(seg["seg_id"])
             elif not banned_hit:
-                # term present in Latin, no approved English found, nothing banned
+                # term in Latin, no approved English in the window, nothing banned
                 flags.append({
-                    "segment_id": seg_id, "page_id": pid, "term": e["term"],
-                    "flag": "MISSING_APPROVED", "severity": _SEVERITY["MISSING_APPROVED"],
+                    "segment_id": seg["seg_id"], "page_id": seg["page_id"],
+                    "term": e["term"], "flag": "MISSING_APPROVED",
+                    "severity": _SEVERITY["MISSING_APPROVED"],
                     "found": None, "expected": e.get("approved", []),
-                    "latin": _excerpt(latin), "english": _excerpt(english) or "(empty)",
+                    "latin": _excerpt(seg["latin"]),
+                    "english": _excerpt(seg["english"]) or "(empty)",
                     "note": e.get("note", ""),
                 })
 
-    # Cross-corpus drift: term rendered with >1 distinct approved variant.
+    # Drift: term rendered with >1 distinct approved variant across the run.
     for term, variants in usage.items():
         if len(variants) > 1:
             flags.append({
                 "segment_id": "", "page_id": "", "term": term,
                 "flag": "DRIFT", "severity": _SEVERITY["DRIFT"],
                 "found": {v: len(ids) for v, ids in variants.items()},
-                "expected": sorted(variants),
-                "latin": "", "english": "",
+                "expected": sorted(variants), "latin": "", "english": "",
                 "note": "Term rendered with multiple approved variants; confirm "
                         "each occurrence is contextually justified.",
             })
@@ -167,6 +210,10 @@ def main() -> int:
     p.add_argument("--output", type=Path, default=_DEFAULT_OUTPUT)
     p.add_argument("--start-page", type=int, default=None)
     p.add_argument("--end-page", type=int, default=None)
+    p.add_argument("--window", type=int, default=1,
+                   help="Neighbour lines each side to include when checking "
+                        "approved/banned renderings (suppresses line-break "
+                        "false positives). 0 = strict line-exact. Default 1.")
     args = p.parse_args()
 
     if not args.segments.exists():
@@ -178,7 +225,8 @@ def main() -> int:
 
     glossary = load_glossary(args.glossary)
     flags = validate(args.segments, glossary,
-                     start_page=args.start_page, end_page=args.end_page)
+                     start_page=args.start_page, end_page=args.end_page,
+                     window=args.window)
 
     args.output.parent.mkdir(parents=True, exist_ok=True)
     with args.output.open("w", encoding="utf-8") as h:

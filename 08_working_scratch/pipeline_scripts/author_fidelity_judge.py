@@ -308,6 +308,12 @@ def _normalize_row(r: dict) -> dict:
     }
 
 
+def _page_of(unit_id: str) -> int | None:
+    """Parse the page number from a unit_id like 'seg_p0034_body_l0011'."""
+    m = re.search(r"p(\d+)", str(unit_id or ""))
+    return int(m.group(1)) if m else None
+
+
 def _load_completed_ids(path: Path) -> set[str]:
     """Return unit_ids from a partial run that completed without error."""
     completed: set[str] = set()
@@ -360,6 +366,11 @@ def main() -> int:
                        "Ignore any existing --output JSONL and start fresh. "
                        "Default: resume by skipping already-completed unit IDs."
                    ))
+    p.add_argument("--start-page", type=int, default=None,
+                   help="if set, judge only units whose page (parsed from "
+                        "unit_id, e.g. seg_p0034_...) is >= this")
+    p.add_argument("--end-page", type=int, default=None,
+                   help="if set, judge only units whose page is <= this")
     args = p.parse_args()
 
     rows: list[dict] = []
@@ -373,6 +384,23 @@ def main() -> int:
                 continue
             rows.append(_normalize_row(r))
     print(f"Loaded {len(rows)} units from {args.scores_jsonl} (run={args.run_filter})")
+
+    if args.start_page is not None or args.end_page is not None:
+        before = len(rows)
+
+        def _in_range(uid: str) -> bool:
+            pn = _page_of(uid)
+            if pn is None:
+                return False
+            if args.start_page is not None and pn < args.start_page:
+                return False
+            if args.end_page is not None and pn > args.end_page:
+                return False
+            return True
+
+        rows = [r for r in rows if _in_range(r.get("unit_id"))]
+        print(f"Page filter {args.start_page}-{args.end_page}: "
+              f"{before} -> {len(rows)} units")
 
     out_path = Path(args.output)
 
