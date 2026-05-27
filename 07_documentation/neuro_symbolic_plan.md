@@ -2,9 +2,81 @@
 
 **Date:** 2026-05-17
 **Project:** Ussher translation pipeline
-**Status:** Proposed architecture
+**Status:** Proposed architecture — **partially superseded; see Reconciliation (2026-05-26) below**
 **Scope:** Latin/Greek-to-English translation support for Ussher, Whitaker,
 near-peer early modern theological corpora, and patristic source material.
+
+---
+
+## 0. Reconciliation with empirical findings (2026-05-26)
+
+This architecture (dated 2026-05-17) predates two results from the Phase 6–7
+work that change its priorities. **Read this section first; it overrides the
+relevant parts of §§6–8 and §13 below.**
+
+The two findings:
+
+1. **§7.3 exemplar ablation (REJECTED).** Injecting near-peer Whitaker/Parker
+   parallels into the translation prompt was tested directly on Britannicarum
+   p0036 (control vs. treatment, author-fidelity judge, 32 units). It
+   **regressed** content fidelity (cf 4.281 → 4.156, −0.125) and register
+   (−0.031) via attention-budget dilution — the v3 regression signature. The
+   fork was deleted.
+2. **Completeness safety net (IMPLEMENTED).** A code-side detect-and-rerun in
+   `translate_segments.py` re-translates any source line the model omits,
+   before persistence. This is the deterministic completeness guarantee §9
+   gestures at, delivered without touching the prompt.
+
+### What this plan got right (adopted)
+
+- **§2 design principles** stand, and were vindicated: symbolic constrains
+  neural; prompt text is not the source of truth; Whitaker-as-lab /
+  Ussher-as-target; **near-peer parallels are evidence, not imitation
+  targets** (§2.5); every change survives ablation (§2.6).
+- **§9.1 symbolic validators** — adopted and expanded. The cheap deterministic
+  checks (Greek-preserved, bracket-gloss-present, footnote-marker leakage,
+  citation/title preservation, named-entity consistency) are high value at
+  zero model cost. Implemented incrementally as post-hoc validators over the
+  segments JSONL, starting with the controlled glossary
+  (`glossary_validate.py` + `glossary_ussher.jsonl`, Phase A, done).
+- **§9.2 CometKiwi** — adopted. Reference-free QE fills a real gap: COMET is
+  reference-based and cannot score the Antiquitates (no English gold). CometKiwi
+  gives a reproducible per-segment quality gate the LLM judge alone does not.
+- **§3.4 rule status/scope vocabulary** — adopted as lightweight documentation
+  (status: accepted/experimental/rejected/ablation-needed; scope:
+  shared-core/skin), NOT as a full registry+compiler build (§10 deferred). The
+  §7.3 exemplar rejection is the first "rejected" rule of record.
+- **§5.2 alignment metadata** and **§12 review-as-workstation** — adopted as the
+  schema target for the translation memory and the north star for the
+  editor-flags surface, respectively.
+
+### What this plan got wrong for this project (rejected / deferred)
+
+- **⛔ Retrieval → evidence-packet → prompt injection (§§6–7, §13 Phase 3–4).**
+  This is the core of the proposed architecture and it is the thing the §7.3
+  ablation falsified: putting retrieved near-peer parallels *into the prompt*
+  hurts. **Correction: retrieval and the translation memory are for post-hoc
+  consistency checking and cost dedup, never for prompt injection.** Same
+  evidence, opposite plumbing — it enters as validation, not as prompt context.
+- **⛔ Multi-candidate generation, 4 profiles/segment (§8.1).** 4× model cost on
+  a ~480-unit chapter; contradicts the cost constraint and the validated
+  page-at-a-time single-call granularity. Rejected for production.
+- **⏸ Upfront schema proliferation + prompt compiler (§3, §10, §13 Phase 1).**
+  Violates "lightest formalization that handles the actual rule complexity."
+  Import-based core-sharing already gives single-source-of-truth for the core.
+  Deferred; adopt schemas incrementally as each component lands.
+
+### Revised roadmap (current)
+
+- **Phase A (done) → A+:** glossary validator + cheap deterministic validators
+  (footnote-leakage, Greek-with-gloss, citation/title preservation).
+- **Scoring:** COMET (Whitaker/Annals, references exist) + author-fidelity judge
+  + **CometKiwi** (reference-free gate for the Antiquitates).
+- **Phase B:** translation memory for consistency validation + cost dedup
+  (explicitly not prompt injection); rich alignment metadata per §5.2.
+- **Phase C:** named-entity/prosopography + remaining artifact validators.
+- **Invariant:** the symbolic layer validates and flags; it does not inject into
+  the prompt and does not silently rewrite.
 
 ---
 
