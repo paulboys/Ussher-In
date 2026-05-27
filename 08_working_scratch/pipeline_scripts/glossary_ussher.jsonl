@@ -1,0 +1,21 @@
+{"_comment": "Controlled glossary (termbase) for Ussher's Britannicarum Ecclesiarum Antiquitates. SEED — curate over time. Schema per entry: term (display), latin_pattern (IGNORECASE regex matched against segment Latin; word-boundaried, handles common inflections + ae/aelig), approved (list of acceptable English renderings), banned (renderings that must never appear), note (editor guidance). Lines without both 'term' and 'latin_pattern' are skipped, so this header is ignored."}
+{"term": "ecclesia", "latin_pattern": "\\becclesi(?:a|æ|ae|am|arum|is)\\b", "approved": ["church", "congregation"], "banned": ["chapel", "parish"], "note": "Homograph. Default 'church' (the institution). Use 'congregation' only for a gathered body of believers."}
+{"term": "episcopus", "latin_pattern": "\\bepiscop(?:us|i|o|um|orum|is|e)\\b", "approved": ["bishop"], "banned": ["overseer"], "note": "Standard scholarly rendering is 'bishop'; 'overseer' is etymological but anachronistic here."}
+{"term": "primatus", "latin_pattern": "\\bprimat(?:us|ui|um|u|uum|ibus)\\b", "approved": ["primacy"], "banned": ["supremacy", "primateship"], "note": "Render consistently as 'primacy'. 'Supremacy' imports a different juridical claim and would distort Ussher's argument."}
+{"term": "jurisdictio", "latin_pattern": "\\b[ij]urisdictio\\w*\\b", "approved": ["jurisdiction"], "banned": [], "note": "Ecclesiastical vs. civil/legal sense both render 'jurisdiction'; editor confirms the domain in context."}
+{"term": "catholicus", "latin_pattern": "\\bcatholic\\w*\\b", "approved": ["catholic", "universal"], "banned": [], "note": "7th-c Insular sense is closer to 'universal/orthodox', NOT the post-Tridentine confessional 'Roman Catholic'. Editor confirms sense per occurrence."}
+{"term": "concilium", "latin_pattern": "\\bconcili(?:um|i|o|a|orum|is)\\b", "approved": ["council"], "banned": ["synod"], "note": "Keep distinct from synodus."}
+{"term": "synodus", "latin_pattern": "\\bsynod\\w*\\b", "approved": ["synod"], "banned": ["council"], "note": "Keep distinct from concilium."}
+{"term": "presbyter", "latin_pattern": "\\bpresbyter\\w*\\b", "approved": ["presbyter", "priest"], "banned": ["elder"], "note": "Homograph in Ussher's usage; 'presbyter' for the order, 'priest' where the sacerdotal sense is clear."}
+{"term": "archiepiscopus", "latin_pattern": "\\barchiepiscop\\w*\\b", "approved": ["archbishop"], "banned": [], "note": ""}
+{"term": "metropolitanus", "latin_pattern": "\\bmetropolitan\\w*\\b", "approved": ["metropolitan"], "banned": [], "note": "The ecclesiastical office, not the modern adjective."}
+{"term": "evangelium", "latin_pattern": "\\bevangeli(?:um|i|o|a|orum|is)\\b", "approved": ["gospel"], "banned": ["evangel"], "note": ""}
+{"term": "apostolus", "latin_pattern": "\\bapostol(?:us|i|o|um|orum|is|os)\\b", "approved": ["apostle"], "banned": [], "note": "Pattern excludes apostolicus ('apostolic')."}
+{"term": "haeresis", "latin_pattern": "\\bh(?:ae|æ)res(?:is|eos|im|es|ibus)\\b", "approved": ["heresy"], "banned": [], "note": ""}
+{"term": "haereticus", "latin_pattern": "\\bh(?:ae|æ)retic\\w*\\b", "approved": ["heretic", "heretical"], "banned": [], "note": ""}
+{"term": "schisma", "latin_pattern": "\\bschisma(?:t\\w*)?\\b", "approved": ["schism"], "banned": [], "note": ""}
+{"term": "monasterium", "latin_pattern": "\\bmonasteri(?:um|i|o|a|orum|is)\\b", "approved": ["monastery"], "banned": ["convent", "abbey"], "note": "Keep distinct from abbey/convent."}
+{"term": "abbas", "latin_pattern": "\\babba(?:s|t\\w*)\\b", "approved": ["abbot"], "banned": [], "note": ""}
+{"term": "baptismus", "latin_pattern": "\\bbaptism\\w*\\b", "approved": ["baptism"], "banned": [], "note": ""}
+{"term": "pontifex", "latin_pattern": "\\bpontif(?:ex|ic\\w*)\\b", "approved": ["pontiff", "pope"], "banned": [], "note": "'pontifex Romanus' = Roman pontiff/pope; a bare pontifex may be an ordinary bishop in Insular/classical contexts. Editor confirms."}
+{"term": "sedes", "latin_pattern": "\\bsed(?:es|is|i|em|ium|ibus)\\b", "approved": ["see", "seat"], "banned": [], "note": "Homograph: ecclesiastical 'see' vs literal 'seat'. Beware Latin 'sed' = 'but' (a different word, not matched)."}
