@@ -51,7 +51,12 @@
       "Bash(PYTHONIOENCODING=utf-8 python whitaker_v4_ch2_score.py)",
       "Bash(PYTHONIOENCODING=utf-8 tail *)",
       "Bash(PYTHONIOENCODING=utf-8 python author_fidelity_judge.py --scores-jsonl ../../04_translation_work/ab/whitaker_ch1/whitaker_v4_ch2_unit_scores.jsonl --output ../../04_translation_work/ab/whitaker_ch1/whitaker_v4_ch2_fidelity_run01.jsonl)",
-      "Bash(PYTHONIOENCODING=utf-8 python *)"
+      "Bash(PYTHONIOENCODING=utf-8 python *)",
+      "PowerShell(cd C:\\\\Users\\\\User\\\\Documents\\\\UssherIn\\\\08_working_scratch\\\\pipeline_scripts; $env:PYTHONIOENCODING=\"utf-8\"; python -c \"import translation_prompts_ussher_v5 as v5; import translation_prompts_ussher_v5_exemplars as ex; b=[{'line_id':'p0036_body_l0001','text_gold':'Test kappa line.','review_status':'locked'}]; pv=v5.build_translation_prompt\\(page_id='p0036',body_lines=b\\); pe=ex.build_translation_prompt\\(page_id='p0036',body_lines=b\\); print\\('core shared:', ex.HARD_RULES is v5.HARD_RULES, ex.TRANSLATOR_BRIEF is v5.TRANSLATOR_BRIEF\\); print\\('exemplar delta chars:', len\\(pe\\)-len\\(pv\\)\\); print\\('block in ex only:', \\('Worked examples' in pe\\) and \\('Worked examples' not in pv\\)\\)\")",
+      "Bash(ls -la 04_translation_work/ab/p0036/ussher_v5/v5_base/fidelity_scores.jsonl)",
+      "Bash(wc -l 04_translation_work/ab/p0036/ussher_v5/v5_base/fidelity_scores.jsonl)",
+      "Bash(ls -la 04_translation_work/ab/p0036/ussher_v5_exemplars/v5_ex/fidelity_scores.jsonl)",
+      "Bash(wc -l 04_translation_work/ab/p0036/ussher_v5_exemplars/v5_ex/fidelity_scores.jsonl)"
     ]
   }
 }
