@@ -28,7 +28,7 @@ The pipeline has three linked stages:
 
 1. **OCR** — Extract structured Latin (and polytonic Greek) text from the source PDFs using **Google Gemini 3.1 Pro** as the primary OCR engine, with paleography-aware prompts that preserve long-s, ligatures, and historical numerals. Each page is segmented into header, body, footnotes, marginalia, and catchword regions, then quality-checked. Tesseract and Kraken remain available as fallback engines during the migration.
 2. **Reference English** — OCR and structure the existing English translation PDF/images into aligned English text where that witness is available. This serves as an initial gold-standard benchmark for evaluating machine translation from Latin to English.
-3. **Translation** — Translate the structured Latin into literal, academic-register English using **Claude Opus 4.6** (configured via the same provider layer as Gemini) with human post-editing. Where aligned English reference text exists, machine output can be scored with BLEU, COMET, or similar metrics, and those aligned pairs may later inform model selection. The output remains bilingual Latin-English reading documents.
+3. **Translation** — Translate the structured Latin into modern academic-register English using **Claude Opus 4.7** (configured via the same provider layer as Gemini), followed by human post-editing. The translation prompt was developed and validated on a separate, scorable training corpus before deployment (see *Translation Methodology* below); output is scored with COMET and an author-fidelity LLM judge, and a post-hoc neuro-symbolic layer validates terminology consistency. The output remains bilingual Latin-English reading documents.
 
 ### Provider configuration
 
@@ -56,6 +56,15 @@ The source is the 1847 Elrington/Todd Latin reissue of Ussher's 1639 work, which
 
 A small annotated gold set (Phase 3b, pages around p0030–p0060) is retained for regression checks and prompt evaluation rather than for model fine-tuning.
 
+### Translation Methodology
+
+Because no complete English gold standard exists for the *Antiquitates*, the translation prompt was developed on a **separate, scorable training corpus** and then transferred. William Whitaker's *Disputatio de Sacra Scriptura* (1690 Latin) was translated and scored against its published 1849 Parker Society English translation, iterating the prompt against COMET (reference-based) and an author-fidelity LLM judge that scores Greek preservation, paraphrase handling, and content/register fidelity directly against the Latin source. The resulting prompt is split into a locked **shared core** (translation rules, lexicon, output contract) and a swappable **corpus skin** (author brief, register clause); only the skin changes per author. The same core was generalization-tested on Ussher's *Annales Veteris Testamenti* and validated on the *Antiquitates* itself.
+
+Two reliability layers run after generation, in code rather than in the prompt:
+
+- a **completeness safety net** that detects any source line the model omitted and re-translates just that span; and
+- a **neuro-symbolic validation layer**, built lightest-first: a controlled glossary/termbase flags terminology drift and banned renderings against the Latin source (Phase A, implemented), with a translation memory and structured-artifact validators (citations, proper names, language switches) planned. The model performs the creative translation; the deterministic layer validates consistency and surfaces editor flags rather than making silent edits.
+
 ## Project Status
 
 | Phase | Status |
@@ -68,7 +77,14 @@ A small annotated gold set (Phase 3b, pages around p0030–p0060) is retained fo
 | Paleography prompt evaluation against gold set | ✅ Complete |
 | English reference benchmark ingestion/alignment | 🟡 In progress |
 | Full OCR run (~1200 pages) via Gemini | 🟡 In progress |
-| Translation (Claude Opus 4.6 + post-editing) | ⬜ Pending |
+| Translation prompt development & validation (Whitaker corpus, COMET + author-fidelity) | ✅ Complete |
+| Cross-corpus generalization test (Ussher *Annals*) | ✅ Complete |
+| Translation prompt validated for *Antiquitates* (p0036) | ✅ Complete |
+| Completeness safety net (detect-and-rerun) | ✅ Complete |
+| Neuro-symbolic validation — Phase A (controlled glossary) | ✅ Complete |
+| Neuro-symbolic validation — Phase B (translation memory) & C (artifact validators) | ⬜ Planned |
+| Chapter 1 translation (pp. 32–45, Claude Opus 4.7) | 🟡 Ready to begin |
+| Full translation (remaining chapters) + post-editing | ⬜ Pending |
 
 ## Quick Start
 
