@@ -127,14 +127,28 @@ def needs_fix(scores: dict, max_cf: int) -> bool:
     return False
 
 
+_FENCE_OPEN = re.compile(r"^\s*```(?:json|JSON)?\s*\n?")
+_FENCE_CLOSE = re.compile(r"\n?\s*```\s*$")
+
+
 def parse_fix_response(raw: str) -> dict:
-    """Parse the fix-call output into {proposed_english, fix_reason, no_change}."""
+    """Parse the fix-call output into {proposed_english, fix_reason, no_change}.
+
+    Tolerates:
+      - leading/trailing whitespace
+      - markdown code fences (``` or ```json ... ```)
+      - prose around the JSON object (extracts the largest {...} span)
+    """
     raw = (raw or "").strip()
     if not raw:
         raise ValueError("empty response")
+    # Strip markdown fences if present
+    raw = _FENCE_OPEN.sub("", raw)
+    raw = _FENCE_CLOSE.sub("", raw).strip()
     try:
         obj = json.loads(raw)
     except json.JSONDecodeError:
+        # Fall back to extracting the largest brace-balanced span
         m = re.search(r"\{.*\}", raw, re.DOTALL)
         if not m:
             raise
@@ -145,6 +159,14 @@ def parse_fix_response(raw: str) -> dict:
     obj["fix_reason"] = str(obj.get("fix_reason") or "")
     obj["no_change"] = bool(obj.get("no_change"))
     return obj
+
+
+_STRICTER_SUFFIX = (
+    "\n\nIMPORTANT: your previous response failed JSON parsing. "
+    "Return ONLY the JSON object — no markdown fences, no prose before "
+    "or after, no commentary. The response must start with '{' and end "
+    "with '}'. Re-emit the exact same content as valid strict JSON."
+)
 
 
 def _page_of(uid: str) -> int | None:
@@ -301,17 +323,36 @@ def main() -> int:
             err: str | None = None
             parsed: dict | None = None
             raw: str = ""
-            try:
-                raw = judge(prompt)
-                parsed = parse_fix_response(raw)
-            except aj.JudgeQuotaError as e:
-                print(f"[{display_i}/{total}] {uid} QUOTA REFUSAL — aborting")
-                err = f"quota: {e}"
-                # Persist the abort marker so resume knows nothing landed
+            quota = False
+            # Up to 2 attempts: first plain, second with a stricter
+            # "valid-JSON-only" suffix if the first failed to parse.
+            for attempt in (1, 2):
+                use_prompt = prompt if attempt == 1 else (prompt + _STRICTER_SUFFIX)
+                try:
+                    raw = judge(use_prompt)
+                except aj.JudgeQuotaError as e:
+                    err = f"quota: {e}"
+                    quota = True
+                    break
+                # Claude CLI sometimes delivers a quota refusal as plain
+                # stdout (no exception). Detect and treat as quota.
+                if aj._looks_like_quota_refusal(raw):
+                    err = f"quota: {raw.strip()[:140]}"
+                    quota = True
+                    break
+                try:
+                    parsed = parse_fix_response(raw)
+                    err = None
+                    break
+                except Exception as e:
+                    err = f"{type(e).__name__}: {e}"
+                    if attempt == 1:
+                        continue  # retry once with stricter prompt
+                    print(f"[{display_i}/{total}] {uid} PARSE FAIL after retry: {err}")
+            if quota:
+                print(f"[{display_i}/{total}] {uid} QUOTA REFUSAL — aborting "
+                      "(re-run the same command after quota resets to resume)")
                 break
-            except Exception as e:
-                err = f"{type(e).__name__}: {e}"
-                print(f"[{display_i}/{total}] {uid} ERROR: {err}")
             dt = time.time() - t0
 
             rec = {
