@@ -48,7 +48,7 @@ multitudes;
 
 **Fixer:** Replaced the bare em-dash with a direct English rendering of the Latin fragment 'multitudines'.
 
-**Decision:** [ ] accept   [ ] reject (keep prior)   [ ] edit (write below)
+**Decision:** [x] accept   [ ] reject (keep prior)   [ ] edit (write below)
 
 ---
 
@@ -74,7 +74,7 @@ he calls treacherous — that greatest disaster) against
 
 **Fixer:** Restored the omitted 'cladem illam maximam' as 'that greatest disaster' and removed the unsupported 'Lioness'; 'dolosam' agrees with the feminine 'cladem' (disaster), so it modifies the disaster, not a lioness.
 
-**Decision:** [ ] accept   [ ] reject (keep prior)   [ ] edit (write below)
+**Decision:** [x] accept   [ ] reject (keep prior)   [ ] edit (write below)
 
 ---
 
@@ -100,8 +100,8 @@ he calls treacherous — that greatest disaster) against
 
 **Fixer:** Added the required English bracket gloss after the preserved Greek, per Rule 1.
 
-**Decision:** [ ] accept   [ ] reject (keep prior)   [ ] edit (write below)
-
+**Decision:** [ ] accept   [ ] reject (keep prior)   [x] edit (write below)
+ἀνθρώποις τοὺς εὐαγγελικοὺς προσενηνόχασι νόμους· καὶ οὐ [they have brought the evangelical precepts to men; and not]
 ---
 
 ### `seg_p0036_body_l0026` &nbsp;·&nbsp; page p0036
@@ -126,7 +126,7 @@ that torque of ours, the evangelical law to all nations
 
 **Fixer:** Corrected 'leather-worker' to 'torque' (the neck-ornament sense of 'torque'), restored 'legem' as 'law' rather than 'teaching', and removed the unwarranted finite verb since the Latin fragment has none.
 
-**Decision:** [ ] accept   [ ] reject (keep prior)   [ ] edit (write below)
+**Decision:** [ ] accept   [x] reject (keep prior)   [ ] edit (write below)
 
 ---
 
@@ -152,8 +152,8 @@ are ordained at Rome, and sent to preach the word of God
 
 **Fixer:** Restored the omitted 'apud Romam ordinantur' clause as 'are ordained at Rome' to capture both distinct actions the Latin specifies.
 
-**Decision:** [ ] accept   [ ] reject (keep prior)   [ ] edit (write below)
-
+**Decision:** [ ] accept   [ ] reject (keep prior)   [x] edit (write below)
+They are ordained at Rome, and for preaching the word of God
 ---
 
 ### `seg_p0039_body_l0023` &nbsp;·&nbsp; page p0039
@@ -178,7 +178,7 @@ and in the martyrologies of Ado, on the eighth day of October
 
 **Fixer:** Restored the dropped 'martyrologiis' and corrected 'octavum' from 'twenty-eighth' to 'eighth'.
 
-**Decision:** [ ] accept   [ ] reject (keep prior)   [ ] edit (write below)
+**Decision:** [x] accept   [ ] reject (keep prior)   [ ] edit (write below)
 
 ---
 
@@ -199,13 +199,13 @@ fifteenth day of March, a commemoration of this kind is made: "Οὗ- [This—
 
 **Proposed English:** _(model: claude-opus-4-7)_
 ```
-fifth day of March, a commemoration of this kind is made: "Οὗ-
+on thefifth day of March, a commemoration of this kind is made: "Οὗ-
 ```
 
 **Fixer:** Corrected 'fifteenth' to 'fifth' (quintum) and removed the spurious bracketed gloss '[This—', since the truncated Greek 'Οὗ-' is a mid-word fragment with no translatable content.
 
-**Decision:** [ ] accept   [ ] reject (keep prior)   [ ] edit (write below)
-
+**Decision:** [ ] accept   [ ] reject (keep prior)   [x] edit (write below)
+on the fifth day of March, a commemoration of this kind is made: "Οὗ-
 ---
 
 ### `seg_p0044_fn_003` &nbsp;·&nbsp; page p0044
@@ -241,8 +241,16 @@ But Trajan too, after his adoption, was called Nerva: as in Aelian, in the prefa
 
 **Fixer:** Added the missing Martial verse, the prose sentence on Trajan/Nerva, and the Greek citation from Aelian with an English bracket gloss per Rule 1.
 
-**Decision:** [ ] accept   [ ] reject (keep prior)   [ ] edit (write below)
+**Decision:** [ ] accept   [ ] reject (keep prior)   [x] edit (write below)
+Martial, Book XI, Epigram 4:
 
+"And you, Janus, who now record Nerva's name for the third time in the imperial fasti."
+
+But Trajan also, after his adoption, was called Nerva, as appears in Aelian's Tactics, in the preface addressed to the Emperor Hadrian:
+
+Ἐπεὶ δὲ τῷ Θεῷ πατρί σου Νέρουᾳ συμβαλὼν, etc.
+
+("Since, having had dealings with your divine father Nerva, ...")
 ---
 
 ### `seg_p0045_body_l0005` &nbsp;·&nbsp; page p0045
@@ -267,7 +275,7 @@ he had reigned, who was consecrated when the world was set free,
 
 **Fixer:** Restored the dropped main verb 'Rexerat' ('he had reigned') and replaced KJV-toned 'hallowed' with the neutral scholarly 'consecrated' for 'sacer'.
 
-**Decision:** [ ] accept   [ ] reject (keep prior)   [ ] edit (write below)
+**Decision:** [ ] accept   [x] reject (keep prior)   [ ] edit (write below)
 
 ---
 

@@ -1,3 +1,4 @@
+
 """Phase A neuro-symbolic layer: controlled-glossary consistency validator.
 
 The deterministic half of the LLM-drafts / symbolic-layer-validates split.
