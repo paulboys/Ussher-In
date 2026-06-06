@@ -108,7 +108,7 @@ def default_config() -> Config:
             ),
             "anthropic": ProviderConfig(
                 name="anthropic",
-                model="claude-opus-4-7",
+                model="claude-opus-4-8",
                 base_url="https://api.anthropic.com",
                 # The Claude Code CLI streams a long-running session;
                 # 0 disables the wall-clock timeout so prompts run to

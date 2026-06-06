@@ -1,0 +1,18 @@
+{
+  "n_segments": 478,
+  "n_scored": 467,
+  "n_errored": 11,
+  "v0_mean": 0.5827437538406323,
+  "v0_median": 0.5738906264305115,
+  "v1_mean": 0.5555179207815093,
+  "v1_median": 0.5518496036529541,
+  "mean_delta_v1_minus_v0": -0.027225833059123038,
+  "v1_segment_wins": 163,
+  "v0_segment_wins": 264,
+  "ties": 40,
+  "v1_win_rate": 0.3490364025695932,
+  "model": "Unbabel/wmt22-cometkiwi-da",
+  "reference_based": false,
+  "v0_path": "03_segmented_text\\part1\\segments_with_translations.jsonl",
+  "v1_path": "03_segmented_text\\part1\\segments_wholepage.jsonl"
+}

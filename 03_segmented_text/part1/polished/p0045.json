@@ -1,0 +1,24 @@
+{
+  "page_id": "p0045",
+  "stage": "polished",
+  "version": 1,
+  "timestamp": "2026-05-30T09:47:11Z",
+  "model": "claude-opus-4-7",
+  "lexicon_profile": "auto",
+  "source_versions": {
+    "seg_p0045_body_l0001": 1,
+    "seg_p0045_body_l0002": 1,
+    "seg_p0045_body_l0003": 1,
+    "seg_p0045_body_l0004": 1,
+    "seg_p0045_body_l0005": 2,
+    "seg_p0045_body_l0006": 1,
+    "seg_p0045_body_l0007": 1,
+    "seg_p0045_body_l0008": 1,
+    "seg_p0045_body_l0009": 1,
+    "seg_p0045_body_l0010": 2,
+    "seg_p0045_body_l0011": 1,
+    "seg_p0045_body_l0012": 1
+  },
+  "english": "the author of the Punica. That Nero perished while Silius held the consulship is confirmed both by other authors and by Martial himself,^r who indicates as much in those short verses about Silius:\n\nAfter he had governed the mighty year with its twice-six fasces — that consul, made sacred by his liberation of the world — he gave his remaining years to the Muses and to Phoebus, and now, in place of his own forum, frequents Helicon.\n\nIt was while Nero held supreme power (and indeed, as most scholars hold, toward the end of his reign) that Paul wrote the epistle in which Pudens, Linus, and Claudia send their greetings to Timothy. But there will be further occasion to discuss these figures in chapter three.",
+  "warnings": []
+}
