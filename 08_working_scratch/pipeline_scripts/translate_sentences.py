@@ -30,6 +30,7 @@ Usage
 from __future__ import annotations
 
 import argparse
+import calendar
 import json
 import re
 import sys
@@ -231,6 +232,39 @@ def _parse_response(raw: str) -> dict[str, str]:
     return {k: str(v) for k, v in obj.items()}
 
 
+def _load_agent_written_file(
+    part: str, page_id: str, *, run_started_epoch: float | None
+) -> dict[str, str] | None:
+    """Recover translations the ``claude -p`` agent wrote to a file.
+
+    The agent has file-writing tools and occasionally writes the result to
+    ``03_segmented_text/<part>/<page_id>_translation.json`` and returns a
+    prose summary instead of the inline JSON the prompt asked for — which
+    defeats :func:`_parse_response`. When inline parsing fails, look for
+    that file and use it.
+
+    When *run_started_epoch* is given, the file is only accepted if it was
+    modified at/after the run start (1s grace), so a stale file left by a
+    previous run is never silently substituted for a genuinely failed page.
+    """
+    path = ARTIFACTS_DIR / part / f"{page_id}_translation.json"
+    if not path.exists():
+        return None
+    if run_started_epoch is not None:
+        try:
+            if path.stat().st_mtime < run_started_epoch - 1:
+                return None
+        except OSError:
+            return None
+    try:
+        obj = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return None
+    if not isinstance(obj, dict):
+        return None
+    return {k: str(v) for k, v in obj.items()}
+
+
 # ---------------------------------------------------------------------------
 # Record builders
 # ---------------------------------------------------------------------------
@@ -374,6 +408,14 @@ def translate_page(
             "warnings": [],
         }
 
+    # Run start epoch, for the agent-written-file staleness guard.
+    try:
+        run_started_epoch: float | None = calendar.timegm(
+            time.strptime(timestamp, "%Y-%m-%dT%H:%M:%SZ")
+        )
+    except (ValueError, TypeError):
+        run_started_epoch = None
+
     # Call the model
     try:
         raw_json = adapter.complete_text(prompt)
@@ -385,18 +427,29 @@ def translate_page(
             "warnings": [],
         }
 
+    warnings: list[str] = []
     try:
         translations = _parse_response(raw_json)
     except ValueError as exc:
-        return {
-            "page_id": page_id,
-            "status": "parse_error",
-            "error": str(exc),
-            "raw_response": raw_json[:500],
-            "warnings": [],
-        }
+        # The agent sometimes writes the JSON to a <page_id>_translation.json
+        # file and returns a prose summary; recover from that file.
+        recovered = _load_agent_written_file(
+            part, page_id, run_started_epoch=run_started_epoch
+        )
+        if recovered is None:
+            return {
+                "page_id": page_id,
+                "status": "parse_error",
+                "error": str(exc),
+                "raw_response": raw_json[:500],
+                "warnings": [],
+            }
+        translations = recovered
+        warnings.append(
+            f"inline JSON parse failed ({exc}); recovered from "
+            f"{page_id}_translation.json written by the agent"
+        )
 
-    warnings: list[str] = []
     missing = [sid for sid in all_ids if sid not in translations]
     if missing:
         warnings.append(f"Missing IDs: {', '.join(missing)}")
