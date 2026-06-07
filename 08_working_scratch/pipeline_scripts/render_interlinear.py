@@ -140,6 +140,10 @@ class PageBundle:
     body: list[dict]
     footnotes: list[dict]
     polished: dict | None = None
+    # Set when a cross-page sentence homed on an earlier page absorbs this
+    # page's opening lines: ``{"from_page": "p0036", "sentence_id": "..."}``.
+    # Drives the "⟵ opening lines complete pNNNN's sentence" reviewer cue.
+    continued_from: dict | None = None
 
 
 def _segment_sort_key(seg: dict) -> tuple:
@@ -189,6 +193,9 @@ def group_by_page(
     artifact for each page and attach it to the bundle.
     """
     by_page: dict[str, dict[str, list[dict]]] = {}
+    # Continuation map: a cross-page sentence (``spans_pages`` longer than one,
+    # home page first) absorbs the opening lines of each later page it touches.
+    continued_from: dict[str, dict] = {}
     for seg in segments:
         page_id = seg.get("page_id") or ""
         if not page_id:
@@ -199,6 +206,13 @@ def group_by_page(
             bucket["footnote"].append(seg)
         else:
             bucket["body"].append(seg)
+        spans = seg.get("spans_pages") or []
+        if len(spans) > 1:
+            home, sid = spans[0], seg.get("segment_id") or ""
+            for cont_page in spans[1:]:
+                continued_from.setdefault(
+                    cont_page, {"from_page": home, "sentence_id": sid}
+                )
 
     bundles: list[PageBundle] = []
     for page_id in sorted(by_page.keys()):
@@ -211,6 +225,7 @@ def group_by_page(
                 body=body,
                 footnotes=footnotes,
                 polished=polished,
+                continued_from=continued_from.get(page_id),
             )
         )
     return bundles
@@ -323,6 +338,37 @@ def _fn_lookup_for_page(footnotes: Sequence[dict]) -> dict[str, str]:
 # ---------------------------------------------------------------------------
 
 
+def _line_no_from_id(line_id: str) -> str:
+    """'p0037_body_l0026' -> 'l0026' (or '' if no match)."""
+    m = re.search(r"_l(\d+)$", line_id or "")
+    return f"l{int(m.group(1)):04d}" if m else ""
+
+
+def _spans_continuation(seg: dict) -> list[str]:
+    """Pages after the home page that a cross-page sentence continues onto."""
+    spans = seg.get("spans_pages") or []
+    return spans[1:] if len(spans) > 1 else []
+
+
+def _continued_from_text(bundle: PageBundle) -> str:
+    """Reviewer cue (plain text) for a page whose opening lines were absorbed
+    by a cross-page sentence homed on an earlier page. Empty when N/A."""
+    cf = bundle.continued_from
+    if not cf:
+        return ""
+    src = cf.get("from_page", "?")
+    sid = cf.get("sentence_id", "")
+    sid_part = f" ({sid})" if sid else ""
+    if bundle.body:
+        resumes = _line_no_from_id((bundle.body[0].get("source_line_ids") or [""])[0])
+        tail = f"This page's own text begins below at {resumes}." if resumes \
+            else "This page's own text begins below."
+    else:
+        tail = "This entire page completes that sentence; no new sentence begins here."
+    return (f"⟵ The opening lines of this page complete the final sentence "
+            f"of {src}{sid_part}, translated there. {tail}")
+
+
 def render_page_markdown(
     bundle: PageBundle,
     *,
@@ -346,6 +392,10 @@ def render_page_markdown(
     if not reading_only:
         lines.append("## Interlinear")
         lines.append("")
+        back_note = _continued_from_text(bundle)
+        if back_note:
+            lines.append(f"*{back_note}*")
+            lines.append("")
         for seg in bundle.body:
             anchor_id = _line_anchor_id(seg, bundle.page_id)
             anchor = f'<a id="{anchor_id}"></a>' if anchor_id else ""
@@ -367,6 +417,13 @@ def render_page_markdown(
             lines.append("")
             lines.append(f"**EN**  {english}")
             lines.append("")
+            cont = _spans_continuation(seg)
+            if cont:
+                lines.append(
+                    f"*⟶ This sentence's Latin runs onto {', '.join(cont)}; "
+                    f"it is translated whole here.*"
+                )
+                lines.append("")
 
         if bundle.footnotes:
             lines.append("## Footnotes")
@@ -430,6 +487,8 @@ section.reading {{ font-size: 1.05rem; line-height: 1.7;
 section.reading p {{ margin: 0 0 1rem 0; }}
 sup a {{ text-decoration: none; color: #0a58ca; }}
 sup a:hover {{ text-decoration: underline; }}
+.xpage {{ font-style: italic; color: #7a5; font-size: 0.9rem;
+          margin: 0 0 1rem 0; }}
 </style>
 </head>
 <body>
@@ -456,6 +515,9 @@ def render_page_html(
 
     if not reading_only:
         body_parts: list[str] = ["<h2>Interlinear</h2>"]
+        back_note = _continued_from_text(bundle)
+        if back_note:
+            body_parts.append(f'<p class="xpage">{html.escape(back_note)}</p>')
         for seg in bundle.body:
             anchor_id = _line_anchor_id(seg, bundle.page_id)
             row_id_attr = f' id="{anchor_id}"' if anchor_id else ""
@@ -479,6 +541,11 @@ def render_page_html(
                 f"  <div><span class=\"lang\">EN</span><span class=\"en\">{english}</span></div>\n"
                 "</div>"
             )
+            cont = _spans_continuation(seg)
+            if cont:
+                note = (f"⟶ This sentence's Latin runs onto {', '.join(cont)}; "
+                        f"it is translated whole here.")
+                body_parts.append(f'<p class="xpage">{html.escape(note)}</p>')
 
         if bundle.footnotes:
             body_parts.append("<h2>Footnotes</h2>")
