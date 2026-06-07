@@ -1,0 +1,16 @@
+{
+  "n_cross_page_sentences": 12,
+  "n_scored": 12,
+  "v0_label": "per-page fragments stitched",
+  "v1_label": "cross-page whole sentence",
+  "v0_mean": 0.5121871953209242,
+  "v1_mean": 0.5469434981544813,
+  "v0_median": 0.48444488644599915,
+  "v1_median": 0.5132477879524231,
+  "mean_delta_v1_minus_v0": 0.03475630283355713,
+  "v1_wins": 10,
+  "v0_wins": 2,
+  "ties": 0,
+  "model": "Unbabel/wmt22-cometkiwi-da",
+  "reference_based": false
+}
