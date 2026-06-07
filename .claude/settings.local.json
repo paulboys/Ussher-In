@@ -56,7 +56,8 @@
       "Bash(ls -la 04_translation_work/ab/p0036/ussher_v5/v5_base/fidelity_scores.jsonl)",
       "Bash(wc -l 04_translation_work/ab/p0036/ussher_v5/v5_base/fidelity_scores.jsonl)",
       "Bash(ls -la 04_translation_work/ab/p0036/ussher_v5_exemplars/v5_ex/fidelity_scores.jsonl)",
-      "Bash(wc -l 04_translation_work/ab/p0036/ussher_v5_exemplars/v5_ex/fidelity_scores.jsonl)"
+      "Bash(wc -l 04_translation_work/ab/p0036/ussher_v5_exemplars/v5_ex/fidelity_scores.jsonl)",
+      "Bash(python3 *)"
     ]
   }
 }
