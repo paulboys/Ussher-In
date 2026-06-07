@@ -29,8 +29,12 @@ if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
 _HERE = Path(__file__).resolve().parent
+if str(_HERE) not in sys.path:
+    sys.path.insert(0, str(_HERE))
 WORKSPACE_ROOT = _HERE.parent.parent
 ANNOTATIONS_DIR = WORKSPACE_ROOT / "08_working_scratch" / "phase3b" / "annotations"
+
+from translation_prompts import _inject_markers  # noqa: E402
 
 
 # ---------------------------------------------------------------------------
@@ -192,36 +196,58 @@ def _build_sentence_unit(
     lines: list[dict],
     page_id: str,
     seq: int,
+    marker_lookup: dict[str, str] | None = None,
 ) -> SentenceUnit:
-    """Build one SentenceUnit from a list of consecutive body lines."""
-    line_ids = [ln["line_id"] for ln in lines]
-    # Join with space; handle hyphenated line-breaks by stripping the hyphen
-    parts: list[str] = []
-    for i, ln in enumerate(lines):
-        t = _latin_text(ln)
-        if t.endswith("-") and i < len(lines) - 1:
-            parts.append(t[:-1])   # strip hyphen; next line continues the word
-        else:
-            parts.append(t)
-    latin = " ".join(p for p in parts if p)
+    """Build one SentenceUnit from a list of consecutive body lines.
 
-    # Collect markers from all constituent lines, adjusting char_offset to
-    # the position within the concatenated latin string.
-    markers: list[dict] = []
-    offset = 0
+    Latin is concatenated with each line's start offset tracked, so two
+    things are handled correctly:
+
+    - **Hyphenated line breaks** join *without* a space (``Evange-`` + ``lii``
+      -> ``Evangelii``, not ``Evange lii``). Non-hyphenated lines join with a
+      single space.
+    - **Footnote-anchor carets** (``^x``): when *marker_lookup*
+      (``footnote_id -> symbol``) is supplied, ``^<symbol>`` sentinels are
+      injected into the Latin at each marker's position, matching the
+      line-by-line artifact. Without a lookup the Latin stays caret-free.
+    """
+    line_ids = [ln["line_id"] for ln in lines]
+
+    # Concatenate Latin, de-hyphenating line breaks, tracking each line's
+    # start offset within the joined string.
+    chunks: list[str] = []
+    line_start: list[int] = []
+    pos = 0
+    prev_hyphen = False
     for i, ln in enumerate(lines):
         t = _latin_text(ln)
-        raw_len = len(t[:-1] if t.endswith("-") and i < len(lines) - 1 else t)
+        hyph = t.endswith("-") and i < len(lines) - 1
+        body = t[:-1] if hyph else t
+        if i > 0 and not prev_hyphen:
+            chunks.append(" ")
+            pos += 1
+        line_start.append(pos)
+        chunks.append(body)
+        pos += len(body)
+        prev_hyphen = hyph
+    latin = "".join(chunks)
+
+    # Collect markers, mapping each line-relative char_offset into the join.
+    markers: list[dict] = []
+    for i, ln in enumerate(lines):
+        base = line_start[i]
         for m in ln.get("markers") or []:
             char_off = m.get("char_offset")
-            adjusted_off = (offset + char_off) if char_off is not None else None
+            adjusted_off = (base + char_off) if char_off is not None else None
             markers.append({
                 **m,
                 "char_offset": adjusted_off,
                 "source_line_id": ln["line_id"],
             })
-        # +1 for the joining space (except after last line)
-        offset += raw_len + (1 if i < len(lines) - 1 else 0)
+
+    # Inject ^<symbol> footnote-anchor carets when a lookup is available.
+    if marker_lookup:
+        latin = _inject_markers(latin, markers, marker_lookup)
 
     # Pages spanned, in order of first appearance. Derived from each line's
     # own page_id so single-page and cross-page sentences share one code path.
@@ -248,10 +274,13 @@ def _build_sentence_unit(
 def group_lines_into_sentences(
     body_lines: Sequence[dict],
     page_id: str,
+    marker_lookup: dict[str, str] | None = None,
 ) -> list[SentenceUnit]:
     """Return sentence units for *body_lines* (locked lines only).
 
     Lines whose ``review_status`` is not ``'locked'`` are skipped.
+    *marker_lookup* (``footnote_id -> symbol``), when supplied, injects
+    ``^x`` footnote-anchor carets into each unit's Latin.
     """
     locked = [ln for ln in body_lines if ln.get("review_status") == "locked"]
 
@@ -261,18 +290,21 @@ def group_lines_into_sentences(
     for line in locked:
         current.append(line)
         if _is_sentence_end(_latin_text(line)):
-            units.append(_build_sentence_unit(current, page_id, len(units) + 1))
+            units.append(_build_sentence_unit(
+                current, page_id, len(units) + 1, marker_lookup))
             current = []
 
     # Flush any trailing lines (sentence runs to end of page / continues on next)
     if current:
-        units.append(_build_sentence_unit(current, page_id, len(units) + 1))
+        units.append(_build_sentence_unit(
+            current, page_id, len(units) + 1, marker_lookup))
 
     return units
 
 
 def group_pages_into_sentences(
     pages: Sequence[tuple[str, Sequence[dict]]],
+    marker_lookup: dict[str, str] | None = None,
 ) -> list[SentenceUnit]:
     """Cross-page sentence grouping over an ordered sequence of pages.
 
@@ -313,7 +345,7 @@ def group_pages_into_sentences(
         home = current[0].get("page_id") or ""
         seq = page_seq.get(home, 0) + 1
         page_seq[home] = seq
-        units.append(_build_sentence_unit(current, home, seq))
+        units.append(_build_sentence_unit(current, home, seq, marker_lookup))
 
     for line in stream:
         current.append(line)

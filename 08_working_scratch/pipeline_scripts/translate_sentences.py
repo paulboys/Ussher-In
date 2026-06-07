@@ -49,6 +49,7 @@ from translation_adapters import (                              # noqa: E402
     TranslationError,
 )
 import translation_prompts_ussher_v5 as _v5                    # noqa: E402
+from translation_prompts import _build_marker_lookup           # noqa: E402
 from sentence_segment import (                                  # noqa: E402
     SentenceUnit,
     group_lines_into_sentences,
@@ -60,6 +61,7 @@ from translate_segments import (                                # noqa: E402
     load_phase3b_page,
     extract_units,
     _load_cross_page_context,
+    _resolve_page_path,
 )
 
 # ---------------------------------------------------------------------------
@@ -369,19 +371,20 @@ def translate_page(
     next page. When None (per-page mode), the page's own lines are grouped.
     """
 
-    # Sentence units: pre-computed (cross-page) or grouped per page.
-    if sentences is None:
-        body_lines = load_page_body(part or None, page_id)
-        sentences = group_lines_into_sentences(body_lines, page_id)
-
-    # Load footnotes via the phase3b payload (same path translate_segments uses)
-    from translate_segments import _resolve_page_path  # noqa: E402
+    # Load footnotes first — the marker lookup feeds caret injection into the
+    # per-page segmentation below (cross-page units are already injected upstream).
     page_path = _resolve_page_path(part, page_id)
     if page_path is None or not page_path.exists():
         return {"page_id": page_id, "status": "annotation_not_found", "warnings": []}
 
     payload = load_phase3b_page(page_path)
     _, footnotes = extract_units(payload)
+
+    # Sentence units: pre-computed (cross-page) or grouped per page.
+    if sentences is None:
+        body_lines = load_page_body(part or None, page_id)
+        sentences = group_lines_into_sentences(
+            body_lines, page_id, marker_lookup=_build_marker_lookup(footnotes))
 
     all_ids = (
         [s.sentence_id for s in sentences]
@@ -582,7 +585,17 @@ def main(argv: Sequence[str] | None = None) -> int:
     sentences_by_home: dict[str, list[SentenceUnit]] | None = None
     if args.cross_page:
         loaded = [(pid, load_page_body(args.part, pid)) for pid in page_ids]
-        all_units = group_pages_into_sentences(loaded)
+        # Range-wide marker lookup: a cross-page sentence may carry markers
+        # whose footnotes live on the continuation page, so the lookup must
+        # cover every page in the range, not just the home page.
+        all_fns: list[dict] = []
+        for pid in page_ids:
+            pp = _resolve_page_path(args.part, pid)
+            if pp is not None and pp.exists():
+                _, fns = extract_units(load_phase3b_page(pp))
+                all_fns.extend(fns)
+        marker_lookup = _build_marker_lookup(all_fns)
+        all_units = group_pages_into_sentences(loaded, marker_lookup=marker_lookup)
         sentences_by_home = {pid: [] for pid in page_ids}
         for u in all_units:
             sentences_by_home.setdefault(u.page_id, []).append(u)
