@@ -5451,3 +5451,882 @@ pilot_ocr.py: error: argument --part: invalid choice: 'annals_latin' (choose fro
 2026-06-07 07:22:08,513 - INFO - Received POST request to save page_id: p0050 edition: None
 2026-06-07 07:22:08,516 - INFO - Recorded 0 edits for page_id: p0050
 2026-06-07 07:22:08,519 - INFO - Successfully saved payload for page_id: p0050
+2026-06-07 09:46:55,804 - INFO - Received GET request for page_id: p0001 edition: None
+2026-06-07 09:46:55,807 - INFO - Successfully read payload for page_id: p0001
+2026-06-07 09:47:26,311 - INFO - Received GET request for page_id: p0045 edition: 1847_elrington_todd
+2026-06-07 09:47:26,312 - INFO - Successfully read payload for page_id: p0045
+2026-06-07 09:47:34,049 - INFO - Received GET request for page_id: p0005 edition: 1847_elrington_todd
+2026-06-07 09:47:34,049 - WARNING - Page not found: p0005
+2026-06-07 09:47:34,929 - INFO - Received GET request for page_id: p0055 edition: 1847_elrington_todd
+2026-06-07 09:47:34,945 - INFO - Successfully read payload for page_id: p0055
+2026-06-07 09:47:34,986 - INFO - Received GET request for page_id: p0055 edition: 1847_elrington_todd
+2026-06-07 09:47:34,989 - INFO - Successfully read payload for page_id: p0055
+2026-06-07 09:47:41,304 - INFO - Received GET request for page_id: p0075 edition: 1847_elrington_todd
+2026-06-07 09:47:41,307 - INFO - Successfully read payload for page_id: p0075
+2026-06-07 09:48:16,010 - INFO - Received GET request for page_id: p0085 edition: 1847_elrington_todd
+2026-06-07 09:48:16,010 - WARNING - Page not found: p0085
+2026-06-07 09:48:22,676 - INFO - Received GET request for page_id: p0095 edition: 1847_elrington_todd
+2026-06-07 09:48:22,676 - WARNING - Page not found: p0095
+2026-06-07 09:48:29,781 - INFO - Received GET request for page_id: p0094 edition: 1847_elrington_todd
+2026-06-07 09:48:29,781 - WARNING - Page not found: p0094
+2026-06-07 09:49:15,481 - INFO - Received GET request for page_id: p0009 edition: 1847_elrington_todd
+2026-06-07 09:49:15,481 - WARNING - Page not found: p0009
+2026-06-07 09:49:16,321 - INFO - Received GET request for page_id: p0005 edition: 1847_elrington_todd
+2026-06-07 09:49:16,321 - WARNING - Page not found: p0005
+2026-06-07 09:49:16,887 - INFO - Received GET request for page_id: p0055 edition: 1847_elrington_todd
+2026-06-07 09:49:16,889 - INFO - Successfully read payload for page_id: p0055
+2026-06-07 09:49:16,907 - INFO - Received GET request for page_id: p0055 edition: 1847_elrington_todd
+2026-06-07 09:49:16,940 - INFO - Successfully read payload for page_id: p0055
+2026-06-07 09:49:23,918 - INFO - Received GET request for page_id: p0075 edition: 1847_elrington_todd
+2026-06-07 09:49:23,920 - INFO - Successfully read payload for page_id: p0075
+2026-06-07 09:49:31,394 - INFO - Received GET request for page_id: p0005 edition: 1847_elrington_todd
+2026-06-07 09:49:31,394 - WARNING - Page not found: p0005
+2026-06-07 09:49:32,246 - INFO - Received GET request for page_id: p0085 edition: 1847_elrington_todd
+2026-06-07 09:49:32,247 - WARNING - Page not found: p0085
+2026-06-07 09:53:20,785 - INFO - Received GET request for page_id: p0080 edition: 1847_elrington_todd
+2026-06-07 09:53:20,786 - INFO - Successfully read payload for page_id: p0080
+2026-06-07 09:53:36,600 - INFO - Received GET request for page_id: p0081 edition: 1847_elrington_todd
+2026-06-07 09:53:36,602 - INFO - Successfully read payload for page_id: p0081
+2026-06-07 09:53:40,487 - INFO - Received GET request for page_id: p0082 edition: 1847_elrington_todd
+2026-06-07 09:53:40,490 - INFO - Successfully read payload for page_id: p0082
+2026-06-07 09:53:43,885 - INFO - Received GET request for page_id: p0083 edition: 1847_elrington_todd
+2026-06-07 09:53:43,886 - INFO - Successfully read payload for page_id: p0083
+2026-06-07 09:53:47,778 - INFO - Received GET request for page_id: p0084 edition: 1847_elrington_todd
+2026-06-07 09:53:47,779 - INFO - Successfully read payload for page_id: p0084
+2026-06-07 09:53:53,365 - INFO - Received GET request for page_id: p0085 edition: 1847_elrington_todd
+2026-06-07 09:53:53,366 - WARNING - Page not found: p0085
+2026-06-07 09:54:00,816 - INFO - Starting OCR job for page p0085 using Gemini.
+2026-06-07 09:54:00,816 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\JamesUssher_Britannicarum ecclesiarum antiquitates_Part1.pdf --part part1 --start-page 85 --end-page 85 --ocr-engine gemini
+2026-06-07 09:54:28,127 - INFO - Subprocess stdout: Gemini OCR written to 01_raw_ocr_output\part1\part1_pilot_ocr.json
+
+2026-06-07 09:54:28,158 - INFO - OCR job completed successfully for page p0085.
+2026-06-07 09:54:29,033 - INFO - Received GET request for page_id: p0085 edition: 1847_elrington_todd
+2026-06-07 09:54:29,034 - INFO - Successfully read payload for page_id: p0085
+2026-06-07 09:54:47,971 - INFO - Received POST request to save page_id: p0085 edition: 1847_elrington_todd
+2026-06-07 09:54:47,976 - INFO - Recorded 1 edits for page_id: p0085
+2026-06-07 09:54:47,997 - INFO - Successfully saved payload for page_id: p0085
+2026-06-07 09:54:51,137 - INFO - Received GET request for page_id: p0086 edition: 1847_elrington_todd
+2026-06-07 09:54:51,137 - WARNING - Page not found: p0086
+2026-06-07 09:54:54,498 - INFO - Starting OCR job for page p0086 using Gemini.
+2026-06-07 09:54:54,506 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\JamesUssher_Britannicarum ecclesiarum antiquitates_Part1.pdf --part part1 --start-page 86 --end-page 86 --ocr-engine gemini
+2026-06-07 09:55:22,615 - INFO - Subprocess stdout: Gemini OCR written to 01_raw_ocr_output\part1\part1_pilot_ocr.json
+
+2026-06-07 09:55:22,630 - INFO - OCR job completed successfully for page p0086.
+2026-06-07 09:55:22,746 - INFO - Received GET request for page_id: p0086 edition: 1847_elrington_todd
+2026-06-07 09:55:22,748 - INFO - Successfully read payload for page_id: p0086
+2026-06-07 09:56:13,529 - INFO - Received POST request to save page_id: p0086 edition: 1847_elrington_todd
+2026-06-07 09:56:13,532 - INFO - Recorded 1 edits for page_id: p0086
+2026-06-07 09:56:13,532 - INFO - Successfully saved payload for page_id: p0086
+2026-06-07 09:56:15,746 - INFO - Received GET request for page_id: p0087 edition: 1847_elrington_todd
+2026-06-07 09:56:15,747 - WARNING - Page not found: p0087
+2026-06-07 09:56:15,803 - INFO - Received GET request for page_id: p0087 edition: 1847_elrington_todd
+2026-06-07 09:56:15,804 - WARNING - Page not found: p0087
+2026-06-07 09:56:19,623 - INFO - Starting OCR job for page p0087 using Gemini.
+2026-06-07 09:56:19,623 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\JamesUssher_Britannicarum ecclesiarum antiquitates_Part1.pdf --part part1 --start-page 87 --end-page 87 --ocr-engine gemini
+2026-06-07 09:56:44,392 - INFO - Subprocess stdout: Gemini OCR written to 01_raw_ocr_output\part1\part1_pilot_ocr.json
+
+2026-06-07 09:56:44,396 - INFO - OCR job completed successfully for page p0087.
+2026-06-07 09:56:47,908 - INFO - Received GET request for page_id: p0087 edition: 1847_elrington_todd
+2026-06-07 09:56:47,910 - INFO - Successfully read payload for page_id: p0087
+2026-06-07 09:56:49,606 - INFO - Received POST request to save page_id: p0087 edition: 1847_elrington_todd
+2026-06-07 09:56:49,612 - INFO - Recorded 0 edits for page_id: p0087
+2026-06-07 09:56:49,622 - INFO - Successfully saved payload for page_id: p0087
+2026-06-07 09:56:53,217 - INFO - Received GET request for page_id: p0086 edition: 1847_elrington_todd
+2026-06-07 09:56:53,219 - INFO - Successfully read payload for page_id: p0086
+2026-06-07 09:56:55,832 - INFO - Received GET request for page_id: p0087 edition: 1847_elrington_todd
+2026-06-07 09:56:55,853 - INFO - Successfully read payload for page_id: p0087
+2026-06-07 09:57:03,643 - INFO - Received POST request to save page_id: p0087 edition: 1847_elrington_todd
+2026-06-07 09:57:03,648 - INFO - Recorded 1 edits for page_id: p0087
+2026-06-07 09:57:03,656 - INFO - Successfully saved payload for page_id: p0087
+2026-06-07 09:57:05,904 - INFO - Received GET request for page_id: p0088 edition: 1847_elrington_todd
+2026-06-07 09:57:05,905 - WARNING - Page not found: p0088
+2026-06-07 09:57:05,969 - INFO - Received GET request for page_id: p0088 edition: 1847_elrington_todd
+2026-06-07 09:57:05,969 - WARNING - Page not found: p0088
+2026-06-07 09:57:10,050 - INFO - Received GET request for page_id: p0087 edition: 1847_elrington_todd
+2026-06-07 09:57:10,088 - INFO - Successfully read payload for page_id: p0087
+2026-06-07 09:57:10,653 - INFO - Received GET request for page_id: p0087 edition: 1847_elrington_todd
+2026-06-07 09:57:10,654 - INFO - Successfully read payload for page_id: p0087
+2026-06-07 09:57:13,230 - INFO - Received GET request for page_id: p0088 edition: 1847_elrington_todd
+2026-06-07 09:57:13,230 - WARNING - Page not found: p0088
+2026-06-07 09:57:15,483 - INFO - Starting OCR job for page p0088 using Gemini.
+2026-06-07 09:57:15,483 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\JamesUssher_Britannicarum ecclesiarum antiquitates_Part1.pdf --part part1 --start-page 88 --end-page 88 --ocr-engine gemini
+2026-06-07 09:57:42,045 - INFO - Subprocess stdout: Gemini OCR written to 01_raw_ocr_output\part1\part1_pilot_ocr.json
+
+2026-06-07 09:57:42,060 - INFO - OCR job completed successfully for page p0088.
+2026-06-07 09:57:43,741 - INFO - Received GET request for page_id: p0088 edition: 1847_elrington_todd
+2026-06-07 09:57:43,742 - INFO - Successfully read payload for page_id: p0088
+2026-06-07 09:57:45,490 - INFO - Received POST request to save page_id: p0088 edition: 1847_elrington_todd
+2026-06-07 09:57:45,497 - INFO - Recorded 0 edits for page_id: p0088
+2026-06-07 09:57:45,506 - INFO - Successfully saved payload for page_id: p0088
+2026-06-07 09:57:48,172 - INFO - Received GET request for page_id: p0087 edition: 1847_elrington_todd
+2026-06-07 09:57:48,176 - INFO - Successfully read payload for page_id: p0087
+2026-06-07 09:57:50,705 - INFO - Received GET request for page_id: p0088 edition: 1847_elrington_todd
+2026-06-07 09:57:50,736 - INFO - Successfully read payload for page_id: p0088
+2026-06-07 09:57:56,726 - INFO - Received POST request to save page_id: p0088 edition: 1847_elrington_todd
+2026-06-07 09:57:56,730 - INFO - Recorded 1 edits for page_id: p0088
+2026-06-07 09:57:56,739 - INFO - Successfully saved payload for page_id: p0088
+2026-06-07 09:57:59,251 - INFO - Received GET request for page_id: p0089 edition: 1847_elrington_todd
+2026-06-07 09:57:59,251 - WARNING - Page not found: p0089
+2026-06-07 09:58:02,224 - INFO - Starting OCR job for page p0089 using Gemini.
+2026-06-07 09:58:02,224 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\JamesUssher_Britannicarum ecclesiarum antiquitates_Part1.pdf --part part1 --start-page 89 --end-page 89 --ocr-engine gemini
+2026-06-07 09:58:29,979 - INFO - Subprocess stdout: Gemini OCR written to 01_raw_ocr_output\part1\part1_pilot_ocr.json
+
+2026-06-07 09:58:29,979 - INFO - OCR job completed successfully for page p0089.
+2026-06-07 09:58:30,460 - INFO - Received GET request for page_id: p0089 edition: 1847_elrington_todd
+2026-06-07 09:58:30,461 - INFO - Successfully read payload for page_id: p0089
+2026-06-07 09:58:39,213 - INFO - Received POST request to save page_id: p0089 edition: 1847_elrington_todd
+2026-06-07 09:58:39,214 - INFO - Recorded 1 edits for page_id: p0089
+2026-06-07 09:58:39,230 - INFO - Successfully saved payload for page_id: p0089
+2026-06-07 09:58:42,412 - INFO - Received GET request for page_id: p0090 edition: 1847_elrington_todd
+2026-06-07 09:58:42,413 - WARNING - Page not found: p0090
+2026-06-07 09:58:45,926 - INFO - Starting OCR job for page p0090 using Gemini.
+2026-06-07 09:58:45,930 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\JamesUssher_Britannicarum ecclesiarum antiquitates_Part1.pdf --part part1 --start-page 90 --end-page 90 --ocr-engine gemini
+2026-06-07 09:59:13,617 - INFO - Subprocess stdout: Gemini OCR written to 01_raw_ocr_output\part1\part1_pilot_ocr.json
+
+2026-06-07 09:59:13,632 - INFO - OCR job completed successfully for page p0090.
+2026-06-07 09:59:14,193 - INFO - Received GET request for page_id: p0090 edition: 1847_elrington_todd
+2026-06-07 09:59:14,194 - INFO - Successfully read payload for page_id: p0090
+2026-06-07 09:59:34,964 - INFO - Received POST request to save page_id: p0090 edition: 1847_elrington_todd
+2026-06-07 09:59:34,966 - INFO - Recorded 1 edits for page_id: p0090
+2026-06-07 09:59:34,986 - INFO - Successfully saved payload for page_id: p0090
+2026-06-07 09:59:38,668 - INFO - Received GET request for page_id: p0091 edition: 1847_elrington_todd
+2026-06-07 09:59:38,669 - WARNING - Page not found: p0091
+2026-06-07 09:59:43,722 - INFO - Starting OCR job for page p0091 using Gemini.
+2026-06-07 09:59:43,722 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\JamesUssher_Britannicarum ecclesiarum antiquitates_Part1.pdf --part part1 --start-page 91 --end-page 91 --ocr-engine gemini
+2026-06-07 10:00:10,923 - INFO - Subprocess stdout: Gemini OCR written to 01_raw_ocr_output\part1\part1_pilot_ocr.json
+
+2026-06-07 10:00:10,939 - INFO - OCR job completed successfully for page p0091.
+2026-06-07 10:00:11,977 - INFO - Received GET request for page_id: p0091 edition: 1847_elrington_todd
+2026-06-07 10:00:11,979 - INFO - Successfully read payload for page_id: p0091
+2026-06-07 10:00:19,718 - INFO - Received POST request to save page_id: p0091 edition: 1847_elrington_todd
+2026-06-07 10:00:19,722 - INFO - Recorded 1 edits for page_id: p0091
+2026-06-07 10:00:19,739 - INFO - Successfully saved payload for page_id: p0091
+2026-06-07 10:00:23,228 - INFO - Received GET request for page_id: p0092 edition: 1847_elrington_todd
+2026-06-07 10:00:23,229 - WARNING - Page not found: p0092
+2026-06-07 10:00:26,740 - INFO - Starting OCR job for page p0092 using Gemini.
+2026-06-07 10:00:26,740 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\JamesUssher_Britannicarum ecclesiarum antiquitates_Part1.pdf --part part1 --start-page 92 --end-page 92 --ocr-engine gemini
+2026-06-07 10:00:54,964 - INFO - Subprocess stdout: Gemini OCR written to 01_raw_ocr_output\part1\part1_pilot_ocr.json
+
+2026-06-07 10:00:54,964 - INFO - OCR job completed successfully for page p0092.
+2026-06-07 10:00:58,997 - INFO - Received GET request for page_id: p0092 edition: 1847_elrington_todd
+2026-06-07 10:00:58,999 - INFO - Successfully read payload for page_id: p0092
+2026-06-07 10:01:01,091 - INFO - Received POST request to save page_id: p0092 edition: 1847_elrington_todd
+2026-06-07 10:01:01,093 - INFO - Recorded 0 edits for page_id: p0092
+2026-06-07 10:01:01,104 - INFO - Successfully saved payload for page_id: p0092
+2026-06-07 10:01:04,103 - INFO - Received GET request for page_id: p0091 edition: 1847_elrington_todd
+2026-06-07 10:01:04,105 - INFO - Successfully read payload for page_id: p0091
+2026-06-07 10:01:06,801 - INFO - Received GET request for page_id: p0092 edition: 1847_elrington_todd
+2026-06-07 10:01:06,832 - INFO - Successfully read payload for page_id: p0092
+2026-06-07 10:01:06,905 - INFO - Received GET request for page_id: p0092 edition: 1847_elrington_todd
+2026-06-07 10:01:06,915 - INFO - Successfully read payload for page_id: p0092
+2026-06-07 10:01:13,247 - INFO - Received POST request to save page_id: p0092 edition: 1847_elrington_todd
+2026-06-07 10:01:13,250 - INFO - Recorded 1 edits for page_id: p0092
+2026-06-07 10:01:13,264 - INFO - Successfully saved payload for page_id: p0092
+2026-06-07 10:01:16,433 - INFO - Received GET request for page_id: p0093 edition: 1847_elrington_todd
+2026-06-07 10:01:16,433 - WARNING - Page not found: p0093
+2026-06-07 10:01:16,501 - INFO - Received GET request for page_id: p0093 edition: 1847_elrington_todd
+2026-06-07 10:01:16,501 - WARNING - Page not found: p0093
+2026-06-07 10:01:18,965 - INFO - Starting OCR job for page p0093 using Gemini.
+2026-06-07 10:01:18,965 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\JamesUssher_Britannicarum ecclesiarum antiquitates_Part1.pdf --part part1 --start-page 93 --end-page 93 --ocr-engine gemini
+2026-06-07 10:01:42,933 - INFO - Subprocess stdout: Gemini OCR written to 01_raw_ocr_output\part1\part1_pilot_ocr.json
+
+2026-06-07 10:01:42,948 - INFO - OCR job completed successfully for page p0093.
+2026-06-07 10:01:43,194 - INFO - Received GET request for page_id: p0093 edition: 1847_elrington_todd
+2026-06-07 10:01:43,196 - INFO - Successfully read payload for page_id: p0093
+2026-06-07 10:01:50,834 - INFO - Received POST request to save page_id: p0093 edition: 1847_elrington_todd
+2026-06-07 10:01:50,836 - INFO - Recorded 0 edits for page_id: p0093
+2026-06-07 10:01:50,836 - INFO - Successfully saved payload for page_id: p0093
+2026-06-07 10:01:53,808 - INFO - Received GET request for page_id: p0092 edition: 1847_elrington_todd
+2026-06-07 10:01:53,812 - INFO - Successfully read payload for page_id: p0092
+2026-06-07 10:01:57,128 - INFO - Received GET request for page_id: p0093 edition: 1847_elrington_todd
+2026-06-07 10:01:57,148 - INFO - Successfully read payload for page_id: p0093
+2026-06-07 10:02:04,862 - INFO - Received POST request to save page_id: p0093 edition: 1847_elrington_todd
+2026-06-07 10:02:04,863 - INFO - Recorded 1 edits for page_id: p0093
+2026-06-07 10:02:04,870 - INFO - Successfully saved payload for page_id: p0093
+2026-06-07 10:02:08,548 - INFO - Received GET request for page_id: p0094 edition: 1847_elrington_todd
+2026-06-07 10:02:08,548 - WARNING - Page not found: p0094
+2026-06-07 10:02:17,613 - INFO - Received GET request for page_id: p0093 edition: 1847_elrington_todd
+2026-06-07 10:02:17,630 - INFO - Successfully read payload for page_id: p0093
+2026-06-07 10:02:20,737 - INFO - Received GET request for page_id: p0094 edition: 1847_elrington_todd
+2026-06-07 10:02:20,738 - WARNING - Page not found: p0094
+2026-06-07 10:02:23,386 - INFO - Starting OCR job for page p0094 using Gemini.
+2026-06-07 10:02:23,386 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\JamesUssher_Britannicarum ecclesiarum antiquitates_Part1.pdf --part part1 --start-page 94 --end-page 94 --ocr-engine gemini
+2026-06-07 10:02:50,796 - INFO - Subprocess stdout: Gemini OCR written to 01_raw_ocr_output\part1\part1_pilot_ocr.json
+
+2026-06-07 10:02:50,811 - INFO - OCR job completed successfully for page p0094.
+2026-06-07 10:02:51,619 - INFO - Received GET request for page_id: p0094 edition: 1847_elrington_todd
+2026-06-07 10:02:51,620 - INFO - Successfully read payload for page_id: p0094
+2026-06-07 10:03:33,525 - INFO - Received POST request to save page_id: p0094 edition: 1847_elrington_todd
+2026-06-07 10:03:33,530 - INFO - Recorded 1 edits for page_id: p0094
+2026-06-07 10:03:33,539 - INFO - Successfully saved payload for page_id: p0094
+2026-06-07 10:03:36,590 - INFO - Received GET request for page_id: p0095 edition: 1847_elrington_todd
+2026-06-07 10:03:36,591 - WARNING - Page not found: p0095
+2026-06-07 10:03:40,092 - INFO - Starting OCR job for page p0095 using Gemini.
+2026-06-07 10:03:40,096 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\JamesUssher_Britannicarum ecclesiarum antiquitates_Part1.pdf --part part1 --start-page 95 --end-page 95 --ocr-engine gemini
+2026-06-07 10:04:07,729 - INFO - Subprocess stdout: Gemini OCR written to 01_raw_ocr_output\part1\part1_pilot_ocr.json
+
+2026-06-07 10:04:07,747 - INFO - OCR job completed successfully for page p0095.
+2026-06-07 10:04:08,366 - INFO - Received GET request for page_id: p0095 edition: 1847_elrington_todd
+2026-06-07 10:04:08,367 - INFO - Successfully read payload for page_id: p0095
+2026-06-07 10:04:10,060 - INFO - Received POST request to save page_id: p0095 edition: 1847_elrington_todd
+2026-06-07 10:04:10,063 - INFO - Recorded 0 edits for page_id: p0095
+2026-06-07 10:04:10,073 - INFO - Successfully saved payload for page_id: p0095
+2026-06-07 10:04:15,586 - INFO - Received POST request to save page_id: p0095 edition: 1847_elrington_todd
+2026-06-07 10:04:15,622 - INFO - Recorded 1 edits for page_id: p0095
+2026-06-07 10:04:15,633 - INFO - Successfully saved payload for page_id: p0095
+2026-06-07 10:04:18,052 - INFO - Received GET request for page_id: p0096 edition: 1847_elrington_todd
+2026-06-07 10:04:18,053 - WARNING - Page not found: p0096
+2026-06-07 10:04:20,650 - INFO - Starting OCR job for page p0096 using Gemini.
+2026-06-07 10:04:20,651 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\JamesUssher_Britannicarum ecclesiarum antiquitates_Part1.pdf --part part1 --start-page 96 --end-page 96 --ocr-engine gemini
+2026-06-07 10:04:47,115 - INFO - Subprocess stdout: Gemini OCR written to 01_raw_ocr_output\part1\part1_pilot_ocr.json
+
+2026-06-07 10:04:47,127 - INFO - OCR job completed successfully for page p0096.
+2026-06-07 10:04:48,901 - INFO - Received GET request for page_id: p0096 edition: 1847_elrington_todd
+2026-06-07 10:04:48,906 - INFO - Successfully read payload for page_id: p0096
+2026-06-07 10:04:53,826 - INFO - Received POST request to save page_id: p0096 edition: 1847_elrington_todd
+2026-06-07 10:04:53,836 - INFO - Recorded 1 edits for page_id: p0096
+2026-06-07 10:04:53,856 - INFO - Successfully saved payload for page_id: p0096
+2026-06-07 10:04:56,363 - INFO - Received GET request for page_id: p0097 edition: 1847_elrington_todd
+2026-06-07 10:04:56,364 - WARNING - Page not found: p0097
+2026-06-07 10:04:58,918 - INFO - Starting OCR job for page p0097 using Gemini.
+2026-06-07 10:04:58,931 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\JamesUssher_Britannicarum ecclesiarum antiquitates_Part1.pdf --part part1 --start-page 97 --end-page 97 --ocr-engine gemini
+2026-06-07 10:06:04,346 - INFO - Subprocess stdout: Gemini OCR written to 01_raw_ocr_output\part1\part1_pilot_ocr.json
+
+2026-06-07 10:06:04,351 - INFO - OCR job completed successfully for page p0097.
+2026-06-07 10:06:07,404 - INFO - Received GET request for page_id: p0097 edition: 1847_elrington_todd
+2026-06-07 10:06:07,406 - INFO - Successfully read payload for page_id: p0097
+2026-06-07 10:06:19,597 - INFO - Received POST request to save page_id: p0097 edition: 1847_elrington_todd
+2026-06-07 10:06:19,599 - INFO - Recorded 1 edits for page_id: p0097
+2026-06-07 10:06:19,613 - INFO - Successfully saved payload for page_id: p0097
+2026-06-07 10:06:24,307 - INFO - Received GET request for page_id: p0098 edition: 1847_elrington_todd
+2026-06-07 10:06:24,308 - WARNING - Page not found: p0098
+2026-06-07 10:06:24,378 - INFO - Received GET request for page_id: p0098 edition: 1847_elrington_todd
+2026-06-07 10:06:24,378 - WARNING - Page not found: p0098
+2026-06-07 10:06:28,450 - INFO - Starting OCR job for page p0098 using Gemini.
+2026-06-07 10:06:28,452 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\JamesUssher_Britannicarum ecclesiarum antiquitates_Part1.pdf --part part1 --start-page 98 --end-page 98 --ocr-engine gemini
+2026-06-07 10:06:54,293 - INFO - Subprocess stdout: Gemini OCR written to 01_raw_ocr_output\part1\part1_pilot_ocr.json
+
+2026-06-07 10:06:54,309 - INFO - OCR job completed successfully for page p0098.
+2026-06-07 10:06:56,703 - INFO - Received GET request for page_id: p0098 edition: 1847_elrington_todd
+2026-06-07 10:06:56,706 - INFO - Successfully read payload for page_id: p0098
+2026-06-07 10:07:05,673 - INFO - Received POST request to save page_id: p0098 edition: 1847_elrington_todd
+2026-06-07 10:07:05,675 - INFO - Recorded 0 edits for page_id: p0098
+2026-06-07 10:07:05,683 - INFO - Successfully saved payload for page_id: p0098
+2026-06-07 10:07:08,593 - INFO - Received GET request for page_id: p0099 edition: 1847_elrington_todd
+2026-06-07 10:07:08,594 - WARNING - Page not found: p0099
+2026-06-07 10:07:12,683 - INFO - Received GET request for page_id: p0098 edition: 1847_elrington_todd
+2026-06-07 10:07:12,697 - INFO - Successfully read payload for page_id: p0098
+2026-06-07 10:07:18,245 - INFO - Received POST request to save page_id: p0098 edition: 1847_elrington_todd
+2026-06-07 10:07:18,249 - INFO - Recorded 1 edits for page_id: p0098
+2026-06-07 10:07:18,257 - INFO - Successfully saved payload for page_id: p0098
+2026-06-07 10:07:21,152 - INFO - Received GET request for page_id: p0099 edition: 1847_elrington_todd
+2026-06-07 10:07:21,152 - WARNING - Page not found: p0099
+2026-06-07 10:07:23,687 - INFO - Starting OCR job for page p0099 using Gemini.
+2026-06-07 10:07:23,688 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\JamesUssher_Britannicarum ecclesiarum antiquitates_Part1.pdf --part part1 --start-page 99 --end-page 99 --ocr-engine gemini
+2026-06-07 10:07:36,024 - INFO - Subprocess stdout: Gemini OCR written to 01_raw_ocr_output\part1\part1_pilot_ocr.json
+
+2026-06-07 10:07:36,039 - INFO - OCR job completed successfully for page p0099.
+2026-06-07 10:07:39,902 - INFO - Received GET request for page_id: p0099 edition: 1847_elrington_todd
+2026-06-07 10:07:39,903 - INFO - Successfully read payload for page_id: p0099
+2026-06-07 10:07:47,070 - INFO - Received POST request to save page_id: p0099 edition: 1847_elrington_todd
+2026-06-07 10:07:47,070 - INFO - Recorded 1 edits for page_id: p0099
+2026-06-07 10:07:47,081 - INFO - Successfully saved payload for page_id: p0099
+2026-06-07 10:07:49,448 - INFO - Received GET request for page_id: p0100 edition: 1847_elrington_todd
+2026-06-07 10:07:49,449 - WARNING - Page not found: p0100
+2026-06-07 12:22:13,841 - INFO - Starting OCR job for page p0100 using Gemini.
+2026-06-07 12:22:13,841 - INFO - Executing command: C:\Users\User\miniforge3\envs\ussher\python.exe C:\Users\User\Documents\UssherIn\08_working_scratch\pipeline_scripts\pilot_ocr.py --pdf C:\Users\User\Documents\UssherIn\00_source_pdf\JamesUssher_Britannicarum ecclesiarum antiquitates_Part1.pdf --part part1 --start-page 100 --end-page 100 --ocr-engine gemini
+2026-06-07 12:22:40,597 - INFO - Subprocess stdout: Gemini OCR written to 01_raw_ocr_output\part1\part1_pilot_ocr.json
+
+2026-06-07 12:22:40,617 - INFO - OCR job completed successfully for page p0100.
+2026-06-07 12:22:43,465 - INFO - Received GET request for page_id: p0100 edition: 1847_elrington_todd
+2026-06-07 12:22:43,466 - INFO - Successfully read payload for page_id: p0100
+2026-06-07 12:34:15,022 - INFO - Received POST request to save page_id: p0100 edition: 1847_elrington_todd
+2026-06-07 12:34:15,045 - INFO - Recorded 1 edits for page_id: p0100
+2026-06-07 12:34:15,096 - INFO - Successfully saved payload for page_id: p0100
+2026-06-07 12:38:10,193 - INFO - Received POST request to save page_id: p0033 edition: None
+2026-06-07 12:38:10,206 - INFO - Recorded 1 edits for page_id: p0033
+2026-06-07 12:38:10,210 - INFO - Successfully saved payload for page_id: p0033
+2026-06-07 12:38:10,222 - INFO - Received GET request for page_id: p0033 edition: None
+2026-06-07 12:38:10,222 - INFO - Successfully read payload for page_id: p0033
+2026-06-07 12:38:10,237 - INFO - Received POST request to save page_id: p0099 edition: None
+2026-06-07 12:38:10,241 - INFO - Recorded 1 edits for page_id: p0099
+2026-06-07 12:38:10,244 - INFO - Successfully saved payload for page_id: p0099
+2026-06-07 12:38:10,265 - INFO - Received POST request to save page_id: p0099 edition: None
+2026-06-07 12:38:10,268 - INFO - Recorded 2 edits for page_id: p0099
+2026-06-07 12:38:10,272 - INFO - Successfully saved payload for page_id: p0099
+2026-06-07 12:38:10,292 - INFO - Received POST request to save page_id: p0099 edition: None
+2026-06-07 12:38:10,295 - INFO - Recorded 2 edits for page_id: p0099
+2026-06-07 12:38:10,300 - INFO - Successfully saved payload for page_id: p0099
+2026-06-07 12:38:10,325 - INFO - Received POST request to save page_id: p0099 edition: None
+2026-06-07 12:38:10,329 - INFO - Recorded 1 edits for page_id: p0099
+2026-06-07 12:38:10,332 - INFO - Successfully saved payload for page_id: p0099
+2026-06-07 12:38:10,335 - INFO - Received POST request to save page_id: p0099 edition: None
+2026-06-07 12:38:10,352 - INFO - Recorded 1 edits for page_id: p0099
+2026-06-07 12:38:10,356 - INFO - Successfully saved payload for page_id: p0099
+2026-06-07 12:38:10,376 - INFO - Received POST request to save page_id: p0099 edition: None
+2026-06-07 12:38:10,389 - INFO - Recorded 0 edits for page_id: p0099
+2026-06-07 12:38:10,392 - INFO - Successfully saved payload for page_id: p0099
+2026-06-07 12:38:10,422 - INFO - Received GET request for page_id: p0001 edition: whitaker_latin
+2026-06-07 12:38:10,424 - INFO - Successfully read payload for page_id: p0001
+2026-06-07 12:38:10,435 - INFO - Received GET request for page_id: p0001 edition: None
+2026-06-07 12:38:10,435 - WARNING - Page not found: p0001
+2026-06-07 12:38:10,445 - INFO - Received POST request to save page_id: p0001 edition: whitaker_latin
+2026-06-07 12:38:10,449 - INFO - Recorded 1 edits for page_id: p0001
+2026-06-07 12:38:10,454 - INFO - Successfully saved payload for page_id: p0001
+2026-06-07 12:38:11,138 - INFO - Received POST request to save page_id: p0050 edition: None
+2026-06-07 12:38:11,141 - INFO - Recorded 0 edits for page_id: p0050
+2026-06-07 12:38:11,144 - INFO - Successfully saved payload for page_id: p0050
+2026-06-07 12:38:11,156 - INFO - Received POST request to save page_id: p0050 edition: None
+2026-06-07 12:38:11,166 - INFO - Recorded 0 edits for page_id: p0050
+2026-06-07 12:38:11,168 - INFO - Successfully saved payload for page_id: p0050
+2026-06-07 12:38:19,204 - INFO - Received GET request for page_id: p0101 edition: 1847_elrington_todd
+2026-06-07 12:38:19,209 - WARNING - Page not found: p0101
+2026-06-07 12:38:19,262 - INFO - Received GET request for page_id: p0101 edition: 1847_elrington_todd
+2026-06-07 12:38:19,262 - WARNING - Page not found: p0101
+2026-06-07 12:39:04,620 - INFO - Received GET request for page_id: p0100 edition: 1847_elrington_todd
+2026-06-07 12:39:04,659 - INFO - Successfully read payload for page_id: p0100
+2026-06-07 12:39:04,682 - INFO - Received GET request for page_id: p0100 edition: 1847_elrington_todd
+2026-06-07 12:39:04,686 - INFO - Successfully read payload for page_id: p0100
+2026-06-07 12:40:11,871 - INFO - Received GET request for page_id: p0101 edition: 1847_elrington_todd
+2026-06-07 12:40:11,932 - INFO - Successfully read payload for page_id: p0101
+2026-06-07 12:40:11,944 - INFO - Received GET request for page_id: p0101 edition: 1847_elrington_todd
+2026-06-07 12:40:11,947 - INFO - Successfully read payload for page_id: p0101
+2026-06-07 12:40:52,691 - INFO - Received POST request to save page_id: p0101 edition: 1847_elrington_todd
+2026-06-07 12:40:52,709 - INFO - Recorded 1 edits for page_id: p0101
+2026-06-07 12:40:52,733 - INFO - Successfully saved payload for page_id: p0101
+2026-06-07 12:42:33,303 - INFO - Received GET request for page_id: p0102 edition: 1847_elrington_todd
+2026-06-07 12:42:33,400 - INFO - Successfully read payload for page_id: p0102
+2026-06-07 12:42:33,431 - INFO - Received GET request for page_id: p0102 edition: 1847_elrington_todd
+2026-06-07 12:42:33,435 - INFO - Successfully read payload for page_id: p0102
+2026-06-07 12:42:40,958 - INFO - Received POST request to save page_id: p0102 edition: 1847_elrington_todd
+2026-06-07 12:42:40,959 - INFO - Recorded 1 edits for page_id: p0102
+2026-06-07 12:42:40,974 - INFO - Successfully saved payload for page_id: p0102
+2026-06-07 12:42:44,531 - INFO - Received GET request for page_id: p0103 edition: 1847_elrington_todd
+2026-06-07 12:42:44,590 - INFO - Successfully read payload for page_id: p0103
+2026-06-07 12:42:44,605 - INFO - Received GET request for page_id: p0103 edition: 1847_elrington_todd
+2026-06-07 12:42:44,607 - INFO - Successfully read payload for page_id: p0103
+2026-06-07 12:42:52,776 - INFO - Received POST request to save page_id: p0103 edition: 1847_elrington_todd
+2026-06-07 12:42:52,776 - INFO - Recorded 1 edits for page_id: p0103
+2026-06-07 12:42:52,792 - INFO - Successfully saved payload for page_id: p0103
+2026-06-07 12:42:57,517 - INFO - Received GET request for page_id: p0104 edition: 1847_elrington_todd
+2026-06-07 12:42:57,573 - INFO - Successfully read payload for page_id: p0104
+2026-06-07 12:42:57,584 - INFO - Received GET request for page_id: p0104 edition: 1847_elrington_todd
+2026-06-07 12:42:57,587 - INFO - Successfully read payload for page_id: p0104
+2026-06-07 12:43:05,092 - INFO - Received POST request to save page_id: p0104 edition: 1847_elrington_todd
+2026-06-07 12:43:05,094 - INFO - Recorded 1 edits for page_id: p0104
+2026-06-07 12:43:05,106 - INFO - Successfully saved payload for page_id: p0104
+2026-06-07 12:44:06,432 - INFO - Received POST request to save page_id: p0104 edition: 1847_elrington_todd
+2026-06-07 12:44:06,464 - INFO - Recorded 0 edits for page_id: p0104
+2026-06-07 12:44:06,480 - INFO - Successfully saved payload for page_id: p0104
+2026-06-07 12:44:09,018 - INFO - Received GET request for page_id: p0105 edition: 1847_elrington_todd
+2026-06-07 12:44:09,049 - INFO - Successfully read payload for page_id: p0105
+2026-06-07 12:44:09,085 - INFO - Received GET request for page_id: p0105 edition: 1847_elrington_todd
+2026-06-07 12:44:09,087 - INFO - Successfully read payload for page_id: p0105
+2026-06-07 12:44:17,725 - INFO - Received GET request for page_id: p0104 edition: 1847_elrington_todd
+2026-06-07 12:44:17,749 - INFO - Successfully read payload for page_id: p0104
+2026-06-07 12:44:17,792 - INFO - Received GET request for page_id: p0104 edition: 1847_elrington_todd
+2026-06-07 12:44:17,794 - INFO - Successfully read payload for page_id: p0104
+2026-06-07 12:44:20,363 - INFO - Received GET request for page_id: p0105 edition: 1847_elrington_todd
+2026-06-07 12:44:20,365 - INFO - Successfully read payload for page_id: p0105
+2026-06-07 12:44:25,550 - INFO - Received POST request to save page_id: p0105 edition: 1847_elrington_todd
+2026-06-07 12:44:25,552 - INFO - Recorded 1 edits for page_id: p0105
+2026-06-07 12:44:25,571 - INFO - Successfully saved payload for page_id: p0105
+2026-06-07 12:44:30,338 - INFO - Received GET request for page_id: p0106 edition: 1847_elrington_todd
+2026-06-07 12:44:30,366 - INFO - Successfully read payload for page_id: p0106
+2026-06-07 12:44:30,405 - INFO - Received GET request for page_id: p0106 edition: 1847_elrington_todd
+2026-06-07 12:44:30,407 - INFO - Successfully read payload for page_id: p0106
+2026-06-07 12:44:38,332 - INFO - Received POST request to save page_id: p0106 edition: 1847_elrington_todd
+2026-06-07 12:44:38,334 - INFO - Recorded 1 edits for page_id: p0106
+2026-06-07 12:44:38,334 - INFO - Successfully saved payload for page_id: p0106
+2026-06-07 12:44:43,010 - INFO - Received GET request for page_id: p0107 edition: 1847_elrington_todd
+2026-06-07 12:44:43,061 - INFO - Successfully read payload for page_id: p0107
+2026-06-07 12:44:43,074 - INFO - Received GET request for page_id: p0107 edition: 1847_elrington_todd
+2026-06-07 12:44:43,078 - INFO - Successfully read payload for page_id: p0107
+2026-06-07 12:44:51,473 - INFO - Received POST request to save page_id: p0107 edition: 1847_elrington_todd
+2026-06-07 12:44:51,475 - INFO - Recorded 1 edits for page_id: p0107
+2026-06-07 12:44:51,491 - INFO - Successfully saved payload for page_id: p0107
+2026-06-07 12:44:53,868 - INFO - Received GET request for page_id: p0108 edition: 1847_elrington_todd
+2026-06-07 12:44:53,922 - INFO - Successfully read payload for page_id: p0108
+2026-06-07 12:44:53,943 - INFO - Received GET request for page_id: p0108 edition: 1847_elrington_todd
+2026-06-07 12:44:53,946 - INFO - Successfully read payload for page_id: p0108
+2026-06-07 12:45:01,369 - INFO - Received POST request to save page_id: p0108 edition: 1847_elrington_todd
+2026-06-07 12:45:01,370 - INFO - Recorded 1 edits for page_id: p0108
+2026-06-07 12:45:01,370 - INFO - Successfully saved payload for page_id: p0108
+2026-06-07 12:45:03,801 - INFO - Received GET request for page_id: p0109 edition: 1847_elrington_todd
+2026-06-07 12:45:03,828 - INFO - Successfully read payload for page_id: p0109
+2026-06-07 12:45:03,843 - INFO - Received GET request for page_id: p0109 edition: 1847_elrington_todd
+2026-06-07 12:45:03,845 - INFO - Successfully read payload for page_id: p0109
+2026-06-07 12:45:12,062 - INFO - Received POST request to save page_id: p0109 edition: 1847_elrington_todd
+2026-06-07 12:45:12,071 - INFO - Recorded 1 edits for page_id: p0109
+2026-06-07 12:45:12,085 - INFO - Successfully saved payload for page_id: p0109
+2026-06-07 12:45:15,183 - INFO - Received GET request for page_id: p0110 edition: 1847_elrington_todd
+2026-06-07 12:45:15,209 - INFO - Successfully read payload for page_id: p0110
+2026-06-07 12:45:15,267 - INFO - Received GET request for page_id: p0110 edition: 1847_elrington_todd
+2026-06-07 12:45:15,271 - INFO - Successfully read payload for page_id: p0110
+2026-06-07 12:45:27,564 - INFO - Received POST request to save page_id: p0110 edition: 1847_elrington_todd
+2026-06-07 12:45:27,568 - INFO - Recorded 1 edits for page_id: p0110
+2026-06-07 12:45:27,568 - INFO - Successfully saved payload for page_id: p0110
+2026-06-07 12:45:30,006 - INFO - Received GET request for page_id: p0111 edition: 1847_elrington_todd
+2026-06-07 12:45:30,054 - INFO - Successfully read payload for page_id: p0111
+2026-06-07 12:45:30,068 - INFO - Received GET request for page_id: p0111 edition: 1847_elrington_todd
+2026-06-07 12:45:30,070 - INFO - Successfully read payload for page_id: p0111
+2026-06-07 12:45:36,583 - INFO - Received POST request to save page_id: p0111 edition: 1847_elrington_todd
+2026-06-07 12:45:36,585 - INFO - Recorded 1 edits for page_id: p0111
+2026-06-07 12:45:36,590 - INFO - Successfully saved payload for page_id: p0111
+2026-06-07 12:45:40,127 - INFO - Received GET request for page_id: p0112 edition: 1847_elrington_todd
+2026-06-07 12:45:40,128 - WARNING - Page not found: p0112
+2026-06-07 12:45:45,818 - INFO - Received GET request for page_id: p0111 edition: 1847_elrington_todd
+2026-06-07 12:45:45,851 - INFO - Successfully read payload for page_id: p0111
+2026-06-07 12:48:59,985 - INFO - Received GET request for page_id: p0112 edition: 1847_elrington_todd
+2026-06-07 12:49:00,040 - INFO - Successfully read payload for page_id: p0112
+2026-06-07 12:49:00,121 - INFO - Received GET request for page_id: p0112 edition: 1847_elrington_todd
+2026-06-07 12:49:00,122 - INFO - Successfully read payload for page_id: p0112
+2026-06-07 12:49:08,124 - INFO - Received POST request to save page_id: p0112 edition: 1847_elrington_todd
+2026-06-07 12:49:08,128 - INFO - Recorded 1 edits for page_id: p0112
+2026-06-07 12:49:08,144 - INFO - Successfully saved payload for page_id: p0112
+2026-06-07 12:49:12,309 - INFO - Received GET request for page_id: p0113 edition: 1847_elrington_todd
+2026-06-07 12:49:12,369 - INFO - Successfully read payload for page_id: p0113
+2026-06-07 12:49:12,378 - INFO - Received GET request for page_id: p0113 edition: 1847_elrington_todd
+2026-06-07 12:49:12,381 - INFO - Successfully read payload for page_id: p0113
+2026-06-07 12:49:19,397 - INFO - Received POST request to save page_id: p0113 edition: 1847_elrington_todd
+2026-06-07 12:49:19,405 - INFO - Recorded 1 edits for page_id: p0113
+2026-06-07 12:49:19,414 - INFO - Successfully saved payload for page_id: p0113
+2026-06-07 12:49:23,902 - INFO - Received GET request for page_id: p0114 edition: 1847_elrington_todd
+2026-06-07 12:49:23,947 - INFO - Successfully read payload for page_id: p0114
+2026-06-07 12:49:23,963 - INFO - Received GET request for page_id: p0114 edition: 1847_elrington_todd
+2026-06-07 12:49:23,966 - INFO - Successfully read payload for page_id: p0114
+2026-06-07 12:49:31,207 - INFO - Received POST request to save page_id: p0114 edition: 1847_elrington_todd
+2026-06-07 12:49:31,210 - INFO - Recorded 1 edits for page_id: p0114
+2026-06-07 12:49:31,225 - INFO - Successfully saved payload for page_id: p0114
+2026-06-07 12:49:33,910 - INFO - Received GET request for page_id: p0115 edition: 1847_elrington_todd
+2026-06-07 12:49:33,937 - INFO - Successfully read payload for page_id: p0115
+2026-06-07 12:49:33,950 - INFO - Received GET request for page_id: p0115 edition: 1847_elrington_todd
+2026-06-07 12:49:33,956 - INFO - Successfully read payload for page_id: p0115
+2026-06-07 12:49:43,083 - INFO - Received POST request to save page_id: p0115 edition: 1847_elrington_todd
+2026-06-07 12:49:43,086 - INFO - Recorded 1 edits for page_id: p0115
+2026-06-07 12:49:43,086 - INFO - Successfully saved payload for page_id: p0115
+2026-06-07 12:49:45,554 - INFO - Received POST request to save page_id: p0115 edition: 1847_elrington_todd
+2026-06-07 12:49:45,569 - INFO - Recorded 0 edits for page_id: p0115
+2026-06-07 12:49:45,571 - INFO - Successfully saved payload for page_id: p0115
+2026-06-07 12:49:48,144 - INFO - Received GET request for page_id: p0116 edition: 1847_elrington_todd
+2026-06-07 12:49:48,188 - INFO - Successfully read payload for page_id: p0116
+2026-06-07 12:49:48,213 - INFO - Received GET request for page_id: p0116 edition: 1847_elrington_todd
+2026-06-07 12:49:48,215 - INFO - Successfully read payload for page_id: p0116
+2026-06-07 12:49:53,715 - INFO - Received POST request to save page_id: p0116 edition: 1847_elrington_todd
+2026-06-07 12:49:53,722 - INFO - Recorded 1 edits for page_id: p0116
+2026-06-07 12:49:53,730 - INFO - Successfully saved payload for page_id: p0116
+2026-06-07 12:49:57,267 - INFO - Received GET request for page_id: p0117 edition: 1847_elrington_todd
+2026-06-07 12:49:57,324 - INFO - Successfully read payload for page_id: p0117
+2026-06-07 12:49:57,338 - INFO - Received GET request for page_id: p0117 edition: 1847_elrington_todd
+2026-06-07 12:49:57,340 - INFO - Successfully read payload for page_id: p0117
+2026-06-07 12:50:04,664 - INFO - Received POST request to save page_id: p0117 edition: 1847_elrington_todd
+2026-06-07 12:50:04,670 - INFO - Recorded 1 edits for page_id: p0117
+2026-06-07 12:50:04,682 - INFO - Successfully saved payload for page_id: p0117
+2026-06-07 12:50:08,231 - INFO - Received GET request for page_id: p0118 edition: 1847_elrington_todd
+2026-06-07 12:50:08,260 - INFO - Successfully read payload for page_id: p0118
+2026-06-07 12:50:08,272 - INFO - Received GET request for page_id: p0118 edition: 1847_elrington_todd
+2026-06-07 12:50:08,278 - INFO - Successfully read payload for page_id: p0118
+2026-06-07 12:50:15,101 - INFO - Received POST request to save page_id: p0118 edition: 1847_elrington_todd
+2026-06-07 12:50:15,104 - INFO - Recorded 1 edits for page_id: p0118
+2026-06-07 12:50:15,104 - INFO - Successfully saved payload for page_id: p0118
+2026-06-07 12:50:17,590 - INFO - Received GET request for page_id: p0119 edition: 1847_elrington_todd
+2026-06-07 12:50:17,646 - INFO - Successfully read payload for page_id: p0119
+2026-06-07 12:50:17,659 - INFO - Received GET request for page_id: p0119 edition: 1847_elrington_todd
+2026-06-07 12:50:17,663 - INFO - Successfully read payload for page_id: p0119
+2026-06-07 12:50:23,405 - INFO - Received POST request to save page_id: p0119 edition: 1847_elrington_todd
+2026-06-07 12:50:23,411 - INFO - Recorded 1 edits for page_id: p0119
+2026-06-07 12:50:23,427 - INFO - Successfully saved payload for page_id: p0119
+2026-06-07 12:50:30,705 - INFO - Received GET request for page_id: p0120 edition: 1847_elrington_todd
+2026-06-07 12:50:30,751 - INFO - Successfully read payload for page_id: p0120
+2026-06-07 12:50:30,774 - INFO - Received GET request for page_id: p0120 edition: 1847_elrington_todd
+2026-06-07 12:50:30,777 - INFO - Successfully read payload for page_id: p0120
+2026-06-07 12:50:37,881 - INFO - Received POST request to save page_id: p0120 edition: 1847_elrington_todd
+2026-06-07 12:50:37,886 - INFO - Recorded 1 edits for page_id: p0120
+2026-06-07 12:50:37,894 - INFO - Successfully saved payload for page_id: p0120
+2026-06-07 12:50:40,516 - INFO - Received GET request for page_id: p0121 edition: 1847_elrington_todd
+2026-06-07 12:50:40,570 - INFO - Successfully read payload for page_id: p0121
+2026-06-07 12:50:40,588 - INFO - Received GET request for page_id: p0121 edition: 1847_elrington_todd
+2026-06-07 12:50:40,590 - INFO - Successfully read payload for page_id: p0121
+2026-06-07 12:50:50,091 - INFO - Received POST request to save page_id: p0121 edition: 1847_elrington_todd
+2026-06-07 12:50:50,094 - INFO - Recorded 1 edits for page_id: p0121
+2026-06-07 12:50:50,105 - INFO - Successfully saved payload for page_id: p0121
+2026-06-07 12:50:53,003 - INFO - Received GET request for page_id: p0122 edition: 1847_elrington_todd
+2026-06-07 12:50:53,038 - INFO - Successfully read payload for page_id: p0122
+2026-06-07 12:50:53,078 - INFO - Received GET request for page_id: p0122 edition: 1847_elrington_todd
+2026-06-07 12:50:53,080 - INFO - Successfully read payload for page_id: p0122
+2026-06-07 12:51:00,907 - INFO - Received POST request to save page_id: p0122 edition: 1847_elrington_todd
+2026-06-07 12:51:00,911 - INFO - Recorded 1 edits for page_id: p0122
+2026-06-07 12:51:00,927 - INFO - Successfully saved payload for page_id: p0122
+2026-06-07 12:51:04,052 - INFO - Received GET request for page_id: p0123 edition: 1847_elrington_todd
+2026-06-07 12:51:04,112 - INFO - Successfully read payload for page_id: p0123
+2026-06-07 12:51:04,127 - INFO - Received GET request for page_id: p0123 edition: 1847_elrington_todd
+2026-06-07 12:51:04,130 - INFO - Successfully read payload for page_id: p0123
+2026-06-07 12:51:11,060 - INFO - Received POST request to save page_id: p0123 edition: 1847_elrington_todd
+2026-06-07 12:51:11,068 - INFO - Recorded 1 edits for page_id: p0123
+2026-06-07 12:51:11,081 - INFO - Successfully saved payload for page_id: p0123
+2026-06-07 12:51:14,166 - INFO - Received GET request for page_id: p0124 edition: 1847_elrington_todd
+2026-06-07 12:51:14,223 - INFO - Successfully read payload for page_id: p0124
+2026-06-07 12:51:14,240 - INFO - Received GET request for page_id: p0124 edition: 1847_elrington_todd
+2026-06-07 12:51:14,242 - INFO - Successfully read payload for page_id: p0124
+2026-06-07 12:51:20,646 - INFO - Received POST request to save page_id: p0124 edition: 1847_elrington_todd
+2026-06-07 12:51:20,652 - INFO - Recorded 1 edits for page_id: p0124
+2026-06-07 12:51:20,660 - INFO - Successfully saved payload for page_id: p0124
+2026-06-07 12:51:25,118 - INFO - Received GET request for page_id: p0125 edition: 1847_elrington_todd
+2026-06-07 12:51:25,118 - WARNING - Page not found: p0125
+2026-06-07 12:57:37,316 - INFO - Received POST request to save page_id: p0125 edition: 1847_elrington_todd
+2026-06-07 12:57:37,364 - INFO - Recorded 11 edits for page_id: p0125
+2026-06-07 12:57:37,370 - INFO - Successfully saved payload for page_id: p0125
+2026-06-07 12:57:40,162 - INFO - Received GET request for page_id: p0126 edition: 1847_elrington_todd
+2026-06-07 12:57:40,190 - INFO - Successfully read payload for page_id: p0126
+2026-06-07 12:57:48,758 - INFO - Received POST request to save page_id: p0126 edition: 1847_elrington_todd
+2026-06-07 12:57:48,760 - INFO - Recorded 1 edits for page_id: p0126
+2026-06-07 12:57:48,771 - INFO - Successfully saved payload for page_id: p0126
+2026-06-07 12:57:51,825 - INFO - Received GET request for page_id: p0127 edition: 1847_elrington_todd
+2026-06-07 12:57:51,844 - INFO - Successfully read payload for page_id: p0127
+2026-06-07 12:57:58,361 - INFO - Received POST request to save page_id: p0127 edition: 1847_elrington_todd
+2026-06-07 12:57:58,370 - INFO - Recorded 1 edits for page_id: p0127
+2026-06-07 12:57:58,381 - INFO - Successfully saved payload for page_id: p0127
+2026-06-07 12:58:01,164 - INFO - Received GET request for page_id: p0126 edition: 1847_elrington_todd
+2026-06-07 12:58:01,212 - INFO - Successfully read payload for page_id: p0126
+2026-06-07 12:58:01,228 - INFO - Received GET request for page_id: p0126 edition: 1847_elrington_todd
+2026-06-07 12:58:01,231 - INFO - Successfully read payload for page_id: p0126
+2026-06-07 12:58:08,511 - INFO - Received GET request for page_id: p0127 edition: 1847_elrington_todd
+2026-06-07 12:58:08,565 - INFO - Successfully read payload for page_id: p0127
+2026-06-07 12:58:08,592 - INFO - Received GET request for page_id: p0127 edition: 1847_elrington_todd
+2026-06-07 12:58:08,593 - INFO - Successfully read payload for page_id: p0127
+2026-06-07 12:58:17,315 - INFO - Received POST request to save page_id: p0127 edition: 1847_elrington_todd
+2026-06-07 12:58:17,320 - INFO - Recorded 1 edits for page_id: p0127
+2026-06-07 12:58:17,327 - INFO - Successfully saved payload for page_id: p0127
+2026-06-07 12:58:19,780 - INFO - Received GET request for page_id: p0128 edition: 1847_elrington_todd
+2026-06-07 12:58:19,805 - INFO - Successfully read payload for page_id: p0128
+2026-06-07 12:58:19,846 - INFO - Received GET request for page_id: p0128 edition: 1847_elrington_todd
+2026-06-07 12:58:19,848 - INFO - Successfully read payload for page_id: p0128
+2026-06-07 12:58:27,593 - INFO - Received POST request to save page_id: p0128 edition: 1847_elrington_todd
+2026-06-07 12:58:27,603 - INFO - Recorded 1 edits for page_id: p0128
+2026-06-07 12:58:27,623 - INFO - Successfully saved payload for page_id: p0128
+2026-06-07 12:58:29,838 - INFO - Received GET request for page_id: p0129 edition: 1847_elrington_todd
+2026-06-07 12:58:29,881 - INFO - Successfully read payload for page_id: p0129
+2026-06-07 12:58:29,908 - INFO - Received GET request for page_id: p0129 edition: 1847_elrington_todd
+2026-06-07 12:58:29,910 - INFO - Successfully read payload for page_id: p0129
+2026-06-07 12:58:35,493 - INFO - Received POST request to save page_id: p0129 edition: 1847_elrington_todd
+2026-06-07 12:58:35,496 - INFO - Recorded 1 edits for page_id: p0129
+2026-06-07 12:58:35,512 - INFO - Successfully saved payload for page_id: p0129
+2026-06-07 12:58:37,853 - INFO - Received GET request for page_id: p0130 edition: 1847_elrington_todd
+2026-06-07 12:58:37,887 - INFO - Successfully read payload for page_id: p0130
+2026-06-07 12:58:37,907 - INFO - Received GET request for page_id: p0130 edition: 1847_elrington_todd
+2026-06-07 12:58:37,923 - INFO - Successfully read payload for page_id: p0130
+2026-06-07 12:58:44,498 - INFO - Received POST request to save page_id: p0130 edition: 1847_elrington_todd
+2026-06-07 12:58:44,502 - INFO - Recorded 1 edits for page_id: p0130
+2026-06-07 12:58:44,502 - INFO - Successfully saved payload for page_id: p0130
+2026-06-07 12:58:46,132 - INFO - Received POST request to save page_id: p0130 edition: 1847_elrington_todd
+2026-06-07 12:58:46,147 - INFO - Recorded 0 edits for page_id: p0130
+2026-06-07 12:58:46,159 - INFO - Successfully saved payload for page_id: p0130
+2026-06-07 12:58:48,093 - INFO - Received GET request for page_id: p0131 edition: 1847_elrington_todd
+2026-06-07 12:58:48,143 - INFO - Successfully read payload for page_id: p0131
+2026-06-07 12:58:48,157 - INFO - Received GET request for page_id: p0131 edition: 1847_elrington_todd
+2026-06-07 12:58:48,160 - INFO - Successfully read payload for page_id: p0131
+2026-06-07 12:58:54,475 - INFO - Received POST request to save page_id: p0131 edition: 1847_elrington_todd
+2026-06-07 12:58:54,480 - INFO - Recorded 1 edits for page_id: p0131
+2026-06-07 12:58:54,495 - INFO - Successfully saved payload for page_id: p0131
+2026-06-07 12:59:01,439 - INFO - Received POST request to save page_id: p0131 edition: 1847_elrington_todd
+2026-06-07 12:59:01,457 - INFO - Recorded 1 edits for page_id: p0131
+2026-06-07 12:59:01,465 - INFO - Successfully saved payload for page_id: p0131
+2026-06-07 12:59:06,611 - INFO - Received GET request for page_id: p0132 edition: 1847_elrington_todd
+2026-06-07 12:59:06,648 - INFO - Successfully read payload for page_id: p0132
+2026-06-07 12:59:06,709 - INFO - Received GET request for page_id: p0132 edition: 1847_elrington_todd
+2026-06-07 12:59:06,711 - INFO - Successfully read payload for page_id: p0132
+2026-06-07 12:59:13,993 - INFO - Received POST request to save page_id: p0132 edition: 1847_elrington_todd
+2026-06-07 12:59:14,002 - INFO - Recorded 1 edits for page_id: p0132
+2026-06-07 12:59:14,014 - INFO - Successfully saved payload for page_id: p0132
+2026-06-07 12:59:17,378 - INFO - Received GET request for page_id: p0133 edition: 1847_elrington_todd
+2026-06-07 12:59:17,405 - INFO - Successfully read payload for page_id: p0133
+2026-06-07 12:59:17,444 - INFO - Received GET request for page_id: p0133 edition: 1847_elrington_todd
+2026-06-07 12:59:17,448 - INFO - Successfully read payload for page_id: p0133
+2026-06-07 12:59:23,150 - INFO - Received POST request to save page_id: p0133 edition: 1847_elrington_todd
+2026-06-07 12:59:23,155 - INFO - Recorded 1 edits for page_id: p0133
+2026-06-07 12:59:23,164 - INFO - Successfully saved payload for page_id: p0133
+2026-06-07 12:59:26,083 - INFO - Received GET request for page_id: p0134 edition: 1847_elrington_todd
+2026-06-07 12:59:26,133 - INFO - Successfully read payload for page_id: p0134
+2026-06-07 12:59:26,142 - INFO - Received GET request for page_id: p0134 edition: 1847_elrington_todd
+2026-06-07 12:59:26,153 - INFO - Successfully read payload for page_id: p0134
+2026-06-07 12:59:31,804 - INFO - Received POST request to save page_id: p0134 edition: 1847_elrington_todd
+2026-06-07 12:59:31,806 - INFO - Recorded 1 edits for page_id: p0134
+2026-06-07 12:59:31,825 - INFO - Successfully saved payload for page_id: p0134
+2026-06-07 12:59:34,752 - INFO - Received GET request for page_id: p0135 edition: 1847_elrington_todd
+2026-06-07 12:59:34,812 - INFO - Successfully read payload for page_id: p0135
+2026-06-07 12:59:34,828 - INFO - Received GET request for page_id: p0135 edition: 1847_elrington_todd
+2026-06-07 12:59:34,830 - INFO - Successfully read payload for page_id: p0135
+2026-06-07 12:59:47,588 - INFO - Received POST request to save page_id: p0135 edition: 1847_elrington_todd
+2026-06-07 12:59:47,590 - INFO - Recorded 1 edits for page_id: p0135
+2026-06-07 12:59:47,590 - INFO - Successfully saved payload for page_id: p0135
+2026-06-07 13:00:04,138 - INFO - Received GET request for page_id: p0136 edition: 1847_elrington_todd
+2026-06-07 13:00:04,197 - INFO - Successfully read payload for page_id: p0136
+2026-06-07 13:00:04,206 - INFO - Received GET request for page_id: p0136 edition: 1847_elrington_todd
+2026-06-07 13:00:04,208 - INFO - Successfully read payload for page_id: p0136
+2026-06-07 13:00:11,420 - INFO - Received POST request to save page_id: p0136 edition: 1847_elrington_todd
+2026-06-07 13:00:11,422 - INFO - Recorded 1 edits for page_id: p0136
+2026-06-07 13:00:11,422 - INFO - Successfully saved payload for page_id: p0136
+2026-06-07 13:00:16,118 - INFO - Received GET request for page_id: p0137 edition: 1847_elrington_todd
+2026-06-07 13:00:16,167 - INFO - Successfully read payload for page_id: p0137
+2026-06-07 13:00:16,179 - INFO - Received GET request for page_id: p0137 edition: 1847_elrington_todd
+2026-06-07 13:00:16,181 - INFO - Successfully read payload for page_id: p0137
+2026-06-07 13:00:22,168 - INFO - Received POST request to save page_id: p0137 edition: 1847_elrington_todd
+2026-06-07 13:00:22,175 - INFO - Recorded 1 edits for page_id: p0137
+2026-06-07 13:00:22,189 - INFO - Successfully saved payload for page_id: p0137
+2026-06-07 13:00:25,262 - INFO - Received GET request for page_id: p0138 edition: 1847_elrington_todd
+2026-06-07 13:00:25,301 - INFO - Successfully read payload for page_id: p0138
+2026-06-07 13:00:25,318 - INFO - Received GET request for page_id: p0138 edition: 1847_elrington_todd
+2026-06-07 13:00:25,319 - INFO - Successfully read payload for page_id: p0138
+2026-06-07 13:00:30,440 - INFO - Received POST request to save page_id: p0138 edition: 1847_elrington_todd
+2026-06-07 13:00:30,446 - INFO - Recorded 1 edits for page_id: p0138
+2026-06-07 13:00:30,462 - INFO - Successfully saved payload for page_id: p0138
+2026-06-07 13:00:33,466 - INFO - Received GET request for page_id: p0139 edition: 1847_elrington_todd
+2026-06-07 13:00:33,500 - INFO - Successfully read payload for page_id: p0139
+2026-06-07 13:00:33,513 - INFO - Received GET request for page_id: p0139 edition: 1847_elrington_todd
+2026-06-07 13:00:33,515 - INFO - Successfully read payload for page_id: p0139
+2026-06-07 13:00:39,251 - INFO - Received POST request to save page_id: p0139 edition: 1847_elrington_todd
+2026-06-07 13:00:39,253 - INFO - Recorded 1 edits for page_id: p0139
+2026-06-07 13:00:39,253 - INFO - Successfully saved payload for page_id: p0139
+2026-06-07 13:00:44,245 - INFO - Received GET request for page_id: p0140 edition: 1847_elrington_todd
+2026-06-07 13:00:44,284 - INFO - Successfully read payload for page_id: p0140
+2026-06-07 13:00:44,318 - INFO - Received GET request for page_id: p0140 edition: 1847_elrington_todd
+2026-06-07 13:00:44,323 - INFO - Successfully read payload for page_id: p0140
+2026-06-07 13:00:51,854 - INFO - Received POST request to save page_id: p0140 edition: 1847_elrington_todd
+2026-06-07 13:00:51,856 - INFO - Recorded 1 edits for page_id: p0140
+2026-06-07 13:00:51,870 - INFO - Successfully saved payload for page_id: p0140
+2026-06-07 13:00:53,857 - INFO - Received GET request for page_id: p0141 edition: 1847_elrington_todd
+2026-06-07 13:00:53,920 - INFO - Successfully read payload for page_id: p0141
+2026-06-07 13:00:53,930 - INFO - Received GET request for page_id: p0141 edition: 1847_elrington_todd
+2026-06-07 13:00:53,932 - INFO - Successfully read payload for page_id: p0141
+2026-06-07 13:01:00,081 - INFO - Received POST request to save page_id: p0141 edition: 1847_elrington_todd
+2026-06-07 13:01:00,086 - INFO - Recorded 1 edits for page_id: p0141
+2026-06-07 13:01:00,094 - INFO - Successfully saved payload for page_id: p0141
+2026-06-07 13:01:05,998 - INFO - Received GET request for page_id: p0142 edition: 1847_elrington_todd
+2026-06-07 13:01:06,039 - INFO - Successfully read payload for page_id: p0142
+2026-06-07 13:01:06,064 - INFO - Received GET request for page_id: p0142 edition: 1847_elrington_todd
+2026-06-07 13:01:06,066 - INFO - Successfully read payload for page_id: p0142
+2026-06-07 13:01:13,643 - INFO - Received POST request to save page_id: p0142 edition: 1847_elrington_todd
+2026-06-07 13:01:13,653 - INFO - Recorded 1 edits for page_id: p0142
+2026-06-07 13:01:13,664 - INFO - Successfully saved payload for page_id: p0142
+2026-06-07 13:01:22,819 - INFO - Received GET request for page_id: p0143 edition: 1847_elrington_todd
+2026-06-07 13:01:22,873 - INFO - Successfully read payload for page_id: p0143
+2026-06-07 13:01:22,901 - INFO - Received GET request for page_id: p0143 edition: 1847_elrington_todd
+2026-06-07 13:01:22,904 - INFO - Successfully read payload for page_id: p0143
+2026-06-07 13:01:28,693 - INFO - Received POST request to save page_id: p0143 edition: 1847_elrington_todd
+2026-06-07 13:01:28,696 - INFO - Recorded 1 edits for page_id: p0143
+2026-06-07 13:01:28,709 - INFO - Successfully saved payload for page_id: p0143
+2026-06-07 13:01:32,257 - INFO - Received GET request for page_id: p0144 edition: 1847_elrington_todd
+2026-06-07 13:01:32,304 - INFO - Successfully read payload for page_id: p0144
+2026-06-07 13:01:32,318 - INFO - Received GET request for page_id: p0144 edition: 1847_elrington_todd
+2026-06-07 13:01:32,321 - INFO - Successfully read payload for page_id: p0144
+2026-06-07 13:01:38,168 - INFO - Received POST request to save page_id: p0144 edition: 1847_elrington_todd
+2026-06-07 13:01:38,171 - INFO - Recorded 1 edits for page_id: p0144
+2026-06-07 13:01:38,171 - INFO - Successfully saved payload for page_id: p0144
+2026-06-07 13:01:41,917 - INFO - Received GET request for page_id: p0145 edition: 1847_elrington_todd
+2026-06-07 13:01:41,979 - INFO - Successfully read payload for page_id: p0145
+2026-06-07 13:01:41,994 - INFO - Received GET request for page_id: p0145 edition: 1847_elrington_todd
+2026-06-07 13:01:41,995 - INFO - Successfully read payload for page_id: p0145
+2026-06-07 13:01:47,663 - INFO - Received POST request to save page_id: p0145 edition: 1847_elrington_todd
+2026-06-07 13:01:47,669 - INFO - Recorded 1 edits for page_id: p0145
+2026-06-07 13:01:47,684 - INFO - Successfully saved payload for page_id: p0145
+2026-06-07 13:01:50,852 - INFO - Received GET request for page_id: p0146 edition: 1847_elrington_todd
+2026-06-07 13:01:50,911 - INFO - Successfully read payload for page_id: p0146
+2026-06-07 13:01:50,919 - INFO - Received GET request for page_id: p0146 edition: 1847_elrington_todd
+2026-06-07 13:01:50,922 - INFO - Successfully read payload for page_id: p0146
+2026-06-07 13:01:56,442 - INFO - Received POST request to save page_id: p0146 edition: 1847_elrington_todd
+2026-06-07 13:01:56,454 - INFO - Recorded 1 edits for page_id: p0146
+2026-06-07 13:01:56,468 - INFO - Successfully saved payload for page_id: p0146
+2026-06-07 13:02:01,019 - INFO - Received GET request for page_id: p0147 edition: 1847_elrington_todd
+2026-06-07 13:02:01,073 - INFO - Successfully read payload for page_id: p0147
+2026-06-07 13:02:01,084 - INFO - Received GET request for page_id: p0147 edition: 1847_elrington_todd
+2026-06-07 13:02:01,085 - INFO - Successfully read payload for page_id: p0147
+2026-06-07 13:02:07,689 - INFO - Received POST request to save page_id: p0147 edition: 1847_elrington_todd
+2026-06-07 13:02:07,692 - INFO - Recorded 1 edits for page_id: p0147
+2026-06-07 13:02:07,709 - INFO - Successfully saved payload for page_id: p0147
+2026-06-07 13:02:09,916 - INFO - Received GET request for page_id: p0148 edition: 1847_elrington_todd
+2026-06-07 13:02:09,970 - INFO - Successfully read payload for page_id: p0148
+2026-06-07 13:02:09,993 - INFO - Received GET request for page_id: p0148 edition: 1847_elrington_todd
+2026-06-07 13:02:09,994 - INFO - Successfully read payload for page_id: p0148
+2026-06-07 13:02:16,043 - INFO - Received POST request to save page_id: p0148 edition: 1847_elrington_todd
+2026-06-07 13:02:16,053 - INFO - Recorded 1 edits for page_id: p0148
+2026-06-07 13:02:16,065 - INFO - Successfully saved payload for page_id: p0148
+2026-06-07 13:02:21,768 - INFO - Received POST request to save page_id: p0148 edition: 1847_elrington_todd
+2026-06-07 13:02:21,783 - INFO - Recorded 1 edits for page_id: p0148
+2026-06-07 13:02:21,783 - INFO - Successfully saved payload for page_id: p0148
+2026-06-07 13:02:25,334 - INFO - Received GET request for page_id: p0147 edition: 1847_elrington_todd
+2026-06-07 13:02:25,383 - INFO - Successfully read payload for page_id: p0147
+2026-06-07 13:02:25,393 - INFO - Received GET request for page_id: p0147 edition: 1847_elrington_todd
+2026-06-07 13:02:25,393 - INFO - Successfully read payload for page_id: p0147
+2026-06-07 13:02:27,502 - INFO - Received GET request for page_id: p0146 edition: 1847_elrington_todd
+2026-06-07 13:02:27,554 - INFO - Successfully read payload for page_id: p0146
+2026-06-07 13:02:27,731 - INFO - Received GET request for page_id: p0146 edition: 1847_elrington_todd
+2026-06-07 13:02:27,747 - INFO - Successfully read payload for page_id: p0146
+2026-06-07 13:02:29,460 - INFO - Received GET request for page_id: p0145 edition: 1847_elrington_todd
+2026-06-07 13:02:29,492 - INFO - Successfully read payload for page_id: p0145
+2026-06-07 13:02:29,520 - INFO - Received GET request for page_id: p0145 edition: 1847_elrington_todd
+2026-06-07 13:02:29,522 - INFO - Successfully read payload for page_id: p0145
+2026-06-07 13:02:31,036 - INFO - Received GET request for page_id: p0144 edition: 1847_elrington_todd
+2026-06-07 13:02:31,086 - INFO - Successfully read payload for page_id: p0144
+2026-06-07 13:02:31,101 - INFO - Received GET request for page_id: p0144 edition: 1847_elrington_todd
+2026-06-07 13:02:31,103 - INFO - Successfully read payload for page_id: p0144
+2026-06-07 13:02:32,398 - INFO - Received GET request for page_id: p0143 edition: 1847_elrington_todd
+2026-06-07 13:02:32,442 - INFO - Successfully read payload for page_id: p0143
+2026-06-07 13:02:32,912 - INFO - Received GET request for page_id: p0143 edition: 1847_elrington_todd
+2026-06-07 13:02:32,913 - INFO - Successfully read payload for page_id: p0143
+2026-06-07 13:02:35,015 - INFO - Received GET request for page_id: p0142 edition: 1847_elrington_todd
+2026-06-07 13:02:35,053 - INFO - Successfully read payload for page_id: p0142
+2026-06-07 13:02:35,871 - INFO - Received GET request for page_id: p0141 edition: 1847_elrington_todd
+2026-06-07 13:02:35,892 - INFO - Successfully read payload for page_id: p0141
+2026-06-07 13:02:36,514 - INFO - Received GET request for page_id: p0141 edition: 1847_elrington_todd
+2026-06-07 13:02:36,514 - INFO - Successfully read payload for page_id: p0141
+2026-06-07 13:02:41,451 - INFO - Received GET request for page_id: p0014 edition: 1847_elrington_todd
+2026-06-07 13:02:41,453 - INFO - Successfully read payload for page_id: p0014
+2026-06-07 13:02:41,645 - INFO - Received GET request for page_id: p0148 edition: 1847_elrington_todd
+2026-06-07 13:02:41,672 - INFO - Successfully read payload for page_id: p0148
+2026-06-07 13:02:41,700 - INFO - Received GET request for page_id: p0148 edition: 1847_elrington_todd
+2026-06-07 13:02:41,703 - INFO - Successfully read payload for page_id: p0148
+2026-06-07 13:02:44,976 - INFO - Received GET request for page_id: p0149 edition: 1847_elrington_todd
+2026-06-07 13:02:45,024 - INFO - Successfully read payload for page_id: p0149
+2026-06-07 13:02:45,070 - INFO - Received GET request for page_id: p0149 edition: 1847_elrington_todd
+2026-06-07 13:02:45,071 - INFO - Successfully read payload for page_id: p0149
+2026-06-07 13:02:51,306 - INFO - Received POST request to save page_id: p0149 edition: 1847_elrington_todd
+2026-06-07 13:02:51,314 - INFO - Recorded 1 edits for page_id: p0149
+2026-06-07 13:02:51,325 - INFO - Successfully saved payload for page_id: p0149
+2026-06-07 13:02:53,983 - INFO - Received GET request for page_id: p0150 edition: 1847_elrington_todd
+2026-06-07 13:02:54,030 - INFO - Successfully read payload for page_id: p0150
+2026-06-07 13:02:54,066 - INFO - Received GET request for page_id: p0150 edition: 1847_elrington_todd
+2026-06-07 13:02:54,067 - INFO - Successfully read payload for page_id: p0150
+2026-06-07 13:03:01,187 - INFO - Received POST request to save page_id: p0150 edition: 1847_elrington_todd
+2026-06-07 13:03:01,189 - INFO - Recorded 1 edits for page_id: p0150
+2026-06-07 13:03:01,203 - INFO - Successfully saved payload for page_id: p0150
+2026-06-07 13:03:03,512 - INFO - Received GET request for page_id: p0151 edition: 1847_elrington_todd
+2026-06-07 13:03:03,513 - WARNING - Page not found: p0151
+2026-06-07 13:03:03,537 - INFO - Received GET request for page_id: p0151 edition: 1847_elrington_todd
+2026-06-07 13:03:03,538 - WARNING - Page not found: p0151
+2026-06-07 13:03:06,341 - INFO - Received GET request for page_id: p0150 edition: 1847_elrington_todd
+2026-06-07 13:03:06,376 - INFO - Successfully read payload for page_id: p0150
+2026-06-07 13:03:06,413 - INFO - Received GET request for page_id: p0150 edition: 1847_elrington_todd
+2026-06-07 13:03:06,418 - INFO - Successfully read payload for page_id: p0150
+2026-06-07 13:12:43,130 - INFO - Received GET request for page_id: p0015 edition: 1847_elrington_todd
+2026-06-07 13:12:43,130 - WARNING - Page not found: p0015
+2026-06-07 13:12:44,741 - INFO - Received GET request for page_id: p0300 edition: 1847_elrington_todd
+2026-06-07 13:12:44,741 - WARNING - Page not found: p0300
+2026-06-07 13:13:59,442 - INFO - Received GET request for page_id: p0030 edition: 1847_elrington_todd
+2026-06-07 13:13:59,442 - INFO - Successfully read payload for page_id: p0030
+2026-06-07 13:14:00,807 - INFO - Received GET request for page_id: p0045 edition: 1847_elrington_todd
+2026-06-07 13:14:00,811 - INFO - Successfully read payload for page_id: p0045
+2026-06-07 13:14:07,486 - INFO - Received GET request for page_id: p0049 edition: 1847_elrington_todd
+2026-06-07 13:14:07,491 - INFO - Successfully read payload for page_id: p0049
+2026-06-07 13:14:10,545 - INFO - Received GET request for page_id: p0004 edition: 1847_elrington_todd
+2026-06-07 13:14:10,546 - WARNING - Page not found: p0004
+2026-06-07 13:14:11,337 - INFO - Received GET request for page_id: p0048 edition: 1847_elrington_todd
+2026-06-07 13:14:11,349 - INFO - Successfully read payload for page_id: p0048
+2026-06-07 13:14:17,622 - INFO - Received GET request for page_id: p0004 edition: 1847_elrington_todd
+2026-06-07 13:14:17,623 - WARNING - Page not found: p0004
+2026-06-07 13:14:18,383 - INFO - Received GET request for page_id: p0047 edition: 1847_elrington_todd
+2026-06-07 13:14:18,390 - INFO - Successfully read payload for page_id: p0047
+2026-06-07 13:14:46,115 - INFO - Received GET request for page_id: p0048 edition: 1847_elrington_todd
+2026-06-07 13:14:46,117 - INFO - Successfully read payload for page_id: p0048
+2026-06-07 13:14:46,199 - INFO - Received GET request for page_id: p0048 edition: 1847_elrington_todd
+2026-06-07 13:14:46,200 - INFO - Successfully read payload for page_id: p0048
+2026-06-07 13:27:52,042 - INFO - Received POST request to save page_id: p0048 edition: 1847_elrington_todd
+2026-06-07 13:27:52,050 - INFO - Recorded 41 edits for page_id: p0048
+2026-06-07 13:27:52,064 - INFO - Successfully saved payload for page_id: p0048
+2026-06-07 13:27:55,970 - INFO - Received GET request for page_id: p0049 edition: 1847_elrington_todd
+2026-06-07 13:27:55,974 - INFO - Successfully read payload for page_id: p0049
+2026-06-07 13:28:05,712 - INFO - Received GET request for page_id: p0050 edition: 1847_elrington_todd
+2026-06-07 13:28:05,713 - WARNING - Page not found: p0050
+2026-06-07 13:28:14,927 - INFO - Received GET request for page_id: p0051 edition: 1847_elrington_todd
+2026-06-07 13:28:14,941 - INFO - Successfully read payload for page_id: p0051
+2026-06-07 13:28:21,475 - INFO - Received GET request for page_id: p0052 edition: 1847_elrington_todd
+2026-06-07 13:28:21,479 - INFO - Successfully read payload for page_id: p0052
+2026-06-07 13:28:24,894 - INFO - Received GET request for page_id: p0053 edition: 1847_elrington_todd
+2026-06-07 13:28:24,897 - INFO - Successfully read payload for page_id: p0053
+2026-06-07 13:28:28,000 - INFO - Received GET request for page_id: p0054 edition: 1847_elrington_todd
+2026-06-07 13:28:28,004 - INFO - Successfully read payload for page_id: p0054
+2026-06-07 13:28:30,792 - INFO - Received GET request for page_id: p0055 edition: 1847_elrington_todd
+2026-06-07 13:28:30,795 - INFO - Successfully read payload for page_id: p0055
+2026-06-07 13:28:34,156 - INFO - Received GET request for page_id: p0056 edition: 1847_elrington_todd
+2026-06-07 13:28:34,158 - INFO - Successfully read payload for page_id: p0056
+2026-06-07 13:28:37,665 - INFO - Received GET request for page_id: p0057 edition: 1847_elrington_todd
+2026-06-07 13:28:37,673 - INFO - Successfully read payload for page_id: p0057
+2026-06-07 13:28:41,368 - INFO - Received GET request for page_id: p0058 edition: 1847_elrington_todd
+2026-06-07 13:28:41,370 - INFO - Successfully read payload for page_id: p0058
+2026-06-07 13:28:44,412 - INFO - Received GET request for page_id: p0059 edition: 1847_elrington_todd
+2026-06-07 13:28:44,417 - INFO - Successfully read payload for page_id: p0059
+2026-06-07 13:28:47,611 - INFO - Received GET request for page_id: p0060 edition: 1847_elrington_todd
+2026-06-07 13:28:47,616 - INFO - Successfully read payload for page_id: p0060
+2026-06-07 13:28:50,560 - INFO - Received GET request for page_id: p0061 edition: 1847_elrington_todd
+2026-06-07 13:28:50,563 - INFO - Successfully read payload for page_id: p0061
+2026-06-07 13:28:53,611 - INFO - Received GET request for page_id: p0062 edition: 1847_elrington_todd
+2026-06-07 13:28:53,616 - INFO - Successfully read payload for page_id: p0062
+2026-06-07 13:28:57,260 - INFO - Received GET request for page_id: p0063 edition: 1847_elrington_todd
+2026-06-07 13:28:57,263 - INFO - Successfully read payload for page_id: p0063
+2026-06-07 13:29:00,553 - INFO - Received GET request for page_id: p0064 edition: 1847_elrington_todd
+2026-06-07 13:29:00,561 - INFO - Successfully read payload for page_id: p0064
+2026-06-07 13:29:03,831 - INFO - Received GET request for page_id: p0065 edition: 1847_elrington_todd
+2026-06-07 13:29:03,835 - INFO - Successfully read payload for page_id: p0065
+2026-06-07 13:29:06,929 - INFO - Received GET request for page_id: p0066 edition: 1847_elrington_todd
+2026-06-07 13:29:06,933 - INFO - Successfully read payload for page_id: p0066
+2026-06-07 13:29:13,981 - INFO - Received GET request for page_id: p0067 edition: 1847_elrington_todd
+2026-06-07 13:29:13,988 - INFO - Successfully read payload for page_id: p0067
+2026-06-07 13:29:16,910 - INFO - Received GET request for page_id: p0068 edition: 1847_elrington_todd
+2026-06-07 13:29:16,914 - INFO - Successfully read payload for page_id: p0068
+2026-06-07 13:29:24,817 - INFO - Received GET request for page_id: p0058 edition: 1847_elrington_todd
+2026-06-07 13:29:24,830 - INFO - Successfully read payload for page_id: p0058
+2026-06-07 13:29:30,990 - INFO - Received GET request for page_id: p0005 edition: 1847_elrington_todd
+2026-06-07 13:29:30,991 - WARNING - Page not found: p0005
+2026-06-07 13:29:31,799 - INFO - Received GET request for page_id: p0054 edition: 1847_elrington_todd
+2026-06-07 13:29:31,804 - INFO - Successfully read payload for page_id: p0054
+2026-06-07 13:29:35,066 - INFO - Received GET request for page_id: p0050 edition: 1847_elrington_todd
+2026-06-07 13:29:35,067 - WARNING - Page not found: p0050
+2026-06-07 13:29:38,818 - INFO - Received GET request for page_id: p0005 edition: 1847_elrington_todd
+2026-06-07 13:29:38,819 - WARNING - Page not found: p0005
+2026-06-07 13:29:40,641 - INFO - Received GET request for page_id: p0004 edition: 1847_elrington_todd
+2026-06-07 13:29:40,641 - WARNING - Page not found: p0004
+2026-06-07 13:29:41,372 - INFO - Received GET request for page_id: p0049 edition: 1847_elrington_todd
+2026-06-07 13:29:41,374 - INFO - Successfully read payload for page_id: p0049
+2026-06-07 13:29:46,846 - INFO - Received GET request for page_id: p0048 edition: 1847_elrington_todd
+2026-06-07 13:29:46,912 - INFO - Successfully read payload for page_id: p0048
+2026-06-07 13:29:46,914 - INFO - Received GET request for page_id: p0048 edition: 1847_elrington_todd
+2026-06-07 13:29:46,924 - INFO - Successfully read payload for page_id: p0048
+2026-06-07 13:29:50,407 - INFO - Received GET request for page_id: p0049 edition: 1847_elrington_todd
+2026-06-07 13:29:50,410 - INFO - Successfully read payload for page_id: p0049
+2026-06-07 13:29:50,501 - INFO - Received GET request for page_id: p0049 edition: 1847_elrington_todd
+2026-06-07 13:29:50,501 - INFO - Successfully read payload for page_id: p0049
+2026-06-07 13:42:50,584 - INFO - Received POST request to save page_id: p0033 edition: None
+2026-06-07 13:42:50,587 - INFO - Recorded 1 edits for page_id: p0033
+2026-06-07 13:42:50,593 - INFO - Successfully saved payload for page_id: p0033
+2026-06-07 13:42:50,602 - INFO - Received GET request for page_id: p0033 edition: None
+2026-06-07 13:42:50,604 - INFO - Successfully read payload for page_id: p0033
+2026-06-07 13:42:50,612 - INFO - Received POST request to save page_id: p0099 edition: None
+2026-06-07 13:42:50,616 - INFO - Recorded 1 edits for page_id: p0099
+2026-06-07 13:42:50,619 - INFO - Successfully saved payload for page_id: p0099
+2026-06-07 13:42:50,638 - INFO - Received POST request to save page_id: p0099 edition: None
+2026-06-07 13:42:50,642 - INFO - Recorded 2 edits for page_id: p0099
+2026-06-07 13:42:50,646 - INFO - Successfully saved payload for page_id: p0099
+2026-06-07 13:42:50,663 - INFO - Received POST request to save page_id: p0099 edition: None
+2026-06-07 13:42:50,666 - INFO - Recorded 2 edits for page_id: p0099
+2026-06-07 13:42:50,670 - INFO - Successfully saved payload for page_id: p0099
+2026-06-07 13:42:50,689 - INFO - Received POST request to save page_id: p0099 edition: None
+2026-06-07 13:42:50,694 - INFO - Recorded 1 edits for page_id: p0099
+2026-06-07 13:42:50,697 - INFO - Successfully saved payload for page_id: p0099
+2026-06-07 13:42:50,698 - INFO - Received POST request to save page_id: p0099 edition: None
+2026-06-07 13:42:50,700 - INFO - Recorded 1 edits for page_id: p0099
+2026-06-07 13:42:50,703 - INFO - Successfully saved payload for page_id: p0099
+2026-06-07 13:42:50,724 - INFO - Received POST request to save page_id: p0099 edition: None
+2026-06-07 13:42:50,735 - INFO - Recorded 0 edits for page_id: p0099
+2026-06-07 13:42:50,738 - INFO - Successfully saved payload for page_id: p0099
+2026-06-07 13:42:50,767 - INFO - Received GET request for page_id: p0001 edition: whitaker_latin
+2026-06-07 13:42:50,769 - INFO - Successfully read payload for page_id: p0001
+2026-06-07 13:42:50,778 - INFO - Received GET request for page_id: p0001 edition: None
+2026-06-07 13:42:50,778 - WARNING - Page not found: p0001
+2026-06-07 13:42:50,786 - INFO - Received POST request to save page_id: p0001 edition: whitaker_latin
+2026-06-07 13:42:50,790 - INFO - Recorded 1 edits for page_id: p0001
+2026-06-07 13:42:50,794 - INFO - Successfully saved payload for page_id: p0001
+2026-06-07 13:42:51,329 - INFO - Received POST request to save page_id: p0050 edition: None
+2026-06-07 13:42:51,331 - INFO - Recorded 0 edits for page_id: p0050
+2026-06-07 13:42:51,334 - INFO - Successfully saved payload for page_id: p0050
+2026-06-07 13:42:51,344 - INFO - Received POST request to save page_id: p0050 edition: None
+2026-06-07 13:42:51,346 - INFO - Recorded 0 edits for page_id: p0050
+2026-06-07 13:42:51,348 - INFO - Successfully saved payload for page_id: p0050
