@@ -6330,3 +6330,39 @@ pilot_ocr.py: error: argument --part: invalid choice: 'annals_latin' (choose fro
 2026-06-07 13:42:51,344 - INFO - Received POST request to save page_id: p0050 edition: None
 2026-06-07 13:42:51,346 - INFO - Recorded 0 edits for page_id: p0050
 2026-06-07 13:42:51,348 - INFO - Successfully saved payload for page_id: p0050
+2026-06-07 13:48:34,762 - INFO - Received POST request to save page_id: p0033 edition: None
+2026-06-07 13:48:34,762 - INFO - Recorded 1 edits for page_id: p0033
+2026-06-07 13:48:34,762 - INFO - Successfully saved payload for page_id: p0033
+2026-06-07 13:48:34,776 - INFO - Received GET request for page_id: p0033 edition: None
+2026-06-07 13:48:34,776 - INFO - Successfully read payload for page_id: p0033
+2026-06-07 13:48:34,776 - INFO - Received POST request to save page_id: p0099 edition: None
+2026-06-07 13:48:34,776 - INFO - Recorded 1 edits for page_id: p0099
+2026-06-07 13:48:34,795 - INFO - Successfully saved payload for page_id: p0099
+2026-06-07 13:48:34,814 - INFO - Received POST request to save page_id: p0099 edition: None
+2026-06-07 13:48:34,817 - INFO - Recorded 2 edits for page_id: p0099
+2026-06-07 13:48:34,821 - INFO - Successfully saved payload for page_id: p0099
+2026-06-07 13:48:34,827 - INFO - Received POST request to save page_id: p0099 edition: None
+2026-06-07 13:48:34,842 - INFO - Recorded 2 edits for page_id: p0099
+2026-06-07 13:48:34,844 - INFO - Successfully saved payload for page_id: p0099
+2026-06-07 13:48:34,867 - INFO - Received POST request to save page_id: p0099 edition: None
+2026-06-07 13:48:34,870 - INFO - Recorded 1 edits for page_id: p0099
+2026-06-07 13:48:34,874 - INFO - Successfully saved payload for page_id: p0099
+2026-06-07 13:48:34,875 - INFO - Received POST request to save page_id: p0099 edition: None
+2026-06-07 13:48:34,878 - INFO - Recorded 1 edits for page_id: p0099
+2026-06-07 13:48:34,881 - INFO - Successfully saved payload for page_id: p0099
+2026-06-07 13:48:34,897 - INFO - Received POST request to save page_id: p0099 edition: None
+2026-06-07 13:48:34,910 - INFO - Recorded 0 edits for page_id: p0099
+2026-06-07 13:48:34,910 - INFO - Successfully saved payload for page_id: p0099
+2026-06-07 13:48:34,945 - INFO - Received GET request for page_id: p0001 edition: whitaker_latin
+2026-06-07 13:48:34,947 - INFO - Successfully read payload for page_id: p0001
+2026-06-07 13:48:34,956 - INFO - Received GET request for page_id: p0001 edition: None
+2026-06-07 13:48:34,956 - WARNING - Page not found: p0001
+2026-06-07 13:48:34,964 - INFO - Received POST request to save page_id: p0001 edition: whitaker_latin
+2026-06-07 13:48:34,964 - INFO - Recorded 1 edits for page_id: p0001
+2026-06-07 13:48:34,964 - INFO - Successfully saved payload for page_id: p0001
+2026-06-07 13:48:35,527 - INFO - Received POST request to save page_id: p0050 edition: None
+2026-06-07 13:48:35,530 - INFO - Recorded 0 edits for page_id: p0050
+2026-06-07 13:48:35,532 - INFO - Successfully saved payload for page_id: p0050
+2026-06-07 13:48:35,541 - INFO - Received POST request to save page_id: p0050 edition: None
+2026-06-07 13:48:35,543 - INFO - Recorded 0 edits for page_id: p0050
+2026-06-07 13:48:35,543 - INFO - Successfully saved payload for page_id: p0050
