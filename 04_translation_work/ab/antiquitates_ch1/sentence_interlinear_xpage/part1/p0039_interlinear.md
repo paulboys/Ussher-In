@@ -6,7 +6,7 @@
 
 **LA**  Simonem Zelotem evangelii doctrinam “ ad occidentalem oceanum, Britannicasque insulas” pertulisse, author est Nicephorus<sup id="fnref-p0039-q"><a href="#fn-seg_p0039_fn_001">q</a></sup> Callisti. Eundem “ in Britannia crucifixum, occisum et sepultum esse,” tradit in synopsi Dorotheus: astipulantibus etiam Græcorum menologiis<sup id="fnref-p0039-r"><a href="#fn-seg_p0039_fn_002">r</a></sup>.
 
-**EN**  It is on the authority of Nicephorus Callistus that Simon the Zealot carried the teaching of the Gospel “to the western ocean and the British Isles”; and Dorotheus, in his synopsis, records that the same man “was crucified, slain, and buried in Britain,” the Greek menologies likewise concurring.
+**EN**  It is on the authority of Nicephorus<sup><a href="#fn-seg_p0039_fn_001">q</a></sup> Callistus that Simon the Zealot carried the teaching of the Gospel “to the western ocean and the British Isles”; and Dorotheus, in his synopsis, records that the same man “was crucified, slain, and buried in Britain,” the Greek menologies<sup><a href="#fn-seg_p0039_fn_002">r</a></sup> likewise concurring.
 
 **LA**  In quibus ad Maii diem decimum de Simone ita scriptum legimus. Ὕστερον δὲ ἐν Βρετανίᾳ γενόμενος, καὶ πολλοὺς τῷ λόγῳ τοῦ εὐαγγελίου φωτίσας, ὑπὸ τῶν ἀπίστων σταυρωθεὶς καὶ τεθεὶς θάπτεται ἐκεῖ. Postremo in Britanniam profectus, cum multos evangelii verbo illustrasset, ab infidelibus crucifixus, illic sepultus est.” In martyrologio tamen et breviario Romano, ut et in Bedæ, Usuardi, atque Adonis martyrologiis, ad Octobris diem octavum et vigesimum in Perside martyrium subiisse legitur.
 
@@ -14,7 +14,7 @@
 
 **LA**  Simonem Petrum, “ duodecim quidem annos esse versatum in oriente, viginti autem et tres annos transegisse Romæ, et in Britannia, et in civitatibus quæ sunt in occidente,” retulit alicubi Eusebius Pamphili; siquidem Simeoni Metaphrastæ credimus. Apud<sup id="fnref-p0039-s"><a href="#fn-seg_p0039_fn_003">s</a></sup> quem etiam legimus, Petrum in Britannia “ longo tempore fuisse moratum, et multas gentes non nominatas attraxisse ad fidem Christi;” ad extremum vero, cum “ verbo gratiæ multos illuminasset, et ecclesias constituisset, episcopos et presbyteros et diaconos ordinasset, XII. anno Cæsaris Neronis rursus Romam reversam esse.”
 
-**EN**  Eusebius Pamphili reports somewhere that Simon Peter “spent twelve years in the East, but passed twenty-three years at Rome, and in Britain, and in the cities which lie in the West”—if indeed Simeon Metaphrastes is to be believed; for in him I also read that Peter “remained a long time in Britain, and drew many unnamed peoples to the faith of Christ,” but at the last, when he had “enlightened many by the word of grace, and established churches, and ordained bishops and presbyters and deacons, in the twelfth year of Caesar Nero returned again to Rome.”
+**EN**  Eusebius Pamphili reports somewhere that Simon Peter “spent twelve years in the East, but passed twenty-three years at Rome, and in Britain, and in the cities which lie in the West”—if indeed Simeon Metaphrastes is to be believed; for in him I also read that Peter “remained a long time in Britain, and drew many unnamed peoples to the faith of Christ,” but at the last, when he had “enlightened many by the word of grace, and established churches, and ordained bishops and presbyters and deacons, in the twelfth year of Caesar Nero returned again to Rome.”<sup><a href="#fn-seg_p0039_fn_003">s</a></sup>
 
 *⟶ This sentence's Latin runs onto p0040; it is translated whole here.*
 
