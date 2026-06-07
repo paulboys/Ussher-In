@@ -1,0 +1,13 @@
+{
+  "page_id": "p0041",
+  "stage": "polished",
+  "version": 1,
+  "timestamp": "2026-06-07T11:48:35Z",
+  "model": "claude-opus-4-8",
+  "lexicon_profile": "auto",
+  "source_versions": {
+    "seg_p0041_s0001": 1
+  },
+  "english": "I'll produce the polished translation for this page. This is a single segment with Latin text, a Greek quotation, and its Latin/English rendering.\n\nI also find, in the Greek Menaia, that Aristobulus — whom Paul himself mentions in his Epistle to the Romans — was ordained by Paul as a bishop of the Britons. There, under the fifteenth of March, Aristobulus is commemorated in these words: “Οὗτος ἦν εἷς τῶν ἑβδομήκοντα μαθητῶν, ἠκολούθησε δὲ τῷ ἁγίῳ ἀποστόλῳ Παύλῳ, κηρύττων τὸ εὐαγγέλιον εἰς πᾶσαν τὴν οἰκουμένην διακονῶν αὐτῷ· ὑφ᾽ οὗ καὶ χειροτονεῖται ἐπίσκοπος εἰς τὴν τῶν Βρετανῶν χώραν, ἀγρίων ἀνδρῶν καὶ ὠμοτάτων· παρ᾽ ὧν ποτὲ μὲν τυπτόμενος, ποτὲ δὲ καὶ κατὰ τῆς ἀγορᾶς συρόμενος, πολλοὺς ἔπεισε τῷ Χριστῷ προσελθεῖν· ὅθεν καὶ ἐκκλησίας συστησάμενος, καὶ πρεσβυτέρους καὶ διακόνους ἐν αὐτῇ καταστήσας, ἐτελειώθη [This man was one of the seventy disciples, and he followed the holy apostle Paul, preaching the gospel throughout the whole world and ministering to him; by him he was also ordained bishop in the region of the Britons, a fierce and most savage people. By them he was at one time beaten and at another dragged through the marketplace, yet he won over many to come to Christ; and so, having established churches and ordained presbyters and deacons in them, he completed his life].”",
+  "warnings": []
+}

@@ -1,0 +1,21 @@
+{
+  "page_id": "p0035",
+  "stage": "polished",
+  "version": 1,
+  "timestamp": "2026-06-07T11:48:35Z",
+  "model": "claude-opus-4-8",
+  "lexicon_profile": "auto",
+  "source_versions": {
+    "seg_p0035_s0001": 1,
+    "seg_p0035_s0002": 1,
+    "seg_p0035_s0003": 1,
+    "seg_p0035_s0004": 1
+  },
+  "english": "Tertullian writes in his Apology.^t\n\nTertullian's words are these: \"Tiberius, in whose time the Christian name entered the world, received word from Syria Palaestina that the truth of that divinity had been revealed there. He brought the matter before the senate, lending it the weight of his own vote in its favor. The senate, because it had not approved the report on its own authority, rejected it. Caesar held to his opinion, however, and threatened danger to anyone who accused the Christians.\"\n\nEusebius adds, in the second book of the Ecclesiastical History, chapter three, in Rufinus's translation: \"Divine providence then so impressed this upon Caesar's mind that, with no obstacle to hinder it, the word of the Gospel could run everywhere in every direction at its very outset. And so it came about that suddenly—as though a light had shone down from heaven, or a ray of the sun had burst forth—the brightness of that light from on high illumined the whole world. Thus the prophecy was fulfilled that had said, 'Their sound went out into all the earth'^u—the sound, that is, of the evangelists and apostles—'and their words to the ends of the world.' From this time, throughout every city and village, vast multitudes of people gathered to the Churches, just as grain is brought to the threshing floors at harvest time.\"\n\n\"The fellowship of the Christians made its way into every kind of human being; nor did any nation of the Roman world remain that was left without a share in its worship.\"^w\n\nThere is one Church, which the holy apostles established from one end of the earth to the other in the blood of Christ, by their own sweat and toil.^x",
+  "warnings": [
+    "polished output contains unexpected marker '^t'; keeping it but it does not match any footnote on this page",
+    "polished output contains unexpected marker '^u'; keeping it but it does not match any footnote on this page",
+    "polished output contains unexpected marker '^w'; keeping it but it does not match any footnote on this page",
+    "polished output contains unexpected marker '^x'; keeping it but it does not match any footnote on this page"
+  ]
+}

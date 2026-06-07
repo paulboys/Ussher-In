@@ -1,0 +1,16 @@
+{
+  "page_id": "p0042",
+  "stage": "polished",
+  "version": 1,
+  "timestamp": "2026-06-07T11:48:35Z",
+  "model": "claude-opus-4-8",
+  "lexicon_profile": "auto",
+  "source_versions": {
+    "seg_p0042_s0001": 1,
+    "seg_p0042_s0002": 1,
+    "seg_p0042_s0003": 1,
+    "seg_p0042_s0004": 1
+  },
+  "english": "Similarly, in Dorotheus's Synopsis we read that Aristobulus was made bishop of Britain, as we also do in the fragment published under the name of Heleca, bishop of Saragossa: \"Among the Britons the memory of many martyrs is celebrated, especially that of St. Aristobulus, one of the seventy-two disciples, who was also called Zebedee (father of James and of John the martyr, and of Mary Salome), and who went to Rome with Peter. From there, leaving his household behind, he was sent into England as bishop and died a martyr in the second year of the most savage emperor Nero.\" So it stands on page 108 of the Saragossa edition. The words I enclosed in the parenthesis, however, should be corrected to read: \"Father of James and John, husband of Mary Salome.\" For on the following page Concordia, the wife of the apostle Peter, is reported to have been the daughter of Aristobulus and Salome. \"St. Peter,\" says the author, \"is held in honour in Spain, and his wife Concordia suffered at Rome under Nero, not long before he himself suffered. She was, as M. Maximus teaches in his commentaries on the epistle of St. Peter, the daughter of Aristobulus, or Zebedee, and of Salome; and she was also the mother-in-law of Andrew, who married another sister of Concordia and of James and John. Now Aristobulus, surnamed Zebedee, was the brother of Barnabas, the apostle of the Lord.\" So he writes; and with him, on the point that Peter took as his wife the daughter of Aristobulus, the brother of the apostle Barnabas, the Greeks too agree — in Metaphrastes, in his commentary on Peter and Paul, and in the Menaia, under the day of June 29.\n\nAt the end of the second epistle to Timothy, the apostle mentions Pudens, Linus, and Claudia together. Pseudo-Clement intimates that Linus, the first bishop of the Roman Church, ordained by Paul, was the son of Claudia. The Book of the Pontiffs, however, asserts that the father of Linus was a certain Herculanus. Our own writers gather from the poet Martial that Claudia was British by birth and the wife of Pudens, for he sang of her thus: Although Claudia Rufina is sprung from the woad-blue Britons, why does she possess the heart of the Latin people?",
+  "warnings": []
+}
