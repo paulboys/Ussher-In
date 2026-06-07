@@ -28,9 +28,9 @@ def test_default_gemini_supports_ocr_and_vision():
     assert gemini.model == "gemini-3.1-pro-preview"
 
 
-def test_default_anthropic_targets_opus_4_7():
+def test_default_anthropic_targets_opus_4_8():
     anthropic = default_config().get("anthropic")
-    assert anthropic.model == "claude-opus-4-7"
+    assert anthropic.model == "claude-opus-4-8"
     assert anthropic.supports_translation is True
 
 
