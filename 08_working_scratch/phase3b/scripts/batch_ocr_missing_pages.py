@@ -65,6 +65,9 @@ class BatchConfig:
     dry_run: bool = False
     stop_on_error: bool = False
     delay_seconds: float = 0.0
+    max_page_retries: int = 2
+    retry_delay_seconds: float = 60.0
+    continue_on_rate_limit: bool = False
     log_dir: Path = DEFAULT_LOG_DIR
 
 
@@ -194,6 +197,29 @@ def _load_pilot_record(pilot_json: Path, page_id: str) -> dict:
     raise RuntimeError(f"{page_id} not found in pilot OCR output: {pilot_json}")
 
 
+def _http_status_code(exc: BaseException) -> int | None:
+    code = getattr(exc, "code", None) or getattr(exc, "status", None)
+    if isinstance(code, int):
+        return code
+    response = getattr(exc, "response", None)
+    status_code = getattr(response, "status_code", None)
+    return status_code if isinstance(status_code, int) else None
+
+
+def _is_retryable_error(exc: BaseException) -> bool:
+    status = _http_status_code(exc)
+    if status in {429, 500, 502, 503, 504}:
+        return True
+    text = str(exc).lower()
+    return "too many requests" in text or "rate limit" in text
+
+
+def _is_rate_limit_error(exc: BaseException) -> bool:
+    status = _http_status_code(exc)
+    text = str(exc).lower()
+    return status == 429 or "too many requests" in text or "rate limit" in text
+
+
 def run_ocr_for_page(config: BatchConfig, job: PageJob) -> Path:
     """Run Gemini OCR for one page and write the UI annotation JSON."""
     if str(PIPELINE_SCRIPTS_DIR) not in sys.path:
@@ -268,25 +294,69 @@ def run_batch(
             continue
 
         started = time.time()
-        print(f"RUN  {job.page_id} {job.reason}")
-        try:
-            written = page_runner(config, job)
-        except Exception as exc:  # noqa: BLE001 - CLI should log and continue by default.
+        written: Path | None = None
+        last_exc: Exception | None = None
+        for attempt in range(config.max_page_retries + 1):
+            label = "RUN " if attempt == 0 else "TRY "
+            suffix = "" if attempt == 0 else f" retry {attempt}/{config.max_page_retries}"
+            print(f"{label} {job.page_id} {job.reason}{suffix}")
+            try:
+                written = page_runner(config, job)
+                last_exc = None
+                break
+            except Exception as exc:  # noqa: BLE001 - CLI should log retryable API failures.
+                last_exc = exc
+                retryable = _is_retryable_error(exc)
+                has_retry = attempt < config.max_page_retries
+                if retryable and has_retry:
+                    wait = max(0.0, config.retry_delay_seconds * (attempt + 1))
+                    print(
+                        f"WAIT {job.page_id} {type(exc).__name__}: {exc}; "
+                        f"retrying in {wait:g}s"
+                    )
+                    _append_log(
+                        log_path,
+                        {
+                            **base_row,
+                            "status": "retry_wait",
+                            "attempt": attempt + 1,
+                            "max_page_retries": config.max_page_retries,
+                            "wait_seconds": wait,
+                            "http_status": _http_status_code(exc),
+                            "error_type": type(exc).__name__,
+                            "error": str(exc),
+                        },
+                    )
+                    if wait > 0:
+                        time.sleep(wait)
+                    continue
+                break
+
+        if last_exc is not None:
             counts["error"] += 1
-            print(f"ERR  {job.page_id} {type(exc).__name__}: {exc}")
+            print(f"ERR  {job.page_id} {type(last_exc).__name__}: {last_exc}")
             _append_log(
                 log_path,
                 {
                     **base_row,
                     "status": "error",
-                    "error_type": type(exc).__name__,
-                    "error": str(exc),
+                    "error_type": type(last_exc).__name__,
+                    "http_status": _http_status_code(last_exc),
+                    "error": str(last_exc),
                     "elapsed_seconds": round(time.time() - started, 3),
                 },
             )
-            if config.stop_on_error:
+            if config.stop_on_error or (
+                _is_rate_limit_error(last_exc) and not config.continue_on_rate_limit
+            ):
+                print(
+                    f"STOP {job.page_id} rate limit encountered; "
+                    "rerun later starting from this page."
+                )
                 break
             continue
+
+        assert written is not None
 
         counts["done"] += 1
         print(f"DONE {job.page_id} wrote {written}")
@@ -347,6 +417,29 @@ def _build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--dry-run", action="store_true")
     parser.add_argument("--stop-on-error", action="store_true")
     parser.add_argument("--delay-seconds", type=float, default=0.0)
+    parser.add_argument(
+        "--max-page-retries",
+        type=int,
+        default=2,
+        help="Retry count for retryable API errors such as HTTP 429.",
+    )
+    parser.add_argument(
+        "--retry-delay-seconds",
+        type=float,
+        default=60.0,
+        help=(
+            "Base cooldown before retrying retryable API errors. "
+            "The wait scales by attempt number."
+        ),
+    )
+    parser.add_argument(
+        "--continue-on-rate-limit",
+        action="store_true",
+        help=(
+            "Continue to later pages after a 429 exhausts retries. By default "
+            "the batch stops so resume can restart from the rate-limited page."
+        ),
+    )
     parser.add_argument("--log-dir", type=Path, default=DEFAULT_LOG_DIR)
     return parser
 
@@ -375,6 +468,9 @@ def main(argv: list[str] | None = None) -> int:
         dry_run=args.dry_run,
         stop_on_error=args.stop_on_error,
         delay_seconds=args.delay_seconds,
+        max_page_retries=args.max_page_retries,
+        retry_delay_seconds=args.retry_delay_seconds,
+        continue_on_rate_limit=args.continue_on_rate_limit,
         log_dir=log_dir,
     )
     run_batch(config)

@@ -6366,3 +6366,31 @@ pilot_ocr.py: error: argument --part: invalid choice: 'annals_latin' (choose fro
 2026-06-07 13:48:35,541 - INFO - Received POST request to save page_id: p0050 edition: None
 2026-06-07 13:48:35,543 - INFO - Recorded 0 edits for page_id: p0050
 2026-06-07 13:48:35,543 - INFO - Successfully saved payload for page_id: p0050
+2026-06-07 16:38:38,675 - INFO - Received GET request for page_id: p0004 edition: 1847_elrington_todd
+2026-06-07 16:38:38,684 - WARNING - Page not found: p0004
+2026-06-07 16:38:40,648 - INFO - Received GET request for page_id: p0005 edition: 1847_elrington_todd
+2026-06-07 16:38:40,648 - WARNING - Page not found: p0005
+2026-06-07 16:38:41,567 - INFO - Received GET request for page_id: p0056 edition: 1847_elrington_todd
+2026-06-07 16:38:41,606 - INFO - Successfully read payload for page_id: p0056
+2026-06-07 16:38:43,069 - INFO - Received GET request for page_id: p0560 edition: 1847_elrington_todd
+2026-06-07 16:38:43,070 - WARNING - Page not found: p0560
+2026-06-07 16:38:47,107 - INFO - Received GET request for page_id: p0559 edition: 1847_elrington_todd
+2026-06-07 16:38:47,107 - WARNING - Page not found: p0559
+2026-06-07 16:38:57,221 - INFO - Received GET request for page_id: p0055 edition: 1847_elrington_todd
+2026-06-07 16:38:57,253 - INFO - Successfully read payload for page_id: p0055
+2026-06-07 16:38:58,604 - INFO - Received GET request for page_id: p0005 edition: 1847_elrington_todd
+2026-06-07 16:38:58,608 - WARNING - Page not found: p0005
+2026-06-07 16:38:59,734 - INFO - Received GET request for page_id: p0057 edition: 1847_elrington_todd
+2026-06-07 16:38:59,774 - INFO - Successfully read payload for page_id: p0057
+2026-06-07 16:39:00,252 - INFO - Received GET request for page_id: p0570 edition: 1847_elrington_todd
+2026-06-07 16:39:00,253 - WARNING - Page not found: p0570
+2026-06-07 16:39:04,285 - INFO - Received GET request for page_id: p0571 edition: 1847_elrington_todd
+2026-06-07 16:39:04,285 - WARNING - Page not found: p0571
+2026-06-07 16:39:10,182 - INFO - Received GET request for page_id: p0570 edition: 1847_elrington_todd
+2026-06-07 16:39:10,182 - WARNING - Page not found: p0570
+2026-06-07 16:39:21,834 - INFO - Received GET request for page_id: p0569 edition: 1847_elrington_todd
+2026-06-07 16:39:21,834 - WARNING - Page not found: p0569
+2026-06-07 16:39:32,382 - INFO - Received GET request for page_id: p0568 edition: 1847_elrington_todd
+2026-06-07 16:39:32,382 - WARNING - Page not found: p0568
+2026-06-07 16:39:40,746 - INFO - Received GET request for page_id: p0567 edition: 1847_elrington_todd
+2026-06-07 16:39:40,749 - WARNING - Page not found: p0567

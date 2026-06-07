@@ -29,6 +29,12 @@ def _read_jsonl(path: Path) -> list[dict]:
     ]
 
 
+class FakeHttpError(Exception):
+    def __init__(self, code: int, message: str) -> None:
+        super().__init__(message)
+        self.code = code
+
+
 def test_elrington_todd_edition_uses_flat_annotation_directory(tmp_path):
     assert corpus_subdir("1847_elrington_todd") == ""
     assert (
@@ -152,3 +158,77 @@ def test_run_batch_processes_only_missing_pages_with_injected_runner(tmp_path):
     assert result["done"] == 2
     rows = _read_jsonl(Path(result["log_path"]))
     assert [row["status"] for row in rows] == ["skipped", "done", "done"]
+
+
+def test_run_batch_retries_rate_limit_then_stops_before_later_pages(tmp_path):
+    pdf_path = tmp_path / "source.pdf"
+    pdf_path.write_bytes(b"%PDF-1.4 fake")
+    annotations_dir = tmp_path / "annotations"
+    annotations_dir.mkdir()
+    called: list[str] = []
+
+    config = BatchConfig(
+        pdf_path=pdf_path,
+        edition="1847_elrington_todd",
+        part="part1",
+        start_page=338,
+        end_page=339,
+        annotations_dir=annotations_dir,
+        output_root=tmp_path / "raw",
+        provider_config=None,
+        max_page_retries=1,
+        retry_delay_seconds=0,
+        log_dir=tmp_path / "logs",
+    )
+
+    def rate_limited_runner(_config, job):
+        called.append(job.page_id)
+        raise FakeHttpError(429, "HTTP Error 429: Too Many Requests")
+
+    result = run_batch(config, page_runner=rate_limited_runner)
+
+    assert called == ["p0338", "p0338"]
+    assert result["done"] == 0
+    assert result["error"] == 1
+    rows = _read_jsonl(Path(result["log_path"]))
+    assert [row["status"] for row in rows] == ["retry_wait", "error"]
+    assert rows[-1]["page_id"] == "p0338"
+    assert rows[-1]["http_status"] == 429
+
+
+def test_run_batch_can_continue_after_rate_limit_when_requested(tmp_path):
+    pdf_path = tmp_path / "source.pdf"
+    pdf_path.write_bytes(b"%PDF-1.4 fake")
+    annotations_dir = tmp_path / "annotations"
+    annotations_dir.mkdir()
+    called: list[str] = []
+
+    config = BatchConfig(
+        pdf_path=pdf_path,
+        edition="1847_elrington_todd",
+        part="part1",
+        start_page=338,
+        end_page=339,
+        annotations_dir=annotations_dir,
+        output_root=tmp_path / "raw",
+        provider_config=None,
+        max_page_retries=0,
+        retry_delay_seconds=0,
+        continue_on_rate_limit=True,
+        log_dir=tmp_path / "logs",
+    )
+
+    def runner(_config, job):
+        called.append(job.page_id)
+        if job.page_id == "p0338":
+            raise FakeHttpError(429, "HTTP Error 429: Too Many Requests")
+        job.target_path.write_text("{}", encoding="utf-8")
+        return job.target_path
+
+    result = run_batch(config, page_runner=runner)
+
+    assert called == ["p0338", "p0339"]
+    assert result["done"] == 1
+    assert result["error"] == 1
+    rows = _read_jsonl(Path(result["log_path"]))
+    assert [row["status"] for row in rows] == ["error", "done"]
