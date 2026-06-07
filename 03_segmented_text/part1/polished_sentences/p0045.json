@@ -1,0 +1,16 @@
+{
+  "page_id": "p0045",
+  "stage": "polished",
+  "version": 1,
+  "timestamp": "2026-06-07T02:00:30Z",
+  "model": "claude-opus-4-8",
+  "lexicon_profile": "auto",
+  "source_versions": {
+    "seg_p0045_s0001": 1,
+    "seg_p0045_s0002": 1
+  },
+  "english": "Silius Italicus, the author of the Punica; and that Nero perished during his consulship is confirmed both by other authorities and by Martial himself, who indicates as much in those verses about Silius:^r After he had governed the mighty year with its twice-six fasces — he who was hallowed when the world had been set free — he devoted his remaining years to the Muses and to Phoebus, and now frequents Helicon in place of his own forum.\n\nWhile Nero held supreme power — and indeed, as most hold, toward the end of his reign — Paul wrote that epistle in which Pudens, Linus, and Claudia send their greetings to Timothy. But there will be occasion to speak of these again in the third chapter.",
+  "warnings": [
+    "polished output contains unexpected marker '^r'; keeping it but it does not match any footnote on this page"
+  ]
+}

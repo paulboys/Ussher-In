@@ -1,0 +1,35 @@
+# Page p0036
+
+## Interlinear
+
+**LA**  Hinc Arnobius “ Tam velociter currit sermo ejus ut, cum per tot millia annorum in sola Judæa notus fuerit Deus, nunc intra paucos annos, nec ipsos Iɴᴅᴏs lateat a parte orientis, nec ipsos Bʀɪᴛᴏɴᴇs a parte occidentis.
+
+**EN**  Hence Arnobius: "So swiftly does his word run that, whereas for so many thousands of years God had been known in Judaea alone, now within a few years it is not concealed even from the Indians in the East, nor from the Britons in the West.
+
+**LA**  Ubique cucurrit velociter sermo ejus.” Gildas vero inter tempus hoc summum Tiberii Cæsariis, quo lumen Evange lii per universum terrarum orbem spargi cœptum est, et rem a Romanis, (post acceptam a Boadicia regina, quam Leænam ille appellat dolosam, cladem illam maximam) adversus Britannos gestam, de qua proxime verba fecerat; hoc est, inter XXXVI. vulgatæ nostræ æræ Christianæ annum, et LXI. (quo a Paulino Suetonio recuperata iterum provincia est, cæsis Britannorum octoginta millibus) veritatis suæ radios Britanniæ primum indulsisse Christum significat.
+
+**EN**  Everywhere his word has run swiftly." Gildas, for his part, indicates that Christ first bestowed the rays of his truth upon Britain between the closing period of Tiberius Caesar's reign — when the light of the Gospel began to be spread throughout the whole world — and the campaign waged by the Romans against the Britons (after the very great disaster they suffered at the hands of queen Boudica, whom he calls a treacherous lioness), of which he had just been speaking; that is, between the year 36 of our common Christian era and the year 61 (in which the province was again recovered by Suetonius Paulinus, with eighty thousand of the Britons slain).
+
+**LA**  Unde inter gentes apostolorum ministerio ad fidem con versas, Britannos quoque connumerat Theodoretus libro nono Ἑλλήνων παθημάτων θεραπευτικῆς. Οἱ δὲ ἡμέτεροι ἁλιεῖς, inquit, καὶ οἱ τελώναι, καὶ ὁ σκυτοτόμος ἅπασιν ἀνθρώποις τοὺς εὐαγγελικοὺς προσενηνόχασι νόμους· καὶ οὐ μονον ῾Ρωμαίους καὶ ὑπὸ τούτοις τελοῦντας, ἀλλὰ καὶ τὰ Σκυ θικὰ καὶ τὰ Σαυροματικὰ ἔθνη, καὶ Ἰνδοὺς καὶ Αἰθίοπας, καὶ Πέρσας καὶ Σῆρας, καὶ Ὑρκανοὺς, καὶ Βακτριανοὺς, καὶ Βρετ τανοὺς, καὶ Κίμβρους, καὶ Γερμανοὺς, καὶ ἁπαξαπλῶς πᾶν ἔθνος καὶ γένος ἀνθρώπων, δέξασθαι τοῦ σταυρωθέντος τοὺς νόμους ἀνέπεισαν. Nostri illi piscatores ac publicani, su torque ille noster, cunctis nationibus legem evangelicam detulerunt. Neque solum Romanos, quique sub Romano vivunt imperio, sed Scythas quoque ac Sauromatas, Indos præterea, Æthiopas, Persas, Seras, Hyrcanos, Bʀɪᴛᴀɴ ɴᴏs, Cimmerios et Germanos, utque semel dicatur, omne hominum genus, nationesque omnes induxerunt crucifixi leges accipere.” Sed quisnam ex illo apostolorum choro ad Britannicas nostras insulas accesserit; non eadem est omnium authorum sententia.
+
+**EN**  Hence Theodoret too counts the Britons among the peoples converted to the faith by the ministry of the apostles, in the ninth book of his Ἑλλήνων παθημάτων θεραπευτικῆς [The Cure of the Greek Maladies]: Οἱ δὲ ἡμέτεροι ἁλιεῖς, he says, καὶ οἱ τελῶναι, καὶ ὁ σκυτοτόμος ἅπασιν ἀνθρώποις τοὺς εὐαγγελικοὺς προσενηνόχασι νόμους· καὶ οὐ μονον ῾Ρωμαίους καὶ ὑπὸ τούτοις τελοῦντας, ἀλλὰ καὶ τὰ Σκυθικὰ καὶ τὰ Σαυροματικὰ ἔθνη, καὶ Ἰνδοὺς καὶ Αἰθίοπας, καὶ Πέρσας καὶ Σῆρας, καὶ Ὑρκανοὺς, καὶ Βακτριανοὺς, καὶ Βρεττανοὺς, καὶ Κίμβρους, καὶ Γερμανοὺς, καὶ ἁπαξαπλῶς πᾶν ἔθνος καὶ γένος ἀνθρώπων, δέξασθαι τοῦ σταυρωθέντος τοὺς νόμους ἀνέπεισαν [those fishermen of ours and the tax-collectors, and that cobbler of ours, brought the evangelical precepts to all men; and they prevailed upon not only the Romans and those who live under their rule, but also the Scythian and Sarmatian peoples, and the Indians and the Ethiopians, and the Persians and the Seres, and the Hyrcanians, and the Bactrians, and the Britons, and the Cimbri, and the Germans, and — to say it once for all — every nation and race of men, to accept the precepts of the crucified one]. But as to which member of that apostolic band came to our British isles, the opinion of all the authors is not the same.
+
+**LA**  S. Jᴀᴄᴏʙᴜᴍ Zebedæi filium, fratrem Johannis, abi isse in occidentem, multaque iis locis fecisse miracula; ex Anastasii patriarchæ Antiocheni libro de passionibus mar-
+
+**EN**  That St. James the son of Zebedee, the brother of John, went off into the West and performed many miracles in those regions, some report from the book of Anastasius, patriarch of Antioch, "On the Sufferings of the Martyrs"—
+
+## Footnotes
+
+<a id="fn-seg_p0036_fn_001"></a>**<a href="#fnref-p0036-y">^y</a>**  *LA:* in Psalm. 147.
+
+**EN:** On Psalm 147.
+
+## Reading
+
+Hence Arnobius: "So swiftly does his word run that, whereas for so many thousands of years God had been known in Judaea alone, now within a few years it is hidden neither from the Indians in the East nor from the Britons in the West. Everywhere his word has run swiftly."
+
+Gildas, for his part, indicates that Christ first granted the rays of his truth to Britain in the interval between the closing years of Tiberius Caesar's reign — when the light of the Gospel began to spread throughout the whole world — and the campaign that the Romans waged against the Britons (after the very great disaster they had suffered at the hands of queen Boudica, whom he calls a treacherous lioness), of which he had just been speaking: that is, between the year 36 of our common Christian era and the year 61, in which Suetonius Paulinus recovered the province once more, with eighty thousand of the Britons slain.
+
+Theodoret too, accordingly, counts the Britons among the peoples converted to the faith by the ministry of the apostles, in the ninth book of his Ἑλλήνων παθημάτων θεραπευτικῆς [The Cure of the Greek Maladies]. Οἱ δὲ ἡμέτεροι ἁλιεῖς, he says, καὶ οἱ τελῶναι, καὶ ὁ σκυτοτόμος ἅπασιν ἀνθρώποις τοὺς εὐαγγελικοὺς προσενηνόχασι νόμους· καὶ οὐ μονον ῾Ρωμαίους καὶ ὑπὸ τούτοις τελοῦντας, ἀλλὰ καὶ τὰ Σκυθικὰ καὶ τὰ Σαυροματικὰ ἔθνη, καὶ Ἰνδοὺς καὶ Αἰθίοπας, καὶ Πέρσας καὶ Σῆρας, καὶ Ὑρκανοὺς, καὶ Βακτριανοὺς, καὶ Βρεττανοὺς, καὶ Κίμβρους, καὶ Γερμανοὺς, καὶ ἁπαξαπλῶς πᾶν ἔθνος καὶ γένος ἀνθρώπων, δέξασθαι τοῦ σταυρωθέντος τοὺς νόμους ἀνέπεισαν [those fishermen of ours and the tax-collectors, and that shoemaker of ours, brought the teachings of the Gospel to all men; and they prevailed not only upon the Romans and those who live under their rule, but also upon the Scythian and Sarmatian peoples, and the Indians and the Ethiopians, and the Persians and the Seres, and the Hyrcanians, and the Bactrians, and the Britons, and the Cimbri, and the Germans, and — to say it once for all — every nation and race of men, to accept the teachings of the crucified one]. But as to which member of that apostolic band came to our British isles, the authors are not all of one opinion.
+
+Some report, from the book of Anastasius, patriarch of Antioch, "On the Sufferings of the Martyrs," that St. James the son of Zebedee, the brother of John, went off into the West and performed many miracles in those regions—

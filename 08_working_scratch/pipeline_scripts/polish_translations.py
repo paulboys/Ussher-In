@@ -47,13 +47,20 @@ from translation_prompts import (  # noqa: E402
 WORKSPACE_ROOT = _HERE.parent.parent  # .../UssherIn
 ARTIFACTS_DIR = WORKSPACE_ROOT / "03_segmented_text"
 
+# Source artifact + polished subdirectory. Overridable from the CLI so the
+# same polisher serves the line-by-line run (defaults) and the sentence-level
+# run (``--segments-name segments_sentences.jsonl --polished-subdir
+# polished_sentences``) without clobbering either's artifacts.
+_SEGMENTS_NAME = "segments_with_translations.jsonl"
+_POLISHED_SUBDIR = "polished"
+
 
 def _segments_path(part: str) -> Path:
-    return ARTIFACTS_DIR / part / "segments_with_translations.jsonl"
+    return ARTIFACTS_DIR / part / _SEGMENTS_NAME
 
 
 def _polished_dir(part: str) -> Path:
-    return ARTIFACTS_DIR / part / "polished"
+    return ARTIFACTS_DIR / part / _POLISHED_SUBDIR
 
 
 def _polished_path(part: str, page_id: str) -> Path:
@@ -438,6 +445,20 @@ def _build_argument_parser() -> argparse.ArgumentParser:
         default=None,
         help="Override the translation provider timeout for this run.",
     )
+    parser.add_argument(
+        "--segments-name",
+        default=_SEGMENTS_NAME,
+        help="Source JSONL filename under 03_segmented_text/<part>/ "
+             "(default: segments_with_translations.jsonl; use "
+             "segments_sentences.jsonl for the sentence-level run).",
+    )
+    parser.add_argument(
+        "--polished-subdir",
+        default=_POLISHED_SUBDIR,
+        help="Polished-artifact subdirectory under "
+             "03_segmented_text/<part>/ (default: polished; use "
+             "polished_sentences for the sentence-level run).",
+    )
     return parser
 
 
@@ -460,6 +481,9 @@ def _load_extra_context(path: Path | None) -> str | None:
 
 def main(argv: Sequence[str] | None = None) -> int:
     args = _build_argument_parser().parse_args(argv)
+    global _SEGMENTS_NAME, _POLISHED_SUBDIR
+    _SEGMENTS_NAME = args.segments_name
+    _POLISHED_SUBDIR = args.polished_subdir
 
     config = default_config()
     provider = config.translation_provider()

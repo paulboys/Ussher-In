@@ -50,6 +50,13 @@ WORKSPACE_ROOT = _HERE.parent.parent  # .../UssherIn
 ARTIFACTS_DIR = WORKSPACE_ROOT / "03_segmented_text"
 DEFAULT_OUT_DIR = WORKSPACE_ROOT / "05_final_output"
 
+# Source artifact + polished subdirectory. Overridable from the CLI so the
+# same renderer serves the line-by-line run (defaults) and the sentence-level
+# run (``--segments-name segments_sentences.jsonl --polished-subdir
+# polished_sentences``) without disturbing either's outputs.
+_SEGMENTS_NAME = "segments_with_translations.jsonl"
+_POLISHED_SUBDIR = "polished"
+
 
 # ---------------------------------------------------------------------------
 # Polished-translation artifact loader
@@ -57,7 +64,7 @@ DEFAULT_OUT_DIR = WORKSPACE_ROOT / "05_final_output"
 
 
 def _polished_path(part: str, page_id: str) -> Path:
-    return ARTIFACTS_DIR / part / "polished" / f"{page_id}.json"
+    return ARTIFACTS_DIR / part / _POLISHED_SUBDIR / f"{page_id}.json"
 
 
 def load_polished(part: str, page_id: str) -> dict | None:
@@ -94,7 +101,7 @@ _EXT_BY_FORMAT = {"markdown": "md", "html": "html"}
 
 def load_segments(part: str) -> list[dict]:
     """Read the segments JSONL for *part* and return records in file order."""
-    path = ARTIFACTS_DIR / part / "segments_with_translations.jsonl"
+    path = ARTIFACTS_DIR / part / _SEGMENTS_NAME
     if not path.exists():
         raise FileNotFoundError(
             f"No segments artifact for part {part!r} at {path}"
@@ -610,6 +617,20 @@ def _build_argument_parser() -> argparse.ArgumentParser:
         default=DEFAULT_OUT_DIR,
         help="Output root directory (default: 05_final_output/).",
     )
+    parser.add_argument(
+        "--segments-name",
+        default=_SEGMENTS_NAME,
+        help="Source JSONL filename under 03_segmented_text/<part>/ "
+             "(default: segments_with_translations.jsonl; use "
+             "segments_sentences.jsonl for the sentence-level run).",
+    )
+    parser.add_argument(
+        "--polished-subdir",
+        default=_POLISHED_SUBDIR,
+        help="Polished-artifact subdirectory under "
+             "03_segmented_text/<part>/ (default: polished; use "
+             "polished_sentences for the sentence-level run).",
+    )
     reading_group = parser.add_mutually_exclusive_group()
     reading_group.add_argument(
         "--no-reading",
@@ -635,6 +656,9 @@ def _build_argument_parser() -> argparse.ArgumentParser:
 
 def main(argv: Sequence[str] | None = None) -> int:
     args = _build_argument_parser().parse_args(argv)
+    global _SEGMENTS_NAME, _POLISHED_SUBDIR
+    _SEGMENTS_NAME = args.segments_name
+    _POLISHED_SUBDIR = args.polished_subdir
     written = render_pages(
         part=args.part,
         out_dir=args.out_dir,

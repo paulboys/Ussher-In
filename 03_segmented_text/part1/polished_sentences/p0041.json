@@ -1,0 +1,14 @@
+{
+  "page_id": "p0041",
+  "stage": "polished",
+  "version": 1,
+  "timestamp": "2026-06-07T02:00:30Z",
+  "model": "claude-opus-4-8",
+  "lexicon_profile": "auto",
+  "source_versions": {
+    "seg_p0041_s0001": 1,
+    "seg_p0041_s0002": 1
+  },
+  "english": "this, however, I report on the testimony of others, for I myself have not yet had the chance to see the author. The old translator of Chrysostom's sermon on Pentecost likewise suggests that he ran from Spain \"into the farthest parts\" of the earth. Finally, as Nicephorus writes, \"like some heavenly bird ranging round about the inhabited world, having completed thirty-five years of gospel warfare for Christ,\" he at last completed the course of his martyrdom at Rome under Nero.\n\nI also find Aristobulus — whom Paul mentions in the Epistle to the Romans — recorded in the Greek Menaea as a bishop of the Britons ordained by Paul. There, on the fifteenth of March, a commemoration of this kind is made of him: \"This man was one of the seventy disciples … and, having established churches and appointed presbyters and deacons in them, he reached the end of his life.\"",
+  "warnings": []
+}

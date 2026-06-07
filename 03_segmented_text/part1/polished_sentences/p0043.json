@@ -1,0 +1,22 @@
+{
+  "page_id": "p0043",
+  "stage": "polished",
+  "version": 1,
+  "timestamp": "2026-06-07T02:00:30Z",
+  "model": "claude-opus-4-8",
+  "lexicon_profile": "auto",
+  "source_versions": {
+    "seg_p0043_s0001": 1,
+    "seg_p0043_s0002": 1,
+    "seg_p0043_s0003": 1,
+    "seg_p0043_s0004": 1,
+    "seg_p0043_s0005": 1,
+    "seg_p0043_s0006": 1,
+    "seg_p0043_s0007": 1,
+    "seg_p0043_s0008": 1,
+    "seg_p0043_s0009": 1,
+    "seg_p0043_s0010": 1
+  },
+  "english": "the Pontifical book asserts. Our own writers gather from the poet Martial that Claudia was British by birth and the wife of Pudens, for he sang of her thus: \"Though Claudia Rufina is sprung from the blue-painted Britons, why does she have the heart of the Latin people? What grace of form is hers! Italian mothers might take her for a Roman, and Athenian mothers for one of their own. The gods are good, that in her fruitfulness she has borne to her holy husband as many sons-in-law and as many daughters-in-law as the girl could hope for. So may it please the gods above that she rejoice in one husband alone, and rejoice forever in those three children of hers.\"\n\nAnd again, on the marriage of Pudens and Claudia: \"Claudia, a foreigner, weds my Pudens, Rufus; a blessing be upon your torches, O Hymen. So well is rare cinnamon mingled with its own nard, so well are Massic wines blended with Attic honeycombs. No better are elms joined to tender vines, nor more does the lotus love the waters, or the myrtle the shores. Fair Concord, dwell forever upon their couch, and may Venus be ever kindly to a yoke so evenly matched. May she love him one day when he is old; and may she, even when she has grown old in her husband's eyes, still not seem an old woman to him.\"\n\nNow, although this epigram was written to Rufus about Pudens, Thomas Dempster — a man of much reading but plainly of no judgment — attached the name Rufus to Pudens himself as well, so that we might perhaps learn from it why his wife \"Claudia, having taken a Roman surname, was called Rufina.\" It was with the same acuteness, of course, that Dempster asserts Plutarch \"numbers this same Claudia among the matrons most renowned for the praise of continence\" — whereas Plutarch is in fact speaking of Claudia of old, that most celebrated Vestal, \"who against the over-swelling Albula drew the ship along by her maiden hair,\" and not of this later Claudia, who lived in the very age of Pudens.",
+  "warnings": []
+}
