@@ -52,6 +52,7 @@ import translation_prompts_ussher_v5 as _v5                    # noqa: E402
 from sentence_segment import (                                  # noqa: E402
     SentenceUnit,
     group_lines_into_sentences,
+    group_pages_into_sentences,
     load_page_body,
     _iter_page_ids,
 )
@@ -68,9 +69,13 @@ from translate_segments import (                                # noqa: E402
 WORKSPACE_ROOT = _HERE.parent.parent
 ARTIFACTS_DIR = WORKSPACE_ROOT / "03_segmented_text"
 
+# Output artifact name. Overridable from the CLI; the cross-page run defaults
+# to a distinct file so the two segmentations never mix in one artifact.
+_OUTPUT_NAME = "segments_sentences.jsonl"
+
 
 def _output_path(part: str) -> Path:
-    return ARTIFACTS_DIR / part / "segments_sentences.jsonl"
+    return ARTIFACTS_DIR / part / _OUTPUT_NAME
 
 
 def _logs_dir(part: str) -> Path:
@@ -285,6 +290,7 @@ def _sentence_record(
         "latin_text": unit.latin_text,
         "source_line_ids": unit.source_line_ids,
         "markers": unit.markers,
+        "spans_pages": unit.spans_pages,
         "seq": unit.seq,
         "translation_history": [{
             "version": 1,
@@ -354,12 +360,19 @@ def translate_page(
     dry_run: bool,
     timestamp: str,
     model: str,
+    sentences: list[SentenceUnit] | None = None,
 ) -> dict[str, Any]:
-    """Translate one page. Updates *existing* in place. Returns log dict."""
+    """Translate one page. Updates *existing* in place. Returns log dict.
 
-    # Load body lines and sentence-group them
-    body_lines = load_page_body(part or None, page_id)
-    sentences = group_lines_into_sentences(body_lines, page_id)
+    When *sentences* is provided (cross-page mode) it is used verbatim — these
+    are the units homed on *page_id*, possibly carrying lines absorbed from the
+    next page. When None (per-page mode), the page's own lines are grouped.
+    """
+
+    # Sentence units: pre-computed (cross-page) or grouped per page.
+    if sentences is None:
+        body_lines = load_page_body(part or None, page_id)
+        sentences = group_lines_into_sentences(body_lines, page_id)
 
     # Load footnotes via the phase3b payload (same path translate_segments uses)
     from translate_segments import _resolve_page_path  # noqa: E402
@@ -512,11 +525,33 @@ def _build_parser() -> argparse.ArgumentParser:
     p.add_argument("--dry-run", action="store_true")
     p.add_argument("--force", action="store_true")
     p.add_argument("--timeout-seconds", type=float, default=None)
+    p.add_argument(
+        "--cross-page", action="store_true",
+        help="Group sentences across page seams so a sentence that straddles "
+             "a page boundary is translated as one whole unit. The spanning "
+             "sentence is homed on the page where it begins; the continuation "
+             "page's lines are not re-emitted. Defaults the output to "
+             "segments_sentences_xpage.jsonl so the two segmentations never "
+             "mix.",
+    )
+    p.add_argument(
+        "--output-name", default=None,
+        help="Override the output JSONL filename under "
+             "03_segmented_text/<part>/. Defaults to segments_sentences.jsonl "
+             "(per-page) or segments_sentences_xpage.jsonl (--cross-page).",
+    )
     return p
 
 
 def main(argv: Sequence[str] | None = None) -> int:
     args = _build_parser().parse_args(argv)
+
+    # Resolve the output artifact name (cross-page goes to its own file).
+    global _OUTPUT_NAME
+    if args.output_name:
+        _OUTPUT_NAME = args.output_name
+    elif args.cross_page:
+        _OUTPUT_NAME = "segments_sentences_xpage.jsonl"
 
     config = default_config()
     provider = config.translation_provider()
@@ -539,6 +574,19 @@ def main(argv: Sequence[str] | None = None) -> int:
     timestamp = _now_iso()
     model = provider.model
 
+    page_ids = list(_iter_page_ids(args.part, args.start_page, args.end_page))
+
+    # Cross-page mode: segment the whole range once, then group the resulting
+    # sentence units by their home page so each page's translate_page call gets
+    # exactly the units that begin on it (some carrying next-page lines).
+    sentences_by_home: dict[str, list[SentenceUnit]] | None = None
+    if args.cross_page:
+        loaded = [(pid, load_page_body(args.part, pid)) for pid in page_ids]
+        all_units = group_pages_into_sentences(loaded)
+        sentences_by_home = {pid: [] for pid in page_ids}
+        for u in all_units:
+            sentences_by_home.setdefault(u.page_id, []).append(u)
+
     run_log: dict[str, Any] = {
         "started_at": timestamp,
         "part": args.part,
@@ -547,10 +595,12 @@ def main(argv: Sequence[str] | None = None) -> int:
         "model": model,
         "dry_run": args.dry_run,
         "force": args.force,
+        "cross_page": args.cross_page,
+        "output": str(_output_path(args.part)),
         "pages": [],
     }
 
-    for pid in _iter_page_ids(args.part, args.start_page, args.end_page):
+    for pid in page_ids:
         page_log = translate_page(
             pid,
             part=args.part,
@@ -562,6 +612,8 @@ def main(argv: Sequence[str] | None = None) -> int:
             dry_run=args.dry_run,
             timestamp=timestamp,
             model=model,
+            sentences=(sentences_by_home.get(pid, [])
+                       if sentences_by_home is not None else None),
         )
         run_log["pages"].append(page_log)
 

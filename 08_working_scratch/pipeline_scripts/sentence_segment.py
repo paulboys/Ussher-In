@@ -152,11 +152,20 @@ def _is_sentence_end(raw_text: str) -> bool:
 @dataclass
 class SentenceUnit:
     sentence_id: str          # e.g. "seg_p0036_s0001"
-    page_id: str
-    seq: int                  # 1-based sentence number on this page
+    page_id: str              # HOME page — where the sentence's first line sits
+    seq: int                  # 1-based sentence number on the home page
     source_line_ids: list[str] = field(default_factory=list)
     latin_text: str = ""      # space-joined text of constituent lines
     markers: list[dict] = field(default_factory=list)
+    # Pages the sentence's lines span, in order. Single-page sentences carry
+    # ``[page_id]``; a cross-page sentence carries every page it touches, with
+    # the home page first. The reviewer-facing render derives a "completes on
+    # pNNNN" cue from this when ``len(spans_pages) > 1``.
+    spans_pages: list[str] = field(default_factory=list)
+
+    @property
+    def is_cross_page(self) -> bool:
+        return len(self.spans_pages) > 1
 
     def to_dict(self) -> dict:
         return {
@@ -166,6 +175,7 @@ class SentenceUnit:
             "source_line_ids": self.source_line_ids,
             "latin_text": self.latin_text,
             "markers": self.markers,
+            "spans_pages": self.spans_pages,
         }
 
 
@@ -213,6 +223,16 @@ def _build_sentence_unit(
         # +1 for the joining space (except after last line)
         offset += raw_len + (1 if i < len(lines) - 1 else 0)
 
+    # Pages spanned, in order of first appearance. Derived from each line's
+    # own page_id so single-page and cross-page sentences share one code path.
+    spans: list[str] = []
+    for ln in lines:
+        lp = ln.get("page_id") or page_id
+        if lp not in spans:
+            spans.append(lp)
+    if not spans:
+        spans = [page_id]
+
     sid = f"seg_{page_id}_s{seq:04d}"
     return SentenceUnit(
         sentence_id=sid,
@@ -221,6 +241,7 @@ def _build_sentence_unit(
         source_line_ids=line_ids,
         latin_text=latin,
         markers=markers,
+        spans_pages=spans,
     )
 
 
@@ -246,6 +267,60 @@ def group_lines_into_sentences(
     # Flush any trailing lines (sentence runs to end of page / continues on next)
     if current:
         units.append(_build_sentence_unit(current, page_id, len(units) + 1))
+
+    return units
+
+
+def group_pages_into_sentences(
+    pages: Sequence[tuple[str, Sequence[dict]]],
+) -> list[SentenceUnit]:
+    """Cross-page sentence grouping over an ordered sequence of pages.
+
+    *pages* is ``[(page_id, body_lines), ...]`` in ascending page order.
+    A sentence left open at a page's end absorbs the leading locked lines of
+    the following page(s) until a sentence boundary is reached, so a sentence
+    that straddles a page seam is translated as one whole unit instead of two
+    fragments (the ``mar-`` / ``tyrum`` problem at the p0036/p0037 seam).
+
+    Rules that keep the page-based review model intact:
+    - **Home page** = the page of the sentence's *first* line. The sentence's
+      ``sentence_id`` and ``page_id`` use that page; ``seq`` restarts per home
+      page. A spanning sentence therefore appears exactly once, on its home
+      page — never duplicated on the continuation page.
+    - The continuation page's own sentences start at its first line that is
+      *not* already absorbed by the previous page's trailing sentence, so no
+      physical line is owned by two units.
+    - ``spans_pages`` records every page the sentence touches (home first) so
+      the renderer can show a "completes on pNNNN" cue.
+
+    Only locked lines participate; callers that need the both-pages-locked
+    guard should pre-filter the pages they pass in.
+    """
+    # Flatten to one ordered stream of locked lines across all pages.
+    stream: list[dict] = []
+    for _pid, body in pages:
+        for ln in body:
+            if ln.get("review_status") == "locked":
+                stream.append(ln)
+
+    units: list[SentenceUnit] = []
+    page_seq: dict[str, int] = {}   # home page_id -> running sentence count
+    current: list[dict] = []
+
+    def flush() -> None:
+        if not current:
+            return
+        home = current[0].get("page_id") or ""
+        seq = page_seq.get(home, 0) + 1
+        page_seq[home] = seq
+        units.append(_build_sentence_unit(current, home, seq))
+
+    for line in stream:
+        current.append(line)
+        if _is_sentence_end(_latin_text(line)):
+            flush()
+            current = []
+    flush()  # trailing open sentence at the very end of the range
 
     return units
 
@@ -315,6 +390,10 @@ def main(argv: Sequence[str] | None = None) -> int:
     p.add_argument("--end-page", type=int, default=45)
     p.add_argument("--debug", action="store_true",
                    help="Show constituent line IDs and full Latin text.")
+    p.add_argument("--cross-page", action="store_true",
+                   help="Group sentences across page seams (a sentence open "
+                        "at a page's end absorbs the next page's leading "
+                        "lines). Reports cross-page sentences.")
     args = p.parse_args(argv)
 
     if args.page is not None:
@@ -328,16 +407,39 @@ def main(argv: Sequence[str] | None = None) -> int:
         print("No pages found.", file=sys.stderr)
         return 1
 
-    total_lines = 0
-    total_sentences = 0
-
+    # Load each page's body once.
+    loaded: list[tuple[str, list[dict]]] = []
     for pid in page_ids:
         try:
-            body = load_page_body(args.part, pid)
+            loaded.append((pid, load_page_body(args.part, pid)))
         except FileNotFoundError:
             print(f"  {pid}: annotation file not found — skipping", file=sys.stderr)
-            continue
 
+    if args.cross_page:
+        units = group_pages_into_sentences(loaded)
+        total_lines = sum(
+            1 for _pid, body in loaded
+            for ln in body if ln.get("review_status") == "locked"
+        )
+        crossers = [u for u in units if u.is_cross_page]
+        avg_all = total_lines / len(units) if units else 0
+        print(f"{'=' * 60}")
+        print(f"CROSS-PAGE: {total_lines} locked lines → {len(units)} sentences "
+              f"(avg {avg_all:.1f} lines/sentence); "
+              f"{len(crossers)} cross-page sentence(s)")
+        _print_units(units, debug=args.debug)
+        if crossers:
+            print(f"\n{'-' * 60}\nCross-page sentences:")
+            for u in crossers:
+                print(f"  {u.sentence_id}  spans {', '.join(u.spans_pages)}  "
+                      f"({len(u.source_line_ids)} lines)")
+                print(f"    {u.latin_text[:100]}"
+                      f"{'…' if len(u.latin_text) > 100 else ''}")
+        return 0
+
+    total_lines = 0
+    total_sentences = 0
+    for pid, body in loaded:
         locked = [ln for ln in body if ln.get("review_status") == "locked"]
         units = group_lines_into_sentences(body, pid)
 
