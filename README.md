@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="Ussher_In_logo_private.png" alt="Ussher In" width="300"/>
+  <img src="Ussher_In_logo_v2.png" alt="Ussher In" width="300"/>
 </p>
 
 # Ussher In
@@ -28,7 +28,7 @@ The pipeline has three linked stages:
 
 1. **OCR** — Extract structured Latin (and polytonic Greek) text from the source PDFs using **Google Gemini 3.1 Pro** as the primary OCR engine, with paleography-aware prompts that preserve long-s, ligatures, and historical numerals. Each page is segmented into header, body, footnotes, marginalia, and catchword regions, then quality-checked. Tesseract and Kraken remain available as fallback engines during the migration.
 2. **Reference English** — OCR and structure the existing English translation PDF/images into aligned English text where that witness is available. This serves as an initial gold-standard benchmark for evaluating machine translation from Latin to English.
-3. **Translation** — Translate the structured Latin into modern academic-register English using **Claude Opus 4.7** (configured via the same provider layer as Gemini), followed by human post-editing. The translation prompt was developed and validated on a separate, scorable training corpus before deployment (see *Translation Methodology* below); output is scored with COMET and an author-fidelity LLM judge, and a post-hoc neuro-symbolic layer validates terminology consistency. The output remains bilingual Latin-English reading documents.
+3. **Translation** — Translate the structured Latin into modern academic-register English using **Claude Opus 4.8** (configured via the same provider layer as Gemini), followed by human post-editing. The translation prompt was developed and validated on a separate, scorable training corpus before deployment (see *Translation Methodology* below); output is scored with COMET and an author-fidelity LLM judge, and a post-hoc neuro-symbolic layer validates terminology consistency. The output remains bilingual Latin-English reading documents.
 
 ### Provider configuration
 
@@ -83,7 +83,7 @@ Two reliability layers run after generation, in code rather than in the prompt:
 | Completeness safety net (detect-and-rerun) | ✅ Complete |
 | Neuro-symbolic validation — Phase A (controlled glossary) | ✅ Complete |
 | Neuro-symbolic validation — Phase B (translation memory) & C (artifact validators) | ⬜ Planned |
-| Chapter 1 translation (pp. 32–45, Claude Opus 4.7) | 🟡 Ready to begin |
+| Chapter 1 translation (pp. 32–45, Claude Opus 4.8) | ✅ Draft complete; under review |
 | Full translation (remaining chapters) + post-editing | ⬜ Pending |
 
 ## Quick Start
@@ -110,6 +110,9 @@ Two reliability layers run after generation, in code rather than in the prompt:
 | `08_working_scratch/` | Pipeline scripts, annotation tooling, Go Claw verification module |
 
 ## Collaboration
-Private experimental collaboration project between Justin Alamaras and Paul D. Boys.
 
-This repository is shared for research and development purposes.
+Contributions are welcome—whether with Latin, historical context, or technical expertise. Please open an issue on GitHub or reach out to paul.d.boys@gmail.com.
+
+## License
+
+Released under the MIT License — see [LICENSE](LICENSE).
