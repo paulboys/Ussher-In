@@ -229,6 +229,7 @@ def run_gemini_pilot(
     output_root: Path,
     provider_config_path: Path | None,
     lang: str,
+    edition: str | None = None,
 ) -> Path:
     logger.info("Starting Gemini OCR pipeline")
     config = load_config(provider_config_path)
@@ -262,7 +263,7 @@ def run_gemini_pilot(
         page_id = f"p{index:04d}"
         try:
             logger.info(f"Processing page {page_id} with Gemini OCR")
-            detailed = engine.extract_detailed(image, lang=lang, page_id=page_id)
+            detailed = engine.extract_detailed(image, lang=lang, page_id=page_id, edition=edition)
             logger.debug(f"Gemini API response for page {page_id}: {detailed}")
         except Exception as e:
             logger.error(f"Error during Gemini OCR for page {page_id}: {e}")
@@ -301,6 +302,7 @@ def run_gemini_pilot(
                 "ocr_engine": "gemini",
                 "ocr_provider_model": provider.model,
                 "ocr_lang": lang.split("+"),
+                "ocr_edition": edition,
                 "raw_text_path": str(txt_path),
                 "raw_confidence_avg": detailed.result.avg_confidence,
                 "raw_confidence_min": detailed.result.min_confidence,
@@ -409,6 +411,16 @@ def main() -> None:
         action="store_true",
         help="Apply heuristic fixes for common OCR losses of ae/AE in Latin words",
     )
+    parser.add_argument(
+        "--edition",
+        default=None,
+        help=(
+            "Edition typography profile for the OCR prompt (Gemini only). Use "
+            "'1847_elrington_todd' for the modernized Antiquitates reissue so the "
+            "model defaults to round 's' instead of long-s. Omit for genuinely "
+            "early-modern sources (Whitaker, 1639/1687), which preserve long-s."
+        ),
+    )
     args = parser.parse_args()
 
     if args.ocr_engine == "gemini":
@@ -421,6 +433,7 @@ def main() -> None:
             output_root=Path(args.output_root),
             provider_config_path=provider_config_path,
             lang=args.lang,
+            edition=args.edition,
         )
         print(f"Gemini OCR written to {output_path}")
         return

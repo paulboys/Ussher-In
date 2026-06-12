@@ -236,6 +236,7 @@ def run_ocr_for_page(config: BatchConfig, job: PageJob) -> Path:
         output_root=config.output_root,
         provider_config_path=config.provider_config,
         lang=config.lang,
+        edition=config.edition,
     )
     record = _load_pilot_record(pilot_json, job.page_id)
     payload = convert_record(

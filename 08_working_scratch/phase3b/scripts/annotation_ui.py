@@ -656,6 +656,8 @@ def _run_ocr_job(
             str(page_num),
             "--ocr-engine",
             "gemini",
+            "--edition",
+            edition,
         ]
         logger.info(f"Executing command: {' '.join(cmd)}")
         proc = subprocess.run(

@@ -339,9 +339,10 @@ class GeminiOcrEngine:
         lang: str = "lat+grc",
         config: str = "",
         page_id: str | None = None,
+        edition: str | None = None,
     ) -> GeminiDetailedResult:
         png_bytes = _encode_png_bytes(image)
-        prompt = build_ocr_prompt(lang=lang, page_id=page_id)
+        prompt = build_ocr_prompt(lang=lang, page_id=page_id, edition=edition)
         last_error: Exception | None = None
         attempts = max(1, self.provider.max_retries + 1)
         for _ in range(attempts):
