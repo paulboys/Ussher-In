@@ -10,14 +10,14 @@
       "notes": "",
       "page_id": "p0086",
       "review_status": "draft",
+      "reviewer": "Paul Boys",
       "seq": 1,
       "source_marginalia_line_ids": [
         "p0086_marginalia_l0001"
       ],
       "source_region": "marginalia",
       "text_gold": "al. impetrat. Ado petiit.",
-      "text_ocr_original": "al. impetrat. Ado petiit.",
-      "reviewer": "Paul Boys"
+      "text_ocr_original": "al. impetrat. Ado petiit."
     },
     {
       "body_line_id": "p0086_body_l0003",
@@ -28,14 +28,14 @@
       "notes": "",
       "page_id": "p0086",
       "review_status": "draft",
+      "reviewer": "Paul Boys",
       "seq": 2,
       "source_marginalia_line_ids": [
         "p0086_marginalia_l0002"
       ],
       "source_region": "marginalia",
       "text_gold": "Scotichronic. lib. 2. cap. 30.",
-      "text_ocr_original": "Scotichronic. lib. 2. cap. 30.",
-      "reviewer": "Paul Boys"
+      "text_ocr_original": "Scotichronic. lib. 2. cap. 30."
     },
     {
       "body_line_id": "p0086_body_l0006",
@@ -46,14 +46,14 @@
       "notes": "",
       "page_id": "p0086",
       "review_status": "draft",
+      "reviewer": "Paul Boys",
       "seq": 3,
       "source_marginalia_line_ids": [
         "p0086_marginalia_l0003"
       ],
       "source_region": "marginalia",
       "text_gold": "Vitæ August. cap. 32.",
-      "text_ocr_original": "Vitæ August. cap. 32.",
-      "reviewer": "Paul Boys"
+      "text_ocr_original": "Vitæ August. cap. 32."
     },
     {
       "body_line_id": "p0086_body_l0033",
@@ -64,14 +64,14 @@
       "notes": "",
       "page_id": "p0086",
       "review_status": "draft",
+      "reviewer": "Paul Boys",
       "seq": 4,
       "source_marginalia_line_ids": [
         "p0086_marginalia_l0004"
       ],
       "source_region": "marginalia",
       "text_gold": "Historiæ Britannicæ lib. 2. cap. 1.",
-      "text_ocr_original": "Historiæ Britannicæ lib. 2. cap. 1.",
-      "reviewer": "Paul Boys"
+      "text_ocr_original": "Historiæ Britannicæ lib. 2. cap. 1."
     }
   ],
   "meta": {
@@ -92,6 +92,7 @@
   "page_id": "p0086",
   "page_num": 86,
   "part": "part1",
+  "printed_page_num": "65",
   "regions": {
     "body": [
       {
@@ -699,7 +700,7 @@
       {
         "line_id": "p0086_catchword_l0001",
         "marker_id": "",
-        "notes": "",
+        "notes": "This is a signature which should be referencing that this is volume V of Erlington and Todd translation. However, notice that the printer erroneously entered `IV` here (the chapter number and not the book's volume number). `F` is the gathering of pages to be bound together. `A` signifies the ending of the first set of pages to be gathered. `B` (on this page) would signifies the second set of pages to be gathered and bound together. And so on.",
         "ocr_confidence": 0.9,
         "ocr_illegible": false,
         "ocr_marginalia_anchor_index": null,
@@ -792,6 +793,5 @@
       }
     ]
   },
-  "source_pdf": "00_source_pdf/JamesUssher_Britannicarum ecclesiarum antiquitates_Part1.pdf",
-  "printed_page_num": "65"
+  "source_pdf": "00_source_pdf/JamesUssher_Britannicarum ecclesiarum antiquitates_Part1.pdf"
 }

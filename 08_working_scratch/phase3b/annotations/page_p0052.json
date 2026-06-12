@@ -9,15 +9,15 @@
       "marker_number": 1,
       "notes": "",
       "page_id": "p0052",
-      "review_status": "draft",
+      "review_status": "locked",
+      "reviewer": "Paul Boys",
       "seq": 1,
       "source_marginalia_line_ids": [
         "p0052_marginalia_l0001"
       ],
       "source_region": "marginalia",
-      "text_gold": "Hiſt. Anglic. Arthuri, a Molorio edit. lib. 11. cap. ult.",
-      "text_ocr_original": "Hiſt. Anglic. Arthuri, a Molorio edit. lib. 11. cap. ult.",
-      "reviewer": "Paul Boys"
+      "text_gold": "Hist. Anglic. Arthuri, a Molorio edit. lib. 11. cap. ult.",
+      "text_ocr_original": "Hiſt. Anglic. Arthuri, a Molorio edit. lib. 11. cap. ult."
     },
     {
       "body_line_id": "p0052_body_l0017",
@@ -27,15 +27,15 @@
       "marker_number": 2,
       "notes": "",
       "page_id": "p0052",
-      "review_status": "draft",
+      "review_status": "locked",
+      "reviewer": "Paul Boys",
       "seq": 2,
       "source_marginalia_line_ids": [
         "p0052_marginalia_l0002"
       ],
       "source_region": "marginalia",
-      "text_gold": "Forcatul. de Gallorum imperio et philoſophia, lib. 7. pag. 989.",
-      "text_ocr_original": "Forcatul. de Gallorum imperio et philoſophia, lib. 7. pag. 989.",
-      "reviewer": "Paul Boys"
+      "text_gold": "Forcatul. de Gallorum imperio et philosophia, lib. 7. pag. 989.",
+      "text_ocr_original": "Forcatul. de Gallorum imperio et philoſophia, lib. 7. pag. 989."
     },
     {
       "body_line_id": "p0052_body_l0024",
@@ -45,15 +45,15 @@
       "marker_number": 3,
       "notes": "",
       "page_id": "p0052",
-      "review_status": "draft",
+      "review_status": "locked",
+      "reviewer": "Paul Boys",
       "seq": 3,
       "source_marginalia_line_ids": [
         "p0052_marginalia_l0003"
       ],
       "source_region": "marginalia",
-      "text_gold": "Id. ibid. pag. 1002. Vid. Jacob. Valdeſium, de dignitate Hiſpaniæ, cap.",
-      "text_ocr_original": "Id. ibid. pag. 1002. Vid. Jacob. Valdeſium, de dignitate Hiſpaniæ, cap.",
-      "reviewer": "Paul Boys"
+      "text_gold": "Id. ibid. pag. 1002. Vid. Jacob. Valdesium, de dignitate Hispaniæ, cap. 16. ſec. 12.",
+      "text_ocr_original": "Id. ibid. pag. 1002. Vid. Jacob. Valdeſium, de dignitate Hiſpaniæ, cap."
     },
     {
       "body_line_id": "p0052_body_l0027",
@@ -63,33 +63,15 @@
       "marker_number": 4,
       "notes": "",
       "page_id": "p0052",
-      "review_status": "draft",
+      "review_status": "locked",
+      "reviewer": "Paul Boys",
       "seq": 4,
       "source_marginalia_line_ids": [
         "p0052_marginalia_l0005"
       ],
       "source_region": "marginalia",
       "text_gold": "Ex Joſepho, lib. 8. Antiquit. Judaic. cap. 2.",
-      "text_ocr_original": "Ex Joſepho, lib. 8. Antiquit. Judaic. cap. 2.",
-      "reviewer": "Paul Boys"
-    },
-    {
-      "body_line_id": "",
-      "footnote_id": "p0052_fn_005",
-      "kind": "citation",
-      "marker_id": "",
-      "marker_number": 5,
-      "notes": "",
-      "page_id": "p0052",
-      "review_status": "draft",
-      "seq": 5,
-      "source_marginalia_line_ids": [
-        "p0052_marginalia_l0004"
-      ],
-      "source_region": "marginalia",
-      "text_gold": "16. ſec. 12.",
-      "text_ocr_original": "16. ſec. 12.",
-      "reviewer": "Paul Boys"
+      "text_ocr_original": "Ex Joſepho, lib. 8. Antiquit. Judaic. cap. 2."
     }
   ],
   "meta": {
@@ -110,6 +92,7 @@
   "page_id": "p0052",
   "page_num": 52,
   "part": "part1",
+  "printed_page_num": "31",
   "regions": {
     "body": [
       {
@@ -406,10 +389,10 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0052",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 18,
-        "text_gold": "pignus ac teſtimonium ſecum attuliſſe Joſephum comme-",
+        "text_gold": "pignus ac testimonium secum attulisse Josephum comme-",
         "text_ocr_original": "pignus ac teſtimonium ſecum attuliſſe Joſephum comme-"
       },
       {
@@ -422,10 +405,10 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0052",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 19,
-        "text_gold": "morant: nempe catinum ſanctiſſimis convivis appoſitum,",
+        "text_gold": "morant: nempe catinum sanctissimis convivis appositum,",
         "text_ocr_original": "morant: nempe catinum ſanctiſſimis convivis appoſitum,"
       },
       {
@@ -438,10 +421,10 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0052",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 20,
-        "text_gold": "diutiſſime in magna ceremonia, tanquam pignus quoddam",
+        "text_gold": "diutissime in magna ceremonia, tanquam pignus quoddam",
         "text_ocr_original": "diutiſſime in magna ceremonia, tanquam pignus quoddam"
       },
       {
@@ -454,10 +437,10 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0052",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 21,
-        "text_gold": "ſecuritatis Britannicæ; non aliter atque Trojanum Palla-",
+        "text_gold": "securitatis Britannicæ; non aliter atque Trojanum Palla-",
         "text_ocr_original": "ſecuritatis Britannicæ; non aliter atque Trojanum Palla-"
       },
       {
@@ -470,10 +453,10 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0052",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 22,
-        "text_gold": "dium.” Hæc ille: de aucta etiam a Joſepho vetere magia",
+        "text_gold": "dium.” Hæc ille: de aucta etiam a Josepho vetere magia",
         "text_ocr_original": "dium.” Hæc ille: de aucta etiam a Joſepho vetere magia"
       },
       {
@@ -486,7 +469,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0052",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 23,
         "text_gold": "Britannica eﬀatum non minus a ratione quam a religione",
@@ -508,10 +491,10 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0052",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 24,
-        "text_gold": "remotum poſtea adjiciens: “ Auxit prodigioſos ritus Jo-",
+        "text_gold": "remotum postea adjiciens: “ Auxit prodigiosos ritus Jo-",
         "text_ocr_original": "remotum poſtea adjiciens: “ Auxit prodigioſos ritus Jo-"
       },
       {
@@ -524,10 +507,10 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0052",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 25,
-        "text_gold": "ſephus Arimathæus, advena Britanniæ plauſibilis; qui de",
+        "text_gold": "sephus Arimathæus, advena Britanniæ plauſsbilis; qui de",
         "text_ocr_original": "ſephus Arimathæus, advena Britanniæ plauſibilis; qui de"
       },
       {
@@ -540,10 +523,10 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0052",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 26,
-        "text_gold": "Solomonis fonte artem hauſerat. Fuit namque hic ſapiens",
+        "text_gold": "Solomonis fonte artem hauserat. Fuit namque hic sapiens",
         "text_ocr_original": "Solomonis fonte artem hauſerat. Fuit namque hic ſapiens"
       },
       {
@@ -562,10 +545,10 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0052",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 27,
-        "text_gold": "rex imbutus divinitus ſecretiore ſapientia: incantationes",
+        "text_gold": "rex imbutus divinitus secretiore sapientia: incantationes",
         "text_ocr_original": "rex imbutus divinitus ſecretiore ſapientia: incantationes"
       },
       {
@@ -578,10 +561,10 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0052",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 28,
-        "text_gold": "compoſuit, quibus morbi pellerentur, et dæmones fuga-",
+        "text_gold": "composuit, quibus morbi pellerentur, et dæmones fuga-",
         "text_ocr_original": "compoſuit, quibus morbi pellerentur, et dæmones fuga-"
       },
       {
@@ -594,7 +577,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0052",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 29,
         "text_gold": "rentur, non redituri.”",
@@ -610,10 +593,10 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0052",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 30,
-        "text_gold": "De duodecim diſcipulis a B. Philippo in Britanniam",
+        "text_gold": "De duodecim discipulis a B. Philippo in Britanniam",
         "text_ocr_original": "De duodecim diſcipulis a B. Philippo in Britanniam"
       },
       {
@@ -626,10 +609,10 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0052",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 31,
-        "text_gold": "miſſis, Malmeſburienſis quidam monachus in eulogii ſui",
+        "text_gold": "missis, Malmesburiensis quidam monachus in eulogii sui",
         "text_ocr_original": "miſſis, Malmeſburienſis quidam monachus in eulogii ſui"
       },
       {
@@ -642,10 +625,10 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0052",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 32,
-        "text_gold": "libro ſecundo hunc in modum meminit: “ Anno Incarna-",
+        "text_gold": "libro secundo hunc in modum meminit: “ Anno Incarna-",
         "text_ocr_original": "libro ſecundo hunc in modum meminit: “ Anno Incarna-"
       },
       {
@@ -658,10 +641,10 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0052",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 33,
-        "text_gold": "tionis Domini LXIII. et aſſumptionis beatæ virginis Mariæ",
+        "text_gold": "tionis Domini LXIII. et assumptionis beatæ virginis Mariæ",
         "text_ocr_original": "tionis Domini LXIII. et aſſumptionis beatæ virginis Mariæ"
       }
     ],
@@ -761,6 +744,5 @@
       }
     ]
   },
-  "source_pdf": "00_source_pdf/JamesUssher_Britannicarum ecclesiarum antiquitates_Part1.pdf",
-  "printed_page_num": "31"
+  "source_pdf": "00_source_pdf/JamesUssher_Britannicarum ecclesiarum antiquitates_Part1.pdf"
 }

@@ -10,14 +10,14 @@
       "notes": "",
       "page_id": "p0102",
       "review_status": "draft",
+      "reviewer": "Paul Boys",
       "seq": 1,
       "source_marginalia_line_ids": [
         "p0102_marginalia_l0001"
       ],
       "source_region": "marginalia",
       "text_gold": "Joh. a Leid. lib. 2. cap. 1. confer verba Hertmanni Schedelii, in sexta ætat.",
-      "text_ocr_original": "Joh. a Leid. lib. 2. cap. 1. confer verba Hertmanni Schedelii, in sexta ætat.",
-      "reviewer": "Paul Boys"
+      "text_ocr_original": "Joh. a Leid. lib. 2. cap. 1. confer verba Hertmanni Schedelii, in sexta ætat."
     },
     {
       "body_line_id": "p0102_body_l0025",
@@ -28,14 +28,14 @@
       "notes": "",
       "page_id": "p0102",
       "review_status": "draft",
+      "reviewer": "Paul Boys",
       "seq": 2,
       "source_marginalia_line_ids": [
         "p0102_marginalia_l0003"
       ],
       "source_region": "marginalia",
       "text_gold": "Bergom. supplement. chronic. lib. 8.",
-      "text_ocr_original": "Bergom. supplement. chronic. lib. 8.",
-      "reviewer": "Paul Boys"
+      "text_ocr_original": "Bergom. supplement. chronic. lib. 8."
     },
     {
       "body_line_id": "p0102_body_l0034",
@@ -46,14 +46,14 @@
       "notes": "",
       "page_id": "p0102",
       "review_status": "draft",
+      "reviewer": "Paul Boys",
       "seq": 3,
       "source_marginalia_line_ids": [
         "p0102_marginalia_l0004"
       ],
       "source_region": "marginalia",
       "text_gold": "Naucler. volum. 2. chronograph. generat. 6. Robertus Antissiodorensis",
-      "text_ocr_original": "Naucler. volum. 2. chronograph. generat. 6. Robertus Antissiodorensis",
-      "reviewer": "Paul Boys"
+      "text_ocr_original": "Naucler. volum. 2. chronograph. generat. 6. Robertus Antissiodorensis"
     },
     {
       "body_line_id": "",
@@ -64,14 +64,14 @@
       "notes": "",
       "page_id": "p0102",
       "review_status": "draft",
+      "reviewer": "Paul Boys",
       "seq": 4,
       "source_marginalia_line_ids": [
         "p0102_marginalia_l0002"
       ],
       "source_region": "marginalia",
       "text_gold": "Mund. f. 115. b. Col. edit.",
-      "text_ocr_original": "Mund. f. 115. b. Col. edit.",
-      "reviewer": "Paul Boys"
+      "text_ocr_original": "Mund. f. 115. b. Col. edit."
     },
     {
       "body_line_id": "",
@@ -82,14 +82,14 @@
       "notes": "",
       "page_id": "p0102",
       "review_status": "draft",
+      "reviewer": "Paul Boys",
       "seq": 5,
       "source_marginalia_line_ids": [
         "p0102_marginalia_l0005"
       ],
       "source_region": "marginalia",
       "text_gold": "monachus fol. 39. b. \" Erant tunc in Britannia XX. et VIII. flamines, i. e. pontifices",
-      "text_ocr_original": "monachus fol. 39. b. \" Erant tunc in Britannia XX. et VIII. flamines, i. e. pontifices",
-      "reviewer": "Paul Boys"
+      "text_ocr_original": "monachus fol. 39. b. \" Erant tunc in Britannia XX. et VIII. flamines, i. e. pontifices"
     },
     {
       "body_line_id": "",
@@ -97,17 +97,17 @@
       "kind": "citation",
       "marker_id": "",
       "marker_number": 6,
-      "notes": "",
+      "notes": "This is a signature referencing that this is volume V of Erlington and Todd translation. `G` is the gathering of pages to be bound together. `A` signifies the ending of the first set of pages to be gathered. `B` (on this page) would signifies the second set of pages to be gathered and bound together. And so on.",
       "page_id": "p0102",
-      "review_status": "draft",
+      "review_status": "locked",
+      "reviewer": "Paul Boys",
       "seq": 6,
       "source_marginalia_line_ids": [
         "p0102_marginalia_l0006"
       ],
       "source_region": "marginalia",
       "text_gold": "VOL. V. G",
-      "text_ocr_original": "VOL. V. G",
-      "reviewer": "Paul Boys"
+      "text_ocr_original": "VOL. V. G"
     }
   ],
   "meta": {
@@ -128,6 +128,7 @@
   "page_id": "p0102",
   "page_num": 102,
   "part": "part1",
+  "printed_page_num": "81",
   "regions": {
     "body": [
       {
@@ -804,6 +805,5 @@
       }
     ]
   },
-  "source_pdf": "00_source_pdf/JamesUssher_Britannicarum ecclesiarum antiquitates_Part1.pdf",
-  "printed_page_num": "81"
+  "source_pdf": "00_source_pdf/JamesUssher_Britannicarum ecclesiarum antiquitates_Part1.pdf"
 }

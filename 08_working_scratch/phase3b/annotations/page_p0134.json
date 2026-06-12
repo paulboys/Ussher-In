@@ -10,14 +10,14 @@
       "notes": "",
       "page_id": "p0134",
       "review_status": "draft",
+      "reviewer": "Paul Boys",
       "seq": 1,
       "source_marginalia_line_ids": [
         "p0134_marginalia_l0001"
       ],
       "source_region": "marginalia",
       "text_gold": "Girald. de eccles. Menevens. distinct. 2. et Itenerar. Cambriæ, lib. 2.",
-      "text_ocr_original": "Girald. de eccles. Menevens. distinct. 2. et Itenerar. Cambriæ, lib. 2.",
-      "reviewer": "Paul Boys"
+      "text_ocr_original": "Girald. de eccles. Menevens. distinct. 2. et Itenerar. Cambriæ, lib. 2."
     },
     {
       "body_line_id": "p0134_body_l0007",
@@ -28,14 +28,14 @@
       "notes": "",
       "page_id": "p0134",
       "review_status": "draft",
+      "reviewer": "Paul Boys",
       "seq": 2,
       "source_marginalia_line_ids": [
         "p0134_marginalia_l0003"
       ],
       "source_region": "marginalia",
       "text_gold": "Supr. pag. 79, et 110.",
-      "text_ocr_original": "Supr. pag. 79, et 110.",
-      "reviewer": "Paul Boys"
+      "text_ocr_original": "Supr. pag. 79, et 110."
     },
     {
       "body_line_id": "p0134_body_l0011",
@@ -46,14 +46,14 @@
       "notes": "",
       "page_id": "p0134",
       "review_status": "draft",
+      "reviewer": "Paul Boys",
       "seq": 3,
       "source_marginalia_line_ids": [
         "p0134_marginalia_l0004"
       ],
       "source_region": "marginalia",
       "text_gold": "Fr. Godwin. in Menevensium episcop. catalog. pag. 603.",
-      "text_ocr_original": "Fr. Godwin. in Menevensium episcop. catalog. pag. 603.",
-      "reviewer": "Paul Boys"
+      "text_ocr_original": "Fr. Godwin. in Menevensium episcop. catalog. pag. 603."
     },
     {
       "body_line_id": "p0134_body_l0013",
@@ -64,14 +64,14 @@
       "notes": "",
       "page_id": "p0134",
       "review_status": "draft",
+      "reviewer": "Paul Boys",
       "seq": 4,
       "source_marginalia_line_ids": [
         "p0134_marginalia_l0005"
       ],
       "source_region": "marginalia",
       "text_gold": "Vitæ S. Edani, et S. Molyngi. MSS.",
-      "text_ocr_original": "Vitæ S. Edani, et S. Molyngi. MSS.",
-      "reviewer": "Paul Boys"
+      "text_ocr_original": "Vitæ S. Edani, et S. Molyngi. MSS."
     },
     {
       "body_line_id": "p0134_body_l0017",
@@ -82,14 +82,14 @@
       "notes": "",
       "page_id": "p0134",
       "review_status": "draft",
+      "reviewer": "Paul Boys",
       "seq": 5,
       "source_marginalia_line_ids": [
         "p0134_marginalia_l0006"
       ],
       "source_region": "marginalia",
       "text_gold": "Rog. Hoveden. et Gualter. Coventrens. in histor. anni 1199.",
-      "text_ocr_original": "Rog. Hoveden. et Gualter. Coventrens. in histor. anni 1199.",
-      "reviewer": "Paul Boys"
+      "text_ocr_original": "Rog. Hoveden. et Gualter. Coventrens. in histor. anni 1199."
     },
     {
       "body_line_id": "p0134_body_l0022",
@@ -100,14 +100,14 @@
       "notes": "",
       "page_id": "p0134",
       "review_status": "draft",
+      "reviewer": "Paul Boys",
       "seq": 6,
       "source_marginalia_line_ids": [
         "p0134_marginalia_l0007"
       ],
       "source_region": "marginalia",
       "text_gold": "Vid. Girald. Itinerar. Camb. lib. 2. fin. cap. 4.",
-      "text_ocr_original": "Vid. Girald. Itinerar. Camb. lib. 2. fin. cap. 4.",
-      "reviewer": "Paul Boys"
+      "text_ocr_original": "Vid. Girald. Itinerar. Camb. lib. 2. fin. cap. 4."
     },
     {
       "body_line_id": "p0134_body_l0031",
@@ -118,14 +118,14 @@
       "notes": "",
       "page_id": "p0134",
       "review_status": "draft",
+      "reviewer": "Paul Boys",
       "seq": 7,
       "source_marginalia_line_ids": [
         "p0134_marginalia_l0008"
       ],
       "source_region": "marginalia",
       "text_gold": "Scultet. uarrat. historic. de curriculo vitæ suæ, edit. ann. 1625. pag. 59, 60.",
-      "text_ocr_original": "Scultet. uarrat. historic. de curriculo vitæ suæ, edit. ann. 1625. pag. 59, 60.",
-      "reviewer": "Paul Boys"
+      "text_ocr_original": "Scultet. uarrat. historic. de curriculo vitæ suæ, edit. ann. 1625. pag. 59, 60."
     },
     {
       "body_line_id": "",
@@ -136,14 +136,14 @@
       "notes": "",
       "page_id": "p0134",
       "review_status": "draft",
+      "reviewer": "Paul Boys",
       "seq": 8,
       "source_marginalia_line_ids": [
         "p0134_marginalia_l0002"
       ],
       "source_region": "marginalia",
       "text_gold": "cap. 1.",
-      "text_ocr_original": "cap. 1.",
-      "reviewer": "Paul Boys"
+      "text_ocr_original": "cap. 1."
     }
   ],
   "meta": {
@@ -164,6 +164,7 @@
   "page_id": "p0134",
   "page_num": 134,
   "part": "part1",
+  "printed_page_num": "113",
   "regions": {
     "body": [
       {
@@ -707,33 +708,18 @@
     ],
     "catchword": [
       {
-        "line_id": "p0134_catchword_l0001",
-        "marker_id": "",
-        "notes": "",
-        "ocr_confidence": 0.98,
-        "ocr_illegible": false,
-        "ocr_marginalia_anchor_index": null,
-        "page_id": "p0134",
-        "region": "catchword",
-        "review_status": "draft",
-        "reviewer": "Paul Boys",
-        "seq": 1,
-        "text_gold": "I",
-        "text_ocr_original": "I"
-      },
-      {
         "line_id": "p0134_catchword_l0002",
         "marker_id": "",
-        "notes": "",
+        "notes": "This is a signature referencing that this is volume V of Erlington and Todd translation. `I` is the gathering of pages to be bound together. `A` signifies the ending of the first set of pages to be gathered. `B` (on this page) would signifies the second set of pages to be gathered and bound together. And so on.",
         "ocr_confidence": 0.98,
         "ocr_illegible": false,
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0134",
         "region": "catchword",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
-        "seq": 2,
-        "text_gold": "VOL. V.",
+        "seq": 1,
+        "text_gold": "VOL. V.  I",
         "text_ocr_original": "VOL. V."
       }
     ],
@@ -877,6 +863,5 @@
       }
     ]
   },
-  "source_pdf": "00_source_pdf/JamesUssher_Britannicarum ecclesiarum antiquitates_Part1.pdf",
-  "printed_page_num": "113"
+  "source_pdf": "00_source_pdf/JamesUssher_Britannicarum ecclesiarum antiquitates_Part1.pdf"
 }

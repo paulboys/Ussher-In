@@ -1,0 +1,402 @@
+{
+  "page_id": "p0510",
+  "part": "part1",
+  "edition": "1847_elrington_todd",
+  "source_pdf": "00_source_pdf/JamesUssher_Britannicarum ecclesiarum antiquitates_Part1.pdf",
+  "page_num": 510,
+  "regions": {
+    "header": [
+      {
+        "page_id": "p0510",
+        "region": "header",
+        "line_id": "p0510_header_l0001",
+        "seq": 1,
+        "text_gold": "CAP. XII. ANTIQUITATES. 487",
+        "text_ocr_original": "CAP. XII. ANTIQUITATES. 487",
+        "marker_id": "",
+        "reviewer": "",
+        "review_status": "draft",
+        "notes": "",
+        "ocr_confidence": 1.0,
+        "ocr_illegible": false,
+        "ocr_marginalia_anchor_index": null
+      }
+    ],
+    "body": [
+      {
+        "page_id": "p0510",
+        "region": "body",
+        "line_id": "p0510_body_l0001",
+        "seq": 1,
+        "text_gold": "isse et subscripsisse; et Britannos super Ligerim sitos,\"",
+        "text_ocr_original": "isse et subscripsisse; et Britannos super Ligerim sitos,\"",
+        "marker_id": "",
+        "reviewer": "",
+        "review_status": "draft",
+        "notes": "",
+        "ocr_confidence": 1.0,
+        "ocr_illegible": false,
+        "ocr_marginalia_anchor_index": null,
+        "markers": [
+          {
+            "number": 1,
+            "footnote_id": "p0510_fn_001",
+            "char_offset": 35
+          }
+        ]
+      },
+      {
+        "page_id": "p0510",
+        "region": "body",
+        "line_id": "p0510_body_l0002",
+        "seq": 2,
+        "text_gold": "in Apollinari Sidonio disertis verbis legimus, cujus et ad",
+        "text_ocr_original": "in Apollinari Sidonio disertis verbis legimus, cujus et ad",
+        "marker_id": "",
+        "reviewer": "",
+        "review_status": "draft",
+        "notes": "",
+        "ocr_confidence": 1.0,
+        "ocr_illegible": false,
+        "ocr_marginalia_anchor_index": null,
+        "markers": []
+      },
+      {
+        "page_id": "p0510",
+        "region": "body",
+        "line_id": "p0510_body_l0003",
+        "seq": 3,
+        "text_gold": "Riothamum epistola extat, quem Riothimum Britonum",
+        "text_ocr_original": "Riothamum epistola extat, quem Riothimum Britonum",
+        "marker_id": "",
+        "reviewer": "",
+        "review_status": "draft",
+        "notes": "",
+        "ocr_confidence": 1.0,
+        "ocr_illegible": false,
+        "ocr_marginalia_anchor_index": null,
+        "markers": [
+          {
+            "number": 2,
+            "footnote_id": "p0510_fn_002",
+            "char_offset": 18
+          }
+        ]
+      },
+      {
+        "page_id": "p0510",
+        "region": "body",
+        "line_id": "p0510_body_l0004",
+        "seq": 4,
+        "text_gold": "regem Jornandes nominat, in qua Britannorum illorum",
+        "text_ocr_original": "regem Jornandes nominat, in qua Britannorum illorum",
+        "marker_id": "",
+        "reviewer": "",
+        "review_status": "draft",
+        "notes": "",
+        "ocr_confidence": 1.0,
+        "ocr_illegible": false,
+        "ocr_marginalia_anchor_index": null,
+        "markers": [
+          {
+            "number": 3,
+            "footnote_id": "p0510_fn_003",
+            "char_offset": 15
+          }
+        ]
+      },
+      {
+        "page_id": "p0510",
+        "region": "body",
+        "line_id": "p0510_body_l0005",
+        "seq": 5,
+        "text_gold": "mores graphice describit: \"Gerulus,\" inquit, \"episto-",
+        "text_ocr_original": "mores graphice describit: \"Gerulus,\" inquit, \"episto-",
+        "marker_id": "",
+        "reviewer": "",
+        "review_status": "draft",
+        "notes": "",
+        "ocr_confidence": 1.0,
+        "ocr_illegible": false,
+        "ocr_marginalia_anchor_index": null,
+        "markers": []
+      },
+      {
+        "page_id": "p0510",
+        "region": "body",
+        "line_id": "p0510_body_l0006",
+        "seq": 6,
+        "text_gold": "larum, humilis, obscurus, despicabilisque etiam usque ad",
+        "text_ocr_original": "larum, humilis, obscurus, despicabilisque etiam usque ad",
+        "marker_id": "",
+        "reviewer": "",
+        "review_status": "draft",
+        "notes": "",
+        "ocr_confidence": 1.0,
+        "ocr_illegible": false,
+        "ocr_marginalia_anchor_index": null,
+        "markers": []
+      },
+      {
+        "page_id": "p0510",
+        "region": "body",
+        "line_id": "p0510_body_l0007",
+        "seq": 7,
+        "text_gold": "damnum innocentis ignaviæ, mancipia sua, Britannis clam",
+        "text_ocr_original": "damnum innocentis ignaviæ, mancipia sua, Britannis clam",
+        "marker_id": "",
+        "reviewer": "",
+        "review_status": "draft",
+        "notes": "",
+        "ocr_confidence": 1.0,
+        "ocr_illegible": false,
+        "ocr_marginalia_anchor_index": null,
+        "markers": []
+      },
+      {
+        "page_id": "p0510",
+        "region": "body",
+        "line_id": "p0510_body_l0008",
+        "seq": 8,
+        "text_gold": "solicitantibus, abducta deplorat. Incertum mihi est, an",
+        "text_ocr_original": "solicitantibus, abducta deplorat. Incertum mihi est, an",
+        "marker_id": "",
+        "reviewer": "",
+        "review_status": "draft",
+        "notes": "",
+        "ocr_confidence": 1.0,
+        "ocr_illegible": false,
+        "ocr_marginalia_anchor_index": null,
+        "markers": []
+      },
+      {
+        "page_id": "p0510",
+        "region": "body",
+        "line_id": "p0510_body_l0009",
+        "seq": 9,
+        "text_gold": "sit certa causatio: sed si inter coram positos æquanimiter",
+        "text_ocr_original": "sit certa causatio: sed si inter coram positos æquanimiter",
+        "marker_id": "",
+        "reviewer": "",
+        "review_status": "draft",
+        "notes": "",
+        "ocr_confidence": 1.0,
+        "ocr_illegible": false,
+        "ocr_marginalia_anchor_index": null,
+        "markers": []
+      },
+      {
+        "page_id": "p0510",
+        "region": "body",
+        "line_id": "p0510_body_l0010",
+        "seq": 10,
+        "text_gold": "objecta discingitis, arbitror hunc laboriosum posse pro-",
+        "text_ocr_original": "objecta discingitis, arbitror hunc laboriosum posse pro-",
+        "marker_id": "",
+        "reviewer": "",
+        "review_status": "draft",
+        "notes": "",
+        "ocr_confidence": 1.0,
+        "ocr_illegible": false,
+        "ocr_marginalia_anchor_index": null,
+        "markers": []
+      },
+      {
+        "page_id": "p0510",
+        "region": "body",
+        "line_id": "p0510_body_l0011",
+        "seq": 11,
+        "text_gold": "bare quod objicit; si tamen inter argutos, armatos, tumul-",
+        "text_ocr_original": "bare quod objicit; si tamen inter argutos, armatos, tumul-",
+        "marker_id": "",
+        "reviewer": "",
+        "review_status": "draft",
+        "notes": "",
+        "ocr_confidence": 1.0,
+        "ocr_illegible": false,
+        "ocr_marginalia_anchor_index": null,
+        "markers": []
+      },
+      {
+        "page_id": "p0510",
+        "region": "body",
+        "line_id": "p0510_body_l0012",
+        "seq": 12,
+        "text_gold": "tuosos, virtute, numero, contubernio contumaces, poterit",
+        "text_ocr_original": "tuosos, virtute, numero, contubernio contumaces, poterit",
+        "marker_id": "",
+        "reviewer": "",
+        "review_status": "draft",
+        "notes": "",
+        "ocr_confidence": 1.0,
+        "ocr_illegible": false,
+        "ocr_marginalia_anchor_index": null,
+        "markers": []
+      },
+      {
+        "page_id": "p0510",
+        "region": "body",
+        "line_id": "p0510_body_l0013",
+        "seq": 13,
+        "text_gold": "ex æquo et bono solus, inermis, abjectus, rusticus, pere-",
+        "text_ocr_original": "ex æquo et bono solus, inermis, abjectus, rusticus, pere-",
+        "marker_id": "",
+        "reviewer": "",
+        "review_status": "draft",
+        "notes": "",
+        "ocr_confidence": 1.0,
+        "ocr_illegible": false,
+        "ocr_marginalia_anchor_index": null,
+        "markers": []
+      },
+      {
+        "page_id": "p0510",
+        "region": "body",
+        "line_id": "p0510_body_l0014",
+        "seq": 14,
+        "text_gold": "grinus, pauper audiri.\" Et de Brittia quidem Batavica,",
+        "text_ocr_original": "grinus, pauper audiri.\" Et de Brittia quidem Batavica,",
+        "marker_id": "",
+        "reviewer": "",
+        "review_status": "draft",
+        "notes": "",
+        "ocr_confidence": 1.0,
+        "ocr_illegible": false,
+        "ocr_marginalia_anchor_index": null,
+        "markers": []
+      },
+      {
+        "page_id": "p0510",
+        "region": "body",
+        "line_id": "p0510_body_l0015",
+        "seq": 15,
+        "text_gold": "atque Britannia Armorica, ista dicta sufficiant.",
+        "text_ocr_original": "atque Britannia Armorica, ista dicta sufficiant.",
+        "marker_id": "",
+        "reviewer": "",
+        "review_status": "draft",
+        "notes": "",
+        "ocr_confidence": 1.0,
+        "ocr_illegible": false,
+        "ocr_marginalia_anchor_index": null,
+        "markers": []
+      }
+    ],
+    "marginalia": [
+      {
+        "page_id": "p0510",
+        "region": "marginalia",
+        "line_id": "p0510_marginalia_l0001",
+        "seq": 1,
+        "text_gold": "Sidon. lib. 1. epist. 7.",
+        "text_ocr_original": "Sidon. lib. 1. epist. 7.",
+        "marker_id": "b",
+        "reviewer": "",
+        "review_status": "draft",
+        "notes": "",
+        "ocr_confidence": 1.0,
+        "ocr_illegible": false,
+        "ocr_marginalia_anchor_index": null
+      },
+      {
+        "page_id": "p0510",
+        "region": "marginalia",
+        "line_id": "p0510_marginalia_l0002",
+        "seq": 2,
+        "text_gold": "Id. lib. 3. epist. 9.",
+        "text_ocr_original": "Id. lib. 3. epist. 9.",
+        "marker_id": "c",
+        "reviewer": "",
+        "review_status": "draft",
+        "notes": "",
+        "ocr_confidence": 1.0,
+        "ocr_illegible": false,
+        "ocr_marginalia_anchor_index": null
+      },
+      {
+        "page_id": "p0510",
+        "region": "marginalia",
+        "line_id": "p0510_marginalia_l0003",
+        "seq": 3,
+        "text_gold": "Jornand. de reb. Getic. cap. 45. Vid. Sigebert. chronic. ann. 470.",
+        "text_ocr_original": "Jornand. de reb. Getic. cap. 45. Vid. Sigebert. chronic. ann. 470.",
+        "marker_id": "d",
+        "reviewer": "",
+        "review_status": "draft",
+        "notes": "",
+        "ocr_confidence": 1.0,
+        "ocr_illegible": false,
+        "ocr_marginalia_anchor_index": null
+      }
+    ],
+    "catchword": []
+  },
+  "footnotes": [
+    {
+      "footnote_id": "p0510_fn_001",
+      "page_id": "p0510",
+      "marker_number": 1,
+      "seq": 1,
+      "marker_id": "b",
+      "body_line_id": "p0510_body_l0001",
+      "text_gold": "Sidon. lib. 1. epist. 7.",
+      "text_ocr_original": "Sidon. lib. 1. epist. 7.",
+      "kind": "citation",
+      "source_region": "marginalia",
+      "source_marginalia_line_ids": [
+        "p0510_marginalia_l0001"
+      ],
+      "review_status": "draft",
+      "notes": ""
+    },
+    {
+      "footnote_id": "p0510_fn_002",
+      "page_id": "p0510",
+      "marker_number": 2,
+      "seq": 2,
+      "marker_id": "c",
+      "body_line_id": "p0510_body_l0003",
+      "text_gold": "Id. lib. 3. epist. 9.",
+      "text_ocr_original": "Id. lib. 3. epist. 9.",
+      "kind": "citation",
+      "source_region": "marginalia",
+      "source_marginalia_line_ids": [
+        "p0510_marginalia_l0002"
+      ],
+      "review_status": "draft",
+      "notes": ""
+    },
+    {
+      "footnote_id": "p0510_fn_003",
+      "page_id": "p0510",
+      "marker_number": 3,
+      "seq": 3,
+      "marker_id": "d",
+      "body_line_id": "p0510_body_l0004",
+      "text_gold": "Jornand. de reb. Getic. cap. 45. Vid. Sigebert. chronic. ann. 470.",
+      "text_ocr_original": "Jornand. de reb. Getic. cap. 45. Vid. Sigebert. chronic. ann. 470.",
+      "kind": "citation",
+      "source_region": "marginalia",
+      "source_marginalia_line_ids": [
+        "p0510_marginalia_l0003"
+      ],
+      "review_status": "draft",
+      "notes": ""
+    }
+  ],
+  "meta": {
+    "reviewer": "",
+    "annotation_status": "ocr_seeded",
+    "review_status": "draft",
+    "notes": "",
+    "ocr_engine": "gemini",
+    "ocr_provider_model": "gemini-3.1-pro-preview",
+    "ocr_lang": [
+      "lat",
+      "grc"
+    ],
+    "ocr_confidence_avg": 100.0,
+    "ocr_confidence_min": 100.0,
+    "ocr_page_summary": "Standard layout, footnotes with superscript letter markers."
+  }
+}

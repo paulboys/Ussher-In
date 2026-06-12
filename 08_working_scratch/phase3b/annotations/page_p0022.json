@@ -11,13 +11,13 @@
       "page_id": "p0022",
       "review_status": "draft",
       "reviewer": "Paul Boys",
+      "seq": 1,
       "source_marginalia_line_ids": [
         "p0022_marginalia_l0001"
       ],
       "source_region": "marginalia",
       "text_gold": "Cic. l. in Orat.",
-      "text_ocr_original": "Cic. l. in Orat.",
-      "seq": 1
+      "text_ocr_original": "Cic. l. in Orat."
     }
   ],
   "meta": {
@@ -52,9 +52,9 @@
         "region": "body",
         "review_status": "locked",
         "reviewer": "Paul Boys",
+        "seq": 1,
         "text_gold": "CLEMENTISSIMO ET AUGUSTISSIMO",
-        "text_ocr_original": "CLEMENTISSIMO ET AUGUSTISSIMO",
-        "seq": 1
+        "text_ocr_original": "CLEMENTISSIMO ET AUGUSTISSIMO"
       },
       {
         "line_id": "p0022_body_l0002",
@@ -68,9 +68,9 @@
         "region": "body",
         "review_status": "locked",
         "reviewer": "Paul Boys",
+        "seq": 2,
         "text_gold": "P R I N C I P I C A R O L O,",
-        "text_ocr_original": "P R I N C I P I C A R O L O,",
-        "seq": 2
+        "text_ocr_original": "P R I N C I P I C A R O L O,"
       },
       {
         "line_id": "p0022_body_l0003",
@@ -84,9 +84,9 @@
         "region": "body",
         "review_status": "locked",
         "reviewer": "Paul Boys",
+        "seq": 3,
         "text_gold": "DEI GRATIA, MAGNÆ BRITANNIÆ, FRANCIÆ, ET HIBERNIÆ",
-        "text_ocr_original": "DEI GRATIA, MAGNÆ BRITANNIÆ, FRANCIÆ, ET HIBERNIÆ",
-        "seq": 3
+        "text_ocr_original": "DEI GRATIA, MAGNÆ BRITANNIÆ, FRANCIÆ, ET HIBERNIÆ"
       },
       {
         "line_id": "p0022_body_l0004",
@@ -100,9 +100,9 @@
         "region": "body",
         "review_status": "locked",
         "reviewer": "Paul Boys",
+        "seq": 4,
         "text_gold": "R E G I,",
-        "text_ocr_original": "R E G I,",
-        "seq": 4
+        "text_ocr_original": "R E G I,"
       },
       {
         "line_id": "p0022_body_l0005",
@@ -116,9 +116,9 @@
         "region": "body",
         "review_status": "locked",
         "reviewer": "Paul Boys",
+        "seq": 5,
         "text_gold": "FIDEI DEFENSORI,",
-        "text_ocr_original": "FIDEI DEFENSORI,",
-        "seq": 5
+        "text_ocr_original": "FIDEI DEFENSORI,"
       },
       {
         "line_id": "p0022_body_l0006",
@@ -132,9 +132,9 @@
         "region": "body",
         "review_status": "locked",
         "reviewer": "Paul Boys",
+        "seq": 6,
         "text_gold": "&c. &c.",
-        "text_ocr_original": "&c. &c.",
-        "seq": 6
+        "text_ocr_original": "&c. &c."
       },
       {
         "line_id": "p0022_body_l0007",
@@ -148,9 +148,9 @@
         "region": "body",
         "review_status": "locked",
         "reviewer": "Paul Boys",
+        "seq": 7,
         "text_gold": "SÆPIUS animo meo, Serenissime Princeps, ora-",
-        "text_ocr_original": "SÆPIUS animo meo, Serenissime Princeps, ora-",
-        "seq": 7
+        "text_ocr_original": "SÆPIUS animo meo, Serenissime Princeps, ora-"
       },
       {
         "line_id": "p0022_body_l0008",
@@ -170,9 +170,9 @@
         "region": "body",
         "review_status": "locked",
         "reviewer": "Paul Boys",
+        "seq": 8,
         "text_gold": "toris obversabatur illud: “Nescire quid antea",
-        "text_ocr_original": "toris obversabatur illud: “Nescire quid antea",
-        "seq": 8
+        "text_ocr_original": "toris obversabatur illud: “Nescire quid antea"
       },
       {
         "line_id": "p0022_body_l0009",
@@ -186,9 +186,9 @@
         "region": "body",
         "review_status": "locked",
         "reviewer": "Paul Boys",
+        "seq": 9,
         "text_gold": "quam natus sis acciderit, id est semper esse",
-        "text_ocr_original": "quam natus sis acciderit, id est semper esse",
-        "seq": 9
+        "text_ocr_original": "quam natus sis acciderit, id est semper esse"
       },
       {
         "line_id": "p0022_body_l0010",
@@ -202,9 +202,9 @@
         "region": "body",
         "review_status": "locked",
         "reviewer": "Paul Boys",
+        "seq": 10,
         "text_gold": "puerum.” Indeque mihi insitum fuisse diffiteri",
-        "text_ocr_original": "puerum.” Indeque mihi insitum fuisse diffiteri",
-        "seq": 10
+        "text_ocr_original": "puerum.” Indeque mihi insitum fuisse diffiteri"
       },
       {
         "line_id": "p0022_body_l0011",
@@ -218,9 +218,9 @@
         "region": "body",
         "review_status": "locked",
         "reviewer": "Paul Boys",
+        "seq": 11,
         "text_gold": "non possum rerum gestarum et memoriæ veteris",
-        "text_ocr_original": "non possum rerum gestarum et memoriæ veteris",
-        "seq": 11
+        "text_ocr_original": "non possum rerum gestarum et memoriæ veteris"
       },
       {
         "line_id": "p0022_body_l0012",
@@ -234,9 +234,9 @@
         "region": "body",
         "review_status": "locked",
         "reviewer": "Paul Boys",
+        "seq": 12,
         "text_gold": "ordinem cognoscendi singulare quoddam et prope",
-        "text_ocr_original": "ordinem cognoscendi singulare quoddam et prope",
-        "seq": 12
+        "text_ocr_original": "ordinem cognoscendi singulare quoddam et prope"
       },
       {
         "line_id": "p0022_body_l0013",
@@ -250,9 +250,9 @@
         "region": "body",
         "review_status": "locked",
         "reviewer": "Paul Boys",
+        "seq": 13,
         "text_gold": "incredibile desiderium. Quo in studio, quum",
-        "text_ocr_original": "incredibile desiderium. Quo in studio, quum",
-        "seq": 13
+        "text_ocr_original": "incredibile desiderium. Quo in studio, quum"
       },
       {
         "line_id": "p0022_body_l0014",
@@ -266,9 +266,9 @@
         "region": "body",
         "review_status": "locked",
         "reviewer": "Paul Boys",
+        "seq": 14,
         "text_gold": "exterarum gentium ἀρχαιολογιῶν mediocrem ali-",
-        "text_ocr_original": "exterarum gentium ἀρχαιολογιῶν mediocrem ali-",
-        "seq": 14
+        "text_ocr_original": "exterarum gentium ἀρχαιολογιῶν mediocrem ali-"
       },
       {
         "line_id": "p0022_body_l0015",
@@ -282,9 +282,9 @@
         "region": "body",
         "review_status": "locked",
         "reviewer": "Paul Boys",
+        "seq": 15,
         "text_gold": "quam assecutus mihi visus fuissem intelligentiam:",
-        "text_ocr_original": "quam assecutus mihi visus fuissem intelligentiam:",
-        "seq": 15
+        "text_ocr_original": "quam assecutus mihi visus fuissem intelligentiam:"
       },
       {
         "line_id": "p0022_body_l0016",
@@ -298,9 +298,9 @@
         "region": "body",
         "review_status": "locked",
         "reviewer": "Paul Boys",
+        "seq": 16,
         "text_gold": "etiam illa cogitatio mentem meam identidem",
-        "text_ocr_original": "etiam illa cogitatio mentem meam identidem",
-        "seq": 16
+        "text_ocr_original": "etiam illa cogitatio mentem meam identidem"
       },
       {
         "line_id": "p0022_body_l0017",
@@ -314,16 +314,16 @@
         "region": "body",
         "review_status": "locked",
         "reviewer": "Paul Boys",
+        "seq": 17,
         "text_gold": "subiit; magnæ et inconsiderantiæ et imprudentiæ",
-        "text_ocr_original": "subiit; magnæ et inconsiderantiæ et imprudentiæ",
-        "seq": 17
+        "text_ocr_original": "subiit; magnæ et inconsiderantiæ et imprudentiæ"
       }
     ],
     "catchword": [
       {
         "line_id": "p0022_catchword_l0001",
         "marker_id": "",
-        "notes": "",
+        "notes": "This is a signature referencing that this is volume V of Erlington and Todd translation. `B` is the gathering of pages to be bound together. `A` signifies the ending of the first set of pages to be gathered. `B` (on this page) would signifies the second set of pages to be gathered and bound together.",
         "ocr_confidence": 1,
         "ocr_illegible": false,
         "ocr_marginalia_anchor_index": null,
@@ -331,9 +331,9 @@
         "region": "catchword",
         "review_status": "locked",
         "reviewer": "Paul Boys",
+        "seq": 1,
         "text_gold": "VOL. V. B",
-        "text_ocr_original": "VOL. V. B",
-        "seq": 1
+        "text_ocr_original": "VOL. V. B"
       }
     ],
     "header": [],
@@ -349,9 +349,9 @@
         "region": "marginalia",
         "review_status": "draft",
         "reviewer": "Paul Boys",
+        "seq": 1,
         "text_gold": "Cic. l. in Orat.",
-        "text_ocr_original": "Cic. l. in Orat.",
-        "seq": 1
+        "text_ocr_original": "Cic. l. in Orat."
       }
     ]
   },
