@@ -9,14 +9,14 @@
       "marker_number": 1,
       "notes": "",
       "page_id": "p0063",
-      "review_status": "draft",
+      "review_status": "locked",
       "seq": 1,
       "source_marginalia_line_ids": [
         "p0063_marginalia_l0001"
       ],
       "source_region": "marginalia",
-      "text_gold": "Collect. Concil. Hiſpan. a Loaiſa edit. pag. 391. et Concil. edit. Colon. an.",
-      "text_ocr_original": "Collect. Concil. Hiſpan. a Loaiſa edit. pag. 391. et Concil. edit. Colon. an.",
+      "text_gold": "Collect. Concil. Hispan. a Loaisa edit. pag. 291. et Concil. edit. Colon. an. 1618. tom. 2. part. 2. pag. 317, 318. Vide Baron. annal. tom. 9. an. 816. sec. 49, 50, 51, 52. et bibliothec. Floriacens. Joannis a Bosco, part. 2. pag. 184.",
+      "text_ocr_original": "Collect. Concil. Hispan. a Loaisa edit. pag. 291. et Concil. edit. Colon. an.",
       "reviewer": "Paul Boys"
     },
     {
@@ -27,66 +27,30 @@
       "marker_number": 2,
       "notes": "",
       "page_id": "p0063",
-      "review_status": "draft",
+      "review_status": "locked",
       "seq": 2,
       "source_marginalia_line_ids": [
         "p0063_marginalia_l0004"
       ],
       "source_region": "marginalia",
-      "text_gold": "Eyſengrein. cent. 1. part. 6. diſtinct. 6.",
-      "text_ocr_original": "Eyſengrein. cent. 1. part. 6. diſtinct. 6.",
-      "reviewer": "Paul Boys"
-    },
-    {
-      "body_line_id": "",
-      "footnote_id": "p0063_fn_003",
-      "kind": "citation",
-      "marker_id": "",
-      "marker_number": 3,
-      "notes": "",
-      "page_id": "p0063",
-      "review_status": "draft",
-      "seq": 3,
-      "source_marginalia_line_ids": [
-        "p0063_marginalia_l0002"
-      ],
-      "source_region": "marginalia",
-      "text_gold": "1618. tom. 2. part. 2. pag. 317, 318. Vide Baron. annal. tom. 9. an. 816. ſec.",
-      "text_ocr_original": "1618. tom. 2. part. 2. pag. 317, 318. Vide Baron. annal. tom. 9. an. 816. ſec.",
-      "reviewer": "Paul Boys"
-    },
-    {
-      "body_line_id": "",
-      "footnote_id": "p0063_fn_004",
-      "kind": "citation",
-      "marker_id": "",
-      "marker_number": 4,
-      "notes": "",
-      "page_id": "p0063",
-      "review_status": "draft",
-      "seq": 4,
-      "source_marginalia_line_ids": [
-        "p0063_marginalia_l0003"
-      ],
-      "source_region": "marginalia",
-      "text_gold": "49, 50, 51, 52. et bibliothec. Floriacens. Joannis a Bosco, part. 2. pag. 184.",
-      "text_ocr_original": "49, 50, 51, 52. et bibliothec. Floriacens. Joannis a Bosco, part. 2. pag. 184.",
+      "text_gold": "Eysengrein. cent. 1. part. 6. distinct. 6.",
+      "text_ocr_original": "Eysengrein. cent. 1. part. 6. distinct. 6.",
       "reviewer": "Paul Boys"
     }
   ],
   "meta": {
     "annotation_status": "ocr_seeded",
     "notes": "",
-    "ocr_confidence_avg": 99.55,
+    "ocr_confidence_avg": 99.13,
     "ocr_confidence_min": 95,
     "ocr_engine": "gemini",
     "ocr_lang": [
       "lat",
       "grc"
     ],
-    "ocr_page_summary": "Page with header, main text body, and footnotes. Long-s and ligatures preserved.",
+    "ocr_page_summary": "Standard scholarly text page with footnote rule, footnote markers in text, no catchword or marginalia.",
     "ocr_provider_model": "gemini-3.1-pro-preview",
-    "review_status": "draft",
+    "review_status": "locked",
     "reviewer": "Paul Boys"
   },
   "page_id": "p0063",
@@ -104,11 +68,11 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0063",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 1,
-        "text_gold": "falſis nititur fundamentis. Jacobi prædicationem in Hiſ-",
-        "text_ocr_original": "falſis nititur fundamentis. Jacobi prædicationem in Hiſ-"
+        "text_gold": "falsis nititur fundamentis. Jacobi prædicationem in His-",
+        "text_ocr_original": "falsis nititur fundamentis. Jacobi prædicationem in His-"
       },
       {
         "line_id": "p0063_body_l0002",
@@ -120,11 +84,11 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0063",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 2,
-        "text_gold": "pania, inter incerta poſuit Rodericus Ximenius Toletanus",
-        "text_ocr_original": "pania, inter incerta poſuit Rodericus Ximenius Toletanus"
+        "text_gold": "pania, inter incerta posuit Rodericus Ximenius Toletanus",
+        "text_ocr_original": "pania, inter incerta posuit Rodericus Ximenius Toletanus"
       },
       {
         "line_id": "p0063_body_l0003",
@@ -136,11 +100,11 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0063",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 3,
-        "text_gold": "archiepiſcopus, in concertatione quam anno MCCXV. in",
-        "text_ocr_original": "archiepiſcopus, in concertatione quam anno MCCXV. in"
+        "text_gold": "archiepiscopus, in concertatione quam anno MCCXV. in",
+        "text_ocr_original": "archiepiscopus, in concertatione quam anno MCCXV. in"
       },
       {
         "line_id": "p0063_body_l0004",
@@ -152,11 +116,11 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0063",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 4,
-        "text_gold": "Lateranenſi concilio cum præſule Compoſtellano de pri-",
-        "text_ocr_original": "Lateranenſi concilio cum præſule Compoſtellano de pri-"
+        "text_gold": "Lateranensi concilio cum præsule Compostellano de pri-",
+        "text_ocr_original": "Lateranensi concilio cum præsule Compostellano de pri-"
       },
       {
         "line_id": "p0063_body_l0005",
@@ -168,11 +132,11 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0063",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 5,
-        "text_gold": "matu habuit. Ejus verba, a Garſia Loaiſa e libro MS.",
-        "text_ocr_original": "matu habuit. Ejus verba, a Garſia Loaiſa e libro MS."
+        "text_gold": "matu habuit. Ejus verba, a Garsia Loaisa e libro MS.",
+        "text_ocr_original": "matu habuit. Ejus verba, a Garsia Loaisa e libro MS."
       },
       {
         "line_id": "p0063_body_l0006",
@@ -185,16 +149,16 @@
           }
         ],
         "notes": "",
-        "ocr_confidence": 0.98,
+        "ocr_confidence": 0.95,
         "ocr_illegible": false,
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0063",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 6,
-        "text_gold": "bibliothecæ Toletanæ edita, hæc ſunt. “ Si inducat",
-        "text_ocr_original": "bibliothecæ Toletanæ edita, hæc ſunt. “ Si inducat"
+        "text_gold": "bibliothecæ Toletanæ edita, hæc sunt. “ Si inducat",
+        "text_ocr_original": "bibliothecæ Toletanæ edita, hæc sunt. “ Si inducat"
       },
       {
         "line_id": "p0063_body_l0007",
@@ -206,11 +170,11 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0063",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 7,
-        "text_gold": "(Compoſtellanus) primam divini verbi promulgationem, et",
-        "text_ocr_original": "(Compoſtellanus) primam divini verbi promulgationem, et"
+        "text_gold": "(Compostellanus) primam divini verbi promulgationem, et",
+        "text_ocr_original": "(Compostellanus) primam divini verbi promulgationem, et"
       },
       {
         "line_id": "p0063_body_l0008",
@@ -222,11 +186,11 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0063",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 8,
-        "text_gold": "plurimorum converſionem ad fidem Chriſti in Hiſpania",
-        "text_ocr_original": "plurimorum converſionem ad fidem Chriſti in Hiſpania"
+        "text_gold": "plurimorum conversionem ad fidem Christi in Hispania",
+        "text_ocr_original": "plurimorum conversionem ad fidem Christi in Hispania"
       },
       {
         "line_id": "p0063_body_l0009",
@@ -238,11 +202,11 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0063",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 9,
-        "text_gold": "(per Jacobum factam :) qui divinam paginam noverunt,",
-        "text_ocr_original": "(per Jacobum factam :) qui divinam paginam noverunt,"
+        "text_gold": "(per Jacobum factam:) qui divinam paginam noverunt,",
+        "text_ocr_original": "(per Jacobum factam:) qui divinam paginam noverunt,"
       },
       {
         "line_id": "p0063_body_l0010",
@@ -254,11 +218,11 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0063",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 10,
-        "text_gold": "teſtimonium perhibeant. Ego tantum legi, datam ei fuiſſe",
-        "text_ocr_original": "teſtimonium perhibeant. Ego tantum legi, datam ei fuiſſe"
+        "text_gold": "testimonium perhibeant. Ego tantum legi, datam ei fuisse",
+        "text_ocr_original": "testimonium perhibeant. Ego tantum legi, datam ei fuisse"
       },
       {
         "line_id": "p0063_body_l0011",
@@ -270,11 +234,11 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0063",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 11,
-        "text_gold": "poteſtatem prædicandi in Hiſpania : ſed interim, cum per",
-        "text_ocr_original": "poteſtatem prædicandi in Hiſpania : ſed interim, cum per"
+        "text_gold": "potestatem prædicandi in Hispania: sed interim, cum per",
+        "text_ocr_original": "potestatem prædicandi in Hispania: sed interim, cum per"
       },
       {
         "line_id": "p0063_body_l0012",
@@ -286,11 +250,11 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0063",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 12,
-        "text_gold": "Judæam et Samariam divinam legem ſeminaret, ſub He-",
-        "text_ocr_original": "Judæam et Samariam divinam legem ſeminaret, ſub He-"
+        "text_gold": "Judæam et Samariam divinam legem seminaret, sub He-",
+        "text_ocr_original": "Judæam et Samariam divinam legem seminaret, sub He-"
       },
       {
         "line_id": "p0063_body_l0013",
@@ -302,11 +266,11 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0063",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 13,
-        "text_gold": "rode Hieroſolymis truncato capite exhalavit animam, et",
-        "text_ocr_original": "rode Hieroſolymis truncato capite exhalavit animam, et"
+        "text_gold": "rode Hierosolymis truncato capite exhalavit animam, et",
+        "text_ocr_original": "rode Hierosolymis truncato capite exhalavit animam, et"
       },
       {
         "line_id": "p0063_body_l0014",
@@ -318,7 +282,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0063",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 14,
         "text_gold": "Domino reddidit. Quomodo ergo ibi prædicavit, quo",
@@ -334,11 +298,11 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0063",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 15,
-        "text_gold": "nondum ingreſſus eſt? aut ſine prædicatione, quos, obſe-",
-        "text_ocr_original": "nondum ingreſſus eſt? aut ſine prædicatione, quos, obſe-"
+        "text_gold": "nondum ingressus est? aut sine prædicatione, quos, obse-",
+        "text_ocr_original": "nondum ingressus est? aut sine prædicatione, quos, obse-"
       },
       {
         "line_id": "p0063_body_l0016",
@@ -350,7 +314,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0063",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 16,
         "text_gold": "cro, convertit ad Dominum?” Nec ex parte altera certum",
@@ -366,11 +330,11 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0063",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 17,
-        "text_gold": "eſt, quantumvis id ita eſſe affirmet Alphonſus, “ quod ſi",
-        "text_ocr_original": "eſt, quantumvis id ita eſſe affirmet Alphonſus, “ quod ſi"
+        "text_gold": "est, quantumvis id ita esse affirmet Alphonsus, “ quod si",
+        "text_ocr_original": "est, quantumvis id ita esse affirmet Alphonsus, “ quod si"
       },
       {
         "line_id": "p0063_body_l0018",
@@ -382,11 +346,11 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0063",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 18,
-        "text_gold": "Joſeph fuiſſet in Anglia, hoc fuiſſet poſtquam de carcere",
-        "text_ocr_original": "Joſeph fuiſſet in Anglia, hoc fuiſſet poſtquam de carcere"
+        "text_gold": "Joseph fuisset in Anglia, hoc fuisset postquam de carcere",
+        "text_ocr_original": "Joseph fuisset in Anglia, hoc fuisset postquam de carcere"
       },
       {
         "line_id": "p0063_body_l0019",
@@ -398,11 +362,11 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0063",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 19,
-        "text_gold": "liberatus fuiſſet per Titum, et ſic poſt octuageſimum",
-        "text_ocr_original": "liberatus fuiſſet per Titum, et ſic poſt octuageſimum"
+        "text_gold": "liberatus fuisset per Titum, et sic post octuagesimum",
+        "text_ocr_original": "liberatus fuisset per Titum, et sic post octuagesimum"
       },
       {
         "line_id": "p0063_body_l0020",
@@ -414,7 +378,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0063",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 20,
         "text_gold": "annum a nativitate Domini.” A Tito enim, anno æræ",
@@ -430,11 +394,11 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0063",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 21,
-        "text_gold": "Chriſtianæ (non octogeſimo ſed) ſeptuageſimo everſam",
-        "text_ocr_original": "Chriſtianæ (non octogeſimo ſed) ſeptuageſimo everſam"
+        "text_gold": "Christianæ (non octogesimo sed) septuagesimo eversam",
+        "text_ocr_original": "Christianæ (non octogesimo sed) septuagesimo eversam"
       },
       {
         "line_id": "p0063_body_l0022",
@@ -446,11 +410,11 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0063",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 22,
-        "text_gold": "eſſe Hieroſolymam certum eſt: quæ vero de Joſepho",
-        "text_ocr_original": "eſſe Hieroſolymam certum eſt: quæ vero de Joſepho"
+        "text_gold": "esse Hierosolymam certum est: quæ vero de Josepho",
+        "text_ocr_original": "esse Hierosolymam certum est: quæ vero de Josepho"
       },
       {
         "line_id": "p0063_body_l0023",
@@ -462,11 +426,11 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0063",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 23,
-        "text_gold": "Arimathæenſi tunc per eum liberato pro certis aſſumuntur,",
-        "text_ocr_original": "Arimathæenſi tunc per eum liberato pro certis aſſumuntur,"
+        "text_gold": "Arimathæensi tunc per eum liberato pro certis assumuntur,",
+        "text_ocr_original": "Arimathæensi tunc per eum liberato pro certis assumuntur,"
       },
       {
         "line_id": "p0063_body_l0024",
@@ -478,11 +442,11 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0063",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 24,
-        "text_gold": "nugæ ſunt nugerrimæ.",
-        "text_ocr_original": "nugæ ſunt nugerrimæ."
+        "text_gold": "nugæ sunt nugerrimæ.",
+        "text_ocr_original": "nugæ sunt nugerrimæ."
       },
       {
         "line_id": "p0063_body_l0025",
@@ -495,16 +459,16 @@
           }
         ],
         "notes": "",
-        "ocr_confidence": 0.98,
+        "ocr_confidence": 0.95,
         "ocr_illegible": false,
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0063",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 25,
-        "text_gold": "Guilielmus quidem Eyſengreineus ex annalibus An-",
-        "text_ocr_original": "Guilielmus quidem Eyſengreineus ex annalibus An-"
+        "text_gold": "Guilielmus quidem Eysengreineus ex annalibus An-",
+        "text_ocr_original": "Guilielmus quidem Eysengreineus ex annalibus An-"
       },
       {
         "line_id": "p0063_body_l0026",
@@ -516,11 +480,11 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0063",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 26,
-        "text_gold": "glorum narrat eum “ poſt urbis Hieroſolymæ deſtructi-",
-        "text_ocr_original": "glorum narrat eum “ poſt urbis Hieroſolymæ deſtructi-"
+        "text_gold": "glorum narrat eum “ post urbis Hierosolymæ destructi-",
+        "text_ocr_original": "glorum narrat eum “ post urbis Hierosolymæ destructi-"
       },
       {
         "line_id": "p0063_body_l0027",
@@ -532,11 +496,11 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0063",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 27,
-        "text_gold": "onem apoſtolis adhæſiſſe; atque hoc pacto jam ſenem in",
-        "text_ocr_original": "onem apoſtolis adhæſiſſe; atque hoc pacto jam ſenem in"
+        "text_gold": "onem apostolis adhæsisse; atque hoc pacto jam senem in",
+        "text_ocr_original": "onem apostolis adhæsisse; atque hoc pacto jam senem in"
       },
       {
         "line_id": "p0063_body_l0028",
@@ -548,11 +512,11 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0063",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 28,
-        "text_gold": "Britanniam profectum, in urbe Wellia Chriſtum prædica-",
-        "text_ocr_original": "Britanniam profectum, in urbe Wellia Chriſtum prædica-"
+        "text_gold": "Britanniam profectum, in urbe Wellia Christum prædica-",
+        "text_ocr_original": "Britanniam profectum, in urbe Wellia Christum prædica-"
       },
       {
         "line_id": "p0063_body_l0029",
@@ -564,11 +528,11 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0063",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 29,
-        "text_gold": "viſſe.” Sed temporis illam circumſtantiam in nullis An-",
-        "text_ocr_original": "viſſe.” Sed temporis illam circumſtantiam in nullis An-"
+        "text_gold": "visse.” Sed temporis illam circumstantiam in nullis An-",
+        "text_ocr_original": "visse.” Sed temporis illam circumstantiam in nullis An-"
       },
       {
         "line_id": "p0063_body_l0030",
@@ -580,11 +544,11 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0063",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 30,
-        "text_gold": "glorum annalibus expreſſam reperit. Glaſtonienſes, et",
-        "text_ocr_original": "glorum annalibus expreſſam reperit. Glaſtonienſes, et"
+        "text_gold": "glorum annalibus expressam reperit. Glastonienses, et",
+        "text_ocr_original": "glorum annalibus expressam reperit. Glastonienses, et"
       },
       {
         "line_id": "p0063_body_l0031",
@@ -596,11 +560,11 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0063",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 31,
-        "text_gold": "Malmesburienſis monachus in ſecundo Eulogii ſui libro,",
-        "text_ocr_original": "Malmesburienſis monachus in ſecundo Eulogii ſui libro,"
+        "text_gold": "Malmesburiensis monachus in secundo Eulogii sui libro,",
+        "text_ocr_original": "Malmesburiensis monachus in secundo Eulogii sui libro,"
       },
       {
         "line_id": "p0063_body_l0032",
@@ -612,11 +576,11 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0063",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 32,
-        "text_gold": "Joſephi adventum ad annum Chriſti LXIII. referunt:",
-        "text_ocr_original": "Joſephi adventum ad annum Chriſti LXIII. referunt:"
+        "text_gold": "Josephi adventum ad annum Christi LXIII. referunt:",
+        "text_ocr_original": "Josephi adventum ad annum Christi LXIII. referunt:"
       },
       {
         "line_id": "p0063_body_l0033",
@@ -628,11 +592,11 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0063",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 33,
-        "text_gold": "quem ab aſſumptione beatæ virginis XV. fuiſſe tradunt.",
-        "text_ocr_original": "quem ab aſſumptione beatæ virginis XV. fuiſſe tradunt."
+        "text_gold": "quem ab assumptione beatæ virginis XV. fuisse tradunt.",
+        "text_ocr_original": "quem ab assumptione beatæ virginis XV. fuisse tradunt."
       },
       {
         "line_id": "p0063_body_l0034",
@@ -644,11 +608,11 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0063",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 34,
-        "text_gold": "Oratores Angli, ut diximus, in Baſileenſi hoc concilio,",
-        "text_ocr_original": "Oratores Angli, ut diximus, in Baſileenſi hoc concilio,"
+        "text_gold": "Oratores Angli, ut diximus, in Basileensi hoc concilio,",
+        "text_ocr_original": "Oratores Angli, ut diximus, in Basileensi hoc concilio,"
       },
       {
         "line_id": "p0063_body_l0035",
@@ -660,11 +624,11 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0063",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 35,
-        "text_gold": "templum a Joſepho in Britannia erectum aſſerunt, “ tem-",
-        "text_ocr_original": "templum a Joſepho in Britannia erectum aſſerunt, “ tem-"
+        "text_gold": "templum a Josepho in Britannia erectum asserunt, “ tem-",
+        "text_ocr_original": "templum a Josepho in Britannia erectum asserunt, “ tem-"
       }
     ],
     "catchword": [],
@@ -673,12 +637,12 @@
         "line_id": "p0063_header_l0001",
         "marker_id": "",
         "notes": "",
-        "ocr_confidence": 1,
+        "ocr_confidence": 0.95,
         "ocr_illegible": false,
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0063",
         "region": "header",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 1,
         "text_gold": "42 BRITANNICARUM ECCLESIARUM CAP. II.",
@@ -690,7 +654,7 @@
         "line_id": "p0063_marginalia_l0001",
         "marker_id": "z",
         "notes": "",
-        "ocr_confidence": 0.98,
+        "ocr_confidence": 0.95,
         "ocr_illegible": false,
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0063",
@@ -698,8 +662,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "seq": 1,
-        "text_gold": "Collect. Concil. Hiſpan. a Loaiſa edit. pag. 391. et Concil. edit. Colon. an.",
-        "text_ocr_original": "Collect. Concil. Hiſpan. a Loaiſa edit. pag. 391. et Concil. edit. Colon. an."
+        "text_gold": "Collect. Concil. Hispan. a Loaisa edit. pag. 291. et Concil. edit. Colon. an.",
+        "text_ocr_original": "Collect. Concil. Hispan. a Loaisa edit. pag. 291. et Concil. edit. Colon. an."
       },
       {
         "line_id": "p0063_marginalia_l0002",
@@ -713,8 +677,8 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "seq": 2,
-        "text_gold": "1618. tom. 2. part. 2. pag. 317, 318. Vide Baron. annal. tom. 9. an. 816. ſec.",
-        "text_ocr_original": "1618. tom. 2. part. 2. pag. 317, 318. Vide Baron. annal. tom. 9. an. 816. ſec."
+        "text_gold": "1618. tom. 2. part. 2. pag. 317, 318. Vide Baron. annal. tom. 9. an. 816. sec.",
+        "text_ocr_original": "1618. tom. 2. part. 2. pag. 317, 318. Vide Baron. annal. tom. 9. an. 816. sec."
       },
       {
         "line_id": "p0063_marginalia_l0003",
@@ -735,7 +699,7 @@
         "line_id": "p0063_marginalia_l0004",
         "marker_id": "a",
         "notes": "",
-        "ocr_confidence": 0.98,
+        "ocr_confidence": 0.95,
         "ocr_illegible": false,
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0063",
@@ -743,10 +707,11 @@
         "review_status": "draft",
         "reviewer": "Paul Boys",
         "seq": 4,
-        "text_gold": "Eyſengrein. cent. 1. part. 6. diſtinct. 6.",
-        "text_ocr_original": "Eyſengrein. cent. 1. part. 6. diſtinct. 6."
+        "text_gold": "Eysengrein. cent. 1. part. 6. distinct. 6.",
+        "text_ocr_original": "Eysengrein. cent. 1. part. 6. distinct. 6."
       }
     ]
   },
-  "source_pdf": "00_source_pdf/JamesUssher_Britannicarum ecclesiarum antiquitates_Part1.pdf"
+  "source_pdf": "00_source_pdf/JamesUssher_Britannicarum ecclesiarum antiquitates_Part1.pdf",
+  "printed_page_num": "42"
 }

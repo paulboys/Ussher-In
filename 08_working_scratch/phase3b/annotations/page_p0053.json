@@ -10,30 +10,30 @@
       "notes": "",
       "page_id": "p0053",
       "review_status": "locked",
+      "reviewer": "Paul Boys",
       "seq": 1,
       "source_marginalia_line_ids": [
         "p0053_marginalia_l0001"
       ],
       "source_region": "marginalia",
       "text_gold": "MS. in bibliotheca Cottoniana.",
-      "text_ocr_original": "MS. in bibliotheca Cottoniana.     ^q MS. M. Roberti Haræi.",
-      "reviewer": "Paul Boys"
+      "text_ocr_original": "MS. in bibliotheca Cottoniana.     ^q MS. M. Roberti Haræi."
     },
     {
-      "footnote_id": "p0053_fn_004",
-      "page_id": "p0053",
-      "marker_number": 2,
-      "marker_id": "q",
       "body_line_id": "p0053_body_l0015",
-      "text_gold": "MS. M. Roberti Haræi.",
-      "text_ocr_original": "",
+      "footnote_id": "p0053_fn_004",
       "kind": "citation",
-      "source_region": "manual",
-      "source_marginalia_line_ids": [],
-      "review_status": "locked",
+      "marker_id": "q",
+      "marker_number": 2,
       "notes": "",
+      "page_id": "p0053",
+      "review_status": "locked",
+      "reviewer": "Paul Boys",
       "seq": 2,
-      "reviewer": "Paul Boys"
+      "source_marginalia_line_ids": [],
+      "source_region": "manual",
+      "text_gold": "MS. M. Roberti Haræi.",
+      "text_ocr_original": ""
     },
     {
       "body_line_id": "p0053_body_l0034",
@@ -43,15 +43,15 @@
       "marker_number": 3,
       "notes": "",
       "page_id": "p0053",
-      "review_status": "draft",
+      "review_status": "locked",
+      "reviewer": "Paul Boys",
       "seq": 3,
       "source_marginalia_line_ids": [
         "p0053_marginalia_l0002"
       ],
       "source_region": "marginalia",
       "text_gold": "Similia ad verbum pene reperiuntur in MS. Cottoniano, ubi variæ prophetiæ Merlini aliorumque una sunt collectæ.",
-      "text_ocr_original": "Similia ad verbum pene reperiuntur in MS. Cottoniano, ubi variæ prophe-",
-      "reviewer": "Paul Boys"
+      "text_ocr_original": "Similia ad verbum pene reperiuntur in MS. Cottoniano, ubi variæ prophe-"
     }
   ],
   "meta": {
@@ -72,6 +72,7 @@
   "page_id": "p0053",
   "page_num": 53,
   "part": "part1",
+  "printed_page_num": "32",
   "regions": {
     "body": [
       {
@@ -719,6 +720,5 @@
       }
     ]
   },
-  "source_pdf": "00_source_pdf/JamesUssher_Britannicarum ecclesiarum antiquitates_Part1.pdf",
-  "printed_page_num": "32"
+  "source_pdf": "00_source_pdf/JamesUssher_Britannicarum ecclesiarum antiquitates_Part1.pdf"
 }

@@ -9,33 +9,15 @@
       "marker_number": 1,
       "notes": "",
       "page_id": "p0068",
-      "review_status": "draft",
+      "review_status": "locked",
+      "reviewer": "Paul Boys",
       "seq": 1,
       "source_marginalia_line_ids": [
         "p0068_marginalia_l0001"
       ],
       "source_region": "marginalia",
-      "text_gold": "Guil. Malmesbur. de antiquitat. Glaſton. et eum ſecutus Johannes de Tin-",
-      "text_ocr_original": "Guil. Malmesbur. de antiquitat. Glaſton. et eum ſecutus Johannes de Tin-",
-      "reviewer": "Paul Boys"
-    },
-    {
-      "body_line_id": "",
-      "footnote_id": "p0068_fn_002",
-      "kind": "citation",
-      "marker_id": "",
-      "marker_number": 2,
-      "notes": "",
-      "page_id": "p0068",
-      "review_status": "draft",
-      "seq": 2,
-      "source_marginalia_line_ids": [
-        "p0068_marginalia_l0002"
-      ],
-      "source_region": "marginalia",
-      "text_gold": "mouth, et Capgravius in vita Patricii.",
-      "text_ocr_original": "mouth, et Capgravius in vita Patricii.",
-      "reviewer": "Paul Boys"
+      "text_gold": "Guil. Malmesbur. de antiquitat. Glaston. et eum secutus Johannes de Tinmouth, et Capgravius in vita Patricii.",
+      "text_ocr_original": "Guil. Malmesbur. de antiquitat. Glaſton. et eum ſecutus Johannes de Tin-"
     }
   ],
   "meta": {
@@ -50,7 +32,7 @@
     ],
     "ocr_page_summary": "Page with a header, a short body text paragraph, and a footnote.",
     "ocr_provider_model": "gemini-3.1-pro-preview",
-    "review_status": "draft",
+    "review_status": "locked",
     "reviewer": "Paul Boys"
   },
   "page_id": "p0068",
@@ -74,7 +56,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0068",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 1,
         "text_gold": "burienſis his verbis edocet. “Sancti igitur memorati in",
@@ -90,10 +72,10 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0068",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 2,
-        "text_gold": "eadem eremo ſic degentes, eﬄuentibus multis annorum",
+        "text_gold": "eadem eremo sic degentes, eﬄuentibus multis annorum",
         "text_ocr_original": "eadem eremo ſic degentes, eﬄuentibus multis annorum"
       },
       {
@@ -106,10 +88,10 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0068",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 3,
-        "text_gold": "curriculis carnis ergaſtulo ſunt educti: idemque locus",
+        "text_gold": "curriculis carnis ergastulo sunt educti: idemque locus",
         "text_ocr_original": "curriculis carnis ergaſtulo ſunt educti: idemque locus"
       },
       {
@@ -122,10 +104,10 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0068",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 4,
-        "text_gold": "cœpit eſſe ferarum latibulum, qui prius fuerat habitatio",
+        "text_gold": "cœpit esse ferarum latibulum, qui prius fuerat habitatio",
         "text_ocr_original": "cœpit eſſe ferarum latibulum, qui prius fuerat habitatio"
       },
       {
@@ -138,10 +120,10 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0068",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 5,
-        "text_gold": "ſanctorum.”",
+        "text_gold": "sanctorum.”",
         "text_ocr_original": "ſanctorum.”"
       }
     ],
@@ -156,7 +138,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0068",
         "region": "header",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 1,
         "text_gold": "CAP. II. ANTIQUITATES. 47",
@@ -196,5 +178,6 @@
       }
     ]
   },
-  "source_pdf": "00_source_pdf/JamesUssher_Britannicarum ecclesiarum antiquitates_Part1.pdf"
+  "source_pdf": "00_source_pdf/JamesUssher_Britannicarum ecclesiarum antiquitates_Part1.pdf",
+  "printed_page_num": "47"
 }
