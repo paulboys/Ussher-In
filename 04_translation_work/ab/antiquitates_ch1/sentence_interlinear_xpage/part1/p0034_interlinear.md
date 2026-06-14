@@ -16,26 +16,6 @@
 
 ## Footnotes
 
-<a id="fn-seg_p0034_fn_001"></a>**<a href="#fnref-p0034-l">^l</a>**  *LA:* Esai. cap. 49. ver. 6. Act. cap. 13. ver. 47.
-
-**EN:** Isaiah 49:6; Acts 13:47.
-
-<a id="fn-seg_p0034_fn_002"></a>**<a href="#fnref-p0034-m">^m</a>**  *LA:* Marc. cap. 16. ver. 15, 20. cum Coloss. cap. 1. ver. 23.
-
-**EN:** Mark 16:15, 20, with Colossians 1:23.
-
-<a id="fn-seg_p0034_fn_003"></a>**<a href="#fnref-p0034-n">^n</a>**  *LA:* Orat. in Petrum et Paulum, edit. Ingolstad. 1620.
-
-**EN:** Oration on Peter and Paul, Ingolstadt edition, 1620.
-
-<a id="fn-seg_p0034_fn_004"></a>**<a href="#fnref-p0034-o">^o</a>**  *LA:* Esai. cap. 66. ver. 19. Vid. Lyran. in Psal. 97. ver. 1. multitudo insularum, de Anglia et Hibernia.
-
-**EN:** Isaiah 66:19. See Nicholas of Lyra on Psalm 97:1, “the multitude of the isles,” concerning England and Ireland.
-
-<a id="fn-seg_p0034_fn_005"></a>**<a href="#fnref-p0034-p">^p</a>**  *LA:* in expositione Psal. 96. op. tom. 4. pag. 1043.
-
-**EN:** In his exposition of Psalm 96, Works, volume 4, page 1043.
-
 <a id="fn-seg_p0034_fn_006"></a>**<a href="#fnref-p0034-q">^q</a>**  *LA:* al. Sol.
 
 **EN:** Another reading: Sol (“Sun”).

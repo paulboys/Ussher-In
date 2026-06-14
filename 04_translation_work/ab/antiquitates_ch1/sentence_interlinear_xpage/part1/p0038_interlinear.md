@@ -16,10 +16,6 @@
 
 ## Footnotes
 
-<a id="fn-seg_p0038_fn_001"></a>**<a href="#fnref-p0038-h">^h</a>**  *LA:* MS. in bibliotheca Collegii Benedicti Cantabrig. et Coll. Baliol. Oxon. et D. Roberti Cotton.
-
-**EN:** A manuscript in the library of Bene't (Corpus Christi) College, Cambridge, and of Balliol College, Oxford, and of Sir Robert Cotton.
-
 <a id="fn-seg_p0038_fn_002"></a>**<a href="#fnref-p0038-k">^k</a>**  *LA:* al. Ctesiphon.
 
 **EN:** Variant reading: Ctesiphon.

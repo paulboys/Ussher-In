@@ -65,6 +65,27 @@ Two reliability layers run after generation, in code rather than in the prompt:
 - a **completeness safety net** that detects any source line the model omitted and re-translates just that span; and
 - a **neuro-symbolic validation layer**, built lightest-first: a controlled glossary/termbase flags terminology drift and banned renderings against the Latin source (Phase A, implemented), with a translation memory and structured-artifact validators (citations, proper names, language switches) planned. The model performs the creative translation; the deterministic layer validates consistency and surfaces editor flags rather than making silent edits.
 
+### Interlinear Rendering & Footnote Anchoring
+
+The translated output is rendered as bilingual review documents — a paired
+Latin/English **interlinear**, a flowing-prose **reading** view, and a linked
+**footnotes** section — by `render_interlinear.py`. Two features keep the dense
+scholarly apparatus faithful across page breaks:
+
+- **Cross-page sentence grouping.** A sentence whose Latin runs across a page
+  break is translated whole on its home page; the renderer attaches each
+  footnote to the page where its anchoring line is actually rendered, so a
+  marker and its definition never drift onto different pages.
+- **Per-chapter marker-placement pass.** Footnote superscripts (`^a`, `^b`, …)
+  are anchored inline in both the Latin and the English. Where the automated
+  placement falls back (dumping a marker at a sentence's end), an **agentic
+  pass run inside Claude Code** relocates each marker to the English word
+  matching its Latin anchor — quotation openings, proper names, or the rendered
+  word — then verifies the page deterministically (zero dangling clusters, exact
+  marker↔definition parity). The procedure is documented as a repeatable
+  per-chapter runbook in
+  [07_documentation/MARKER_PLACEMENT_RUNBOOK.md](07_documentation/MARKER_PLACEMENT_RUNBOOK.md).
+
 ## Project Status
 
 | Phase | Status |
@@ -84,6 +105,7 @@ Two reliability layers run after generation, in code rather than in the prompt:
 | Neuro-symbolic validation — Phase A (controlled glossary) | ✅ Complete |
 | Neuro-symbolic validation — Phase B (translation memory) & C (artifact validators) | ⬜ Planned |
 | Chapter 1 translation (pp. 32–45, Claude Opus 4.8) | ✅ Draft complete; under review |
+| Interlinear rendering: cross-page sentences + footnote marker anchoring (Chapter 1) | ✅ Complete |
 | Full translation (remaining chapters) + post-editing | ⬜ Pending |
 
 ## Quick Start

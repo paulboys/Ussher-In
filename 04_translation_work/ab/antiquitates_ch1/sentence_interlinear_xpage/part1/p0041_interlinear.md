@@ -12,18 +12,6 @@
 
 ## Footnotes
 
-<a id="fn-seg_p0041_fn_001"></a>**<a href="#fnref-p0041-c">^c</a>**  *LA:* Tom. 3. Latin. edit. Paris. ann. 1546. et Basil. ann. 1558.
-
-**EN:** Volume 3 of the Latin edition, Paris, 1546, and Basel, 1558.
-
-<a id="fn-seg_p0041_fn_002"></a>**<a href="#fnref-p0041-d">^d</a>**  *LA:* Οἷά τις πτηνὸς αἰθέριος ὁ Παῦλος διέθει, κύκλῳ διατρέχων τὴν οἰκουμένην. Nicephor. Callist. ecclesiast. histor. lib. 3. cap. 1. καθάπερ ὑποπτερός τις πᾶσαν διαδραμὼν τὴν οἰκουμένην ἐσαγήνευσε. Menæa Græc. Jun. 29.
-
-**EN:** Οἷά τις πτηνὸς αἰθέριος ὁ Παῦλος διέθει, κύκλῳ διατρέχων τὴν οἰκουμένην [Paul sped about like some winged creature of the air, coursing in a circuit through the whole world]. Nicephorus Callistus, Ecclesiastical History, book 3, chapter 1. καθάπερ ὑποπτερός τις πᾶσαν διαδραμὼν τὴν οἰκουμένην ἐσαγήνευσε [like some winged being, he ran through the whole world and caught it as in a net]. Menaia of the Greeks, June 29.
-
-<a id="fn-seg_p0041_fn_003"></a>**<a href="#fnref-p0041-e">^e</a>**  *LA:* Πᾶσαν σχεδὸν τὴν γῆν διελθὼν, καὶ ἐπὶ πέντε καὶ τριάκοντα ὑπὲρ Χριστοῦ τῷ εὐαγγελίῳ διαθλεύσας ἐνιαυτοῖς. Niceph. hist. eccles. lib. 12. cap. 34. Vix triginta annorum spatio et Romanos, et Persas, et Parthos, et Medos, et Indos, et Scythas, et Sauromatas, et Sarracenos, et omne prorsus humanum genus sub jugum mitteret veritatis, &c. Chrysost. homil. 4. de laudib. Pauli. Clemens in epistola ad Corinthios pag. 8. de eodem: Κῆρυξ γενόμενος ἐν τῇ ἀνατολῇ καὶ ἐν τῇ δύσει, τὸ γενναῖον τῆς πίστεως αὑτοῦ κλέος ἔλαβεν δικαιοσύνην διδάξαι ὅλον τὸν κόσμον, καὶ ἐπὶ τὸ τέρμα τῆς δύσεως ἐλθὼν, καὶ μαρτυρήσας ἐπὶ τῶν ἡγουμένων, οὕτως ἀπηλλάγη τοῦ κόσμου. In oriente ac occidente verbi præco factus, illustrem fidei suæ fainam sortitus est, in justitia mundum universum instruens, et ad occidentis terminos veniens, et sub imperatoribus martyrium subiens, sic e mundo migravit.
-
-**EN:** Πᾶσαν σχεδὸν τὴν γῆν διελθὼν, καὶ ἐπὶ πέντε καὶ τριάκοντα ὑπὲρ Χριστοῦ τῷ εὐαγγελίῳ διαθλεύσας ἐνιαυτοῖς [Having traversed almost the whole earth, and having contended for the gospel on behalf of Christ for thirty-five years]. Nicephorus, Ecclesiastical History, book 12, chapter 34. In scarcely the space of thirty years he brought the Romans, the Persians, the Parthians, the Medes, the Indians, the Scythians, the Sauromatae, the Saracens, and indeed the whole human race under the yoke of truth, etc. Chrysostom, Homily 4, On the Praises of Paul. Clement, in his Epistle to the Corinthians, page 8, concerning the same: Κῆρυξ γενόμενος ἐν τῇ ἀνατολῇ καὶ ἐν τῇ δύσει, τὸ γενναῖον τῆς πίστεως αὑτοῦ κλέος ἔλαβεν δικαιοσύνην διδάξαι ὅλον τὸν κόσμον, καὶ ἐπὶ τὸ τέρμα τῆς δύσεως ἐλθὼν, καὶ μαρτυρήσας ἐπὶ τῶν ἡγουμένων, οὕτως ἀπηλλάγη τοῦ κόσμου [Having become a herald in the East and in the West, he won the illustrious renown of his faith, instructing the whole world in righteousness; and coming to the limits of the West and bearing witness before the rulers, he thus departed from the world].
-
 <a id="fn-seg_p0041_fn_004"></a>**<a href="#fnref-p0041-f">^f</a>**  *LA:* Rom. cap. 16. ver. 10.
 
 **EN:** Romans 16:10.

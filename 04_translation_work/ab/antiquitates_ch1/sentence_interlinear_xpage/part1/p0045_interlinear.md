@@ -8,12 +8,6 @@
 
 **EN**  While Nero held the supreme power (and indeed, as most hold, toward the end of his reign), Paul wrote that epistle in which Pudens, Linus, and Claudia greet Timothy. But there will be occasion to speak of these again in chapter three.
 
-## Footnotes
-
-<a id="fn-seg_p0045_fn_001"></a>**<a href="#fnref-p0045-r">^r</a>**  *LA:* Martial. lib. 7. Epigram. 63.
-
-**EN:** Martial, Epigrams, book 7, epigram 63.
-
 ## Reading
 
 While Nero held supreme power—and indeed, as most scholars hold, toward the end of his reign—Paul wrote that letter in which Pudens, Linus, and Claudia send their greetings to Timothy. But there will be occasion to speak of these figures again in chapter three.

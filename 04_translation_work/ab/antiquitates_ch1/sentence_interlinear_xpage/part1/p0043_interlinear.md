@@ -36,17 +36,13 @@
 
 **EN**  May she love him one day when he is old; but may she too, even when she shall have grown old to her husband, then likewise not seem an old woman.
 
-**LA**  Quod epigramma cum ad Rufum de Pudente scriptum fuerit: Thomas Dempsterus<sup id="fnref-p0043-l"><a href="#fn-seg_p0043_fn_002">l</a></sup>, homo multæ lectionis, sed nullius plane judicii, ipsi Pudenti nomen etiam Rufi apposuit, ut inde fortasse disceremus, quare uxor illius “Claudia Romano cognomento assumpto Ruﬁna dicta” fuerit: pari nempe acumine, quo eandem Claudiam “inter matronas laude continentiæ clarissimas numerare Plutarchum<sup id="fnref-p0043-m"><a href="#fn-seg_p0043_fn_003">m</a></sup>” idem asserit: cum is Κλαυδίας τῆς παλαιᾶς Claudiæ illius priscæ, Vestalis utique illius nominatissimæ, Quæ<sup id="fnref-p0043-n"><a href="#fn-seg_p0043_fn_004">n</a></sup> contra satis Albulam tumentem Duxit virgineo ratem capillo: Non hujus, quæ eodem cum illo vixit seculo, mentionem faciat. Et quo Pudentem maritum, centurionem aut primipilarem in Britannia vel Germania militantem, exulem in Scotiam, ob Christianæ pietatis professionem, extra Romani imperii fines, relegatum fuisse colligit, ex illo Martialis carmine : Cernere<sup id="fnref-p0043-o">o</sup> Parrhasios dum te juvat, Aule, triones Cominus et Scythici sidera ferre poli.
+**LA**  Quod epigramma cum ad Rufum de Pudente scriptum fuerit: Thomas Dempsterus<sup id="fnref-p0043-l"><a href="#fn-seg_p0043_fn_002">l</a></sup>, homo multæ lectionis, sed nullius plane judicii, ipsi Pudenti nomen etiam Rufi apposuit, ut inde fortasse disceremus, quare uxor illius “Claudia Romano cognomento assumpto Ruﬁna dicta” fuerit: pari nempe acumine, quo eandem Claudiam “inter matronas laude continentiæ clarissimas numerare Plutarchum<sup id="fnref-p0043-m"><a href="#fn-seg_p0043_fn_003">m</a></sup>” idem asserit: cum is Κλαυδίας τῆς παλαιᾶς Claudiæ illius priscæ, Vestalis utique illius nominatissimæ, Quæ<sup id="fnref-p0043-n"><a href="#fn-seg_p0043_fn_004">n</a></sup> contra satis Albulam tumentem Duxit virgineo ratem capillo: Non hujus, quæ eodem cum illo vixit seculo, mentionem faciat. Et quo Pudentem maritum, centurionem aut primipilarem in Britannia vel Germania militantem, exulem in Scotiam, ob Christianæ pietatis professionem, extra Romani imperii fines, relegatum fuisse colligit, ex illo Martialis carmine : Cernere<sup id="fnref-p0043-o"><a href="#fn-seg_p0044_fn_001">o</a></sup> Parrhasios dum te juvat, Aule, triones Cominus et Scythici sidera ferre poli.
 
-**EN**  Although this epigram was written to Rufus about Pudens, Thomas Dempster<sup><a href="#fn-seg_p0043_fn_002">l</a></sup> — a man of much reading but plainly of no judgement — even assigned the name Rufus to Pudens himself, so that from this we might perhaps learn why his wife "Claudia, having taken on the Roman cognomen, was called Rufina": with that same acumen, indeed, by which he likewise asserts that "Plutarch numbers this same Claudia among the matrons most renowned for the praise of continence" — although Plutarch makes mention of Κλαυδίας τῆς παλαιᾶς [that ancient Claudia], that most celebrated Vestal, of course, "Who, against the swelling Albula, well enough / Drew the vessel with her maiden's hair," and not of this Claudia, who lived in the same age as Pudens. And [it is with the like acumen] that he gathers, from that poem of Martial, that the husband Pudens, a centurion or primipilus serving in Britain or Germany, was banished as an exile into Scotland, beyond the bounds of the Roman empire, on account of his profession of Christian piety: "While it delights you, Aulus, to behold the Parrhasian / oxen at close range, and to bear the stars of the Scythian pole."<sup><a href="#fn-seg_p0043_fn_003">m</a></sup><sup><a href="#fn-seg_p0043_fn_004">n</a></sup><sup>o</sup>
+**EN**  Although this epigram was written to Rufus about Pudens, Thomas Dempster<sup><a href="#fn-seg_p0043_fn_002">l</a></sup> — a man of much reading but plainly of no judgement — even assigned the name Rufus to Pudens himself, so that from this we might perhaps learn why his wife "Claudia, having taken on the Roman cognomen, was called Rufina": with that same acumen, indeed, by which he likewise asserts that "Plutarch numbers<sup><a href="#fn-seg_p0043_fn_003">m</a></sup> this same Claudia among the matrons most renowned for the praise of continence" — although Plutarch makes mention of Κλαυδίας τῆς παλαιᾶς [that ancient Claudia], that most celebrated Vestal, of course, "Who, against the swelling Albula<sup><a href="#fn-seg_p0043_fn_004">n</a></sup>, well enough / Drew the vessel with her maiden's hair," and not of this Claudia, who lived in the same age as Pudens. And [it is with the like acumen] that he gathers, from that poem of Martial, that the husband Pudens, a centurion or primipilus serving in Britain or Germany, was banished as an exile into Scotland, beyond the bounds of the Roman empire, on account of his profession of Christian piety: "While it delights you<sup><a href="#fn-seg_p0044_fn_001">o</a></sup>, Aulus, to behold the Parrhasian / oxen at close range, and to bear the stars of the Scythian pole."
 
 *⟶ This sentence's Latin runs onto p0044; it is translated whole here.*
 
 ## Footnotes
-
-<a id="fn-seg_p0043_fn_001"></a>**<a href="#fnref-p0043-i">^i</a>**  *LA:* Martial. lib. 11. epigram. 53.
-
-**EN:** Martial, book 11, epigram 53.
 
 <a id="fn-seg_p0043_fn_005"></a>**<a href="#fnref-p0043-k">^k</a>**  *LA:* Id. lib. 4. epigram. 13.
 
@@ -63,6 +59,10 @@
 <a id="fn-seg_p0043_fn_004"></a>**<a href="#fnref-p0043-n">^n</a>**  *LA:* Sidon. Apollinar. in Propemptico ad libellum. Carm. 24.
 
 **EN:** Sidonius Apollinaris, in the Propempticon to his little book, Poem 24.
+
+<a id="fn-seg_p0044_fn_001"></a>**<a href="#fnref-p0043-o">^o</a>**  *LA:* Martial. lib. 6. Epigram. 58.
+
+**EN:**  Martial, book 6, epigram 58.
 
 ## Reading
 

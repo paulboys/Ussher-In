@@ -179,6 +179,27 @@ def _line_anchor_id(seg: dict, page_id: str) -> str:
     return f"line-{page_id}-l{int(match.group(1)):04d}"
 
 
+def _norm_line_id(line_id: str) -> str:
+    """Normalize a body-line reference for cross-field matching.
+
+    ``source_line_ids`` stores bare line ids (``p0033_body_l0001``) while
+    a footnote's ``body_segment_id`` carries the ``seg_`` prefix
+    (``seg_p0033_body_l0001``). Strip the prefix so the two forms compare
+    equal.
+    """
+    lid = line_id or ""
+    return lid[4:] if lid.startswith("seg_") else lid
+
+
+def _home_page_of(seg: dict) -> str:
+    """Page on which *seg* is rendered: the first of ``spans_pages`` for a
+    cross-page sentence, else the segment's own ``page_id``."""
+    spans = seg.get("spans_pages") or []
+    if spans:
+        return spans[0]
+    return seg.get("page_id") or ""
+
+
 def group_by_page(
     segments: Iterable[dict],
     *,
@@ -191,21 +212,65 @@ def group_by_page(
     in line-number order, then footnotes in marker order. When *part*
     is supplied, an attempt is made to load the per-page polished
     artifact for each page and attach it to the bundle.
+
+    Footnotes are attached to the page where their *anchoring body line*
+    is rendered, not to the page they were printed on. These differ for a
+    cross-page sentence: a sentence homed on p0032 that absorbs p0033's
+    opening lines renders those lines' markers on p0032, so their
+    definitions must accompany them there (otherwise p0032 shows orphan
+    markers and p0033 shows orphan definitions). For the page-bounded
+    line-by-line artifact the anchor line is always on its own page, so
+    this is a no-op.
     """
+    segments = list(segments)
+
+    # Pass 1: map every source body line to the page where it is rendered
+    # (the home page of the sentence that contains it) and to a global
+    # reading-order rank used to keep merged footnotes in a, b, c, … order.
+    line_home_page: dict[str, str] = {}
+    line_order: dict[str, int] = {}
+    order = 0
+    body_segs = [
+        s for s in segments if (s.get("segment_type") or "body") != "footnote"
+    ]
+    for seg in sorted(
+        body_segs,
+        key=lambda s: (
+            _home_page_of(s),
+            s.get("seq") if isinstance(s.get("seq"), int) else 1 << 30,
+            s.get("segment_id") or "",
+        ),
+    ):
+        home = _home_page_of(seg)
+        src_lines = seg.get("source_line_ids") or [seg.get("segment_id") or ""]
+        for lid in src_lines:
+            key = _norm_line_id(lid)
+            if key and key not in line_home_page:
+                line_home_page[key] = home
+                line_order[key] = order
+                order += 1
+
+    # Pass 2: bucket records by page. Body stays on its own page (== home
+    # page for sentence segments); footnotes follow their anchor line.
     by_page: dict[str, dict[str, list[dict]]] = {}
     # Continuation map: a cross-page sentence (``spans_pages`` longer than one,
     # home page first) absorbs the opening lines of each later page it touches.
     continued_from: dict[str, dict] = {}
     for seg in segments:
+        seg_type = seg.get("segment_type") or "body"
+        if seg_type == "footnote":
+            anchor = _norm_line_id(seg.get("body_segment_id") or "")
+            page_id = line_home_page.get(anchor) or seg.get("page_id") or ""
+            if not page_id:
+                continue
+            by_page.setdefault(page_id, {"body": [], "footnote": []})[
+                "footnote"
+            ].append(seg)
+            continue
         page_id = seg.get("page_id") or ""
         if not page_id:
             continue
-        bucket = by_page.setdefault(page_id, {"body": [], "footnote": []})
-        seg_type = seg.get("segment_type") or "body"
-        if seg_type == "footnote":
-            bucket["footnote"].append(seg)
-        else:
-            bucket["body"].append(seg)
+        by_page.setdefault(page_id, {"body": [], "footnote": []})["body"].append(seg)
         spans = seg.get("spans_pages") or []
         if len(spans) > 1:
             home, sid = spans[0], seg.get("segment_id") or ""
@@ -214,10 +279,17 @@ def group_by_page(
                     cont_page, {"from_page": home, "sentence_id": sid}
                 )
 
+    def _footnote_key(fn: dict) -> tuple:
+        anchor = _norm_line_id(fn.get("body_segment_id") or "")
+        rank = line_order.get(anchor)
+        if rank is not None:
+            return (0, rank, fn.get("segment_id") or "")
+        return (1,) + _segment_sort_key(fn)
+
     bundles: list[PageBundle] = []
     for page_id in sorted(by_page.keys()):
         body = sorted(by_page[page_id]["body"], key=_segment_sort_key)
-        footnotes = sorted(by_page[page_id]["footnote"], key=_segment_sort_key)
+        footnotes = sorted(by_page[page_id]["footnote"], key=_footnote_key)
         polished = load_polished(part, page_id) if part else None
         bundles.append(
             PageBundle(

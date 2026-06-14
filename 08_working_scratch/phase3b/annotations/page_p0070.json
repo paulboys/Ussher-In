@@ -9,15 +9,15 @@
       "marker_number": 1,
       "notes": "",
       "page_id": "p0070",
-      "review_status": "draft",
+      "review_status": "locked",
+      "reviewer": "Paul Boys",
       "seq": 1,
       "source_marginalia_line_ids": [
         "p0070_marginalia_l0001"
       ],
       "source_region": "marginalia",
-      "text_gold": "Vid. M. Velserum, rer. August. Vindelic. lib. 6. ad ann. Dom. 179. Gasp.",
-      "text_ocr_original": "Vid. M. Velserum, rer. August. Vindelic. lib. 6. ad ann. Dom. 179. Gasp.",
-      "reviewer": "Paul Boys"
+      "text_gold": "Vid. M. Velserum, rer. August. Vindelic. lib. 6. ad ann. Dom. 179. Gasp. Bruschium de Germaniæ episcopat. cap. 3. Sebast. Munster. cosmograph. lib. 3. pag. 519. Achillem Gassarum, in Augustanæ urbis descript. ibid. pag. 603. Et Arnoldum Mermannium, in Theatro conversionis gentium. Λούκιος ἐπίσκοπος Λαοδικίας Σωρίας. Hippolyto in libello inedito de 70. discipulis.",
+      "text_ocr_original": "Vid. M. Velserum, rer. August. Vindelic. lib. 6. ad ann. Dom. 179. Gasp."
     },
     {
       "body_line_id": "p0070_body_l0004",
@@ -27,14 +27,30 @@
       "marker_number": 2,
       "notes": "",
       "page_id": "p0070",
-      "review_status": "draft",
+      "review_status": "locked",
+      "reviewer": "Paul Boys",
       "seq": 2,
       "source_marginalia_line_ids": [
         "p0070_marginalia_l0006"
       ],
       "source_region": "marginalia",
-      "text_gold": "Act. cap. 13. ver. 1. l Mark. cap. 15. ver. 21.",
-      "text_ocr_original": "Act. cap. 13. ver. 1. l Mark. cap. 15. ver. 21.",
+      "text_gold": "Act. cap. 13. ver. 1.",
+      "text_ocr_original": "Act. cap. 13. ver. 1. l Mark. cap. 15. ver. 21."
+    },
+    {
+      "footnote_id": "p0070_fn_014",
+      "page_id": "p0070",
+      "marker_number": 3,
+      "marker_id": "l",
+      "body_line_id": "p0070_body_l0005",
+      "text_gold": "Mark. cap. 15. ver. 21.",
+      "text_ocr_original": "",
+      "kind": "citation",
+      "source_region": "manual",
+      "source_marginalia_line_ids": [],
+      "review_status": "locked",
+      "notes": "",
+      "seq": 3,
       "reviewer": "Paul Boys"
     },
     {
@@ -42,17 +58,33 @@
       "footnote_id": "p0070_fn_003",
       "kind": "citation",
       "marker_id": "m",
-      "marker_number": 3,
+      "marker_number": 4,
       "notes": "",
       "page_id": "p0070",
-      "review_status": "draft",
-      "seq": 3,
+      "review_status": "locked",
+      "reviewer": "Paul Boys",
+      "seq": 4,
       "source_marginalia_line_ids": [
         "p0070_marginalia_l0007"
       ],
       "source_region": "marginalia",
-      "text_gold": "Jo. Aventin. annal. Boior. lib. 2. n Rom. cap. 16. cap. 21.",
-      "text_ocr_original": "Jo. Aventin. annal. Boior. lib. 2. n Rom. cap. 16. cap. 21.",
+      "text_gold": "Jo. Aventin. annal. Boior. lib. 2.",
+      "text_ocr_original": "Jo. Aventin. annal. Boior. lib. 2. n Rom. cap. 16. cap. 21."
+    },
+    {
+      "footnote_id": "p0070_fn_015",
+      "page_id": "p0070",
+      "marker_number": 5,
+      "marker_id": "n",
+      "body_line_id": "p0070_body_l0008",
+      "text_gold": "Rom. cap. 16. cap. 21.",
+      "text_ocr_original": "",
+      "kind": "citation",
+      "source_region": "manual",
+      "source_marginalia_line_ids": [],
+      "review_status": "locked",
+      "notes": "",
+      "seq": 5,
       "reviewer": "Paul Boys"
     },
     {
@@ -60,180 +92,90 @@
       "footnote_id": "p0070_fn_004",
       "kind": "citation",
       "marker_id": "o",
-      "marker_number": 4,
+      "marker_number": 6,
       "notes": "",
       "page_id": "p0070",
-      "review_status": "draft",
-      "seq": 4,
+      "review_status": "locked",
+      "reviewer": "Paul Boys",
+      "seq": 6,
       "source_marginalia_line_ids": [
         "p0070_marginalia_l0008"
       ],
       "source_region": "marginalia",
-      "text_gold": "Sigismund. chronic. Augustan. ecclesiastic. cap. 3. tom. 3. scriptor. rerum",
-      "text_ocr_original": "Sigismund. chronic. Augustan. ecclesiastic. cap. 3. tom. 3. scriptor. rerum",
-      "reviewer": "Paul Boys"
+      "text_gold": "Sigismund. chronic. Augustan. ecclesiastic. cap. 3. tom. 3. scriptor. rerum Germanic. a Pistorio edit. pag. 592. excus. Francofurt. ann. 1607.",
+      "text_ocr_original": "Sigismund. chronic. Augustan. ecclesiastic. cap. 3. tom. 3. scriptor. rerum"
     },
     {
       "body_line_id": "p0070_body_l0015",
       "footnote_id": "p0070_fn_005",
       "kind": "citation",
       "marker_id": "p",
-      "marker_number": 5,
+      "marker_number": 7,
       "notes": "",
       "page_id": "p0070",
-      "review_status": "draft",
-      "seq": 5,
+      "review_status": "locked",
+      "reviewer": "Paul Boys",
+      "seq": 7,
       "source_marginalia_line_ids": [
         "p0070_marginalia_l0010"
       ],
       "source_region": "marginalia",
       "text_gold": "Petr. de Natalib. lib. 1. cap. 24.",
-      "text_ocr_original": "Petr. de Natalib. lib. 1. cap. 24.",
-      "reviewer": "Paul Boys"
+      "text_ocr_original": "Petr. de Natalib. lib. 1. cap. 24."
     },
     {
       "body_line_id": "p0070_body_l0021",
       "footnote_id": "p0070_fn_006",
       "kind": "citation",
       "marker_id": "q",
-      "marker_number": 6,
+      "marker_number": 8,
       "notes": "",
       "page_id": "p0070",
-      "review_status": "draft",
-      "seq": 6,
+      "review_status": "locked",
+      "reviewer": "Paul Boys",
+      "seq": 8,
       "source_marginalia_line_ids": [
         "p0070_marginalia_l0011"
       ],
       "source_region": "marginalia",
       "text_gold": "Bartholemæus Anglicus (ut videtur) in chronico de Sanctis.",
-      "text_ocr_original": "Bartholemæus Anglicus (ut videtur) in chronico de Sanctis.",
-      "reviewer": "Paul Boys"
+      "text_ocr_original": "Bartholemæus Anglicus (ut videtur) in chronico de Sanctis."
     },
     {
       "body_line_id": "p0070_body_l0022",
       "footnote_id": "p0070_fn_007",
       "kind": "citation",
       "marker_id": "r",
-      "marker_number": 7,
+      "marker_number": 9,
       "notes": "",
       "page_id": "p0070",
-      "review_status": "draft",
-      "seq": 7,
+      "review_status": "locked",
+      "reviewer": "Paul Boys",
+      "seq": 9,
       "source_marginalia_line_ids": [
         "p0070_marginalia_l0012"
       ],
       "source_region": "marginalia",
       "text_gold": "Naucler. chronograph. volum. 2. generat. 6.",
-      "text_ocr_original": "Naucler. chronograph. volum. 2. generat. 6.",
-      "reviewer": "Paul Boys"
+      "text_ocr_original": "Naucler. chronograph. volum. 2. generat. 6."
     },
     {
       "body_line_id": "p0070_body_l0027",
       "footnote_id": "p0070_fn_008",
       "kind": "citation",
       "marker_id": "s",
-      "marker_number": 8,
+      "marker_number": 10,
       "notes": "",
       "page_id": "p0070",
-      "review_status": "draft",
-      "seq": 8,
+      "review_status": "locked",
+      "reviewer": "Paul Boys",
+      "seq": 10,
       "source_marginalia_line_ids": [
         "p0070_marginalia_l0013"
       ],
       "source_region": "marginalia",
       "text_gold": "Pantal. de viris illustr. German. part. 1.",
-      "text_ocr_original": "Pantal. de viris illustr. German. part. 1.",
-      "reviewer": "Paul Boys"
-    },
-    {
-      "body_line_id": "",
-      "footnote_id": "p0070_fn_009",
-      "kind": "citation",
-      "marker_id": "",
-      "marker_number": 9,
-      "notes": "",
-      "page_id": "p0070",
-      "review_status": "draft",
-      "seq": 9,
-      "source_marginalia_line_ids": [
-        "p0070_marginalia_l0002"
-      ],
-      "source_region": "marginalia",
-      "text_gold": "Bruschium de Germaniæ episcopat. cap. 3. Sebast. Munster. cosmograph. lib. 3.",
-      "text_ocr_original": "Bruschium de Germaniæ episcopat. cap. 3. Sebast. Munster. cosmograph. lib. 3.",
-      "reviewer": "Paul Boys"
-    },
-    {
-      "body_line_id": "",
-      "footnote_id": "p0070_fn_010",
-      "kind": "citation",
-      "marker_id": "",
-      "marker_number": 10,
-      "notes": "",
-      "page_id": "p0070",
-      "review_status": "draft",
-      "seq": 10,
-      "source_marginalia_line_ids": [
-        "p0070_marginalia_l0003"
-      ],
-      "source_region": "marginalia",
-      "text_gold": "pag. 519. Achillem Gassarum, in Augustanæ urbis descript. ibid. pag. 603. Et",
-      "text_ocr_original": "pag. 519. Achillem Gassarum, in Augustanæ urbis descript. ibid. pag. 603. Et",
-      "reviewer": "Paul Boys"
-    },
-    {
-      "body_line_id": "",
-      "footnote_id": "p0070_fn_011",
-      "kind": "citation",
-      "marker_id": "",
-      "marker_number": 11,
-      "notes": "",
-      "page_id": "p0070",
-      "review_status": "draft",
-      "seq": 11,
-      "source_marginalia_line_ids": [
-        "p0070_marginalia_l0004"
-      ],
-      "source_region": "marginalia",
-      "text_gold": "Arnoldum Mermannium, in Theatro conversionis gentium. Λούκιος ἐπίσκοπος",
-      "text_ocr_original": "Arnoldum Mermannium, in Theatro conversionis gentium. Λούκιος ἐπίσκοπος",
-      "reviewer": "Paul Boys"
-    },
-    {
-      "body_line_id": "",
-      "footnote_id": "p0070_fn_012",
-      "kind": "citation",
-      "marker_id": "",
-      "marker_number": 12,
-      "notes": "",
-      "page_id": "p0070",
-      "review_status": "draft",
-      "seq": 12,
-      "source_marginalia_line_ids": [
-        "p0070_marginalia_l0005"
-      ],
-      "source_region": "marginalia",
-      "text_gold": "Λαοδικίας Σωρίας. Hippolyto in libello inedito de 70. discipulis.",
-      "text_ocr_original": "Λαοδικίας Σωρίας. Hippolyto in libello inedito de 70. discipulis.",
-      "reviewer": "Paul Boys"
-    },
-    {
-      "body_line_id": "",
-      "footnote_id": "p0070_fn_013",
-      "kind": "citation",
-      "marker_id": "",
-      "marker_number": 13,
-      "notes": "",
-      "page_id": "p0070",
-      "review_status": "draft",
-      "seq": 13,
-      "source_marginalia_line_ids": [
-        "p0070_marginalia_l0009"
-      ],
-      "source_region": "marginalia",
-      "text_gold": "Germanic. a Pistorio edit. pag. 592. excus. Francofurt. ann. 1607.",
-      "text_ocr_original": "Germanic. a Pistorio edit. pag. 592. excus. Francofurt. ann. 1607.",
-      "reviewer": "Paul Boys"
+      "text_ocr_original": "Pantal. de viris illustr. German. part. 1."
     }
   ],
   "meta": {
@@ -248,7 +190,7 @@
     ],
     "ocr_page_summary": "Single column of body text with multiple footnote markers and corresponding footnotes. Some footnotes share lines. The page number and chapter heading appear in the header.",
     "ocr_provider_model": "gemini-3.1-pro-preview",
-    "review_status": "draft",
+    "review_status": "locked",
     "reviewer": "Paul Boys"
   },
   "page_id": "p0070",
@@ -266,7 +208,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0070",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 1,
         "text_gold": "Rhætis et Bavaris evangelium Lucius quidam primus",
@@ -288,7 +230,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0070",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 2,
         "text_gold": "annuntiasse dicitur : quem alii Britannicum regem fuisse",
@@ -304,7 +246,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0070",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 3,
         "text_gold": "asserunt, alii negant; alii Lucium Cyrenæum fuisse pro-",
@@ -326,7 +268,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0070",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 4,
         "text_gold": "nuntiant, cujus apud Lucam in Actis fit mentio. Eun-",
@@ -335,14 +277,20 @@
       {
         "line_id": "p0070_body_l0005",
         "marker_id": "",
-        "markers": [],
+        "markers": [
+          {
+            "number": 3,
+            "footnote_id": "p0070_fn_014",
+            "char_offset": 49
+          }
+        ],
         "notes": "",
         "ocr_confidence": 0.95,
         "ocr_illegible": false,
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0070",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 5,
         "text_gold": "demque ipsum I.ucium Cyrenæum alii Simonis illius qui",
@@ -358,7 +306,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0070",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 6,
         "text_gold": "Christo crucem portavit, filium, alii, in quibus est Aven-",
@@ -369,7 +317,7 @@
         "marker_id": "",
         "markers": [
           {
-            "number": 3,
+            "number": 4,
             "footnote_id": "p0070_fn_003",
             "char_offset": 5
           }
@@ -380,7 +328,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0070",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 7,
         "text_gold": "tinus, Pauli commilitonem et cognatum (cujus ipse in",
@@ -389,14 +337,20 @@
       {
         "line_id": "p0070_body_l0008",
         "marker_id": "",
-        "markers": [],
+        "markers": [
+          {
+            "number": 5,
+            "footnote_id": "p0070_fn_015",
+            "char_offset": 19
+          }
+        ],
         "notes": "",
         "ocr_confidence": 1,
         "ocr_illegible": false,
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0070",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 8,
         "text_gold": "epistola ad Romanos meminit) fuisse censent: alii etiam",
@@ -412,7 +366,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0070",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 9,
         "text_gold": "cum rege Britannico confundunt. “ Principes apostolici",
@@ -428,7 +382,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0070",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 10,
         "text_gold": "senatus Petru: n et Paulum ex Roma unum misisse, qui",
@@ -444,7 +398,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0070",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 11,
         "text_gold": "Lucium regem Britanniæ convertens, faceret regalem sa-",
@@ -455,7 +409,7 @@
         "marker_id": "",
         "markers": [
           {
-            "number": 4,
+            "number": 6,
             "footnote_id": "p0070_fn_004",
             "char_offset": 32
           }
@@ -466,7 +420,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0070",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 12,
         "text_gold": "cerdotem,” affirmat Sigisınundus Meisterlinus Augusta-",
@@ -482,7 +436,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0070",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 13,
         "text_gold": "nus. Nec desunt, qui Lucium hunc Britannicum a Ti-",
@@ -498,7 +452,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0070",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 14,
         "text_gold": "motheo S. Pauli discipulo baptizatum fuisse tradant. Ita",
@@ -509,7 +463,7 @@
         "marker_id": "",
         "markers": [
           {
-            "number": 5,
+            "number": 7,
             "footnote_id": "p0070_fn_005",
             "char_offset": 26
           }
@@ -520,7 +474,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0070",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 15,
         "text_gold": "Petrus Equilinus: “ Lucius beatus confessor fuit rex",
@@ -536,7 +490,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0070",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 16,
         "text_gold": "Britanniæ, baptizatus a Timotheo discipulo sancti Pauli.",
@@ -552,7 +506,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0070",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 17,
         "text_gold": "Qui regno composito et bene ordinato, relictis omnibus",
@@ -568,7 +522,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0070",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 18,
         "text_gold": "secularibus pompis, multisque ad Deum conversis; veni-",
@@ -584,7 +538,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0070",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 19,
         "text_gold": "ens per Augustam in civitatem Curiæ, multis ad vitæ per-",
@@ -600,7 +554,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0070",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 20,
         "text_gold": "fectionem exemplo et doctrinis inductis, die III. Decenı-",
@@ -611,7 +565,7 @@
         "marker_id": "",
         "markers": [
           {
-            "number": 6,
+            "number": 8,
             "footnote_id": "p0070_fn_006",
             "char_offset": 50
           }
@@ -622,7 +576,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0070",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 21,
         "text_gold": "bris in pace quievit: ut dicit frater Bartholemæus.” Et",
@@ -633,7 +587,7 @@
         "marker_id": "",
         "markers": [
           {
-            "number": 7,
+            "number": 9,
             "footnote_id": "p0070_fn_007",
             "char_offset": 29
           }
@@ -644,7 +598,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0070",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 22,
         "text_gold": "Johannes Nauclerus: “ Invenio,” inquit, “ in legenda",
@@ -660,7 +614,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0070",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 23,
         "text_gold": "sancti Timothei apostoli, quod venerit in Britanniam,",
@@ -676,7 +630,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0070",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 24,
         "text_gold": "et Lucium ejus gentis regem cum tota insula ad fidem",
@@ -692,7 +646,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0070",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 25,
         "text_gold": "Christi converterit. Et illud magis concordat legendæ",
@@ -708,7 +662,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0070",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 26,
         "text_gold": "sancti Lucii, quæ habetur in ecclesia Curiensi, ubi fuit",
@@ -719,7 +673,7 @@
         "marker_id": "",
         "markers": [
           {
-            "number": 8,
+            "number": 10,
             "footnote_id": "p0070_fn_008",
             "char_offset": 42
           }
@@ -730,7 +684,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0070",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 27,
         "text_gold": "episcopus et martyrio coronatus.” Henricus Pantaleon",
@@ -764,7 +718,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0070",
         "region": "header",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 1,
         "text_gold": "CAP. III. ANTIQUITATES. 49",
@@ -969,5 +923,6 @@
       }
     ]
   },
-  "source_pdf": "00_source_pdf/JamesUssher_Britannicarum ecclesiarum antiquitates_Part1.pdf"
+  "source_pdf": "00_source_pdf/JamesUssher_Britannicarum ecclesiarum antiquitates_Part1.pdf",
+  "printed_page_num": "49"
 }
