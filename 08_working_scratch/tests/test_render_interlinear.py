@@ -101,6 +101,57 @@ def test_latest_english_handles_empty_history():
     assert ri.latest_english({}) == ""
 
 
+def test_group_by_page_follows_footnotes_across_page_span():
+    """A footnote whose anchor line is absorbed by a cross-page sentence
+    renders on the sentence's home page, not the page it was printed on.
+
+    Sentence ``seg_p0032_s0003`` is homed on p0032 and absorbs p0033's
+    line l0001 (marker ``e`` anchors there). The definition for ``e`` must
+    land on p0032 alongside its marker, and must NOT remain on p0033.
+    """
+    home_sentence = {
+        "segment_id": "seg_p0032_s0003",
+        "page_id": "p0032",
+        "segment_type": "body",
+        "seq": 3,
+        "spans_pages": ["p0032", "p0033"],
+        "source_line_ids": ["p0032_body_l0008", "p0033_body_l0001"],
+        "latin_text": "... ab He-^e",
+        "translation_history": [{"english": "... from the He-^e"}],
+    }
+    p0033_own = {
+        "segment_id": "seg_p0033_s0001",
+        "page_id": "p0033",
+        "segment_type": "body",
+        "seq": 1,
+        "spans_pages": ["p0033"],
+        "source_line_ids": ["p0033_body_l0027"],
+        "latin_text": "Piscium ritu...",
+        "translation_history": [{"english": "Like fish..."}],
+    }
+    fn_a = {
+        "segment_id": "seg_p0032_fn_001", "page_id": "p0032",
+        "segment_type": "footnote", "marker_id": "a",
+        "body_segment_id": "seg_p0032_body_l0008",
+        "latin_text": "Acts.", "translation_history": [{"english": "Acts."}],
+    }
+    fn_e = {  # printed on p0033, but its anchor was absorbed onto p0032
+        "segment_id": "seg_p0033_fn_001", "page_id": "p0033",
+        "segment_type": "footnote", "marker_id": "e",
+        "body_segment_id": "seg_p0033_body_l0001",
+        "latin_text": "Camden.", "translation_history": [{"english": "Camden."}],
+    }
+    bundles = {b.page_id: b for b in ri.group_by_page(
+        [home_sentence, p0033_own, fn_a, fn_e]
+    )}
+    p0032_markers = [f["marker_id"] for f in bundles["p0032"].footnotes]
+    p0033_markers = [f["marker_id"] for f in bundles["p0033"].footnotes]
+    # 'e' follows its marker onto p0032 and orders after 'a' (reading order).
+    assert p0032_markers == ["a", "e"]
+    # ...and is gone from p0033, which has no footnotes of its own here.
+    assert p0033_markers == []
+
+
 def test_group_by_page_sorts_body_then_footnotes_in_order():
     segments = [
         _fn_seg(2, "z", 2, "fn2 LA", "fn2 EN"),

@@ -16,9 +16,9 @@
 
 **EN**  Pseudo-Clement intimates that Linus, the first bishop of the Roman Church, ordained by Paul, was the son of Claudia.<sup><a href="#fn-seg_p0042_fn_002">h</a></sup>
 
-**LA**  Patrem vero Lini Herculanum quendam fuisse liber pontificalis asserit. Nostri Claudiam natione Britannam, et Pudentis uxorem fuisse, ex Martiale poeta colligunt: qui<sup id="fnref-p0042-i">i</sup> de Claudia ita cecinit: Claudia cœruleis cum sit Ruﬃna Britannis Edita, cur Latiæ pectora plebis habet?
+**LA**  Patrem vero Lini Herculanum quendam fuisse liber pontificalis asserit. Nostri Claudiam natione Britannam, et Pudentis uxorem fuisse, ex Martiale poeta colligunt: qui<sup id="fnref-p0042-i"><a href="#fn-seg_p0043_fn_001">i</a></sup> de Claudia ita cecinit: Claudia cœruleis cum sit Ruﬃna Britannis Edita, cur Latiæ pectora plebis habet?
 
-**EN**  The Book of the Pontiffs, however, asserts that the father of Linus was a certain Herculanus. Our own writers gather from the poet Martial that Claudia was British by nationality and the wife of Pudens; for he<sup>i</sup> sang of Claudia thus: Although Claudia Rufina is sprung from the woad-blue Britons, why does she possess the heart of the Latin people?
+**EN**  The Book of the Pontiffs, however, asserts that the father of Linus was a certain Herculanus. Our own writers gather from the poet Martial that Claudia was British by nationality and the wife of Pudens; for he<sup><a href="#fn-seg_p0043_fn_001">i</a></sup> sang of Claudia thus: Although Claudia Rufina is sprung from the woad-blue Britons, why does she possess the heart of the Latin people?
 
 *⟶ This sentence's Latin runs onto p0043; it is translated whole here.*
 
@@ -31,6 +31,10 @@
 <a id="fn-seg_p0042_fn_002"></a>**<a href="#fnref-p0042-h">^h</a>**  *LA:* lib. 7. Constitutionum apostolicarum, cap. 47.
 
 **EN:** Apostolic Constitutions, book 7, chapter 47.
+
+<a id="fn-seg_p0043_fn_001"></a>**<a href="#fnref-p0042-i">^i</a>**  *LA:* Martial. lib. 11. epigram. 53.
+
+**EN:** Martial, book 11, epigram 53.
 
 ## Reading
 
