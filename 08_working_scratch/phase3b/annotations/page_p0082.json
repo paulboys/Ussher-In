@@ -9,15 +9,15 @@
       "marker_number": 1,
       "notes": "",
       "page_id": "p0082",
-      "review_status": "draft",
+      "review_status": "locked",
+      "reviewer": "Paul Boys",
       "seq": 1,
       "source_marginalia_line_ids": [
         "p0082_marginalia_l0001"
       ],
       "source_region": "marginalia",
       "text_gold": "Cæsar. de bello Gallic. lib. 5.",
-      "text_ocr_original": "Cæsar. de bello Gallic. lib. 5.",
-      "reviewer": "Paul Boys"
+      "text_ocr_original": "Cæsar. de bello Gallic. lib. 5."
     },
     {
       "body_line_id": "p0082_body_l0001",
@@ -27,15 +27,15 @@
       "marker_number": 2,
       "notes": "",
       "page_id": "p0082",
-      "review_status": "draft",
+      "review_status": "locked",
+      "reviewer": "Paul Boys",
       "seq": 2,
       "source_marginalia_line_ids": [
         "p0082_marginalia_l0002"
       ],
       "source_region": "marginalia",
       "text_gold": "Diodor. Sicul. lib. 5. cap. 8.",
-      "text_ocr_original": "Diodor. Sicul. lib. 5. cap. 8.",
-      "reviewer": "Paul Boys"
+      "text_ocr_original": "Diodor. Sicul. lib. 5. cap. 8."
     },
     {
       "body_line_id": "p0082_body_l0002",
@@ -45,15 +45,15 @@
       "marker_number": 3,
       "notes": "",
       "page_id": "p0082",
-      "review_status": "draft",
+      "review_status": "locked",
+      "reviewer": "Paul Boys",
       "seq": 3,
       "source_marginalia_line_ids": [
         "p0082_marginalia_l0003"
       ],
       "source_region": "marginalia",
       "text_gold": "Strabo Geograph. lib. 4.",
-      "text_ocr_original": "Strabo Geograph. lib. 4.",
-      "reviewer": "Paul Boys"
+      "text_ocr_original": "Strabo Geograph. lib. 4."
     },
     {
       "body_line_id": "p0082_body_l0002",
@@ -63,15 +63,15 @@
       "marker_number": 4,
       "notes": "",
       "page_id": "p0082",
-      "review_status": "draft",
+      "review_status": "locked",
+      "reviewer": "Paul Boys",
       "seq": 4,
       "source_marginalia_line_ids": [
         "p0082_marginalia_l0004"
       ],
       "source_region": "marginalia",
       "text_gold": "Mela, de situ orbis, lib. 3. cap. 6.",
-      "text_ocr_original": "Mela, de situ orbis, lib. 3. cap. 6.",
-      "reviewer": "Paul Boys"
+      "text_ocr_original": "Mela, de situ orbis, lib. 3. cap. 6."
     },
     {
       "body_line_id": "p0082_body_l0002",
@@ -81,15 +81,15 @@
       "marker_number": 5,
       "notes": "",
       "page_id": "p0082",
-      "review_status": "draft",
+      "review_status": "locked",
+      "reviewer": "Paul Boys",
       "seq": 5,
       "source_marginalia_line_ids": [
         "p0082_marginalia_l0005"
       ],
       "source_region": "marginalia",
       "text_gold": "Sueton. in Claudio, cap. 21.",
-      "text_ocr_original": "Sueton. in Claudio, cap. 21.",
-      "reviewer": "Paul Boys"
+      "text_ocr_original": "Sueton. in Claudio, cap. 21."
     },
     {
       "body_line_id": "p0082_body_l0002",
@@ -99,15 +99,15 @@
       "marker_number": 6,
       "notes": "",
       "page_id": "p0082",
-      "review_status": "draft",
+      "review_status": "locked",
+      "reviewer": "Paul Boys",
       "seq": 6,
       "source_marginalia_line_ids": [
         "p0082_marginalia_l0006"
       ],
       "source_region": "marginalia",
       "text_gold": "Tacit. annal. lib. 12. et 14. et in vita Agricolæ.",
-      "text_ocr_original": "Tacit. annal. lib. 12. et 14. et in vita Agricolæ.",
-      "reviewer": "Paul Boys"
+      "text_ocr_original": "Tacit. annal. lib. 12. et 14. et in vita Agricolæ."
     },
     {
       "body_line_id": "p0082_body_l0002",
@@ -117,15 +117,15 @@
       "marker_number": 7,
       "notes": "",
       "page_id": "p0082",
-      "review_status": "draft",
+      "review_status": "locked",
+      "reviewer": "Paul Boys",
       "seq": 7,
       "source_marginalia_line_ids": [
         "p0082_marginalia_l0007"
       ],
       "source_region": "marginalia",
       "text_gold": "Dio Cass. lib. 60.",
-      "text_ocr_original": "Dio Cass. lib. 60.",
-      "reviewer": "Paul Boys"
+      "text_ocr_original": "Dio Cass. lib. 60."
     },
     {
       "body_line_id": "p0082_body_l0003",
@@ -135,15 +135,15 @@
       "marker_number": 8,
       "notes": "",
       "page_id": "p0082",
-      "review_status": "draft",
+      "review_status": "locked",
+      "reviewer": "Paul Boys",
       "seq": 8,
       "source_marginalia_line_ids": [
         "p0082_marginalia_l0008"
       ],
       "source_region": "marginalia",
       "text_gold": "Gildas, epist. de excid. Britann.",
-      "text_ocr_original": "Gildas, epist. de excid. Britann.",
-      "reviewer": "Paul Boys"
+      "text_ocr_original": "Gildas, epist. de excid. Britann."
     },
     {
       "body_line_id": "p0082_body_l0003",
@@ -153,15 +153,15 @@
       "marker_number": 9,
       "notes": "",
       "page_id": "p0082",
-      "review_status": "draft",
+      "review_status": "locked",
+      "reviewer": "Paul Boys",
       "seq": 9,
       "source_marginalia_line_ids": [
         "p0082_marginalia_l0009"
       ],
       "source_region": "marginalia",
-      "text_gold": "Appianus in procœmio histor. Τῆς Βρεττανίδος νήσου τὸ κράτιστον",
-      "text_ocr_original": "Appianus in procœmio histor. Τῆς Βρεττανίδος νήσου τὸ κράτιστον",
-      "reviewer": "Paul Boys"
+      "text_gold": "Appianus in procœmio histor. Τῆς Βρεττανίδος νήσου τὸ κράτιστον ἔχουσιν ὑπὲρ ἥμισυ, οὐδὲν τῆς ἄλλης δεόμενοι· Οὐ γὰρ εὔφορος αὐτοῖς ἐστὶ οὐδ’ ἣν ἔχουσι.",
+      "text_ocr_original": "Appianus in procœmio histor. Τῆς Βρεττανίδος νήσου τὸ κράτιστον"
     },
     {
       "body_line_id": "p0082_body_l0005",
@@ -171,15 +171,15 @@
       "marker_number": 10,
       "notes": "",
       "page_id": "p0082",
-      "review_status": "draft",
+      "review_status": "locked",
+      "reviewer": "Paul Boys",
       "seq": 10,
       "source_marginalia_line_ids": [
         "p0082_marginalia_l0012"
       ],
       "source_region": "marginalia",
-      "text_gold": "Julius Capitolinus, in Antonino Pio. “ Britannos per Lollium Urbicum lega-",
-      "text_ocr_original": "Julius Capitolinus, in Antonino Pio. “ Britannos per Lollium Urbicum lega-",
-      "reviewer": "Paul Boys"
+      "text_gold": "Julius Capitolinus, in Antonino Pio. “ Britannos per Lollium Urbicum legatum vicit, alio (præter illum sc. quem prius extruxerat Hadrianus) muro cespititio submotis barbaris ducto.”",
+      "text_ocr_original": "Julius Capitolinus, in Antonino Pio. “ Britannos per Lollium Urbicum lega-"
     },
     {
       "body_line_id": "p0082_body_l0016",
@@ -189,15 +189,15 @@
       "marker_number": 11,
       "notes": "",
       "page_id": "p0082",
-      "review_status": "draft",
+      "review_status": "locked",
+      "reviewer": "Paul Boys",
       "seq": 11,
       "source_marginalia_line_ids": [
         "p0082_marginalia_l0015"
       ],
       "source_region": "marginalia",
       "text_gold": "Beda, lib. 1. hist. cap. 5.",
-      "text_ocr_original": "Beda, lib. 1. hist. cap. 5.",
-      "reviewer": "Paul Boys"
+      "text_ocr_original": "Beda, lib. 1. hist. cap. 5."
     },
     {
       "body_line_id": "p0082_body_l0017",
@@ -207,15 +207,15 @@
       "marker_number": 12,
       "notes": "",
       "page_id": "p0082",
-      "review_status": "draft",
+      "review_status": "locked",
+      "reviewer": "Paul Boys",
       "seq": 12,
       "source_marginalia_line_ids": [
         "p0082_marginalia_l0016"
       ],
       "source_region": "marginalia",
-      "text_gold": "Vid. Baron. annal. tom. 2. ann. 183. sec. 6. Et Nicol. Sander. de visib.",
-      "text_ocr_original": "Vid. Baron. annal. tom. 2. ann. 183. sec. 6. Et Nicol. Sander. de visib.",
-      "reviewer": "Paul Boys"
+      "text_gold": "Vid. Baron. annal. tom. 2. ann. 183. sec. 6. Et Nicol. Sander. de visib. monarch. lib.",
+      "text_ocr_original": "Vid. Baron. annal. tom. 2. ann. 183. sec. 6. Et Nicol. Sander. de visib."
     },
     {
       "body_line_id": "p0082_body_l0019",
@@ -225,15 +225,15 @@
       "marker_number": 13,
       "notes": "",
       "page_id": "p0082",
-      "review_status": "draft",
+      "review_status": "locked",
+      "reviewer": "Paul Boys",
       "seq": 13,
       "source_marginalia_line_ids": [
         "p0082_marginalia_l0018"
       ],
       "source_region": "marginalia",
       "text_gold": "Tertullian. in lib. adversus Judæos, cap. 7.",
-      "text_ocr_original": "Tertullian. in lib. adversus Judæos, cap. 7.",
-      "reviewer": "Paul Boys"
+      "text_ocr_original": "Tertullian. in lib. adversus Judæos, cap. 7."
     },
     {
       "body_line_id": "p0082_body_l0025",
@@ -243,105 +243,15 @@
       "marker_number": 14,
       "notes": "",
       "page_id": "p0082",
-      "review_status": "draft",
+      "review_status": "locked",
+      "reviewer": "Paul Boys",
       "seq": 14,
       "source_marginalia_line_ids": [
         "p0082_marginalia_l0019"
       ],
       "source_region": "marginalia",
       "text_gold": "Gotcelinus in histor. minore vitæ Augustini. cap. 24.",
-      "text_ocr_original": "Gotcelinus in histor. minore vitæ Augustini. cap. 24.",
-      "reviewer": "Paul Boys"
-    },
-    {
-      "body_line_id": "",
-      "footnote_id": "p0082_fn_015",
-      "kind": "citation",
-      "marker_id": "",
-      "marker_number": 15,
-      "notes": "",
-      "page_id": "p0082",
-      "review_status": "draft",
-      "seq": 15,
-      "source_marginalia_line_ids": [
-        "p0082_marginalia_l0010"
-      ],
-      "source_region": "marginalia",
-      "text_gold": "ἔχουσιν ὑπὲρ ἥμισυ, οὐδὲν τῆς ἄλλης δεόμενοι· Οὐ γὰρ εὔφορος αὐτοῖς",
-      "text_ocr_original": "ἔχουσιν ὑπὲρ ἥμισυ, οὐδὲν τῆς ἄλλης δεόμενοι· Οὐ γὰρ εὔφορος αὐτοῖς",
-      "reviewer": "Paul Boys"
-    },
-    {
-      "body_line_id": "",
-      "footnote_id": "p0082_fn_016",
-      "kind": "citation",
-      "marker_id": "",
-      "marker_number": 16,
-      "notes": "",
-      "page_id": "p0082",
-      "review_status": "draft",
-      "seq": 16,
-      "source_marginalia_line_ids": [
-        "p0082_marginalia_l0011"
-      ],
-      "source_region": "marginalia",
-      "text_gold": "ἐστὶ οὐδ’ ἣν ἔχουσι.",
-      "text_ocr_original": "ἐστὶ οὐδ’ ἣν ἔχουσι.",
-      "reviewer": "Paul Boys"
-    },
-    {
-      "body_line_id": "",
-      "footnote_id": "p0082_fn_017",
-      "kind": "citation",
-      "marker_id": "",
-      "marker_number": 17,
-      "notes": "",
-      "page_id": "p0082",
-      "review_status": "draft",
-      "seq": 17,
-      "source_marginalia_line_ids": [
-        "p0082_marginalia_l0013"
-      ],
-      "source_region": "marginalia",
-      "text_gold": "tum vicit, alio (præter illum sc. quem prius extruxerat Hadrianus) muro cespi-",
-      "text_ocr_original": "tum vicit, alio (præter illum sc. quem prius extruxerat Hadrianus) muro cespi-",
-      "reviewer": "Paul Boys"
-    },
-    {
-      "body_line_id": "",
-      "footnote_id": "p0082_fn_018",
-      "kind": "citation",
-      "marker_id": "",
-      "marker_number": 18,
-      "notes": "",
-      "page_id": "p0082",
-      "review_status": "draft",
-      "seq": 18,
-      "source_marginalia_line_ids": [
-        "p0082_marginalia_l0014"
-      ],
-      "source_region": "marginalia",
-      "text_gold": "titio submotis barbaris ducto.”",
-      "text_ocr_original": "titio submotis barbaris ducto.”",
-      "reviewer": "Paul Boys"
-    },
-    {
-      "body_line_id": "",
-      "footnote_id": "p0082_fn_019",
-      "kind": "citation",
-      "marker_id": "",
-      "marker_number": 19,
-      "notes": "",
-      "page_id": "p0082",
-      "review_status": "draft",
-      "seq": 19,
-      "source_marginalia_line_ids": [
-        "p0082_marginalia_l0017"
-      ],
-      "source_region": "marginalia",
-      "text_gold": "monarch. lib.",
-      "text_ocr_original": "monarch. lib.",
-      "reviewer": "Paul Boys"
+      "text_ocr_original": "Gotcelinus in histor. minore vitæ Augustini. cap. 24."
     }
   ],
   "meta": {
@@ -356,7 +266,7 @@
     ],
     "ocr_page_summary": "Body text with several superscript footnotes connecting to footnotes at the bottom.",
     "ocr_provider_model": "gemini-3.1-pro-preview",
-    "review_status": "draft",
+    "review_status": "locked",
     "reviewer": "Paul Boys"
   },
   "page_id": "p0082",
@@ -385,7 +295,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0082",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 1,
         "text_gold": "sed pluribus regibus paruisse, ex Cæsare, Diodoro,",
@@ -427,7 +337,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0082",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 2,
         "text_gold": "Strabone, Mela, Suetonio, Tacito, Dione, ipsoque",
@@ -454,7 +364,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0082",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 3,
         "text_gold": "Gilda manifestum est: et meliorem partem insulæ jam-",
@@ -470,7 +380,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0082",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 4,
         "text_gold": "dudum in provinciam a Romanis redactam, ac non ita",
@@ -492,7 +402,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0082",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 5,
         "text_gold": "pridem sub Antonino Pio a cæteris indomitis gentibus in-",
@@ -508,7 +418,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0082",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 6,
         "text_gold": "terjecto vallo diremptam esse, norunt vel mediocriter in",
@@ -524,7 +434,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0082",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 7,
         "text_gold": "hisce studiis versati.",
@@ -540,7 +450,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0082",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 8,
         "text_gold": "Ultra vallum illud erat ea Britanniæ pars quæ Caledonia",
@@ -556,7 +466,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0082",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 9,
         "text_gold": "appellabatur, maximam hodiernæ Scotiæ partem com-",
@@ -572,7 +482,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0082",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 10,
         "text_gold": "plexa: in qua sub Victore I. Eleutheri successore, et",
@@ -588,7 +498,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0082",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 11,
         "text_gold": "Severo imperatore primum receptam esse fidem Chris-",
@@ -604,7 +514,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0082",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 12,
         "text_gold": "tianam, Scotorum tradunt historici. Quanquam au-",
@@ -620,7 +530,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0082",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 13,
         "text_gold": "thor annalium lingua Anglo-Saxonica ante sexcentos",
@@ -636,7 +546,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0082",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 14,
         "text_gold": "annos scriptorum, hanc ipsam Eleutheri et Lucii his-",
@@ -652,7 +562,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0082",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 15,
         "text_gold": "toriam ad Severi tempora referat, quem anno Domini",
@@ -674,7 +584,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0082",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 16,
         "text_gold": "CLXXXIX. imperium adeptum esse, cum Beda affirmat.",
@@ -696,7 +606,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0082",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 17,
         "text_gold": "Nec desunt, qui in hac insulæ parte quam Britanni libere",
@@ -712,7 +622,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0082",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 18,
         "text_gold": "possederunt Lucium regnasse existiment; et Tertullia-",
@@ -734,7 +644,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0082",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 19,
         "text_gold": "num hic testem advocent sub Severi imperio scribentem,",
@@ -750,7 +660,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0082",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 20,
         "text_gold": "“ Britannorum inaccessa Romanis loca Christo subdita.”",
@@ -766,7 +676,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0082",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 21,
         "text_gold": "In citeriore tamen insulæ parte a Lucio Christianam fidem",
@@ -782,7 +692,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0082",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 22,
         "text_gold": "propagatam fuisse, communis scriptorum nostrorum est sen-",
@@ -798,7 +708,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0082",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 23,
         "text_gold": "tentia: pro qua etiam facit, quod de Cambro-Britannis",
@@ -814,7 +724,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0082",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 24,
         "text_gold": "refert Gotcelinus Bertinianus monachus; eos Augustino",
@@ -836,7 +746,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0082",
         "region": "body",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 25,
         "text_gold": "Romano legato sese opposuisse, illi “ velut in acie non",
@@ -854,7 +764,7 @@
         "ocr_marginalia_anchor_index": null,
         "page_id": "p0082",
         "region": "header",
-        "review_status": "draft",
+        "review_status": "locked",
         "reviewer": "Paul Boys",
         "seq": 1,
         "text_gold": "CAP. III. ANTIQUITATES. 61",
@@ -1149,5 +1059,6 @@
       }
     ]
   },
-  "source_pdf": "00_source_pdf/JamesUssher_Britannicarum ecclesiarum antiquitates_Part1.pdf"
+  "source_pdf": "00_source_pdf/JamesUssher_Britannicarum ecclesiarum antiquitates_Part1.pdf",
+  "printed_page_num": "61"
 }
