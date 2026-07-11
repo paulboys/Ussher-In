@@ -12,6 +12,18 @@ Flag types
 ----------
 BANNED            A forbidden rendering of a glossary term appears in the
                   English. (severity: high)
+SCRIPTURE_        The English reproduces a received English Bible (KJV /
+SUBSTITUTION      Douay) instead of translating the Vulgate Latin Ussher
+                  actually printed. Ussher argues FROM the Latin wording, so
+                  reciting a remembered verse silently swaps out his
+                  evidence — and it is near-invisible in review because the
+                  received English reads beautifully. Raised by glossary
+                  entries carrying "category": "scripture". (severity: high)
+ARCHAISM          Archaic diction (thou/hath/unto/...) in a body rendering.
+                  The target register is modern academic English, so this
+                  usually means a received Bible was recited — it catches
+                  verses not yet enumerated in the glossary. (severity:
+                  medium)
 MISSING_APPROVED  The Latin term is present but no approved English
                   rendering was found — possible drift to an unlisted
                   synonym, OR a legitimate Rule 1 collapse / empty render.
@@ -48,7 +60,33 @@ _DEFAULT_SEGMENTS = Path("03_segmented_text/part1/segments_with_translations.jso
 _DEFAULT_GLOSSARY = _HERE / "glossary_ussher.jsonl"
 _DEFAULT_OUTPUT = Path("08_working_scratch/phase3b/glossary_flags.jsonl")
 
-_SEVERITY = {"BANNED": "high", "MISSING_APPROVED": "medium", "DRIFT": "info"}
+_SEVERITY = {
+    "BANNED": "high",
+    "SCRIPTURE_SUBSTITUTION": "high",
+    "ARCHAISM": "medium",
+    "MISSING_APPROVED": "medium",
+    "DRIFT": "info",
+}
+
+# Caret sentinels ('^b') mark footnote anchors in the English. They are
+# pipeline metadata, not text, and must not defeat a phrase match that
+# happens to straddle one.
+_CARET_RE = re.compile(r"\^[A-Za-z0-9]{1,2}")
+
+
+def _strip_carets(text: str) -> str:
+    return _CARET_RE.sub("", text or "")
+
+
+# Archaic English that betrays recitation of a received Bible (KJV/Douay)
+# rather than translation of Ussher's Latin. Our target register is modern
+# academic English, so any of these in a body rendering is a red flag —
+# including for verses not yet enumerated in the glossary.
+_ARCHAISM_RE = re.compile(
+    r"\b(?:thee|thou|thy|thine|ye|hath|doth|dost|saith|shalt|wilt|"
+    r"cometh|goeth|whosoever|verily|thereof|unto)\b",
+    re.IGNORECASE,
+)
 
 
 def english_for(record: dict) -> str:
@@ -79,8 +117,15 @@ def _order_key(record: dict) -> int:
 
 def _eng_pattern(s: str) -> re.Pattern:
     """Case-insensitive, word-boundaried matcher for an English rendering,
-    tolerant of a simple plural ('church' -> church/churches)."""
-    return re.compile(r"\b" + re.escape(s) + r"(?:e?s)?\b", re.IGNORECASE)
+    tolerant of a simple plural ('church' -> church/churches).
+
+    Whitespace in a multi-word phrase is matched flexibly (``\\s+``) so a
+    line-wrapped or re-spaced rendering of a scripture phrase still matches.
+    """
+    escaped = re.escape(s)
+    # re.escape may or may not backslash a space depending on version; handle both.
+    escaped = escaped.replace(r"\ ", r"\s+").replace(" ", r"\s+")
+    return re.compile(r"\b" + escaped + r"(?:e?s)?\b", re.IGNORECASE)
 
 
 def load_glossary(path: Path) -> list[dict]:
@@ -159,16 +204,42 @@ def validate(segments_path: Path, glossary: list[dict], *,
     flags: list[dict] = []
     usage: dict[str, dict[str, set]] = {e["term"]: {} for e in glossary}
     for seg in segs:
-        win = window_english(seg)
-        for e in glossary:
-            if not e["_latin_re"].search(seg["latin"]):
-                continue  # term not in this segment's Latin
+        win = _strip_carets(window_english(seg))
 
-            banned_hit = next((b for b, rx in e["_banned_re"] if rx.search(win)), None)
-            if banned_hit:
+        # Archaic English in a body rendering betrays recitation of a received
+        # Bible rather than translation of Ussher's Latin. Checked on the
+        # segment's own English (not the window) so the flag names the culprit.
+        if seg["kind"] == "body":
+            archaic = sorted({m.group(0).lower()
+                              for m in _ARCHAISM_RE.finditer(_strip_carets(seg["english"]))})
+            if archaic:
                 flags.append({
                     "segment_id": seg["seg_id"], "page_id": seg["page_id"],
-                    "term": e["term"], "flag": "BANNED", "severity": _SEVERITY["BANNED"],
+                    "term": "(archaic register)", "flag": "ARCHAISM",
+                    "severity": _SEVERITY["ARCHAISM"],
+                    "found": archaic, "expected": ["modern English"],
+                    "latin": _excerpt(seg["latin"]),
+                    "english": _excerpt(seg["english"]) or "(empty)",
+                    "note": "Archaic diction suggests a received English Bible "
+                            "(KJV/Douay) was recited instead of translating "
+                            "Ussher's Latin. Confirm against the Latin.",
+                })
+
+        # Carets are footnote-anchor sentinels, not text. A marker sitting
+        # inside a quoted verse ('A^w summo caelo') would otherwise defeat the
+        # Latin pattern and silently disable the check.
+        seg_latin = _strip_carets(seg["latin"])
+        for e in glossary:
+            if not e["_latin_re"].search(seg_latin):
+                continue  # term not in this segment's Latin
+
+            is_scripture = e.get("category") == "scripture"
+            banned_hit = next((b for b, rx in e["_banned_re"] if rx.search(win)), None)
+            if banned_hit:
+                kind = "SCRIPTURE_SUBSTITUTION" if is_scripture else "BANNED"
+                flags.append({
+                    "segment_id": seg["seg_id"], "page_id": seg["page_id"],
+                    "term": e["term"], "flag": kind, "severity": _SEVERITY[kind],
                     "found": banned_hit, "expected": e.get("approved", []),
                     "latin": _excerpt(seg["latin"]), "english": _excerpt(win),
                     "note": e.get("note", ""),
@@ -178,8 +249,12 @@ def validate(segments_path: Path, glossary: list[dict], *,
             if approved_hits:
                 for a in approved_hits:
                     usage[e["term"]].setdefault(a, set()).add(seg["seg_id"])
-            elif not banned_hit:
-                # term in Latin, no approved English in the window, nothing banned
+            elif not banned_hit and e.get("approved"):
+                # Term in Latin, no approved English in the window, nothing
+                # banned. Entries with an empty 'approved' list are
+                # banned-only detectors (e.g. scripture substitution: there is
+                # no single required rendering, only forbidden ones), so they
+                # never raise MISSING_APPROVED.
                 flags.append({
                     "segment_id": seg["seg_id"], "page_id": seg["page_id"],
                     "term": e["term"], "flag": "MISSING_APPROVED",
@@ -242,9 +317,11 @@ def main() -> int:
     if args.start_page is not None or args.end_page is not None:
         rng = f" (pages {args.start_page}-{args.end_page})"
     print(f"Wrote {len(flags)} flag(s) to {args.output}{rng}")
-    for flag in ("BANNED", "MISSING_APPROVED", "DRIFT"):
+    # Iterate _SEVERITY so a newly-added flag kind can never be silently
+    # omitted from the summary (SCRIPTURE_SUBSTITUTION was, once).
+    for flag in _SEVERITY:
         if by_flag.get(flag):
-            print(f"  {flag:16s} {by_flag[flag]:4d}  [{_SEVERITY[flag]}]")
+            print(f"  {flag:22s} {by_flag[flag]:4d}  [{_SEVERITY[flag]}]")
     return 0
 
 
