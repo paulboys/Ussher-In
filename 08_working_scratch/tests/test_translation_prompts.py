@@ -392,3 +392,71 @@ def test_build_marker_placement_prompt_includes_both_strings_and_marker():
     assert "code fence" in prompt.lower()
 
 
+
+
+# ---------------------------------------------------------------------------
+# Scripture-quotation policy (ch1 review finding)
+# ---------------------------------------------------------------------------
+
+
+def test_prompt_forbids_substituting_a_received_english_bible():
+    """Ussher quotes the Vulgate and argues from its exact wording.
+
+    The ch1 review caught the model reciting the King James text of
+    Ephesians 2:12 ("aliens from the commonwealth of Israel") instead of
+    construing the Latin in front of it. Reciting a remembered English
+    Bible silently swaps out Ussher's evidence, so the prompt must forbid
+    it for ANY received version, not just the KJV.
+    """
+    prompt = build_translation_prompt(
+        body_lines=_BODY_LATIN,
+        footnotes=_FOOTNOTE,
+        page_id="p0036",
+    )
+    assert "Vulgate" in prompt
+    # Named versions are called out so the model cannot drift to a
+    # different translation and consider the rule satisfied.
+    for version in ("KJV", "Douay", "RSV", "ESV"):
+        assert version in prompt
+    # The instruction is to translate the printed Latin.
+    assert "translate the latin" in prompt.lower()
+    # The concrete Ephesians 2:12 failure is pinned as the example.
+    assert "alienos a republica Israelis" in prompt
+
+
+def test_prompt_encodes_literal_on_grammar_idiomatic_on_idiom():
+    """The ch1 review's implicit policy, made explicit.
+
+    Alimaras consistently asked for the Latin grammar to survive (passive,
+    pluperfect, ablative absolute, litotes) while asking for idiom to be
+    rendered by sense (cucurrisse = 'hastened', not 'ran').
+    """
+    prompt = build_translation_prompt(
+        body_lines=_BODY_LATIN, footnotes=_FOOTNOTE, page_id="p0036",
+    )
+    assert "pluperfect" in prompt.lower()
+    assert "ablative absolute" in prompt.lower()
+    assert "litotes" in prompt.lower()
+    # Litotes must not be flattened -- the hedging is part of the argument.
+    assert "is not improbable" in prompt
+    # ...but idiom is rendered by sense.
+    assert "cucurrisse" in prompt
+
+
+def test_prompt_maps_historical_present_to_english_past():
+    prompt = build_translation_prompt(
+        body_lines=_BODY_LATIN, footnotes=_FOOTNOTE, page_id="p0036",
+    )
+    assert "Historical present" in prompt
+    assert "SIMPLE PAST" in prompt
+    for verb in ("praedicat", "revertitur", "indulget", "ordinantur"):
+        assert verb in prompt
+
+
+def test_prompt_forbids_retranslating_usshers_latin_echo_of_greek():
+    """Ussher quotes Greek then renders it into Latin himself; translating
+    both yields two divergent English versions of one passage (ch1 p0042)."""
+    prompt = build_translation_prompt(
+        body_lines=_BODY_LATIN, footnotes=_FOOTNOTE, page_id="p0036",
+    )
+    assert "translate it ONCE" in prompt

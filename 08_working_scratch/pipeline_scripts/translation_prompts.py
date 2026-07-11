@@ -317,6 +317,58 @@ def build_translation_prompt(
         "the source spelling and flag the choice in 'notes'."
     )
     sections.append(
+        "Literalness policy — literal on grammar, idiomatic on idiom. "
+        "Where the Latin GRAMMAR carries meaning, preserve it: keep the "
+        "passive passive ('ante acceptam fidem' = 'before the faith was "
+        "accepted', not 'before they received the faith'); keep tense "
+        "distinctions exact ('erant positi' is pluperfect = 'had been "
+        "placed', not 'were placed'); render an ablative absolute as "
+        "such ('Ruffino interprete' = 'with Rufinus as translator'); "
+        "preserve litotes and other understatement ('a vero non est "
+        "absimile' = 'is not dissimilar from the truth', NOT flattened "
+        "to 'is not improbable') — Ussher's hedging signals his degree "
+        "of confidence in a source and is part of his argument. But "
+        "where a word-for-word rendering produces misleading or "
+        "unidiomatic English, translate by SENSE ('cucurrisse' of "
+        "travel = 'hastened'/'travelled', not 'ran'). Literal on "
+        "structure; idiomatic on figure."
+    )
+    sections.append(
+        "Historical present: Latin narrative often uses the present "
+        "tense for past events ('praedicat', 'revertitur', 'indulget', "
+        "'ordinantur'). Render these in the English SIMPLE PAST ('he "
+        "preached', 'he returned', 'he granted', 'they were ordained'), "
+        "which is the natural English narrative tense. Do not carry the "
+        "Latin present into English."
+    )
+    sections.append(
+        "Ussher's own Latin rendering of a Greek quotation: Ussher "
+        "frequently quotes a Greek passage and then supplies his own "
+        "Latin translation of that same passage immediately after. When "
+        "the Latin of a unit is plainly a rendering of Greek already "
+        "quoted in an adjacent unit, translate it ONCE. Do not produce a "
+        "second, differently-worded English version of the same content; "
+        "note the duplication in 'notes' instead."
+    )
+    sections.append(
+        "Scripture quotations — translate the Latin, never recite a "
+        "remembered Bible. Ussher quotes the Vulgate, and he frequently "
+        "argues FROM its precise wording. When a quoted passage is "
+        "recognizably a verse of Scripture, you MUST still translate the "
+        "Latin actually printed in front of you. Do NOT substitute, or "
+        "drift toward, the wording of any received English version (KJV, "
+        "Douay-Rheims, RSV, ESV, or a half-remembered blend of them) — "
+        "even when you are confident you know the verse. Recalling the "
+        "familiar English instead of construing the Latin silently "
+        "replaces Ussher's evidence with a different text and can destroy "
+        "the point he is making. Example: 'alienos a republica Israelis' "
+        "must be rendered from the Latin ('foreign to the commonwealth "
+        "of Israel'), NOT reproduced as the King James 'aliens from the "
+        "commonwealth of Israel'. Translate what is on the page; if your "
+        "rendering happens to coincide with a received version because "
+        "the Latin genuinely says that, note it in 'notes'."
+    )
+    sections.append(
         "Book and treatise titles: when the source names a Latin or "
         "Greek work — typically signposted by 'libro [N]', 'liber X', "
         "'in [topic] book', or a Greek genitive title (e.g. "
