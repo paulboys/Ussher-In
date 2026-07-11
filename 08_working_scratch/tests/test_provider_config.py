@@ -28,9 +28,11 @@ def test_default_gemini_supports_ocr_and_vision():
     assert gemini.model == "gemini-3.1-pro-preview"
 
 
-def test_default_anthropic_targets_opus_4_8():
+def test_default_anthropic_targets_fable_5():
+    # ch2 run model; ch1 was claude-opus-4-8 (recorded per-unit in
+    # translation_history). Bump deliberately, never silently.
     anthropic = default_config().get("anthropic")
-    assert anthropic.model == "claude-opus-4-8"
+    assert anthropic.model == "claude-fable-5"
     assert anthropic.supports_translation is True
 
 
