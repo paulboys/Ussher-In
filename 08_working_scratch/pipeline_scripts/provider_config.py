@@ -108,7 +108,9 @@ def default_config() -> Config:
             ),
             "anthropic": ProviderConfig(
                 name="anthropic",
-                model="claude-opus-4-8",
+                # Fable 5 for the ch2 run (ch1 was claude-opus-4-8); each
+                # unit's translation_history 'model' field records provenance.
+                model="claude-fable-5",
                 base_url="https://api.anthropic.com",
                 # The Claude Code CLI streams a long-running session;
                 # 0 disables the wall-clock timeout so prompts run to
