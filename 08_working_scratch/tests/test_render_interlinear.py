@@ -477,3 +477,48 @@ def test_line_anchor_id_helper_returns_blank_for_unrecognized_segment():
     assert ri._line_anchor_id({"segment_id": "seg_p0036_fn_001"}, "p0036") == ""
     assert ri._line_anchor_id({}, "p0036") == ""
 
+
+
+def test_footnote_follows_the_caret_when_two_sentences_share_its_anchor_line():
+    """A sentence boundary can fall inside a line, leaving the line claimed
+    by two sentences with different home pages (ch2 p0059: the seam sentence
+    homed on p0058 and p0059's own first sentence both list lines
+    l0001-l0008). Line-level 'first sentence wins' shipped footnote ^p's
+    definition to p0058 while its marker rendered on p0059. The caret in the
+    Latin decides: whichever sentence carries '^p' hosts the definition."""
+    seam_sentence = {  # homed on p0058, absorbs p0059 lines, NO ^p caret
+        "segment_id": "seg_p0058_s0003",
+        "page_id": "p0058",
+        "segment_type": "body",
+        "seq": 3,
+        "spans_pages": ["p0058", "p0059"],
+        "source_line_ids": ["p0058_body_l0021", "p0059_body_l0004"],
+        "latin_text": "... in clypeo argenteo depictam tradiderit.",
+        "translation_history": [{"english": "... he delivered."}],
+    }
+    own_sentence = {  # p0059's own sentence, shares l0004, carries ^p
+        "segment_id": "seg_p0059_s0001",
+        "page_id": "p0059",
+        "segment_type": "body",
+        "seq": 1,
+        "spans_pages": ["p0059"],
+        "source_line_ids": ["p0059_body_l0004"],
+        "latin_text": "pus ante diem^p judicialem in Josaphat ...",
+        "translation_history": [{"english": "body before the day^p of judgement ..."}],
+    }
+    fn_p = {
+        "segment_id": "seg_p0059_fn_003",
+        "page_id": "p0059",
+        "segment_type": "footnote",
+        "marker_id": "p",
+        "body_segment_id": "seg_p0059_body_l0004",  # the SHARED line
+        "latin_text": "cap. 50, et 51.",
+        "translation_history": [{"english": "chs. 50 and 51."}],
+    }
+    bundles = {b.page_id: b for b in ri.group_by_page(
+        [seam_sentence, own_sentence, fn_p]
+    )}
+    # The definition must land on p0059 (the caret's sentence), not p0058
+    # (the first sentence to claim the shared anchor line).
+    assert [f["marker_id"] for f in bundles["p0059"].footnotes] == ["p"]
+    assert all(f["marker_id"] != "p" for f in bundles["p0058"].footnotes)

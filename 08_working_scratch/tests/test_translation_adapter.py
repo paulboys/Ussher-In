@@ -270,3 +270,39 @@ def test_translate_units_extracts_usage_tokens_when_present():
     )
     result = adapter.translate_units("PROMPT", expected_unit_ids=["l1"])
     assert result.usage_tokens == {"input_tokens": 42, "output_tokens": 17}
+
+
+# ---------------------------------------------------------------------------
+# CLI process failure vs malformed output (ch2 usage-exhaustion incident)
+# ---------------------------------------------------------------------------
+
+
+def test_nonzero_cli_exit_raises_cli_execution_error_not_malformed():
+    """A non-zero CLI exit means the model never produced output (usage
+    exhaustion, auth lapse, crash). Labeling it 'malformed_json' hid ten
+    consecutive usage-exhaustion failures in a ch2 run — batch runners key
+    fail-fast behaviour off category == 'cli_failure'."""
+    from translation_adapters import CLIExecutionError
+
+    def fake_runner(argv, stdin, timeout):
+        return CommandResult(stdout="", stderr="", returncode=1)
+
+    adapter = AnthropicTranslationAdapter(
+        _anthropic_provider(max_retries=0), command_runner=fake_runner
+    )
+    with pytest.raises(CLIExecutionError) as exc_info:
+        adapter.complete_text("translate this")
+    assert exc_info.value.category == "cli_failure"
+
+
+def test_garbage_stdout_still_raises_malformed_json():
+    """Exit 0 with unparseable output remains 'malformed_json' — that path
+    is a real model-output problem, not a dead provider."""
+    def fake_runner(argv, stdin, timeout):
+        return CommandResult(stdout="not json at all", returncode=0)
+
+    adapter = AnthropicTranslationAdapter(
+        _anthropic_provider(max_retries=0), command_runner=fake_runner
+    )
+    with pytest.raises(MalformedOutputError):
+        adapter.translate_units("translate this", expected_unit_ids=("u1",))

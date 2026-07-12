@@ -7872,3 +7872,29 @@ pilot_ocr.py: error: argument --part: invalid choice: 'annals_latin' (choose fro
 2026-06-17 14:09:28,312 - INFO - Successfully read payload for page_id: p0087
 2026-06-17 14:09:28,337 - INFO - Received GET request for page_id: p0087 edition: 1847_elrington_todd
 2026-06-17 14:09:28,338 - INFO - Successfully read payload for page_id: p0087
+2026-07-11 17:02:16,357 - INFO - Received GET request for page_id: p0001 edition: None
+2026-07-11 17:02:16,360 - INFO - Successfully read payload for page_id: p0001
+2026-07-11 17:02:43,232 - INFO - Received GET request for page_id: p0040 edition: 1847_elrington_todd
+2026-07-11 17:02:43,239 - INFO - Successfully read payload for page_id: p0040
+2026-07-11 17:02:50,125 - INFO - Received GET request for page_id: p0004 edition: 1847_elrington_todd
+2026-07-11 17:02:50,126 - WARNING - Page not found: p0004
+2026-07-11 17:02:51,073 - INFO - Received GET request for page_id: p0050 edition: 1847_elrington_todd
+2026-07-11 17:02:51,075 - INFO - Successfully read payload for page_id: p0050
+2026-07-11 17:03:33,007 - INFO - Received GET request for page_id: p0049 edition: 1847_elrington_todd
+2026-07-11 17:03:33,008 - INFO - Successfully read payload for page_id: p0049
+2026-07-11 17:03:36,626 - INFO - Received GET request for page_id: p0048 edition: 1847_elrington_todd
+2026-07-11 17:03:36,627 - INFO - Successfully read payload for page_id: p0048
+2026-07-11 17:03:36,674 - INFO - Received GET request for page_id: p0048 edition: 1847_elrington_todd
+2026-07-11 17:03:36,675 - INFO - Successfully read payload for page_id: p0048
+2026-07-11 17:03:40,880 - INFO - Received GET request for page_id: p0047 edition: 1847_elrington_todd
+2026-07-11 17:03:40,882 - INFO - Successfully read payload for page_id: p0047
+2026-07-11 17:03:40,962 - INFO - Received GET request for page_id: p0047 edition: 1847_elrington_todd
+2026-07-11 17:03:40,964 - INFO - Successfully read payload for page_id: p0047
+2026-07-11 17:03:44,473 - INFO - Received GET request for page_id: p0046 edition: 1847_elrington_todd
+2026-07-11 17:03:44,479 - INFO - Successfully read payload for page_id: p0046
+2026-07-11 17:03:44,542 - INFO - Received GET request for page_id: p0046 edition: 1847_elrington_todd
+2026-07-11 17:03:44,544 - INFO - Successfully read payload for page_id: p0046
+2026-07-11 17:04:17,313 - INFO - Received GET request for page_id: p0004 edition: 1847_elrington_todd
+2026-07-11 17:04:17,313 - WARNING - Page not found: p0004
+2026-07-11 17:04:18,912 - INFO - Received GET request for page_id: p0068 edition: 1847_elrington_todd
+2026-07-11 17:04:18,913 - INFO - Successfully read payload for page_id: p0068
