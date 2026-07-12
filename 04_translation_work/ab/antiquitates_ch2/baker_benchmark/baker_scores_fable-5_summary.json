@@ -1,0 +1,15 @@
+{
+  "model": "Unbabel/wmt22-comet-da",
+  "system": "fable-5",
+  "units_scored": 58,
+  "units_skipped": [
+    "seg_p0046_s0001",
+    "seg_p0050_s0007"
+  ],
+  "mean": 0.7578,
+  "median": 0.7732,
+  "stdev": 0.0739,
+  "min": 0.5527,
+  "max": 0.9662,
+  "system_score": 0.7578
+}
