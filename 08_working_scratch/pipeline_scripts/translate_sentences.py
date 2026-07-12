@@ -575,6 +575,12 @@ def _build_parser() -> argparse.ArgumentParser:
              "mix.",
     )
     p.add_argument(
+        "--model", default=None,
+        help="Override the provider's model id for this run (e.g. "
+             "claude-opus-4-8 for an A/B comparison run; pair with "
+             "--output-name so artifacts never mix).",
+    )
+    p.add_argument(
         "--output-name", default=None,
         help="Override the output JSONL filename under "
              "03_segmented_text/<part>/. Defaults to segments_sentences.jsonl "
@@ -597,6 +603,12 @@ def main(argv: Sequence[str] | None = None) -> int:
     provider = config.translation_provider()
     if args.timeout_seconds is not None:
         provider = replace(provider, timeout_seconds=float(args.timeout_seconds))
+    if args.model:
+        # Model override for A/B runs (e.g. re-translating a chapter with a
+        # different model into a separate --output-name artifact). The
+        # adapter pins --model on every CLI call, and each unit records the
+        # producing model in translation_history.
+        provider = replace(provider, model=args.model)
 
     adapter: AnthropicTranslationAdapter | None = None
     if not args.dry_run:
