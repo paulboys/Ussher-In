@@ -46,6 +46,20 @@ class MalformedOutputError(TranslationError):
     category = "malformed_json"
 
 
+class CLIExecutionError(TranslationError):
+    """The Claude CLI process itself failed (non-zero exit).
+
+    Distinct from MalformedOutputError: the model never produced output at
+    all. In practice this means usage/quota exhaustion, an auth lapse, or a
+    crashed CLI — conditions that will fail identically for EVERY subsequent
+    page, so batch runners should fail fast on repeats rather than hammer
+    retries against a dead provider. (A ch2 run mislabeled ten consecutive
+    usage-exhaustion exits as 'malformed_json' and kept going.)
+    """
+
+    category = "cli_failure"
+
+
 class TranslationPermissionError(TranslationError):
     category = "permission_denied"
 
@@ -363,8 +377,10 @@ class AnthropicTranslationAdapter:
                 lowered = stderr.lower()
                 if "permission" in lowered or "not allowed" in lowered:
                     raise TranslationPermissionError(stderr.strip())
-                # treat other non-zero exits as malformed; retry
-                last_error = MalformedOutputError(
+                # Process failure (usage exhaustion / auth / crash) — retry
+                # within this call, but surface the true category so batch
+                # runners can fail fast when it repeats across pages.
+                last_error = CLIExecutionError(
                     f"Claude CLI exited with code {result.returncode}: "
                     f"{stderr.strip()[:200]}"
                 )
@@ -420,7 +436,7 @@ class AnthropicTranslationAdapter:
             lowered = stderr.lower()
             if "permission" in lowered or "not allowed" in lowered:
                 raise TranslationPermissionError(stderr.strip())
-            raise MalformedOutputError(
+            raise CLIExecutionError(
                 f"Claude CLI exited with code {result.returncode}: "
                 f"{stderr.strip()[:200]}"
             )

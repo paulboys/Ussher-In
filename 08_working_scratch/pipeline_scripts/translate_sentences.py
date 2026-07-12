@@ -613,6 +613,14 @@ def main(argv: Sequence[str] | None = None) -> int:
         "pages": [],
     }
 
+    # Fail fast on a dead provider: consecutive CLI process failures mean
+    # usage exhaustion / an auth lapse, which will fail identically for every
+    # remaining page. Abort and let resume-by-rerun pick up later, instead of
+    # burning a retry cycle per page against a wall (a ch2 run hammered ten
+    # pages in a row this way).
+    _CLI_ABORT_AFTER = 2
+    consecutive_cli_failures = 0
+
     for pid in page_ids:
         page_log = translate_page(
             pid,
@@ -645,6 +653,24 @@ def main(argv: Sequence[str] | None = None) -> int:
 
         if not args.dry_run and status == "translated":
             write_artifact(args.part, existing)
+
+        if status == "error:cli_failure":
+            consecutive_cli_failures += 1
+            if consecutive_cli_failures >= _CLI_ABORT_AFTER:
+                run_log["aborted"] = (
+                    f"{consecutive_cli_failures} consecutive CLI process "
+                    f"failures at {pid}"
+                )
+                print(
+                    f"\nABORTING: {consecutive_cli_failures} consecutive CLI "
+                    f"process failures (usage limit exhausted? auth lapsed?). "
+                    f"Translated pages are already written; re-run the same "
+                    f"command later to resume from {pid}.",
+                    file=sys.stderr,
+                )
+                break
+        elif status != "skipped":
+            consecutive_cli_failures = 0
 
     logs_dir = _logs_dir(args.part)
     logs_dir.mkdir(parents=True, exist_ok=True)
