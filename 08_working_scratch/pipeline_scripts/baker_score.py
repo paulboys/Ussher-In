@@ -38,12 +38,41 @@ def main(argv=None) -> int:
                     default=BENCH_DIR / "baker_alignment.jsonl")
     ap.add_argument("--label", required=True,
                     help="System label for the output filenames (e.g. fable-5).")
+    ap.add_argument("--mt-segments", type=Path, default=None,
+                    help="Optional segments JSONL whose English replaces the "
+                         "alignment's mt_english by unit_id (for A/B runs: "
+                         "the SAME Baker references score a different "
+                         "system's output). Unit ids must match — the "
+                         "segmentation is deterministic from the same "
+                         "annotations, so a re-translation run aligns 1:1.")
     ap.add_argument("--batch-size", type=int, default=8)
     ap.add_argument("--gpus", type=int, default=0)
     args = ap.parse_args(argv)
 
     rows = [json.loads(l) for l in
             args.alignment.read_text(encoding="utf-8").splitlines() if l.strip()]
+
+    if args.mt_segments:
+        import re as _re
+        strip = lambda s: _re.sub(r"\^[A-Za-z0-9]{1,2}", "", s or "")
+        mt_by_id: dict[str, str] = {}
+        for line in args.mt_segments.read_text(encoding="utf-8").splitlines():
+            if not line.strip():
+                continue
+            r = json.loads(line)
+            if r.get("segment_type") == "footnote":
+                continue
+            hist = r.get("translation_history") or [{}]
+            mt_by_id[r["segment_id"]] = strip((hist[-1] or {}).get("english") or "")
+        missing = [r["unit_id"] for r in rows if r["unit_id"] not in mt_by_id]
+        if missing:
+            print(f"ERROR: --mt-segments lacks {len(missing)} unit id(s): "
+                  f"{missing[:5]} — segmentation mismatch, refusing to score "
+                  f"a partial system.", file=sys.stderr)
+            return 2
+        for r in rows:
+            r["mt_english"] = mt_by_id[r["unit_id"]]
+        print(f"MT swapped in from {args.mt_segments.name} for {len(rows)} units")
     scoreable = [r for r in rows
                  if r.get("baker_ref", "").strip() and r.get("mt_english", "").strip()]
     skipped = [r["unit_id"] for r in rows if r not in scoreable]
