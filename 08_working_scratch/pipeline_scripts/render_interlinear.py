@@ -221,14 +221,27 @@ def group_by_page(
     markers and p0033 shows orphan definitions). For the page-bounded
     line-by-line artifact the anchor line is always on its own page, so
     this is a no-op.
+
+    Resolution granularity: the footnote's ``^<marker>`` caret in a body
+    segment's Latin wins over the anchor-line map. A sentence boundary can
+    fall inside a line, leaving the line claimed by two sentences with
+    different home pages (ch2 p0059: the seam sentence from p0058 and
+    p0059's own first sentence share lines l0001–l0008; the ``^p`` caret
+    belongs to the latter). Line-level "first sentence wins" would ship the
+    definition to the wrong page, so the caret decides when present.
     """
     segments = list(segments)
 
     # Pass 1: map every source body line to the page where it is rendered
     # (the home page of the sentence that contains it) and to a global
     # reading-order rank used to keep merged footnotes in a, b, c, … order.
+    # Simultaneously map each caret symbol to the home page of the sentence
+    # whose Latin carries it, keyed by every page the sentence touches
+    # (marker symbols restart per printed page, so the printed page of the
+    # footnote disambiguates which 'p' is meant).
     line_home_page: dict[str, str] = {}
     line_order: dict[str, int] = {}
+    caret_home: dict[tuple[str, str], str] = {}
     order = 0
     body_segs = [
         s for s in segments if (s.get("segment_type") or "body") != "footnote"
@@ -249,6 +262,16 @@ def group_by_page(
                 line_home_page[key] = home
                 line_order[key] = order
                 order += 1
+        pages_touched = set(seg.get("spans_pages") or [])
+        pages_touched.add(seg.get("page_id") or "")
+        pages_touched.update(
+            m.group(1) for m in re.finditer(r"(p\d+)_", " ".join(src_lines))
+        )
+        pages_touched.discard("")
+        for m in _CARET_RE.finditer(seg.get("latin_text") or ""):
+            sym = m.group(1)
+            for pg in pages_touched:
+                caret_home.setdefault((pg, sym), home)
 
     # Pass 2: bucket records by page. Body stays on its own page (== home
     # page for sentence segments); footnotes follow their anchor line.
@@ -260,7 +283,15 @@ def group_by_page(
         seg_type = seg.get("segment_type") or "body"
         if seg_type == "footnote":
             anchor = _norm_line_id(seg.get("body_segment_id") or "")
-            page_id = line_home_page.get(anchor) or seg.get("page_id") or ""
+            printed_page = seg.get("page_id") or ""
+            marker = str(seg.get("marker_id") or "")
+            # Caret granularity first (see docstring), then the anchor-line
+            # map, then the printed page.
+            page_id = (
+                caret_home.get((printed_page, marker))
+                or line_home_page.get(anchor)
+                or printed_page
+            )
             if not page_id:
                 continue
             by_page.setdefault(page_id, {"body": [], "footnote": []})[

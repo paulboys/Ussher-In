@@ -268,3 +268,52 @@ def test_end_to_end_drag_order_propagates_through_pipeline(tmp_path, monkeypatch
         "seg_p0099_body_l0001",
         "seg_p0099_body_l0003",
     ]
+
+
+# ---------------------------------------------------------------------------
+# Resume-window seam guard (ch2 p0058/p0059 duplication incident)
+# ---------------------------------------------------------------------------
+
+
+def test_find_seam_clashes_flags_lines_owned_by_another_segment():
+    """A narrow resume window re-segments lines an earlier run's cross-page
+    sentence already absorbed. The guard must name both the new unit and the
+    owning segment so the operator widens the range."""
+    from types import SimpleNamespace
+    from translate_sentences import find_seam_clashes
+
+    existing = {
+        "seg_p0058_s0003": {
+            "segment_type": "body",
+            "source_line_ids": ["p0058_body_l0021", "p0059_body_l0004"],
+        },
+    }
+    fresh_dup = SimpleNamespace(
+        sentence_id="seg_p0059_s0001",
+        source_line_ids=["p0059_body_l0004"],  # already absorbed upstream
+    )
+    clashes = find_seam_clashes([fresh_dup], existing)
+    assert clashes == [("seg_p0059_s0001", ["seg_p0058_s0003"])]
+
+
+def test_find_seam_clashes_ignores_identical_ids_and_footnotes():
+    """Normal resume (same range) regenerates identical unit ids -- not a
+    clash. Footnote records never own body lines."""
+    from types import SimpleNamespace
+    from translate_sentences import find_seam_clashes
+
+    existing = {
+        "seg_p0059_s0001": {
+            "segment_type": "body",
+            "source_line_ids": ["p0059_body_l0009"],
+        },
+        "seg_p0059_fn_001": {
+            "segment_type": "footnote",
+            "source_line_ids": ["p0059_body_l0009"],  # pathological; ignored
+        },
+    }
+    same_unit = SimpleNamespace(
+        sentence_id="seg_p0059_s0001",
+        source_line_ids=["p0059_body_l0009"],
+    )
+    assert find_seam_clashes([same_unit], existing) == []

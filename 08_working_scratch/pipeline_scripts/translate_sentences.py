@@ -89,6 +89,43 @@ def _logs_dir(part: str) -> Path:
 # ---------------------------------------------------------------------------
 
 
+def find_seam_clashes(
+    units: Sequence,
+    existing: dict[str, dict],
+) -> list[tuple[str, list[str]]]:
+    """Resume-window guard for cross-page grouping.
+
+    Cross-page grouping only sees the pages in THIS run's range. If the
+    range starts mid-seam — an earlier run's cross-page sentence (homed
+    before the window) already absorbed the first page's leading lines —
+    those lines look like a fresh sentence to the narrow window and would
+    be segmented, translated, and merged AGAIN. (A ch2 usage-recovery
+    probe over p0059 alone duplicated eight lines already owned by
+    seg_p0058_s0003 this way.)
+
+    Returns ``[(new_unit_id, [owning_segment_ids]), ...]`` for every new
+    unit whose source lines are claimed by a DIFFERENT existing segment.
+    An identical id (the normal skip-and-resume case) is not a clash.
+    Callers should refuse to proceed on any clash: re-running with a
+    wide-enough range costs nothing, since completed pages are skipped.
+    """
+    claimed: dict[str, str] = {}
+    for sid, rec in existing.items():
+        if rec.get("segment_type") == "footnote":
+            continue
+        for lid in rec.get("source_line_ids") or []:
+            claimed[lid] = sid
+    out: list[tuple[str, list[str]]] = []
+    for u in units:
+        owners = sorted({
+            claimed[lid] for lid in u.source_line_ids
+            if lid in claimed and claimed[lid] != u.sentence_id
+        })
+        if owners:
+            out.append((u.sentence_id, owners))
+    return out
+
+
 def load_existing(part: str) -> dict[str, dict]:
     path = _output_path(part)
     if not path.exists():
@@ -596,6 +633,21 @@ def main(argv: Sequence[str] | None = None) -> int:
                 all_fns.extend(fns)
         marker_lookup = _build_marker_lookup(all_fns)
         all_units = group_pages_into_sentences(loaded, marker_lookup=marker_lookup)
+
+        clashes = find_seam_clashes(all_units, existing)
+        if clashes:
+            unit_id, owners = clashes[0]
+            homes = ", ".join(sorted({c.split("_")[1] for c in owners}))
+            print(
+                f"ERROR: lines of {unit_id} are already owned by "
+                f"{', '.join(owners)} in the existing artifact. The page "
+                f"range starts mid-seam; widen it to include the owning "
+                f"sentence's home page ({homes}) and re-run — completed "
+                f"pages are skipped automatically.",
+                file=sys.stderr,
+            )
+            return 2
+
         sentences_by_home = {pid: [] for pid in page_ids}
         for u in all_units:
             sentences_by_home.setdefault(u.page_id, []).append(u)
