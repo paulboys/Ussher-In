@@ -1,0 +1,15 @@
+{
+  "model": "Unbabel/wmt22-comet-da",
+  "system": "opus-4-8",
+  "units_scored": 58,
+  "units_skipped": [
+    "seg_p0046_s0001",
+    "seg_p0050_s0007"
+  ],
+  "mean": 0.7565,
+  "median": 0.7737,
+  "stdev": 0.076,
+  "min": 0.5419,
+  "max": 0.9662,
+  "system_score": 0.7565
+}
