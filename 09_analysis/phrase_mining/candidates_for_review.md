@@ -14,66 +14,66 @@ The medieval chroniclers Ussher cites and the persons/places named. These are th
 
 | term (variants) | count | pages | example | English rendering | note |
 |---|---|---|---|---|---|
-| galfridus monemuthensis · galfridi monemuthensis, galfrido monemuthensi | 45 | 33 | Galfridus Monemuthensis |  |  |
-| matthaeus florilegus · matthaeo florilego, matthaei florilegi | 39 | 28 | Matthaeus Florilegus |  |  |
-| johannes tinmuthensis · johannem tinmuthensem, johanne tinmuthensi, johannis tinmuthensis | 36 | 21 | Johannes Tinmuthensis |  |  |
-| guilielmus malmesburiensis · guilielmo malmesburiensi, guilielmi malmesburiensis | 33 | 18 | Guilielmus Malmesburiensis |  |  |
-| henricus huntingdoniensis · henrico huntingdoniensi | 24 | 15 | Henricus Huntingdoniensis |  |  |
-| polydorus vergilius · polydoro vergilio | 18 | 15 | Polydorus Vergilius |  |  |
-| thomas rudburnus · thomae rudburni | 17 | 11 | Thomas Rudburnus |  |  |
-| florentius wigorniensis · florentii wigorniensis, florentio wigorniensi | 17 | 8 | Florentius Wigorniensis |  |  |
-| ranulphus cestrensis · ranulpho cestrensi | 16 | 12 | Ranulphus Cestrensis |  |  |
-| hector boethius | 15 | 15 | Hector Boethius |  |  |
-| matthaeus parisiensis · matthaeo parisiensi | 15 | 12 | Matthaeus Parisiensis |  |  |
-| giraldus cambrensis · giraldo cambrensi | 14 | 10 | Giraldus Cambrensis |  |  |
-| caesar baronius | 11 | 11 | Caesar Baronius |  |  |
-| johannes caius | 11 | 11 | Johannes Caius |  |  |
-| aurelii ambrosii · aurelius ambrosius | 11 | 8 | Aurelii Ambrosii |  |  |
-| radulphus niger | 10 | 10 | Radulphus Niger |  |  |
-| johannes capgravius · johanne capgravio | 10 | 7 | Johannes Capgravius |  |  |
-| fabius ethelwerdus | 9 | 9 | Fabius Ethelwerdus |  |  |
-| matthaeus westmonasteriensis | 9 | 9 | Matthaeus Westmonasteriensis |  |  |
-| petrus equilinus · petro equilino | 9 | 6 | Petrus Equilinus |  |  |
-| jesu christi | 9 | 8 | Jesu Christi |  |  |
-| guilielmus camdenus | 8 | 8 | Guilielmus Camdenus |  |  |
-| johannes balaeus | 8 | 8 | Johannes Balaeus |  |  |
-| thomas dempsterus | 7 | 7 | Thomas Dempsterus |  |  |
-| ammiano marcellino · ammianus marcellinus | 7 | 4 | Ammiano Marcellino |  |  |
-| alphredo beverlacensi | 6 | 5 | Alphredo Beverlacensi |  |  |
-| martinus polonus | 6 | 6 | Martinus Polonus |  |  |
-| philippus bergomensis | 6 | 6 | Philippus Bergomensis |  |  |
-| ado viennensis | 6 | 6 | Ado Viennensis |  |  |
-| jesum christum | 6 | 5 | Jesum Christum |  |  |
-| davidis menevensis | 6 | 6 | Davidis Menevensis |  |  |
-| johannes hardingus | 6 | 6 | Johannes Hardingus |  |  |
-| johannes gerbrandus | 6 | 6 | Johannes Gerbrandus |  |  |
-| britannia armorica | 6 | 6 | Britannia Armorica |  |  |
-| johanne cassiano · johannes cassianus | 6 | 3 | Johanne Cassiano |  |  |
-| isidori mercatoris | 5 | 5 | Isidori Mercatoris |  |  |
-| sigebertus gemblacensis | 5 | 5 | Sigebertus Gemblacensis |  |  |
-| erricus antissiodorensis | 5 | 5 | Erricus Antissiodorensis |  |  |
-| kalendas junii | 5 | 5 | Kalendas Junii |  |  |
-| pelagius brito | 5 | 5 | Pelagius Brito |  |  |
-| guilielmus harrisonus | 5 | 5 | Guilielmus Harrisonus |  |  |
-| jacobus philippus | 5 | 5 | Jacobus Philippus |  |  |
-| johannes trithemius | 5 | 5 | Johannes Trithemius |  |  |
-| johannes leidensis | 5 | 5 | Johannes Leidensis |  |  |
-| venantius fortunatus | 4 | 4 | Venantius Fortunatus |  |  |
-| humfredus lhuydus | 4 | 4 | Humfredus Lhuydus |  |  |
-| theophili raynaudi | 4 | 4 | Theophili Raynaudi |  |  |
-| stephanus forcatulus | 4 | 4 | Stephanus Forcatulus |  |  |
-| apollinaris sidonius | 4 | 4 | Apollinaris Sidonius |  |  |
-| ambrosium aurelianum | 4 | 3 | Ambrosium Aurelianum |  |  |
-| rogerus wendoverius | 4 | 4 | Rogerus Wendoverius |  |  |
-| josepho arimathaeensi | 4 | 3 | Josepho Arimathaeensi |  |  |
-| asserio menevensi | 4 | 4 | Asserio Menevensi |  |  |
-| petrus cratepolius | 4 | 4 | Petrus Cratepolius |  |  |
-| divi constantini | 4 | 4 | Divi Constantini |  |  |
-| johannes castorius | 4 | 4 | Johannes Castorius |  |  |
-| johannes stowaeus | 4 | 4 | Johannes Stowaeus |  |  |
-| johannes nauclerus | 4 | 4 | Johannes Nauclerus |  |  |
-| johannes rossus | 4 | 4 | Johannes Rossus |  |  |
-| johannes lelandus | 4 | 4 | Johannes Lelandus |  |  |
+| britannia · britanniam, britanniae, britanniis, britannias | 524 | 122 | britannia |  |  |
+| dei · deo, deus, deum, deos | 472 | 145 | dei |  |  |
+| christi · christo, christum, christus | 385 | 171 | christi |  |  |
+| augustini · augustin, augustinus, augustino, augustinum | 345 | 68 | augustini |  |  |
+| romano · romanorum, romanis, romani, romanae | 284 | 34 | romano |  |  |
+| britannorum · britannis, britannos, britanni, britannus | 261 | 56 | britannorum |  |  |
+| johannes · johannis, johanne, johannem, johanni | 256 | 120 | johannes |  |  |
+| domini · domino, dominus, dominum, domine | 247 | 102 | domini |  |  |
+| christianae · christianam, christianorum, christiana, christianus | 185 | 32 | christianae |  |  |
+| britannica · britannicae, britannico, britannici, britannicum | 180 | 38 | britannica |  |  |
+| pelagiana · pelagianam, pelagianos, pelagianae, pelagiani | 179 | 26 | pelagiana |  |  |
+| anglorum · anglis, angli, anglos, anglus | 163 | 72 | anglorum |  |  |
+| germani · germanum, germano, germanus, german | 158 | 36 | germani |  |  |
+| lucius · lucii, lucio | 156 | 42 | lucius |  |  |
+| pelagii · pelagius, pelagio | 155 | 46 | pelagii |  |  |
+| constantini · constantinum, constantino, constantinus, constantin | 154 | 29 | constantini |  |  |
+| saxonum · saxones, saxonibus, saxonas | 152 | 48 | saxonum |  |  |
+| britonum · britones, britonibus, britonem | 150 | 68 | britonum |  |  |
+| albani · albanus, albano, albanum | 142 | 39 | albani |  |  |
+| beda · bedae, bedam | 128 | 68 | beda |  |  |
+| gildas · gildae, gilda, gildam | 121 | 40 | gildas |  |  |
+| petri · petrus, petro, petr, petrum | 121 | 28 | petri |  |  |
+| catholicae · catholica, catholicam, catholici, catholicis | 120 | 23 | catholicae |  |  |
+| angliae · anglia, angliam | 110 | 33 | angliae |  |  |
+| romae · roma, romam | 102 | 37 | romae |  |  |
+| fausti · faustum, faustus, fausto | 99 | 16 | fausti |  |  |
+| pelagium · pelag | 96 | 49 | pelagium |  |  |
+| prosper · prospero, prosperi | 94 | 41 | prosper |  |  |
+| guilielmus · guilielmi, guilielmo, guilielmum | 94 | 45 | guilielmus |  |  |
+| matthaeus · matthaeo, matthaeum, matthaei | 90 | 52 | matthaeus |  |  |
+| henricus · henrico, henrici, henricum | 90 | 26 | henricus |  |  |
+| julian · julianum, julianus, juliani, juliano | 90 | 22 | julian |  |  |
+| celestius · celestii, celestio | 89 | 27 | celestius |  |  |
+| hieronymus · hieronymi, hieronymum, hieronymo | 87 | 32 | hieronymus |  |  |
+| galliae · gallia, gallias, galliam, galliis | 84 | 26 | galliae |  |  |
+| joseph · josephi, josepho, josephus, josephum | 80 | 13 | joseph |  |  |
+| constantius · constantio, constantii | 78 | 24 | constantius |  |  |
+| david · davidis, davidem, davide, davidi | 78 | 19 | david |  |  |
+| glastoniensis · glastoniensi, glastoniensem, glastonienses, glastoniense | 76 | 27 | glastoniensis |  |  |
+| camden · camdenus, camdeno, camdeni | 76 | 36 | camden |  |  |
+| galfridus · galfridi, galfrido | 73 | 44 | galfridus |  |  |
+| arthuri · arthuro, arthurus, arthurum | 70 | 23 | arthuri |  |  |
+| augusti · august, augustae, augusto, augustam | 70 | 17 | augusti |  |  |
+| baron · baronium | 68 | 57 | baron |  |  |
+| hengistum · hengisto, hengistus, hengisti, hengist | 66 | 13 | hengistum |  |  |
+| aurelii · aurelius, aurelio | 64 | 21 | aurelii |  |  |
+| scotorum · scotum, scotos, scoti, scotus | 64 | 20 | scotorum |  |  |
+| malmesburiensis · malmesburiensi | 63 | 41 | malmesburiensis |  |  |
+| arelatensi · arelatensem, arelatensis, arelatense | 61 | 18 | arelatensi |  |  |
+| zosimo · zosimus, zosimum, zosimi | 61 | 16 | zosimo |  |  |
+| gallis · galliarum, gallos, gallorum, galli | 61 | 12 | gallis |  |  |
+| caesaris · caesar, caesarem, caesares, caesarium | 60 | 14 | caesaris |  |  |
+| lucium · lucae | 59 | 34 | lucium |  |  |
+| samsonis · samson, samsonem, samsone, samsoni | 58 | 10 | samsonis |  |  |
+| mariae · maria, mariam | 57 | 30 | mariae |  |  |
+| baronius · baronio, baronii | 56 | 33 | baronius |  |  |
+| ambrosii · ambrosio, ambrosius | 54 | 18 | ambrosii |  |  |
+| menevensis · menevensi, menevensem, menevenses | 54 | 22 | menevensis |  |  |
+| pauli · paulus, paulum, paulae | 54 | 16 | pauli |  |  |
+| lupum · lupus, lupi, lupo | 53 | 13 | lupum |  |  |
 
 ## Recurring terms & phrases (70)
 

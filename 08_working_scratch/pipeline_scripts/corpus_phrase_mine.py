@@ -243,6 +243,7 @@ def clause_tokens(text: str) -> list[list[tuple[str, str]]]:
 
 def mine(corpus: list[tuple[str, str]], *, min_count: int):
     word_count: Counter = Counter()
+    word_pages: dict[str, set] = defaultdict(set)
     # proper-noun evidence: caps when NOT clause-initial
     caps_hits: Counter = Counter()
     caps_obs: Counter = Counter()
@@ -260,6 +261,7 @@ def mine(corpus: list[tuple[str, str]], *, min_count: int):
             total_tokens += len(lows)
             for i, (surf, low) in enumerate(clause):
                 word_count[low] += 1
+                word_pages[low].add(page_id)
                 if i > 0:  # not clause-initial => caps is evidence of proper noun
                     caps_obs[low] += 1
                     if surf[:1].isupper():
@@ -331,6 +333,7 @@ def mine(corpus: list[tuple[str, str]], *, min_count: int):
         word_rows.append({
             "word": low, "count": c,
             "pct": round(100 * c / max(1, total_content), 3),
+            "pages": len(word_pages[low]),
             "proper": is_proper(low),
             "loose_key": _loose_key(low),
         })
@@ -375,7 +378,7 @@ def _write_tsv(path: Path, rows: list[dict], cols: list[str]) -> None:
 def write_outputs(out_dir: Path, words, phrases, stats, *, start, end) -> None:
     out_dir.mkdir(parents=True, exist_ok=True)
     _write_tsv(out_dir / "words.tsv", words,
-               ["word", "count", "pct", "proper", "loose_key"])
+               ["word", "count", "pct", "pages", "proper", "loose_key"])
     _write_tsv(out_dir / "phrases.tsv", phrases,
                ["phrase", "n", "count", "loglik", "pages", "proper",
                 "example", "loose_key", "head_key"])
