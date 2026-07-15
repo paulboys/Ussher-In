@@ -158,6 +158,14 @@ def test_head_key_folds_last_word():
     assert row["head_key"] == m._loose_key("arbitrio")
 
 
+def test_word_rows_carry_page_spread():
+    # The curator folds single-word proper nouns into the names worksheet and
+    # filters them by page-spread, so word rows MUST expose a "pages" count.
+    corpus = [("p0001", "gildas scripsit"), ("p0002", "gildas iterum")]
+    words = _word_index(corpus, min_count=1)
+    assert words["gildas"]["pages"] == 2
+
+
 def test_proper_noun_flag_on_midclause_capital():
     # "Roma" capitalized off clause-start twice -> flagged proper; a word only
     # ever lowercase -> not flagged.
