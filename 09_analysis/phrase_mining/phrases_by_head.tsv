@@ -1,0 +1,965 @@
+head_key	phrase	count	pages	proper	example
+aaron	beati aaron	3	2	False	beati Aaron
+abbat	historia abbatum	3	3	False	historia abbatum
+abbreviat	chronica britonum abbreviata	5	5	False	Chronica Britonum abbreviata
+academi	cantabrigiensis academiae	5	5	False	Cantabrigiensis academiae
+accepit	nomen accepit	6	6	False	nomen accepit
+advent	anglorum adventum	5	5	False	Anglorum adventum
+advent	annum adventus	3	2	False	annum adventus
+advent	britanniam adventum	3	3	False	Britanniam adventum
+advent	saxonum adventum	4	4	False	Saxonum adventum
+aelfred	gestis aelfredi	4	4	False	gestis Aelfredi
+aer	anno aerae	4	4	False	anno aerae
+aetat	anno aetatis	4	2	False	anno aetatis
+aetern	vitam aeternam	3	3	False	vitam aeternam
+afric	plenario totius africae	3	2	False	plenario totius Africae
+alban	martyris albani	3	3	False	martyris Albani
+alban	sancti albani	6	5	False	sancti Albani
+alban	sanctum albanum	3	3	False	Sanctum Albanum
+alban	sanctus albanus	3	2	False	sanctus Albanus
+alban	sanctorum albani	3	3	False	sanctorum Albani
+albanens	guilielmo albanensi	3	3	True	Guilielmo Albanensi
+albani	gildas albanius	3	3	True	Gildas Albanius
+ali	multis aliis	5	4	False	multis aliis
+ali	praeter alios	6	6	False	praeter alios
+aliud	nihil aliud	8	8	False	nihil aliud
+altar	vetusta ecclesia ante altare	3	1	False	vetusta ecclesia ante altare
+altissiodorens	germanus altissiodorensis	3	3	True	Germanus Altissiodorensis
+alypi	augustinus et alypius	3	3	False	Augustinus et Alypius
+amantissim	carissime atque amantissime	4	4	False	carissime atque amantissime
+ambrosi	aurelii ambrosii	8	8	True	Aurelii Ambrosii
+ambrosi	aurelius ambrosius	3	3	True	Aurelius Ambrosius
+ambrosi	victoria aurelii ambrosii	6	6	False	victoria Aurelii Ambrosii
+amphibal	albani et amphibali	6	6	False	Albani et Amphibali
+amphibal	coenobium in honore sancti amphibali	3	3	False	coenobium in honore sancti Amphibali
+amphibal	honore sancti amphibali	3	3	False	honore sancti Amphibali
+amphibal	sanctorum albani et amphibali	3	3	False	sanctorum Albani et Amphibali
+amphibal	sancti amphibali	9	6	False	sancti Amphibali
+angl	gente anglorum	3	3	False	gente Anglorum
+angl	gentis anglorum	3	3	False	gentis Anglorum
+angl	gestis regum anglorum	4	4	False	gestis regum Anglorum
+angl	regum anglorum	5	5	False	regum Anglorum
+angl	rex anglorum	3	2	False	rex Anglorum
+angli	regis angliae	7	6	False	regis Angliae
+anglican	lingua anglicana	3	3	False	lingua Anglicana
+anglosaxonic	annales anglosaxonici	6	6	False	Annales AngloSaxonici
+anglosaxonic	lingua anglosaxonica	3	3	False	lingua AngloSaxonica
+ann	britanniam anno	4	4	False	Britanniam anno
+ann	britannia anno	3	3	False	Britannia anno
+ann	centum annis	3	3	False	centum annis
+ann	decem annis	3	3	False	decem annis
+ann	decem annos	3	3	False	decem annos
+ann	finem anni	3	3	False	finem anni
+ann	hujus anni	5	5	False	hujus anni
+ann	multos annos	4	4	False	multos annos
+ann	quarto anno	3	3	False	quarto anno
+ann	quinquaginta annis	3	3	False	quinquaginta annis
+ann	septem annos	4	4	False	septem annos
+ann	sequente anno	3	3	False	sequente anno
+annal	author annalium	3	3	False	author annalium
+antiquissim	duobus antiquissimis	3	3	False	duobus antiquissimis
+antiquitat	glastoniensis ecclesiae antiquitate	4	4	False	Glastoniensis ecclesiae antiquitate
+antiquitat	libro de antiquitate	5	5	False	libro de antiquitate
+antissiodorens	erricus antissiodorensis	5	5	True	Erricus Antissiodorensis
+antissiodorens	robertus antissiodorensis	3	3	True	Robertus Antissiodorensis
+antonin	marci antonini	3	3	True	Marci Antonini
+apostol	ait apostolus	4	4	False	ait apostolus
+apostol	omnium apostolorum	3	3	False	omnium apostolorum
+apostol	petro apostolo	3	3	False	Petro apostolo
+apostol	petri apostoli	3	3	False	Petri apostoli
+apostol	philippus apostolus	3	3	False	Philippus apostolus
+apostol	sanctis apostolis	4	4	False	sanctis apostolis
+apostol	sancti timothei apostoli	3	3	False	sancti Timothei apostoli
+apostolic	sedis apostolicae	3	3	False	sedis apostolicae
+arbitr	liberum arbitrium	12	8	False	liberum arbitrium
+arbitri	gratia et libero arbitrio	8	7	False	gratia et libero arbitrio
+arbitri	libero arbitrio	18	15	False	libero arbitrio
+arbitri	liberi arbitrii	8	8	False	liberi arbitrii
+archiepiscop	cantuariensem archiepiscopum	3	3	False	Cantuariensem archiepiscopum
+archiepiscop	eboracensium archiepiscoporum	3	2	False	Eboracensium archiepiscoporum
+archiepiscop	londinensium archiepiscoporum	3	3	False	Londinensium archiepiscoporum
+archiepiscopatu	legionensi archiepiscopatu	3	2	False	Legionensi archiepiscopatu
+arelatens	concilio arelatensi	3	3	False	concilio Arelatensi
+arelatens	hilarium arelatensem	3	3	True	Hilarium Arelatensem
+arimathaeens	josepho arimathaeensi	4	3	True	Josepho Arimathaeensi
+arimathi	joseph ab arimathia	14	12	False	Joseph ab Arimathia
+armat	tribus millibus armatorum	3	2	False	tribus millibus armatorum
+armoric	britannia armorica	6	6	True	Britannia Armorica
+arthur	regis arthuri	5	5	False	regis Arthuri
+arthur	rex arthurus	3	3	False	rex Arthurus
+august	honorii augusti	3	3	True	Honorii Augusti
+augustin	adversus augustinum	3	3	False	adversus Augustinum
+augustin	beati augustini	3	3	False	beati Augustini
+augustin	interfuit augustinus	3	2	False	interfuit Augustinus
+augustin	majore historia vitae augustini	3	3	False	majore historia vitae Augustini
+augustin	posterioris operis contra augustin	4	4	False	posterioris operis contra Augustin
+augustin	sancti augustini	3	3	False	sancti Augustini
+augustin	vitae augustini	5	5	False	vitae Augustini
+augustin	vita augustini	3	3	False	vita Augustini
+aure	legenda aurea	4	4	False	legenda aurea
+aurel	marcum aurelium	3	3	True	Marcum Aurelium
+aureli	marci aurelii	3	3	True	Marci Aurelii
+aurelian	ambrosium aurelianum	4	3	True	Ambrosium Aurelianum
+austral	parte australi	3	2	False	parte australi
+author	eulogii author	4	4	False	eulogii author
+author	inquit author	5	5	False	inquit author
+avalloni	insula avalloniae	8	6	False	insula Avalloniae
+balae	johannes balaeus	8	8	True	Johannes Balaeus
+balbul	notkerus balbulus	3	3	True	Notkerus Balbulus
+baldoc	radulphus de baldoc	4	4	False	Radulphus de Baldoc
+baptizar	debere baptizari	3	3	False	debere baptizari
+baroni	caesar baronius	11	11	True	Caesar Baronius
+baroni	putavit baronius	3	3	False	putavit Baronius
+basilic	scribit vigilantius in libro de basilica	3	3	False	scribit Vigilantius in libro de Basilica
+bed	sicut beda	3	3	False	sicut Beda
+belgic	chronico belgico	5	5	False	chronico Belgico
+belgic	magno chronico belgico	4	4	False	magno chronico Belgico
+benedict	ordinis benedict	3	3	False	ordinis Benedict
+bergomens	jacobus philippus bergomensis	4	4	True	Jacobus Philippus Bergomensis
+bergomens	philippus bergomensis	6	6	True	Philippus Bergomensis
+bernic	regnum vero berniciorum	3	2	False	regnum vero Berniciorum
+bertinian	gotcelinus bertinianus	4	4	False	Gotcelinus Bertinianus
+beverlacens	alphredo beverlacensi	6	5	True	Alphredo Beverlacensi
+beverlacens	alphredus beverlacensis	4	3	False	Alphredus Beverlacensis
+bibliothec	cottonianae bibliothecae	3	3	False	Cottonianae bibliothecae
+bibliothec	cottoniana bibliotheca	3	3	False	Cottoniana bibliotheca
+bibliothec	habetur in bibliotheca	3	3	False	habetur in bibliotheca
+bini	severinus binius	3	3	True	Severinus Binius
+boethi	hector boethius	15	15	True	Hector Boethius
+boreal	parte boreali	3	2	False	parte boreali
+bosc	johannes bosco	3	3	True	Johannes Bosco
+bremens	adamus bremensis	3	3	True	Adamus Bremensis
+brit	pelagius brito	5	5	True	Pelagius Brito
+britanni	anglorum in britanniam	3	2	False	Anglorum in Britanniam
+britanni	dextralis britanniae	4	4	False	dextralis Britanniae
+britanni	locis britanniae	3	3	False	locis Britanniae
+britanni	majore britannia	3	3	False	majore Britannia
+britanni	millibus armatorum sibi sociatis in britanniam	3	2	False	millibus armatorum sibi sociatis in Britanniam
+britanni	misit in britanniam	3	3	False	misit in Britanniam
+britanni	regis britanniae	6	6	False	regis Britanniae
+britanni	rege britanniae	3	3	False	rege Britanniae
+britanni	regno britanniae	5	5	False	regno Britanniae
+britanni	regnavit in britannia	3	2	False	regnavit in Britannia
+britanni	rex britanniae	5	5	False	rex Britanniae
+britanni	saxonum in britanniam	3	3	False	Saxonum in Britanniam
+britanni	sociatis in britanniam	3	2	False	sociatis in Britanniam
+britanni	totam britanniam	6	5	False	totam Britanniam
+britanni	totius britanniae	8	7	False	totius Britanniae
+britanni	venerunt in britanniam	4	2	False	venerunt in Britanniam
+britannic	historia britannica	7	7	False	historia Britannica
+britannic	historiae britannicae	6	6	False	Historiae Britannicae
+britannic	regis britannici	3	3	False	regis Britannici
+britannic	regni britannici	4	4	False	regni Britannici
+briton	armoricanorum britonum	3	2	True	Armoricanorum Britonum
+briton	historia britonum	4	4	False	historia Britonum
+briton	regis britonum	6	6	False	regis Britonum
+briton	tempore britonum	4	4	False	Tempore Britonum
+cacumin	montis cacumine	3	3	False	montis cacumine
+caesar	legatis caesaris	3	3	False	legatis Caesaris
+cai	johannes caius	11	11	True	Johannes Caius
+cair	britannis cair	3	2	True	Britannis Cair
+calend	pridie calendas	3	3	False	pridie Calendas
+cambrens	giraldus cambrensis	10	10	True	Giraldus Cambrensis
+cambrens	giraldo cambrensi	4	4	True	Giraldo Cambrensi
+camden	guilielmus camdenus	8	8	True	Guilielmus Camdenus
+canonic	sanctorum canonicorum	3	3	False	sanctorum canonicorum
+cantabrigi	historiola cantabrigiae	3	3	False	historiola Cantabrigiae
+cantelup	nicolaus cantelupus	3	3	True	Nicolaus Cantelupus
+cantuariens	archiepiscopo cantuariensi	3	3	False	archiepiscopo Cantuariensi
+capgravi	johannes capgravius	7	7	True	Johannes Capgravius
+capgravi	johanne capgravio	3	3	True	Johanne Capgravio
+capgravi	johannes tinmuthensis et capgravius	3	2	False	Johannes Tinmuthensis et Capgravius
+capit	quinto capite	4	4	False	quinto capite
+capital	sententiam subiit capitalem	3	3	False	sententiam subiit capitalem
+carthaginiens	aurelio carthaginiensi	3	3	True	Aurelio Carthaginiensi
+carthaginiens	concilio carthaginiensi	3	3	False	concilio Carthaginiensi
+cassian	johanne cassiano	3	3	True	Johanne Cassiano
+cassian	johannes cassianus	3	3	True	Johannes Cassianus
+castori	johannes castorius	4	4	True	Johannes Castorius
+catalog	archiepiscoporum catalogo	6	6	False	archiepiscoporum catalogo
+catalog	scriptorum catalogo	3	3	False	scriptorum catalogo
+catalog	trevirensium archiepiscoporum catalogo	3	3	False	Trevirensium archiepiscoporum catalogo
+cathedr	arelatensi cathedra	3	3	False	Arelatensi cathedra
+cathedral	ecclesia cathedrali	3	3	False	ecclesia cathedrali
+catholic	ecclesiae catholicae	5	4	False	Ecclesiae Catholicae
+catholic	ecclesia catholica	4	4	False	ecclesia Catholica
+catholic	fidei catholicae	5	5	False	fidei Catholicae
+caxton	guilielmus caxtonus	3	3	True	Guilielmus Caxtonus
+ccccxxix	anni ccccxxix	5	5	False	anni CCCCXXIX
+ccccxxx	anno ccccxxx	3	3	False	anno CCCCXXX
+celest	pelagium atque celestium	3	3	False	Pelagium atque Celestium
+celest	pelagium celestium	4	4	True	Pelagium Celestium
+celest	pelagium et celestium	8	7	False	Pelagium et Celestium
+celesti	pelagii et celestii	5	4	False	Pelagii et Celestii
+celesti	pelagius et celestius	4	4	False	Pelagius et Celestius
+cent	anni mille centum	4	4	False	anni mille centum
+cent	mille centum	6	5	False	mille centum
+cent	passus centum	3	1	False	passus centum
+cestrens	ranulphus cestrensis	12	12	True	Ranulphus Cestrensis
+cestrens	ranulpho cestrensi	4	4	True	Ranulpho Cestrensi
+christ	adventum christi	7	6	False	adventum Christi
+christ	anno christi	18	16	False	anno Christi
+christ	annum christi	16	15	False	annum Christi
+christ	cultum christi	4	4	False	cultum Christi
+christ	domini nostri jesu christi	4	4	False	Domini nostri Jesu Christi
+christ	evangelium christi	3	3	False	evangelium Christi
+christ	fidem christi	24	22	False	fidem Christi
+christ	gratia christi	15	14	False	gratia Christi
+christ	gratiam christi	6	6	False	gratiam Christi
+christ	gratiae christi	4	4	False	gratiae Christi
+christ	jesum christum	6	5	True	Jesum Christum
+christ	jesu christi	9	8	True	Jesu Christi
+christ	passionem christi	6	6	False	passionem Christi
+christ	passione christi	3	2	False	passione Christi
+christian	accusatoribus christianorum	3	2	False	accusatoribus Christianorum
+christian	aerae christianae	6	6	False	aerae Christianae
+christian	aerae nostrae christianae	3	3	False	aerae nostrae Christianae
+christian	fidem christianam	5	5	False	fidem Christianam
+christian	fidei christianae	3	3	False	fidei Christianae
+christian	religionem christianam	5	5	False	religionem Christianam
+christian	vita christiana	4	2	False	vita Christiana
+chronic	minore chronico	3	3	False	minore chronico
+chronic	prosper in chronico	6	6	False	Prosper in chronico
+chronic	radulphus niger in chronico	3	3	False	Radulphus Niger in chronico
+civ	albanus civis	3	3	False	Albanus civis
+cler	omni clero	4	3	False	omni clero
+codic	vulgati codices	3	3	False	vulgati codices
+coenob	vetus coenobium	4	3	False	vetus coenobium
+coenobi	albanensis coenobii	3	3	False	Albanensis coenobii
+coenobi	lirinensis coenobii	4	3	False	Lirinensis coenobii
+coepiscop	fratres et coepiscopos	3	3	False	fratres et coepiscopos
+collator	prosper contra collator	3	3	False	Prosper contra collator
+collection	isidori mercatoris collectione	3	3	False	Isidori Mercatoris collectione
+collector	wintoniensis ecclesiae collector	3	3	False	Wintoniensis ecclesiae collector
+collegi	bibliotheca collegii	5	5	False	bibliotheca Collegii
+color	verisimilitudinis colore	3	3	False	verisimilitudinis colore
+concili	actis concilii	3	3	False	actis concilii
+concupiscenti	augustini de nuptiis et concupiscentia	3	3	False	Augustini de nuptiis et concupiscentia
+concupiscenti	nuptiis et concupiscentia	6	6	False	nuptiis et concupiscentia
+confessor	edvardi confessoris	4	4	False	Edvardi confessoris
+confessor	legum edvardi confessoris	3	3	False	legum Edvardi confessoris
+consentiunt	omnes consentiunt	4	4	False	omnes consentiunt
+constantin	divi constantini	4	4	True	Divi Constantini
+constantin	natum fuisse constantinum	3	3	False	natum fuisse Constantinum
+constantin	patria constantini	5	5	False	patria Constantini
+constantin	vita constantini	5	4	False	vita Constantini
+consul	plinta consulibus	3	3	False	Plinta consulibus
+consul	ter consuli	3	1	False	ter consuli
+consulat	aetii consulatum	3	3	False	Aetii consulatum
+contigit	videre contigit	4	4	False	videre contigit
+contract	hermanni contracti	3	3	True	Hermanni Contracti
+convertit	fidem convertit	3	3	False	fidem convertit
+cord	campano gramine corda	3	2	False	Campano gramine corda
+cornhill	petri in cornhill	4	2	False	Petri in Cornhill
+corp	ejus corpus	3	3	False	ejus corpus
+cottonian	bibliotheca cottoniana	10	10	False	bibliotheca Cottoniana
+cratepoli	petrus cratepolius	4	4	True	Petrus Cratepolius
+curiens	ecclesiae curiensis	4	4	False	ecclesiae Curiensis
+custodir	facile custodire	4	4	False	facile custodire
+custodir	mandata dei facile custodire	3	3	False	mandata Dei facile custodire
+damian	faganum et damianum	3	3	False	Faganum et Damianum
+damian	fagano et damiano	3	3	False	Fagano et Damiano
+dat	successor datus	3	3	False	successor datus
+david	sanctus david	4	3	False	sanctus David
+david	sancti david	3	3	False	sancti David
+de	adjutorium dei	3	2	False	adjutorium Dei
+de	adjutorio dei	5	3	False	adjutorio Dei
+de	ecclesiae dei	3	3	False	Ecclesiae Dei
+de	ecclesiam in honore sanctae dei	3	3	False	ecclesiam in honore sanctae Dei
+de	filii dei	3	3	False	filii Dei
+de	gratia dei	21	18	False	gratia Dei
+de	gratiam dei	17	15	False	gratiam Dei
+de	gratiae dei	16	16	False	gratiae Dei
+de	honorem dei	3	3	False	honorem Dei
+de	honore sanctae dei	3	3	False	honore sanctae Dei
+de	solius dei	3	2	False	solius Dei
+de	unius dei	4	4	False	unius Dei
+de	verbum dei	10	10	False	verbum Dei
+de	verbi dei	3	3	False	verbi Dei
+de	volente deo	3	3	False	volente Deo
+debit	dimitte nobis debita	4	3	False	Dimitte nobis debita
+decim	anno decimo	3	3	False	Anno decimo
+decim	capite decimo	7	6	False	capite decimo
+decuri	nobilis decurio	4	4	False	nobilis decurio
+deir	regnum deirorum	3	2	False	Regnum Deirorum
+dem	anno demum	4	4	False	Anno demum
+dempster	thomas dempsterus	7	7	True	Thomas Dempsterus
+deruvian	phaganus et deruvianus	5	3	False	Phaganus et Deruvianus
+deruvian	sanctorum phagani et deruviani	3	3	False	sanctorum Phagani et Deruviani
+deruvian	sancti phaganus et deruvianus	3	3	False	sancti Phaganus et Deruvianus
+dextral	totius dextralis	3	3	False	totius dextralis
+di	hodiernum diem	4	4	False	hodiernum diem
+diacon	paulus diaconus	4	4	False	Paulus diaconus
+dicat	virgineo deo dicatarum	3	2	False	virgineo Deo dicatarum
+dicet	radulphus de diceto	4	4	False	Radulphus de Diceto
+dicitur	loco qui dicitur	4	3	False	loco qui dicitur
+dict	nobis dictum	3	3	False	nobis dictum
+diocletian	anno diocletiani	4	4	False	anno Diocletiani
+diocletian	persecutionem diocletiani	3	3	False	persecutionem Diocletiani
+dixerit	quicunque dixerit	4	2	False	quicunque dixerit
+do	annum dom	3	3	False	annum Dom
+dogm	christi dogma	3	3	False	Christi dogma
+dogm	pelagianum dogma	4	3	False	Pelagianum dogma
+dogmat	ecclesiasticorum dogmatum	4	4	False	ecclesiasticorum dogmatum
+dogmat	pelagiana dogmata	3	3	False	Pelagiana dogmata
+dolens	samson dolensis	3	2	True	Samson Dolensis
+domin	anno ab incarnatione domini	14	13	False	anno ab incarnatione Domini
+domin	anno domini	29	27	False	anno Domini
+domin	annum domini	14	13	False	annum Domini
+domin	annum nativitate domini	3	2	False	annum nativitate Domini
+domin	anno post passionem domini	4	4	False	anno post passionem Domini
+domin	grex domini	3	3	False	grex Domini
+domin	incarnatione domini	17	16	False	incarnatione Domini
+domin	passionem domini	5	5	False	passionem Domini
+du	libros duos	3	3	False	libros duos
+dubrici	vita dubricii	6	6	False	vita Dubricii
+duc	duodecim duces	3	1	False	duodecim duces
+ducit	nos ducit	3	3	False	nos ducit
+duob	libris duobus	3	3	False	libris duobus
+duvian	fagano et duviano	4	4	False	Fagano et Duviano
+duvian	faganum et duvianum	3	3	False	Faganum et Duvianum
+eccles	omnium ecclesiarum	3	3	False	omnium ecclesiarum
+ecclesi	antiquitate glastoniensis ecclesiae	3	3	False	antiquitate Glastoniensis ecclesiae
+ecclesi	carthaginiensis ecclesiae	3	3	False	Carthaginiensis ecclesiae
+ecclesi	catholicae ecclesiae	3	2	False	Catholicae Ecclesiae
+ecclesi	combustionem ejusdem ecclesiae	3	3	False	combustionem ejusdem ecclesiae
+ecclesi	glastoniensis ecclesiae	19	17	False	Glastoniensis ecclesiae
+ecclesi	historiolae wintoniensis ecclesiae	3	3	False	historiolae Wintoniensis Ecclesiae
+ecclesi	landavensis ecclesiae	6	6	False	Landavensis Ecclesiae
+ecclesi	libro quarto de triumphis ecclesiae	3	3	False	libro quarto de triumphis Ecclesiae
+ecclesi	matris ecclesiae	3	3	False	matris Ecclesiae
+ecclesi	omnes ecclesias	5	4	False	omnes Ecclesias
+ecclesi	praedictae ecclesiae	4	4	False	praedictae ecclesiae
+ecclesi	primam ecclesiam	4	2	False	primam ecclesiam
+ecclesi	renovant ecclesias	4	4	False	renovant ecclesias
+ecclesi	romanae ecclesiae	11	10	False	Romanae Ecclesiae
+ecclesi	romana ecclesia	5	5	False	Romana Ecclesia
+ecclesi	sanctae ecclesiae	3	3	False	sanctae Ecclesiae
+ecclesi	sarisburiensis ecclesiae	3	3	False	Sarisburiensis ecclesiae
+ecclesi	statu landavensis ecclesiae	5	5	False	statu Landavensis Ecclesiae
+ecclesi	totius ecclesiae	3	3	False	totius Ecclesiae
+ecclesi	triumphis ecclesiae	7	7	False	triumphis Ecclesiae
+ecclesi	urbis ecclesia	3	3	False	urbis ecclesia
+ecclesi	vetusta ecclesia	8	5	False	vetusta ecclesia
+ecclesi	vetustam ecclesiam	5	5	False	vetustam ecclesiam
+ecclesi	wintoniensis ecclesiae	23	19	False	Wintoniensis ecclesiae
+ecclesiastic	historiae ecclesiasticae	8	8	False	historiae ecclesiasticae
+ecclesiastic	scriptorum ecclesiasticorum	3	2	False	scriptorum ecclesiasticorum
+edit	habetur editum	3	3	False	habetur editum
+edit	justello edit	3	3	False	Justello edit
+edvard	legum edvardi	4	4	False	legum Edvardi
+efficeretur	christianus efficeretur	3	2	False	Christianus efficeretur
+ej	corpus ejus	4	3	False	corpus ejus
+ej	filium ejus	4	4	False	filium ejus
+ej	frater ejus	3	3	False	frater ejus
+ej	pater ejus	4	4	False	pater ejus
+ej	regni ejus	3	3	False	regni ejus
+eleutheri	tempore eleutherii	5	5	False	tempore Eleutherii
+episcop	africanis episcopis	3	3	False	Africanis episcopis
+episcop	arelatensem episcopum	3	3	False	Arelatensem episcopum
+episcop	augustinus episcopus	4	3	False	Augustinus episcopus
+episcop	aurelii carthaginiensis episcopi	4	4	False	Aurelii Carthaginiensis episcopi
+episcop	caesaraugustani episcopi	3	3	False	Caesaraugustani episcopi
+episcop	johannes episcopus	3	3	False	Johannes episcopus
+episcop	landavensium episcoporum	3	3	False	Landavensium episcoporum
+episcop	landavensi episcopo	3	3	False	Landavensi episcopo
+episcop	londinensis episcopus	5	5	False	Londinensis episcopus
+episcop	omnes episcopos	3	3	False	omnes episcopos
+episcop	orientalium episcoporum	3	3	False	orientalium episcoporum
+episcop	pii episcopi	3	3	False	Pii episcopi
+episcop	romanum episcopum	4	4	False	Romanum episcopum
+episcop	romano episcopo	3	3	False	Romano episcopo
+episcop	septem episcopis	3	2	False	septem episcopis
+episcop	septuaginta episcoporum	4	4	False	septuaginta episcoporum
+episcopat	reiensem episcopatum	3	3	False	Reiensem episcopatum
+epistol	ctesiphontem epistola	3	2	False	Ctesiphontem epistola
+epistol	missa est epistola	3	3	False	missa est epistola
+epistol	scripta est epistola	5	5	False	scripta est epistola
+equilin	petrus equilinus	6	6	True	Petrus Equilinus
+equilin	petro equilino	3	3	True	Petro Equilino
+erudit	apostolis eruditi	3	2	False	apostolis eruditi
+erudit	vir eruditus	3	3	False	vir eruditus
+ethelwerd	fabius ethelwerdus	9	9	True	Fabius Ethelwerdus
+excessiss	vita excessisse	3	3	False	vita excessisse
+explet	integrum expleto	3	3	False	integrum expleto
+explet	necdum ad integrum expleto	3	3	False	necdum ad integrum expleto
+facien	verba faciens	8	8	False	verba faciens
+fact	mortalem factum	3	3	False	mortalem factum
+fallor	ni fallor	4	4	False	ni fallor
+faust	epistolam fausti	3	2	False	epistolam Fausti
+ferrari	philippus ferrarius	3	3	True	Philippus Ferrarius
+fid	christi fidem	6	5	False	Christi fidem
+fid	christianam fidem	3	3	False	Christianam fidem
+fid	historiae fidem	3	3	False	historiae fidem
+fide	christianae fidei	3	2	False	Christianae fidei
+fide	probatae fidei	3	3	False	probatae fidei
+fide	verae fidei	3	2	False	verae fidei
+fidel	christi fidelibus	3	3	False	Christi fidelibus
+fin	italiae finibus	3	2	False	Italiae finibus
+flet	johannes fletus	3	3	True	Johannes Fletus
+floriacens	bibliotheca floriacensi	3	3	False	bibliotheca Floriacensi
+florileg	matthaeus florilegus	30	28	True	Matthaeus Florilegus
+florileg	matthaeo florilego	6	6	True	Matthaeo Florilego
+florileg	matthaei florilegi	3	3	True	Matthaei Florilegi
+flumin	ripam fluminis	4	4	False	ripam fluminis
+forcatul	stephanus forcatulus	4	4	True	Stephanus Forcatulus
+fordon	johannes fordonus	3	3	True	Johannes Fordonus
+fortunat	venantius fortunatus	4	4	True	Venantius Fortunatus
+funct	vita functum	4	3	False	vita functum
+funct	vita functus	3	3	False	vita functus
+fundat	nomine fundata	3	2	False	nomine fundata
+garlandi	johannes de garlandia	5	5	False	Johannes de Garlandia
+garsi	alphonsus garsias	3	3	True	Alphonsus Garsias
+gemblacens	sigebertus gemblacensis	5	5	True	Sigebertus Gemblacensis
+gemin	duobus geminis	3	2	False	duobus geminis
+gen	humanum genus	4	4	False	humanum genus
+gen	omne hominum genus	3	3	False	omne hominum genus
+genetric	dei genetricis	6	6	False	Dei genetricis
+gent	britannicae gentis	3	3	False	Britannicae gentis
+gent	omnibus gentibus	4	4	False	omnibus gentibus
+gent	scoticae gentis	3	2	False	Scoticae gentis
+gent	solus forte romanae gentis	3	2	False	solus forte Romanae gentis
+gerbrand	johannes gerbrandus	6	6	True	Johannes Gerbrandus
+german	sancto germano	4	4	False	sancto Germano
+german	sanctus germanus	3	3	False	sanctus Germanus
+german	sancti germani	3	3	False	Sancti Germani
+germani	libello de sanctis germaniae	3	3	False	libello de sanctis Germaniae
+germani	sanctis germaniae	3	3	False	sanctis Germaniae
+gessit	consulatum gessit	3	3	False	consulatum gessit
+gest	rebus gestis	4	4	False	rebus gestis
+gest	synodi gestis	3	3	False	synodi gestis
+glastoni	abbates in glastonia	3	1	False	abbates in Glastonia
+glastoniens	magna glastoniensis	5	4	False	magna Glastoniensis
+glocestrens	robertus glocestrensis	3	3	True	Robertus Glocestrensis
+gradu	aetatis gradu	3	3	False	aetatis gradu
+grati	anno gratiae	18	14	False	anno gratiae
+grati	annum gratiae	5	5	False	annum gratiae
+grati	dei gratiam	17	14	False	Dei gratiam
+grati	dei gratia	8	8	False	Dei gratia
+grati	divinae gratiae	5	5	False	divinae gratiae
+grati	implere per gratiam	3	2	False	implere per gratiam
+grati	inimicos gratiae	7	6	False	inimicos gratiae
+grati	natura et gratia	3	3	False	natura et gratia
+haben	suffraganeos habens	3	1	False	suffraganeos habens
+haber	nos habere	3	2	False	nos habere
+haeres	pelagiana haeresis	6	6	False	Pelagiana haeresis
+haeres	pelagiana haeresi	4	4	False	Pelagiana haeresi
+haerese	pelagianae haereseos	6	6	False	Pelagianae haereseos
+haeresi	pelagianam haeresim	18	16	False	Pelagianam haeresim
+harding	johannes hardingus	6	6	True	Johannes Hardingus
+harfeldi	thomas harfeldius	3	3	True	Thomas Harfeldius
+harpsfeldi	nicolaus harpsfeldius	3	3	True	Nicolaus Harpsfeldius
+harrison	guilielmus harrisonus	5	5	True	Guilielmus Harrisonus
+helen	legenda helenae	3	3	False	legenda Helenae
+henric	tempus henrici	4	3	False	tempus Henrici
+hermianens	facundus hermianensis	3	3	True	Facundus Hermianensis
+hid	duodecim hidas	3	3	False	duodecim hidas
+hieronym	beatus hieronymus	3	3	False	beatus Hieronymus
+hieronym	scripsit hieronymus	3	3	False	scripsit Hieronymus
+histor	floribus historiarum	3	3	False	floribus historiarum
+histori	britannica historia	9	9	False	Britannica historia
+histori	britannicae historiae	5	5	False	Britannicae historiae
+histori	ecclesiasticae suae historiae	4	4	False	ecclesiasticae suae historiae
+histori	galfridi monemuthensis historia	4	4	False	Galfridi Monemuthensis historia
+histori	libro primo historiae	3	3	False	libro primo historiae
+histori	libro secundo historiae	3	3	False	libro secundo historiae
+histori	majore historia	5	4	False	majore historia
+histori	roffensis historiae	3	3	False	Roffensis historiae
+histori	suae historiae	7	7	False	suae historiae
+historial	speculo historiali	3	3	False	speculo historiali
+historiol	ecclesiae historiola	6	6	False	ecclesiae historiola
+historiol	wintoniensis ecclesiae historiola	5	5	False	Wintoniensis ecclesiae historiola
+hom	omnis homo	3	3	False	omnis homo
+hom	potest homo	5	4	False	potest homo
+homin	millia hominum	3	3	False	millia hominum
+homin	omne hominum	4	4	False	omne hominum
+homin	omnes homines	3	3	False	omnes homines
+homin	posse esse hominem	5	4	False	Posse esse hominem
+homin	posse hominem	6	6	False	posse hominem
+honor	ecclesiam in honore	5	4	False	ecclesiam in honore
+hors	hengisti et horsi	5	2	False	Hengisti et Horsi
+hoveden	rogerus hovedenus	3	3	True	Rogerus Hovedenus
+human	genus humanum	5	3	False	genus humanum
+human	omne genus humanum	3	2	False	omne genus humanum
+huntingdoniens	henricus huntingdoniensis	16	15	True	Henricus Huntingdoniensis
+huntingdoniens	henrico huntingdoniensi	8	8	True	Henrico Huntingdoniensi
+imperator	theodosii imperatoris	4	3	False	Theodosii imperatoris
+imperfect	operis imperfecti	3	3	False	operis imperfecti
+imperi	gallorum imperio	3	3	False	Gallorum imperio
+imperi	orientalis imperii	3	3	False	Orientalis imperii
+imperi	romanorum imperio	3	3	False	Romanorum imperio
+imperi	romani imperii	3	3	False	Romani imperii
+imperi	utrius que imperii	3	3	False	utrius que imperii
+in	rex ina	3	2	False	rex Ina
+incarnation	anno ab incarnatione	17	15	False	anno ab incarnatione
+incarnation	anno dominicae incarnationis	10	9	False	anno Dominicae Incarnationis
+incarnation	dominicae incarnationis	15	13	False	Dominicae Incarnationis
+iniiss	regnum iniisse	3	3	False	regnum iniisse
+insul	alanus de insulis	5	5	False	Alanus de insulis
+insul	britanniam insulam	3	3	False	Britanniam insulam
+insul	britannia insula	3	3	False	Britannia insula
+insul	parte insulae	4	4	False	parte insulae
+insul	totam insulam	3	3	False	totam insulam
+jacob	philippi et jacobi	5	4	False	Philippi et Jacobi
+jacob	sanctorum philippi et jacobi	4	3	False	sanctorum Philippi et Jacobi
+jacob	timasius et jacobus	3	3	False	Timasius et Jacobus
+johann	episcopus johannes	3	2	False	episcopus Johannes
+johann	inquit johannes	3	3	False	inquit Johannes
+johann	secutus johannes	6	6	False	secutus Johannes
+joseph	vita josephi	5	3	False	vita Josephi
+julian	operis contra julian	6	4	False	operis contra Julian
+julian	prioris operis contra julian	3	2	False	prioris operis contra Julian
+juni	kalendas junii	5	5	True	Kalendas Junii
+junior	theodosii junioris	4	3	False	Theodosii junioris
+labor	manuum labore	3	3	False	manuum labore
+lancarvanens	caradocus lancarvanensis	3	3	True	Caradocus Lancarvanensis
+landavens	regesto landavensi	7	6	False	regesto Landavensi
+legation	hujus legationis	5	5	False	hujus legationis
+legation	missa legatione	3	2	False	missa legatione
+legim	chronico legimus	4	4	False	chronico legimus
+legim	scotichronico legimus	3	3	False	Scotichronico legimus
+legim	tabula legimus	3	3	False	tabula legimus
+legion	urbis legionum	10	10	False	urbis legionum
+legion	urbe legionum	7	5	False	urbe legionum
+legion	urbem legionum	4	4	False	urbem legionum
+legitur	scripta legitur	3	3	False	scripta legitur
+leidens	johannes leidensis	5	5	True	Johannes Leidensis
+leland	johannes lelandus	4	4	True	Johannes Lelandus
+lhuyd	humfredus lhuydus	4	4	True	Humfredus Lhuydus
+libell	ecclesiae libello	3	3	False	ecclesiae libello
+liber	gratia dei et libero	3	3	False	gratia Dei et libero
+libertat	arbitrii libertatem	7	5	False	arbitrii libertatem
+libr	ecclesiasticae suae historiae libro	3	3	False	ecclesiasticae suae historiae libro
+libr	eulogii sui libro	4	4	False	eulogii sui libro
+libr	historiarum libro	3	3	False	historiarum libro
+libr	historiae libro	8	8	False	historiae libro
+libr	initio libri	3	3	False	initio libri
+libr	scribit vigilantius in libro	3	3	False	scribit Vigilantius in libro
+libr	vigilantius in libro	5	5	False	Vigilantius in libro
+lipsi	justus lipsius	3	3	False	Justus Lipsius
+liter	missae sunt literae	3	3	False	missae sunt literae
+loc	diversis locis	3	3	False	diversis locis
+londinens	baldoc londinensis	3	3	True	Baldoc Londinensis
+londinens	civitate londinensi	3	2	False	civitate Londinensi
+luci	rege lucio	6	5	False	rege Lucio
+luci	rex lucius	6	5	False	rex Lucius
+luci	tempore lucii	3	3	False	tempore Lucii
+lup	germano et lupo	5	5	False	Germano et Lupo
+lup	germanum et lupum	4	4	False	Germanum et Lupum
+lup	germani et lupi	3	3	False	Germani et Lupi
+lutzenburgi	bernardus lutzenburgius	3	3	True	Bernardus Lutzenburgius
+m	samsonis ms	3	1	True	Samsonis MS
+magister	palatii magister	3	3	False	Palatii magister
+magn	constantini magni	11	10	False	Constantini magni
+magn	constantino magno	4	4	False	Constantino magno
+magn	constantinum magnum	3	3	False	Constantinum Magnum
+magn	tabula magna	3	3	False	Tabula magna
+major	historia majore	3	3	False	historia majore
+major	johannes major	5	5	False	Johannes Major
+malmesburiens	guilielmus malmesburiensis	19	18	True	Guilielmus Malmesburiensis
+malmesburiens	guilielmo malmesburiensi	8	8	True	Guilielmo Malmesburiensi
+malmesburiens	guilielmi malmesburiensis	6	5	True	Guilielmi Malmesburiensis
+mandat	ejus mandatum	4	4	False	ejus mandatum
+manu	alia manu	4	4	False	alia manu
+mar	insulam mari	3	3	False	insulam mari
+mar	insulam mari usque ad mare	3	3	False	insulam mari usque ad mare
+mar	mari usque ad mare	4	4	False	mari usque ad mare
+marcellin	ammiano marcellino	4	4	True	Ammiano Marcellino
+marcellin	ammianus marcellinus	3	3	True	Ammianus Marcellinus
+mari	dei genetricis mariae	5	5	False	Dei genetricis Mariae
+mari	sancta maria	3	3	False	sancta Maria
+mari	sanctae mariae	3	3	False	sanctae Mariae
+mari	virginis mariae	7	7	False	virginis Mariae
+marti	idus martii	3	3	True	Idus Martii
+marti	mense martio	3	3	False	mense Martio
+martyr	albani martyris	4	3	False	Albani martyris
+martyr	albani martyrium	3	3	False	Albani martyrium
+martyr	beati martyris	4	4	False	beati martyris
+martyr	julii martyris	3	2	False	Julii martyris
+martyr	sanctorum martyrum	5	5	False	sanctorum martyrum
+martyrologi	bedae martyrologio	3	3	False	Bedae martyrologio
+martyrologi	romanae ecclesiae martyrologio	3	3	False	Romanae Ecclesiae martyrologio
+martyrologi	romano martyrologio	3	3	False	Romano martyrologio
+massiliens	honoratus massiliensis	3	3	True	Honoratus Massiliensis
+matr	suae matris	4	4	False	suae matris
+maxim	constantini maximi	5	2	True	Constantini Maximi
+maxim	loco natali constantini maximi	3	2	False	loco natali Constantini Maximi
+mcccclx	annum mcccclx	3	3	False	annum MCCCCLX
+me	deo meo	3	2	False	Deo meo
+memori	beatae memoriae	5	5	False	beatae memoriae
+memori	sanctae memoriae	6	6	False	Sanctae memoriae
+menevens	asserio menevensi	4	4	True	Asserio Menevensi
+menevens	davidis menevensis	6	6	True	Davidis Menevensis
+ment	humanae mentis	3	3	False	humanae mentis
+menti	facta est mentio	4	4	False	facta est mentio
+menti	facta habetur mentio	3	3	False	facta habetur mentio
+menti	fit mentio	3	3	False	fit mentio
+mercator	isidori mercatoris	5	5	True	Isidori Mercatoris
+merssae	petrus merssaeus	3	3	True	Petrus Merssaeus
+mill	passuum millibus	4	4	False	passuum millibus
+minor	chronico minore	3	3	False	chronico minore
+misit	britanniam misit	3	3	False	Britanniam misit
+mod	mirum in modum	3	3	False	mirum in modum
+monach	glastoniensium monachorum	3	2	False	Glastoniensium monachorum
+monach	malmesburiensis monachus	3	3	False	Malmesburiensis monachus
+monasteri	glastoniensis monasterii	5	4	False	Glastoniensis monasterii
+monasteri	lirinensis monasterii	3	3	False	Lirinensis monasterii
+monasteri	situs monasterii	3	3	False	Situs monasterii
+monemuthens	britannica galfridi monemuthensis	3	3	True	Britannica Galfridi Monemuthensis
+monemuthens	galfridus monemuthensis	34	33	True	Galfridus Monemuthensis
+monemuthens	galfridi monemuthensis	7	7	True	Galfridi Monemuthensis
+monemuthens	galfrido monemuthensi	4	4	True	Galfrido Monemuthensi
+mor	solito more	3	3	False	solito more
+ms	duobus mss	3	3	False	duobus MSS
+mult	alia multa	3	3	False	alia multa
+mund	aetate mundi	3	3	False	aetate mundi
+narrat	rem narrat	3	3	False	rem narrat
+naucler	johannes nauclerus	4	4	True	Johannes Nauclerus
+nav	longis navibus	5	5	False	longis navibus
+nav	tribus longis navibus	3	3	False	tribus longis navibus
+necess	confiteri necesse	3	1	False	confiteri necesse
+niger	radulphus niger	10	10	True	Radulphus Niger
+nigr	radulpho nigro	3	2	True	Radulpho Nigro
+nini	inquit ninius	3	3	False	inquit Ninius
+nomen	christi nomen	3	3	False	Christi nomen
+nomen	clerici nomen	3	2	False	clerici nomen
+nomen	cujus nomen	4	4	False	cujus nomen
+nomen	gildae nomen	5	5	False	Gildae nomen
+nomen	pelagii nomen	3	3	False	Pelagii nomen
+nomin	christi nomine	3	3	False	Christi nomine
+nomin	ejus nominis	4	4	False	ejus nominis
+nomin	ejus nomine	4	4	False	ejus nomine
+nomin	falso gildae nomine	3	3	False	falso Gildae nomine
+non	libro nono	3	3	False	libro nono
+nostr	deo nostro	3	3	False	Deo nostro
+nostr	dominum nostrum	5	4	False	Dominum nostrum
+nostr	jesum christum dominum nostrum	3	2	False	Jesum Christum Dominum nostrum
+novembr	calendas novembris	3	3	True	Calendas Novembris
+nupti	augustini de nuptiis	3	3	False	Augustini de nuptiis
+obiiss	mortem obiisse	3	3	False	mortem obiisse
+occident	orientis et occidentis	3	3	False	orientis et occidentis
+oct	decem et octo	3	3	False	decem et octo
+oct	viginti et octo	6	5	False	viginti et octo
+oct	viginti octo	5	4	False	viginti octo
+octav	capite octavo	4	4	False	capite octavo
+octobr	calendas octobris	3	3	True	Calendas Octobris
+octogint	mille centum et octoginta	3	3	False	mille centum et octoginta
+omn	aliis omnibus	5	5	False	aliis omnibus
+oper	ejus opera	3	3	False	ejus opera
+oper	imperfecti operis	4	4	False	imperfecti operis
+oper	posterioris operis	5	5	False	posterioris operis
+oper	prioris operis	3	2	False	prioris operis
+oration	soluta oratione	3	3	False	soluta oratione
+orb	terrarum orbem	3	3	False	terrarum orbem
+orb	toto orbe	4	4	False	toto orbe
+orb	totum orbem	3	3	False	totum orbem
+orb	totius orbis	9	9	False	totius orbis
+orb	universum orbem	4	4	False	universum orbem
+original	peccato originali	3	3	False	peccato originali
+orosi	paulus orosius	3	3	True	Paulus Orosius
+pac	quieta in pace	3	3	False	quieta in pace
+pagan	reges pagani	3	3	False	reges pagani
+palaestin	gestis palaestinis	7	7	False	gestis Palaestinis
+palaestin	gestis palaestin	6	6	False	gestis Palaestin
+panvini	onuphrius panvinius	3	3	True	Onuphrius Panvinius
+pap	eleutheri papae	4	3	False	Eleutheri papae
+pap	eleutherii papae	7	7	False	Eleutherii papae
+pap	eleutherius papa	4	4	False	Eleutherius papa
+pap	eleutherio papa	4	3	False	Eleutherio papa
+pap	innocentium papam	3	3	False	Innocentium papam
+pap	tempore eleutherii papae	4	4	False	tempore Eleutherii papae
+parisiens	matthaeus parisiensis	12	12	True	Matthaeus Parisiensis
+parisiens	matthaeo parisiensi	3	3	True	Matthaeo Parisiensi
+part	britanniae parte	4	3	False	Britanniae parte
+part	illis partibus	3	3	False	illis partibus
+part	insulae parte	4	3	False	insulae parte
+part	magna ex parte	5	5	False	magna ex parte
+part	occidentali parte	3	3	False	occidentali parte
+part	orientali parte	4	4	False	orientali parte
+part	primas partes	3	1	False	primas partes
+part	utraque parte	3	3	False	utraque parte
+passion	anno post passionem	5	5	False	anno post passionem
+passu	millia passuum	5	4	False	millia passuum
+pater	cujus pater	6	4	False	cujus pater
+patr	bibliothecae patrum	4	3	False	bibliothecae patrum
+patr	mortem patris	3	3	False	mortem patris
+patr	sanctorum patrum	3	3	False	sanctorum patrum
+patrici	sancti patricii	3	2	False	sancti Patricii
+patrici	vita patricii	5	5	False	vita Patricii
+paul	petro et paulo	3	3	False	Petro et Paulo
+peccat	absque peccato	4	4	False	absque peccato
+peccat	habere peccatum	4	2	False	habere peccatum
+peccat	homo sine peccato	5	4	False	homo sine peccato
+peccat	hominem sine peccato	13	7	False	hominem sine peccato
+peccat	originali peccato	4	3	False	originali peccato
+peccat	originalis peccati	3	3	False	originalis peccati
+peccat	originale peccatum	3	3	False	originale peccatum
+peccat	posse esse hominem sine peccato	5	4	False	Posse esse hominem sine peccato
+peccat	posse esse sine peccato	4	4	False	posse esse sine peccato
+peccat	potest homo sine peccato	3	3	False	potest homo sine peccato
+peccat	remissionem peccatorum	4	2	False	remissionem peccatorum
+pelag	adversus pelagium	5	4	False	adversus Pelagium
+pelagian	adversus pelagianos	7	7	False	adversus Pelagianos
+pelagian	episcopi pelagiani	3	2	False	episcopi Pelagiani
+pelagian	haeresis pelagiana	3	3	False	haeresis Pelagiana
+pelagian	haeresim pelagianam	4	4	False	haeresim Pelagianam
+pensil	tabula pensili	3	2	False	tabula pensili
+perfidi	ariana perfidia	3	3	False	Ariana perfidia
+pergit	narrare pergit	3	3	False	narrare pergit
+perseveranti	dono perseverantiae	3	3	False	dono perseverantiae
+petr	basilica petri	5	5	False	Basilica Petri
+petr	libro de basilica petri	5	5	False	libro de Basilica Petri
+petr	sancti petri	4	3	False	sancti Petri
+petr	suffridus petrus	3	3	True	Suffridus Petrus
+petr	vigilantius in libro de basilica petri	5	5	False	Vigilantius in libro de Basilica Petri
+phagan	sanctorum phagani	3	3	False	sanctorum Phagani
+phagan	sancti phaganus	3	3	False	sancti Phaganus
+philipp	beato philippo	3	2	False	beato Philippo
+philipp	jacobus philippus	5	5	True	Jacobus Philippus
+philipp	sanctorum philippi	4	3	False	sanctorum Philippi
+pi	antonino pio	3	2	True	Antonino Pio
+pi	antonini pii	3	2	True	Antonini Pii
+plumbe	lamina plumbea	3	2	False	lamina plumbea
+plur	alia plura	3	2	False	alia plura
+polon	martinus polonus	6	6	True	Martinus Polonus
+pontific	gestis pontificum	6	6	False	gestis pontificum
+pontific	romani pontificis	5	5	False	Romani pontificis
+pontific	romano pontifice	5	4	False	Romano pontifice
+pontific	romanum pontificem	4	4	False	Romanum pontificem
+poss	dei posse	3	3	False	Dei posse
+poss	hominem posse	4	4	False	hominem posse
+potest	vitari potest	8	2	False	vitari potest
+potestat	arbitrii potestatem	3	3	False	arbitrii potestatem
+presbyt	lucidum presbyterum	3	3	False	Lucidum presbyterum
+presbyter	lucidi presbyteri	3	2	False	Lucidi presbyteri
+presbyter	timothei presbyteri	4	2	False	Timothei presbyteri
+prim	britanniam primam	3	3	False	Britanniam primam
+prim	libri primi	4	4	False	libri primi
+product	rem producto	4	4	False	rem producto
+protomartyr	albani anglorum protomartyris	3	3	False	Albani Anglorum protomartyris
+protomartyr	anglorum protomartyris	4	4	False	Anglorum protomartyris
+providenti	divina providentia	5	5	False	divina providentia
+provinci	germaniae provinciis	3	2	False	Germaniae provinciis
+pulver	massam pulveris	3	2	False	massam pulveris
+quaerend	iterum quaerendum	12	3	False	Iterum quaerendum
+quart	capite quarto	5	5	False	capite quarto
+quart	decimo quarto	3	3	False	decimo quarto
+quart	libro quarto	10	9	False	libro quarto
+quart	libri quarti	3	3	False	libri quarti
+quid	nescio quid	3	3	False	nescio quid
+quin	viginti et quinque	4	4	False	viginti et quinque
+quinquagesim	capite quinquagesimo	3	3	False	capite quinquagesimo
+quint	capite quinto	5	5	False	capite quinto
+quint	decimo quinto	6	6	False	decimo quinto
+quint	libro quinto	10	9	False	libro quinto
+rati	temporum ratio	4	4	False	temporum ratio
+ration	temporis ratione	4	4	False	temporis ratione
+raynaud	theophili raynaudi	4	4	True	Theophili Raynaudi
+re	cujus rei	3	3	False	Cujus rei
+re	hujus rei	7	7	False	hujus rei
+recordation	sanctae recordationis	3	3	False	sanctae recordationis
+reg	anglorum regis	8	7	False	Anglorum regis
+reg	anglorum regem	6	4	False	Anglorum regem
+reg	arthuri regis	6	6	False	Arthuri regis
+reg	arthuro rege	4	4	False	Arthuro rege
+reg	britannorum rege	4	4	False	Britannorum rege
+reg	britannorum regis	3	3	False	Britannorum regis
+reg	britanniae regem	3	3	False	Britanniae regem
+reg	britonum rege	3	3	False	Britonum rege
+reg	castellani regis	3	3	False	Castellani regis
+reg	filiam regis	3	3	False	filiam regis
+reg	lucium regem	10	9	False	Lucium regem
+reg	lucii regis	15	14	False	Lucii regis
+reg	lucio rege	8	8	False	Lucio rege
+reg	lucio regi	3	3	False	Lucio regi
+reg	offa rege	3	3	False	Offa rege
+reg	prophetam regem	4	1	False	prophetam regem
+region	transmarinas petebant regiones	3	1	False	transmarinas petebant regiones
+regn	anno regni	6	6	False	anno regni
+regn	armoricum regnum	3	3	False	Armoricum regnum
+regn	britanniae regnum	3	3	False	Britanniae regnum
+regn	hujus regni	3	3	False	hujus regni
+regn	lucii regno	3	3	False	Lucii regno
+regn	totius regni	3	3	False	Totius regni
+religion	christianam religionem	6	6	False	Christianam religionem
+religion	christianae religioni	5	5	False	Christianae religioni
+religion	christianae religionis	4	4	False	Christianae religionis
+religion	totius religionis	3	3	False	totius religionis
+religios	duos religiosos	4	3	False	duos religiosos
+reliqui	albani reliquias	4	4	False	Albani reliquias
+retinet	nomen retinet	3	3	False	nomen retinet
+rex	britanniae rex	5	4	False	Britanniae rex
+rex	jacet sepultus inclitus rex	3	2	False	jacet sepultus inclitus Rex
+rex	lucius britannorum rex	3	3	False	Lucius Britannorum rex
+rex	lucius britanniae rex	3	3	False	Lucius Britanniae rex
+rex	lucius rex	9	9	False	Lucius rex
+rom	tibi roma	3	2	False	tibi Roma
+rom	urbe roma	6	6	False	urbe Roma
+rom	urbis romae	5	4	False	urbis Romae
+roman	celestino romano	3	3	True	Celestino Romano
+roman	innocentii romani	3	3	True	Innocentii Romani
+roman	martyrologio romano	5	5	False	martyrologio Romano
+roman	papa romano	3	2	False	papa Romano
+ross	johannes rossus	4	4	True	Johannes Rossus
+rudburn	thomas rudburnus	13	11	True	Thomas Rudburnus
+rudburn	thomae rudburni	4	4	True	Thomae Rudburni
+rug	macula et ruga	3	2	False	macula et ruga
+sacerdot	beatissimi sacerdotes	3	3	False	beatissimi sacerdotes
+salut	annum salutis	5	5	False	annum salutis
+salut	anno salutis	4	4	False	anno salutis
+salut	domino salutem	3	3	False	Domino salutem
+salvator	sancti salvatoris	3	3	False	sancti Salvatoris
+sanct	discipulis sanctorum	3	3	False	discipulis sanctorum
+sanct	ecclesiam in honore sanctae	4	4	False	ecclesiam in honore sanctae
+sanct	ecclesia sancti	4	4	False	ecclesia sancti
+sanct	historiarum sanctorum	3	3	False	historiarum sanctorum
+sanct	honore sancti	7	7	False	honore sancti
+sanct	honorem sancti	6	6	False	honorem sancti
+sanct	honore sanctae	5	5	False	honore sanctae
+sanct	legenda sancti	3	3	False	legenda sancti
+sanct	praedestinatione sanctorum	4	4	False	praedestinatione sanctorum
+sanct	praedicti sancti	3	3	False	praedicti sancti
+sanct	spiritum sanctum	3	2	False	Spiritum sanctum
+sanct	vir sanctus	5	5	False	vir sanctus
+sanct	virum sanctum	4	4	False	virum sanctum
+sapienti	divinae sapientiae	3	3	False	divinae sapientiae
+saxon	anglorum sive saxonum	4	4	False	Anglorum sive Saxonum
+saxon	antiquorum saxonum	3	3	False	antiquorum Saxonum
+saxon	occidentalium saxonum	7	7	False	occidentalium Saxonum
+scot	marianus scotus	3	3	False	Marianus Scotus
+scot	mariani scoti	3	3	True	Mariani Scoti
+scot	pictos et scotos	4	4	False	Pictos et Scotos
+scotic	mare scoticum	5	2	False	mare Scoticum
+secul	christum seculi	3	3	False	Christum seculi
+secund	capite secundo	4	4	False	capite secundo
+secund	distinctione secunda	3	3	False	distinctione secunda
+secund	libro secundo	18	16	False	libro secundo
+sed	apostolicae sedis	10	9	False	apostolicae sedis
+sed	apostolicam sedem	3	3	False	apostolicam sedem
+sed	episcopalem sedem	3	3	False	episcopalem sedem
+sed	metropolitana sede	3	3	False	metropolitana sede
+sed	primae sedis	4	2	False	primae sedis
+senior	thomas rudburnus senior	4	4	False	Thomas Rudburnus senior
+sepelivit	christum sepelivit	3	2	False	Christum sepelivit
+sepelivit	dominum sepelivit	4	4	False	Dominum sepelivit
+septim	capite septimo	4	4	False	capite septimo
+septim	libro septimo	3	3	False	libro septimo
+septim	sexagesimo septimo	3	3	False	sexagesimo septimo
+sequent	anno proxime sequente	4	4	False	anno proxime sequente
+sequent	proxime sequente	6	6	False	proxime sequente
+sermon	anglico sermone	4	4	False	Anglico sermone
+servand	viduitate servanda	3	1	False	viduitate servanda
+sex	utrius que sexus	3	3	False	utrius que sexus
+sexagesim	centesimo sexagesimo	5	3	False	centesimo sexagesimo
+sexagint	centum sexaginta	3	3	False	centum sexaginta
+sexagint	quadringentos et sexaginta	3	2	False	quadringentos et sexaginta
+sext	capite sexto	5	5	False	capite sexto
+sidoni	apollinaris sidonius	4	4	True	Apollinaris Sidonius
+sigoni	carolus sigonius	3	3	True	Carolus Sigonius
+singul	dies singulos	3	3	False	dies singulos
+soci	duodecim sociis	3	3	False	duodecim sociis
+sociat	tribus millibus armatorum sibi sociatis	3	2	False	tribus millibus armatorum sibi sociatis
+sol	natale solum	4	3	False	natale solum
+spati	biennii spatio	3	3	False	biennii spatio
+stabulari	bona stabularia	3	1	False	Bona stabularia
+stowae	johannes stowaeus	4	4	True	Johannes Stowaeus
+su	ecclesiae suae	4	4	False	ecclesiae suae
+su	gratiae suae	4	3	False	gratiae suae
+su	historiae suae	7	7	False	historiae suae
+suburbicar	ecclesiis suburbicar	3	3	False	ecclesiis suburbicar
+supr	vide supr	5	5	False	Vide supr
+susceperunt	baptismum susceperunt	3	2	False	baptismum susceperunt
+synod	sancta synodo	3	2	False	sancta synodo
+tabul	ecclesiae tabula	8	8	False	ecclesiae tabula
+tabul	magna glastoniensis ecclesiae tabula	3	3	False	magna Glastoniensis ecclesiae tabula
+tabul	magnae glastoniensis tabulae	4	4	False	magnae Glastoniensis tabulae
+tabul	magna wintoniensis ecclesiae tabula	4	4	False	magna Wintoniensis ecclesiae tabula
+tabul	wintoniensis ecclesiae tabula	5	5	False	Wintoniensis ecclesiae tabula
+tant	partem tantum	3	2	False	partem tantum
+taur	felicis et tauri	3	2	False	Felicis et Tauri
+taxster	johannes de taxster	3	3	False	Johannes de Taxster
+temp	multum tempus	3	3	False	multum tempus
+tempor	antiquis temporibus	5	5	False	antiquis temporibus
+tempor	illis temporibus	4	4	False	illis temporibus
+tempor	lucii regis temporibus	3	3	False	Lucii regis temporibus
+tempor	lucii temporibus	3	3	False	Lucii temporibus
+tempor	multo tempore	3	3	False	multo tempore
+tempor	nostris temporibus	3	3	False	nostris temporibus
+tempor	regis temporibus	6	6	False	regis temporibus
+terr	portiones terrae	3	2	False	portiones terrae
+terti	capite tertio	6	6	False	capite tertio
+terti	capitulo tertio	3	3	False	capitulo tertio
+terti	libro tertio	4	4	False	libro tertio
+terti	libri tertii	3	3	False	libri tertii
+testament	novi testamenti	3	3	False	novi Testamenti
+testimoni	rem producto testimonio	3	3	False	rem producto testimonio
+tiberi	summo tiberii	3	3	False	summo Tiberii
+tillesburiens	gervasius tillesburiensis	3	3	True	Gervasius Tillesburiensis
+timothe	sancti timothei	4	4	False	sancti Timothei
+tinmuthens	johannes tinmuthensis	24	21	True	Johannes Tinmuthensis
+tinmuthens	johannem tinmuthensem	4	4	True	Johannem Tinmuthensem
+tinmuthens	johanne tinmuthensi	4	4	True	Johanne Tinmuthensi
+tinmuthens	johannis tinmuthensis	4	3	True	Johannis Tinmuthensis
+tinmuthens	vita johannes tinmuthensis	5	5	False	vita Johannes Tinmuthensis
+torquat	virgis torquatis	3	3	False	virgis torquatis
+toti	cambriae totius	4	3	False	Cambriae totius
+toti	regulis totius	3	2	False	regulis totius
+translation	ejus translatione	3	2	False	ejus translatione
+trithemi	johannes trithemius	5	5	True	Johannes Trithemius
+tu	beatitudinem tuam	4	4	False	beatitudinem tuam
+tu	sanctitas tua	3	3	False	sanctitas tua
+tu	sanctitatis tuae	4	3	False	sanctitatis tuae
+ull	absque ullo	4	4	False	absque ullo
+uter	matthaeus uterque	3	3	False	Matthaeus uterque
+v	henrico vi	3	3	True	Henrico VI
+valerian	decium et valerianum	3	2	False	Decium et Valerianum
+valerian	theophili raynaudi defensionem valeriani	3	3	False	Theophili Raynaudi defensionem Valeriani
+venerunt	anno quo saxones venerunt	3	1	False	anno quo Saxones venerunt
+venerunt	saxones venerunt	3	1	False	Saxones venerunt
+veniss	britanniam venisse	3	3	False	Britanniam venisse
+ver	hisce versibus	3	3	False	hisce versibus
+verb	disertis verbis	3	3	False	disertis verbis
+verb	hisce verbis	5	5	False	hisce verbis
+vergili	polydorus vergilius	15	15	True	Polydorus Vergilius
+vergili	polydoro vergilio	3	3	True	Polydoro Vergilio
+veritat	rei veritate	3	3	False	rei veritate
+verol	civitatem verolamium	3	2	False	civitatem Verolamium
+vestr	dilectionem vestram	3	3	False	dilectionem vestram
+vicari	dei vicarius	4	2	False	Dei vicarius
+vicesim	capite vicesimo	3	2	False	capite vicesimo
+videlicet	anno videlicet	4	4	False	anno videlicet
+videtur	mihi videtur	3	3	False	mihi videtur
+viennens	ado viennensis	6	6	True	Ado Viennensis
+vigesim	capite vigesimo	5	5	False	capite vigesimo
+vigesim	libro vigesimo	3	2	False	libro vigesimo
+vigilanti	scribit vigilantius	3	3	False	scribit Vigilantius
+vigint	dies viginti	3	3	False	dies viginti
+vir	sancti viri	4	4	False	sancti viri
+vir	sanctum virum	3	3	False	sanctum virum
+virgin	beatae virginis	6	6	False	beatae virginis
+virgin	gloriosae virginis	4	4	False	gloriosae virginis
+virunni	ponticus virunnius	7	7	False	Ponticus Virunnius
+vit	dominus vitam	3	3	False	Dominus vitam
+vit	dubricii vita	3	3	False	Dubricii vita
+vit	ejus vita	6	6	False	ejus vita
+vit	martyrio vitam	3	3	False	martyrio vitam
+vit	monasticam vitam	4	4	False	monasticam vitam
+vit	religiosae vitae	3	3	False	religiosae vitae
+vit	richardus vitus	3	3	True	Richardus Vitus
+vit	scriptor vitae	3	3	False	scriptor vitae
+vit	tinmuthensis in vita	4	4	False	Tinmuthensis in vita
+vit	verbum vitae	5	4	False	verbum vitae
+vital	ordericus vitalis	3	3	True	Ordericus Vitalis
+vivend	bene vivendi	4	3	False	bene vivendi
+voluntat	propria voluntate	3	1	False	propria voluntate
+vortimeri	audito obitu vortimerii	3	2	False	audito obitu Vortimerii
+vossi	clarissimus vossius	3	3	False	clarissimus Vossius
+wendover	rogerus de wendover	7	6	False	Rogerus de Wendover
+wendoveri	rogerus wendoverius	4	4	True	Rogerus Wendoverius
+westmonasteriens	matthaeus westmonasteriensis	9	9	True	Matthaeus Westmonasteriensis
+westmonasteriens	parisiensis et westmonasteriensis	4	4	False	Parisiensis et Westmonasteriensis
+wigorniens	florentius wigorniensis	8	8	True	Florentius Wigorniensis
+wigorniens	florentii wigorniensis	6	6	True	Florentii Wigorniensis
+wigorniens	florentio wigorniensi	3	3	True	Florentio Wigorniensi
+wintoniens	ecclesiam wintoniensem	5	3	False	ecclesiam Wintoniensem
+zosim	papa zosimus	5	4	False	papa Zosimus
