@@ -121,8 +121,8 @@ def main(argv=None) -> int:
     lines = [
         "# Ussher *Antiquitates* — terminology review worksheet",
         "",
-        "Auto-mined recurring words/phrases across the OCR'd corpus "
-        f"(p0032–p0567), curated for consistency-rule decisions. Inflectional "
+        "Auto-mined recurring words/phrases across the mined corpus slice, "
+        "curated for consistency-rule decisions. Inflectional "
         "variants are collapsed into one row (variants listed after `·`); "
         "decide ONCE per concept.",
         "",
