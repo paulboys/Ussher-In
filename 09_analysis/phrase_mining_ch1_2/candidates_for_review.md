@@ -1,6 +1,6 @@
 # Ussher *Antiquitates* — terminology review worksheet
 
-Auto-mined recurring words/phrases across the OCR'd corpus (p0032–p0567), curated for consistency-rule decisions. Inflectional variants are collapsed into one row (variants listed after `·`); decide ONCE per concept.
+Auto-mined recurring words/phrases across chapters 1–2 (p0032–p0068, human-locked text), curated for consistency-rule decisions. Inflectional variants are collapsed into one row (variants listed after `·`); decide ONCE per concept.
 
 **For each row, fill in:**
 - **English rendering** — the settled translation to use everywhere (leave blank if no fixed rule is warranted).
