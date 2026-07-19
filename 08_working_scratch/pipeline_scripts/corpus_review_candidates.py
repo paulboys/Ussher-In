@@ -38,6 +38,13 @@ _HERE = Path(__file__).resolve().parent
 WORKSPACE = _HERE.parent.parent
 DEFAULT_DIR = WORKSPACE / "09_analysis" / "phrase_mining"
 
+# Capitalized citation abbreviations the proper-noun heuristic mis-flags as
+# names (they are not people/places). Skipped from the names worksheet.
+_NAME_ABBREVS = {
+    "ms", "mss", "jo", "io", "st", "cap", "lib", "pag", "tom", "ib", "ibid",
+    "vid", "edit", "epist", "hist", "chron", "cod", "fol", "num", "seq", "ann",
+}
+
 
 def _load_tsv(path: Path) -> list[dict]:
     with path.open(encoding="utf-8", newline="") as fh:
@@ -95,6 +102,18 @@ def main(argv=None) -> int:
     names_src = [r for r in phrases if r["proper"] == "True"]
     terms_src = [r for r in phrases if r["proper"] != "True"]
 
+    # Single-word proper nouns never appear in the (2+-gram) phrase list, but
+    # they ARE consistency rules (Joseph, Arimathia, Glastonia, Arviragus).
+    # Fold them into the names section, shaped like phrase rows so one
+    # _cluster call collapses their inflections (Josephi/Josepho/Josephum).
+    words = _load_tsv(args.dir / "words.tsv")
+    for w in words:
+        if w["proper"] == "True" and w["word"] not in _NAME_ABBREVS \
+                and len(w["word"]) > 2:
+            names_src.append({"phrase": w["word"], "loose_key": w["loose_key"],
+                              "count": w["count"], "pages": w["pages"],
+                              "proper": "True", "example": w["word"]})
+
     names = [c for c in _cluster(names_src) if c["pages"] >= args.min_pages][:args.top_names]
     terms = [c for c in _cluster(terms_src) if c["pages"] >= args.min_pages][:args.top_terms]
 
@@ -102,8 +121,8 @@ def main(argv=None) -> int:
     lines = [
         "# Ussher *Antiquitates* — terminology review worksheet",
         "",
-        "Auto-mined recurring words/phrases across the OCR'd corpus "
-        f"(p0032–p0567), curated for consistency-rule decisions. Inflectional "
+        "Auto-mined recurring words/phrases across the mined corpus slice, "
+        "curated for consistency-rule decisions. Inflectional "
         "variants are collapsed into one row (variants listed after `·`); "
         "decide ONCE per concept.",
         "",
